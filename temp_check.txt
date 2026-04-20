@@ -1,0 +1,54 @@
+# -*- coding: utf-8 -*-
+
+"""
+
+çç©å»å­¦è®¡ç®ä¸ç»è®¡èªå¨åç§ç å¼æ - Web UI
+
+åºäº Streamlit çç°ä»£åäº¤äºçé¢
+
+Human-in-the-Loop æ¨¡å¼
+
+"""
+
+import sys
+import os
+
+# ==================== Windows UTF-8 编码修复 ====================
+# 修复 Windows 控制台和 Streamlit 中文显示问题
+if sys.platform == "win32":
+    try:
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8")
+    except Exception:
+        pass  # IDE 环境可能无法重新配置
+# =================================================================
+
+from pathlib import Path
+
+import time
+
+import json
+
+from datetime import datetime
+
+from typing import Dict, List, Optional, Any, Tuple
+
+
+
+print("============== [DEBUG 1] æ¨¡åå¯¼å¥å¼å§ ==============", flush=True)
+
+
+
+# æ·»å é¡¹ç®è·¯å¾
+
+project_root = Path(__file__).parent
+
+sys.path.insert(0, str(project_root))
+
+sys.path.insert(0, str(project_root / 'src'))
+
+
+
+print("==============
+Has garble pattern: True

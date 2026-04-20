@@ -1,0 +1,1428 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-14T04:00:51.517730",
+  "cutoff_date": "2026-04-14",
+  "metadata": {
+    "query": "肿瘤微环境 AND scRNA-seq",
+    "date_range": "(2023, 2026)"
+  },
+  "record_count": 50,
+  "papers": [
+    {
+      "pmid": "36973787",
+      "title": "Comprehensive analysis of scRNA-Seq and bulk RNA-Seq reveals dynamic changes in the tumor immune microenvironment of bladder cancer and establishes a prognostic model.",
+      "abstract": "The prognostic management of bladder cancer (BLCA) remains a great challenge for clinicians. Recently, bulk RNA-seq sequencing data have been used as a prognostic marker for many cancers but do not accurately detect core cellular and molecular functions in tumor cells. In the current study, bulk RNA-seq and single-cell RNA sequencing (scRNA-seq) data were combined to construct a prognostic model of BLCA. BLCA scRNA-seq data were downloaded from Gene Expression Omnibus (GEO) database. Bulk RNA-seq data were obtained from the UCSC Xena. The R package \"Seurat\" was used for scRNA-seq data processing, and the uniform manifold approximation and projection (UMAP) were utilized for downscaling and cluster identification. The FindAllMarkers function was used to identify marker genes for each cluster. The limma package was used to obtain differentially expressed genes (DEGs) affecting overall survival (OS) in BLCA patients. Weighted gene correlation network analysis (WGCNA) was used to identify BLCA key modules. The intersection of marker genes of core cells and genes of BLCA key modules and DEGs was used to construct a prognostic model by univariate Cox and Least Absolute Shrinkage and Selection Operator (LASSO) analyses. Differences in clinicopathological characteristics, immune microenvironment, immune checkpoints, and chemotherapeutic drug sensitivity between the high and low-risk groups were also investigated. scRNA-seq data were analyzed to identify 19 cell subpopulations and 7 core cell types. The ssGSEA showed that all 7 core cell types were significantly downregulated in tumor samples of BLCA. We identified 474 marker genes from the scRNA-seq dataset, 1556 DEGs from the Bulk RNA-seq dataset, and 2334 genes associated with a key module identified by WGCNA. After performing intersection, univariate Cox, and LASSO analysis, we obtained a prognostic model based on the expression levels of 3 signature genes, namely MAP1B, PCOLCE2, and ELN. The feasibility of the model was validated by an internal training set and two external validation sets. Moreover, patients with high-risk scores are predisposed to experience poor OS, a larger prevalence of stage III-IV, a greater TMB, a higher infiltration of immune cells, and a lesser likelihood of responding favorably to immunotherapy. By integrating scRNA-seq and bulk RNA-seq data, we constructed a novel prognostic model to predict the survival of BLCA patients. The risk score is a promising independent prognostic factor that is closely correlated with the immune microenvironment and clinicopathological characteristics.",
+      "authors": "[\"Tan Zhiyong\", \"Chen Xiaorong\", \"Zuo Jieming\", \"Fu Shi\", \"Wang Haifeng\", \"Wang Jiansong\"]",
+      "journal": "Journal of translational medicine",
+      "publication_date": "2023-03-27",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.958219",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "UMAP",
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [
+          "Seurat"
+        ],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "37566049",
+      "title": "A Review of Single-Cell RNA-Seq Annotation, Integration, and Cell-Cell Communication.",
+      "abstract": "Single-cell RNA sequencing (scRNA-seq) has emerged as a powerful tool for investigating cellular biology at an unprecedented resolution, enabling the characterization of cellular heterogeneity, identification of rare but significant cell types, and exploration of cell-cell communications and interactions. Its broad applications span both basic and clinical research domains. In this comprehensive review, we survey the current landscape of scRNA-seq analysis methods and tools, focusing on count modeling, cell-type annotation, data integration, including spatial transcriptomics, and the inference of cell-cell communication. We review the challenges encountered in scRNA-seq analysis, including issues of sparsity or low expression, reliability of cell annotation, and assumptions in data integration, and discuss the potential impact of suboptimal clustering and differential expression analysis tools on downstream analyses, particularly in identifying cell subpopulations. Finally, we discuss recent advancements and future directions for enhancing scRNA-seq analysis. Specifically, we highlight the development of novel tools for annotating single-cell data, integrating and interpreting multimodal datasets covering transcriptomics, epigenomics, and proteomics, and inferring cellular communication networks. By elucidating the latest progress and innovation, we provide a comprehensive overview of the rapidly advancing field of scRNA-seq analysis.",
+      "authors": "[\"Cheng Changde\", \"Chen Wenan\", \"Jin Hongjian\", \"Chen Xiang\"]",
+      "journal": "Cells",
+      "publication_date": "2023-07-30",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.958927",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [
+          "Multimodal"
+        ],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Proteomics",
+          "Spatial Transcriptomics",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37081869",
+      "title": "Integrating single-cell RNA-seq and spatial transcriptomics reveals MDK-NCL dependent immunosuppressive environment in endometrial carcinoma.",
+      "abstract": "The tumor microenvironment (TME) play important roles in progression of endometrial carcinoma (EC). We aimed to assess the cell populations in TME of EC. We downloaded datasets of single-cell RNA-seq (scRNA-seq) and spatial transcriptome (ST) for EC from GEO, and downloaded RNA-Seq (FPKM) and clinical data of TCGA-UCEC project from TCGA. The datasets were analyzed using R software. We obtained 5 datasets of scRNA-seq, 1 of ST and 569 samples of RNA-seq. Totally, 0.2 billion transcripts and 33,408 genes were detected in 33,162 cells from scRNA-seq. The cells were classified into 9 clusters, and EC cells were originated from epithelial cells and ciliated cells. Gene set variation analysis (GSVA) indicated that the pathways enriched in the subclusters of epithelial cells and endothelial cells were significantly different, indicating great heterogeneity in EC. Cell-cell communication analyses showed that EC cells emitted the strongest signals, and endothelial cells received more signals than other cells. Further analysis found that subclusters of 1 and 2 of epithelial cells were showed a more malignant phenotype, which may confer malignant phenotype to subcluster of 0 of endothelial cells through MK pathway by MDL-NCL signal. We also analyzed communications between spatial neighbors with ST data and confirmed the findings on MDL-NCL in cell-cell communication. TCGA and GEO analyses indicated that the expression levels of NCL was inversely correlated with ImmuneScore. Our study revealed EC cells can confer malignant phenotype to endothelial cells by MDK-NCL signal, and NCL is associated with suppressed immune activity. EC cells may shape TME by inhibiting immune cells and \"educating\" stromal cells <i>via</i> MDK-NCL signal.",
+      "authors": "[\"Yu Xinnian\", \"Xie Linjun\", \"Ge Jianjuan\", \"Li Huixin\", \"Zhong Shanliang\", \"Liu Xiaolin\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2023-04-04",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.959627",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 33162,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Spatial Transcriptomics",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38253219",
+      "title": "scRNA-seq of colorectal cancer shows regional immune atlas with the function of CD20<sup>+</sup> B cells.",
+      "abstract": "Colorectal cancer (CRC) from different regions exhibits different histological, genetic characteristics, and molecular subtypes, even in response to conventional chemotherapies and immunotherapies. To characterize the immune landscape in different regions of CRC and search for potential therapeutic targets, we analyzed 39,484 single-cell transcription data from 19 samples of CRC and paired normal tissues from four regions to identify the immune characteristics of CRC among anatomic locations, especially in B cells. We discovered that immune cell infiltration in tumors significantly varied among different regions of CRC. B cells from right- and left-sided CRC had different development trajectories, but both had extensive interactions with myeloid cells and T cells. Survival analysis suggested that CD20<sup>+</sup> B cells correlated with good prognosis in CRC patients, especially on the right side. Furthermore, the depletion of CD20<sup>+</sup> B cells demonstrated that anti-CD20 promoted tumor growth progression and reversed the tumor-killing activity of anti-PD-1 treatment in vivo and in vitro. Our results highlight the characterization of the immune landscape of CRC in different regions. CD20<sup>+</sup> B-cell infiltration has been associated with CRC patient prognosis and may promote the tumor-killing role of PD-1 antibodies.",
+      "authors": "[\"Ji Linlin\", \"Fu Gongbo\", \"Huang Mengxi\", \"Kao Xiaoming\", \"Zhu Jialong\", \"Dai Zhe\", \"Chen Yitian\", \"Li Huiyu\", \"Zhou Jie\", \"Chu Xiaoyuan\", \"Lei Zengjie\"]",
+      "journal": "Cancer letters",
+      "publication_date": "2024-01-20",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.960196",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 19,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39264020",
+      "title": "Single-cell RNA-seq in diabetic foot ulcer wound healing.",
+      "abstract": "Diabetic foot ulcer (DFU) is a chronic and serious complication of diabetes mellitus. It is mainly caused by hyperglycaemia, diabetic peripheral vasculopathy and diabetic peripheral neuropathy. These conditions result in ulceration of foot tissues and chronic wounds. If left untreated, DFU can lead to amputation or even endanger the patient's life. Single-cell RNA sequencing (scRNA-seq) is a technique used to identify and characterise transcriptional subpopulations at the single-cell level. It provides insight into cellular function and the molecular drivers of disease. The objective of this paper is to examine the subpopulations, genes and molecules of cells associated with chronic wounds of diabetic foot by using scRNA-seq. The paper aims to explore the wound-healing mechanism of DFU from three aspects: inflammation, angiogenesis and extracellular matrix remodelling. The goal is to gain a better understanding of the mechanism of DFU wound healing and identify possible DFU therapeutic targets, providing new insights for the application of DFU personalised therapy.",
+      "authors": "[\"Dong Yan\", \"Wang Mengting\", \"Wang Qianqian\", \"Cao Xiaoliang\", \"Chen Peng\", \"Gong Zhenhua\"]",
+      "journal": "Wound repair and regeneration : official publication of the Wound Healing Society [and] the European Tissue Repair Society",
+      "publication_date": "2024-09-12",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.960654",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39700255",
+      "title": "Predicting lung aging using scRNA-Seq data.",
+      "abstract": "Age prediction based on single cell RNA-Sequencing data (scRNA-Seq) can provide information for patients' susceptibility to various diseases and conditions. In addition, such analysis can be used to identify aging related genes and pathways. To enable age prediction based on scRNA-Seq data, we developed PolyEN, a new regression model which learns continuous representation for expression over time. These representations are then used by PolyEN to integrate genes to predict an age. Existing and new lung aging data we profiled demonstrated PolyEN's improved performance over existing methods for age prediction. Our results identified lung epithelial cells as the most significant predictors for non-smokers while lung endothelial cells led to the best chronological age prediction results for smokers.",
+      "authors": "[\"Song Qi\", \"Singh Alex\", \"McDonough John E\", \"Adams Taylor S\", \"Vos Robin\", \"De Man Ruben\", \"Myers Greg\", \"Ceulemans Laurens J\", \"Vanaudenaerde Bart M\", \"Wuyts Wim A\", \"Yan Xiting\", \"Schupp Jonas\", \"Hagood James S\", \"Kaminski Naftali\", \"Bar-Joseph Ziv\"]",
+      "journal": "PLoS computational biology",
+      "publication_date": "2024-12-19",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.961005",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37156441",
+      "title": "Microbiota-mediated shaping of mouse spleen structure and immune function characterized by scRNA-seq and Stereo-seq.",
+      "abstract": "Gut microbes exhibit complex interactions with their hosts and shape an organism's immune system throughout its lifespan. As the largest secondary lymphoid organ, the spleen has a wide range of immunological functions. To explore the role of microbiota in regulating and shaping the spleen, we employ scRNA-seq and Stereo-seq technologies based on germ-free (GF) mice to detect differences in tissue size, anatomical structure, cell types, functions, and spatial molecular characteristics. We identify 18 cell types, 9 subtypes of T cells, and 7 subtypes of B cells. Gene differential expression analysis reveals that the absence of microorganisms results in alterations in erythropoiesis within the red pulp region and congenital immune deficiency in the white pulp region. Stereo-seq results demonstrate a clear hierarchy of immune cells in the spleen, including marginal zone (MZ) macrophages, MZ B cells, follicular B cells and T cells, distributed in a well-defined pattern from outside to inside. However, this hierarchical structure is disturbed in GF mice. Ccr7 and Cxcl13 chemokines are specifically expressed in the spatial locations of T cells and B cells, respectively. We speculate that the microbiota may mediate the structural composition or partitioning of spleen immune cells by modulating the expression levels of chemokines.",
+      "authors": "[\"Zhang Yin\", \"Shen Juan\", \"Cheng Wei\", \"Roy Bhaskar\", \"Zhao Ruizhen\", \"Chai Tailiang\", \"Sheng Yifei\", \"Zhang Zhao\", \"Chen Xueting\", \"Liang Weiming\", \"Hu Weining\", \"Liao Qijun\", \"Pan Shanshan\", \"Zhuang Wen\", \"Zhang Yangrui\", \"Chen Rouxi\", \"Mei Junpu\", \"Wei Hong\", \"Fang Xiaodong\"]",
+      "journal": "Journal of genetics and genomics = Yi chuan xue bao",
+      "publication_date": "2023-05-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.961587",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37455906",
+      "title": "Exploring PANoptosis in breast cancer based on scRNA-seq and bulk-seq.",
+      "abstract": "PANoptosis, a cell death pathway involving pyroptosis, apoptosis, and necroptosis, is pivotal in the development of malignancy. However, in the field of breast cancer, the interaction between PANoptosis and tumor cells has not been thoroughly explored. We downloaded breast cancer data and GSE176078 single-cell sequencing dataset from Gene Expression Omnibus (GEO) and The Cancer Genome Atlas (TCGA) databases to obtain PANoptosis-associated genes. To construct prognostic models, COX and LASSO regression was used to identify PANoptosis-associated genes with prognostic value. Finally, immune infiltration analysis and differential analysis of biological functions were performed. Risk grouping was performed according to the prognostic model constructed by COX regression and LASSO regression. The low-risk group showed a better prognosis (P < 0.05) and possessed higher levels of immune infiltration and expression of immune checkpoint-related genes. In addition, the lower the risk score, the higher the degree of microsatellite instability (MSI). Meanwhile, radixin (RDX), the gene with the highest hazard ratio (HR) value among PANoptosis prognosis-related genes, was explicitly expressed in artery Iendothelial cells (ECs) and was widely involved in signaling pathways such as immune response and cell proliferation, possessing rich biological functions. We demonstrated the potential of PANoptosis-based molecular clustering and prognostic features in predicting the survival of breast cancer patients. Furthermore, this study has led to a deeper understanding of the role of PANoptosis in breast cancer and has the potential to provide new directions for immunotherapy of breast cancer.",
+      "authors": "[\"He Puxing\", \"Ma Yixuan\", \"Wu Yaolu\", \"Zhou Qing\", \"Du Huan\"]",
+      "journal": "Frontiers in endocrinology",
+      "publication_date": "2023-06-28",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.962249",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38594466",
+      "title": "Targeting nucleotide metabolic pathways in colorectal cancer by integrating scRNA-seq, spatial transcriptome, and bulk RNA-seq data.",
+      "abstract": "Colorectal cancer is a malignant tumor of the digestive system originating from abnormal cell proliferation in the colon or rectum, often leading to gastrointestinal symptoms and severe health issues. Nucleotide metabolism, which encompasses the synthesis of DNA and RNA, is a pivotal cellular biochemical process that significantly impacts both the progression and therapeutic strategies of colorectal cancer METHODS: For single-cell RNA sequencing (scRNA-seq), five functions were employed to calculate scores related to nucleotide metabolism. Cell developmental trajectory analysis and intercellular interaction analysis were utilized to explore the metabolic characteristics and communication patterns of different epithelial cells. These findings were further validated using spatial transcriptome RNA sequencing (stRNA-seq). A risk model was constructed using expression profile data from TCGA and GEO cohorts to optimize clinical decision-making. Key nucleotide metabolism-related genes (NMRGs) were functionally validated by further in vitro experiments. In both scRNA-seq and stRNA-seq, colorectal cancer (CRC) exhibited unique cellular heterogeneity, with myeloid cells and epithelial cells in tumor samples displaying higher nucleotide metabolism scores. Analysis of intercellular communication revealed enhanced signaling pathways and ligand-receptor interactions between epithelial cells with high nucleotide metabolism and fibroblasts. Spatial transcriptome sequencing confirmed elevated nucleotide metabolism states in the core region of tumor tissue. After identifying differentially expressed NMRGs in epithelial cells, a risk prognostic model based on four genes effectively predicted overall survival and immunotherapy outcomes in patients. High-risk group patients exhibited an immunosuppressive microenvironment and relatively poorer prognosis and responses to chemotherapy and immunotherapy. Finally, based on data analysis and a series of cellular functional experiments, ACOX1 and CPT2 were identified as novel therapeutic targets for CRC. In this study, a comprehensive analysis of NMRGs in CRC was conducted using a combination of single-cell sequencing, spatial transcriptome sequencing, and high-throughput data. The prognostic model constructed with NMRGs shows potential as a standalone prognostic marker for colorectal cancer patients and may significantly influence the development of personalized treatment approaches for CRC.",
+      "authors": "[\"Zhao Songyun\", \"Zhang Pengpeng\", \"Niu Sen\", \"Xie Jiaheng\", \"Liu Yuankun\", \"Liu Yuan\", \"Zhao Ning\", \"Cheng Chao\", \"Lu Peihua\"]",
+      "journal": "Functional & integrative genomics",
+      "publication_date": "2024-04-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.963192",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Spatial Transcriptomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40345606",
+      "title": "Single-cell RNA sequencing (scRNA-seq) and its insights into cellular heterogeneity in atherosclerosis.",
+      "abstract": "Single-cell RNA sequencing (scRNA-seq) has transformed our understanding of cellular diversity in human biology, providing novel insights into disease mechanisms. In cardiovascular disease (CVD), scRNA-seq enables precise mapping of complex cell populations, uncovering unique cell types and states that influence disease progression and suggest new therapeutic targets. In atherosclerosis (AS), scRNA-seq has redefined plaque pathology by identifying distinct cell types, including endothelial cells (ECs), smooth muscle cells (SMCs), fibroblasts, macrophages, T cells, and B cells, each with specific roles in plaque stability, inflammation, and disease progression. In our review, we summarized these major cellular populations and their cellular heterogeneity in non-diseased and atherosclerotic aorta, as identified by scRNA-seq in mice and human tissues. We discussed conserved and species-specific subpopulations, their defining markers, and their functional implications in plaque progression. In addition, we integrated findings from scRNA-seq with experimental studies to highlight key molecular targets with therapeutic potential. In the future, these insights offer a refined cellular and molecular framework of atherosclerosis and may help the development of targeted interventions to promote plaque stabilization and reduce cardiovascular risk.",
+      "authors": "[\"Yu Baixue\", \"Sopic Miron\", \"Sluimer Judith C\"]",
+      "journal": "Vascular pharmacology",
+      "publication_date": "2025-05-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.963751",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37573313",
+      "title": "Characterizing cancer metabolism from bulk and single-cell RNA-seq data using METAFlux.",
+      "abstract": "Cells often alter metabolic strategies under nutrient-deprived conditions to support their survival and growth. Characterizing metabolic reprogramming in the tumor microenvironment (TME) is of emerging importance in cancer research and patient care. However, recent technologies only measure a subset of metabolites and cannot provide in situ measurements. Computational methods such as flux balance analysis (FBA) have been developed to estimate metabolic flux from bulk RNA-seq data and can potentially be extended to single-cell RNA-seq (scRNA-seq) data. However, it is unclear how reliable current methods are, particularly in TME characterization. Here, we present a computational framework METAFlux (METAbolic Flux balance analysis) to infer metabolic fluxes from bulk or single-cell transcriptomic data. Large-scale experiments using cell-lines, the cancer genome atlas (TCGA), and scRNA-seq data obtained from diverse cancer and immunotherapeutic contexts, including CAR-NK cell therapy, have validated METAFlux's capability to characterize metabolic heterogeneity and metabolic interaction amongst cell types.",
+      "authors": "[\"Huang Yuefan\", \"Mohanty Vakul\", \"Dede Merve\", \"Tsai Kyle\", \"Daher May\", \"Li Li\", \"Rezvani Katayoun\", \"Chen Ken\"]",
+      "journal": "Nature communications",
+      "publication_date": "2023-08-12",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.964319",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38605399",
+      "title": "The implications of single-cell RNA-seq analysis in prostate cancer: unraveling tumor heterogeneity, therapeutic implications and pathways towards personalized therapy.",
+      "abstract": "In recent years, advancements in single-cell and spatial transcriptomics, which are highly regarded developments in the current era, particularly the emerging integration of single-cell and spatiotemporal transcriptomics, have enabled a detailed molecular comprehension of the complex regulation of cell fate. The insights obtained from these methodologies are anticipated to significantly contribute to the development of personalized medicine. Currently, single-cell technology is less frequently utilized for prostate cancer compared with other types of tumors. Starting from the perspective of RNA sequencing technology, this review outlined the significance of single-cell RNA sequencing (scRNA-seq) in prostate cancer research, encompassing preclinical medicine and clinical applications. We summarize the differences between mouse and human prostate cancer as revealed by scRNA-seq studies, as well as a combination of multi-omics methods involving scRNA-seq to highlight the key molecular targets for the diagnosis, treatment, and drug resistance characteristics of prostate cancer. These studies are expected to provide novel insights for the development of immunotherapy and other innovative treatment strategies for castration-resistant prostate cancer. Furthermore, we explore the potential clinical applications stemming from other single-cell technologies in this review, paving the way for future research in precision medicine.",
+      "authors": "[\"Feng De-Chao\", \"Zhu Wei-Zhen\", \"Wang Jie\", \"Li Deng-Xiong\", \"Shi Xu\", \"Xiong Qiao\", \"You Jia\", \"Han Ping\", \"Qiu Shi\", \"Wei Qiang\", \"Yang Lu\"]",
+      "journal": "Military Medical Research",
+      "publication_date": "2024-04-11",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.964936",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Precision"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Spatial Transcriptomics",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39521797",
+      "title": "Uncovering functional lncRNAs by scRNA-seq with ELATUS.",
+      "abstract": "Long non-coding RNAs (lncRNAs) play fundamental roles in cellular processes and pathologies, regulating gene expression at multiple levels. Despite being highly cell type-specific, their study at single-cell (sc) level is challenging due to their less accurate annotation and low expression compared to protein-coding genes. Here, we systematically benchmark different preprocessing methods and develop a computational framework, named ELATUS, based on the combination of the pseudoaligner Kallisto with selective functional filtering. ELATUS enhances the detection of functional lncRNAs from scRNA-seq data, detecting their expression with higher concordance than standard methods with the ATAC-seq profiles in single-cell multiome data. Interestingly, the better results of ELATUS are due to its advanced performance with an inaccurate reference annotation such as that of lncRNAs. We independently confirm the expression patterns of cell type-specific lncRNAs exclusively detected with ELATUS and unveil biologically important lncRNAs, such as AL121895.1, a previously undocumented cis-repressor lncRNA, whose role in breast cancer progression is unnoticed by traditional methodologies. Our results emphasize the necessity for an alternative scRNA-seq workflow tailored to lncRNAs that sheds light on the multifaceted roles of lncRNAs.",
+      "authors": "[\"Goñi Enrique\", \"Mas Aina Maria\", \"Gonzalez Jovanna\", \"Abad Amaya\", \"Santisteban Marta\", \"Fortes Puri\", \"Huarte Maite\", \"Hernaez Mikel\"]",
+      "journal": "Nature communications",
+      "publication_date": "2024-11-09",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.965472",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39221762",
+      "title": "Comprehensive scRNA-seq analysis to identify new markers of M2 macrophages for predicting the prognosis of prostate cancer.",
+      "abstract": "Prostate cancer (PCa) has become the highest incidence of malignant tumor among men in the world. Tumor microenvironment (TME) is necessary for tumor growth. M2 macrophages play an important role in many solid tumors. This research aimed at the role of M2 macrophages' prognosis value in PCa. Single-cell RNA-seq (scRNA-seq) data and mRNA expression data were obtained from the Gene Expression Omnibus database (GEO) and The Cancer Genome Atlas (TCGA). Quality control, normalization, reduction, clustering, and cell annotation of scRNA-seq data were preformed using the Seruat package. The sub-populations of the tumor-associated macrophages (TAMs) were analysis and the marker genes of M2 macrophage were selected. Differentially expressed genes (DEGs) in PCa were identified using limma and the immune infiltration was detected using CIBERSORTx. Then, a weighted correlation network analysis (WGCNA) was constructed to identify the M2 macrophage-related modules and genes. Integration of the marker genes of M2 macrophage from scRNA-seq data analysis and hub genes from WGCNA to select the prognostic gene signature based on Univariate and LASSO regression analysis. The risk score was calculated, and the DEGs, biological function, immune characteristics related to risk score were explored. And a predictive nomogram was constructed. CCK8, Transwell, and wound healing were used to verify cell phenotype changes after co-cultured. A total of 2431 marker genes of M2 macrophage and 650 hub M2 macrophage-related genes were selected based on scRNA-seq data and WGCNA. Then, 113 M2 macrophage-related genes were obtained by overlapping the scRNA-seq data and WGCNA results. Nine M2 macrophage-related genes (SMOC2, PLPP1, HES1, STMN1, GPR160, ABCG1, MAZ, MYC, and EPCAM) were screened as prognostic gene signatures. M2 risk score was calculated, the DEGs, Immune score, stromal score, ESTIMATE score, tumor purity, and immune cell infiltration, immune checkpoint expression, and responses of immunotherapy and chemotherapy were identified. And a predictive nomogram was constructed. CCK8, Transwell invasion, and wound healing further verified that M2 macrophages promoted the proliferation, invasion, and migration of PCa (<i>p</i> < 0.05). We uncovered that M2 macrophages and relevant genes played key roles in promoting the occurrence, development, and metastases of PCa and played as convincing predictors in PCa.",
+      "authors": "[\"Ou Yitian\", \"Xia Chengxing\", \"Ye Chunwei\", \"Liu Mingming\", \"Jiang Haiyang\", \"Zhu Yong\", \"Yang Delin\"]",
+      "journal": "Annals of medicine",
+      "publication_date": "2024-09-02",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.966402",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "PCA",
+          "Normalization",
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40317650",
+      "title": "scCompass: An Integrated Multi-Species scRNA-seq Database for AI-Ready.",
+      "abstract": "Emerging single-cell sequencing technology has generated large amounts of data, allowing analysis of cellular dynamics and gene regulation at the single-cell resolution. Advances in artificial intelligence enhance life sciences research by delivering critical insights and optimizing data analysis processes. However, inconsistent data processing quality and standards remain to be a major challenge. Here scCompass is proposed, which provides a comprehensive resource designed to build large-scale, multi-species, and model-friendly single-cell data collection. By applying standardized data pre-processing, scCompass integrates and curates transcriptomic data from nearly 105 million single cells across 13 species. Using this extensive dataset, it is able to identify stable expression genes (SEGs) and organ-specific expression genes (OSGs) in humans and mice. Different scalable datasets are provided that can be easily adapted for AI model training and the pretrained checkpoints with state-of-the-art single-cell foundation models. In summary, scCompass is highly efficient and scalable database for AI-ready, which combined with user-friendly data sharing, visualization, and online analysis, greatly simplifies data access and exploitation for researchers in single-cell biology (http://www.bdbe.cn/kun).",
+      "authors": "[\"Wang Pengfei\", \"Liu Wenhao\", \"Wang Jiajia\", \"Liu Yana\", \"Li Pengjiang\", \"Xu Ping\", \"Cui Wentao\", \"Zhang Ran\", \"Long Qingqing\", \"Hu Zhilong\", \"Fang Chen\", \"Dong Jingxi\", \"Zhang Chunyang\", \"Chen Yan\", \"Wang Chengrui\", \"Liu Guole\", \"Xie Hanyu\", \"Zhang Yiyang\", \"Xiao Meng\", \"Chen Shubai\"]",
+      "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+      "publication_date": "2025-05-02",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.966967",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "36495457",
+      "title": "Integration of scATAC-Seq with scRNA-Seq Data.",
+      "abstract": "Single-cell studies are enabling our understanding of the molecular processes of normal cell development and the onset of several pathologies. For instance, single-cell RNA sequencing (scRNA-Seq) measures the transcriptome-wide gene expression at a single-cell resolution, allowing for studying the heterogeneity among the cells of the same population and revealing complex and rare cell populations. On the other hand, single-cell Assay for Transposase-Accessible Chromatin using sequencing (scATAC-Seq) can be used to define transcriptional and epigenetic changes by analyzing the chromatin accessibility at the single-cell level. However, the integration of multi-omics data still remains one of the most difficult tasks in bioinformatics. In this chapter, we focus on the combination of scRNA-Seq and scATACSeq data to perform an integrative analysis of the single-cell transcriptome and chromatin accessibility of human fetal progenitors.",
+      "authors": "[\"Berest Ivan\", \"Tangherloni Andrea\"]",
+      "journal": "Methods in molecular biology (Clifton, N.J.)",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.967360",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39082647",
+      "title": "Enhancer-driven gene regulatory networks inference from single-cell RNA-seq and ATAC-seq data.",
+      "abstract": "Deciphering the intricate relationships between transcription factors (TFs), enhancers, and genes through the inference of enhancer-driven gene regulatory networks (eGRNs) is crucial in understanding gene regulatory programs in a complex biological system. This study introduces STREAM, a novel method that leverages a Steiner forest problem model, a hybrid biclustering pipeline, and submodular optimization to infer eGRNs from jointly profiled single-cell transcriptome and chromatin accessibility data. Compared to existing methods, STREAM demonstrates enhanced performance in terms of TF recovery, TF-enhancer linkage prediction, and enhancer-gene relation discovery. Application of STREAM to an Alzheimer's disease dataset and a diffuse small lymphocytic lymphoma dataset reveals its ability to identify TF-enhancer-gene relations associated with pseudotime, as well as key TF-enhancer-gene relations and TF cooperation underlying tumor cells.",
+      "authors": "[\"Li Yang\", \"Ma Anjun\", \"Wang Yizhong\", \"Guo Qi\", \"Wang Cankun\", \"Fu Hongjun\", \"Liu Bingqiang\", \"Ma Qin\"]",
+      "journal": "Briefings in bioinformatics",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.967774",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37614232",
+      "title": "Exploring the shared molecular mechanisms between systemic lupus erythematosus and primary Sjögren's syndrome based on integrated bioinformatics and single-cell RNA-seq analysis.",
+      "abstract": "Systemic lupus erythematosus (SLE) and primary Sjögren's syndrome (pSS) are common systemic autoimmune diseases that share a wide range of clinical manifestations and serological features. This study investigates genes, signaling pathways, and transcription factors (TFs) shared between SLE and pSS. Gene expression profiles of SLE and pSS were obtained from the Gene Expression Omnibus (GEO). Weighted gene co-expression network analysis (WGCNA) and differentially expressed gene (DEG) analysis were conducted to identify shared genes related to SLE and pSS. Overlapping genes were then subject to Gene Ontology (GO) and protein-protein interaction (PPI) network analyses. Cytoscape plugins cytoHubba and iRegulon were subsequently used to screen shared hub genes and predict TFs. In addition, gene set variation analysis (GSVA) and CIBERSORTx were used to calculate the correlations between hub genes and immune cells as well as related pathways. To confirm these results, hub genes and TFs were verified in microarray and single-cell RNA sequencing (scRNA-seq) datasets. Following WGCNA and limma analysis, 152 shared genes were identified. These genes were involved in interferon (IFN) response and cytokine-mediated signaling pathway. Moreover, we screened six shared genes, namely <i>IFI44L, ISG15, IFIT1, USP18, RSAD2</i> and <i>ITGB2</i>, out of which three genes, namely <i>IFI44L, ISG15</i> and <i>ITGB2</i> were found to be highly expressed in both microarray and scRNA-seq datasets. IFN response and ITGB2 signaling pathway were identified as potentially relevant pathways. In addition, STAT1 and IRF7 were identified as common TFs in both diseases. This study revealed <i>IFI44L, ISG15</i> and <i>ITGB2</i> as the shared genes and identified STAT1 and IRF7 as the common TFs of SLE and pSS. Notably, the IFN response and ITGB2 signaling pathway played vital roles in both diseases. Our study revealed common pathogenetic characteristics of SLE and pSS. The particular roles of these pivotal genes and mutually overlapping pathways may provide a basis for further mechanistic research.",
+      "authors": "[\"Cui Yanling\", \"Zhang Huina\", \"Wang Zhen\", \"Gong Bangdong\", \"Al-Ward Hisham\", \"Deng Yaxuan\", \"Fan Orion\", \"Wang Junbang\", \"Zhu Wenmin\", \"Sun Yi Eve\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2023-08-08",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.968648",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39642568",
+      "title": "Integrating scRNA-seq and Visium HD for the analysis of the tumor microenvironment in the progression of colorectal cancer.",
+      "abstract": "Colorectal cancer (CRC) development is a complex, multi-stage process, transitioning from normal to adenomatous tissue, and then to invasive carcinoma. Despite research, there's a knowledge gap on using high-resolution spatial omics to understand CRC's tumor microenvironment dynamics. We used single-cell transcriptomics to study major biological changes and cell interactions in CRC progression. Additionally, high-resolution spatial transcriptomics helped us examine the spatial distribution of cells with significant pathway changes, offering insights into the tumor microenvironment's development throughout CRC stages. In the progression of CRC, plasma cells, neutrophils, and fibroblasts exhibit the most significant changes in hallmark pathways, while epithelial cells show the most pronounced alterations in metabolic pathways. We also identified a population of NOTUM + epithelial cells and IGHG1/3 + plasma cells that are concentrated at the boundary between normal tissue and adenomas. Pathway analysis further suggests that these NOTUM + cells activate numerous cancer-related pathways, despite the absence of significant pathological morphological changes. Additionally, we conducted a targeted drug prediction analysis to identify potential therapeutic agents for NOTUM-expressing epithelial cells. Analyzing scRNA-seq and Visium HD data, we found that IGHG1/3 + plasma cells and tumor-associated neutrophil (TANs) may significantly affect colorectal tissue transformation from normal to adenoma and carcinoma. These cells are concentrated at the transition between normal and adenomatous tissue. We also found NOTUM-expressing cells at the edge of normal and adenomatous areas, possibly indicating a morphological transition as normal cells evolve into adenoma cells.",
+      "authors": "[\"Wang Chun\", \"Lu Mengying\", \"Chen Cuimin\", \"Chen Jiajun\", \"Cai Yusi\", \"Wang Hao\", \"Tao Lili\", \"Yin Weihua\", \"Chen Jiakang\"]",
+      "journal": "International immunopharmacology",
+      "publication_date": "2024-12-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.969445",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Spatial Transcriptomics",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40803394",
+      "title": "Unveiling the role of STAT1-activated macrophages in abdominal aortic aneurysm: Insights from scRNA-seq and prognostic signature development.",
+      "abstract": "Abdominal aortic aneurysm (AAA) is a life-threatening cardiovascular disorder with no effective drug treatment. Inflammation and macrophage infiltration in the abdominal aorta play a pivotal role in AAA development, progression, and rupture. However, the precise molecular mechanisms driving these processes remain unclear. To address this, we analyzed single-cell RNA sequencing datasets from three AAA mouse models and two healthy controls. Our findings revealed that AAA samples showed a marked increase in macrophage populations, with a shift toward pro-inflammatory M1 polarization compared to the predominantly M2 phenotype in controls. CellChat analysis revealed that the STAT1 pathway may mediate the enhanced intercellular communication between M1 and M2 macrophages. SCENIC analysis further identified STAT1 as a central transcriptional regulator in macrophages. We also developed a ten-gene inflammatory signature predictive of AAA prognosis, validated with external datasets, and confirmed STAT1's involvement via Western blotting and real-time PCR. These findings highlight the importance of macrophage polarization and STAT1-driven signaling in AAA pathogenesis. The identified gene signature offers potential for risk stratification and therapeutic targeting, advancing both mechanistic understanding and clinical management of AAA.",
+      "authors": "[\"Chen Yihui\", \"Wu Baoxing\", \"Hong Shichai\"]",
+      "journal": "Vascular pharmacology",
+      "publication_date": "2025-08-11",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:46.970030",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37372943",
+      "title": "Single-Cell Transcriptome Analysis Identifies Subclusters with Inflammatory Fibroblast Responses in Localized Scleroderma.",
+      "abstract": "Localized scleroderma (LS) is an autoimmune disease with both inflammatory and fibrotic components causing an abnormal deposition of collagen in the skin and underlying tissue, often leading to disfigurement and disability. Much of its pathophysiology is extrapolated from systemic sclerosis (SSc) since the histopathology findings in the skin are nearly identical. However, LS is critically understudied. Single-cell RNA sequencing (scRNA seq) technology provides a novel way to obtain detailed information at the individual cellular level, overcoming this barrier. Here, we analyzed the affected skin of 14 patients with LS (pediatric and adult) and 14 healthy controls. Fibroblast populations were the focus, since they are the main drivers of fibrosis in SSc. We identified 12 fibroblast subclusters in LS, which overall had an inflammatory gene expression (IFN and HLA-associated genes). A myofibroblast-like cluster (SFRP4/PRSS23) was more prevalent in LS subjects and shared many upregulated genes expressed in SSc-associated myofibroblasts, though it also had strong expression of CXCL9/10/11, known CXCR3 ligands. A CXCL2/IRF1 cluster identified was unique to LS, with a robust inflammatory gene signature, including IL-6, and according to cell communication analysis are influenced by macrophages. In summary, potential disease-propagating fibroblasts and associated gene signatures were identified in LS skin via scRNA seq.",
+      "authors": "[\"Werner Giffin\", \"Sanyal Anwesha\", \"Mirizio Emily\", \"Hutchins Theresa\", \"Tabib Tracy\", \"Lafyatis Robert\", \"Jacobe Heidi\", \"Torok Kathryn S\"]",
+      "journal": "International journal of molecular sciences",
+      "publication_date": "2023-06-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.324095",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 14,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41038850",
+      "title": "Benchmarking scRNA-seq copy number variation callers.",
+      "abstract": "Copy number variations (CNVs), the gain or loss of genomic regions, are associated with disease, especially cancer. Single cell technologies offer new possibilities to capture within-sample heterogeneity of CNVs and identify subclones relevant for tumor progression and treatment outcome. Several computational tools have been developed to identify CNVs from scRNA-seq data. However, an independent benchmarking of them is lacking. Here, we evaluate six popular methods in their ability to correctly identify ground truth CNVs, euploid cells and subclonal structures in 21 scRNA-seq datasets. We discover dataset-specific factors influencing the performance, including dataset size, the number and type of CNVs in the sample and the choice of the reference dataset. Methods which include allelic information perform more robustly for large droplet-based datasets, but require higher runtime. Furthermore, the methods differ in their additional functionalities. We offer a benchmarking pipeline to identify the optimal method for new datasets, and improve methods' performance.",
+      "authors": "[\"Schmid Katharina T\", \"Symeonidi Aikaterini\", \"Hlushchenko Dmytro\", \"Richter Maria L\", \"Tijhuis Andréa E\", \"Foijer Floris\", \"Colomé-Tatché Maria\"]",
+      "journal": "Nature communications",
+      "publication_date": "2025-10-02",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.324538",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 21,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "36321662",
+      "title": "TISCH2: expanded datasets and new tools for single-cell transcriptome analyses of the tumor microenvironment.",
+      "abstract": "The Tumor Immune Single Cell Hub 2 (TISCH2) is a resource of single-cell RNA-seq (scRNA-seq) data from human and mouse tumors, which enables comprehensive characterization of gene expression in the tumor microenvironment (TME) across multiple cancer types. As an increasing number of datasets are generated in the public domain, in this update, TISCH2 has included 190 tumor scRNA-seq datasets covering 6 million cells in 50 cancer types, with 110 newly collected datasets and almost tripling the number of cells compared with the previous release. Furthermore, TISCH2 includes several new functions that allow users to better utilize the large-scale scRNA-seq datasets. First, in the Dataset module, TISCH2 provides the cell-cell communication results in each dataset, facilitating the analyses of interacted cell types and the discovery of significant ligand-receptor pairs between cell types. TISCH2 also includes the transcription factor analyses for each dataset and visualization of the top enriched transcription factors of each cell type. Second, in the Gene module, TISCH2 adds functions for identifying correlated genes and providing survival information for the input genes. In summary, TISCH2 is a user-friendly, up-to-date and well-maintained data resource for gene expression analyses in the TME. TISCH2 is freely available at http://tisch.comp-genomics.org/.",
+      "authors": "[\"Han Ya\", \"Wang Yuting\", \"Dong Xin\", \"Sun Dongqing\", \"Liu Zhaoyang\", \"Yue Jiali\", \"Wang Haiyun\", \"Li Taiwen\", \"Wang Chenfei\"]",
+      "journal": "Nucleic acids research",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.325427",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 50,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39762897",
+      "title": "Comprehensive analysis of scRNA-seq and bulk RNA-seq reveals the non-cardiomyocytes heterogeneity and novel cell populations in dilated cardiomyopathy.",
+      "abstract": "Dilated cardiomyopathy (DCM) is one of the most common causes of heart failure. Infiltration and alterations in non-cardiomyocytes of the human heart involve crucially in the occurrence of DCM and associated immunotherapeutic approaches. We constructed a single-cell transcriptional atlas of DCM and normal patients. Then, the xCell algorithm, EPIC algorithm, MCP counter algorithm, and CIBERSORT method were applied to identify DCM-related cell types with a high degree of precision and specificity using RNA-seq datasets. We further analyzed the heterogeneity among cell types, performed trajectory analysis, examined transcription factor regulatory networks, investigated metabolic heterogeneity, and conducted intercellular communication analysis. Finally, we used bulk RNA-seq data to confirm the roles of M2-like2 subpopulations and GAS6 in DCM. We integrated and analyzed Single-cell sequencing (scRNA-seq) data from 7 DCM samples and 3 normal heart tissue samples, totaling 70,958 single-cell data points. Based on gene-specific expression and prior marker genes, we identified 9 distinct subtypes, including fibroblasts, endothelial cells, myeloid cells, pericytes, T/NK cells, smooth muscle cells, neuronal cells, B cells, and cardiomyocytes. Using machine learning methods to quantify bulk RNA-seq data, we found significant differences in fibroblasts, T cells, and macrophages between DCM and normal samples. Further analysis revealed high heterogeneity in tissue preference, gene expression, functional enrichment, immunodynamics, transcriptional regulatory factors, metabolic changes, and communication patterns in fibroblasts and myeloid cells. Among fibroblast subpopulations, proliferative F3 cells were implicated in the fibroblast transition process in DCM, while myofibroblast F6 cells promoted the fibroblast transition to a late cell state in DCM. Additionally, two subpopulations of M2 macrophages, M2-like1 and M2-like2, were identified with distinct features. The M2-like2 cell subpopulation, which was enriched in glycolysis and fatty acid metabolism, involved in inflammation inhibition and fibrosis promotion. Cell‒cell communication analysis indicated the GAS6-MERTK axis might exhibit interaction between M2 macrophage and M2-like1 macrophage. Furthermore, deconvolution analysis for bulk RNA-seq data revealed a significant increase in M2-like2 subpopulations in DCM, suggesting a more important role for this cell population in DCM. We revealed the heterogeneity of non-cardiomyocytes in DCM and identified subpopulations of myofibroblast and macrophages engaged in DCM, which suggested a potential significance of non-cardiomyocytes in treatment of DCM.",
+      "authors": "[\"He Siyu\", \"Li Chunyu\", \"Lu Mingxin\", \"Lin Fang\", \"Hu Sangyu\", \"Zhang Junfang\", \"Peng Luying\", \"Li Li\"]",
+      "journal": "Journal of translational medicine",
+      "publication_date": "2025-01-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.326932",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Precision"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37944069",
+      "title": "Pan-cancer scRNA-seq analysis reveals immunological and diagnostic significance of the peripheral blood mononuclear cells.",
+      "abstract": "Peripheral blood mononuclear cells (PBMCs) reflect systemic immune response during cancer progression. However, a comprehensive understanding of the composition and function of PBMCs in cancer patients is lacking, and the potential of these features to assist cancer diagnosis is also unclear. Here, the compositional and status differences between cancer patients and healthy donors in PBMCs were investigated by single-cell RNA sequencing (scRNA-seq), involving 262,025 PBMCs from 68 cancer samples and 14 healthy samples. We observed an enhanced activation and differentiation of most immune subsets in cancer patients, along with reduction of naïve T cells, expansion of macrophages, impairment of NK cells and myeloid cells, as well as tumor promotion and immunosuppression. Based on characteristics including differential cell type abundances and/or hub genes identified from weight gene co-expression network analysis (WGCNA) modules of each major cell type, we applied logistic regression to construct cancer diagnosis models. Furthermore, we found that the above models can distinguish cancer patients and healthy donors with high sensitivity. Our study provided new insights into using the features of PBMCs in non-invasive cancer diagnosis.",
+      "authors": "[\"Zhang Yuanhang\", \"Zhou Xiaorui\", \"Zhong Yu\", \"Chen Xi\", \"Li Zeyu\", \"Li Rui\", \"Qin Pengfei\", \"Wang Shanshan\", \"Yin Jianhua\", \"Liu Shang\", \"Jiang Miaomiao\", \"Yu Qichao\", \"Hou Yong\", \"Liu Shiping\", \"Wu Liang\"]",
+      "journal": "Human molecular genetics",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.327482",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "Logistic Regression"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39120646",
+      "title": "A comparison of scRNA-seq annotation methods based on experimentally labeled immune cell subtype dataset.",
+      "abstract": "Cell-type annotation is a critical step in single-cell data analysis. With the development of numerous cell annotation methods, it is necessary to evaluate these methods to help researchers use them effectively. Reference datasets are essential for evaluation, but currently, the cell labels of reference datasets mainly come from computational methods, which may have computational biases and may not reflect the actual cell-type outcomes. This study first constructed an experimentally labeled immune cell-subtype single-cell dataset of the same batch and systematically evaluated 18 cell annotation methods. We assessed those methods under five scenarios, including intra-dataset validation, immune cell-subtype validation, unsupervised clustering, inter-dataset annotation, and unknown cell-type prediction. Accuracy and ARI were evaluation metrics. The results showed that SVM, scBERT, and scDeepSort were the best-performing supervised methods. Seurat was the best-performing unsupervised clustering method, but it couldn't fully fit the actual cell-type distribution. Our results indicated that experimentally labeled immune cell-subtype datasets revealed the deficiencies of unsupervised clustering methods and provided new dataset support for supervised methods.",
+      "authors": "[\"Fu Qiqing\", \"Dong Chenyu\", \"Liu Yunhe\", \"Xia Xiaoqiong\", \"Liu Gang\", \"Zhong Fan\", \"Liu Lei\"]",
+      "journal": "Briefings in bioinformatics",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.328007",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "SVM"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Accuracy"
+        ],
+        "sample_size": null,
+        "python_libs": [
+          "Seurat"
+        ],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40255395",
+      "title": "Repertoire-based mapping and time-tracking of T helper cell subsets in scRNA-Seq.",
+      "abstract": "The functional programs of CD4<sup>+</sup> T helper (Th) cell clones play a central role in shaping immune responses to different challenges. While advances in single-cell RNA sequencing (scRNA-Seq) have significantly improved our understanding of the diversity of Th cells, the relationship between scRNA-Seq clusters and the traditionally characterized Th subsets remains ambiguous. In this study, we introduce TCR-Track, a method leveraging immune repertoire data to map phenotypically sorted Th subsets onto scRNA-Seq profiles. This approach accurately positions the Th1, Th1-17, Th17, Th22, Th2a, Th2, T follicular helper (Tfh), and regulatory T-cell (Treg) subsets, outperforming mapping based on CITE-Seq. Remarkably, the mapping is tightly focused on specific scRNA-Seq clusters, despite 4-year interval between subset sorting and the effector CD4<sup>+</sup> scRNA-Seq experiment. These findings highlight the intrinsic program stability of Th clones circulating in peripheral blood. Repertoire overlap analysis at the scRNA-Seq level confirms that the circulating Th1, Th2, Th2a, Th17, Th22, and Treg subsets are clonally independent. However, a significant clonal overlap between the Th1 and cytotoxic CD4<sup>+</sup> T-cell clusters suggests that cytotoxic CD4<sup>+</sup> T cells differentiate from Th1 clones. In addition, this study resolves a longstanding ambiguity: we demonstrate that, while CCR10+ Th cells align with a specific Th22 scRNA-Seq cluster, CCR10-CCR6+CXCR3-CCR4+ cells, typically classified as Th17, represent a mixture of bona fide Th17 cells and clonally unrelated CCR10<sup>low</sup> Th22 cells. The clear distinction between the Th17 and Th22 subsets should influence the development of vaccine- and T-cell-based therapies. Furthermore, we show that severe acute SARS-CoV-2 infection induces systemic type 1 interferon (IFN) activation of naive Th cells. An increased proportion of effector IFN-induced Th cells is associated with a moderate course of the disease but remains low in critical COVID-19 cases. Using integrated scRNA-Seq, TCR-Track, and CITE-Seq data from 122 donors, we provide a comprehensive Th scRNA-Seq reference that should facilitate further investigation of Th subsets in fundamental and clinical studies.",
+      "authors": "[\"Lukyanov Daniil K\", \"Kriukova Valeriia V\", \"Ladell Kristin\", \"Shagina Irina A\", \"Staroverov Dmitry B\", \"Minasian Bella E\", \"Fedosova Anna S\", \"Shelyakin Pavel\", \"Suchalko Oleg N\", \"Komkov Alexander Y\", \"Blagodatskikh Konstantin A\", \"Miners Kelly L\", \"Britanova Olga V\", \"Franke Andre\", \"Price David A\", \"Chudakov Dmitry M\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2025-04-04",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.329030",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40404675",
+      "title": "Machine learning using scRNA-seq Combined with bulk-seq to identify lactylation-related hub genes in carotid arteriosclerosis.",
+      "abstract": "Atherosclerosis is a chronic inflammatory disease, this study aims to investigate the immune landscape in carotid atherosclerotic plaque formation and explore diagnostic biomarkers of lactylation-associated genes, so as to gain new insights into underlying molecular mechanisms and provide new perspectives for disease detection and treatment. Single cell transcriptome data and Bulk transcriptome data of carotid atherosclerosis samples were obtained from the Gene Expression Omnibus (GEO). Eleven cell types were identified by scRNA-seq data. Lactylation scores were significantly higher in γδT cells than in cells of other subtypes, but lower in plasma cells than in cells of other subtypes. The scores of malignant related pathways were significantly increased in cells with high lactylation scores. scRNA-seq combined with bulk-seq identified differentially expressed lactylation genes in carotid atherosclerosis. A diagnostic model was constructed by combining 10 machine learning algorithms and 101 algorithms, SOD1, DDX42 and PDLIM1 as core genes. Further analysis revealed that the expression levels of core genes were significantly correlated with immune cell infiltration, and their regulatory networks were constructed. Clinical samples verified that the expression of core gene in unstable plaque was significantly lower than that in stable plaque, suggesting that it has protective effect on atherosclerosis. By combining scRNA-seq and Bulk transcriptome data in this study, three lactylation-associated genes SOD1, DDX42 and PDLIM1 were identified in carotid atherosclerosis samples, providing targets for the diagnosis and treatment of carotid atherosclerosis samples.",
+      "authors": "[\"Liu Gaoyan\", \"Song Ye\", \"Yin Shanxue\", \"Zhang Bo\", \"Han Peng\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2025-05-22",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.329760",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38019344",
+      "title": "Practical Compass of Single-Cell RNA-Seq Analysis.",
+      "abstract": "This review paper provides step-by-step instructions on the fundamental process, from handling fastq datasets to illustrating plots and drawing trajectories. The number of studies using single-cell RNA-seq (scRNA-seq) is increasing. scRNA-seq revealed the heterogeneity or diversity of the cellular populations. scRNA-seq also provides insight into the interactions between different cell types. User-friendly scRNA-seq packages for ligand-receptor interactions and trajectory analyses are available. In skeletal biology, osteoclast differentiation, fracture healing, ectopic ossification, human bone development, and the bone marrow niche have been examined using scRNA-seq. scRNA-seq data analysis tools are still being developed, even at the fundamental step of dataset integration. However, updating the latest information is difficult for many researchers. Investigators and reviewers must share their knowledge of in silico scRNA-seq for better biological interpretation. This review article aims to provide a useful guide for complex analytical processes in single-cell RNA-seq data analysis.",
+      "authors": "[\"Okada Hiroyuki\", \"Chung Ung-Il\", \"Hojo Hironori\"]",
+      "journal": "Current osteoporosis reports",
+      "publication_date": "2023-11-29",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.330214",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41106935",
+      "title": "Analysis of single-cell TCR repertoires and gene expression from multi-modal scRNA-seq data.",
+      "abstract": "Single-cell RNA and T-cell receptor (TCR) sequencing are powerful tools for dissecting T-cell diversity and function with unprecedented resolution. Analyzing transcripts and TCR sequences expressed by individual T-cells, enables comprehensive characterization of T-cell repertoires, antigen specificity and clonal dynamics which is fundamental in understanding the adaptive immune responses in various physiological and pathological conditions, including cancer, autoimmune diseases, and infectious diseases. To perform integrative analyses of multi-modal data from single-cell RNA and TCR sequencing experiments specialized bioinformatic tools are required. Here we exemplify the application of Scirpy, a versatile Python package specifically designed for single-cell TCR sequencing analysis, which streamlines the processing and analysis of TCR sequencing data. Scirpy offers a user-friendly framework for tasks like repertoire characterization, visualization, and clonotype identification. Moreover, Scirpy integrates seamlessly with other single-cell analysis tools from the scverse ecosystem, enabling comprehensive multi-modal data integration and downstream analyses.",
+      "authors": "[\"Plattner Christina\", \"Sturm Gregor\", \"Rieder Dietmar\"]",
+      "journal": "Methods in cell biology",
+      "publication_date": "2025-04-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.330800",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [
+          "Multimodal"
+        ],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37791839",
+      "title": "Single-cell RNA seq analysis of erythroid cells reveals a specific sub-population of stress erythroid progenitors.",
+      "abstract": ": Erythroid cells play important roles in hemostasis and disease. However, there is still significant knowledge gap regarding stress erythropoiesis. : Two single-cell RNAseq datasets of erythroid cells on GEO with accession numbers GSE149938 and GSE184916 were obtained. The datasets from two sources, bone marrow and peripheral blood were analyzed using Seurat v4.1.1, and other tools in R. QC metrics were performed, data were normalized and scaled. Principal components that capture the variation of the data were determined. In clustering the cells, KNN graph was constructed and Louvain algorithm was applied to optimize the standard modularity function. Clusters were defined via differential expression of features. We identified 9 different cell types, with a particular cluster representing the stress erythroids. The clusters showed differentially expressed genes as observed from the gene signature plot. The stress erythroid cluster differentially expressed some genes including ALAS2, HEMGN, and GUK1. The erythroid population was found to be heterogeneous, with a distinct sub-cell type constituting the stress erythroids; this may have important implications for our knowledge of steady-state and stress erythropoiesis, and the markers found in this cluster may prove useful for future research into the dynamics of stress erythroid progenitor cell differentiation.",
+      "authors": "[\"Fomukong Hanneda A\", \"Kalu Mayen\", \"Aimola Idowu A\", \"Sallau Abdullahi B\", \"Bello-Manga Halima\", \"Gouegni Flore E\", \"Ameloko Joy U\", \"Bello Zeenat K\", \"David Alfa U\", \"Baba Reuben S\"]",
+      "journal": "Hematology (Amsterdam, Netherlands)",
+      "publication_date": "2023-10-04",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.331376",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "KNN"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [
+          "Seurat"
+        ],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39062480",
+      "title": "DeepIMAGER: Deeply Analyzing Gene Regulatory Networks from scRNA-seq Data.",
+      "abstract": "Understanding the dynamics of gene regulatory networks (GRNs) across diverse cell types poses a challenge yet holds immense value in unraveling the molecular mechanisms governing cellular processes. Current computational methods, which rely solely on expression changes from bulk RNA-seq and/or scRNA-seq data, often result in high rates of false positives and low precision. Here, we introduce an advanced computational tool, DeepIMAGER, for inferring cell-specific GRNs through deep learning and data integration. DeepIMAGER employs a supervised approach that transforms the co-expression patterns of gene pairs into image-like representations and leverages transcription factor (TF) binding information for model training. It is trained using comprehensive datasets that encompass scRNA-seq profiles and ChIP-seq data, capturing TF-gene pair information across various cell types. Comprehensive validations on six cell lines show DeepIMAGER exhibits superior performance in ten popular GRN inference tools and has remarkable robustness against dropout-zero events. DeepIMAGER was applied to scRNA-seq datasets of multiple myeloma (MM) and detected potential GRNs for TFs of <i>RORC</i>, <i>MITF</i>, and <i>FOXD2</i> in MM dendritic cells. This technical innovation, combined with its capability to accurately decode GRNs from scRNA-seq, establishes DeepIMAGER as a valuable tool for unraveling complex regulatory networks in various cell types.",
+      "authors": "[\"Zhou Xiguo\", \"Pan Jingyi\", \"Chen Liang\", \"Zhang Shaoqiang\", \"Chen Yong\"]",
+      "journal": "Biomolecules",
+      "publication_date": "2024-06-27",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.331951",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Precision"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38744866",
+      "title": "Quantifying 3'UTR length from scRNA-seq data reveals changes independent of gene expression.",
+      "abstract": "Although more than half of all genes generate transcripts that differ in 3'UTR length, current analysis pipelines only quantify the amount but not the length of mRNA transcripts. 3'UTR length is determined by 3' end cleavage sites (CS). We map CS in more than 200 primary human and mouse cell types and increase CS annotations relative to the GENCODE database by 40%. Approximately half of all CS are used in few cell types, revealing that most genes only have one or two major 3' ends. We incorporate the CS annotations into a computational pipeline, called scUTRquant, for rapid, accurate, and simultaneous quantification of gene and 3'UTR isoform expression from single-cell RNA sequencing (scRNA-seq) data. When applying scUTRquant to data from 474 cell types and 2134 perturbations, we discover extensive 3'UTR length changes across cell types that are as widespread and coordinately regulated as gene expression changes but affect mostly different genes. Our data indicate that mRNA abundance and mRNA length are two largely independent axes of gene regulation that together determine the amount and spatial organization of protein synthesis.",
+      "authors": "[\"Fansler Mervin M\", \"Mitschka Sibylle\", \"Mayr Christine\"]",
+      "journal": "Nature communications",
+      "publication_date": "2024-05-14",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.332421",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 3,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37980428",
+      "title": "scReadSim: a single-cell RNA-seq and ATAC-seq read simulator.",
+      "abstract": "Benchmarking single-cell RNA-seq (scRNA-seq) and single-cell Assay for Transposase-Accessible Chromatin using sequencing (scATAC-seq) computational tools demands simulators to generate realistic sequencing reads. However, none of the few read simulators aim to mimic real data. To fill this gap, we introduce scReadSim, a single-cell RNA-seq and ATAC-seq read simulator that allows user-specified ground truths and generates synthetic sequencing reads (in a FASTQ or BAM file) by mimicking real data. At both read-sequence and read-count levels, scReadSim mimics real scRNA-seq and scATAC-seq data. Moreover, scReadSim provides ground truths, including unique molecular identifier (UMI) counts for scRNA-seq and open chromatin regions for scATAC-seq. In particular, scReadSim allows users to design cell-type-specific ground-truth open chromatin regions for scATAC-seq data generation. In benchmark applications of scReadSim, we show that UMI-tools achieves the top accuracy in scRNA-seq UMI deduplication, and HMMRATAC and MACS3 achieve the top performance in scATAC-seq peak calling.",
+      "authors": "[\"Yan Guanao\", \"Song Dongyuan\", \"Li Jingyi Jessica\"]",
+      "journal": "Nature communications",
+      "publication_date": "2023-11-18",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.332868",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Accuracy"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38267084",
+      "title": "Integration tools for scRNA-seq data and spatial transcriptomics sequencing data.",
+      "abstract": "Numerous methods have been developed to integrate spatial transcriptomics sequencing data with single-cell RNA sequencing (scRNA-seq) data. Continuous development and improvement of these methods offer multiple options for integrating and analyzing scRNA-seq and spatial transcriptomics data based on diverse research inquiries. However, each method has its own advantages, limitations and scope of application. Researchers need to select the most suitable method for their research purposes based on the actual situation. This review article presents a compilation of 19 integration methods sourced from a wide range of available approaches, serving as a comprehensive reference for researchers to select the suitable integration method for their specific research inquiries. By understanding the principles of these methods, we can identify their similarities and differences, comprehend their applicability and potential complementarity, and lay the foundation for future method development and understanding. This review article presents 19 methods that aim to integrate scRNA-seq data and spatial transcriptomics data. The methods are classified into two main groups and described accordingly. The article also emphasizes the incorporation of High Variance Genes in annotating various technologies, aiming to obtain biologically relevant information aligned with the intended purpose.",
+      "authors": "[\"Yan Chaorui\", \"Zhu Yanxu\", \"Chen Miao\", \"Yang Kainan\", \"Cui Feifei\", \"Zou Quan\", \"Zhang Zilong\"]",
+      "journal": "Briefings in functional genomics",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.333407",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Spatial Transcriptomics",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38976751",
+      "title": "scBoolSeq: Linking scRNA-seq statistics and Boolean dynamics.",
+      "abstract": "Boolean networks are largely employed to model the qualitative dynamics of cell fate processes by describing the change of binary activation states of genes and transcription factors with time. Being able to bridge such qualitative states with quantitative measurements of gene expression in cells, as scRNA-seq, is a cornerstone for data-driven model construction and validation. On one hand, scRNA-seq binarisation is a key step for inferring and validating Boolean models. On the other hand, the generation of synthetic scRNA-seq data from baseline Boolean models provides an important asset to benchmark inference methods. However, linking characteristics of scRNA-seq datasets, including dropout events, with Boolean states is a challenging task. We present scBoolSeq, a method for the bidirectional linking of scRNA-seq data and Boolean activation state of genes. Given a reference scRNA-seq dataset, scBoolSeq computes statistical criteria to classify the empirical gene pseudocount distributions as either unimodal, bimodal, or zero-inflated, and fit a probabilistic model of dropouts, with gene-dependent parameters. From these learnt distributions, scBoolSeq can perform both binarisation of scRNA-seq datasets, and generate synthetic scRNA-seq datasets from Boolean traces, as issued from Boolean networks, using biased sampling and dropout simulation. We present a case study demonstrating the application of scBoolSeq's binarisation scheme in data-driven model inference. Furthermore, we compare synthetic scRNA-seq data generated by scBoolSeq with BoolODE's, data for the same Boolean Network model. The comparison shows that our method better reproduces the statistics of real scRNA-seq datasets, such as the mean-variance and mean-dropout relationships while exhibiting clearly defined trajectories in two-dimensional projections of the data.",
+      "authors": "[\"Magaña-López Gustavo\", \"Calzone Laurence\", \"Zinovyev Andrei\", \"Paulevé Loïc\"]",
+      "journal": "PLoS computational biology",
+      "publication_date": "2024-07-08",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.334105",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40300044",
+      "title": "The Application of scRNA-Seq in Heart Development and Regeneration.",
+      "abstract": "Single-cell RNA sequencing (scRNA-seq) is a rapidly developing and useful technique for elucidating biological mechanisms and characterizing individual cells. Tens of millions of patients worldwide suffer from heart injuries and other types of heart disease. Neonatal mammalian hearts and certain adult vertebrate species, such as zebrafish, can fully regenerate after myocardial injury. However, the adult mammalian heart is unable to regenerate the damaged myocardium. scRNA-seq provides many new insights into pathological and normal hearts and facilitates our understanding of cellular responses to cardiac injury and repair at different stages, which may provide critical clues for effective therapies for adult heart regeneration. In this review, we summarize the application of scRNA-seq in heart development and regeneration and describe how important molecular mechanisms can be harnessed to promote heart regeneration.",
+      "authors": "[\"Gao Junying\", \"Yu Lindong\", \"Qi Haoran\", \"Qi Jun\", \"Zheng Zhaodi\"]",
+      "journal": "Genesis (New York, N.Y. : 2000)",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.334503",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37540365",
+      "title": "Protoplast Isolation for Plant Single-Cell RNA-seq.",
+      "abstract": "The growth and development of plants depends on diversified gene expression in different cell types. Compared to traditional bulk RNA sequencing, droplet-based single-cell RNA sequencing (scRNA-seq) allows for transcriptome profiling of individual cells within heterogeneous tissues. scRNA-seq provides a high-resolution atlas of cellular characterization and vastly improves our understandings of the interactions between individual cells and the microenvironment. However, the difficulty in protoplast isolation has limited the application of single-cell sequencing technology in plant research. Here we describe a high-efficiency protoplast isolation protocol for scRNA-seq.",
+      "authors": "[\"Ren Shulin\", \"Wang Ying\"]",
+      "journal": "Methods in molecular biology (Clifton, N.J.)",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.334804",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38291503",
+      "title": "deMULTIplex2: robust sample demultiplexing for scRNA-seq.",
+      "abstract": "Sample multiplexing enables pooled analysis during single-cell RNA sequencing workflows, thereby increasing throughput and reducing batch effects. A challenge for all multiplexing techniques is to link sample-specific barcodes with cell-specific barcodes, then demultiplex sample identity post-sequencing. However, existing demultiplexing tools fail under many real-world conditions where barcode cross-contamination is an issue. We therefore developed deMULTIplex2, an algorithm inspired by a mechanistic model of barcode cross-contamination. deMULTIplex2 employs generalized linear models and expectation-maximization to probabilistically determine the sample identity of each cell. Benchmarking reveals superior performance across various experimental conditions, particularly on large or noisy datasets with unbalanced sample compositions.",
+      "authors": "[\"Zhu Qin\", \"Conrad Daniel N\", \"Gartner Zev J\"]",
+      "journal": "Genome biology",
+      "publication_date": "2024-01-30",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.335165",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40545078",
+      "title": "Integrating single-cell RNA-seq, bulk RNA-seq, and Mendelian randomization to elucidate the role of HLA-DPA1 expression levels and non-classical monocytes in the pathogenesis of idiopathic pulmonary arterial hypertension.",
+      "abstract": "Aberrant immune and inflammatory responses are critical in idiopathic pulmonary arterial hypertension (IPAH). Thus, investigating immune-related therapeutic targets of IPAH is imperative. By integrating single-cell RNA sequencing (scRNA-seq), genome-wide association studies (GWAS), expression quantitative trait loci (eQTL), and single-cell eQTL (sc-eQTL) data, we identified a non-classical monocyte (NCM)-specific gene that was causally linked to PAH. NCM were classified into three subgroups based on HLA-DPA1 expression: negative, low, and high expression groups. We analyzed intercellular communication, molecular mechanisms, biological processes and assessed the metabolic activity of three subgroups. Additionally, we obtained bulk RNA-seq from lung tissue and Peripheral blood mononuclear cells (PBMCs) transcriptional profiles of IPAH patients to explore HLA-DPA1's functions. We demonstrated that IPAH patients had higher proportions of monocytes and NCM in peripheral blood compared to healthy controls. rs13203715 was causally associated with PAH and downregulated HLA-DPA1 expression in NCM. Differentially expressed genes in three subpopulations were enriched in immune and inflammatory responses. Additionally, HLA-DPA1 expression correlated with immune and inflammatory disruptions in IPAH. In conclusion，HLA-DPA1 exhibited significant downregulation and loss in the NCM of IPAH patients, which was closely associated with disease exacerbation by promoting immune dysregulation and vascular remodeling.",
+      "authors": "[\"Chen Mei\", \"Pang Lingpin\", \"Huang Tao\", \"Liang Weichao\", \"Xian Qian\", \"Guo Dingyu\", \"Zhong Ming\", \"Song Lingyue\", \"Huang Zhihai\", \"Liu Yiming\", \"Yuan Tianhuan\", \"Sun Jie\", \"Sun Xishi\"]",
+      "journal": "International journal of biological macromolecules",
+      "publication_date": "2025-06-20",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:49.335860",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "36414692",
+      "title": "Single-cell RNA-seq methods to interrogate virus-host interactions.",
+      "abstract": "The twenty-first century has seen the emergence of many epidemic and pandemic viruses, with the most recent being the SARS-CoV-2-driven COVID-19 pandemic. As obligate intracellular parasites, viruses rely on host cells to replicate and produce progeny, resulting in complex virus and host dynamics during an infection. Single-cell RNA sequencing (scRNA-seq), by enabling broad and simultaneous profiling of both host and virus transcripts, represents a powerful technology to unravel the delicate balance between host and virus. In this review, we summarize technological and methodological advances in scRNA-seq and their applications to antiviral immunity. We highlight key scRNA-seq applications that have enabled the understanding of viral genomic and host response heterogeneity, differential responses of infected versus bystander cells, and intercellular communication networks. We expect further development of scRNA-seq technologies and analytical methods, combined with measurements of additional multi-omic modalities and increased availability of publicly accessible scRNA-seq datasets, to enable a better understanding of viral pathogenesis and enhance the development of antiviral therapeutics strategies.",
+      "authors": "[\"Ratnasiri Kalani\", \"Wilk Aaron J\", \"Lee Madeline J\", \"Khatri Purvesh\", \"Blish Catherine A\"]",
+      "journal": "Seminars in immunopathology",
+      "publication_date": "2022-11-21",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:51.512332",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37898119",
+      "title": "Dynamic scRNA-seq of live human pancreatic slices reveals functional endocrine cell neogenesis through an intermediate ducto-acinar stage.",
+      "abstract": "Human pancreatic plasticity is implied from multiple single-cell RNA sequencing (scRNA-seq) studies. However, these have been invariably based on static datasets from which fate trajectories can only be inferred using pseudotemporal estimations. Furthermore, the analysis of isolated islets has resulted in a drastic underrepresentation of other cell types, hindering our ability to interrogate exocrine-endocrine interactions. The long-term culture of human pancreatic slices (HPSs) has presented the field with an opportunity to dynamically track tissue plasticity at the single-cell level. Combining datasets from same-donor HPSs at different time points, with or without a known regenerative stimulus (BMP signaling), led to integrated single-cell datasets storing true temporal or treatment-dependent information. This integration revealed population shifts consistent with ductal progenitor activation, blurring of ductal/acinar boundaries, formation of ducto-acinar-endocrine differentiation axes, and detection of transitional insulin-producing cells. This study provides the first longitudinal scRNA-seq analysis of whole human pancreatic tissue, confirming its plasticity in a dynamic fashion.",
+      "authors": "[\"Doke Mayur\", \"Álvarez-Cubela Silvia\", \"Klein Dagmar\", \"Altilio Isabella\", \"Schulz Joseph\", \"Mateus Gonçalves Luciana\", \"Almaça Joana\", \"Fraker Christopher A\", \"Pugliese Alberto\", \"Ricordi Camillo\", \"Qadir Mirza M F\", \"Pastori Ricardo L\", \"Domínguez-Bendala Juan\"]",
+      "journal": "Cell metabolism",
+      "publication_date": "2023-10-27",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:51.512872",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39671349",
+      "title": "Analyzing scRNA-seq data by CCP-assisted UMAP and tSNE.",
+      "abstract": "Single-cell RNA sequencing (scRNA-seq) is widely used to reveal heterogeneity in cells, which has given us insights into cell-cell communication, cell differentiation, and differential gene expression. However, analyzing scRNA-seq data is a challenge due to sparsity and the large number of genes involved. Therefore, dimensionality reduction and feature selection are important for removing spurious signals and enhancing downstream analysis. Correlated clustering and projection (CCP) was recently introduced as an effective method for preprocessing scRNA-seq data. CCP utilizes gene-gene correlations to partition the genes and, based on the partition, employs cell-cell interactions to obtain super-genes. Because CCP is a data-domain approach that does not require matrix diagonalization, it can be used in many downstream machine learning tasks. In this work, we utilize CCP as an initialization tool for uniform manifold approximation and projection (UMAP) and t-distributed stochastic neighbor embedding (tSNE). By using 21 publicly available datasets, we have found that CCP significantly improves UMAP and tSNE visualization and dramatically improve their accuracy. More specifically, CCP improves UMAP by 22% in ARI, 14% in NMI and 15% in ECM, and improves tSNE by 11% in ARI, 9% in NMI and 8% in ECM.",
+      "authors": "[\"Hozumi Yuta\", \"Wei Guo-Wei\"]",
+      "journal": "PloS one",
+      "publication_date": "2024-12-13",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:51.513388",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "t-SNE",
+          "UMAP",
+          "Feature Selection",
+          "Dimensionality Reduction"
+        ],
+        "evaluation_metrics": [
+          "Accuracy"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "36526433",
+      "title": "Cross-species cell-type assignment from single-cell RNA-seq data by a heterogeneous graph neural network.",
+      "abstract": "Cross-species comparative analyses of single-cell RNA sequencing (scRNA-seq) data allow us to explore, at single-cell resolution, the origins of the cellular diversity and evolutionary mechanisms that shape cellular form and function. Cell-type assignment is a crucial step to achieve that. However, the poorly annotated genome and limited known biomarkers hinder us from assigning cell identities for nonmodel species. Here, we design a heterogeneous graph neural network model, CAME, to learn aligned and interpretable cell and gene embeddings for cross-species cell-type assignment and gene module extraction from scRNA-seq data. CAME achieves significant improvements in cell-type characterization across distant species owing to the utilization of non-one-to-one homologous gene mapping ignored by early methods. Our large-scale benchmarking study shows that CAME significantly outperforms five classical methods in terms of cell-type assignment and model robustness to insufficiency and inconsistency of sequencing depths. CAME can transfer the major cell types and interneuron subtypes of human brains to mouse and discover shared cell-type-specific functions in homologous gene modules. CAME can align the trajectories of human and macaque spermatogenesis and reveal their conservative expression dynamics. In short, CAME can make accurate cross-species cell-type assignments even for nonmodel species and uncover shared and divergent characteristics between two species from scRNA-seq data.",
+      "authors": "[\"Liu Xingyan\", \"Shen Qunlun\", \"Zhang Shihua\"]",
+      "journal": "Genome research",
+      "publication_date": "2022-12-16",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:51.514101",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [
+          "Graph Neural Network"
+        ],
+        "feature_engineering": [
+          "Embedding"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37967800",
+      "title": "Single-cell RNA Sequencing (scRNA-seq): Advances and Challenges for Cardiovascular Diseases (CVDs).",
+      "abstract": "Implementing Single-cell RNA sequencing (scRNA-seq) has significantly enhanced our comprehension of cardiovascular diseases (CVDs), providing new opportunities to strengthen the prevention of CVDs progression. Cardiovascular diseases continue to be the primary cause of death worldwide. Improving treatment strategies and patient risk assessment requires a deeper understanding of the fundamental mechanisms underlying these disorders. The advanced and widespread use of Single-cell RNA sequencing enables a comprehensive investigation of the complex cellular makeup of the heart, surpassing essential descriptive aspects. This enhances our understanding of disease causes and directs functional research. The significant advancement in understanding cellular phenotypes has enhanced the study of fundamental cardiovascular science. scRNA-seq enables the identification of discrete cellular subgroups, unveiling previously unknown cell types in the heart and vascular systems that may have relevance to different disease pathologies. Moreover, scRNA-seq has revealed significant heterogeneity in phenotypes among distinct cell subtypes. Finally, we will examine current and upcoming scRNA-seq studies about various aspects of the cardiovascular system, assessing their potential impact on our understanding of the cardiovascular system and offering insight into how these technologies may revolutionise the diagnosis and treatment of cardiac conditions.",
+      "authors": "[\"Khan Shahid Ullah\", \"Huang Yuqing\", \"Ali Hamid\", \"Ali Ijaz\", \"Ahmad Saleem\", \"Khan Safir Ullah\", \"Hussain Talib\", \"Ullah Muneeb\", \"Lu Kun\"]",
+      "journal": "Current problems in cardiology",
+      "publication_date": "2023-11-13",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:51.514706",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "36109685",
+      "title": "Mostly natural sequencing-by-synthesis for scRNA-seq using Ultima sequencing.",
+      "abstract": "Here we introduce a mostly natural sequencing-by-synthesis (mnSBS) method for single-cell RNA sequencing (scRNA-seq), adapted to the Ultima genomics platform, and systematically benchmark it against current scRNA-seq technology. mnSBS uses mostly natural, unmodified nucleotides and only a low fraction of fluorescently labeled nucleotides, which allows for high polymerase processivity and lower costs. We demonstrate successful application in four scRNA-seq case studies of different technical and biological types, including 5' and 3' scRNA-seq, human peripheral blood mononuclear cells from a single individual and in multiplex, as well as Perturb-Seq. Benchmarking shows that results from mnSBS-based scRNA-seq are very similar to those using Illumina sequencing, with minor differences in results related to the position of reads relative to annotated gene boundaries, owing to single-end reads of Ultima being closer to gene ends than reads from Illumina. The method is thus compatible with state-of-the-art scRNA-seq libraries independent of the sequencing technology. We expect mnSBS to be of particular utility for cost-effective large-scale scRNA-seq projects.",
+      "authors": "[\"Simmons Sean K\", \"Lithwick-Yanai Gila\", \"Adiconis Xian\", \"Oberstrass Florian\", \"Iremadze Nika\", \"Geiger-Schuller Kathryn\", \"Thakore Pratiksha I\", \"Frangieh Chris J\", \"Barad Omer\", \"Almogy Gilad\", \"Rozenblatt-Rosen Orit\", \"Regev Aviv\", \"Lipson Doron\", \"Levin Joshua Z\"]",
+      "journal": "Nature biotechnology",
+      "publication_date": "2022-09-15",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:51.515203",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40806640",
+      "title": "scRNA-seq Can Identify Different Cell Populations in Ovarian Cancer Bulk RNA-seq Experiments.",
+      "abstract": "High-grade serous ovarian cancer (HGSC) is a heterogeneous disease. RNA sequencing (RNAseq) of bulk solid tissue is of limited use in these populations due to heterogeneity. Single-cell RNA-seq (scRNA-seq) allows for the identification of diverse genetic compositions of heterogeneous cell populations. New computational methodologies are now available that use scRNAseq results to estimate cell type proportions in bulk RNAseq data. We performed bulk RNA-seq gene expression analysis on 112 HGSC specimens and 12 benign fallopian tube (FT) controls. We identified several publicly available scRNAseq datasets for use as annotation and reference datasets. Deconvolution was performed with MUlti-Subject SIngle Cell Deconvolution (MuSiC) to estimate cell type proportions in the bulk RNA-seq data. Datasets from the Cancer Genome Atlas (TCGA). HGSC repositories were also evaluated. Clinical variables and percentages of cell types were compared for differences in clinical outcomes and treatment results. Pathway enrichment analysis was also performed. Different annotations for referenced scRNA-seq datasets used for deconvolution of bulk RNA-seq data revealed different cellular proportions that were significantly associated with clinical outcomes; for example, higher proportions of macrophages were associated with a better response to primary chemotherapy. Our deconvolution study of bulk RNAseq HGSC samples identified cell populations within the tumor that may be associated with some of the observed clinical outcomes.",
+      "authors": "[\"Gabrilovich Sofia\", \"Devor Eric\", \"Cardillo Nicholas\", \"Bender David\", \"Goodheart Michael\", \"Gonzalez-Bosquet Jesus\"]",
+      "journal": "International journal of molecular sciences",
+      "publication_date": "2025-08-04",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:51.515792",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 112,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37584660",
+      "title": "scNCL: transferring labels from scRNA-seq to scATAC-seq data with neighborhood contrastive regularization.",
+      "abstract": "scATAC-seq has enabled chromatin accessibility landscape profiling at the single-cell level, providing opportunities for determining cell-type-specific regulation codes. However, high dimension, extreme sparsity, and large scale of scATAC-seq data have posed great challenges to cell-type identification. Thus, there has been a growing interest in leveraging the well-annotated scRNA-seq data to help annotate scATAC-seq data. However, substantial computational obstacles remain to transfer information from scRNA-seq to scATAC-seq, especially for their heterogeneous features. We propose a new transfer learning method, scNCL, which utilizes prior knowledge and contrastive learning to tackle the problem of heterogeneous features. Briefly, scNCL transforms scATAC-seq features into gene activity matrix based on prior knowledge. Since feature transformation can cause information loss, scNCL introduces neighborhood contrastive learning to preserve the neighborhood structure of scATAC-seq cells in raw feature space. To learn transferable latent features, scNCL uses a feature projection loss and an alignment loss to harmonize embeddings between scRNA-seq and scATAC-seq. Experiments on various datasets demonstrated that scNCL not only realizes accurate and robust label transfer for common types, but also achieves reliable detection of novel types. scNCL is also computationally efficient and scalable to million-scale datasets. Moreover, we prove scNCL can help refine cell-type annotations in existing scATAC-seq atlases. The source code and data used in this paper can be found in https://github.com/CSUBioGroup/scNCL-release.",
+      "authors": "[\"Yan Xuhua\", \"Zheng Ruiqing\", \"Chen Jinmiao\", \"Li Min\"]",
+      "journal": "Bioinformatics (Oxford, England)",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:51.516446",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41350151",
+      "title": "Leveraging single-cell RNA-seq in helminthology.",
+      "abstract": "Single-cell RNA sequencing (scRNA-seq) has emerged as a leading approach for deciphering the complexity and heterogeneity of RNA transcripts among individual cells. The technique has revolutionized helminthology by offering critical insights into helminth cell and developmental biology, host-helminth interactions, and the underlying mechanisms involved in the immunopathology of helminth infections. scRNA-seq facilitates the identification of novel anti-helminth targets for therapeutic and prophylactic intervention. This review presents an overview of scRNA-seq and highlights its applications in the field of helminthology. Despite certain limitations and challenges, the technique has the potential for further improvement and integration with other methodologies, such as single-cell multi-omics, showing a promising perspective in transforming helminth research.",
+      "authors": "[\"Mu Yi\", \"Zumuk Chika P\", \"Jones Malcolm K\", \"Cai Pengfei\"]",
+      "journal": "Trends in parasitology",
+      "publication_date": "2025-12-04",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:51.516830",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37039664",
+      "title": "Accurate and interpretable gene expression imputation on scRNA-seq data using IGSimpute.",
+      "abstract": "Single-cell ribonucleic acid sequencing (scRNA-seq) enables the quantification of gene expression at the transcriptomic level with single-cell resolution, enhancing our understanding of cellular heterogeneity. However, the excessive missing values present in scRNA-seq data hinder downstream analysis. While numerous imputation methods have been proposed to recover scRNA-seq data, high imputation performance often comes with low or no interpretability. Here, we present IGSimpute, an accurate and interpretable imputation method for recovering missing values in scRNA-seq data with an interpretable instance-wise gene selection layer (GSL). IGSimpute outperforms 12 other state-of-the-art imputation methods on 13 out of 17 datasets from different scRNA-seq technologies with the lowest mean squared error as the chosen benchmark metric. We demonstrate that IGSimpute can give unbiased estimates of the missing values compared to other methods, regardless of whether the average gene expression values are small or large. Clustering results of imputed profiles show that IGSimpute offers statistically significant improvement over other imputation methods. By taking the heart-and-aorta and the limb muscle tissues as examples, we show that IGSimpute can also denoise gene expression profiles by removing outlier entries with unexpectedly high expression values via the instance-wise GSL. We also show that genes selected by the instance-wise GSL could indicate the age of B cells from bladder fat tissue of the Tabula Muris Senis atlas. IGSimpute can impute one million cells using 64 min, and thus applicable to large datasets.",
+      "authors": "[\"Xu Ke\", \"Cheong ChinWang\", \"Veldsman Werner P\", \"Lyu Aiping\", \"Cheung William K\", \"Zhang Lu\"]",
+      "journal": "Briefings in bioinformatics",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "肿瘤微环境 AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:00:51.517462",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 13,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    }
+  ]
+}

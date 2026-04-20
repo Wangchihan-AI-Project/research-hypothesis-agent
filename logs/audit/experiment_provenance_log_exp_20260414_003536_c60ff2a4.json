@@ -1,0 +1,53 @@
+{
+  "experiment_id": "exp_20260414_003536_c60ff2a4",
+  "start_time": "2026-04-14T00:35:36.443314",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "scRNA-seq AND 非小细胞肺癌",
+  "search_params": {
+    "max_results": 20,
+    "date_range": [
+      2020,
+      2026
+    ],
+    "min_if": 0,
+    "relevance_threshold": 7.0,
+    "cutoff_date": "2026-04-14"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-14T00:35:41.777340",
+      "path": "data\\snapshots\\data_snapshot_20260414_003541.json",
+      "record_count": 27
+    },
+    {
+      "timestamp": "2026-04-14T00:44:30.116772",
+      "path": "data\\snapshots\\data_snapshot_20260414_004430.json",
+      "record_count": 1000
+    },
+    {
+      "timestamp": "2026-04-14T01:30:08.861946",
+      "path": "data\\snapshots\\data_snapshot_20260414_013008.json",
+      "record_count": 1000
+    },
+    {
+      "timestamp": "2026-04-14T01:56:48.488077",
+      "path": "data\\snapshots\\data_snapshot_20260414_015648.json",
+      "record_count": 1000
+    },
+    {
+      "timestamp": "2026-04-14T02:40:42.947203",
+      "path": "data\\snapshots\\data_snapshot_20260414_024042.json",
+      "record_count": 1000
+    },
+    {
+      "timestamp": "2026-04-14T03:27:32.017130",
+      "path": "data\\snapshots\\data_snapshot_20260414_032731.json",
+      "record_count": 1000
+    }
+  ]
+}

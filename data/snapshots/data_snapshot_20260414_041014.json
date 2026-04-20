@@ -1,0 +1,1466 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-14T04:10:14.405183",
+  "cutoff_date": "2026-04-14",
+  "metadata": {
+    "query": "TCGA AND scRNA-seq",
+    "date_range": "(2023, 2026)"
+  },
+  "record_count": 50,
+  "papers": [
+    {
+      "pmid": "37081869",
+      "title": "Integrating single-cell RNA-seq and spatial transcriptomics reveals MDK-NCL dependent immunosuppressive environment in endometrial carcinoma.",
+      "abstract": "The tumor microenvironment (TME) play important roles in progression of endometrial carcinoma (EC). We aimed to assess the cell populations in TME of EC. We downloaded datasets of single-cell RNA-seq (scRNA-seq) and spatial transcriptome (ST) for EC from GEO, and downloaded RNA-Seq (FPKM) and clinical data of TCGA-UCEC project from TCGA. The datasets were analyzed using R software. We obtained 5 datasets of scRNA-seq, 1 of ST and 569 samples of RNA-seq. Totally, 0.2 billion transcripts and 33,408 genes were detected in 33,162 cells from scRNA-seq. The cells were classified into 9 clusters, and EC cells were originated from epithelial cells and ciliated cells. Gene set variation analysis (GSVA) indicated that the pathways enriched in the subclusters of epithelial cells and endothelial cells were significantly different, indicating great heterogeneity in EC. Cell-cell communication analyses showed that EC cells emitted the strongest signals, and endothelial cells received more signals than other cells. Further analysis found that subclusters of 1 and 2 of epithelial cells were showed a more malignant phenotype, which may confer malignant phenotype to subcluster of 0 of endothelial cells through MK pathway by MDL-NCL signal. We also analyzed communications between spatial neighbors with ST data and confirmed the findings on MDL-NCL in cell-cell communication. TCGA and GEO analyses indicated that the expression levels of NCL was inversely correlated with ImmuneScore. Our study revealed EC cells can confer malignant phenotype to endothelial cells by MDK-NCL signal, and NCL is associated with suppressed immune activity. EC cells may shape TME by inhibiting immune cells and \"educating\" stromal cells <i>via</i> MDK-NCL signal.",
+      "authors": "[\"Yu Xinnian\", \"Xie Linjun\", \"Ge Jianjuan\", \"Li Huixin\", \"Zhong Shanliang\", \"Liu Xiaolin\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2023-04-04",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.268044",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 33162,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Spatial Transcriptomics",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39414226",
+      "title": "Single-cell transcriptomic profiling uncovers cellular complexity and microenvironment in gastric tumorigenesis associated with Helicobacter pylori.",
+      "abstract": "Helicobacter pylori (H. pylori) infection is the main risk for gastric cancer (GC). However, the cellular heterogeneity and underlying molecular mechanisms in H. pylori-driven gastric tumorigenesis are poorly understood. Here, we generated a single-cell atlas of gastric tumorigenesis comprising 18 specimens of gastritis, gastric intestinal metaplasia (IM) and GC with or without H. pylori infection. Single-cell RNA sequencing (scRNA-seq) was performed. Immunofluorescence, immunohistochemistry and qRT-PCR analysis were applied in a second human gastric tissues cohort for validation. Bioinformatics analyses of public TCGA and GEO datasets were applied. Single-cell RNA profile highlights cellular heterogeneity and alterations in tissue ecology throughout the progression of gastric carcinoma. Various cell lineages exhibited unique cancer-associated expression profiles, such as tumor-like epithelial cell subset (EPC), inflammatory cancer-associated fibroblasts (iCAFs) and Tumor-associated macrophage (TAM). Notably, we revealed that the specific epithelial subset enterocytes from the precancerous lesion GIM, exhibited elevated expression of genes related to lipid metabolism, and HNF4G was predicted as its specific transcription factor. Furthermore, we identified differentially expressed genes in H. pylori-positive and negative epithelial cells, fibroblasts and myeloid cells were identified. Futhermore, H. pylori-positive specimens exhibited enriched cell-cell communication, characterized by significantly active TNF, SPP1, and THY1 signaling networks. Our study provides a comprehensive landscape of the gastric carcinogenesis ecosystem and novel insights into the molecular mechanisms of different cell types in H. pylori-induced GC.",
+      "authors": "[\"Li Nianshuang\", \"Chen Sihai\", \"Xu Xinbo\", \"Wang Huan\", \"Zheng Pan\", \"Fei Xiao\", \"Ke Huajing\", \"Lei Yuting\", \"Zhou Yanan\", \"Yang Xiaoyu\", \"Ouyang Yaobin\", \"Xie Chuan\", \"He Cong\", \"Hu Yi\", \"Cao Yi\", \"Li Zhengrong\", \"Xie Yong\", \"Ge Zhongming\", \"Shu Xu\", \"Lu Nonghua\"]",
+      "journal": "Journal of advanced research",
+      "publication_date": "2024-10-15",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.268992",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "37691929",
+      "title": "ANGPTL2+cancer-associated fibroblasts and SPP1+macrophages are metastasis accelerators of colorectal cancer.",
+      "abstract": "Liver metastasis (LM) is a leading cause of cancer-related deaths in CRC patients, whereas the associated mechanisms have not yet been fully elucidated. Therefore, it is urgently needed to deeply explore novel metastasis accelerators and therapeutic targets of LM-CRC. The bulk RNA sequencing data and clinicopathological information of CRC patients were enrolled from the TCGA and GEO databases. The single-cell RNA sequencing (scRNA-seq) datasets of CRC were collected from and analyzed in the Tumor Immune Single-cell Hub (TISCH) database. The infiltration levels of cancer-associated fibroblasts (CAFs) and macrophages in CRC tissues were estimated by multiple immune deconvolution algorithms. The prognostic values of genes were identified by the Kaplan-Meier curve with a log-rank test. GSEA analysis was carried out to annotate the significantly enriched gene sets. The biological functions of cells were experimentally verified. In the present study, hundreds of differentially expressed genes (DEGs) were selected in LM-CRC compared to primary CRC, and these DEGs were significantly associated with the regulation of endopeptidase activity, blood coagulation, and metabolic processes. Then, SPP1, CAV1, ANGPTL2, and COLEC11 were identified as the characteristic DEGs of LM-CRC, and higher expression levels of SPP1 and ANGPTL2 were significantly associated with worse clinical outcomes of CRC patients. In addition, ANGPTL2 and SPP1 mainly distributed in the tumor microenvironment (TME) of CRC tissues. Subsequent scRNA-seq analysis demonstrated that ANGPTL2 and SPP1 were markedly enriched in the CAFs and macrophages of CRC tissues, respectively. Moreover, we identified the significantly enriched gene sets in LM-CRC, especially those in the SPP1<sup>+</sup>macrophages and ANGPTL2<sup>+</sup>CAFs, such as the HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION and the HALLMARK_COMPLEMENT. Finally, our <i>in vitro</i> experiments proved that ANGPTL2<sup>+</sup>CAFs and SPP1<sup>+</sup>macrophages promote the metastasis of CRC cells. Our study selected four characteristic genes of LM-CRC and identified ANGPTL2<sup>+</sup>CAFs and SPP1<sup>+</sup>macrophages subtypes as metastasis accelerators of CRC which provided a potential therapeutic target for LM-CRC.",
+      "authors": "[\"Liu Xiangxiang\", \"Qin Jian\", \"Nie Junjie\", \"Gao Rui\", \"Hu Shangshang\", \"Sun Huiling\", \"Wang Shukui\", \"Pan Yuqin\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2023-08-24",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.270420",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Log-rank"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "38529286",
+      "title": "Novel prognostic biomarker TBC1D1 is associated with immunotherapy resistance in gliomas.",
+      "abstract": "Glioma, an aggressive brain tumor, poses a challenge in understanding the mechanisms of treatment resistance, despite promising results from immunotherapy. We identified genes associated with immunotherapy resistance through an analysis of The Cancer Genome Atlas (TCGA), Chinese Glioma Genome Atlas (CGGA), and Gene Expression Omnibus (GEO) databases. Subsequently, qRT-PCR and western blot analyses were conducted to measure the mRNA and protein levels of TBC1 Domain Family Member 1 (TBC1D1), respectively. Additionally, Gene Set Enrichment Analysis (GSEA) was employed to reveal relevant signaling pathways, and the expression of TBC1D1 in immune cells was analyzed using single-cell RNA sequencing (scRNA-seq) data from GEO database. Tumor Immune Dysfunction and Exclusion (TIDE) database was utilized to assess T-cell function, while Tumor Immunotherapy Gene Expression Resource (TIGER) database was employed to evaluate immunotherapy resistance in relation to TBC1D1. Furthermore, the predictive performance of molecules on prognosis was assessed using Kaplan-Meier plots, nomograms, and ROC curves. The levels of TBC1D1 were significantly elevated in tumor tissue from glioma patients. Furthermore, high TBC1D1 expression was observed in macrophages compared to other cells, which negatively impacted T cell function, impaired immunotherapy response, promoted treatment tolerance, and led to poor prognosis. Inhibition of TBC1D1 was found to potentially synergistically enhance the efficacy of immunotherapy and prolong the survival of cancer patients with gliomas. Heightened expression of TBC1D1 may facilitate an immunosuppressive microenvironment and predict a poor prognosis. Blocking TBC1D1 could minimize immunotherapy resistance in cancer patients with gliomas.",
+      "authors": "[\"Song Daqiang\", \"Yang Qian\", \"Li Liuying\", \"Wei Yuxian\", \"Zhang Chong\", \"Du Huimin\", \"Ren Guosheng\", \"Li Hongzhong\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2024-03-11",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.271154",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38594466",
+      "title": "Targeting nucleotide metabolic pathways in colorectal cancer by integrating scRNA-seq, spatial transcriptome, and bulk RNA-seq data.",
+      "abstract": "Colorectal cancer is a malignant tumor of the digestive system originating from abnormal cell proliferation in the colon or rectum, often leading to gastrointestinal symptoms and severe health issues. Nucleotide metabolism, which encompasses the synthesis of DNA and RNA, is a pivotal cellular biochemical process that significantly impacts both the progression and therapeutic strategies of colorectal cancer METHODS: For single-cell RNA sequencing (scRNA-seq), five functions were employed to calculate scores related to nucleotide metabolism. Cell developmental trajectory analysis and intercellular interaction analysis were utilized to explore the metabolic characteristics and communication patterns of different epithelial cells. These findings were further validated using spatial transcriptome RNA sequencing (stRNA-seq). A risk model was constructed using expression profile data from TCGA and GEO cohorts to optimize clinical decision-making. Key nucleotide metabolism-related genes (NMRGs) were functionally validated by further in vitro experiments. In both scRNA-seq and stRNA-seq, colorectal cancer (CRC) exhibited unique cellular heterogeneity, with myeloid cells and epithelial cells in tumor samples displaying higher nucleotide metabolism scores. Analysis of intercellular communication revealed enhanced signaling pathways and ligand-receptor interactions between epithelial cells with high nucleotide metabolism and fibroblasts. Spatial transcriptome sequencing confirmed elevated nucleotide metabolism states in the core region of tumor tissue. After identifying differentially expressed NMRGs in epithelial cells, a risk prognostic model based on four genes effectively predicted overall survival and immunotherapy outcomes in patients. High-risk group patients exhibited an immunosuppressive microenvironment and relatively poorer prognosis and responses to chemotherapy and immunotherapy. Finally, based on data analysis and a series of cellular functional experiments, ACOX1 and CPT2 were identified as novel therapeutic targets for CRC. In this study, a comprehensive analysis of NMRGs in CRC was conducted using a combination of single-cell sequencing, spatial transcriptome sequencing, and high-throughput data. The prognostic model constructed with NMRGs shows potential as a standalone prognostic marker for colorectal cancer patients and may significantly influence the development of personalized treatment approaches for CRC.",
+      "authors": "[\"Zhao Songyun\", \"Zhang Pengpeng\", \"Niu Sen\", \"Xie Jiaheng\", \"Liu Yuankun\", \"Liu Yuan\", \"Zhao Ning\", \"Cheng Chao\", \"Lu Peihua\"]",
+      "journal": "Functional & integrative genomics",
+      "publication_date": "2024-04-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.272122",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Spatial Transcriptomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37573313",
+      "title": "Characterizing cancer metabolism from bulk and single-cell RNA-seq data using METAFlux.",
+      "abstract": "Cells often alter metabolic strategies under nutrient-deprived conditions to support their survival and growth. Characterizing metabolic reprogramming in the tumor microenvironment (TME) is of emerging importance in cancer research and patient care. However, recent technologies only measure a subset of metabolites and cannot provide in situ measurements. Computational methods such as flux balance analysis (FBA) have been developed to estimate metabolic flux from bulk RNA-seq data and can potentially be extended to single-cell RNA-seq (scRNA-seq) data. However, it is unclear how reliable current methods are, particularly in TME characterization. Here, we present a computational framework METAFlux (METAbolic Flux balance analysis) to infer metabolic fluxes from bulk or single-cell transcriptomic data. Large-scale experiments using cell-lines, the cancer genome atlas (TCGA), and scRNA-seq data obtained from diverse cancer and immunotherapeutic contexts, including CAR-NK cell therapy, have validated METAFlux's capability to characterize metabolic heterogeneity and metabolic interaction amongst cell types.",
+      "authors": "[\"Huang Yuefan\", \"Mohanty Vakul\", \"Dede Merve\", \"Tsai Kyle\", \"Daher May\", \"Li Li\", \"Rezvani Katayoun\", \"Chen Ken\"]",
+      "journal": "Nature communications",
+      "publication_date": "2023-08-12",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.272598",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38919610",
+      "title": "T cell-related ubiquitination genes as prognostic indicators in hepatocellular carcinoma.",
+      "abstract": "T lymphocytes, integral to the adaptive immune system, wield pivotal influence in bolstering anti-tumor responses, and are strictly regulated by ubiquitination modification. The objective of this investigation was to devise a novel prognostic and immunotherapeutic efficacy predictor for hepatocellular carcinoma patients utilizing T cell-related ubiquitination genes (TCRUG). The single-cell RNA sequencing (scRNA-seq) data and bulk RNA data of HCC patients are derived from the GEO database and TCGA database. Based on the processing of scRNA-seq, T cell marker genes are obtained and TCRUG is obtained. Further combined with WGCNA, differential analysis, univariate Cox regression analysis, LASSO analysis, and multivariate Cox regression analysis to filter and screen TCRUG. Finally construct a riskscore for predicting the prognosis of HCC patients, the predictive effect of which is validated in the GEO dataset. In addition, we also studied the correlation between riskscore and immunotherapy efficacy. Finally, the oncogenic role of UBE2E1 in HCC was explored through various <i>in vitro</i> experiments. Based on patients' scRNA-seq data, we finally obtained 3050 T cell marker genes. Combined with bulk RNA data and clinical data from the TCGA database, we constructed a riskscore that accurately predicts the prognosis of HCC patients. This riskscore is an independent prognostic factor for HCC and is used to construct a convenient column chart. In addition, we found that the high-risk group is more suitable for immunotherapy. Finally, the proliferation, migration, and invasion abilities of HCC cells significantly decreased after UBE2E1 expression reduction. This study developed a riskscore based on TCRUG that can accurately and stably predict the prognosis of HCC patients. This riskscore is also effective in predicting the immune therapy response of HCC patients.",
+      "authors": "[\"Chen Chaobo\", \"Chen Zheng\", \"Zhou Zheyu\", \"Ye Hui\", \"Xiong Shaohui\", \"Hu Weidong\", \"Xu Zipeng\", \"Ge Chen\", \"Zhao Chunlong\", \"Yu Decai\", \"Shen Jiapei\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2024-06-11",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.273359",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39221762",
+      "title": "Comprehensive scRNA-seq analysis to identify new markers of M2 macrophages for predicting the prognosis of prostate cancer.",
+      "abstract": "Prostate cancer (PCa) has become the highest incidence of malignant tumor among men in the world. Tumor microenvironment (TME) is necessary for tumor growth. M2 macrophages play an important role in many solid tumors. This research aimed at the role of M2 macrophages' prognosis value in PCa. Single-cell RNA-seq (scRNA-seq) data and mRNA expression data were obtained from the Gene Expression Omnibus database (GEO) and The Cancer Genome Atlas (TCGA). Quality control, normalization, reduction, clustering, and cell annotation of scRNA-seq data were preformed using the Seruat package. The sub-populations of the tumor-associated macrophages (TAMs) were analysis and the marker genes of M2 macrophage were selected. Differentially expressed genes (DEGs) in PCa were identified using limma and the immune infiltration was detected using CIBERSORTx. Then, a weighted correlation network analysis (WGCNA) was constructed to identify the M2 macrophage-related modules and genes. Integration of the marker genes of M2 macrophage from scRNA-seq data analysis and hub genes from WGCNA to select the prognostic gene signature based on Univariate and LASSO regression analysis. The risk score was calculated, and the DEGs, biological function, immune characteristics related to risk score were explored. And a predictive nomogram was constructed. CCK8, Transwell, and wound healing were used to verify cell phenotype changes after co-cultured. A total of 2431 marker genes of M2 macrophage and 650 hub M2 macrophage-related genes were selected based on scRNA-seq data and WGCNA. Then, 113 M2 macrophage-related genes were obtained by overlapping the scRNA-seq data and WGCNA results. Nine M2 macrophage-related genes (SMOC2, PLPP1, HES1, STMN1, GPR160, ABCG1, MAZ, MYC, and EPCAM) were screened as prognostic gene signatures. M2 risk score was calculated, the DEGs, Immune score, stromal score, ESTIMATE score, tumor purity, and immune cell infiltration, immune checkpoint expression, and responses of immunotherapy and chemotherapy were identified. And a predictive nomogram was constructed. CCK8, Transwell invasion, and wound healing further verified that M2 macrophages promoted the proliferation, invasion, and migration of PCa (<i>p</i> < 0.05). We uncovered that M2 macrophages and relevant genes played key roles in promoting the occurrence, development, and metastases of PCa and played as convincing predictors in PCa.",
+      "authors": "[\"Ou Yitian\", \"Xia Chengxing\", \"Ye Chunwei\", \"Liu Mingming\", \"Jiang Haiyang\", \"Zhu Yong\", \"Yang Delin\"]",
+      "journal": "Annals of medicine",
+      "publication_date": "2024-09-02",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.274518",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "PCA",
+          "Normalization",
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38006433",
+      "title": "Comprehensive analysis of scRNA-Seq and bulk RNA-Seq data reveals dynamic changes in tumor-associated neutrophils in the tumor microenvironment of hepatocellular carcinoma and leads to the establishment of a neutrophil-related prognostic model.",
+      "abstract": "Analysis of hepatocellular carcinoma (HCC) single-cell sequencing data was conducted to explore the role of tumor-associated neutrophils in the tumor microenvironment. Analysis of single-cell sequencing data from 12 HCC tumor cores and five HCC paracancerous tissues identified cellular subpopulations and cellular marker genes. The Cancer Genome Atlas (TCGA) and the Gene Expression Omnibus (GEO) databases were used to establish and validate prognostic models. xCELL, TIMER, QUANTISEQ, CIBERSORT, and CIBERSORT-abs analyses were performed to explore immune cell infiltration. Finally, the pattern of tumor-associated neutrophil roles in tumor microenvironmental components was explored. A total of 271 marker genes for tumor-associated neutrophils were identified based on single-cell sequencing data. Prognostic models incorporating eight genes were established based on TCGA data. Immune cell infiltration differed between the high- and low-risk groups. The low-risk group benefited more from immunotherapy. Single-cell analysis indicated that tumor-associated neutrophils were able to influence macrophage, NK cell, and T-cell functions through the IL16, IFN-II, and SPP1 signaling pathways. Tumor-associated neutrophils regulate immune functions by influencing macrophages and NK cells. Models incorporating tumor-associated neutrophil-related genes can be used to predict patient prognosis and immunotherapy responses.",
+      "authors": "[\"Yang Dashuai\", \"Zhou Yu\", \"Zhang Yanbing\", \"Su Yang\", \"Shen Jie\", \"Yu Bin\", \"Zhao Kailiang\", \"Ding Youming\"]",
+      "journal": "Cancer immunology, immunotherapy : CII",
+      "publication_date": "2023-11-25",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.275168",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37006257",
+      "title": "T-cell exhaustion signatures characterize the immune landscape and predict HCC prognosis <i>via</i> integrating single-cell RNA-seq and bulk RNA-sequencing.",
+      "abstract": "Hepatocellular carcinoma (HCC), the third most prevalent cause of cancer-related death, is a frequent primary liver cancer with a high rate of morbidity and mortality. T-cell depletion (TEX) is a progressive decline in T-cell function due to continuous stimulation of the TCR in the presence of sustained antigen exposure. Numerous studies have shown that TEX plays an essential role in the antitumor immune process and is significantly associated with patient prognosis. Hence, it is important to gain insight into the potential role of T cell depletion in the tumor microenvironment. The purpose of this study was to develop a trustworthy TEX-based signature using single-cell RNA-seq (scRNA-seq) and high-throughput RNA sequencing, opening up new avenues for evaluating the prognosis and immunotherapeutic response of HCC patients. The International Cancer Genome Consortium (ICGC) and The Cancer Genome Atlas (TCGA) databases were used to download RNA-seq information for HCC patients. The 10x scRNA-seq. data of HCC were downloaded from GSE166635, and UMAP was used for clustering descending, and subgroup identification. TEX-related genes were identified by gene set variance analysis (GSVA) and weighted gene correlation network analysis (WGCNA). Afterward, we established a prognostic TEX signature using LASSO-Cox analysis. External validation was performed in the ICGC cohort. Immunotherapy response was assessed by the IMvigor210, GSE78220, GSE79671, and GSE91061cohorts. In addition, differences in mutational landscape and chemotherapy sensitivity between different risk groups were investigated. Finally, the differential expression of TEX genes was verified by qRT-PCR. 11 TEX genes were thought to be highly predictive of the prognosis of HCC and substantially related to HCC prognosis. Patients in the low-risk group had a greater overall survival rate than those in the high-risk group, according to multivariate analysis, which also revealed that the model was an independent predictor of HCC. The predictive efficacy of columnar maps created from clinical features and risk scores was strong. TEX signature and column line plots showed good predictive performance, providing a new perspective for assessing pre-immune efficacy, which will be useful for future precision immuno-oncology studies.",
+      "authors": "[\"Chi Hao\", \"Zhao Songyun\", \"Yang Jinyan\", \"Gao Xinrui\", \"Peng Gaoge\", \"Zhang Jinhao\", \"Xie Xixi\", \"Song Guobin\", \"Xu Ke\", \"Xia Zhijia\", \"Chen Shi\", \"Zhao Jinqiu\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2023-03-15",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.276096",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "UMAP",
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [
+          "Precision",
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "37583701",
+      "title": "Identification of novel gene signature for lung adenocarcinoma by machine learning to predict immunotherapy and prognosis.",
+      "abstract": "Lung adenocarcinoma (LUAD) as a frequent type of lung cancer has a 5-year overall survival rate of lower than 20% among patients with advanced lung cancer. This study aims to construct a risk model to guide immunotherapy in LUAD patients effectively. LUAD Bulk RNA-seq data for the construction of a model, single-cell RNA sequencing (scRNA-seq) data (GSE203360) for cell cluster analysis, and microarray data (GSE31210) for validation were collected from The Cancer Genome Atlas (TCGA) and Gene Expression Omnibus (GEO) database. We used the Seurat R package to filter and process scRNA-seq data. Sample clustering was performed in the ConsensusClusterPlus R package. Differentially expressed genes (DEGs) between two groups were mined by the Limma R package. MCP-counter, CIBERSORT, ssGSEA, and ESTIMATE were employed to evaluate immune characteristics. Stepwise multivariate analysis, Univariate Cox analysis, and Lasso regression analysis were conducted to identify key prognostic genes and were used to construct the risk model. Key prognostic gene expressions were explored by RT-qPCR and Western blot assay. A total of 27 immune cell marker genes associated with prognosis were identified for subtyping LUAD samples into clusters C3, C2, and C1. C1 had the longest overall survival and highest immune infiltration among them, followed by C2 and C3. Oncogenic pathways such as VEGF, EFGR, and MAPK were more activated in C3 compared to the other two clusters. Based on the DEGs among clusters, we confirmed seven key prognostic genes including CPA3, S100P, PTTG1, LOXL2, MELTF, PKP2, and TMPRSS11E. Two risk groups defined by the seven-gene risk model presented distinct responses to immunotherapy and chemotherapy, immune infiltration, and prognosis. The mRNA and protein level of CPA3 was decreased, while the remaining six gene levels were increased in clinical tumor tissues. Immune cell markers are effective in clustering LUAD samples into different subtypes, and they play important roles in regulating the immune microenvironment and cancer development. In addition, the seven-gene risk model may serve as a guide for assisting in personalized treatment in LUAD patients.",
+      "authors": "[\"Shu Jianfeng\", \"Jiang Jinni\", \"Zhao Guofang\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2023-07-31",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.276976",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": 20,
+        "python_libs": [
+          "Seurat"
+        ],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38773508",
+      "title": "Integrated analysis of single-cell and bulk RNA sequencing data reveals a myeloid cell-related regulon predicting neoadjuvant immunotherapy response across cancers.",
+      "abstract": "Immunotherapy has brought about a paradigm shift in the treatment of cancer. However, the majority of patients exhibit resistance or become refractory to immunotherapy, and the underlying mechanisms remain to be explored. Sing-cell RNA sequencing (scRNA‑seq) datasets derived from 1 pretreatment and 1 posttreatment achieving pathological complete response (pCR) patient with lung adenocarcinoma (LUAD) who received neoadjuvant immunotherapy were collected, and pySCENIC was used to find the gene regulatory network (GRN) between cell types and immune checkpoint inhibitor (ICI) response. A regulon predicting ICI response was identified and validated using large‑scale pan-cancer data, including a colorectal cancer scRNA‑seq dataset, a breast cancer scRNA‑seq dataset, The Cancer Genome Atlas (TCGA) pan-cancer cohort, and 5 ICI transcriptomic cohorts. Symphony reference mapping was performed to construct the myeloid cell map. Thirteen major cluster cell types were identified by comparing pretreatment and posttreatment patients, and the fraction of myeloid cells was higher in the posttreatment group (19.0% vs. 11.8%). A PPARG regulon (containing 23 target genes) was associated with ICI response, and its function was validated by a colorectal cancer scRNA‑seq dataset, a breast cancer scRNA‑seq dataset, TCGA pan-cancer cohort, and 5 ICI transcriptomic cohorts. Additionally, a myeloid cell map was developed, and cluster I, II, and III myeloid cells with high expression of PPARG were identified. Moreover, we constructed a website called PPARG ( https://pparg.online/PPARG/ or http://43.134.20.130:3838/PPARG/ ), which provides a powerful discovery tool and resource value for researchers. The PPARG regulon is a predictor of ICI response. The myeloid cell map enables the identification of PPARG subclusters in public scRNA-seq datasets and provides a powerful discovery tool and resource value.",
+      "authors": "[\"Liu Hong\", \"Sima Xiaoxian\", \"Xiao Bijing\", \"Gulizeba Haimiti\", \"Zhao Shen\", \"Zhou Ting\", \"Huang Yan\"]",
+      "journal": "Journal of translational medicine",
+      "publication_date": "2024-05-21",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.277812",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37455906",
+      "title": "Exploring PANoptosis in breast cancer based on scRNA-seq and bulk-seq.",
+      "abstract": "PANoptosis, a cell death pathway involving pyroptosis, apoptosis, and necroptosis, is pivotal in the development of malignancy. However, in the field of breast cancer, the interaction between PANoptosis and tumor cells has not been thoroughly explored. We downloaded breast cancer data and GSE176078 single-cell sequencing dataset from Gene Expression Omnibus (GEO) and The Cancer Genome Atlas (TCGA) databases to obtain PANoptosis-associated genes. To construct prognostic models, COX and LASSO regression was used to identify PANoptosis-associated genes with prognostic value. Finally, immune infiltration analysis and differential analysis of biological functions were performed. Risk grouping was performed according to the prognostic model constructed by COX regression and LASSO regression. The low-risk group showed a better prognosis (P < 0.05) and possessed higher levels of immune infiltration and expression of immune checkpoint-related genes. In addition, the lower the risk score, the higher the degree of microsatellite instability (MSI). Meanwhile, radixin (RDX), the gene with the highest hazard ratio (HR) value among PANoptosis prognosis-related genes, was explicitly expressed in artery Iendothelial cells (ECs) and was widely involved in signaling pathways such as immune response and cell proliferation, possessing rich biological functions. We demonstrated the potential of PANoptosis-based molecular clustering and prognostic features in predicting the survival of breast cancer patients. Furthermore, this study has led to a deeper understanding of the role of PANoptosis in breast cancer and has the potential to provide new directions for immunotherapy of breast cancer.",
+      "authors": "[\"He Puxing\", \"Ma Yixuan\", \"Wu Yaolu\", \"Zhou Qing\", \"Du Huan\"]",
+      "journal": "Frontiers in endocrinology",
+      "publication_date": "2023-06-28",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.278495",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37063423",
+      "title": "SIRT1 promotes glucolipid metabolic conversion to facilitate tumor development in colorectal carcinoma.",
+      "abstract": "<b>Background:</b> Fatty acid oxidation (FAO) is a major alternate energy metabolism pathway in tumor cells subjected to metabolic stress caused by glucose deficiency during rapid progression. However, the mechanism of metabolic reprogramming between glycolysis and FAO in tumor cells is unknown. Therefore, identifying the metabolic glucolipid conversion hub in tumor cells is crucial. <b>Methods:</b> We used single-cell RNA sequencing (scRNA-Seq), RNA sequencing (RNA-Seq), The Cancer Genome Atlas (TCGA), and chromatin immunoprecipitation sequencing (ChIP-Seq) to predict the critical regulator and mechanism of metabolic glucolipid conversion in colorectal cancer (CRC) tumor cells. We used Seahorse metabolic analysis, immunoblotting, immunofluorescence, and immunohistochemical (IHC) technology to verify the prediction and mechanism of this regulator in cancer cell lines, a nude mouse xenograft model, and clinical CRC samples. <b>Results:</b> We demonstrated that sirtuin-1 (SIRT1) was upregulated in CRC cells in response to glucose deprivation and oxidative stress. SIRT1 was also a hub of metabolic glucolipid conversion. SIRT1 upregulation deacetylated β-catenin, translocated it from the nucleus to the cytoplasm, attenuated glycolysis, and was positively correlated with fatty acid oxidation (FAO). Clinical analysis of SIRT1 expression in tumor tissues showed the SIRT1<sup>High</sup> profile was associated with poor prognosis in CRC patients. SIRT1 interference therapy significantly suppressed tumors in the mouse xenograft model. <b>Conclusions:</b> In hostile, glucose-deficient TMEs, SIRT1 is upregulated, and CRC cells transform the Warburg phenotype to FAO. SIRT1 indicates the frequency of glucolipid transformation and rapid tumor progression and is a promising therapeutic target of CRC.",
+      "authors": "[\"Wei Zhihao\", \"Xia Jianyu\", \"Li Jiatao\", \"Cai Jingshu\", \"Shan Juanjuan\", \"Zhang Chengcheng\", \"Zhang Lu\", \"Wang Ting\", \"Qian Cheng\", \"Liu Limei\"]",
+      "journal": "International journal of biological sciences",
+      "publication_date": "2023-03-27",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.279263",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37202394",
+      "title": "Identification of RAC1 in promoting brain metastasis of lung adenocarcinoma using single-cell transcriptome sequencing.",
+      "abstract": "This study aims to give a new perspective to the biomarkers in the lung adenocarcinoma (LUAD) brain metastasis, pathways involved and potential therapeutics. We performed a comprehensive single-cell level transcriptomic analysis on one LUAD patient with circulating tumor cells (CTCs), primary tumor tissue and metastatic tumor tissue using scRNA-seq approach to identify metastasis related biomarkers. Further scRNA-seq were performed on 7 patients to validate the cancer metastatic hallmark. with single cells collected from either metastatic or primary LUAD tissues. Pathological and functional studies were also performed to evidence the critical role of RAC1 in the LUAD metastasis. Hallmark gene was verified based on immunohistochemistry staining, cytological experiment, survival information from The Cancer Genome Atlas (TCGA), and staining results from Human Protein Atlas (HPA) databases. PCA analysis revealed that CTCs were in the intermediate place between the metastatic group and primary group. In the unsupervised clustering analysis CTCs were closer to one of the metastatic tumor cells, implying heterogeneity of the metastatic tumor and origin of the CTCs were from metastatic site. Transitional phase related gene analysis identified RAC1 was enriched in metastatic tumor tissue (MTT) preferred gene set functioning as regulated cell death and apoptosis as well as promoted macromolecule organization. Compared with normal tissue, expression levels of RAC1 increased significantly in LUAD tissue based on HPA database. High expression of RAC1 predicts worse prognosis and higher-risk. EMT analysis identified the propensity of mesenchymal state in primary cells while epithelial signals were higher in the metastatic site. Functional clustering and pathway analyses suggested genes in RAC1 highly expressed cells played critical roles in adhesion, ECM and VEGF signaling pathways. Inhibition of RAC1 attenuates the proliferation, invasiveness and migration ability of lung cancer cells. Besides, through MRI T2WI results, we proved that RAC1 can promote brain metastasis in the RAC1-overexpressed H1975 cell burden nude mouse model. RAC1 and its mechanisms might promote drug design against LUAD brain metastasis.",
+      "authors": "[\"Chen Mingyu\", \"Li Hanyue\", \"Xu Xiaolin\", \"Bao Xunxia\", \"Xue Lei\", \"Ai Xinghao\", \"Xu Jian\", \"Xu Ming\", \"Shi Yong\", \"Zhen Timing\", \"Li Jie\", \"Yang Yi\", \"Ji Yang\", \"Fu Zhiliang\", \"Xing Kaichen\", \"Qing Tao\", \"Wang Qiubo\", \"Zhong Ping\", \"Zhu Sibo\"]",
+      "journal": "Cell death & disease",
+      "publication_date": "2023-05-18",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.280821",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "PCA"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": 7,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Medical Imaging"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40830065",
+      "title": "Anoikis-related genes predicts prognosis and therapeutic response in renal cell carcinoma.",
+      "abstract": "Metastasis represents the primary cause of cancer-related mortality, with a high incidence observed in renal cell carcinoma (RCC). Anoikis, a specialized form of apoptosis, plays a crucial role in preventing displaced cells from adhering to new extracellular matrices (ECM), thus inhibiting their aberrant growth. Notably, cancer cells, especially metastatic ones, exhibit resistance to anoikis. However, the exact mechanisms of anoikis resistance in RCC are not well understood. This study integrates bioinformatics, single-cell RNA sequencing and experimental validation to investigate the role of anoikis-related genes (ARG) in RCC, with a focus on MMP9. RNA-seq data from 518 RCC patients and 71 healthy controls (TCGA-KIRC) and external validation cohorts (E-MTAB-1980, GSE22541) were analyzed to construct an ARG-based prognostic model. Single-cell RNA sequencing (scRNA-seq, GSE159115) was used to assess tumour heterogeneity, while <i>in vitro</i> experiments in RCC cell lines validated MMP9's impact on anoikis resistance, migration and invasion. We collected all RNA-seq and single-cell RNA-seq (scRNA-seq) data from multiple online databases and utilized these datasets to develop a novel ARG-based prognostic model called ARGs. Using Cox regression and machine learning, our model achieved a 5-year area under curve (AUC) of 0.79, surpassing existing models in predictive performance. Enrichment analysis revealed distinct immune and metabolic landscapes between ARGs high- and low-risk groups. At the single-cell level, tumour cells were categorized based on ARG expression, revealing heterogeneous anoikis resistance mechanisms. MMP9 was identified as a key prognostic gene (HR = 1.5, <i>p</i> = 0.016) associated with anoikis resistance and RCC metastasis. Functional assays confirmed that MMP9 knockdown increased anoikis by 59% and significantly reduced wound-healing migration by about 30% and transwell invasion by 50%, reinforcing its role in RCC progression. Targeting anoikis-related genes, particularly MMP9, enhances anoikis sensitivity and reduces RCC invasiveness, offering a potential therapeutic strategy to mitigate metastasis and improve clinical outcomes.",
+      "authors": "[\"Zhou Lizhi\", \"Lu Hengcheng\", \"Fu Bin\", \"Fu Jianhan\"]",
+      "journal": "Annals of medicine",
+      "publication_date": "2025-08-19",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.281799",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC",
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "39176099",
+      "title": "Multi-transcriptomics analysis of microvascular invasion-related malignant cells and development of a machine learning-based prognostic model in hepatocellular carcinoma.",
+      "abstract": "Microvascular invasion (MVI) stands as a pivotal pathological hallmark of hepatocellular carcinoma (HCC), closely linked to unfavorable prognosis, early recurrence, and metastatic progression. However, the precise mechanistic underpinnings governing its onset and advancement remain elusive. In this research, we downloaded bulk RNA-seq data from the TCGA and HCCDB repositories, single-cell RNA-seq data from the GEO database, and spatial transcriptomics data from the CNCB database. Leveraging the Scissor algorithm, we delineated prognosis-related cell subpopulations and discerned a distinct MVI-related malignant cell subtype. A comprehensive exploration of these malignant cell subpopulations was undertaken through pseudotime analysis and cell-cell communication scrutiny. Furthermore, we engineered a prognostic model grounded in MVI-related genes, employing 101 algorithm combinations integrated by 10 machine-learning algorithms on the TCGA training set. Rigorous evaluation ensued on internal testing sets and external validation sets, employing C-index, calibration curves, and decision curve analysis (DCA). Pseudotime analysis indicated that malignant cells, showing a positive correlation with MVI, were primarily concentrated in the early to middle stages of differentiation, correlating with an unfavorable prognosis. Importantly, these cells showed significant enrichment in the MYC pathway and were involved in extensive interactions with diverse cell types via the MIF signaling pathway. The association of malignant cells with the MVI phenotype was corroborated through validation in spatial transcriptomics data. The prognostic model we devised demonstrated exceptional sensitivity and specificity, surpassing the performance of most previously published models. Calibration curves and DCA underscored the clinical utility of this model. Through integrated multi-transcriptomics analysis, we delineated MVI-related malignant cells and elucidated their biological functions. This study provided novel insights for managing HCC, with the constructed prognostic model offering valuable support for clinical decision-making.",
+      "authors": "[\"Huang Haoran\", \"Wu Feifeng\", \"Yu Yang\", \"Xu Borui\", \"Chen Dehua\", \"Huo Yuwei\", \"Li Shaoqiang\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2024-08-08",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.282651",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall",
+          "C-index",
+          "Calibration"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Spatial Transcriptomics",
+          "Multi-omics"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "38880903",
+      "title": "Multi-omics profiling reveal cells with novel oncogenic cluster, TRAP1<sup>low</sup>/CAMSAP3<sup>low</sup>, emerge more aggressive behavior and poor-prognosis in early-stage endometrial cancer.",
+      "abstract": "The clinical heterogeneity of early-stage endometrial cancer (EC) is worthy of further study to identify high-quality prognostic markers and their potential role in aggressive tumor behavior. Mutation of TP53 was considered as an important primary triage in modified molecular typing for EC, it still cannot precisely predict the prognosis of EC. After proteomic analysis of cancer and para-cancerous tissues from 24 early-stage endometrioid EC patients with different survival outcomes, 13 differentially expressed proteins were screen out while 2 proteins enriched in p53 signaling pathway were further identified by single-cell transcriptome (scRNA-seq). Interestingly, tumor necrosis factor type-1 receptor-associated protein (TRAP1) and calmodulin-regulated spectrin-associated protein family member 3 (CAMSAP3) were found to be significantly downregulated in the specific cell cluster. Expectedly, the signature genes of TRAP1<sup>low</sup>/CAMSAP3<sup>low</sup> cluster included classical oncogenes. Moreover, close cellular interactions were observed between myeloid cells and the TRAP1<sup>low</sup>/CAMSAP3<sup>low</sup> cluster after systematically elucidating their relationship with tumor microenvironment (TME). The expression of TRAP1 and CAMSAP3 was verified by immunohistochemistry. Thus, a novel prediction model combining TRAP1, CAMSAP3 and TP53 was construct by multi-omics. Compared with the area under the curve, it demonstrated a significantly improvemrnt in the diagnostic efficacy in EC patients from TCGA bank. In conclusion, this work improved the current knowledge regarding the prognosis of early-stage EC through proteomics and scRNA-seq. These findings may lead to improvements in precise risk stratification of early-stage EC patients.",
+      "authors": "[\"Mao Xiaodan\", \"Tang Xiaoyue\", \"Ye Jingxuan\", \"Xu Shuxia\", \"Wang Yue\", \"Liu Xianhua\", \"Wu Qibin\", \"Lin Xite\", \"Zhang Maotong\", \"Liu Jiangfeng\", \"Yang Juntao\", \"Sun Pengming\"]",
+      "journal": "Molecular cancer",
+      "publication_date": "2024-06-17",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.283428",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Proteomics",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40740783",
+      "title": "Integrative spatial and single-cell transcriptomics elucidate programmed cell death-driven tumor microenvironment dynamics in hepatocellular carcinoma.",
+      "abstract": "Programmed cell death (PCD) mechanisms play crucial roles in cancer progression and treatment response. This study aims to develop a PCD scores prediction model to evaluate the prognosis of hepatocellular carcinoma (HCC) and elucidate the tumor microenvironment differences. We analyzed transcriptomic data from 363 HCC patients in the TCGA database and 221 patients in the GEO database to develop a PCD prediction model. Single-cell RNA sequencing (scRNA-seq) and spatial transcriptomics sequencing (ST-seq) data from HCC patients were analyzed to investigate the tumor microenvironment and functional disparities. The oncogenic role of the key gene UBE2E1 in the model was explored in HCC through various <i>in vitro</i> experiments. Seventeen PCD-related genes were identified as significant prognostic indicators, forming the basis of our PCD prediction model. High-PCD scores correlated with poorer overall survival (OS) and exhibited significant predictive capabilities. scRNA-seq analysis revealed distinct tumor cell characteristics and immune microenvironment differences between high- and low-PCD groups. High-PCD tumors showed increased cell proliferation and malignancy-associated gene expression. T cells in high-PCD patients were more likely to be exhausted, with elevated expression of exhaustion markers. ST-seq data also confirmed these results. Among the genes associated with the PCD prognostic model, UBE2E1 was identified as a key oncogenic marker in HCC. The PCD prediction model effectively predicts prognosis in HCC patients and reveals critical insights into the tumor microenvironment and immune cell exhaustion. This study underscores the potential of PCD-related biomarkers in guiding personalized treatment strategies for HCC.",
+      "authors": "[\"Lei Kai\", \"Zhao Yutong\", \"Li Shumin\", \"Liu Jiawei\", \"Chen Wenhao\", \"Zhou Caihong\", \"Zhang Yi\", \"Tan Jinmei\", \"Wu Jian\", \"Zhou Qi\", \"Tan Jiehui\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2025-07-16",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.284155",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 221,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Spatial Transcriptomics",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39044829",
+      "title": "Developing an advanced diagnostic model for hepatocellular carcinoma through multi-omics integration leveraging diverse cell-death patterns.",
+      "abstract": "Hepatocellular carcinoma (HCC), representing more than 80% of primary liver cancer cases, lacks satisfactory etiology and diagnostic methods. This study aimed to elucidate the role of programmed cell death-associated genes (CDRGs) in HCC by constructing a diagnostic model using single-cell RNA sequencing (scRNA-seq) and RNA sequencing (RNA-seq) data. Six categories of CDRGs, including apoptosis, necroptosis, autophagy, pyroptosis, ferroptosis, and cuproptosis, were collected. RNA-seq data from blood-derived exosomes were sourced from the exoRBase database, RNA-seq data from cancer tissues from the TCGA database, and scRNA-seq data from the GEO database. Subsequently, we intersected the differentially expressed genes (DEGs) of the HCC cohort from exoRBase and TCGA databases with CDRGs, as well as DEGs obtained from single-cell datasets. Candidate biomarker genes were then screened using clinical indicators and a machine learning approach, resulting in the construction of a seven-gene diagnostic model for HCC. Additionally, scRNA-seq and spatial transcriptome sequencing (stRNA-seq) data of HCC from the Mendeley data portal were used to investigate the underlying mechanisms of these seven key genes and their association with immune checkpoint blockade (ICB) therapy. Finally, we validated the expression of key molecules in tissues and blood-derived exosomes through quantitative Polymerase Chain Reaction (qPCR) and immunohistochemistry experiments. Collectively, we obtained a total of 50 samples and 104,288 single cells. Following the meticulous screening, we established a seven-gene diagnostic model for HCC, demonstrating high diagnostic efficacy in both the exoRBase HCC cohort (training set: AUC = 1; testing set: AUC = 0.847) and TCGA HCC cohort (training set: AUC = 1; testing set: AUC = 0.976). Subsequent analysis revealed that HCC cluster 3 exhibited a higher stemness index and could serve as the starting point for the differentiation trajectory of HCC cells, also displaying more abundant interactions with other cell types in the microenvironment. Notably, key genes TRIB3 and NQO1 displayed elevated expression levels in HCC cells. Experimental validation further confirmed their elevated expression in both tumor tissues and blood-derived exosomes of cancer patients. Additionally, stRNA analysis not only substantiated these findings but also suggested that patients with high TRIB3 and NQO1 expression might respond more favorably to ICB therapy. The seven-gene diagnostic model demonstrated remarkable accuracy in HCC screening, with TRIB3 emerging as a promising diagnostic tool and therapeutic target for HCC.",
+      "authors": "[\"Wang Chengbang\", \"Yang Guanglin\", \"Feng Guanzheng\", \"Deng Chengen\", \"Zhang Qingyun\", \"Chen Shaohua\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2024-07-09",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:09.285212",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC",
+          "Accuracy"
+        ],
+        "sample_size": 80,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Spatial Transcriptomics",
+          "Multi-omics"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "39588301",
+      "title": "CXCR6 expression predicts prognosis and immunotherapeutic benefit in muscle-invasive bladder cancer.",
+      "abstract": "Increasing evidence suggests that the CXC chemokine receptor 6 (CXCR6) is involved in tumor progression and the regulation of tumor immunity. However, its role in muscle-invasive bladder cancer (MIBC) remains largely unexplored. Data from 391 MIBC patients in the TCGA, 212 patients from GEO, 131 patients from our center, 195 patients in the IMvigor210 cohort, and single-cell RNA sequencing (scRNA-seq) data from 9 bladder cancer patients (GSE222315) were analyzed. Additionally, data from the GEPIA 2, TISCH2, TIMER2.0, and UALCAN platforms were utilized to investigate the prognostic and immunotherapeutic significance of CXCR6 in MIBC. We observed that CXCR6 expression was significantly reduced in bladder cancer tumors and correlated with tumor stage and grade. Low CXCR6 expression was associated with poor recurrence-free survival (RFS) and overall survival (OS) in the TCGA cohort, a finding validated in both the meta-GEO dataset and our center's cohort. Multivariate analysis confirmed that low CXCR6 expression was an independent predictor of poor OS and RFS. A nomogram incorporating CXCR6 expression and other independent prognostic factors was developed to accurately predict 3- and 5-year OS. Gene set enrichment analysis indicated that immune activation-related pathways were significantly enriched in tumors with high CXCR6 expression. CIBERSORT analysis revealed that CXCR6 expression was positively correlated with CD8+ T cells, CD4+ T cells, activated NK cells, M1 macrophages, and activated dendritic cells in TCGA, findings further validated by TIMER2.0. scRNA-seq data showed that CXCR6 was predominantly expressed in T and NK cells and facilitated T/NK-myeloid interaction via the CXCR6-CXCL16 axis. Importantly, CXCL16+ macrophages and dendritic cells recruited CXCR6+ T and NK cells, which exhibited enhanced cytotoxicity, thereby amplifying anti-tumor immunity. Clinically, in the IMvigor210 immunotherapy cohort, higher CXCR6 expression was associated with improved anti-PD-L1 therapeutic outcomes. Our findings highlight CXCR6 as a critical biomarker for predicting prognosis and immunotherapeutic response in MIBC.",
+      "authors": "[\"Lu Xiaolin\", \"Ge Li-Ping\", \"Liu Zhaopei\", \"Zhu Yu\", \"Ye Dingwei\", \"Chang Yuan\"]",
+      "journal": "Frontiers in oncology",
+      "publication_date": "2024-11-11",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.259705",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 212,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "36685571",
+      "title": "Single-cell transcriptome analysis reveals heterogeneity and convergence of the tumor microenvironment in colorectal cancer.",
+      "abstract": "Colorectal cancer (CRC) ranks second for mortality and third for morbidity among the most commonly diagnosed cancers worldwide. We aimed to investigate the heterogeneity and convergence of tumor microenvironment (TME) in CRC. We analyzed the single-cell RNA sequencing data obtained from the Gene Expression Omnibus (GEO) database and identified 8 major cell types and 25 subgroups derived from tumor, para-tumor and peripheral blood. In this study, we found that there were significant differences in metabolic patterns, immunophenotypes and transcription factor (TF) regulatory patterns among different subgroups of each major cell type. However, subgroups manifested similar lipid metabolic patterns, immunosuppressive functions and TFs module at the end of the differentiation trajectory in CD8+ T cells, myeloid cells and Fibroblasts. Meanwhile, TFs regulated lipid metabolism and immunosuppressive ligand-receptor pairs were detected by tracing the differentiation trajectory. Based on the cell subgroup fractions calculated by CIBERSORTx and bulk RNA-sequencing data from The Cancer Genome Atlas (TCGA), we constructed an immune risk model and clinical risk model of CRC which presented excellent prognostic value. This study identified that the differentiation was accompanied by remodeling of lipid metabolism and suppression of immune function, which suggest that lipid remodeling may be an important trigger of immunosuppression. More importantly, our work provides a new perspective for understanding the heterogeneity and convergence of the TME and will aid the development of prognosis and immunotherapies of CRC patients.",
+      "authors": "[\"Xie Siyuan\", \"Cai Yangke\", \"Chen Delong\", \"Xiang Yu\", \"Cai Wen\", \"Mao Jianshan\", \"Ye Jun\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2023-01-04",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.260404",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38355636",
+      "title": "scRNA-seq revealed high stemness epithelial malignant cell clusters and prognostic models of lung adenocarcinoma.",
+      "abstract": "Lung adenocarcinoma (LUAD) is one of the sole causes of death in lung cancer patients. This study combined with single-cell RNA-seq analysis to identify tumor stem-related prognostic models to predict the prognosis of lung adenocarcinoma, chemotherapy agents, and immunotherapy efficacy. mRNA expression-based stemness index (mRNAsi) was determined by One Class Linear Regression (OCLR). Differentially expressed genes (DEGs) were detected by limma package. Single-cell RNA-seq analysis in GSE123902 dataset was performed using Seurat package. Weighted Co-Expression Network Analysis (WGCNA) was built by rms package. Cell differentiation ability was determined by CytoTRACE. Cell communication analysis was performed by CellCall and CellChat package. Prognosis model was constructed by 10 machine learning and 101 combinations. Drug predictive analysis was conducted by pRRophetic package. Immune microenvironment landscape was determined by ESTIMATE, MCP-Counter, ssGSEA analysis. Tumor samples have higher mRNAsi, and the high mRNAsi group presents a worse prognosis. Turquoise module was highly correlated with mRNAsi in TCGA-LUAD dataset. scRNA analysis showed that 22 epithelial cell clusters were obtained, and higher CSCs malignant epithelial cells have more complex cellular communication with other cells and presented dedifferentiation phenomenon. Cellular senescence and Hippo signaling pathway are the major difference pathways between high- and low CSCs malignant epithelial cells. The pseudo-temporal analysis shows that cluster1, 2, high CSC epithelial cells, are concentrated at the end of the differentiation trajectory. Finally, 13 genes were obtained by intersecting genes in turquoise module, Top200 genes in hdWGCNA, DEGs in high- and low- mRNAsi group as well as DEGs in tumor samples vs. normal group. Among 101 prognostic models, average c-index (0.71) was highest in CoxBoost + RSF model. The high-risk group samples had immunosuppressive status, higher tumor malignancy and low benefit from immunotherapy. This work found that malignant tumors and malignant epithelial cells have high CSC characteristics, and identified a model that could predict the prognosis, immune microenvironment, and immunotherapy of LUAD, based on CSC-related genes. These results provided reference value for the clinical diagnosis and treatment of LUAD.",
+      "authors": "[\"Lin GuoYong\", \"Gao ZhiSen\", \"Wu Shun\", \"Zheng JianPing\", \"Guo XiangQiong\", \"Zheng XiaoHong\", \"Chen RunNan\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2024-02-14",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.261397",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "C-index"
+        ],
+        "sample_size": null,
+        "python_libs": [
+          "Seurat"
+        ],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40707954",
+      "title": "A multi-omic single-cell landscape reveals transcription and epigenetic regulatory features of t(8;21) AML.",
+      "abstract": "Comprehensive analysis of single-cell transcriptome and chromatin accessibility will contribute to interpret the heterogeneity of acute myeloid leukemia (AML). We hypothesize that integrating single-cell transcriptomic and chromatin accessibility landscapes underlying t(8;21) AML will provide valuable insights into its heterogeneous cellular properties and gene regulatory programs. Here, we conducted paired single-cell RNA-sequencing (scRNA-seq) and single-cell ATAC sequencing on bone marrow samples from newly diagnosed t(8;21) AML patients and healthy controls. Genetic signatures extracted from scRNA-seq were built and validated across three independent cohorts (German AMLCG1999, GSE106291 and TCGA LAML). We identified TCF12, a core component of AML1-ETO-containing transcription factor complex (AETFC), as the most active transcription factor in blast cells, driving a universally repressed chromatin state. Furthermore, we delineated two functionally distinct T cell subsets, revealing that EOMES-mediated transcriptional regulation promotes the expansion of a cytotoxic T cell population (T cells_2; high GNLY, NKG7 and GZMB expression), with an increased clonality and a tendency for drug resistance. In addition, we discovered a novel leukemic CMP-like cluster characterized by high TPSAB1, HPGD and FCER1A expression. Leveraging machine learning-based integration of multi-omic profiles, we identified a robust 9-gene prognostic signature, which demonstrated significant predictive value for AML outcomes across three independent cohorts. This multi-omics study provides unprecedented insights into the transcriptional and epigenetic heterogeneity of t(8;21) AML, providing a potential actionable tool for clinical risk stratification.",
+      "authors": "[\"Li Xue-Ping\", \"Gao Yan\", \"Zhao Bai-Tian\", \"Dai Yu-Ting\", \"Mao Jia-Ying\", \"Liang Yang\", \"Jiang Lu\"]",
+      "journal": "Journal of translational medicine",
+      "publication_date": "2025-07-24",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.262146",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37963845",
+      "title": "Integrated analysis of single-cell RNA-seq and bulk RNA-seq unravels the heterogeneity of cancer-associated fibroblasts in TNBC.",
+      "abstract": "The treatment of triple-negative breast cancer (TNBC) is one of the main focuses and key difficulties because of its heterogeneity, and the source of this heterogeneity is unclear. Single-cell RNA (scRNA) and transcriptomics data of TNBC and normal breast samples were retrieved from Gene Expression Omnibus (GEO) database and TCGA-BRCA database. These cells were clustered using the t-SNE and UMAP method, and the marker genes for each cluster were found. We annotated the clusters using the published literature, CellMarker database and \"SingleR\" R package. A total of 1535 cells and 21785 genes from 6 TNBC patients and 2068 cells and 15868 genes from 3 normal breast tissues were used for downstream analyses. The scRNA data were divided into 14 clusters labeled into 8 cell types, including epithelial cells, immunocytes, CAFs/fibroblasts and etc. In the TNBC samples, CAFs were divided into three clusters and labelled as prCAFs, myCAFs and emCAFs, and the marker genes were DCN, FAP and RGS5, respectively. The prCAF subgroup is functionally characterized by promoting proliferation and multi drug resistance; myCAF subgroup is involved in constituting the extracellular matrix and collagen production, matrix composition and collagen production, and the emCAF functionally characterized by energy metabolism. TNBC has inter- and intra-tumor heterogeneity, and CAF is one of the sources of this heterogeneity. CD74, SASH3, CD2, TAGAP and CCR7 served as significant marker genes with prognostic and therapeutic value.",
+      "authors": "[\"Wu Xiaoqing\", \"Lu Wenping\", \"Zhang Weixuan\", \"Zhang Dongni\", \"Mei Heting\", \"Zhang Mengfan\", \"Cui Yongjia\", \"Zhuo Zhili\"]",
+      "journal": "Aging",
+      "publication_date": "2023-11-13",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.262810",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "t-SNE",
+          "UMAP"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40597160",
+      "title": "A dynamic molecular landscape in colorectal cancer progression at single-cell resolution.",
+      "abstract": "Precursor lesions like polyps and adenomas in the colon commonly precede colorectal cancer (CRC), advancing through the \"normal-polyp-adenoma-carcinoma\" sequence towards malignancy. Yet, the cellular heterogeneity and molecular mechanisms involved in CRC development remain inadequately characterized. To understand the molecular mechanisms driving the onset and progression of CRC, we conducted a comprehensive analysis of ten clinical colorectal samples representing sequential pathological stages using single-cell RNA sequencing (scRNA-seq). Validation was performed through immunofluorescence and immunohistochemistry analyses in a separate human colorectal tissue cohort. Additional verification was carried out using bioinformatics analyses of public TCGA and GEO datasets. Our comprehensive analyses not only reveal the cellular diversity and transcriptomic differences throughout disease progression but also highlight the importance of leveraging ligand-receptor gene expression to distinguish various cell subtypes. Subsequent examination and validation with a larger sample cohort uncover the specific involvement of ligand-receptor genes, transcription factors, immunoglobulin genes, and heat shock genes in regulating immune responses and microenvironment changes during colorectal tumorigenesis. Our extensive transcriptome dataset provides valuable insights and acts as a fundamental resource to deepen our understanding of the complex molecular landscape in CRC. This dataset facilitates improved diagnostic accuracy and the creation of more personalized therapeutic approaches.",
+      "authors": "[\"Sheng Jianwen\", \"Li Nianshuang\", \"Li Shuai\", \"Ye Yuman\", \"Liao Yuanhang\", \"Zhang Yupeng\", \"Chen Huan\", \"Tu Mengxian\", \"Zhong Guping\", \"Xiong Chaoliang\", \"Zheng Pan\", \"Lei Yuting\", \"He Zekun\", \"He Xingxing\", \"Zhang Yao\", \"Wang Lei\", \"Gao Xiaolin\", \"Zhu Yin\", \"Liu Jianping\", \"Fan Huizhen\"]",
+      "journal": "Journal of translational medicine",
+      "publication_date": "2025-07-01",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.263993",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Accuracy"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40281576",
+      "title": "scRNA-seq reveals that VEGF signaling mediates the response to neoadjuvant anlotinib combined with PD-1 blockade therapy in non-small cell lung cancer.",
+      "abstract": "Clinical trials have shown that neoadjuvant anlotinib combined with PD-1 blockade therapy can prolong the survival of patients with driver gene negative non-small cell lung cancer (NSCLC), but some patients fail to benefit from the combination therapy. To explore the potential drug resistance mechanism and predict the efficacy of neoadjuvant therapy in NSCLC patients, we used scRNA-seq to observe and analyze the dynamic changes of immune cells, stromal cells and cancer cells in NSCLC patients who received neoadjuvant combination therapy. We analyzed transcriptome data of ~ 47,000 single cells from 9 NSCLC patients, including 3 treatment naïve patients, 3 post-treatment patients with major pathological response (MPR), and 3 Non-MPR patients. Subsequently, the infiltration of immune cells was detected by immunohistochemistry and multiplex immunofluorescence in NSCLC. In MPR patients, we found that neoadjuvant therapy reduced the expression of the T cell exhausted signature, reduced the transition of T_THEMIS cells to Tregs, and enhanced the positive feedback between CD4<sup>+</sup> T cells and PAX5<sup>+</sup> memory B cells. In Non-MPR patients, tumor-associated macrophages (TAMs) dampen therapeutic efficiency by being the hub of cell communication. TAMs and fibroblasts stimulate endothelial cells via VEGF, endothelial ZEB1 may up-regulate FLT1 (VEGFR) expression in response to anlotinib, and VEGFR<sup>+</sup> endothelial cell signature can predict survival of NSCLC cohort in TCGA. In addition, PLA2G4A, the key enzyme in the VEGF pathway, was highly expressed in the tumor cells of Non-MPR patients after anlotinib treatment. In 135 NSCLC patients, we confirmed by immunohistochemistry that PLA2G4A was positively correlated with poor prognosis and Tregs infiltration. In conclusion, VEGF signaling dependent dynamic changes in endothelial and epithelial cells are deeply involved in the formation of anlotinib resistance and immunosuppression phenotypes in NSCLC patients.",
+      "authors": "[\"Huang Ziqi\", \"Li Li\", \"Zhao Xiaohe\", \"Jin Haixia\", \"Shen Meng\", \"Li Baihui\", \"Zeng Yu\", \"Zhang Qinfen\", \"Wang Qiyu\", \"Wang Meng\", \"Yang Lili\"]",
+      "journal": "Journal of translational medicine",
+      "publication_date": "2025-04-25",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.264845",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 135,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39587687",
+      "title": "Integration of single-cell sequencing and drug sensitivity profiling reveals an 11-gene prognostic model for liver cancer.",
+      "abstract": "Liver cancer has a high global incidence, particularly in East Asia. Early detection difficulties lead to poor prognosis. Single-cell sequencing precisely identifies gene expression differences in specific cell types, making it valuable in tumor microenvironment research and immune drug development. However, the characteristics of tumor cells themselves are equally important for patient prognosis and treatment. We downloaded single-cell sequencing data from GSE189903, grouped cells by cluster markers, and classified epithelial cells into adjacent non-tumor, normal, and tumor cells. Differential gene and survival analyses identified significant differential genes. Using TCGA-LIHC data, we divided 370 patients into test and training sets. We constructed and validated a LASSO model based on these genes in both sets and two external datasets. Functional, immune infiltration, and mutation analyses were performed on high and low-risk groups. We also used RNA-seq and IC50 data of 15 liver cancer cell lines from GDSC, scoring them with our prognostic model to identify potential drugs for high-risk patients. Dimensionality reduction and clustering of 34 single-cell samples identified five subgroups, with epithelial cells further classified. Differential gene analysis identified 124 significant genes. An 11-gene prognostic model was constructed, effectively stratifying patient prognosis (p < 0.05) and achieving an AUC above 0.6 for 5 year survival prediction in multiple cohorts. Functional analysis revealed that upregulated genes in high-risk groups were enriched in cell adhesion pathways, while downregulated genes were enriched in metabolic pathways. Mutation analysis showed more TP53 mutations in the high-risk group and more CTNNB1 mutations in the low-risk group. Immune infiltration analysis indicated higher immune scores and less CD8 + naive T cell infiltration in the high-risk group. Drug sensitivity analysis identified 14 drugs with lower IC50 in the high-risk group, including clinically approved Sorafenib and Axitinib for treating unresectable HCC. We established an 11-gene prognostic model that effectively stratifies liver cancer patients based on differentially expressed genes between tumor and adjacent non-tumor cells clustered by scRNA-seq data. The two risk groups had significantly different molecular characteristics. We identified 14 drugs that might be effective for high-risk HCC patients. Our study provides novel insights into tumor cell characteristics, aiding in research on tumor development and treatment.",
+      "authors": "[\"Zhou Qunfang\", \"Wu Jingqiang\", \"Bei Jiaxin\", \"Zhai Zixuan\", \"Chen Xiuzhen\", \"Liang Wei\", \"Meng Jing\", \"Liu Mingyu\"]",
+      "journal": "Human genomics",
+      "publication_date": "2024-11-25",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.265924",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Feature Selection",
+          "Dimensionality Reduction"
+        ],
+        "evaluation_metrics": [
+          "AUROC",
+          "Recall"
+        ],
+        "sample_size": 11,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "38550593",
+      "title": "STING agonist inflames the cervical cancer immune microenvironment and overcomes anti-PD-1 therapy resistance.",
+      "abstract": "Cervical cancer poses a significant global threat to women's health. However, current therapeutic interventions, such as radiotherapy, chemotherapy, surgical resection, and immune checkpoint inhibitors, face limitations in the advanced stages of the disease. Given the immunosuppressive microenvironment in cervical cancer, it is imperative to explore novel perspectives. In this regard, STING agonists have emerged as promising candidates. The expression profiles and clinicopathological data were obtained from The Cancer Genome Atlas (TCGA) and Gene Expression Omnibus (GEO) datasets. Prognostic analysis of STING downstream genes (CCL5, CXCL9, CXCL10) and immune infiltration analysis were conducted using Kaplan-Meier Plotter, ESTIMATE, and <i>deconvo_CIBERSOR</i>. Single-cell RNA-seq (scRNA-seq) analysis was conducted to evaluate the potential of MSA-2 in cervical cancer treatment employing SingleR, chi-squared test, and Gene Set Enrichment Analysis (GSEA). Cellular interaction analysis utilized the CellChat package to assess the potentiation of cellular interaction following MSA-2 administration. Murine tumor models involving U14 and TC-1, were conducted, and the IF of tissue was subsequently conducted to assess the tumor microenvironment status after treatment. Prognosis in cervical cancer correlated with elevated expression of STING downstream genes, indicating prolonged survival and reduced recurrence. These genes positively correlated with immune infiltration, influencing stromal scores, immune scores, and estimate scores. Specific immune cell populations, including CD8<sup>+</sup> T cells, M1-type macrophages, NK cells, and T follicular helper cells, were associated with STING downstream genes. scRNA-seq in a classic immune-excluded model revealed that MSA-2 exerts priming and activating functions on vital components within TME, and intensifies their intercellular communications. The <i>in vivo</i> assay ultimately demonstrated that MSA-2, either as a standalone treatment or in combination with anti-PD-1, effectively suppressed the growth of subcutaneous cervical tumors. Moreover, the combination strategy significantly augmented efficacy compared to anti-PD-1 monotherapy by eliciting a robust antitumor immune response. This study highlights the pivotal role of the STING pathway and the potential of MSA-2 in reshaping the immune microenvironment in cervical cancer. Combining MSA-2 with immune checkpoint inhibitors presents a transformative approach, holding promise for improved prognosis. Further investigations are warranted to explore the broader immune landscape and potential long-term effects of MSA-2 in cervical cancer treatment.",
+      "authors": "[\"Li Tianye\", \"Zhang Weijiang\", \"Niu Mengke\", \"Wu Yuze\", \"Deng Xinyue\", \"Zhou Jianwei\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2024-03-14",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.266971",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "40330470",
+      "title": "Multi-omics identification of a polyamine metabolism related signature for hepatocellular carcinoma and revealing tumor microenvironment characteristics.",
+      "abstract": "Accumulating evidence indicates that elevated polyamine levels are closely linked to tumor initiation and progression. However, the precise role of polyamine metabolism in hepatocellular carcinoma (HCC) remains poorly understood. We conducted differential expression analysis on bulk RNA sequencing data from The Cancer Genome Atlas (TCGA) and Gene Expression Omnibus (GEO) to identify 65 polyamine metabolism-related genes. By employing unsupervised consensus clustering, AddModuleScore, single-sample gene set enrichment analysis (ssGSEA), and weighted gene co-expression network analysis (WGCNA), we identified polyamine metabolism-related genes at both the bulk RNA-seq and single-cell RNA-seq (scRNA-seq) levels. Utilizing 101 machine learning algorithms, we constructed a polyamine metabolism-related signature (PMRS) and validated its predictive power across training, testing, and external validation cohorts. Additionally, we developed a prognostic nomogram model by integrating PMRS with clinical variables. To explore immune treatment sensitivity, we assessed tumor mutation burden (TMB), tumor immune dysfunction and exclusion (TIDE) score, mutation frequency, and immune checkpoint genes expression. Immune cell infiltration was analyzed using the CIBERSORT algorithm. Finally, RT-qPCR experiments were conducted to validate the expression of key genes. Using 101 machine learning algorithms, we established a polyamine metabolism-related signature comprising 9 genes, which exhibited strong prognostic value for HCC patients. Further analysis revealed significant differences in clinical features, biological functions, mutation profiles, and immune cell infiltration between high-risk and low-risk groups. Notably, TIDE analysis and immune phenotype scoring (IPS) demonstrated distinct immune treatment sensitivities between the two risk groups. RT-qPCR validation confirmed that these 9 genes were highly expressed in normal cells but significantly downregulated in tumor cells. Our study developed a polyamine metabolism-based prognostic risk signature for HCC, which may provide valuable insights for personalized treatment strategies in HCC patients.",
+      "authors": "[\"Yu Yuexi\", \"Liu Huiru\", \"Liu Kaipeng\", \"Zhao Meiqi\", \"Zhang Yiyan\", \"Jiang Runci\", \"Wang Fengmei\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2025-04-22",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.267819",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Multi-omics"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "38342234",
+      "title": "Single-cell transcriptomic analysis reveals the landscape of epithelial-mesenchymal transition molecular heterogeneity in esophageal squamous cell carcinoma.",
+      "abstract": "Esophageal squamous cell carcinoma (ESCC) is a prevalent and highly lethal malignant disease. The epithelial-mesenchymal transition (EMT) is crucial in promoting ESCC development. However, the molecular heterogeneity of ESCC and the potential inhibitory strategies targeting EMT remain poorly understood. In this study, we analyzed high-resolution single-cell transcriptome data encompassing 209,231 ESCC cells from 39 tumor samples and 16 adjacent samples obtained from 44 individuals. We identified distinct cell populations exhibiting heterogeneous EMT characteristics and identified 87 EMT-associated molecules. The expression profiles of these EMT-associated molecules showed heterogeneity across different stages of ESCC progression. Moreover, we observed that EMT primarily occurred in early-stage tumors, before lymph node metastasis, and significantly promoted the rapid deterioration of ESCC. Notably, we identified SERPINH1 as a potential novel marker for ESCC EMT. By classifying ESCC patients based on EMT gene sets, we found that those with high EMT exhibited poorer prognosis. Furthermore, we predicted and experimentally validated drugs targeting ESCC EMT, including dactolisib, docetaxel, and nutlin, which demonstrated efficacy in inhibiting EMT and metastasis in ESCC. Through the integration of scRNA-seq, RNA-seq, and TCGA data with experimental validation, our comprehensive analysis elucidated the landscape of EMT during the entire course of ESCC development and metastasis. These findings provide valuable insights and a reference for refining ESCC clinical treatment strategies.",
+      "authors": "[\"Guo Dianhao\", \"Sheng Kaiwen\", \"Zhang Qi\", \"Li Pin\", \"Sun Haoqiang\", \"Wang Yongjie\", \"Lyu Xinxing\", \"Jia Yang\", \"Wang Caifan\", \"Wu Jing\", \"Zhang Xiaohang\", \"Wang Dandan\", \"Sun Yawen\", \"Huang Shuhong\", \"Yu Jinming\", \"Zhang Jingze\"]",
+      "journal": "Cancer letters",
+      "publication_date": "2024-02-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.268541",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 44,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39060344",
+      "title": "Generation of novel lipid metabolism-based signatures to predict prognosis and immunotherapy response for colorectal adenocarcinoma.",
+      "abstract": "Lipid metabolism reprogramming involves in epithelial-mesenchymal transition (EMT), cancer stemness and immune checkpoints (ICs), which influence the metastasis of cancer. This study aimed to generate lipid metabolism-based signatures to predict prognosis, immunotherapy and chemotherapy response for colorectal adenocarcinoma (COAD). Transcriptome data and clinical information of COAD patients were collected from the cancer genome atlas (TCGA) database. The expression of EMT-, stem cell-, and IC-related genes were assessed between COAD and control samples. Modules and genes correlated EMT, ICs and stemness signatures were identified through weighted gene co-expression network analysis (WGCNA). Prognostic signatures were generated and then the distribution of risk genes was evaluated using single-cell RNA sequencing (scRNA-seq) data from GSE132465 dataset. COAD patients exhibited increased EMT score and stemness along with decreased ICs. Next, 12 hub genes (PIK3CG, ALOX5AP, PIK3R5, TNFAIP8L2, DPEP2, PIK3CD, PIK3R6, GGT5, ELOVL4, PTGIS, CYP7B1 and PRKD1) were found within green and yellow modules correlated with EMT, stemness and ICs. Lipid metabolism-based prognostic signatures were generated based on PIK3CG, GGT5 and PTGIS. Patients with high-risk group had poor prognosis, elevated ESTIMATEScore and StromalScore, 100% mutation rate and higher TIDE score. Samples in low-risk group had more immunogenicity on ICIs. Notably, PIK3CG was expressed in B cells, while GGT5 and PTGIS were expressed in stromal cells. This study generates lipid metabolism-based signatures correlated with EMT, stemness and ICs for predicting prognosis of COAD, and provides potential therapeutic targets for immunotherapy in COAD.",
+      "authors": "[\"Wang Yi\", \"Yao Jun\", \"Zhang Zhe\", \"Wei Luxin\", \"Wang Sheng\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2024-07-26",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.269368",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40806640",
+      "title": "scRNA-seq Can Identify Different Cell Populations in Ovarian Cancer Bulk RNA-seq Experiments.",
+      "abstract": "High-grade serous ovarian cancer (HGSC) is a heterogeneous disease. RNA sequencing (RNAseq) of bulk solid tissue is of limited use in these populations due to heterogeneity. Single-cell RNA-seq (scRNA-seq) allows for the identification of diverse genetic compositions of heterogeneous cell populations. New computational methodologies are now available that use scRNAseq results to estimate cell type proportions in bulk RNAseq data. We performed bulk RNA-seq gene expression analysis on 112 HGSC specimens and 12 benign fallopian tube (FT) controls. We identified several publicly available scRNAseq datasets for use as annotation and reference datasets. Deconvolution was performed with MUlti-Subject SIngle Cell Deconvolution (MuSiC) to estimate cell type proportions in the bulk RNA-seq data. Datasets from the Cancer Genome Atlas (TCGA). HGSC repositories were also evaluated. Clinical variables and percentages of cell types were compared for differences in clinical outcomes and treatment results. Pathway enrichment analysis was also performed. Different annotations for referenced scRNA-seq datasets used for deconvolution of bulk RNA-seq data revealed different cellular proportions that were significantly associated with clinical outcomes; for example, higher proportions of macrophages were associated with a better response to primary chemotherapy. Our deconvolution study of bulk RNAseq HGSC samples identified cell populations within the tumor that may be associated with some of the observed clinical outcomes.",
+      "authors": "[\"Gabrilovich Sofia\", \"Devor Eric\", \"Cardillo Nicholas\", \"Bender David\", \"Goodheart Michael\", \"Gonzalez-Bosquet Jesus\"]",
+      "journal": "International journal of molecular sciences",
+      "publication_date": "2025-08-04",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.269986",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 112,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40843359",
+      "title": "Integrated multi-omics profiling of immune microenvironment and drug resistance signatures for precision prognosis in prostate cancer.",
+      "abstract": "<b>Introduction:</b> Prostate cancer (PCa) continues to be a significant cause of mortality among men, with treatment resistance often influenced by the complexity of the tumor microenvironment (TME). This study aims to develop an immune-centric prognostic model that correlates TME dynamics, genomic instability, and the heterogeneity of drug resistance in PCa. <b>Methods:</b> Multi-omics data from The Cancer Genome Atlas (TCGA) and Gene Expression Omnibus (GEO) databases were integrated, encompassing transcriptomic profiles of 554 TCGA-PRAD samples and 329 external validation samples. Immune cell infiltration was assessed using CIBERSORT and ESTIMATE. Weighted gene co-expression network analysis (WGCNA) was employed to identify immune-related modules. Single-cell RNA sequencing (ScRNA-seq) of 835 PCa cells uncovered subtype-specific resistance patterns. Prognostic models were constructed using least absolute shrinkage and selection operator (LASSO) regression and subsequently validated experimentally in PCa cell lines. <b>Results:</b> Two immune subtypes were identified: high-risk subgroups displayed TP53 mutations, increased tumor mutation burden (TMB), and enriched energy metabolism pathways. ScRNA-seq delineated three PCa cell clusters, with high-risk subtypes being sensitive to bendamustine/dacomitinib and resistant to apalutamide/neratinib. A 10-gene prognostic model (e.g., MUC5B, TREM1) categorized patients into high/low-risk groups with distinct survival outcomes (log-rank <i>P</i> < 0.0001). Validation in external datasets confirmed the robust predictive accuracy (AUC: 0.854-0.889). Experimental assays verified subtype-specific drug responses and dysregulation of key model genes. <b>Discussion:</b> This study establishes a TME-driven prognostic framework that connects immune heterogeneity, genomic instability, and therapeutic resistance in PCa. By pinpointing metabolic dependencies and subtype-specific vulnerabilities, our findings provide actionable strategies to circumvent treatment failure, such as targeting energy metabolism or tailoring therapies based on resistance signatures.",
+      "authors": "[\"Li Chao\", \"Wu Longxiang\", \"Zhong Bowen\", \"Gan Yu\", \"Zhou Lei\", \"Tan Shuo\", \"Hou Weibin\", \"Yao Kun\", \"Wang Bingzhi\", \"Ou Zhenyu\", \"Zhang Shengwang\", \"Xiong Wei\"]",
+      "journal": "Cancer drug resistance (Alhambra, Calif.)",
+      "publication_date": "2025-06-25",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.270796",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "PCA",
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [
+          "AUROC",
+          "Accuracy",
+          "Precision",
+          "Log-rank"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Multi-omics"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "37907883",
+      "title": "HArmonized single-cell RNA-seq Cell type Assisted Deconvolution (HASCAD).",
+      "abstract": "Cell composition deconvolution (CCD) is a type of bioinformatic task to estimate the cell fractions from bulk gene expression profiles, such as RNA-seq. Many CCD models were developed to perform linear regression analysis using reference gene expression signatures of distinct cell types. Reference gene expression signatures could be generated from cell-specific gene expression profiles, such as scRNA-seq. However, the batch effects and dropout events frequently observed across scRNA-seq datasets have limited the performances of CCD methods. We developed a deep neural network (DNN) model, HASCAD, to predict the cell fractions of up to 15 immune cell types. HASCAD was trained using the bulk RNA-seq simulated from three scRNA-seq datasets that have been normalized by using a Harmony-Symphony based strategy. Mean square error and Pearson correlation coefficient were used to compare the performance of HASCAD with those of other widely used CCD methods. Two types of datasets, including a set of simulated bulk RNA-seq, and three human PBMC RNA-seq datasets, were arranged to conduct the benchmarks. HASCAD is useful for the investigation of the impacts of immune cell heterogeneity on the therapeutic effects of immune checkpoint inhibitors, since the target cell types include the ones known to play a role in anti-tumor immunity, such as three subtypes of CD8 T cells and three subtypes of CD4 T cells. We found that the removal of batch effects in the reference scRNA-seq datasets could benefit the task of CCD. Our benchmarks showed that HASCAD is more suitable for analyzing bulk RNA-seq data, compared with the two widely used CCD methods, CIBERSORTx and quanTIseq. We applied HASCAD to analyze the liver cancer samples of TCGA-LIHC, and found that there were significant associations of the predicted abundance of Treg and effector CD8 T cell with patients' overall survival. HASCAD could predict the cell composition of the PBMC bulk RNA-seq and classify the cell type from pure bulk RNA-seq. The model of HASCAD is available at https://github.com/holiday01/HASCAD .",
+      "authors": "[\"Chiu Yen-Jung\", \"Ni Chung-En\", \"Huang Yen-Hua\"]",
+      "journal": "BMC medical genomics",
+      "publication_date": "2023-10-31",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.271626",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Pearson"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40201390",
+      "title": "Comprehensive Analyses of Single-Cell and Bulk RNA Sequencing Data From M2 Macrophages to Elucidate the Immune Prognostic Signature in Patients with Gastric Cancer Peritoneal Metastasis.",
+      "abstract": "The peritoneum is a common site of metastasis in gastric cancer (GC), associated with poor prognosis and significant morbidity. The proclivity of GCs to metastasize to the peritoneum has been hypothesized to occur due the latter's immunosuppressive microenvironment, such as stromal infiltration and M2 macrophage enrichment, which are associated with increased risk of PM. As far as we know, a model that can effectively predict the prognosis of patients with GCPM is still lacking. Consequently, we constructed a prognostic risk model based on M2 macrophages associated with gastric cancer peritoneal metastasis, aiming to enhance predictive precision and guide tailored therapeutic interventions. M2 macrophage-associated genes were identified in combination with marker genes from single-cell RNA sequencing (scRNA-seq) and modular genes from weighted gene coexpression network analysis (WGCNA). A prognostic model was constructed via LASSO analysis and validated in internal and external cohorts. We further compared the immune microenvironment, immune checkpoints, and chemotherapeutic drug sensitivity between patient groups stratified by risk to clarify the immune landscape in the GCPM. Our study identified 38 M2 macrophage-related genes via single-cell and bulk RNA sequencing. We developed a prognostic model based on the expression levels of 4 signature genes: DAB2, SPARC, PLTP, and FOLR2. The feasibility of the model was validated with internal and external validation sets (TCGA, GSE62254 and IMvigor210). The model also supported the prediction results of prognosis on the basis of the immunohistochemical results. Notably, patients with higher risk scores had a lower proportion of MSI-H and TMB, a higher prevalence of stages III-IV, and a lower likelihood of responding favorably to immunotherapy. Our prognostic risk model could effectively predict the prognosis and response to chemo-immune therapy in patients with GCPM. The risk score is a promising independent prognostic factor that is closely correlated with the immune microenvironment and clinicopathological characteristics.",
+      "authors": "[\"Tang Qiao\", \"Tang Liang\", \"Wang Xiaofeng\", \"Zhang Yongxin\", \"Liu Wenwei\", \"Yang Ting\", \"Wu Yuxin\", \"Ma Yuanchen\", \"Lei Tianxiang\", \"Song Wu\"]",
+      "journal": "ImmunoTargets and therapy",
+      "publication_date": "2025-04-04",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.272472",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [
+          "Precision",
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "41218746",
+      "title": "Single-cell transcriptome profiling of post-treatment and treatment-naïve colorectal cancer: Insights into putative mechanisms of chemoresistance.",
+      "abstract": "Drug resistance remains a major clinical challenge in the treatment of colorectal cancer (CRC) with conventional chemotherapy regimens. Analyzing post-treatment changes in tumor cells and the tumor microenvironment (TME) is essential to understanding resistance development. We analyzed single-cell RNA sequencing (scRNA-seq) data derived from 50 colorectal cancers (CRCs). This cohort included 30 treatment-naïve tumors (25 microsatellite stable (MSS) and five microsatellite unstable (MSI)) and 20 tumors that had previously received standard chemotherapy (comprising 14 responders and 6 progressors). Compared to MSS tumors, MSI tumors exhibited an immune-enriched tumor microenvironment (TME), marked by higher cytotoxic T cell activity and a less pronounced mesenchymal phenotype. Primary left-sided CRCs were associated with metastatic potential and depleted B cells. In post-treatment CRC, responders showed a high prevalence of a dendritic cell (DC) TME signature, which correlated with better survival in TCGA. Progressors showed TME enrichment of pericyte-like fibroblasts (associated with poor survival) and elevated exhausted CD8 T cells, suggesting a pro-inflammatory TME. Progressor tumor cells also expressed two chemo-protective markers, MTRNR2L1 and CDX1, co-expressed with the stemness-related immune-checkpoint CD24. In summary, scRNA-seq reveals distinct prognostic markers and features underlying progression to chemotherapy in MSS CRC.",
+      "authors": "[\"Puzanov Grigory A\", \"Astier Clémence\", \"Papakonstantinou Dimitris\", \"Quiroga Londoño Mariana\", \"Blériot Camille\", \"Yurchenko Andrey A\", \"Bani Mohamed Amine\", \"Jules-Clement Gérôme\", \"Andre Fabrice\", \"Marabelle Aurélien\", \"Hollebecque Antoine\", \"Nikolaev Sergey I\"]",
+      "journal": "Cancer letters",
+      "publication_date": "2025-11-09",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.273136",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39741285",
+      "title": "Spatial transcriptomics reveals unique metabolic profile and key oncogenic regulators of cervical squamous cell carcinoma.",
+      "abstract": "As a prevalent and deadly malignant tumor, the treatment outcomes for late-stage patients with cervical squamous cell carcinoma (CSCC) are often suboptimal. Previous studies have shown that tumor progression is closely related with tumor metabolism and microenvironment reshaping, with disruptions in energy metabolism playing a critical role in this process. To delve deeper into the understanding of CSCC development, our research focused on analyzing the tumor microenvironment and metabolic characteristics across different regions of tumor tissue. Utilizing spatial transcriptomics (ST) sequencing technology, we conducted a study on FFPE (formalin-fixed paraffin-embedded) tumor samples from CSCC patients. Coupled with single-cell RNA sequencing (scRNA-seq) data after deconvolution, we described spatial distribution maps of tumor leading edge and core regions in detail. Tumor tissues were classified into hypermetabolic and hypometabolic regions to analyze the metabolism profiles and tumor differentiation degree across different spatial areas. We also employed The Cancer Genome Atlas (TCGA) database to examine the analysis results of ST data. Our findings indicated a more complex tumor microenvironment in hypermetabolic regions. Cell-cell communication analysis showed that various cells in tumor microenvironment were influenced by the signalling molecule APP released by cancer cells and higher expression of APP was observed in hypermetabolic regions. Furthermore, our results revealed the correlation between APP and the transcription factor TRPS1. Both APP and TRPS1 demonstrated significant effects on cancer cell proliferation, migration, and invasion, potentially contributing to tumor progression. Utilizing ST, scRNA-seq, and TCGA database, we examined the spatial metabolic profiles of CSCC tissues, including metabolism distribution, metabolic variations, and the relationship between metabolism and tumor differentiation degree. Additionally, potential cancer-promoting factors were proposed, offering a valuable foundation for the development of more effective treatment strategies for CSCC.",
+      "authors": "[\"Zhou Limin\", \"Liu Jiejie\", \"Yao Peipei\", \"Liu Xing\", \"Chen Fei\", \"Chen Yu\", \"Zhou Li\", \"Shen Chao\", \"Zhou You\", \"Du Xin\", \"Hu Junbo\"]",
+      "journal": "Journal of translational medicine",
+      "publication_date": "2024-12-31",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.273992",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Spatial Transcriptomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40225866",
+      "title": "Integrating Single-Cell and Bulk RNA Sequencing Data to Explore Sphingolipid Metabolism Molecular Signatures in Ovarian Cancer Prognosis: an Original Study.",
+      "abstract": "<b>Background:</b> Ovarian cancer (OC) is the deadliest malignant tumor in the female reproductive system. Sphingolipid metabolism (SM) is crucial for cellular function and has been linked to OC progression. Dysregulation of sphingolipid pathways contributes to tumor growth, chemoresistance, and metastasis in OC. Currently, investigations into the relationship between sphingolipid-related genes (SRGs) and OC prognosis in their initial stages. Our study aimed to develop a novel molecular subtyping based on SRGs and construct a signature to predict the prognosis of patients with OC, immune cell infiltration characteristics, and chemotherapy sensitivity. <b>Methods:</b> Bulk and single-cell RNA-sequencing data of OC was analyzed primarily from the TCGA and GEO databases. The gene set related to the sphingolipid pathway (hsa00600) was selected from the SM pathway, and the enrichment of SRGs was analyzed in the annotated single-cell sequencing data. The Scanpy function was used to score the gene features of each cell and further identify differentially expressed genes. By intersecting with the genes most closely related to SM activity identified through Weighted Gene Co-expression Network Analysis (WGCNA) based on bulk RNA sequencing data, and after performing univariate COX, multivariate COX and LASSO regression, three SRGs were identified. Subsequently, the SRGs-related prognostic signature was constructed. The analysis was further extended to clinical feature correlation, GSEA, tumor microenvironment (TME) analysis and chemotherapy sensitivity analysis. Finally, the expression and function of the key gene GBP5 in the model were validated through <i>in vitro</i> experiments. <b>Results:</b> Compared to other sites, SRG scores were highest in ascites, and among different cell types, SRG scores were highest in T cells. By integrating scRNA-seq and bulk RNA-seq analysis, three SRGs (C5AR1, GBP5, and MARCHF3) were ultimately selected to develop a prognostic model for SRGs. In this model, patients with higher risk scores had shorter overall survival, which was validated in the testing cohort. Immune infiltration analysis revealed that the risk score was negatively correlated with the abundance of CD8+ T cell infiltration and positively correlated with the abundance of M2 macrophage infiltration. Chemotherapy sensitivity analysis showed that the high-risk group exhibited increased resistance to Oxaliplatin, Gemcitabine, and Sorafenib. <i>In vitro</i>, we demonstrated that knockdown of the protective gene GBP5 in HEYA8 and SKOV3 cells enhanced cell viability, proliferation, and invasiveness, reduced apoptosis, and increased IC50 values for chemotherapy drugs. <b>Conclusion:</b> Our model effectively identifies high-risk patients and provides a reference for prognosis prediction using SRG signature. Moreover, hub gene GBP5 acts as a tumor inhibitory factor and regulates the chemosensitivity of oxaliplatin, gemcitabine, and sorafenib in OC.",
+      "authors": "[\"Huang Xu\", \"Li Xiaoyu\", \"Shan Wulin\", \"Dou Yingyu\", \"Yu Qiongli\", \"Chen Yao\", \"Wang Zengying\", \"Zhang Haomin\", \"Wang Yumeng\", \"Lu Xiaofei\", \"Peng Wenju\", \"Xia Bairong\"]",
+      "journal": "International journal of medical sciences",
+      "publication_date": "2025-03-24",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.275417",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [
+          "scanpy"
+        ],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40280966",
+      "title": "Telomere-related gene risk model predicts prognostic and immune microenvironment alterations in prostate cancer.",
+      "abstract": "The improvement of the prediction of prostate cancer (PCa) is a major challenge in disease management. This study analysed a total of 147,856 cells and identified 15 distinct cell types using single-cell RNA-sequencing (scRNA-seq) and bulk RNA-seq data from TCGA and GEO databases. Of these cells, 31,256 exhibited a high telomere-related gene score and were predominantly composed of myeloid dendritic cells (mDCs). Simultaneously, pseudo-temporal analysis indicated that mDCs are in the later stages of the differentiation trajectory, suggesting the significant role of mDCs as telomere-active cells in the development of PCa. Analysis of cell-cell communication revealed significant differences, particularly an increase in communication between mDCs and CTLs, alongside a decrease in communication between mDCs and B cells. These variations may represent critical nodes influencing the development of PCa. Additionally, two hub genes were utilized to create risk models, with ROC curves confirming their predictive efficacy for 3-, 5-, and 10-year survival rates in patients. Functional analysis of these genes was conducted, and NPY siRNA transfection notably inhibited proliferation in LNCaP and DU145 cells. Furthermore, the models demonstrated that high-risk patients had poorer overall survival, greater immune infiltration, and reduced sensitivity to chemotherapeutic drugs.",
+      "authors": "[\"Zhao Danfeng\", \"Zang Zhenjie\", \"Li Haodong\", \"Li Ruiyu\", \"Wang Guanbo\", \"Zhang Keqin\", \"Diao Tongxiang\", \"Fu Qiang\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2025-04-25",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:12.276034",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "PCA"
+        ],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40299331",
+      "title": "Migrasome-Related Genes as Potential Prognosis and Immunotherapy Response Predictors for Colorectal Cancer.",
+      "abstract": "<b>Background:</b> Studies highlight the role of migrasomes as mediators of intercellular communication and signaling, critical in influencing tumorigenesis and progression. Yet migrasome-related genes and their potential role in colorectal cancer prognosis remain unexplored. <b>Methods:</b> Differentially expressed gene set A (DEG set A) was identified in the TCGA-CRC dataset, and Weighted Gene Co-expression Network Analysis (WGCNA) was performed to identify the most important modules associated with migrasome-related gene (MRG) scores. Single-cell RNA-seq dataset GSE231559 DEG set B was determined. Candidate migrasome-related genes were filtered by intersecting DGE set A, key module genes, and DEG set B. Prognostic genes were subsequently screened through regression analysis, and a risk model was developed. Patients with CRC in the TCGA cohort were stratified into high- and low-risk groups based on the optimal cutoff of the risk score. Immunotherapy response-related analyses were then performed. Finally, cell-to-cell communication analysis was carried out for key cells identified based on prognostic gene expression analysis in annotated cells. <b>Results:</b> The six candidate migrasome-related genes were identified through the overlap of 5158 DEG set A, 1960 key module genes, and 146 DEG set B. Further screening led to the selection of T1MP1, CXCL8, and MGP as potential prognostic biomarkers. Immune-related analysis indicated that the high-risk group exhibited a better response to immunotherapy. Notably, the prognostic genes showed elevated expression levels in monocytes and tissue stem cells, thereby designating them as key cell types. <b>Conclusions:</b> We conducted bioinformatic analysis of migrasome-related genes and identified significant involvement of T1MP1, CXCL8, and MGP in influencing CRC prognosis and immunotherapy response. Our research provides novel insights into the role of migrasomes in CRC biology.",
+      "authors": "[\"Chang Lu\", \"Qin Chao\", \"Chu Yimin\", \"Guan Ming\", \"Deng Xuan\"]",
+      "journal": "Biomedicines",
+      "publication_date": "2025-03-26",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:14.397167",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39464883",
+      "title": "Integrating anoikis and ErbB signaling insights with machine learning and single-cell analysis for predicting prognosis and immune-targeted therapy outcomes in hepatocellular carcinoma.",
+      "abstract": "Hepatocellular carcinoma (HCC) poses a significant global health challenge due to its poor prognosis and limited therapeutic modalities. Anoikis and ErbB signaling pathways are pivotal in cancer cell proliferation and metastasis, but their relevance in HCC remains insufficiently explored. This study evaluates the prognostic significance of anoikis and ErbB signaling pathways in HCC by utilizing data from The Cancer Genome Atlas (TCGA), the International Cancer Genome Consortium (ICGC), three additional independent validation cohorts, and an in-house cohort. Advanced bioinformatics analyses and 167 machine learning models based on leave-one-out cross-validation (LOOCV) were used to predict HCC prognosis and assess outcomes of immune-targeted therapies. Additionally, key biological processes of the anoikis and ErbB signaling pathways in HCC were further investigated. The single sample Gene Set Enrichment Analysis revealed a strong correlation between upregulated ErbB signaling in high anoikis-expressing tumors and poor clinical outcomes. The development of the Anoikis-ErbB Related Signature (AERS) using the LASSO + RSF model demonstrated robust predictive capabilities, as validated across multiple patient cohorts, and proved effective in predicting responses to immune-targeted therapies. Further investigation highlighted activated NOTCH signaling pathways and decreased macrophage infiltration was associated with resistance to sorafenib and immune checkpoint inhibitors, as evidenced by bulk and single-cell RNA sequencing (scRNA-seq). AERS provides a novel tool for clinical prognosis and paves the way for immune-targeted therapeutic approaches, underscoring the potential of integrated molecular profiling in enhancing treatment strategies for HCC.",
+      "authors": "[\"Fang Huipeng\", \"Chen Xingte\", \"Zhong Yaqi\", \"Wu Shiji\", \"Ke Qiao\", \"Huang Qizhen\", \"Wang Lei\", \"Zhang Kun\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2024-10-11",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:14.397879",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": "Cross-validation"
+      }
+    },
+    {
+      "pmid": "40339499",
+      "title": "TGF-β1 induces autophagy and mediates the effect on macrophages differentiation in primary liver cancer.",
+      "abstract": "Tumor-associated macrophages (TAMs) are closely associated with tumor development and patient outcomes due to their plasticity and polarization capacity. Several distinct TAMs have been proposed, but a complete understanding of heterogeneity and differentiation spectrum of macrophage in human primary liver cancer remains elusive. Deep single-cell RNA sequencing (scRNA-seq) data from 19 primary liver cancer patients were used to profile the transcriptomes of TAMs in liver cancer. Ingenuity pathway analysis (IPA) and in vitro experiments were used to explore possible mechanisms responsible for related signaling pathways altered at the transcriptional level. Finally, we analyzed the relationship between the abundance of the TAMs and the survival outcomes of the 428 patients in the Cancer Genome Atlas (TCGA). Transcriptional profiles allowed us to identify four distinct TAMs cell subsets based on molecular and functional properties and to reconstruct their developmental trajectory. Specifically, TAM_c4 was preferentially enriched and potentially expanded in the advanced-stage patients or those receiving immune checkpoint blockade therapy (ICT). Gene pathway analysis revealed aberrant TGFB1 activation in TAM_c4, which was experimentally confirmed to drive TAM phenotypic transitions via autophagy signaling. High abundance of TAM_c4 is found to be related to a short survival time and low abundance of CD8<sup>+</sup> T cells in primary liver cancers. This integrated transcriptome compendium and experimental validation offer both mechanistic insights and a resource for understanding TAM heterogeneity in primary liver cancers.",
+      "authors": "[\"Liu Chao\", \"Li Mingjie\", \"Liu Lichao\", \"Xu Qian\", \"Zheng Linlin\", \"Wu Cailing\", \"Ren Jinghua\", \"Zhang Tao\", \"Wang Haihong\", \"Lin Zhenyu\"]",
+      "journal": "International immunopharmacology",
+      "publication_date": "2025-05-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:14.398637",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 428,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40415156",
+      "title": "Integrative Analysis of Bulk Multiomics and Single-Cell Transcriptomics Elucidates Age-Related Molecular Landscape Alterations in Cervical Cancer.",
+      "abstract": "Young and elderly patients with cervical cancer represent two distinct demographic cohorts that have attracted considerable attention in clinical practice. However, the age-related molecular characteristics of these groups remain unclear. Data from 307 patients with cervical cancer, including clinical information and comprehensive bulk multiomics data, were obtained from The Cancer Genome Atlas (TCGA). Single-cell RNA-sequencing (scRNA-seq) data for 11 cervical cancer samples were retrieved from the Gene Expression Omnibus (GEO). The patients were stratified into three age groups: young (<30 years), middle (30-64 years), and old (≥65 years). Comparative analyses of survival outcomes, expression profiles, tumor immune microenvironment, genomic and epigenetic features, treatment responsiveness, and cellular composition were performed. Additionally, external validation was performed using bulk transcriptomic and genomic data from the GEO and MSK-IMPACT datasets. Young patients exhibited a transcriptional landscape characterized by pronounced aggressiveness and elevated expression of immunosuppressive molecules. Conversely, elderly patients exhibited an increased level of genomic instability and mutations accompanied by an elevated tumor mutation burden and neoantigen counts. Notably, the elderly cohort had a lower Tumor Immune Dysfunction and Exclusion (TIDE) score, whereas the young group had a higher radiosensitivity index and reduced imputed sensitivity scores for multiple chemotherapeutic agents. Additionally, scRNA-seq identified epithelial clusters 5 and 9 as subtypes associated with elderly and young patients, respectively, with cluster 5 displaying characteristics resembling cancer stem cells and cluster 9 exhibiting enhanced oncogenic activity and immunosuppressive capabilities. Significant molecular disparities were evident among the young, middle-age, and elderly patients. Thus, age-specific management strategies should be considered in cervical cancer treatment.",
+      "authors": "[\"Chen Qian\", \"Deng Dongfeng\", \"Zhu Hong\", \"Li Shan\"]",
+      "journal": "Annals of surgical oncology",
+      "publication_date": "2025-05-26",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:14.399453",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": 307,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq",
+          "Multi-omics"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "40055390",
+      "title": "Integrated analysis of single-cell and bulk RNA-sequencing to predict prognosis and therapeutic response for colorectal cancer.",
+      "abstract": "Colorectal cancer (CRC) is a prevalent malignant tumor characterized by high global incidence and mortality rates. Furthermore, it is imperative to comprehend the molecular mechanisms underlying its development and to identify effective prognostic markers. These efforts are crucial for pinpointing potential therapeutic targets and enhancing patient survival rates. Therefore, we develop a novel prognostic model aimed at providing new theoretical support for clinical prognosis evaluation and treatment. We downloaded data from the Gene Expression Omnibus (GEO) and The Cancer Genome Atlas (TCGA) databases. Subsequently, we performed single-cell analysis and developed a prognostic model associated with colorectal cancer. We divided the scRNA-seq dataset (GSE221575) into 19 cell clusters and classified these clusters into 11 distinct cell types using marker genes. Using univariate Cox regression and LASSO (Least Absolute Shrinkage and Selection Operator) analyses, we developed a prognostic model consisting of 9 genes. Based on our 9-gene model, we divided patients into high-risk and low-risk groups using the median risk score. The high-risk group demonstrated significant positive correlations with M0 macrophages, CD8+ T cells, and M2 macrophages. The enrichment analyses indicate significant enrichment of immune-related pathways in the high-risk group, including HEDGEHOG_SIGNALING, Wnt signaling pathway, and cell adhesion molecules. Drug sensitivity analysis revealed that the low-risk group was sensitive to 5 chemotherapeutic drugs, while the high-risk group was sensitive to only 1. Additionally, we developed a highly reliable nomogram for clinical application. This suggests that the risk score derived from our modeling analysis is highly effective for stratifying colorectal cancer samples. This study comprehensively applied bioinformatics methods to construct a risk score model. The model showed good predictive performance, offering potential guidance for individualized treatment of colorectal cancer patients. Furthermore, it may provide valuable insights into the disease's pathogenesis and identify potential therapeutic targets for further research.",
+      "authors": "[\"Cai Liyang\", \"Guo Xin\", \"Zhang Yucheng\", \"Xie Huajie\", \"Liu Yongfeng\", \"Zhou Jianlong\", \"Feng Huolun\", \"Zheng Jiabin\", \"Li Yong\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2025-03-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:14.400342",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40139615",
+      "title": "Identification of CACNB1 protein as an actionable therapeutic target for hepatocellular carcinoma via metabolic dysfunction analysis in liver diseases: An integrated bioinformatics and machine learning approach for precise therapy.",
+      "abstract": "In addition to histological evaluation for nonalcoholic fatty liver disease (NAFLD), a comprehensive analysis of the metabolic landscape is urgently needed to categorize patients into distinct subgroups for precise treatment. In this study, a total of 806 NAFLD and 267 normal liver samples were comprehensively analyzed. Alterations in 114 metabolic pathways were investigated and two distinct metabolic clusters were identified. Single-cell RNA sequencing (scRNA-seq) analysis was utilized to decipher the metabolic activities within the microenvironment of NAFLD-derived liver cirrhosis. A refined fibrosis prediction model was developed using a Gaussian Mixture Model (GMM), demonstrating superior performance in fibrosis discrimination across multiple independent cohorts. Additionally, using The Cancer Genome Atlas (TCGA), CACNB1 protein was identified as a promising therapeutic target for hepatocellular carcinoma (HCC) patients with elevated metabolic dysfunction scores (MBDS). Machine learning algorithms were applied to MBDS-related genes to select an optimal prognostic model for HCC. All the models were trained in an HCC cohort obtained from the Gene Expression Omnibus (GEO), and the best model was validated in two independent HCC datasets: the TCGA-HCC cohort and LIRI-JP cohort. Overall, we provide insights of metabolic molecular subtyping and its potential clinical applicability in risk stratification for NAFLD and HCC individuals.",
+      "authors": "[\"Sun Jing\", \"Shi Run\", \"Zhou Zhaokai\", \"Xu Weilong\", \"Huai Jiaxuan\", \"Cao Yutian\", \"Zhang Wenhui\", \"Nie Lijuan\", \"Wang Gaoxiang\", \"Yan Qianhua\", \"Wang Xuanbin\", \"Li Minglun\", \"Fang Zhuyuan\", \"Zhou Xiqiao\"]",
+      "journal": "International journal of biological macromolecules",
+      "publication_date": "2025-03-25",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:14.400972",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 114,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38622125",
+      "title": "Single cell analysis unveils B cell-dominated immune subtypes in HNSCC for enhanced prognostic and therapeutic stratification.",
+      "abstract": "Head and neck squamous cell carcinoma (HNSCC) is characterized by high recurrence or distant metastases rate and the prognosis is challenging. There is mounting evidence that tumor-infiltrating B cells (TIL-Bs) have a crucial, synergistic role in tumor control. However, little is known about the role TIL-Bs play in immune microenvironment and the way TIL-Bs affect the outcome of immune checkpoint blockade. Using single-cell RNA sequencing (scRNA-seq) data from the Gene Expression Omnibus (GEO) database, the study identified distinct gene expression patterns in TIL-Bs. HNSCC samples were categorized into TIL-Bs inhibition and TIL-Bs activation groups using unsupervised clustering. This classification was further validated with TCGA HNSCC data, correlating with patient prognosis, immune cell infiltration, and response to immunotherapy. We found that the B cells activation group exhibited a better prognosis, higher immune cell infiltration, and distinct immune checkpoint levels, including elevated PD-L1. A prognostic model was also developed and validated, highlighting four genes as potential biomarkers for predicting survival outcomes in HNSCC patients. Overall, this study provides a foundational approach for B cells-based tumor classification in HNSCC, offering insights into targeted treatment and immunotherapy strategies.",
+      "authors": "[\"Li Kang\", \"Zhang Caihua\", \"Zhou Ruoxing\", \"Cheng Maosheng\", \"Ling Rongsong\", \"Xiong Gan\", \"Ma Jieyi\", \"Zhu Yan\", \"Chen Shuang\", \"Chen Jie\", \"Chen Demeng\", \"Peng Liang\"]",
+      "journal": "International journal of oral science",
+      "publication_date": "2024-04-16",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:14.401547",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39382748",
+      "title": "Identification and Verification of Key Genes in Colorectal Cancer Liver Metastases Through Analysis of Single-Cell Sequencing Data and TCGA Data.",
+      "abstract": "Colorectal cancer (CRC) is highly prevalent worldwide, with more patients experiencing colorectal cancer liver metastases (CRLM). This study aimed to identify key genes in CRLM through single-cell sequencing data reanalysis and experimental validation. The study analyzed single-cell RNA-sequencing (scRNA-seq) data from the Gene Expression Omnibus (GEO) database. Gene ontology (GO) and the Kyoto Encyclopedia of Genes and Genomes (KEGG) were used for gene functional enrichment analysis. The Cancer Genome Atlas (TCGA) data enabled bulk-RNA expression and survival prognosis analysis. Real-time polymerase chain reaction (qPCR) detected mRNA expression, whereas Western blot determined protein levels. Cell function experiments assessed SPARC's impact on CRC cell behavior. Cluster analysis showed 23 classes among 17 CRLM samples, representing six cell types. A GO and KEGG analysis identified interleukin-1 beta (IL1B), CD2 molecule (CD2), and C-X-C motif chemokine ligand 8 (CXCL8) as significant prognostic factors in CRC. Secreted protein acidic and cysteine rich (SPARC) was one of the top differentially expressed genes (DEGs) in tissue stem cells, confirmed in primary and metastatic lesions. Metastatic lesions showed higher expression of SPARC and CRC stem cell marker leucine-rich repeat containing G protein-coupled receptor 5 (LGR5), which was significantly correlated positively with LGR5 expression. Knockdown of SPARC reduced CRC cell sphere- and colony-formation, invasion, and migration abilities. Overexpression of SPARC significantly increased the malignancy of CRC cells. Several key genes were identified in the process of CRLM. In CRLM samples and those corresponding to CRC stem cells, SPARC was significantly upregulated. In the therapy of CRLM, SPARC might be a potential target.",
+      "authors": "[\"Zhang Hui\", \"Zhuo Changhua\", \"Lin Ruirong\", \"Ke Fayong\", \"Wang Ming\", \"Yang Chunkang\"]",
+      "journal": "Annals of surgical oncology",
+      "publication_date": "2024-10-09",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:14.402971",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40406545",
+      "title": "Single-Cell RNA-Seq Recognized Key Genes for Metastasis and Macrophage Infiltration in Colorectal Cancer.",
+      "abstract": "Colorectal cancer (CRC) is one of the most common malignancies in the world. However, the main causes of metastasis and immune cell infiltration in CRC are still unclear. This experiment was conducted to identify the key genes of metastasis and macrophage infiltration in CRC according to single-cell sequencing (scRNA-seq) data. By analyzing the data of GSE261012 and GSE234804 in the Gene Expression Omnibus (GEO) database, the key node genes for the stages of tumorigenesis, epithelial-mesenchymal transition, and metastasis of CRC were found. These genes were modeled by lasso regression by The Cancer Genome Atlas (TCGA) database, and ZFAND2A was identified as a key gene for metastasis and macrophage infiltration in CRC. Finally, the specific function of ZFAND2A in cancer cell activity was explored in vitro by qRT-PCR, WB analysis, CCK-8, and transwell assay. The specific function of ZFAND2A in macrophage polarization was explored in vitro by qRT-PCR, ELISA, and flow cytometry. We identified crucial gene expression in the entire process of CRC tumor progression, including tumorigenesis, epithelial-mesenchymal transition, and metastasis. Ten thousand six hundred and thirty-seven genes were determined as genes associated with tumor progression and metastasis. Among them, six genes were identified to be related to CRC prognosis. The results of TCGA data indicated that ZFAND2A showed lower expression in tumors and was related to a good prognosis of CRC. Overexpression of ZFAND2A inhibits the proliferation and migration of CRC cells. Additionally, there was a correlation between ZFAND2A expression and macrophage infiltration. Increasing ZFAND2A promotes M1 polarization in macrophages. Our findings provide new potential biomarkers for the metastatic mechanisms and prognosis of CRC. In addition, ZFAND2A is expected to become a potential therapeutic target for CRC.",
+      "authors": "[\"Shi Juan\", \"Zheng Peiming\", \"Ouyang Libo\", \"Cui Facai\"]",
+      "journal": "Human mutation",
+      "publication_date": "2025-05-15",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:14.403775",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39085893",
+      "title": "Metastasis and basement membrane-related signature enhances hepatocellular carcinoma prognosis and diagnosis by integrating single-cell RNA sequencing analysis and immune microenvironment assessment.",
+      "abstract": "Hepatocellular carcinoma (HCC) is the most common type of primary liver cancer and second leading cause of cancer-related deaths worldwide. The heightened mortality associated with HCC is largely attributed to its propensity for metastasis, which cannot be achieved without remodeling or loss of the basement membrane (BM). Despite advancements in targeted therapies and immunotherapies, resistance and limited efficacy in late-stage HCC underscore the urgent need for better therapeutic options and early diagnostic biomarkers. Our study aimed to address these gaps by investigating and evaluating potential biomarkers to improve survival outcomes and treatment efficacy in patients with HCC. In this study, we collected the transcriptome sequencing, clinical, and mutation data of 424 patients with HCC from The Cancer Genome Atlas (TCGA) and 240 from the International Cancer Genome Consortium (ICGC) databases. We then constructed and validated a prognostic model based on metastasis and basement membrane-related genes (MBRGs) using univariate and multivariate Cox regression analyses. Five immune-related algorithms (CIBERSORT, QUANTISEQ, MCP counter, ssGSEA, and TIMER) were then utilized to examine the immune landscape and activity across high- and low-risk groups. We also analyzed Tumor Mutation Burden (TMB) values, Tumor Immune Dysfunction and Exclusion (TIDE) scores, mutation frequency, and immune checkpoint gene expression to evaluate immune treatment sensitivity. We analyzed integrin subunit alpha 3 (ITGA3) expression in HCC by performing single-cell RNA sequencing (scRNA-seq) analysis using the TISCH 2.0 database. Lastly, wound healing and transwell assays were conducted to elucidate the role of ITGA3 in tumor metastasis. Patients with HCC were categorized into high- and low-risk groups based on the median values, with higher risk scores indicating worse overall survival. Five immune-related algorithms revealed that the abundance of immune cells, particularly T cells, was greater in the high-risk group than in the low-risk group. The high-risk group also exhibited a higher TMB value, mutation frequency, and immune checkpoint gene expression and a lower tumor TIDE score, suggesting the potential for better immunotherapy outcomes. Additionally, scRNA-seq analysis revealed higher ITGA3 expression in tumor cells compared with normal hepatocytes. Wound healing scratch and transwell cell migration assays revealed that overexpression of the MBRG ITGA3 enhanced migration of HCC HepG2 cells. This study established a direct molecular correlation between metastasis and BM, encompassing clinical features, tumor microenvironment, and immune response, thereby offering valuable insights for predicting clinical outcomes and immunotherapy responses in HCC.",
+      "authors": "[\"Wei Shijia\", \"Tan Jingyi\", \"Huang Xueshan\", \"Zhuang Kai\", \"Qiu Weijian\", \"Chen Mei\", \"Ye Xiaoxia\", \"Wu Minhua\"]",
+      "journal": "Journal of translational medicine",
+      "publication_date": "2024-07-31",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TCGA AND scRNA-seq AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T20:10:14.404847",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": 424,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    }
+  ]
+}

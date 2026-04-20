@@ -1,0 +1,24 @@
+{
+  "experiment_id": "exp_20260412_172113_6bb5a63f",
+  "start_time": "2026-04-12T17:21:13.673117",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "利用 UK Biobank 的多组学数据，构建一个因果图神经网络模型，研究 APOE 变体对后期痴呆风险的非线性影响。重点关注中介效应分析和残余混杂控制。",
+  "search_params": {
+    "max_results": 20,
+    "date_range": 1,
+    "min_if": 20,
+    "cutoff_date": "2026-04-12"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-12T17:21:20.224456",
+      "path": "data\\snapshots\\data_snapshot_20260412_172120.json",
+      "record_count": 21
+    }
+  ]
+}

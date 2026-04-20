@@ -1,0 +1,24 @@
+{
+  "experiment_id": "exp_20260412_173842_79d6749e",
+  "start_time": "2026-04-12T17:38:42.760115",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "基于 UK Biobank 的全外显子组测序 (WES) 与多中心代谢组学数据，构建一个解耦表征学习 (Disentangled Representation Learning) 模型，以识别心血管疾病 (CVD) 的新型生物标志物。必须采用双样本孟德尔随机化 (Two-sample MR) 来控制混杂因素，并利用 NRI (净重分类改善指数) 评估模型在临床风险分层中的实际收益。绝对禁止湿实验验证。",
+  "search_params": {
+    "max_results": 20,
+    "date_range": 3,
+    "min_if": 10,
+    "cutoff_date": "2026-04-12"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-12T17:38:50.948261",
+      "path": "data\\snapshots\\data_snapshot_20260412_173850.json",
+      "record_count": 67
+    }
+  ]
+}

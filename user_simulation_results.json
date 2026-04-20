@@ -1,0 +1,518 @@
+[
+  {
+    "domain": "心血管/衰老",
+    "idea": "通过靶向线粒体自噬相关蛋白 PINK1，延缓血管内皮细胞衰老，预防动脉粥样硬化",
+    "final_state": "HYPOTHESIS_GEN",
+    "version_chain": [
+      {
+        "version": "v1.0",
+        "type": "initial",
+        "type_display": "初始版本",
+        "created_at": "2026-04-20T01:06:03.187162",
+        "hypothesis_content": {
+          "title": "通过靶向线粒体自噬相关蛋白 PINK1，延缓血管内皮细胞衰老，预防动脉粥样硬化",
+          "details": "通过靶向线粒体自噬相关蛋白 PINK1，延缓血管内皮细胞衰老，预防动脉粥样硬化",
+          "methodology": {
+            "sensor": "测序仪",
+            "technique": "RNA-seq"
+          },
+          "expected_results": {
+            "outcome": "发现 PINK1 激活可降低内皮细胞 senescence 标志物 p16 和 p21 表达"
+          },
+          "domain": "心血管/衰老",
+          "keywords": [
+            "线粒体自噬",
+            "PINK1",
+            "内皮衰老",
+            "动脉粥样硬化"
+          ]
+        },
+        "science_score": 6.2,
+        "fitness_score": 5.7,
+        "defense_passed": false,
+        "rewrite_log": [],
+        "iteration": 1,
+        "red_attack_types": [],
+        "patch_applied": false
+      },
+      {
+        "version": "v1.1",
+        "type": "methodology_patch",
+        "type_display": "方法论补丁",
+        "created_at": "2026-04-20T01:06:03.187412",
+        "hypothesis_content": {
+          "title": "通过靶向线粒体自噬相关蛋白 PINK1，延缓血管内皮细胞衰老，预防动脉粥样硬化",
+          "details": "通过靶向线粒体自噬相关蛋白 PINK1，延缓血管内皮细胞衰老，预防动脉粥样硬化",
+          "methodology": {
+            "sensor": "测序仪",
+            "technique": "RNA-seq"
+          },
+          "expected_results": {
+            "outcome": "发现 PINK1 激活可降低内皮细胞 senescence 标志物 p16 和 p21 表达"
+          },
+          "domain": "心血管/衰老",
+          "keywords": [
+            "线粒体自噬",
+            "PINK1",
+            "内皮衰老",
+            "动脉粥样硬化"
+          ]
+        },
+        "science_score": 7.4,
+        "fitness_score": 7.1000000000000005,
+        "defense_passed": false,
+        "rewrite_log": [
+          {
+            "original": "VALIDATION",
+            "replaced_with": "VALIDATION_correction",
+            "reason": "红方攻击修复"
+          }
+        ],
+        "iteration": 2,
+        "red_attack_types": [
+          "VALIDATION",
+          "STATISTICAL_FLAW"
+        ],
+        "patch_applied": true
+      },
+      {
+        "version": "v1.2",
+        "type": "methodology_patch",
+        "type_display": "方法论补丁",
+        "created_at": "2026-04-20T01:06:03.187505",
+        "hypothesis_content": {
+          "title": "通过靶向线粒体自噬相关蛋白 PINK1，延缓血管内皮细胞衰老，预防动脉粥样硬化",
+          "details": "通过靶向线粒体自噬相关蛋白 PINK1，延缓血管内皮细胞衰老，预防动脉粥样硬化",
+          "methodology": {
+            "sensor": "测序仪",
+            "technique": "RNA-seq"
+          },
+          "expected_results": {
+            "outcome": "发现 PINK1 激活可降低内皮细胞 senescence 标志物 p16 和 p21 表达"
+          },
+          "domain": "心血管/衰老",
+          "keywords": [
+            "线粒体自噬",
+            "PINK1",
+            "内皮衰老",
+            "动脉粥样硬化"
+          ]
+        },
+        "science_score": 8.700000000000001,
+        "fitness_score": 8.500000000000002,
+        "defense_passed": true,
+        "rewrite_log": [
+          {
+            "original": "STATISTICAL_FLAW",
+            "replaced_with": "STATISTICAL_FLAW_correction",
+            "reason": "二次迭代修复"
+          }
+        ],
+        "iteration": 3,
+        "red_attack_types": [
+          "VALIDATION",
+          "STATISTICAL_FLAW"
+        ],
+        "patch_applied": true
+      }
+    ],
+    "score_history": [
+      6.2,
+      7.4,
+      8.700000000000001
+    ],
+    "final_science_score": 8.700000000000001,
+    "promise_score": 8.12,
+    "promise_grade": "good",
+    "trend": "rising",
+    "evolution_delta": 2.500000000000001,
+    "total_iterations": 3
+  },
+  {
+    "domain": "神经科学/阿尔茨海默病",
+    "idea": "利用小胶质细胞 TREM2 信号通路调节，通过单细胞 RNA-seq 分析发现新的治疗靶点",
+    "final_state": "HYPOTHESIS_GEN",
+    "version_chain": [
+      {
+        "version": "v1.0",
+        "type": "initial",
+        "type_display": "初始版本",
+        "created_at": "2026-04-20T01:06:03.689248",
+        "hypothesis_content": {
+          "title": "利用小胶质细胞 TREM2 信号通路调节，通过单细胞 RNA-seq 分析发现新的治疗靶点",
+          "details": "利用小胶质细胞 TREM2 信号通路调节，通过单细胞 RNA-seq 分析发现新的治疗靶点",
+          "methodology": {
+            "sensor": "测序仪",
+            "technique": "RNA-seq"
+          },
+          "expected_results": {
+            "outcome": "鉴定出 TREM2 下游 3 个关键基因可作为药物靶点"
+          },
+          "domain": "神经科学/阿尔茨海默病",
+          "keywords": [
+            "TREM2",
+            "小胶质细胞",
+            "单细胞测序",
+            "阿尔茨海默病"
+          ]
+        },
+        "science_score": 6.2,
+        "fitness_score": 5.7,
+        "defense_passed": false,
+        "rewrite_log": [],
+        "iteration": 1,
+        "red_attack_types": [],
+        "patch_applied": false
+      },
+      {
+        "version": "v1.1",
+        "type": "methodology_patch",
+        "type_display": "方法论补丁",
+        "created_at": "2026-04-20T01:06:03.689428",
+        "hypothesis_content": {
+          "title": "利用小胶质细胞 TREM2 信号通路调节，通过单细胞 RNA-seq 分析发现新的治疗靶点",
+          "details": "利用小胶质细胞 TREM2 信号通路调节，通过单细胞 RNA-seq 分析发现新的治疗靶点",
+          "methodology": {
+            "sensor": "测序仪",
+            "technique": "RNA-seq"
+          },
+          "expected_results": {
+            "outcome": "鉴定出 TREM2 下游 3 个关键基因可作为药物靶点"
+          },
+          "domain": "神经科学/阿尔茨海默病",
+          "keywords": [
+            "TREM2",
+            "小胶质细胞",
+            "单细胞测序",
+            "阿尔茨海默病"
+          ]
+        },
+        "science_score": 7.4,
+        "fitness_score": 7.1000000000000005,
+        "defense_passed": false,
+        "rewrite_log": [
+          {
+            "original": "OVERFITTING",
+            "replaced_with": "OVERFITTING_correction",
+            "reason": "红方攻击修复"
+          }
+        ],
+        "iteration": 2,
+        "red_attack_types": [
+          "OVERFITTING",
+          "BIAS"
+        ],
+        "patch_applied": true
+      },
+      {
+        "version": "v1.2",
+        "type": "methodology_patch",
+        "type_display": "方法论补丁",
+        "created_at": "2026-04-20T01:06:03.689771",
+        "hypothesis_content": {
+          "title": "利用小胶质细胞 TREM2 信号通路调节，通过单细胞 RNA-seq 分析发现新的治疗靶点",
+          "details": "利用小胶质细胞 TREM2 信号通路调节，通过单细胞 RNA-seq 分析发现新的治疗靶点",
+          "methodology": {
+            "sensor": "测序仪",
+            "technique": "RNA-seq"
+          },
+          "expected_results": {
+            "outcome": "鉴定出 TREM2 下游 3 个关键基因可作为药物靶点"
+          },
+          "domain": "神经科学/阿尔茨海默病",
+          "keywords": [
+            "TREM2",
+            "小胶质细胞",
+            "单细胞测序",
+            "阿尔茨海默病"
+          ]
+        },
+        "science_score": 8.700000000000001,
+        "fitness_score": 8.500000000000002,
+        "defense_passed": true,
+        "rewrite_log": [
+          {
+            "original": "BIAS",
+            "replaced_with": "BIAS_correction",
+            "reason": "二次迭代修复"
+          }
+        ],
+        "iteration": 3,
+        "red_attack_types": [
+          "OVERFITTING",
+          "BIAS"
+        ],
+        "patch_applied": true
+      }
+    ],
+    "score_history": [
+      6.2,
+      7.4,
+      8.700000000000001
+    ],
+    "final_science_score": 8.700000000000001,
+    "promise_score": 8.12,
+    "promise_grade": "good",
+    "trend": "rising",
+    "evolution_delta": 2.500000000000001,
+    "total_iterations": 3
+  },
+  {
+    "domain": "癌症免疫治疗",
+    "idea": "联合 PD-1 抗体和肿瘤特异性 TCR-T 细胞治疗，克服实体瘤免疫抑制微环境",
+    "final_state": "HYPOTHESIS_GEN",
+    "version_chain": [
+      {
+        "version": "v1.0",
+        "type": "initial",
+        "type_display": "初始版本",
+        "created_at": "2026-04-20T01:06:04.191333",
+        "hypothesis_content": {
+          "title": "联合 PD-1 抗体和肿瘤特异性 TCR-T 细胞治疗，克服实体瘤免疫抑制微环境",
+          "details": "联合 PD-1 抗体和肿瘤特异性 TCR-T 细胞治疗，克服实体瘤免疫抑制微环境",
+          "methodology": {
+            "sensor": "测序仪",
+            "technique": "RNA-seq"
+          },
+          "expected_results": {
+            "outcome": "在小鼠模型中实现 70% 肿瘤完全缓解"
+          },
+          "domain": "癌症免疫治疗",
+          "keywords": [
+            "PD-1",
+            "TCR-T",
+            "实体瘤",
+            "免疫微环境"
+          ]
+        },
+        "science_score": 6.3,
+        "fitness_score": 5.8,
+        "defense_passed": false,
+        "rewrite_log": [],
+        "iteration": 1,
+        "red_attack_types": [],
+        "patch_applied": false
+      },
+      {
+        "version": "v1.1",
+        "type": "methodology_patch",
+        "type_display": "方法论补丁",
+        "created_at": "2026-04-20T01:06:04.191501",
+        "hypothesis_content": {
+          "title": "联合 PD-1 抗体和肿瘤特异性 TCR-T 细胞治疗，克服实体瘤免疫抑制微环境",
+          "details": "联合 PD-1 抗体和肿瘤特异性 TCR-T 细胞治疗，克服实体瘤免疫抑制微环境",
+          "methodology": {
+            "sensor": "测序仪",
+            "technique": "RNA-seq"
+          },
+          "expected_results": {
+            "outcome": "在小鼠模型中实现 70% 肿瘤完全缓解"
+          },
+          "domain": "癌症免疫治疗",
+          "keywords": [
+            "PD-1",
+            "TCR-T",
+            "实体瘤",
+            "免疫微环境"
+          ]
+        },
+        "science_score": 7.5,
+        "fitness_score": 7.2,
+        "defense_passed": false,
+        "rewrite_log": [
+          {
+            "original": "VALIDATION",
+            "replaced_with": "VALIDATION_correction",
+            "reason": "红方攻击修复"
+          }
+        ],
+        "iteration": 2,
+        "red_attack_types": [
+          "VALIDATION",
+          "LEAKAGE"
+        ],
+        "patch_applied": true
+      },
+      {
+        "version": "v1.2",
+        "type": "methodology_patch",
+        "type_display": "方法论补丁",
+        "created_at": "2026-04-20T01:06:04.191586",
+        "hypothesis_content": {
+          "title": "联合 PD-1 抗体和肿瘤特异性 TCR-T 细胞治疗，克服实体瘤免疫抑制微环境",
+          "details": "联合 PD-1 抗体和肿瘤特异性 TCR-T 细胞治疗，克服实体瘤免疫抑制微环境",
+          "methodology": {
+            "sensor": "测序仪",
+            "technique": "RNA-seq"
+          },
+          "expected_results": {
+            "outcome": "在小鼠模型中实现 70% 肿瘤完全缓解"
+          },
+          "domain": "癌症免疫治疗",
+          "keywords": [
+            "PD-1",
+            "TCR-T",
+            "实体瘤",
+            "免疫微环境"
+          ]
+        },
+        "science_score": 8.8,
+        "fitness_score": 8.600000000000001,
+        "defense_passed": true,
+        "rewrite_log": [
+          {
+            "original": "LEAKAGE",
+            "replaced_with": "LEAKAGE_correction",
+            "reason": "二次迭代修复"
+          }
+        ],
+        "iteration": 3,
+        "red_attack_types": [
+          "VALIDATION",
+          "LEAKAGE"
+        ],
+        "patch_applied": true
+      }
+    ],
+    "score_history": [
+      6.3,
+      7.5,
+      8.8
+    ],
+    "final_science_score": 8.8,
+    "promise_score": 8.26,
+    "promise_grade": "good",
+    "trend": "rising",
+    "evolution_delta": 2.500000000000001,
+    "total_iterations": 3
+  },
+  {
+    "domain": "代谢疾病/糖尿病",
+    "idea": "通过靶向肠道 GLP-1 受体和肝脏糖异生通路，改善 2 型糖尿病血糖控制",
+    "final_state": "HYPOTHESIS_GEN",
+    "version_chain": [
+      {
+        "version": "v1.0",
+        "type": "initial",
+        "type_display": "初始版本",
+        "created_at": "2026-04-20T01:06:04.692821",
+        "hypothesis_content": {
+          "title": "通过靶向肠道 GLP-1 受体和肝脏糖异生通路，改善 2 型糖尿病血糖控制",
+          "details": "通过靶向肠道 GLP-1 受体和肝脏糖异生通路，改善 2 型糖尿病血糖控制",
+          "methodology": {
+            "sensor": "测序仪",
+            "technique": "RNA-seq"
+          },
+          "expected_results": {
+            "outcome": "HbA1c 降低 1.5% 以上"
+          },
+          "domain": "代谢疾病/糖尿病",
+          "keywords": [
+            "GLP-1",
+            "糖异生",
+            "2型糖尿病",
+            "血糖"
+          ]
+        },
+        "science_score": 6.3,
+        "fitness_score": 5.8,
+        "defense_passed": false,
+        "rewrite_log": [],
+        "iteration": 1,
+        "red_attack_types": [],
+        "patch_applied": false
+      },
+      {
+        "version": "v1.1",
+        "type": "methodology_patch",
+        "type_display": "方法论补丁",
+        "created_at": "2026-04-20T01:06:04.692993",
+        "hypothesis_content": {
+          "title": "通过靶向肠道 GLP-1 受体和肝脏糖异生通路，改善 2 型糖尿病血糖控制",
+          "details": "通过靶向肠道 GLP-1 受体和肝脏糖异生通路，改善 2 型糖尿病血糖控制",
+          "methodology": {
+            "sensor": "测序仪",
+            "technique": "RNA-seq"
+          },
+          "expected_results": {
+            "outcome": "HbA1c 降低 1.5% 以上"
+          },
+          "domain": "代谢疾病/糖尿病",
+          "keywords": [
+            "GLP-1",
+            "糖异生",
+            "2型糖尿病",
+            "血糖"
+          ]
+        },
+        "science_score": 7.5,
+        "fitness_score": 7.2,
+        "defense_passed": false,
+        "rewrite_log": [
+          {
+            "original": "STATISTICAL_FLAW",
+            "replaced_with": "STATISTICAL_FLAW_correction",
+            "reason": "红方攻击修复"
+          }
+        ],
+        "iteration": 2,
+        "red_attack_types": [
+          "STATISTICAL_FLAW",
+          "REPRODUCIBILITY"
+        ],
+        "patch_applied": true
+      },
+      {
+        "version": "v1.2",
+        "type": "methodology_patch",
+        "type_display": "方法论补丁",
+        "created_at": "2026-04-20T01:06:04.693070",
+        "hypothesis_content": {
+          "title": "通过靶向肠道 GLP-1 受体和肝脏糖异生通路，改善 2 型糖尿病血糖控制",
+          "details": "通过靶向肠道 GLP-1 受体和肝脏糖异生通路，改善 2 型糖尿病血糖控制",
+          "methodology": {
+            "sensor": "测序仪",
+            "technique": "RNA-seq"
+          },
+          "expected_results": {
+            "outcome": "HbA1c 降低 1.5% 以上"
+          },
+          "domain": "代谢疾病/糖尿病",
+          "keywords": [
+            "GLP-1",
+            "糖异生",
+            "2型糖尿病",
+            "血糖"
+          ]
+        },
+        "science_score": 8.8,
+        "fitness_score": 8.600000000000001,
+        "defense_passed": true,
+        "rewrite_log": [
+          {
+            "original": "REPRODUCIBILITY",
+            "replaced_with": "REPRODUCIBILITY_correction",
+            "reason": "二次迭代修复"
+          }
+        ],
+        "iteration": 3,
+        "red_attack_types": [
+          "STATISTICAL_FLAW",
+          "REPRODUCIBILITY"
+        ],
+        "patch_applied": true
+      }
+    ],
+    "score_history": [
+      6.3,
+      7.5,
+      8.8
+    ],
+    "final_science_score": 8.8,
+    "promise_score": 8.14,
+    "promise_grade": "good",
+    "trend": "rising",
+    "evolution_delta": 2.500000000000001,
+    "total_iterations": 3
+  }
+]

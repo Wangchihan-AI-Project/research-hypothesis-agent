@@ -1,0 +1,1282 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-14T11:34:08.401277",
+  "cutoff_date": "2026-04-14",
+  "metadata": {
+    "query": "UK Biobank AND 因果推断",
+    "date_range": "(2023, 2026)"
+  },
+  "record_count": 50,
+  "papers": [
+    {
+      "pmid": "38198570",
+      "title": "Prospective study design and data analysis in UK Biobank.",
+      "abstract": "Population-based prospective studies, such as UK Biobank, are valuable for generating and testing hypotheses about the potential causes of human disease. We describe how UK Biobank's study design, data access policies, and approaches to statistical analysis can help to minimize error and improve the interpretability of research findings, with implications for other population-based prospective studies being established worldwide.",
+      "authors": "[\"Allen Naomi E\", \"Lacey Ben\", \"Lawlor Deborah A\", \"Pell Jill P\", \"Gallacher John\", \"Smeeth Liam\", \"Elliott Paul\", \"Matthews Paul M\", \"Lyons Ronan A\", \"Whetton Anthony D\", \"Lucassen Anneke\", \"Hurles Matthew E\", \"Chapman Michael\", \"Roddam Andrew W\", \"Fitzpatrick Natalie K\", \"Hansell Anna L\", \"Hardy Rebecca\", \"Marioni Riccardo E\", \"O'Donnell Valerie B\", \"Williams Julie\"]",
+      "journal": "Science translational medicine",
+      "publication_date": "2024-01-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.224086",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37675869",
+      "title": "Association between metabolic syndrome and risk of incident dementia in UK Biobank.",
+      "abstract": "The association between metabolic syndrome (MetS) and incident dementia remains inconclusive. In 176,249 dementia-free UK Biobank participants aged ≥60 years at baseline, Cox proportional-hazards models were used to investigate the association between MetS and incident dementia. MetS was defined as the presence of ≥3 of the following: elevated waist circumference, triglycerides, blood pressure, blood glucose, and reduced high-density lipoprotein cholesterol. Over 15 years of follow-up (median = 12.3), 5255 participants developed dementia. MetS was associated with an increased risk of incident dementia (hazard ratio [HR]: 1.12, 95% confidence interval [CI]: 1.06, 1.18). The association remained consistent when restricting to longer follow-up intervals: >5 to 10 years (HR: 1.17, 95% CI: 1.07, 1.27) and >10 years (HR: 1.22, 95% CI: 1.12, 1.32). Stronger associations were observed in those with ≥4 MetS components and in apolipoprotein-E (APOE)-ε4 non-carriers. In this large population-based prospective cohort, MetS was associated with an increased risk of dementia. MetS was associated with a 12% increased risk of incident all-cause dementia. Associations remained similar after restricting the analysis to those with longer follow-up. The presence of four or five MetS components was significantly associated with dementia. Stronger associations were observed in those with a low genetic risk for dementia.",
+      "authors": "[\"Qureshi Danial\", \"Collister Jennifer\", \"Allen Naomi E\", \"Kuźma Elżbieta\", \"Littlejohns Thomas\"]",
+      "journal": "Alzheimer's & dementia : the journal of the Alzheimer's Association",
+      "publication_date": "2023-09-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.225029",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 176249,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38750076",
+      "title": "Identifying proteomic risk factors for cancer using prospective and exome analyses of 1463 circulating proteins and risk of 19 cancers in the UK Biobank.",
+      "abstract": "The availability of protein measurements and whole exome sequence data in the UK Biobank enables investigation of potential observational and genetic protein-cancer risk associations. We investigated associations of 1463 plasma proteins with incidence of 19 cancers and 9 cancer subsites in UK Biobank participants (average 12 years follow-up). Emerging protein-cancer associations were further explored using two genetic approaches, cis-pQTL and exome-wide protein genetic scores (exGS). We identify 618 protein-cancer associations, of which 107 persist for cases diagnosed more than seven years after blood draw, 29 of 618 were associated in genetic analyses, and four had support from long time-to-diagnosis ( > 7 years) and both cis-pQTL and exGS analyses: CD74 and TNFRSF1B with NHL, ADAM8 with leukemia, and SFTPA2 with lung cancer. We present multiple blood protein-cancer risk associations, including many detectable more than seven years before cancer diagnosis and that had concordant evidence from genetic analyses, suggesting a possible role in cancer development.",
+      "authors": "[\"Papier Keren\", \"Atkins Joshua R\", \"Tong Tammy Y N\", \"Gaitskell Kezia\", \"Desai Trishna\", \"Ogamba Chibuzor F\", \"Parsaeian Mahboubeh\", \"Reeves Gillian K\", \"Mills Ian G\", \"Key Tim J\", \"Smith-Byrne Karl\", \"Travis Ruth C\"]",
+      "journal": "Nature communications",
+      "publication_date": "2024-05-15",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.225574",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39261665",
+      "title": "Disease prediction with multi-omics and biomarkers empowers case-control genetic discoveries in the UK Biobank.",
+      "abstract": "The emergence of biobank-level datasets offers new opportunities to discover novel biomarkers and develop predictive algorithms for human disease. Here, we present an ensemble machine-learning framework (machine learning with phenotype associations, MILTON) utilizing a range of biomarkers to predict 3,213 diseases in the UK Biobank. Leveraging the UK Biobank's longitudinal health record data, MILTON predicts incident disease cases undiagnosed at time of recruitment, largely outperforming available polygenic risk scores. We further demonstrate the utility of MILTON in augmenting genetic association analyses in a phenome-wide association study of 484,230 genome-sequenced samples, along with 46,327 samples with matched plasma proteomics data. This resulted in improved signals for 88 known (P < 1 × 10<sup>-8</sup>) gene-disease relationships alongside 182 gene-disease relationships that did not achieve genome-wide significance in the nonaugmented baseline cohorts. We validated these discoveries in the FinnGen biobank alongside two orthogonal machine-learning methods built for gene-disease prioritization. All extracted gene-disease associations and incident disease predictive biomarkers are publicly available ( http://milton.public.cgr.astrazeneca.com ).",
+      "authors": "[\"Garg Manik\", \"Karpinski Marcin\", \"Matelska Dorota\", \"Middleton Lawrence\", \"Burren Oliver S\", \"Hu Fengyuan\", \"Wheeler Eleanor\", \"Smith Katherine R\", \"Fabre Margarete A\", \"Mitchell Jonathan\", \"O'Neill Amanda\", \"Ashley Euan A\", \"Harper Andrew R\", \"Wang Quanli\", \"Dhindsa Ryan S\", \"Petrovski Slavé\", \"Vitsios Dimitrios\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2024-09-11",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.226240",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 46327,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38894691",
+      "title": "Association of Metabolic Syndrome With Neuroimaging and Cognitive Outcomes in the UK Biobank.",
+      "abstract": "Metabolic syndrome (MetS) has been linked to dementia. In this study, we examined the association of MetS with neuroimaging and cognition in dementia-free adults, offering insight into the impact of MetS on brain health prior to dementia onset. We included 37,395 dementia-free adults from the UK Biobank database. MetS was defined as having at least three of the following components: larger waist circumference; elevated levels of triglycerides, blood pressure, HbA1c; or reduced HDL cholesterol levels. Multivariable-adjusted linear regression was used to assess associations of MetS with structural neuroimaging and cognitive domains. MetS was associated with lower total brain (standardized β: -0.06; 95% CI -0.08, -0.04), gray matter (β: -0.10; 95% CI -0.12, -0.08) and hippocampal (for left side, β: -0.03, 95% CI -0.05, -0.01; for right side, β: -0.04, 95% CI -0.07, -0.02) volumes, and greater white matter hyperintensity (WMH) volume (β: 0.08; 95% CI 0.06, 0.11). Study participants with MetS performed poorer on cognitive tests of working memory (β: -0.10; 95% CI -0.13, -0.07), verbal declarative memory (β: -0.08; 95% CI -0.11, -0.05), processing speed (β: -0.06; 95% CI -0.09, -0.04), verbal and numerical reasoning (β: -0.07; 95% CI -0.09, -0.04), nonverbal reasoning (β: -0.03; 95% CI -0.05, -0.01), and on tests of executive function, where higher scores indicated poorer performance (β: 0.05; 95% CI 0.03, 0.08). More MetS components were also associated with less brain volume, greater WMH, and poorer cognition across all domains. MetS was associated poorer brain health in dementia-free adults, characterized by less brain volume, greater vascular pathology, and poorer cognition. Further research is necessary to understand whether reversal or improvement of MetS can improve brain health.",
+      "authors": "[\"Qureshi Danial\", \"Topiwala Anya\", \"Al Abid Shehab Uddin\", \"Allen Naomi E\", \"Kuźma Elżbieta\", \"Littlejohns Thomas J\"]",
+      "journal": "Diabetes care",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.227280",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38536179",
+      "title": "Genetic and Phenotypic Features of Schizophrenia in the UK Biobank.",
+      "abstract": "Large-scale biobanks provide important opportunities for mental health research, but selection biases raise questions regarding the comparability of individuals with those in clinical research settings. To compare the genetic liability to psychiatric disorders in individuals with schizophrenia in the UK Biobank with individuals in the Psychiatric Genomics Consortium (PGC) and to compare genetic liability and phenotypic features with participants recruited from clinical settings. This cross-sectional study included participants from the population-based UK Biobank and schizophrenia samples recruited from clinical settings (CLOZUK, CardiffCOGS, Cardiff F-Series, and Cardiff Affected Sib-Pairs). Data were collected between January 1993 and July 2021. Data analysis was conducted between July 2021 and June 2023. A genome-wide association study of UK Biobank schizophrenia case-control status was conducted, and the results were compared with those from the PGC via genetic correlations. To test for differences with the clinical samples, polygenic risk scores (PRS) were calculated for schizophrenia, bipolar disorder, depression, and intelligence using PRS-CS. PRS and phenotypic comparisons were conducted using pairwise logistic regressions. The proportions of individuals with copy number variants associated with schizophrenia were compared using Firth logistic regression. The sample of 517 375 participants included 1438 UK Biobank participants with schizophrenia (550 [38.2%] female; mean [SD] age, 54.7 [8.3] years), 499 475 UK Biobank controls (271 884 [54.4%] female; mean [SD] age, 56.5 [8.1] years), and 4 schizophrenia research samples (4758 [28.9%] female; mean [SD] age, 38.2 [21.0] years). Liability to schizophrenia in UK Biobank was highly correlated with the latest genome-wide association study from the PGC (genetic correlation, 0.98; SE, 0.18) and showed the expected patterns of correlations with other psychiatric disorders. The schizophrenia PRS explained 6.8% of the variance in liability for schizophrenia case status in UK Biobank. UK Biobank participants with schizophrenia had significantly lower schizophrenia PRS than 3 of the clinically ascertained samples and significantly lower rates of schizophrenia-associated copy number variants than the CLOZUK sample. UK Biobank participants with schizophrenia had higher educational attainment and employment rates than the clinically ascertained schizophrenia samples, lower rates of smoking, and a later age of onset of psychosis. Individuals with schizophrenia in the UK Biobank, and likely other volunteer-based biobanks, represent those less severely affected. Their inclusion in wider studies should enhance the representation of the full spectrum of illness severity.",
+      "authors": "[\"Legge Sophie E\", \"Pardiñas Antonio F\", \"Woolway Grace\", \"Rees Elliott\", \"Cardno Alastair G\", \"Escott-Price Valentina\", \"Holmans Peter\", \"Kirov George\", \"Owen Michael J\", \"O'Donovan Michael C\", \"Walters James T R\"]",
+      "journal": "JAMA psychiatry",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.228437",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "Logistic Regression"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 3,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "40886562",
+      "title": "Proteomic signatures of grip strength and healthy aging among older adults: A prospective cohort study in the UK Biobank.",
+      "abstract": "While grip strength (GS) is recognized as a feasible predictor of various health outcomes, its association with healthy aging and the role of plasma proteins remain unclear. We included 27,828 apparently healthy adults aged 64 years or older who were eligible to survive to age 80 as of the latest follow-up. Healthy aging was defined as survival to age 80 without developing major chronic diseases (MCDs) during the follow-up. Multivariable Logistic regression models assessed the relationship of absolute or relative GS with the likelihood of healthy aging. In a subset of 3366 participants, plasma proteomic signatures of GS were identified and their mediating effects on the GS-healthy aging relationship were further assessed. In total, 16,844 (60.5 %) participants achieved healthy aging. After multivariable adjustment, higher levels of absolute and relative GS were associated with a 67 % (95 % confidence interval [CI]: 50 %-88 %) and a 92 % (95 % CI: 75 %-110 %) higher likelihood of healthy aging, respectively. There were 298 proteins related to both absolute and relative GS in the same direction (20 upwards and 278 downwards), with 50 proteins showing significant associations (13 positive and 37 inverse) with healthy aging. The majority of these 50 proteins showed mediating effects on the relationship of GS with healthy aging, potentially involving cytokine-cytokine receptor interaction, viral protein interactions with cytokine receptor, and the chemokine signaling pathway. Greater GS is associated with a higher likelihood of healthy aging, partially through the modulation of circulating proteins involving the pathways of inflammation and immunity responses.",
+      "authors": "[\"Liu Zhong-Yue\", \"Yang Jing\", \"Fang Fei\", \"Hao Yong-Gang\", \"Cai Xiu-Ying\", \"Miao Meng-Yuan\", \"Lyu Jie-Qiong\", \"Gu Ji-Mei\", \"Qian Yu-Wen\", \"Wan Zhong-Xiao\", \"Qin Li-Qiang\", \"Fang Qi\", \"Chen Guo-Chong\"]",
+      "journal": "Clinical nutrition (Edinburgh, Scotland)",
+      "publication_date": "2025-08-23",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.229108",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "Logistic Regression"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "37984624",
+      "title": "Associations between metabolic syndrome and anxiety, and the mediating role of inflammation: Findings from the UK Biobank.",
+      "abstract": "To investigate the association between metabolic syndrome (MetS) and anxiety and to explore the mediating role of inflammation indicators in this relationship based on the UK Biobank prospective cohort. This population-based retrospective cohort study analyzed data from 308,352 participants. MetS was defined according to criteria jointly developed by the American Heart Association, the National Heart, Lung, and Blood Institute, and the International Diabetes Federation. Anxiety was defined using ICD-10 codes. Cox proportional risk regression models were used to explore the hazard ratios (HRs) between MetS, components of MetS, number of MetS components, and anxiety. The mediating effect of inflammation on the association between MetS and anxiety was explored using longitudinal mediation analysis. A total of 308,352 participants were included in this study. Of these, 9471 (3.071 %) developed anxiety over a mean follow-up of 12.05 years. In the fully adjusted model, MetS increased the risk of anxiety by 13.6 % (HR: 1.136, 95 %CI: 1.085-1.189). All MetS components significantly increased the risk of anxiety, with HRs ranging from 1.066 to 1.165. When MetS was treated as a linear variable, the risk of anxiety increased by 6.5 % per component increment. Age-stratified results showed that the risk of MetS for anxiety was higher among those <55 years (HR: 1.23, 95 %CI: 1.13-1.33) than among those ≥55 years (HR: 1.12, 95 %CI: 1.06-1.18). The mediating effects of platelets, lymphocytes, neutrophils, C-reactive protein, leukocytes, and INFLA scores on the association between MetS and anxiety were significant, with mediating effects of 2.30 %, 7.20 %, 15.9 %, 20.7 %, 22.0 %, and 25.3 %, respectively, and a combined mediating effect of these inflammatory factors was 30.8 % (except for INFLA scores). MetS and its components significantly increased the risk of anxiety, which increased with the number of components. This association may be partially mediated by serum inflammatory indicators, suggesting that MetS may increase the risk of anxiety by elevating the level of chronic inflammation.",
+      "authors": "[\"Cen Manqiu\", \"Song Lingling\", \"Fu Xihang\", \"Gao Xinxin\", \"Zuo Qianlin\", \"Wu Jing\"]",
+      "journal": "Brain, behavior, and immunity",
+      "publication_date": "2023-11-19",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.230024",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39806394",
+      "title": "Association between triglyceride-glucose (TyG) related indices and cardiovascular diseases and mortality among individuals with metabolic dysfunction-associated steatotic liver disease: a cohort study of UK Biobank.",
+      "abstract": "Triglyceride-glucose (TyG) related indices, which serve as simple markers for insulin resistance, have been closely linked to metabolic dysfunction-associated steatotic liver disease (MASLD), cardiovascular disease (CVD), and mortality. However, the prognostic utility of TyG-related indices in predicting the risk of CVD and mortality among patients with MASLD remains unclear. Data of 97,331 MASLD patients, with a median age of 58.0 years and free of CVD at baseline, were obtained from the UK Biobank. The TyG index, along with its combination with adiposity parameters (i.e. body mass index [BMI], waist circumference [WC], and waist-to-height ratio [WHtR]), were calculated. Cox proportional hazards models and restricted cubic spline (RCS) were performed to evaluate the associations between TyG-related indices and the risk of overall CVD, coronary heart disease (CHD), stroke, all-cause mortality, and cardiovascular mortality. Additionally, Harrell's C-index, net reclassification index (NRI), and integrated discrimination improvement index (IDI) were used to assess the predictive performance of these indices. Over a median follow-up of 13.56 years, we identified 13,256 cases of overall CVD, 10,980 CHD, 2,926 stroke, 8,809 all-cause mortality, and 1,796 cardiovascular mortality. Compared with the lowest quartile of TyG-related indices, participants with MASLD in the high quartile of TyG-related indices had a significantly increased risk of incident overall CVD, CHD, stroke, and mortality. Specifically, the hazard ratios of occurring overall CVD in the fourth versus the first quartiles were 1.19 (95% confidence interval: 1.13-1.25) for TyG, 1.35 (1.28-1.42) for TyG-BMI, 1.33 (1.26-1.40) for TyG-WC, and 1.39 (1.32-1.46) for TyG-WHtR. RCS analyses indicated a nonlinear association of TyG with CVD outcomes (all P values for nonlinearity < 0.05), whereas there exhibited linear trends in TyG-BMI, TyG-WC, and TyG-WHtR with CVD outcomes (all P values for nonlinearity > 0.05, except for TyG-WC with stroke). Furthermore, TyG-WC and TyG-WHtR demonstrated the significantly higher C-index, NRI, and IDI in predicting risk of CVD and mortality in MASLD patients. TyG-related indices, especially TyG-WC and TyG-WHtR, had significant predictive values for the risk of incident CVD and mortality in individuals with MASLD. TyG-related indices may serve as effective surrogate predictors of CVD and mortality in MASLD patients.",
+      "authors": "[\"Qiao Yanan\", \"Wang Yue\", \"Chen Cheng\", \"Huang Yueqing\", \"Zhao Chunhua\"]",
+      "journal": "Cardiovascular diabetology",
+      "publication_date": "2025-01-13",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.231273",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "C-index"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40263246",
+      "title": "UKB-MDRMF: a multi-disease risk and multimorbidity framework based on UK biobank data.",
+      "abstract": "The rapid accumulation of biomedical cohort data presents opportunities to explore disease mechanisms, risk factors, and prognostic markers. However, current research often has a narrow focus, limiting the exploration of risk factors and inter-disease correlations. Additionally, fragmented processes and time constraints can hinder comprehensive analysis of the disease landscape. Our work addresses these challenges by integrating multimodal data from the UK Biobank, including basic, lifestyle, measurement, environment, genetic, and imaging data. We propose UKB-MDRMF, a comprehensive framework for predicting and assessing health risks across 1560 diseases. Unlike single disease models, UKB-MDRMF incorporates multimorbidity mechanisms, resulting in superior predictive accuracy, with all disease types showing improved performance in risk assessment. By jointly predicting and assessing multiple diseases, UKB-MDRMF uncovers shared and distinctive connections among risk factors and diseases, offering a broader perspective on health and multimorbidity mechanisms.",
+      "authors": "[\"Jiang Yukang\", \"Zhao Bingxin\", \"Wang Xiaopu\", \"Tang Borui\", \"Peng Huiyang\", \"Luo Zidan\", \"Shen Yue\", \"Wang Zheng\", \"Jiang Zhiwen\", \"Wang Jie\", \"Ye Jieping\", \"Wang Xueqin\", \"Zhu Hongtu\"]",
+      "journal": "Nature communications",
+      "publication_date": "2025-04-22",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.231726",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [
+          "Multimodal"
+        ],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Accuracy"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41263398",
+      "title": "Objectively measured sleep regularity, weekend recovery sleep, and the risk of incident type 2 diabetes: a prospective cohort study from the UK Biobank.",
+      "abstract": "The current study on sleep regularity, weekend recovery sleep (WRS), and the potential risk of developing incident type 2 diabetes (T2D) is both limited and lacks comprehensiveness. This study included 72 562 participants without diabetes who wore an accelerometer for 1 week. Sleep regularity was assessed using standard deviation (SDs) of sleep duration, onset, midpoint, wake-up timing, and sleep regularity index (SRI). Cox models evaluated associations of sleep regularity, WRS, and T2D risk. Elastic net regression identified key sleep characteristics, and a joint analysis differentiated individual and combined effects of sleep regularity indicators. Subgroup analyses explored the effects of weekday and weekly sleep duration, weekday SRI, and sleep alignment on the WRS-T2D relationship. During the average follow-up of 5.1 years, 1087 incident cases of T2D were documented. Irregular sleep patterns were associated with an increased risk of T2D. The elastic net regression model identified the SD of sleep onset timing and SD of sleep duration as key characteristics of sleep regularity. Joint analyses showed that irregular sleep onset timing, but not sleep duration, independently contributed to an increased risk of T2D morbidity, with hazard ratios (95% confidence intervals) of 1.30 (1.07, 1.58) and 1.18 (0.97, 1.44), respectively. The risk of T2D was comparable between participants with and without WRS, regardless of WRS duration. Subgroup analyses showed that the relationship between WRS and T2D did not significantly differ when considering adherence to the recommended weekly sleep duration, achieving adequate sleep duration on weekdays, maintaining regular sleep patterns during weekdays, and aligning sleep schedules on weekdays and weekends. Irregular sleep patterns were associated with an increased risk of T2D. In contrast to previous studies, WRS was not associated with a reduced risk of T2D.",
+      "authors": "[\"Hu Cong\", \"Chen Yunyan\", \"Yuan Xiaodi\", \"Song Yuhua\", \"Wu Huanyu\", \"Liu Hui\", \"Fu Zhihui\", \"Zhou Ning\", \"Han Tianshu\", \"Sun Changhao\"]",
+      "journal": "International journal of surgery (London, England)",
+      "publication_date": "2025-11-18",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.232650",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "Elastic Net"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41184868",
+      "title": "Rheumatoid arthritis and cardiovascular disease associations in the UK Biobank.",
+      "abstract": "This study evaluated observational and causal relationships between rheumatoid arthritis (RA) and cardiovascular disease and imaging phenotypes in the UK Biobank. RA was defined using linked hospital records, self-reported diagnostics, and medication data. Controls were participants without a record of RA. Cardiovascular diseases (CVDs) were defined using linked hospital records over an average of 14 years of prospective follow-up, including: ischaemic heart diseases (IHD), acute myocardial infarction (AMI), atrial fibrillation, any arrhythmia, non-ischaemic cardiomyopathies, pericardial disease, stroke, peripheral vascular disease, and venous thromboembolism. For participants with cardiovascular magnetic resonance (CMR) available as part of the UK Biobank Imaging Study, we considered measures of cardiac structure and function extracted using automated pipelines. Associations of RA with prevalent and incident CVDs were calculated using logistic and Cox regression. Linear regression was used to examine associations with CMR metrics. Models were adjusted for demographic, lifestyle, and clinical confounders. Causal associations were assessed using two-sample Mendelian randomisation. Genetic instruments for RA (22,350 cases and 74,823 controls), nine CVDs (FinnGen, n = 224,737), and 11 CMR phenotypes (UK Biobank) were extracted and associations assessed using inverse-variance weighting with pleiotropy adjustments and multiple testing corrections. The analysis included 1,436 RA cases (mean age 59.9 years; 70.6% female) and 476,975 controls (mean age 56.5 years; 54.3% female). Participants with RA lived in more socioeconomically deprived areas (as per the Townsend Deprivation Index), had lower physical activity levels, were more likely to smoke, and had a higher baseline prevalence of CVDs. In fully adjusted models, participants with RA had a significantly higher hazard of multiple incident CVDs, with the greatest risks related to pericardial disease (HR 2.63 (1.85, 3.74)), heart failure (HR 1.68 (1.42, 1.99)), and AMI (HR 1.53 (1.20, 1.96)). Mendelian Randomisation analyses supported causal links between RA and AMI (OR 1.07 (1.02, 1.09), p = 0.009), arrhythmias (OR 1.05 (1.02, 1.06), p = 0.0007), and IHD (OR 1.05 (1.01, 1.06), p = 0.036). No significant associations were identified between RA and CMR phenotypes. People with RA have a heightened risk of multiple prevalent and incident CVDs, independent of shared risk factors, with suggestions of causal links with IHD, AMI, and arrhythmias.",
+      "authors": "[\"Salatzki Janek\", \"Condurache Dorina-Gabriela\", \"D'Angelo Stefania\", \"Salih Ahmed M\", \"Szabo Liliana\", \"Mahmood Adil\", \"Curtis Elizabeth M\", \"Petersen Steffen E\", \"Altmann Andre\", \"Frey Norbert\", \"André Florian\", \"Harvey Nicholas C\", \"Raisi-Estabragh Zahra\"]",
+      "journal": "BMC medicine",
+      "publication_date": "2025-11-03",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.233641",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 224737,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40208451",
+      "title": "Associations Between Chronotype, Genetic Susceptibility and Risk of Colorectal Cancer in UK Biobank.",
+      "abstract": "Sleep problems are common in the general population, with evidence suggesting a link between circadian rhythm disruptions and various health outcomes. However, the role of chronotype in influencing colorectal cancer (CRC) risk, particularly in conjunction with genetic predisposition, remains unclear and warrants further investigation. We analyzed data from 295,729 UK Biobank participants, among whom 4305 developed colorectal cancer. Chronotype was self-reported as morning or evening type, and a polygenic risk score for chronotype was generated from 316 genome-wide significant SNPs using 23andMe effect sizes to reduce overlap bias. Colorectal cancer risk was estimated using Cox proportional hazards models adjusted for age, sex, smoking, alcohol consumption, and the Townsend index. Late chronotype and high polygenic risk were independently associated with an increased risk of CRC. Compared to participants with an early chronotype, those with a late chronotype exhibited a 6.5% increased risk of CRC [HR 1.065, P = 0.046]. Similarly, individuals in the high genetic risk group had a 11.0% increased risk compared with those in the low genetic risk group [HR, 1.110, P = 0.032]. Stratified analyses revealed that individuals with an intermediate genetic risk who had a late chronotype showed a 17.6% higher risk of CRC [OR, 1.176, P = 0.004], whereas those with a high genetic risk had a 25.3% increase [OR, 1.253, P = 0.001]. Through analyzing the combined effects of chronotype and PRS, we found that among individuals with an early chronotype, those with intermediate PRS had a 15.4% increased risk of CRC [HR, 1.154, P = 0.005], and those with high PRS had a 14.7% increased risk [HR, 1.147, P = 0.027]. Our findings highlight the importance of considering circadian rhythm patterns and genetic predispositions when assessing CRC risk, suggesting that chronotype may be associated with CRC risk, but further studies are needed to integrate objective circadian measurements.",
+      "authors": "[\"Xie Huajie\", \"Xi Zhihui\", \"Wen Suqi\", \"Zhang Runbei\", \"Liu Yongfeng\", \"Zheng Jiabin\", \"Feng Huolun\", \"Wu Deqing\", \"Li Yong\"]",
+      "journal": "Journal of epidemiology and global health",
+      "publication_date": "2025-04-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.234618",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40294653",
+      "title": "Optimal amount of vigorous-intensity physical activity for lowering incidence of microvascular diseases: A prospective cohort study from the UK Biobank.",
+      "abstract": "To explore the amount-response associations between the duration of physical activity (PA) at different intensities and the risks of microvascular diseases (MVDs), with a particular focus on identifying the optimal amount of vigorous-intensity PA (VPA). In this prospective cohort study, PA of different intensities were measured using wrist-worn accelerometers. MVDs, including nephropathy, neuropathy, and retinopathy, were identified from hospital inpatient records. Cox models and restricted cubic splines were used to evaluate the associations. This prospective study included 92,275 participants (40,256 males and 52,019 females) with a mean (SD) age of 61.7 (7.8) years. During a median follow-up of 7.9 years, a total of 5,201 individuals were diagnosed with MVDs, including 2,385 with nephropathy, 512 with neuropathy, and 2,666 with retinopathy. An L-shaped amount-response association for VPA and overall MVDs was observed (P value for non-linearity < 0.001), with the optimal amount of 38 (95 % CI: 34, 44) minutes/week, corresponding to an HR of 0.71 (95 % CI: 0.64, 0.77). VPA of 34-44 min/week were associated with 23 %-36 % lower risks of overall MVDs, with a less pronounced decline in risk thereafter. These findings may have implications for the future revision of physical activity recommendations to better improve microvascular health.",
+      "authors": "[\"Yu Lan\", \"Sun Guangbin\", \"Liu Yinyue\", \"Zhang Dongfang\", \"Li Xiang\", \"Zhang Qiang\", \"Xing Xiaolong\", \"Zhang Xumei\", \"Yang Xueli\"]",
+      "journal": "Diabetes research and clinical practice",
+      "publication_date": "2025-04-26",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.235603",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 5201,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39148063",
+      "title": "Association between kidney function and Parkinson's disease risk: a prospective study from the UK Biobank.",
+      "abstract": "Parkinson's disease (PD) is a neurodegenerative influenced by various clinical factors. The potential relationship between renal function and the risk of PD remains poorly understood. This study aims to explore the association between kidney function and the risk of developing PD. A population-based cohort study was conducted using data from 400,571 UK Biobank participants. Renal function was assessed using the estimated glomerular filtration rate (eGFR), calculated from serum creatinine and cystatin C levels. The association between eGFR levels and PD risk was evaluated using univariate and multivariate Cox regression analyses, Restricted Cubic Spline (RCS) analysis, and Kaplan-Meier analysis. Additionally, a clinical prediction model was developed and its diagnostic accuracy was evaluated using ROC analysis. A heatmap was also constructed to examine the relationship between clinical factors and gray matter volume in various brain regions. Over a median observation period of 13.8 years, 2740 PD events were recorded. Cox regression and Kaplan-Meier analyses revealed a significant association between decreased eGFR and increased PD risk, particularly in participants with eGFR < 30 ml/min/1.73 m<sup>2</sup>. This association was confirmed across three adjusted models. RCS analysis demonstrated a nonlinear relationship between decreasing eGFR and increasing PD risk. Furthermore, changes in eGFR were correlated with alterations in subcortical gray matter volume in regions such as the frontal cortex, striatum, and cerebellum. The clinical prediction model showed high diagnostic accuracy with AUC values of 0.776, 0.780, and 0.824 for 4-, 8-, and 16-year predictions, respectively. Renal insufficiency is significantly associated with an increased risk of PD, highlighting the importance of maintaining good kidney function as a potential preventive measure against PD.",
+      "authors": "[\"Peng Haoran\", \"Wu Longyu\", \"Chen Qiao\", \"Chen Siyuan\", \"Wu Shaopu\", \"Shi Xiaoxue\", \"Ma Jianjun\", \"Yang Hongqi\", \"Li Xue\"]",
+      "journal": "BMC public health",
+      "publication_date": "2024-08-15",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.236964",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC",
+          "Accuracy"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40939996",
+      "title": "Associations between refractive errors and mental health: A cohort study of UK Biobank participants.",
+      "abstract": "Although vision impairment has been shown to negatively impact the quality of daily life, no large-scale studies have reported the effect of refractive errors (REs) on mental health. Therefore, this study aimed to investigate the influence of different types and severities of REs on mental health disorders. UK Biobank participants who underwent ophthalmologic examinations were analyzed in this population-based cohort study. A Cox proportional hazards regression model was established using REs as exposure factors to determine the associations between REs and the risk of mental health disorders. A multiple linear regression model was used to explore the relationships between REs and the outcomes of a 12-item mental health questionnaire. The primary and secondary outcomes were risk of mental health disorders and the 12-item mental health questionnaire results, respectively. A cohort of 106,004 participants, initially free of mental disorders, was followed up for a median duration of 12.5 years, during which 15,608 (14.72 %) were diagnosed with mental health disorders. Participants with REs have a significantly higher risk of mental health disorders than those with emmetropia (hazard ratio [HR]: 1.07, 95 % CI: 1.01-1.13). Individuals with astigmatism (HR: 1.13, 95 % CI: 1.02-1.25), hyperopia (HR: 1.20, 95 % CI: 1.12-1.28), and hyperopia with astigmatism (HR: 1.28, 95 % CI: 1.13-1.44) had a higher risk of mental health disorders than those with emmetropia. The dose-response curve indicated that the risk of mental health disorders increased as corrected visual acuity decreased. Participants with REs had significantly lower life satisfaction and subjective well-being (both P < 0.01) and higher scores for neuroticism, depressive symptoms, and anxiety symptoms (all P < 0.01) than those with emmetropia, particularly among individuals with hyperopia and astigmatism (neuroticism: β = 1.16, 95 % CI: 0.87-1.45; depressive symptoms: β = 0.81, 95 % CI: 0.49-1.14; anxiety symptoms: β = 0.64, 95 % CI: 0.33-0.95). Our study showed that participants with hyperopia, astigmatism, and reduced corrected visual acuity had a higher risk of mental health disorders than those with emmetropia or myopia. Furthermore, individuals with moderate-to-high myopia exhibited an increase in depressive or anxiety symptoms.",
+      "authors": "[\"Sun Bingqing\", \"Peng Yuwei\", \"Lin Ruilang\", \"Hu Xiaojun\", \"Wei Ruoyan\", \"Yu Yongfu\", \"Zhou Xingtao\", \"Li Meiyan\", \"Yang Weiming\"]",
+      "journal": "Journal of affective disorders",
+      "publication_date": "2025-09-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.238559",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 106004,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38282238",
+      "title": "Plasma proteomic profiles of UK Biobank participants with multiple sclerosis.",
+      "abstract": "We aimed to describe plasma protein biomarkers of multiple sclerosis risk and to explore protein biomarkers of disease severity using radiological outcome measures. Multiple sclerosis cases and controls were identified in UK Biobank, a longitudinal cohort study of ~500,000 British adults. Plasma proteins were assayed in ~50,000 UK Biobank participants using the Olink proximity extension assay. We performed case-control association testing to examine the association between 2911 proteins and multiple sclerosis, using linear models adjusted for confounding covariates. Associations with radiological lesion burden and brain volume were determined in a subset of the cohort with available magnetic resonance imaging, using normalized T2-hyperintensity volume or whole brain volume as the outcome measure. In total, 407 prevalent multiple sclerosis cases and 39,979 healthy controls were included. We discovered 72 proteins associated with multiple sclerosis at a Bonferroni-adjusted p value of 0.05, including established markers such as neurofilament light chain and glial fibrillary acidic protein. We observed a decrease in plasma Granzyme A, a marker of T cell and NK cell degranulation, which was specific to multiple sclerosis. Higher levels of plasma proteins involved in coagulation were associated with lower T2 lesion burden and preserved brain volume. We report the largest plasma proteomic screen of multiple sclerosis, replicating important known associations and suggesting novel markers, such as the reduction in granzyme A. While these findings require external validation, they demonstrate the power of biobank-scale datasets for discovering new biomarkers for multiple sclerosis.",
+      "authors": "[\"Jacobs Benjamin M\", \"Vickaryous Nicola\", \"Giovannoni Gavin\", \"Proitsi Petroula\", \"Waters Sheena\", \"Dobson Ruth\"]",
+      "journal": "Annals of clinical and translational neurology",
+      "publication_date": "2024-01-28",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.239224",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2911,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "37458535",
+      "title": "Association Between Sarcopenia and Fracture Risk in a Population From the UK Biobank Database.",
+      "abstract": "Studies on the fracture risk in presarcopenic and sarcopenic patients report contradictory results. The objective was to assess whether presarcopenia and sarcopenia are associated with an increase in fracture risk. We conducted a retrospective study using the UK Biobank cohort and the European Working Group on Sarcopenia in Older People 2 (EWGSOP2) criteria. Muscle strength was evaluated using hand-grip strength (HGS) and muscle mass using the skeletal muscle index (SMI; from bioimpedance analysis). Presarcopenia was defined through the two definitions available in the literature, as low HGS with normal SMI and as normal HGS with low SMI, and sarcopenia as low HGS and low SMI. Fracture events were recorded as \"fracture\" (location compatible with an osteoporotic origin) and \"major osteoporotic fracture\" (MOF), as listed in the FRAX tool. Associations were assessed using Cox proportional hazards models, adjusted for sarcopenia and osteoporosis risk factors. Adjusted hazard ratios (HR<sub>a</sub> ) and their 95% confidence intervals (CI) were reported. A total of 387,025 participants (women 54.4%; median age 58.0 years; interquartile range [IQR] 51.0-63.0 years) were included. At baseline, there were 18,257 (4.7%) presarcopenic participants-subgroup 1 (low HGS only), 7940 (2.1%) presarcopenic participants-subgroup 2 (low SMI only), and 1124 (0.3%) sarcopenic participants. Over a median follow-up of 12.0 years (IQR 11.4-12.6 years), 18,300 (4.7%) participants were diagnosed with at least one incident fracture. Presarcopenic (subgroups 1 and 2) and sarcopenic status were significantly associated with a higher risk of fracture (respectively adjusted HRs: HR = 1.26 [1.19-1.33], HR = 1.20 [1.11-1.30], HR = 1.30 [1.08-1.56]) and with a higher risk of MOF (respectively adjusted HRs: HR = 1.30 [1.21-1.40], HR = 1.19 [1.08-1.72], HR = 1.18 [0.93-1.49]). In a middle-aged population, the fracture and MOF risks were higher in both presarcopenic and sarcopenic participants compared with nonsarcopenic participants. © 2023 The Authors. Journal of Bone and Mineral Research published by Wiley Periodicals LLC on behalf of American Society for Bone and Mineral Research (ASBMR).",
+      "authors": "[\"Jauffret Charlotte\", \"Périchon Renaud\", \"Lamer Antoine\", \"Cortet Bernard\", \"Chazard Emmanuel\", \"Paccou Julien\"]",
+      "journal": "Journal of bone and mineral research : the official journal of the American Society for Bone and Mineral Research",
+      "publication_date": "2023-08-03",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.240290",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 54,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Genomics/WGS"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38556842",
+      "title": "U-shaped association between sleep duration and biological aging: Evidence from the UK Biobank study.",
+      "abstract": "Previous research on sleep and aging largely has failed to illustrate the optimal dose-response curve of this relationship. We aimed to analyze the associations between sleep duration and measures of predicted age. In total, 241,713 participants from the UK Biobank were included. Habitual sleep duration was collected from the baseline questionnaire. Four indicators, homeostatic dysregulation (HD), phenoAge (PA), Klemera-Doubal method (KDM), and allostatic load (AL), were chosen to assess predicted age. Multivariate linear regression models were utilized. The association of sleep duration and predicted age followed a U-shape (All p for nonlinear <0.05). Compared with individuals who sleep for 7 h/day, the multivariable-adjusted beta of ≤5 and ≥9 h/day were 0.05 (95% CI 0.03, 0.07) and 0.03 (95% CI 0.02, 0.05) for HD, 0.08 (95% CI 0.01, 0.14) and 0.36 (95% CI 0.31, 0.41) for PA, and 0.21 (95% CI 0.12, 0.30) and 0.30 (95% CI 0.23, 0.37) for KDM. Significant independent and joint effects of sleep and cystatin C (CysC) and gamma glutamyltransferase (GGT) on predicted age metrics were future found. Similar results were observed when conducting stratification analyses. Short and long sleep duration were associated with accelerated predicted age metrics mediated by CysC and GGT.",
+      "authors": "[\"Wang Xuanyang\", \"Yan Xuemin\", \"Li Mengdi\", \"Cheng Licheng\", \"Qi Xiang\", \"Zhang Jia\", \"Pan Sijia\", \"Xu Xiaoqing\", \"Wei Wei\", \"Li Ying\"]",
+      "journal": "Aging cell",
+      "publication_date": "2024-03-31",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.240903",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37813241",
+      "title": "From liver to heart: Enhancing the understanding of cardiovascular outcomes in the UK biobank.",
+      "abstract": "",
+      "authors": "[\"Zhang Ya\", \"Pu Jian\", \"Xie Ruijie\"]",
+      "journal": "Journal of hepatology",
+      "publication_date": "2023-10-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:03.240982",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38909935",
+      "title": "Smoking Timing, Healthy Diet, and Risk of Incident CKD Among Smokers: Findings From UK Biobank.",
+      "abstract": "Although smoking is a recognized risk factor for chronic kidney disease (CKD), the relationship between the time smoking is initiated after awakening each day and CKD remains largely unstudied. This study examined the association between this timing and the risk of CKD, and the potential interactions of smoking timing with other risk factors for the occurrence of CKD. Observational cohort study. A total of 32,776 participants in the UK Biobank with complete data on the time from waking to the first cigarette and free of prevalent CKD were included. Time from waking to the first cigarette. Incident CKD cases. Cox proportional hazards regression was used to investigate the associations between the time smoking is initiated each day and the risk of CKD. The potential interactions of smoking timing with risk factors in relationship to CKD risk were assessed on both multiplicative and additive scales. During a median follow-up period of 12 years, 940 incident CKD cases occurred. Shorter durations of time from waking to the first cigarette were associated with a higher risk of incident CKD (P trend=0.01). Compared with>120 minutes, the adjusted hazard ratio (HR) associated with smoking timing was 1.28 (95% CI, 0.92-1.80) for 61-120 minutes, 1.48 (95% CI, 1.11-1.96) for 30-60 minutes, 1.36 (95% CI, 1.01-1.88) for 5-15 minutes, and 1.70 (95% CI, 1.22-2.37) for<5 minutes, respectively. Furthermore, there was a significant additive interaction and multiplicative interactions between the timing of smoking and a healthy diet score (P for additive interaction=0.01; P for multiplicative interaction = 0.004). Generalizability, possible residual confounding, limiting causal inference. These findings reveal a significant association between the shorter time from waking to the first cigarette and a higher CKD risk. The magnitude of these associations was greater in the setting of an unhealthy diet. This study explored the association of the daily timing of first cigarette smoking and the occurrence of kidney disease. Further, we addressed whether this association was influenced by the quality of the diet. The study found that smoking very soon after waking, especially when combined with a poorer quality diet, was associated with a significantly increased risk of developing chronic kidney disease. This research emphasizes the value of healthier lifestyle choices for kidney health.",
+      "authors": "[\"Tang Rui\", \"Hu Ying\", \"Zhou Jian\", \"Wang Xuan\", \"Li Xiang\", \"Heianza Yoriko\", \"Qi Lu\"]",
+      "journal": "American journal of kidney diseases : the official journal of the National Kidney Foundation",
+      "publication_date": "2024-06-22",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.779190",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 0,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41257832",
+      "title": "Dietary patterns, polygenic risk, and kidney cancer incidence: a UK Biobank cohort study.",
+      "abstract": "Diet and genetic risk are established risk factors for kidney cancer, but their interaction remains unclear. This study aims to systematically investigate the associations between various dietary patterns and kidney cancer risk, as well as to evaluate the combined effects of diet and genetic risk on kidney cancer risk. We conducted a prospective cohort study involving 113,594 participants from the UK Biobank who completed at least two 24-hour dietary recalls, and adherence to four dietary patterns (Alternate Mediterranean Index (aMED), Alternative Healthy Eating Index 2010 (AHEI), dietary approaches to stop hypertension (DASH), and dietary inflammatory index (DII)) was assessed. Incident kidney cancer cases were ascertained via records. Genetic risk was quantified using polygenic risk score (PRS). Associations were evaluated using Cox proportional hazards models, adjusting for confounders. Furthermore, mediation analyses were conducted to identify potential mediators. During a median follow-up of 11.44 years, 425 participants developed kidney cancer. Higher aMED (HR = 0.71, 95% CI: 0.54-0.94) and DASH (HR = 0.67, 95% CI: 0.49-0.90) were associated with reduced risk of kidney cancer, while higher DII was associated with increased risk (HR = 1.36, 95% CI: 1.02-1.79). Moreover, participants with high genetic risk combined with low aMED, AHEI and DASH scores or high DII score presented the highest kidney cancer risk. Additive interaction was observed between genetic risk and AHEI as well as DII. Moreover, a series of biochemical indicators were identified as potential mediators, with the mediation proportions ranging from 0.76% to 8.40%. Adherence to healthy dietary patterns, such as aMED, AHEI, and DASH is associated with a reduced risk of kidney cancer, whereas a pro-inflammatory diet confers a greater risk, particularly in high-genetic-risk populations. These findings provide strong evidence that promoting these healthy dietary patterns represents a promising public health strategy for the primary prevention of kidney cancer.",
+      "authors": "[\"Zou Mingrui\", \"Deng Ruiyi\", \"Qiu Jianhui\", \"Mao Kaiyuan\", \"Shang Jiaheng\", \"Zhu Sainan\", \"Cai Lin\", \"Wang Yizhou\", \"Gong Kan\", \"Zhou Jingcheng\"]",
+      "journal": "Journal of translational medicine",
+      "publication_date": "2025-11-19",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.780139",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40073132",
+      "title": "Genetically supported targets and drug repurposing for brain aging: A systematic study in the UK Biobank.",
+      "abstract": "Brain age gap (BAG), the deviation between estimated brain age and chronological age, is a promising marker of brain health. However, the genetic architecture and reliable targets for brain aging remains poorly understood. In this study, we estimate magnetic resonance imaging (MRI)-based brain age using deep learning models trained on the UK Biobank and validated with three external datasets. A genome-wide association study for BAG identified two unreported loci and seven previously reported loci. By integrating Mendelian Randomization (MR) and colocalization analysis on eQTL and pQTL data, we prioritized seven genetically supported druggable genes, including <i>MAPT</i>, <i>TNFSF12</i>, <i>GZMB</i>, <i>SIRPB1</i>, <i>GNLY</i>, <i>NMB</i>, and <i>C1RL</i>, as promising targets for brain aging. We rediscovered 13 potential drugs with evidence from clinical trials of aging and prioritized several drugs with strong genetic support. Our study provides insights into the genetic basis of brain aging, potentially facilitating drug development for brain aging to extend the health span.",
+      "authors": "[\"Yi Fan\", \"Yuan Jing\", \"Somekh Judith\", \"Peleg Mor\", \"Zhu Yi-Cheng\", \"Jia Zhilong\", \"Wu Fei\", \"Huang Zhengxing\"]",
+      "journal": "Science advances",
+      "publication_date": "2025-03-12",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.780738",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Medical Imaging"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40185700",
+      "title": "Association between sleep and ALS-FTSD: A Prospective Cohort Study based on 396,918 UK biobank participants.",
+      "abstract": "Amyotrophic lateral sclerosis-frontotemporal spectrum disorder (ALS-FTSD) is a fatal neurodegenerative condition, and identifying its modifiable risk factors is a critical public health issue. This large-scale prospective cohort study investigated the role of sleep-related factors in ALS-FTSD risk using data from 396,918 UK Biobank participants. Eight sleep-related exposures were assessed, and Cox proportional hazards regression was employed to evaluate their associations with ALS-FTSD incidence. Subgroup and sensitivity analyses were conducted to validate the robustness of our findings. At baseline, participants had a mean age of 56.31 ± 8.12 years, with 47.5% being male. In the fully adjusted Cox model, organic sleep disorders (G47) (HR: 1.81, 95% CI: 1.21, 2.72, P = 0.004), hypersomnia (G47.1) (HR: 36.53, 95% CI: 9.04, 147.55, P < 0.001), and extreme short sleep (<5 h per day) (HR: 2.09, 95% CI: 1.09, 3.99, P = 0.046) were significantly associated with increased ALS-FTSD risk. In conclusions, these findings revealed the relationship between sleep and the risk of ALS-FTSD, identifying new modifiable risk factors and potential preventive possibilities for ALS-FTSD. Further research is warranted to elucidate the mechanistic links between sleep disturbances and ALS-FTSD pathogenesis.",
+      "authors": "[\"Yang Tianmi\", \"Pang Dejiang\", \"Huang Jingxuan\", \"Xiao Yi\", \"Li Chunyu\", \"Wei Qianqian\", \"Ou Ruwei\", \"Cheng Yangfan\", \"Lin Junyu\", \"Che Ningning\", \"Fu Jiajia\", \"Jiang Qirui\", \"Wang Shichan\", \"Liu Jiyong\", \"Zhang Sirui\", \"Shang Huifang\"]",
+      "journal": "Translational psychiatry",
+      "publication_date": "2025-04-04",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.781322",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": 396918,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38398847",
+      "title": "Associations of Diet with Health Outcomes in the UK Biobank: A Systematic Review.",
+      "abstract": "The UK Biobank is a cohort study that collects data on diet, lifestyle, biomarkers, and health to examine diet-disease associations. Based on the UK Biobank, we reviewed 36 studies on diet and three health conditions: type 2 diabetes (T2DM), cardiovascular disease (CVD), and cancer. Most studies used one-time dietary data instead of repeated 24 h recalls, which may lead to measurement errors and bias in estimating diet-disease associations. We also found that most studies focused on single food groups or macronutrients, while few studies adopted a dietary pattern approach. Several studies consistently showed that eating more red and processed meat led to a higher risk of lung and colorectal cancer. The results suggest that high adherence to \"healthy\" dietary patterns (consuming various food types, with at least three servings/day of whole grain, fruits, and vegetables, and meat and processed meat less than twice a week) slightly lowers the risk of T2DM, CVD, and colorectal cancer. Future research should use multi-omics data and machine learning models to account for the complexity and interactions of dietary components and their effects on disease risk.",
+      "authors": "[\"Navratilova Hana F\", \"Lanham-New Susan\", \"Whetton Anthony D\", \"Geifman Nophar\"]",
+      "journal": "Nutrients",
+      "publication_date": "2024-02-13",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.781865",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39940081",
+      "title": "The association between healthy lifestyle and multimorbidity of non-communicable chronic diseases trajectory: evidence from a perspective study in UK biobank.",
+      "abstract": "Although a few studies have found that healthy lifestyle is linked to a range of non-communicable chronic diseases (NCDs), its association with the onset, progression, and prognosis of multimorbidity of NCDs (MNCDs) has never been studied. A total of 332 444 adults aged 39-73 years who were free of heart disease, stroke, diabetes, and cancer at baseline were selected. Then we used multi-state model to analyze the associations between healthy lifestyle and transition trajectory were analyzed with results expressed as hazard ratio (HR) and 95% confidence interval. A total of 62 994 participants developed first NCDs (FNCDs). After adjustment for potential confounders, healthy lifestyle was negatively associated with the transition trajectory from baseline to FNCD (HR = 0.38), from FNCDs to MNCDs (HR = 0.30), etc. Further, the transition trajectory from FNCDs to MNCDs became more pronounced among the offspring who aged ˂60 (HRFNCDs → MNCDs = 0.29), who never took medicine(HRFNCDs → MNCDs = 0.25). Besides, possessing all five healthy lifestyle factors could extend the life expectancy of MNCD participants. This study suggests that healthy lifestyle is associated with almost all transition phases of MNCDs development and decreases the mortality risk of MNCDs.",
+      "authors": "[\"Wu Jinrong\", \"Jiang Wenbo\", \"Ji Ce\", \"Qiao Conghui\", \"Wei Wei\", \"Wang Yupeng\"]",
+      "journal": "Journal of public health (Oxford, England)",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.782443",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37573024",
+      "title": "Long-term influence of air pollutants on morbidity and all-cause mortality of cardiometabolic multi-morbidity: A cohort analysis of the UK Biobank participants.",
+      "abstract": "The effects of air pollutants on cardiometabolic diseases (CMDs) have been widely explored, whereas their influences on cardiometabolic multi-morbidity (CMM) were not clear. We employed the UK Biobank cohort (N = 317,160) to study the association between six air pollutants (PM<sub>2.5</sub>, PM<sub>10</sub>, PM<sub>2.5-10</sub>, PM<sub>2.5abs</sub>, NO<sub>2</sub>, and NO<sub>x</sub>) and four CMDs including type II diabetes (T2D), coronary artery disease (CAD), stroke and hypertension. CMM was defined as occurrence of two or more of the four diseases. Multi-state Cox models were performed to estimate hazard ratio (HR) and its 95% confidence interval (95%CI). During a median follow-up of 12.8 years, 52,211 participants developed only one CMD, 15,446 further developed CMM, and 16,861 ultimately died. It was demonstrated that per interquartile range increase (IQR) increases in PM<sub>2.5</sub>, PM<sub>10</sub>, PM<sub>2.5-10</sub>, PM<sub>2.5abs</sub>, NO<sub>2</sub>, and NO<sub>x</sub> would increase 12% (9%-15%), 4% (1%-7%), 3% (1%-6%), 7% (4%-10%), 11% (8%-15%) and 10% (7%-13%) higher risk of developing one CMD from health baseline; 7% (2%-12%), 8% (3%-13%), 6% (2%-11%), 10% (5%-15%), 13% (7%-18%) and 10% (5%-15%) greater risk of occurring CMM from one CMD baseline; and 11% (-2%∼26%), 22% (7%-38%), 17% (3%-32%), 31% (16%-49%), 33% (17%-51%) and 32% (17%-50%) larger risk of causing death from CMM baseline, respectively. We revealed that people living in areas with high air pollution suffered from higher hazard of CMD, CMM and all-cause mortality; our findings implied keeping clean air was an effective approach to prevent or mitigate initiation, progression, and death from healthy to CMDs and from CMDs to CMM.",
+      "authors": "[\"Jiang Zhou\", \"Zhang Shuo\", \"Chen Keying\", \"Wu Yuxuan\", \"Zeng Ping\", \"Wang Ting\"]",
+      "journal": "Environmental research",
+      "publication_date": "2023-08-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.783192",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 317160,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39519494",
+      "title": "The Association Between Dietary Vitamin C and Sleep Disorders: A Cohort Study Based on UK Biobank.",
+      "abstract": "<b>Objective:</b> Approximately 30% of adults globally suffer from sleep disorders. However, there are few longitudinal studies on the association between dietary vitamin C and sleep disorders. This study aimed to investigate the association between dietary vitamin C intake and various types of sleep disorders, including sleep apnea and insomnia. <b>Methods:</b> We enrolled 68,221 participants from the UK Biobank. Dietary vitamin C intake was assessed using a 24 h dietary recall questionnaire. We employed a Cox regression model to assess the association between dietary vitamin C and sleep disorders and used restricted cubic spline models to investigate potential nonlinear relationships. Stratified and sensitivity analyses were also conducted to validate the findings. <b>Results:</b> The results indicated that vitamin C intake at the Q4 level (132.88-191.51 mg/d) was significantly associated with a reduced risk of sleep disorders, with an HR (95% CI) of 0.78 (0.65-0.94), and against sleep apnea, with an HR (95% CI) of 0.75 (0.62-0.92). The protective effect persisted significant in stratified analyses of men and those aged ≤ 60 years; the results were consistent in the sensitivity analyses. <b>Conclusions:</b> Our findings suggest that sufficient dietary vitamin C intake may help to prevent sleep disorders.",
+      "authors": "[\"Zhang Qiuge\", \"Qi Xueting\", \"Wang Zhaoguo\", \"Zhang Dongfeng\", \"Wang Tong\"]",
+      "journal": "Nutrients",
+      "publication_date": "2024-10-28",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.783763",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40021682",
+      "title": "Rare genetic associations with human lifespan in UK Biobank are enriched for oncogenic genes.",
+      "abstract": "Human lifespan is shaped by genetic and environmental factors. To enable precision health, understanding how genetic variants influence mortality is essential. We conducted a survival analysis in European ancestry participants of the UK Biobank, using age-at-death (N=35,551) and last-known-age (N=358,282). The associations identified were predominantly driven by cancer. We found lifespan-associated loci (APOE, ZSCAN23) for common variants and six genes where burden of loss-of-function variants were linked to reduced lifespan (TET2, ATM, BRCA2, CKMT1B, BRCA1, ASXL1). Additionally, eight genes with pathogenic missense variants were associated with reduced lifespan (DNMT3A, SF3B1, TET2, PTEN, SOX21, TP53, SRSF2, RLIM). Many of these genes are involved in oncogenic pathways and clonal hematopoiesis. Our findings highlight the importance of understanding genetic factors driving the most prevalent causes of mortality at a population level, highlighting the potential of early genetic testing to identify germline and somatic variants increasing one's susceptibility to cancer and/or early death.",
+      "authors": "[\"Park Junyoung\", \"Peña-Tauber Andrés\", \"Talozzi Lia\", \"Greicius Michael D\", \"Le Guen Yann\"]",
+      "journal": "Nature communications",
+      "publication_date": "2025-02-28",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.784198",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Precision"
+        ],
+        "sample_size": 35551,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39360436",
+      "title": "Associations of metabolic syndrome with cognitive function and dementia risk: Evidence from the UK Biobank cohort.",
+      "abstract": "To investigate the associations of metabolic syndrome (MetS) with cognitive function, dementia and its subtypes. Based on the participants recruited by UK Biobank, this study aims to investigate the associations of MetS with cognitive function, dementia and its subtypes. Generalized estimating equations, Cox proportional risk models, and multiple linear regression models were respectively used to assess associations between MetS and dementia-related outcomes. Among the 363,231 participants, 95,713 had MetS at baseline. The results showed that MetS was significantly associated with cognitive function related to fluid intelligence and prospective memory at follow-up. Among participants aged ≥60 years, MetS was correlated with elevated risk of all-cause dementia, particularly vascular dementia (VaD) [hazard ratio 1.115 (95% confidence interval: 1.047, 1.187), hazard ratio 1.393 (95% confidence interval: 1.233, 1.575), respectively]. With increasing MetS components, the risk of all-cause dementia and VaD tended to be elevated. MetS has also been associated with dementia-related structural changes in the brain, including alterations in overall brain volume, white matter volume, grey matter volume and white matter integrity. MetS was associated with poorer cognitive performance and might increase the risk of all-cause dementia as well as VaD, but the effect on Alzheimer's disease was not significant. Holistic control of the MetS may benefit the prevention and control of cognitive impairment and dementia.",
+      "authors": "[\"Zuo Qianlin\", \"Song Lingling\", \"Gao Xinxin\", \"Cen Manqiu\", \"Fu Xihang\", \"Qin Shifan\", \"Wu Jing\"]",
+      "journal": "Diabetes, obesity & metabolism",
+      "publication_date": "2024-10-03",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.784895",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39405064",
+      "title": "Early-Life Factors and Early-Onset Endometrial Cancer Risk in the UK Biobank.",
+      "abstract": "",
+      "authors": "[\"Peeri Noah C\", \"O'Connell Kelli\", \"Kantor Elizabeth D\", \"Setiawan V Wendy\", \"Guo Xingyi\", \"Lipworth Loren\", \"Du Mengmeng\"]",
+      "journal": "JAMA network open",
+      "publication_date": "2024-10-01",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.784977",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39930511",
+      "title": "Asthma, social isolation and loneliness, and risk of incident osteoarthritis.",
+      "abstract": "Incidence of osteoarthritis (OA) was increased in patients with asthma, while no prospective cohort study has tested the association of asthma with OA, and the modified effect of social isolation and loneliness remains unclear. This prospective cohort study included 448,920 participants without OA at baseline from UK Biobank cohort. The evaluation of asthma was based on diagnosis and self-reported history. The outcome was OA including knee OA, hip OA and hand OA by referring to hospital admission records. Two Cox regression models were constructed to assess the relationship of asthma and risk of OA. With a median of 12.5 years of follow up, a total of 57,573 incident OA were recorded. Compared with participants without asthma, the hazard ratios (HRs) were 1.32 (95% CI: 1.29-1.35) for all OA, 1.21 (95% CI: 1.16-1.25) for knee OA, 1.12 (95% CI: 1.07-1.18) for hip OA and 1.62 (95% CI:1.42-1.85) for hand OA in participants with asthma. In addition, we found that social isolation and loneliness significantly modified the associations of asthma with OA (P-interaction < 0.001). Asthma was a stronger predictor of OA than lifestyle risk factors including smoking, alcohol and healthy diet. In this cohort study of UK Biobank participants, asthma was related to increased risk of OA; such association was more pronounced among those with higher social isolation or loneliness score.",
+      "authors": "[\"Wu Ziyi\", \"Luo Xukun\", \"Dou Pengcheng\", \"Liu Tang\", \"Zhou Jian\"]",
+      "journal": "Arthritis research & therapy",
+      "publication_date": "2025-02-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.785588",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39322770",
+      "title": "Measured and genetically predicted protein levels and cardiovascular diseases in UK Biobank and China Kadoorie Biobank.",
+      "abstract": "Several large-scale studies have measured plasma levels of the proteome in individuals with cardiovascular diseases (CVDs)<sup>1-7</sup>. However, since the majority of such proteins are interrelated<sup>2</sup>, it is difficult for observational studies to distinguish which proteins are likely to be of etiological relevance. Here we evaluate whether plasma levels of 2,919 proteins measured in 52,164 UK Biobank participants are associated with incident myocardial infarction, ischemic stroke or heart failure. Of those proteins, 126 were associated with all three CVD outcomes and 118 were associated with at least one CVD in the China Kadoorie Biobank. Mendelian randomization and colocalization analyses indicated that genetically determined levels of 47 and 18 proteins, respectively, were associated with CVDs, including FGF5, PROCR and FURIN. While the majority of protein-CVD observational associations were noncausal, these three proteins showed evidence to support potential causality and are therefore promising targets for drug treatment for CVD outcomes.",
+      "authors": "[\"Lind Lars\", \"Mazidi Mohsen\", \"Clarke Robert\", \"Bennett Derrick A\", \"Zheng Rui\"]",
+      "journal": "Nature cardiovascular research",
+      "publication_date": "2024-09-25",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.786205",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 52164,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39350213",
+      "title": "Associations of combined accelerated biological aging and genetic susceptibility with incident dementia: a prospective study in the UK Biobank.",
+      "abstract": "Accelerated biological aging has been verified to be a critical risk factor for a number of age-related diseases, but its role in dementia remained unclear. Whether it modified the effects of genetic factors was also unknown. This study evaluated the associations between accelerated biological aging and dementia and the moderating role of accelerated biological aging in the genetic susceptibility to the disease. We included 200,731 participants in the UK biobank. Nine clinical blood biomarkers and chronological age were used to calculate Phenotypic age acceleration (PhenoAgeAccel), which is a novel indicator for accelerated biological aging. The associations of PhenoAgeAccel with dementia, both young-onset and late-onset dementia, were assessed by Cox proportional hazard models. Apolipoprotein E (APOE) alleles and polygenic risk scores (PRS) were used to evaluate the genetic risk of dementia. The interactions between genetic susceptibility and biological aging were tested on both multiplicative and additive scales. These findings showed individuals who were in the highest quartile of PhenoAgeAccel had a higher risk with incidence of dementia compared to individuals in the lowest quartile of PhenoAgeAccel (HR: 1.145 (95% CI: 1.050, 1.249)). Individuals with biologically older had a higher risk of dementia than individuals with biologically younger (HR: 1.069 (95% CI: 1.004, 1.138)). Furthermore, compared to individuals with biologically younger and low APOE ε4-related genetic risk, individuals with biologically younger and high APOE ε4-related genetic risk (HR:3.048 (95% CI: 2.811, 3.305)) had a higher risk of dementia than individuals with biologically older and high APOE ε4-related genetic risk (HR: 2.765 (95% CI: 2.523, 3.029)). Meanwhile, referring to low dementia PRS and biologically younger, the risk of dementia increased by 72.7% (HR: 1.727 (95% CI: 1.538, 1.939) in the biologically younger and high PRS group and 58.7% (HR: 1.587 (95% CI: 1.404, 1.793) in the biologically older and high PRS group, respectively. The negative interactions between PhenoAgeAccel with APOE ε4 and PRS were also tested on the additive scale. Accelerated biological aging could bring the extra risk of dementia but attenuate the effects of genetic risk on dementia. These findings provide insights for precise prevention and intervention of dementia.",
+      "authors": "[\"Ye Zirong\", \"Lang Haoxiang\", \"Xie Zishan\", \"Duan Siyu\", \"Peng Bihao\", \"Chen Xiaochun\", \"Fang Ya\", \"Xin Jiawei\"]",
+      "journal": "BMC medicine",
+      "publication_date": "2024-09-30",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.787466",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40074913",
+      "title": "Nuclear magnetic resonance-based metabolomics and risk of pancreatic cancer: a prospective analysis in the UK Biobank.",
+      "abstract": "Plasma metabolite levels in patients with pancreatic cancer (PC) have changed, but the relationship between the altered plasma metabolites and the risk for PC occurrence is not fully clear, as well as the predictive value of the specific metabolites. In this study, we obtained the metabolomics data of 243,145 people from the UK Biobank. An extreme gradient boosting (XGBoost) model, least absolute shrinkage and selection operator (Lasso) regression, and covariate-adjusted Cox proportional hazard regression models were used to evaluate the relationship between metabolites and PC risk. We also evaluated conventional risks, metabolites, and combination models for PC risk by comparing the area under the receiver operating characteristic curve (AUC). The average follow-up time was 13.8 (± 2.1) years; 1,026 of 243,145 participants developed PC. Fourteen metabolites were significantly associated with PC, including glucose-related metabolites, lipids, lipoproteins, and amino acids. Increased PC risk was associated with citrate, glucose, and the percentage of triglycerides to total lipids in intermediate-density lipoprotein or small low-density lipoprotein. Glycine, histidine, cholesterol, and cholesterol ester subclasses were associated with lower PC risk. Predicting PC risk improved when the newly identified metabolites were added to conventional PC risk factors (AUC: 0.705 vs 0.711, p = 0.037). The Kaplan-Meier cumulative incidence curves showed that these metabolites were good predictors of PC risk (all log-rank p < 0.05). We identified novel metabolites that were significantly associated with the occurrence of PC, which may aid in the early diagnosis of PC.",
+      "authors": "[\"Wu Zelong\", \"Yang Jiayu\", \"Ma Zuyi\", \"Chen Yubin\", \"Han Mingqian\", \"Wu Qianlong\", \"Hou Baohua\", \"Huang Shanzhou\", \"Zhang Chuanzhao\"]",
+      "journal": "Journal of gastroenterology",
+      "publication_date": "2025-03-12",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.788545",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "XGBoost",
+          "Gradient Boosting"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [
+          "AUROC",
+          "Log-rank"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40679991",
+      "title": "Clonal hematopoiesis of indeterminate potential and the risk of breast cancer: a UK Biobank cohort study.",
+      "abstract": "This study aims to investigate the association between clonal hematopoiesis of indeterminate potential (CHIP) and the risk of breast cancer. We analyzed data from the UK Biobank, initially comprised 502 170 participants who met our inclusion criteria. Baseline data on age, body mass index (BMI), alcohol consumption, smoking habits, diet quality scores, physical activity levels, and health status. Whole-exome sequencing data were used to detect CHIP. Logistic regression and Cox proportional hazards (CoxPH) models were employed to assess the association between CHIP and breast cancer risk, adjusting for potential confounders. Additionally, we compared cumulative incident breast cancer cases between CHIP and non-CHIP groups. Univariable analysis showed that CHIP had a higher risk of developing breast cancer (odds ratio [OR] (95% confidence interval [CI]) = 1.200 [1.09-1.31], P = 8.94e-05). This association persisted after adjusting for potential confounders related to lifestyle, inflammation, health status and genetic factors (OR [95% CI] = 1.19 [1.09-1.31], P = 1.77e-04). The correlation remained consistent even after excluding participants with extreme BMI or those diagnosed with breast cancer within 2 or 5 years of follow-up (all OR = 1.18, P < 0.01). Additionally, individuals with CHIP exhibited a significantly higher incidence of breast cancer compared to non-CHIP individuals (Log-Rank P = 5.19e-05). The risk of breast cancer associated with CHIP was predominantly driven by mutations in the gene ATM (OR [95% CI] = 3.97 [2.89-5.36], P = 2.02e-18), and DNMT3A (OR [95% CI] = 1.33 [1.03-1.66], P = 0.014). CHIP is associated with an increased risk of breast cancer, particularly influenced by the ATM and DNMT3A genes.",
+      "authors": "[\"Lai Jiayi\", \"Xi Zhihui\", \"Zhu Dandan\", \"Zhang Qiyu\", \"Yang Yifei\", \"Wang Xin\", \"Xia Baijin\", \"Hou Tieying\", \"Feng Huolun\"]",
+      "journal": "International journal of surgery (London, England)",
+      "publication_date": "2025-06-17",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.789682",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "Logistic Regression"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Log-rank"
+        ],
+        "sample_size": 2,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Genomics/WGS"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38783818",
+      "title": "Long-term changes in frailty and incident type 2 diabetes: A prospective cohort study based on the UK Biobank.",
+      "abstract": "To estimate the association between long-term changes in frailty and the risk of incident type 2 diabetes (T2DM) and to evaluate the effect of preventing the worsening of frailty on the risk of T2DM. We included 348 205 participants free of baseline T2DM and with frailty phenotype (FP) data from the UK Biobank; among them, 36 175 had at least one follow-up assessment. According to their FP score, participants were grouped into nonfrailty, prefrailty and frailty groups. Frailty assessed at baseline and at follow-up was used to derive the trajectory of frailty (ΔFP). Cox regression models were used to estimate hazard ratios (HRs) and 95% confidence intervals (CIs). Compared with those in the nonfrailty group at baseline, the HRs of T2DM for the prefrailty and frailty groups were 1.38 (95% CI 1.33-1.43) and 1.69 (95% CI 1.59-1.79), respectively (both p < 0.001), in the multivariable-adjusted model. During a median follow-up of 5.4 years after the final assessment, data for 472 T2DM patients were recorded. A 1-point increase in the final FP was associated with a 25% (95% CI 1.14-1.38; p < 0.001) increased risk of T2DM. For the trajectory of frailty, each 0.5-point/year increase in ΔFP was associated with a 52% (95% CI 1.18-1.97; p < 0.001) greater risk of T2DM, independent of the FP score at baseline. Compared with those that remained in the nonfrailty group, the greatest risk of T2DM over time was prefrailty aggravation (HR 3.03, 95% CI 2.00-4.58; p < 0.001). Using the frailty index did not materially change the results. Long-term changes in frailty were associated with the risk of incident T2DM, irrespective of baseline frailty status. Preventing the worsening of frailty may reduce T2DM risk.",
+      "authors": "[\"Sun Ying\", \"Li Weihao\", \"Zhou Yinuo\", \"Wang Bin\", \"Tan Xiao\", \"Lu Yingli\", \"Zhu Jingjing\", \"Shi Wentao\", \"Wang Ningjian\"]",
+      "journal": "Diabetes, obesity & metabolism",
+      "publication_date": "2024-05-24",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.790925",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "39972189",
+      "title": "Hot beverage intake and oesophageal cancer in the UK Biobank: prospective cohort study.",
+      "abstract": "Drinking maté, a type of tea consumed at a very hot temperature in South America has been considered as a risk factor for oesophageal squamous cell carcinoma (ESCC). We assessed daily intake and preferred temperature of hot beverages (tea and coffee) in relation to incident ESCC (n = 242) and adenocarcinoma (EAC; n = 710) among 454,796 adults in the UK Biobank. Hazard ratios (HRs) and 95% confidence intervals (CIs) were estimated using multivariable Cox proportional hazards regression. Relative to non-drinkers and warm temperature drinkers (referent group), drinking 4-6 cups/d (HR, 1.97; 95% CI, 1.14-3.38) or more of hot temperature beverages was associated with higher risk of ESCC; HRs increased with increasing daily intake of hot temperature beverages (P-trend < 0.01). ESCC risk was still higher for those who drank very hot beverages; drinking ≤ 4 cups/d was associated with a 2.5-fold higher risk (HR, 2.52; 95% CI, 1.27-5.03), and risk increased with increasing daily intake of very hot temperature beverages (P-trend < 0.01). There was no clear association for EAC. Our findings provide new evidence that drinking hot or very hot beverages is a risk factor for ESCC in the UK where drinking hot tea and coffee is common.",
+      "authors": "[\"Inoue-Choi Maki\", \"Ramirez Yesenia\", \"O'Connell Caitlin\", \"Berrington de Gonzalez Amy\", \"Dawsey Sanford M\", \"Abnet Christian C\", \"Freedman Neal D\", \"Loftfield Erikka\"]",
+      "journal": "British journal of cancer",
+      "publication_date": "2025-02-19",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.791770",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 242,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": "5-fold CV"
+      }
+    },
+    {
+      "pmid": "38836468",
+      "title": "Fracture risk prediction in postmenopausal women with traditional and machine learning models in a nationwide, prospective cohort study in Switzerland with validation in the UK Biobank.",
+      "abstract": "Fracture prediction is essential in managing patients with osteoporosis and is an integral component of many fracture prevention guidelines. We aimed to identify the most relevant clinical fracture risk factors in contemporary populations by training and validating short- and long-term fracture risk prediction models in 2 cohorts. We used traditional and machine learning survival models to predict risks of vertebral, hip, and any fractures on the basis of clinical risk factors, T-scores, and treatment history among participants in a nationwide Swiss Osteoporosis Registry (N = 5944 postmenopausal women, median follow-up of 4.1 yr between January 2015 and October 2022; a total of 1190 fractures during follow-up). The independent validation cohort comprised 5474 postmenopausal women from the UK Biobank with 290 incident fractures during follow-up. Uno's C-index and the time-dependent area under the receiver operating characteristics curve were calculated to evaluate the performance of different machine learning models (Random survival forest and eXtreme Gradient Boosting). In the independent validation set, the C-index was 0.74 [0.58, 0.86] for vertebral fractures, 0.83 [0.7, 0.94] for hip fractures, and 0.63 [0.58, 0.69] for any fractures at year 2, and these values further increased for longer estimations of up to 7 yr. In comparison, the 10-yr fracture probability calculated with FRAX Switzerland was 0.60 [0.55, 0.64] for major osteoporotic fractures and 0.62 [0.49, 0.74] for hip fractures. The most important variables identified with Shapley additive explanations values were age, T-scores, and prior fractures, while number of falls was an important predictor of hip fractures. Performances of both traditional and machine learning models showed similar C-indices. We conclude that fracture risk can be improved by including the lumbar spine T-score, trabecular bone score, numbers of falls and recent fractures, and treatment information has a significant impact on fracture prediction.",
+      "authors": "[\"Lehmann Oliver\", \"Mineeva Olga\", \"Veshchezerova Dinara\", \"Häuselmann HansJörg\", \"Guyer Laura\", \"Reichenbach Stephan\", \"Lehmann Thomas\", \"Demler Olga\", \"Everts-Graber Judith\"]",
+      "journal": "Journal of bone and mineral research : the official journal of the American Society for Bone and Mineral Research",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.793140",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "XGBoost",
+          "Gradient Boosting"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC",
+          "C-index"
+        ],
+        "sample_size": 2,
+        "python_libs": [
+          "SHAP"
+        ],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40081351",
+      "title": "Clinical and Genetic Factors Associated with Neuroendocrine Neoplasms: A UK Biobank Study.",
+      "abstract": "Incidence of neuroendocrine neoplasms (NENs) is rising globally, yet clinical and genetic factors remain poorly understood. Evidence for the role of obesity is conflicted, and studies on prospectively collected data are sparse. We aimed to identify clinical and germline genetic risk factors associated with NEN in the UK Biobank. Cases of NEN were identified in the UK Biobank's cancer registry data (N∼500,000). Using a combination of ICD-O3 codes for cancer site and histology, NEN cases were stratified into neuroendocrine tumour (NET), neuroendocrine carcinoma (NEC), and small/large cell lung cancer (SLCLC). A Cox proportional hazards model was used to test for an association between clinical phenotypes and increased NEN risk, and a gene burden test in Regenie was used to test for causal variants in the exome sequencing data. We identified 704 NET, 340 NEC, and 550 SLCLC cases. Obesity (BMI or waist-hip ratio) and lower cholesterol (LDL, HDL, or total) had a significantly significant association with NEN risk; however, the effect size was marginal. Smoking and HbA1c were associated only with SLCLC. Air pollution was not significantly associated when adjustment was made for socio-economic status. We replicated a known germline association between loss of function variants in MEN-1 and NEC, but did not detect any novel association in exome variants. This is the first large prospective population-based study to identify potential clinical and genetic risk factors for NEN and define a novel phenotype in the UK Biobank. More research is needed to establish whether these relationships are causal. The exome study was underpowered, and future work in this area should focus on meta-analysing multiple large datasets.",
+      "authors": "[\"Green Harry David\", \"El-Asmar Marie Line\", \"Rous Brian\", \"Hawkes Gareth\", \"Moreno-Montilla Maria Trinidad\", \"Thirlwell Christina\", \"Ramage John\"]",
+      "journal": "Neuroendocrinology",
+      "publication_date": "2025-03-13",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:05.794387",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Genomics/WGS"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "41257845",
+      "title": "Elevated triglyceride-glucose index and risk of thymoma-associated myasthenia gravis: a prospective analysis from the UK Biobank.",
+      "abstract": "Thymoma-associated myasthenia gravis (MG) is a clinically significant but uncommon condition, affecting up to half of thymoma patients and associated with worse outcomes than either disease alone. Reliable biomarkers for early risk stratification remain scarce. The triglyceride-glucose (TyG) index and triglyceride-to-high-density lipoprotein cholesterol (TG/HDL-C) ratio are established biomarkers reflecting insulin resistance and dyslipidemia. However, their clinical associations with thymoma-associated MG remain incompletely characterized. A total of 501,954 UK Biobank participants were included. After exclusions, 422,397 (313 cases) were analyzed for TyG index and 422,691 (314 cases) for TG/HDL-C ratio. Exposures were stratified into quartiles, and assessed continuously per unit increase. Cox proportional hazards models estimated hazard ratios (HRs), restricted cubic splines (RCS) assessed non-linear associations, and subgroup analyses were stratified by body mass index (BMI). Sensitivity analyses examined TyG index and MG alone. An elevated TyG index was associated with increased risk of thymoma-associated MG. Compared to Q1, Q4 had higher risk (HR = 1.66, 95% CI: 1.20-2.31, P = 0.003); the overall HR per unit increase was 1.42 (95% CI: 1.17-1.73, P = 0.0005). TG/HDL-C ratio showed similar patterns: Q4 vs Q1 HR = 1.54 (95% CI: 1.11-2.15, P = 0.01); overall HR per unit increase was 1.06 (95% CI: 1.02-1.10, P = 0.002). Non-linear relationships were observed, with suggested inflection points at TyG index 8.7 and TG/HDL-C ratio 2.8, rather than strict thresholds. Subgroup analyses revealed stronger associations in normal-weight and obese participants, although tests for interaction were not statistically significant. Sensitivity analyses confirmed consistent associations between TyG index and MG risk, including for isolated MG. Elevated TyG index and TG/HDL-C ratio were independently associated with higher thymoma-associated MG risk in this large prospective cohort, with evidence of non-linear relationships and BMI-related heterogeneity. These findings provide novel epidemiologic evidence linking metabolic markers of insulin resistance with thymoma-associated MG, but clinical translation requires further validation.",
+      "authors": "[\"Zhu Kangle\", \"Shi Jingwei\", \"Zhao Jingwei\", \"Zhao Yi\", \"Zhang Yao\", \"Zhang Wuji\", \"Wei Mingjun\", \"Zhou Chu\", \"Yang Rusong\", \"Liu Zhengcheng\", \"Liu Zhuo\", \"Shen Zhixiang\"]",
+      "journal": "Cardiovascular diabetology",
+      "publication_date": "2025-11-19",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:08.393739",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40897861",
+      "title": "A phenome-wide association and Mendelian randomization study for suicide attempt within UK Biobank.",
+      "abstract": "Uncertainties persist in the neurological and behavioral risk factors for suicide attempt (SA) due to a lack of data covering multiple phenotypes. Here, the polygenic risk scores (PRSs) for SA samples within the UK Biobank (N = 40,369) were estimated using non-overlapping Psychiatric Genomics Consortium datasets as a reference. A total of 70 PRS-associated phenotypes encompassing discovered and never-reported phenotypes were identified, thereby facilitating applications in SA identification (area under the curve of 84%). Different with the existing observational studies, the causal effects between brain and SA were explored. Mendelian randomization supported a potential causal effect of right hippocampal gray matter volume on SA, whereas SA had a reverse causal effect on the VI cerebellum. After controlling for the effects of psychiatric disorders, the right hippocampus still had an independent causal effect on SA. These findings provide multi-perspective evidence for early understanding and identification of SA and shed new lights for causal inference between brain and SA.",
+      "authors": "[\"Huang Meiyan\", \"Zhang Xiaoling\", \"Chen Xiumei\", \"Zhang Xinyue\", \"Zhao Bingxin\", \"Huang Chao\", \"Tian Ting\", \"Li Chuang\", \"Feng Qianjin\", \"Pan Wenliang\"]",
+      "journal": "Molecular psychiatry",
+      "publication_date": "2025-09-02",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:08.394630",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 40369,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40234895",
+      "title": "Association between systemic inflammation biomarkers and incident cardiovascular disease in 423,701 individuals: evidence from the UK biobank cohort.",
+      "abstract": "The associations between systemic inflammation biomarkers and cardiovascular disease (CVD) remain not well explored. This study aimed to investigate associations between different systemic inflammation biomarkers and incident CVD and main CVD subtypes - ischaemic heart disease (IHD), stroke, and heart failure - explore dose-response relationships, and compare their predictive performance. This prospective cohort study included 423,701 UK Biobank participants free of CVD at baseline. Baseline neutrophil-to-lymphocyte ratio (NLR), lymphocyte-to-monocyte ratio (LMR), platelet-to-lymphocyte ratio (PLR), systemic immune-inflammation index (SII), and system inflammation response index (SIRI) were derived. Cox-proportional regression models were used to investigate the associations. NLR, PLR, SII, and SIRI was positively and LMR was negatively associated with all four of the outcomes investigated. The relationships were non-linear for all biomarkers with CVD and were linear for NLR, SII, and SIRI and non-linear for LMR and PLR with IHD, stroke and heart failure. Compared with the more established biomarkers, all four of the novel biomarkers had statistically superior predictive performance for three of the outcomes investigated (CVD, IHD and heart failure) and three of them were superior at predicting stroke. Compared to a model of CVD prediction with classical risk factors (C-index = 0.702), discrimination was improved on the addition of inflammation markers for CVD (C-index change 0.0069, 95% CI 0.0033 to 0.0107), IHD (C-index change 0.0054, 95% CI 0.0013 to 0.0095), and heart failure (C-index change 0.0153, 95% CI 0.0089 to 0.0218). There were independent and dose-response relationships between the novel systemic inflammation biomarkers and CVD outcomes. Addition of the inflammation biomarkers including novel inflammation biomarkers showed improved discrimination of the traditional risk prediction model. With accumulated evidence, these biomarkers should be considered for inclusion in risk tools and prevention.",
+      "authors": "[\"Qin Pei\", \"Ho Frederick K\", \"Celis-Morales Carlos A\", \"Pell Jill P\"]",
+      "journal": "Cardiovascular diabetology",
+      "publication_date": "2025-04-15",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:08.395857",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "C-index"
+        ],
+        "sample_size": 423701,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40140825",
+      "title": "Cancer incidence inconsistency between UK Biobank participants and the population: a prospective cohort study.",
+      "abstract": "While the UK Biobank has been widely used for cancer research, its representativeness of the population in terms of cancer incidence has not been thoroughly investigated. We conducted a prospective cohort study of 466,163 UK Biobank participants who were cancer-free at recruitment. Standardised incidence ratios (SIRs) were calculated for all cancers combined and for 25 cancers, by comparing incidences for the participants with the UK national incidences. Variations in SIR by age, sex and deprivation measures were investigated. Over a median follow-up period of 12 years, 47,535 participants had a cancer diagnosis. The SIR for all cancers combined was 0.90 (95% CI: 0.89, 0.91). The SIR increased with age and deprivation (P = 10<sup>-9</sup>). The SIRs of 17 cancers differed from 1 (Bonferroni-adjusted P < 0.05): for prostate cancer and melanoma the SIRs were 1.2 and for the other 15 cancers the SIRs ranged from 0.43 to 0.93. The SIRs of 13 cancers differed by deprivation: the greater the deprivation, the lower the SIRs for prostate cancer and melanoma, and the higher the SIRs for the other 11 cancers. The overall cancer incidence was 10% lower for the UK Biobank participants compared with the population, with most cancers having a lower incidence that increased with deprivation. Irrespective of their causes, the inconsistencies could bias UK Biobank research results related to absolute cancer risks, such as the development and/or validation of cancer risk models and penetrance estimates for cancer susceptibility genes.",
+      "authors": "[\"Li Chenxi\", \"Dite Gillian S\", \"Nguyen Tuong L\", \"Hopper John L\", \"Li Shuai\"]",
+      "journal": "BMC medicine",
+      "publication_date": "2025-03-26",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:08.396573",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40403927",
+      "title": "Analgesics use and risk of pancreatitis: Result from the UK Biobank.",
+      "abstract": "Pancreatitis, an inflammatory pancreatic disorder, arises from various etiologies including alcohol, tobacco, and drug use. Although the initiation of pancreatitis has been strongly linked to several medications, the association between analgesic use and pancreatitis risk remains ambiguous in population-based studies. This prospective cohort study involved 324,982 participants from the UK Biobank. Multivariable-adjusted Cox proportional hazards models were conducted to evaluate the longitudinal association between incident pancreatitis risk and analgesics use, encompassing opioids, non-steroidal anti-inflammatory drugs (NSAIDs), paracetamol, antimigraine preparations, and the mix. Subgroup and sensitivity analyses were conducted to assess the potential effects of baseline factors. Over a median follow-up of 13.70 years, 2303 cases of pancreatitis were identified. In the fully adjusted model, analgesics utilization increased the risk of pancreatitis (HR 1.13, 95 % CI 1.04-1.23), acute pancreatitis (AP) (HR 1.11, 95 % CI 1.01-1.22), and chronic pancreatitis (CP) (HR 1.25, 95 % CI 1.00-1.56) (All the above p < 0.05). Furthermore, participants who used opioids presented the highest risk of pancreatitis (HR 1.85, 95 % CI 1.49-2.31, p < 0.001), and the mixed group (HR 1.35, 95 % CI 1.21-1.51, p < 0.001) followed. Compared to the non-analgesics group, the risk of both AP and CP also increased in the opioids and the mixed group. Subgroup analysis indicated that the impact of analgesics utilization on the pancreatitis risk may vary with certain covariates, such as age, cholelithiasis, etc. (p-interaction <0.05). In this large population-based prospective cohort, analgesics utilization, particularly opioids and mixed analgesics, was linked to an increased risk of pancreatitis.",
+      "authors": "[\"Wang Jiayi\", \"Long Wanxin\", \"Qi Zehong\", \"Liao Yangjie\", \"Li Jingbo\"]",
+      "journal": "Clinics and research in hepatology and gastroenterology",
+      "publication_date": "2025-05-20",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:08.397436",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40890428",
+      "title": "Tobacco smoking and the risk of aortic aneurysm in the UK biobank.",
+      "abstract": "Smoking is an established risk factor for aortic aneurysm, however, few studies have investigated the associations with different aortic aneurysm subsites. The aim of this study was to investigate whether different tobacco smoking metrics and smoking cessation was associated with aortic aneurysm and its subsites in the UK Biobank. The analysis included 495,993 participants, aged 37-73 years. Cox proportional hazards models were used to estimate multivariable-adjusted hazard ratios (HRs) and 95% confidence intervals (CIs) for the association between smoking and aortic aneurysm. After 12.3 years of follow-up, 3,353 incident cases and 184 deaths from aortic aneurysm were identified. The HRs (95% CIs) of aortic aneurysm incidence for current and former vs. never smokers were 4.32 (3.93-4.76) and 1.70 (1.56-1.84), respectively, and for ≥ 20 vs. <10 cigarettes per day was 5.67 (4.93-6.52), and similar results were observed for pack-years and duration of smoking. At ≥ 30 years of smoking cessation vs. current smoking risk was substantially reduced (0.23, 0.20-0.27) and comparable to never smoking (0.22, 0.20-0.25). Strong positive HRs were observed for current vs. never smoking and abdominal (8.90, 7.79-10.16), thoracoabdominal (11.64, 4.20-32.25), and unspecified site (2.06, 1.61-2.65), ruptured (10.47, 6.12-17.90) and non-ruptured (4.19, 3.80-4.62) aortic aneurysms, but no association was observed for thoracic aortic aneurysm (1.13, 0.88-1.44). Smoking was strongly associated with increased risk of aortic aneurysm and most subtypes. Smoking cessation for ≥ 30 years strongly reduced risk to levels comparable of never smokers. These findings support public health policies promoting smoking prevention and cessation.",
+      "authors": "[\"Zheng Lili\", \"Baroom Ghaliah\", \"Naqvi Rida E Z\", \"Heath Alicia K\", \"Berlanga-Taylor Antonio\", \"Hibino Makoto\", \"Aune Dagfinn\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2025-09-01",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:08.398186",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40341249",
+      "title": "Sex differences in cancer incidence: prospective analyses in the UK Biobank.",
+      "abstract": "We examined differences in cancer incidence between women and men and the extent to which these persisted after accounting for established risk factors. Prospective analyses in the UK Biobank to examine associations between sex and risk of 15 cancers (and 13 subtypes) using minimal and multivariable-adjusted Cox proportional hazards regression models. Multivariable models were stratified for age, deprivation index, and region, and adjusted for ethnicity, qualifications, height, BMI, smoking status, alcohol, and site-specific risk factors. During 10.5 (SD 2.2) years of follow-up, 32,315 incident cancers across 15 anatomical sites (58.1% in women) were identified in 470,771 individuals (53.8% women). Some differences in cancer risk between the sexes attenuated to the null in the multivariable-adjusted models, but men remained at greater risk than women for cancers at eight sites: oesophageal adenocarcinoma (hazard ratio 5.45; 95% confidence interval, 4.18-7.12), gastric cardia (3.65; 2.48-5.38), bladder (3.47; 2.85-4.24), oral cavity (2.06; 1.69-2.51), liver (1.91; 1.48-2.47), kidney (1.77; 1.51-2.09), rectum (1.70; 1.47-1.96), and leukaemia (1.43; 1.21-1.69). Men had lower risks for cancers of the breast, thyroid (0.36; 0.26-0.49), anus (0.41; 0.26-0.64), and lung adenocarcinoma (0.72; 0.62-0.84). Further research on these sex differences in risk may provide insights into cancer aetiology.",
+      "authors": "[\"Khan Maira\", \"Papier Keren\", \"Pirie Kirstin L\", \"Key Tim J\", \"Atkins Joshua\", \"Travis Ruth C\"]",
+      "journal": "British journal of cancer",
+      "publication_date": "2025-05-08",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:08.398908",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 470771,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38839194",
+      "title": "Waist-to-height ratio and body fat percentage as risk factors for ischemic cardiovascular disease: a prospective cohort study from UK Biobank.",
+      "abstract": "The independent effect of waist-to-height ratio (WHtR) and body fat percentage (BF%) on ischemic cardiovascular disease (CVD) remains uncertain. This study aimed to investigate the independent associations of WHtR and BF% with ischemic CVD. This prospective cohort study used data from the UK Biobank. BF% was calculated as fat mass divided by body weight, measured by bioimpedance. Cox models estimated hazard ratios (HRs) with 95% confidence intervals (CIs) for overall and sex-specific associations of BF% and WHtR with risks of ischemic CVD and its main subtypes [myocardial infarction (MI) and ischemic stroke (IS)], adjusted for a range of potential confounders, including mutual adjustment for BF% and WHtR. In total, 468,333 participants without existing CVD were included in the analysis. During 12 y of follow-up, 20,151 ischemic CVD events, 13,604 MIs, and 6681 ISs were recorded. WHtR was linearly associated with ischemic CVD, MI, and IS, with an HR per 5% increase of 1.23 (95% CI: 1.20, 1.25), 1.24 (95% CI: 1.21, 1.27), and 1.22 (95% CI: 1.18, 1.26), respectively, independent of BF%. A stronger association between WHtR and MI was seen in females than in males. The association of BF% with these outcomes was substantially attenuated in both sexes after adjustment for WHtR. For example, in females, the HR (highest compared with lowest fifth) was reduced from 1.94 (95% CI: 1.76, 2.15) to 1.04 (95% CI: 0.90, 1.01) for ischemic CVD, from 2.04 (95% CI: 1.79, 2.32) to 0.97 (95% CI: 0.81, 1.16) for MI, and from 1.81 (95% CI: 1.54, 2.13) to 1.07 (95% CI: 0.85, 1.33) for IS. WHtR, when used as a proxy measure for central obesity, is linearly associated with ischemic CVD in both sexes, which is independent of BF%. In contrast, the relationship of BF% with these health outcomes is predominantly driven by its correlation with WHtR.",
+      "authors": "[\"Feng Qi\", \"Bešević Jelena\", \"Conroy Megan\", \"Omiyale Wemimo\", \"Woodward Mark\", \"Lacey Ben\", \"Allen Naomi\"]",
+      "journal": "The American journal of clinical nutrition",
+      "publication_date": "2024-05-09",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:08.399729",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40713554",
+      "title": "Composite dietary antioxidant index and lung cancer risk: insights from the UK biobank.",
+      "abstract": "Previous studies provided inconsistent results on the effects of antioxidant intake on lung cancer prevention. This study aimed to investigate the association between the composite dietary antioxidant index (CDAI), which calculated the dietary intake of manganese, selenium, zinc, vitamins A, C and E, and the risk of lung cancer. Using prospective data from the UK Biobank, this study employed Cox proportional hazards regression models to evaluate the relationship between CDAI and lung cancer risk, and restricted cubic spline analyses were used to explore potential nonlinear associations. Multiplicative and additive interaction analyses were conducted to assess the joint effects of CDAI and smoking status on lung cancer risk. Among 201,316 participants over a median follow-up of 11.8 years, 1,229 new cases of lung cancer were identified. Multivariate analysis showed that participants in the highest quartile of CDAI had a significantly lower risk of lung cancer (HR: 0.70; 95% CI: 0.57-0.86; P < 0.001), compared with those in the lowest quartile. An interaction effect between CDAI and smoking status was noted (P = 0.001). Among former smokers, the hazard ratio was 4.58 (95% CI: 3.36-6.25; P = 8.42 × 10⁻<sup>22</sup>) in the lowest CDAI quartile and decreased to 2.60 (95% CI: 1.83-3.70; P = 1.10 × 10⁻⁷) in the highest quartile, compared to never smokers in the lowest CDAI quartile. This study revealed a significant link between increased dietary antioxidant intake and a reduced risk of lung cancer, particularly in former smokers.",
+      "authors": "[\"Feng Yi\", \"Fu Xiuxia\", \"Cheng Bo\", \"Chen Peiling\", \"Wang Zixun\", \"He Juan\", \"Zheng Xiangyuan\", \"Wu Xinyi\", \"Bi Xin\", \"Dong Minyu\", \"He Jianxing\", \"Liang Wenhua\"]",
+      "journal": "BMC public health",
+      "publication_date": "2025-07-26",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:08.400445",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40972583",
+      "title": "Streamlining large-scale genomic data management: Insights from the UK Biobank whole-genome sequencing data.",
+      "abstract": "Biobank-scale whole-genome sequencing (WGS) studies are increasingly pivotal in unraveling the genetic bases of diverse health outcomes. However, managing and analyzing these datasets' sheer volume and complexity presents significant challenges. We highlight the annotated genomic data structure (aGDS) format, substantially reducing the WGS data file size while enabling seamless integration of genomic and functional information for comprehensive WGS analyses. The aGDS format yielded 23 chromosome-specific files for the UK Biobank 500k WGS dataset, occupying only 1.10 tebibytes of storage. We develop the vcf2agds toolkit that streamlines the conversion of WGS data from VCF to aGDS format. Additionally, the STAARpipeline equipped with the aGDS files enabled scalable, comprehensive, and functionally informed WGS analysis, facilitating the detection of common and rare coding and noncoding phenotype-genotype associations. Overall, the vcf2agds toolkit and STAARpipeline provide a streamlined solution that facilitates efficient data management and analysis of biobank-scale WGS data across hundreds of thousands of samples.",
+      "authors": "[\"Li Xihao\", \"Wood Andrew R\", \"Yuan Yuxin\", \"Zhang Manrui\", \"Huang Yushu\", \"Hawkes Gareth\", \"Beaumont Robin N\", \"Weedon Michael N\", \"Li Wenyuan\", \"Li Xiaoyu\", \"Lin Xihong\", \"Li Zilin\"]",
+      "journal": "Cell genomics",
+      "publication_date": "2025-09-18",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "UK Biobank AND 因果推断 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T03:34:08.400960",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Genomics/WGS"
+        ],
+        "validation_method": null
+      }
+    }
+  ]
+}

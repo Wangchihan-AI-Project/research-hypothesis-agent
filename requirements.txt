@@ -1,0 +1,46 @@
+anthropic>=0.18.0
+sqlalchemy>=2.0.0
+biopython>=1.83
+pyyaml>=6.0
+python-dotenv>=1.0.0
+rich>=13.0.0
+questionary>=2.0.0
+pandas>=2.0.0
+requests>=2.31.0
+pyjson5>=1.6.5
+beautifulsoup4>=4.12.0
+pdfplumber>=0.10.0
+scholarly>=1.7.0
+pymupdf>=1.23.0
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+streamlit>=1.28.0
+# 知识图谱可视化
+pyvis>=0.3.2
+streamlit-agraph>=0.0.6
+# ==================== V6.1 新增依赖 (配置管理层重构) ====================
+# Pydantic 强校验防线
+pydantic>=2.5.0
+
+# ==================== V6.0 新增依赖 ====================
+# Celery 异步任务队列
+celery>=5.3.0
+redis>=4.5.0
+
+# 异步 HTTP 客户端
+aiohttp>=3.8.0
+
+# XML 解析（ArXiv API）
+lxml>=4.9.0
+
+# ==================== V6.1 新增依赖 ====================
+# RDKit 化学信息学（SMILES 验证）
+# 注意：RDKit 需要通过 conda 安装：conda install -c conda-forge rdkit
+# pip 安装可能不稳定，推荐使用 conda
+# rdkit>=2023.03
+
+# 向量嵌入模型（已在上方列出）
+# sentence-transformers>=2.2.0
+
+# 科学计算辅助
+scipy>=1.10.0

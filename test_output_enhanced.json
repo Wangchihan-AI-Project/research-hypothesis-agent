@@ -1,0 +1,217 @@
+{
+  "implementation_roadmap": {
+    "phases": [
+      {
+        "phase": "Phase 1: 实验实施",
+        "duration": "1-3个月",
+        "milestones": [
+          "完成实验",
+          "数据收集"
+        ],
+        "deliverables": [
+          "实验数据"
+        ]
+      },
+      {
+        "phase": "Phase 2: 结果分析",
+        "duration": "1-2个月",
+        "milestones": [
+          "数据分析",
+          "论文撰写"
+        ],
+        "deliverables": [
+          "分析报告",
+          "论文"
+        ]
+      }
+    ],
+    "resources": {
+      "personnel": {
+        "PI": "1人，10%时间投入",
+        "研究生": "1人"
+      },
+      "equipment": {
+        "core_facility": [],
+        "shared_instruments": [],
+        "software": [
+          "统计分析软件 (R/Python)",
+          "数据可视化工具",
+          "版本控制系统 (Git)"
+        ]
+      },
+      "data": {
+        "sample_size": {
+          "description": "建议样本量",
+          "note": "需根据功效分析 (Power Analysis) 确定"
+        },
+        "data_sources": [
+          "根据研究设计确定"
+        ],
+        "storage": {
+          "description": "数据存储需求",
+          "estimated": "根据实际数据量确定，建议预留 1TB 起始空间"
+        }
+      }
+    },
+    "timeline": {
+      "total_duration": "3-6个月",
+      "phase_breakdown": "1-3月 + 1-2月",
+      "critical_path": "实验 -> 分析",
+      "buffer_time": "建议预留 10% 缓冲时间"
+    },
+    "risks": [
+      {
+        "category": "技术风险",
+        "description": "实验技术可能无法达到预期效果",
+        "mitigation": "在正式实验前进行小规模预实验验证",
+        "severity": "medium"
+      },
+      {
+        "category": "数据风险",
+        "description": "数据质量或样本量可能不足",
+        "mitigation": "制定严格的质量控制标准，进行中期功效分析",
+        "severity": "high"
+      },
+      {
+        "category": "时间风险",
+        "description": "实验周期可能延长",
+        "mitigation": "设置里程碑检查点，及时调整计划",
+        "severity": "medium"
+      },
+      {
+        "category": "伦理风险",
+        "description": "涉及人体样本需伦理批准",
+        "mitigation": "提前准备伦理申请材料，预留审批时间",
+        "severity": "high"
+      }
+    ],
+    "budget": {
+      "estimated_total": "6 万元",
+      "note": "此为粗略估算，实际预算需根据具体情况调整",
+      "breakdown": {
+        "人力成本": "4 万元",
+        "设备使用": "1 万元",
+        "材料消耗": "1 万元",
+        "其他费用": "0 万元"
+      }
+    },
+    "feasibility_notes": [
+      "[优秀] 综合适应度评分较高，假设具有较强的科学可行性",
+      "[方法论] 假设已包含详细的方法论设计，包括技术保障、验证协议和偏倚控制"
+    ]
+  },
+  "innovation_analysis": {
+    "core_innovations": [
+      {
+        "type": "数据泄露防御",
+        "description": "实施了严格的数据隔离策略，强制所有基于数据分布的统计量计算仅限于训练集",
+        "source": "红蓝对抗补丁"
+      },
+      {
+        "type": "因果推断框架",
+        "description": "引入因果推断框架，通过构建 DAG 显式建模变量间的因果关系",
+        "source": "红蓝对抗补丁"
+      }
+    ],
+    "novelty_level": "breakthrough",
+    "differentiation": [
+      "vs. 现有研究: 实施了严格的数据隔离策略，强制所有基于数据分布的统计量计算仅限于训练集",
+      "vs. 现有研究: 引入因果推断框架，通过构建 DAG 显式建模变量间的因果关系",
+      "验证协议差异: 采用 Nested Cross-Validation（嵌套交叉验证）策略...",
+      "偏倚控制差异: 构建基于领域知识的因果图（DAG）..."
+    ],
+    "breakthrough_potential": {
+      "level": "high",
+      "description": "具有成为领域突破性研究的潜力",
+      "factors": [
+        "向量新颖度: 9.90",
+        "相似度位置: {similarity:.2f}",
+        "方法论严谨性: 7.50"
+      ]
+    },
+    "vector_analysis": {
+      "score": 9.9,
+      "interpretation": "极高新颖性 - 向量空间中与现有研究距离远",
+      "similarity": 0.51,
+      "similarity_interpretation": "创新甜点区（恰到好处的创新度）"
+    },
+    "methodology_analysis": {
+      "rigor_score": 3.0,
+      "has_technical_safeguards": true,
+      "has_validation_protocol": true,
+      "has_bias_control": true,
+      "patch_count": 2,
+      "summary": "应用了 2 个方法论补丁，涵盖数据泄露防控、因果推断等多个方面"
+    },
+    "summary": "本研究的创新性属于【突破性】创新。\n\n核心创新点包括：\n1. 数据泄露防御: 实施了严格的数据隔离策略，强制所有基于数据分布的统计量计算仅限于训练集...\n2. 因果推断框架: 引入因果推断框架，通过构建 DAG 显式建模变量间的因果关系...\n\n向量新颖度评分为 9.90/10，极高新颖性 - 向量空间中与现有研究距离远。"
+  },
+  "frontier_analysis": {
+    "frontier_position": "前沿并跑 - 与国际先进水平同步",
+    "key_publications": [
+      {
+        "type": "direct_support",
+        "content": "检索到 2 篇直接相关文献，为研究提供基础支持",
+        "pmids": [
+          "24762253",
+          "31826347"
+        ]
+      },
+      {
+        "type": "key_reference",
+        "content": "PMID: 24762253 - 作为关键参考文献引用",
+        "pmids": [
+          "24762253"
+        ]
+      },
+      {
+        "type": "key_reference",
+        "content": "PMID: 31826347 - 作为关键参考文献引用",
+        "pmids": [
+          "31826347"
+        ]
+      }
+    ],
+    "research_trends": [
+      "多组学数据整合成为主流研究范式",
+      "人工智能辅助研究设计快速增长",
+      "因果推断方法在临床研究中广泛应用",
+      "心血管疾病精准医学快速发展",
+      "心脏再生医学取得突破进展"
+    ],
+    "gap_analysis": [
+      "现有研究缺乏严格的因果推断框架",
+      "本假设针对的研究问题尚未被充分探索"
+    ],
+    "leading_groups": [
+      {
+        "type": "note",
+        "content": "建议从检索到的文献中分析主要贡献机构和作者",
+        "action": "使用文献计量学工具分析"
+      }
+    ],
+    "timeline": [
+      {
+        "period": "2018-2020",
+        "stage": "基础研究积累",
+        "description": "相关领域基础理论和方法的建立"
+      },
+      {
+        "period": "2021-2023",
+        "stage": "技术方法突破",
+        "description": "关键技术（如单细胞测序、AI分析）的成熟应用"
+      },
+      {
+        "period": "2024-2025",
+        "stage": "当前研究前沿",
+        "description": "本假设所处的前沿位置"
+      },
+      {
+        "period": "2026+",
+        "stage": "未来发展方向",
+        "description": "预测的研究演进方向"
+      }
+    ],
+    "citation_velocity": "normal",
+    "year_trend": "2025年最新趋势 - 基于当前最新研究进展"
+  }
+}

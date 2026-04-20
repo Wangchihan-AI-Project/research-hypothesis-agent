@@ -1,0 +1,98 @@
+{
+  "experiment_id": "exp_20260414_033405_8c95977c",
+  "start_time": "2026-04-14T03:34:05.758257",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "工具变量 AND 阿尔茨海默病",
+  "search_params": {
+    "max_results": 20,
+    "date_range": [
+      2023,
+      2026
+    ],
+    "min_if": 0,
+    "relevance_threshold": 7.0,
+    "cutoff_date": "2026-04-14"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-14T03:34:10.984673",
+      "path": "data\\snapshots\\data_snapshot_20260414_033410.json",
+      "record_count": 14
+    },
+    {
+      "timestamp": "2026-04-14T03:41:04.713067",
+      "path": "data\\snapshots\\data_snapshot_20260414_034104.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T03:43:14.320733",
+      "path": "data\\snapshots\\data_snapshot_20260414_034314.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T03:46:42.686831",
+      "path": "data\\snapshots\\data_snapshot_20260414_034642.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T03:49:03.410943",
+      "path": "data\\snapshots\\data_snapshot_20260414_034903.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T03:51:20.660811",
+      "path": "data\\snapshots\\data_snapshot_20260414_035120.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T03:53:39.159624",
+      "path": "data\\snapshots\\data_snapshot_20260414_035339.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T03:55:56.217322",
+      "path": "data\\snapshots\\data_snapshot_20260414_035556.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T03:58:25.938360",
+      "path": "data\\snapshots\\data_snapshot_20260414_035825.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T04:00:51.520403",
+      "path": "data\\snapshots\\data_snapshot_20260414_040051.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T04:03:32.657033",
+      "path": "data\\snapshots\\data_snapshot_20260414_040332.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T04:05:58.623355",
+      "path": "data\\snapshots\\data_snapshot_20260414_040558.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T04:08:11.949332",
+      "path": "data\\snapshots\\data_snapshot_20260414_040811.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T04:10:14.407316",
+      "path": "data\\snapshots\\data_snapshot_20260414_041014.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T09:22:53.933089",
+      "path": "data\\snapshots\\data_snapshot_20260414_092253.json",
+      "record_count": 50
+    }
+  ]
+}

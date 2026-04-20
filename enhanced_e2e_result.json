@@ -1,0 +1,156 @@
+{
+  "task_id": "9708f50b-cc1e-4401-9edb-2e890dbe7230",
+  "state": "success",
+  "ready": true,
+  "successful": true,
+  "result": {
+    "task_id": "9708f50b-cc1e-4401-9edb-2e890dbe7230",
+    "state": "failure",
+    "result_type": "phoenix_failure",
+    "payload": {
+      "failure_state": "MAX_PHOENIX_EXCEEDED",
+      "iterations": 9,
+      "score_history": [
+        8.779520034790039,
+        5.699999999999999,
+        5.699999999999999,
+        5.699999999999999
+      ],
+      "version_chain": [
+        {
+          "version": "v1.0",
+          "type": "initial",
+          "type_display": "初始版本",
+          "created_at": "2026-04-20T01:44:12.467396",
+          "science_score": 8.779520034790039,
+          "fitness_score": 8.779520034790039,
+          "defense_passed": false,
+          "rewrite_log": [],
+          "iteration": 1,
+          "red_attack_types": [],
+          "patch_applied": false
+        },
+        {
+          "version": "v1.1",
+          "type": "methodology_patch",
+          "type_display": "方法论补丁",
+          "created_at": "2026-04-20T01:44:53.074500",
+          "science_score": 0.0,
+          "fitness_score": 0.0,
+          "defense_passed": false,
+          "rewrite_log": [],
+          "iteration": 5,
+          "red_attack_types": [
+            "UNKNOWN",
+            "UNKNOWN",
+            "UNKNOWN"
+          ],
+          "patch_applied": true
+        }
+      ],
+      "reason": ""
+    },
+    "error": null,
+    "traceback": null,
+    "start_time": "2026-04-20T01:44:02.805668",
+    "end_time": "2026-04-20T01:45:21.880695",
+    "duration": 79.075027,
+    "api_calls_used": 0,
+    "tokens_used": 0,
+    "progress": null,
+    "progress_message": null,
+    "phoenix_protocol": {
+      "total_iterations": 9,
+      "rewrite_attempts": 0,
+      "patch_attempts": 1,
+      "score_evolution": [
+        8.779520034790039,
+        5.699999999999999,
+        5.699999999999999,
+        5.699999999999999
+      ],
+      "version_chain": [],
+      "transition_history": [
+        {
+          "from": "INITIAL",
+          "trigger": "HYPOTHESIS_READY",
+          "to": "HYPOTHESIS_GEN",
+          "iteration": 1,
+          "timestamp": "2026-04-20T01:44:12.467521"
+        },
+        {
+          "from": "HYPOTHESIS_GEN",
+          "trigger": "RED_ATTACK_START",
+          "to": "RED_ATTACK",
+          "iteration": 2,
+          "timestamp": "2026-04-20T01:44:33.873438"
+        },
+        {
+          "from": "RED_ATTACK",
+          "trigger": "BLUE_DEFENSE_START",
+          "to": "BLUE_DEFENSE",
+          "iteration": 3,
+          "timestamp": "2026-04-20T01:44:44.883048"
+        },
+        {
+          "from": "BLUE_DEFENSE",
+          "trigger": "BLUE_DEFENSE_FAILURE",
+          "to": "PHOENIX_PATCH",
+          "iteration": 4,
+          "timestamp": "2026-04-20T01:44:45.849819"
+        },
+        {
+          "from": "PHOENIX_PATCH",
+          "trigger": "PATCH_APPLIED",
+          "to": "PHOENIX_RETRY",
+          "iteration": 5,
+          "timestamp": "2026-04-20T01:44:53.074809"
+        },
+        {
+          "from": "PHOENIX_RETRY",
+          "trigger": "MAX_ITERATIONS_EXCEEDED",
+          "to": "MAX_PHOENIX_EXCEEDED",
+          "iteration": 9,
+          "timestamp": "2026-04-20T01:45:21.877993"
+        }
+      ],
+      "final_state": "MAX_PHOENIX_EXCEEDED",
+      "success": false
+    },
+    "version_evolution": {
+      "chain": [
+        {
+          "version": "v1.0",
+          "type": "initial",
+          "type_display": "初始版本",
+          "created_at": "2026-04-20T01:44:12.467396",
+          "science_score": 8.779520034790039,
+          "fitness_score": 8.779520034790039,
+          "defense_passed": false,
+          "rewrite_log": [],
+          "iteration": 1,
+          "red_attack_types": [],
+          "patch_applied": false
+        },
+        {
+          "version": "v1.1",
+          "type": "methodology_patch",
+          "type_display": "方法论补丁",
+          "created_at": "2026-04-20T01:44:53.074500",
+          "science_score": 0.0,
+          "fitness_score": 0.0,
+          "defense_passed": false,
+          "rewrite_log": [],
+          "iteration": 5,
+          "red_attack_types": [
+            "UNKNOWN",
+            "UNKNOWN",
+            "UNKNOWN"
+          ],
+          "patch_applied": true
+        }
+      ]
+    },
+    "promise_score": null
+  }
+}

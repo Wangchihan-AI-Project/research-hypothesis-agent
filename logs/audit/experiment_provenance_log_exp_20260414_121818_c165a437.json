@@ -1,0 +1,28 @@
+{
+  "experiment_id": "exp_20260414_121818_c165a437",
+  "start_time": "2026-04-14T12:18:18.129436",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "基于 UK Biobank 多组学，构建疾病因果调控网络假设",
+  "search_params": {
+    "max_results": 100,
+    "date_range": [
+      2023,
+      2026
+    ],
+    "min_if": 5.0,
+    "relevance_threshold": 7.0,
+    "cutoff_date": "2026-04-14"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-14T12:18:29.258840",
+      "path": "data\\snapshots\\data_snapshot_20260414_121829.json",
+      "record_count": 50
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "experiment_id": "exp_20260413_013305_a0603e16",
+  "start_time": "2026-04-13T01:33:05.651172",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "结合空间多组学 (Spatial Multi-omics) 与非平衡热力学模型 (Non-equilibrium Thermodynamics)，重构心力衰竭早期的细胞通讯代谢重编程轨迹。",
+  "search_params": {
+    "max_results": 100,
+    "date_range": [
+      2023,
+      2025
+    ],
+    "min_if": 10.0,
+    "cutoff_date": "2026-04-13"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-13T01:33:21.777626",
+      "path": "data\\snapshots\\data_snapshot_20260413_013321.json",
+      "record_count": 68
+    }
+  ]
+}

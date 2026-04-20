@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-11T22:58:06.850964",
+  "cutoff_date": "2026-04-11",
+  "metadata": {
+    "query": "机器学习",
+    "date_range": "3"
+  },
+  "record_count": 139,
+  "papers": [
+    {
+      "pmid": "39878527",
+      "title": "Zebrafish optic nerve regeneration involves resident and retinal oligodendrocytes.",
+      "abstract": "JOURNAL/nrgr/04.03/01300535-202602000-00049/figure1/v/2025-05-05T160104Z/r/image-tiff The visual system of teleost fish grows continuously, which is a useful model for studying regeneration of the central nervous system. Glial cells are key for this process, but their contribution is still not well defined. We followed oligodendrocytes in the visual system of adult zebrafish during regeneration of the optic nerve at 6, 24, and 72 hours post-lesion and at 7 and 14 days post-lesion via the sox10:tagRFP transgenic line and confocal microscopy. To understand the changes that these oligodendrocytes undergo during regeneration, we used Sox2 immunohistochemistry, a stem cell marker involved in oligodendrocyte differentiation. We also used the Click-iT™ Plus TUNEL assay to study cell death and a BrdU assay to determine cell proliferation. Before optic nerve crush, sox10:tagRFP oligodendrocytes are located in the retina, in the optic nerve head, and through all the entire optic nerve. Sox2-positive cells are present in the peripheral germinal zone, the mature retina, and the optic nerve. After optic nerve crush, sox10:tagRFP cells disappeared from the optic nerve crush zone, suggesting that they died, although they were not TUNEL positive. Concomitantly, the number of Sox2-positive cells increased around the crushed area, the optic nerve head, and the retina. Then, between 24 hours post-lesion and 14 days post-lesion, double sox10:tagRFP /Sox2-positive cells were detected in the retina, optic nerve head, and whole optic nerve, together with a proliferation response at 72 hours post-lesion. Our results confirm that a degenerating process may occur prior to regeneration. First, sox10:tagRFP oligodendrocytes that surround the degenerated axons stop wrapping them, change their \"myelinating oligodendrocyte\" morphology to a \"nonmyelinating oligodendrocyte\" morphology, and die. Then, residual oligodendrocyte progenitor cells in the optic nerve and retina proliferate and differentiate for the purpose of remyelination. As new axons arise from the surviving retinal ganglion cells, new sox10:tagRFP oligodendrocytes arise from residual oligodendrocyte progenitor cells to guide, nourish and myelinate them. Thus, oligodendrocytes play an active role in zebrafish axon regeneration and remyelination.",
+      "authors": "[\"Pérez-Montes Cristina\", \"Hernández-García Rosalía\", \"Jiménez-Cubides Jhoana Paola\", \"DeOliveira-Mello Laura\", \"Velasco Almudena\", \"Arévalo Rosario\", \"García-Macia Marina\", \"Santos-Ledo Adrián\"]",
+      "journal": "Neural regeneration research",
+      "publication_date": "2024-10-22",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习 AND (\"2024\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": 

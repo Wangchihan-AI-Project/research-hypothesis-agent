@@ -1,0 +1,1279 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-14T03:41:04.710278",
+  "cutoff_date": "2026-04-14",
+  "metadata": {
+    "query": "多组学 AND 贝叶斯",
+    "date_range": "(2023, 2026)"
+  },
+  "record_count": 50,
+  "papers": [
+    {
+      "pmid": "41942730",
+      "title": "Physical activity among children and young people with chronic kidney diseases: a scoping review.",
+      "abstract": "Promoting physical activity is a global initiative. However, published systematic syntheses regarding physical activity among children and young people with chronic kidney disease (CKD) are limited. The aim of this review was to determine the evidence relating to physical activity among children and young people with CKD and identify research gaps. A comprehensive search across seven databases was conducted, and two reviewers screened and synthesised the data. Fifty-seven primary studies were included. Most studies were observational, conducted in Europe and North America, and focused on kidney transplant recipients. Physical activity levels measured by various parameters, tools, and reporting methods showed children with CKD had a lower or similar percentage of physical activity participation, intensity, frequency, duration, and overall activeness compared with healthy controls. Associations between physical activity and sex, age, CKD stages, and outcomes varied in size, direction, and strength among studies. No prospective longitudinal studies have examined the associations between physical activity and CKD progression. Nor did any explicitly describe children's/carer's experience of engaging in physical activity, although five qualitative studies reported impacts and adaptations in children with different CKD stages. Most interventions described were short-term (<6 months) home-based exercise training programmes incorporating endurance, resistance, or flexibility elements. In conclusion, evidence on physical activity in children with CKD is predominantly quantitative, cross-sectional, relying on self-reported data, and focusing primarily on adolescents and kidney transplant recipients. Further research should establish more precise physical activity estimates using validated, standardised measures across CKD stages and diverse populations.",
+      "authors": "[\"Zhao Rui\", \"Yu Minghui\", \"Coward Richard J M\", \"Townsend Nick\", \"Plumb Lucy\"]",
+      "journal": "Pediatric nephrology (Berlin, Germany)",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.341261",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942685",
+      "title": "Life Cycle and Circadian Rhythms in Central Resident Immunity and Neuropsychiatric Pathology.",
+      "abstract": "The central resident immune system, commonly known as the glial system, comprises various glial cells that play a critical role in neuropsychiatric disorders. However, a systematic review exploring the relationships between the life cycles and daily rhythms of these immune cells and the pathological features of neuropsychiatric disorders is lacking. These immune cells exhibit unique developmental origins and circadian characteristics, resulting in rhythmic variations in functions such as phagocytosis, immune clearance, neurogenesis, and neurotransmitter recycling. These properties are crucial for understanding the pathological mechanisms underlying developmental disorders like major depressive disorder, autism spectrum disorder, and schizophrenia, as well as age-related conditions such as Alzheimer's and Parkinson's diseases. The daily rhythms of these immune cells correlate with diurnal variations in emotion, cognition, and motor function, involving shared processes like oxidative stress and neuroinflammation. This article systematically reviews the composition, life cycle changes, and circadian characteristics of central immune cells, highlighting their roles in neuropsychiatric diseases.",
+      "authors": "[\"Lim Zhixin\", \"Nguyen Ha Linh\", \"Zeng Yuanyuan\", \"Qu Qigngyue\", \"Le Yan\", \"Sun Ming\", \"Wang Xiaoyu\", \"Zhu Hong\", \"Qian Yuchen\", \"Saeed Saboor\", \"Wang Huaizhi\", \"Rong Dazhong\", \"Wang Yueming\", \"Zhang Xuhong\", \"Hu Shaohua\"]",
+      "journal": "Neuroscience bulletin",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.341785",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942635",
+      "title": "Primary biliary cirrhosis and rheumatoid arthritis: a comprehensive study combining genetics and transcriptomics.",
+      "abstract": "Observational investigations have discerned a correlation between primary biliary cirrhosis (PBC) and rheumatoid arthritis (RA). The primary objective of this study is to elucidate the disease risk correlation between them in terms of genetics, and to explore the genes and signaling pathways involved. We acquired genome-wide association studies (GWAS) summary data for PBC and RA from distinct repositories: PBC data sourced from the IEU OpenGWAS database, and RA data obtained from the Finnish consortium. Employing a bidirectional two-sample Mendelian randomization (MR) approach, we scrutinized the disease risk correlation of PBC and RA. Subsequent to this analysis, we conducted a series of meticulous sensitivity assessments to gauge the robustness of our MR findings. These evaluations encompassed analyses for heterogeneity and horizontal pleiotropy, outlier identification, Leave-One-Out analysis, and assessments for adherence to normal distribution assumptions. Furthermore, we conducted an in-depth analysis of the genes and signaling pathways potentially involved in the disease risk correlation between PBC and RA. Finally, a difference analysis and receiver operating characteristic (ROC) curve analysis were conducted. The MR analysis conducted in this study revealed a significant positive disease risk correlation between PBC and RA (P < 0.001, odds ratio [OR] 95% confidence interval [CI] = 1.081 [1.036-1.128]). Moreover, reverse MR analysis also demonstrated a significant positive disease risk correlation between RA and PBC (P < 0.001, OR 95% CI = 1.702 [1.422-2.039]). Importantly, the bidirectional MR analysis detected no evidence of heterogeneity, horizontal pleiotropy, or outliers, and the results were not affected by single single nucleotide polymorphisms (SNPs). Additionally, the findings were consistent with a normal distribution. SNP-associated gene mapping was performed, identifying 14 candidate genes. Subsequent pathway enrichment analysis indicated that these genes were predominantly involved in the chemokine signaling pathway, JAK-STAT signaling pathway, and Th1/Th2 cell differentiation. Among them, IL12RB2, CCR6, and MANBA may serve as key mediators in the shared disease risk correlation architecture of PBC and RA. Further analysis of the differences identified a gene (MANBA). The ROC curve demonstrated the potential diagnostic value of MANBA. The findings of this study suggest a bidirectional disease risk correlation between PBC and RA, establishing them as mutually risk factors. In clinical practice, vigilance is paramount among patients diagnosed with RA regarding the potential development of PBC. Conversely, individuals presenting with PBC should undergo systematic screening for the presence of RA. The genes and pathways identified in this study as potentially contributing to the mutual disease risk correlation between PBC and RA provide valuable insights and lay the groundwork for future investigations into the underlying molecular mechanisms.",
+      "authors": "[\"Yang Mingyi\", \"Ren Honghao\", \"Ren Xiaodong\", \"Wen Pengfei\", \"Xie Jiale\", \"Wan Xianjie\", \"Xu Ke\", \"Liu Lin\", \"Hou Weikun\", \"Yang Zhi\", \"Xu Peng\"]",
+      "journal": "Mammalian genome : official journal of the International Mammalian Genome Society",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.342948",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC",
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Bulk RNA-seq"
+        ],
+        "validation_method": "LOOCV"
+      }
+    },
+    {
+      "pmid": "41942765",
+      "title": "Assessment and drivers of total soil carbon and nitrogen storage in rice paddy cropping system of Western Himalayas, India.",
+      "abstract": "Soil carbon (C) and nitrogen (N) are the major elements of the global bio-geochemical cycle and have a great impact on environmental quality, soil fertility, ecosystem productivity, sustainable agriculture, and in addressing climate change. The present study focuses on the spatial distribution patterns and the drivers of total soil carbon (SC) and total nitrogen (TN) in the rice paddy cropping system of Western Himalayas, Jammu and Kashmir. Soil samples were collected from three depths (0-10, 10-20, and 20-30 cm) from 165 sampling points across 10 districts for the estimation of SC and TN using a CHNS analyzer. The average SC and TN were 56.3 Mg C ha<sup>-1</sup> and 5.3 Mg N ha<sup>-1</sup>, respectively, in the top 30 cm of soils. Both SC and TN showed a negative trend with increasing soil depth. Principal component analysis (PCA) revealed that among structural attributes, paddy biomass components (paddy density, shoot, and root stock) exhibited a significant positive correlation with both SC and TN. In terms of environmental factors, C:N, EC, NDMI, and SMI showed a significant positive trend, whereas MAP, BD, and elevation had a significant negative association with SC and TN. The PCA accounted for 81.5% and 74.3% of variance for SC and TN, respectively. This study reveals that SC and TN storage are synergistically driven by structural attributes, edaphic, and climatic factors. These findings would be indispensable for long-term planning and monitoring programs to enhance and manage SC and TN storage in rice paddies of temperate croplands under changing climate for carbon crediting.",
+      "authors": "[\"Irtiqa Shairq\", \"Rathaude Satendra Kumar\", \"Kothandaraman Subashree\", \"Dar Javid Ahmad\"]",
+      "journal": "Environmental monitoring and assessment",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.343627",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "PCA"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942587",
+      "title": "Pharmacological Microcontroversies and Civilizational Grammars Around ADHD in Chile.",
+      "abstract": "This article examines pharmacological microcontroversies (PMC) surrounding attention deficit hyperactivity disorder (ADHD) in Chile, based on a comparative, multisited ethnography in four educational contexts with differing socioeconomic and territorial profiles. Drawing on science and technology studies, microcontroversies studies, and Norbert Elias's sociology of interdependence, the study conceptualizes ADHD as a situational configuration in which diagnosis and treatment emerge from interwoven relations among children, caregivers, educators, and health professionals. Data were collected through focused ethnography, open interviews, discussion groups, and triangular groups and analyzed via emergent content and sociological discourse analysis. Two axes structure PMC: (i) desired effect-stillness versus performance, and (ii) normative model-external conduct versus internal capacities. Across sites, pharmaceuticals were embedded in distinct \"civilizational grammars\" linking bodily regulation, moral expectations, and educational aims: from medication as protection against criminality to a \"concentration pill\" enabling hidden potential. These grammars mediate acceptance, rejection, or ambivalence toward medication crossed by other vectors as class and gender. ADHD-related debates thus constitute territorially situated normative arrangements, revealing how local trajectories and interdependencies shape diagnoses and the production of children's interiority.",
+      "authors": "[\"Radiszcz Esteban\", \"Sir Hugo\", \"Pinto Juan Pablo\"]",
+      "journal": "Culture, medicine and psychiatry",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.344456",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942679",
+      "title": "Integrative Approach to Quantify and Characterize Risk of Micro‑ and Meso‑plastics in the Gastrointestinal Tracts of Fish from Lagos Commodore Channel.",
+      "abstract": "This study aimed to delineate the physical (shape, size, and color) and chemical characteristics (polymer types) of micro- and mesoplastics in the gastrointestinal tracts (GIT) of fish species in the Lagos Commodore Channel, and to develop a conceptual methodology for investigating these pollutants. Ninety (90) fish individuals of three species, pelagic (Ethmalosa fimbriata) and demersal (Pseudotolithus elongatus and Pseudotolithus senegalensis), were captured fortnightly for three months (June and August 2025). The microplastic shapes in E. fimbriata, P. elongatus, and P. senegalensis were predominantly filaments (53.3-53.8%), followed by fragments (23.1%), fibres (7.7-15.4%), and other shapes, while mesoplastics comprised fibre (41.7%) and filaments (58.3%). A total of fifty (50) polymer types were identified in the GIT of three fish species. The abundance of polymer in the GIT of fish species was as follows: P. senegalensis (217) > P. elongatus (179) > E. fimbriata (124). The polymer-based particle contamination factors (ppCf) revealed low contamination levels. In contrast, polymer risk indices (pRi) varied from medium risks in E. fimbriata to considerable risk in P. elongatus and P. senegalensis. The Polymer Hazard Index (PHI) demonstrated a low pollution level in E. fimbriata, but demersal species P. elongatus and P. senegalensis exhibited low and high contamination levels, respectively. Demersal species showed a higher microplastic ingestion rate (76.15%) than pelagic species (23.85%), likely due to polymer density-related ingestion patterns. The significant species-specific contamination levels underscore the pressing need for targeted mitigation and continuous monitoring to protect ecosystem health and fisheries sustainability in this critically important coastal waterway. Highlights. • Fifty polymer types were identified in the gastrointestinal tracts of three fish species: E. fimbriata, P. elongatus, and P. senegalensis. • Polymer concentrations varied among species: P. senegalensis (217 particles/g) > P. elongatus (179 particles/g) > E. fimbriata (124 particles/g). • ppCf indicated low contamination, while pRi showed medium risk in E. fimbriata and considerable risk in P. elongatus and P. senegalensis. • PHI showed low contamination in pelagic E. fimbriata, and low to high contamination in demersal P. elongatus and P. senegalensis. • Demersal species ingested more microplastics (76.15%) than pelagic species (23.85%), linked to polymer density patterns.",
+      "authors": "[\"Bassey Bassey Okon\", \"Bello Beatrice Omolola\", \"Olapoju Oluwabukunola Ayokunmi\", \"Odedere Adelodun Omotayo\", \"Bello Adebowale Ibrahim\", \"Izge Musa Abdullahi\", \"Obiora Ijeoma Jacinta\"]",
+      "journal": "Environmental monitoring and assessment",
+      "publication_date": "2026-04-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.345575",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942586",
+      "title": "Linking hosts, landscapes, and climate to advance zoonotic arbovirus forecasting.",
+      "abstract": "Forecasting zoonotic mosquito-borne viruses remains a critical challenge because transmission depends on dynamic, multitrophic interactions among vectors, hosts, pathogens, and the environment. We integrate long-term sentinel chicken surveillance in Florida with environmental data to build a predictive framework for eastern equine encephalitis virus (EEEV), a zoonotic mosquito borne disease of concern to human and equine health. Models captured environmental drivers and latent spatiotemporal structure, achieving strong predictive accuracy. Models also revealed nonlinear effects of moderate precipitation a year prior to sampling, higher minimum temperature a month prior to sampling, and moderate and high forest and wetland cover on increased EEEV seroconversion. Retrospective predictions showed distributions of virus activity across regions, consistent with Culiseta melanura vector ecology. We also calculated associations between predicted EEEV seroconversion and abundance estimates for suspected avian hosts using eBird data. Seasonal shifts among migratory and resident birds with predicted virus activity for key species suggests spring migrants play a role in amplification, residents in summer persistence, and overwintering groups as potential reservoirs. These results demonstrate ecological forecasting is feasible at management-relevant scales, with broad potential to extend to other arbovirus systems. By integrating traditional surveillance with community science eBird data, our framework advances predictive capacity and ecological understanding of zoonotic arboviruses.",
+      "authors": "[\"Akshay V A\", \"Baecher J Alex\", \"Burkett-Cadena Nathan\", \"Thorson James T\", \"Sánchez Yesenia\", \"Tavares Yasmin\", \"Bauer Amely\", \"Guralnick Robert\", \"Campbell Lindsay\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.346225",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Accuracy"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41943112",
+      "title": "Characterization of the full-length transcriptome of female Eucoleus annulatus and comparative transcriptomic analysis of its head, middle, and tail body sections.",
+      "abstract": "Eucoleus annulatus is a parasitic nematode that inhabits the upper digestive tract of avian hosts, posing significant threats to avian health and poultry production. However, the gene information and gene expression characteristics underlying its physiological specialization and parasitic adaptation remain poorly understood. In this study, we applied an integrated transcriptomic approach to generate a high-quality full-length transcriptome of E. annulatus using PacBio Iso-Seq and to characterize body section-specific gene expression patterns using Illumina RNA sequencing (RNA-Seq). Differentially expressed transcripts (DETs) among its head, middle, and tail sections were identified, and their functional annotations were assessed through Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) enrichment analyses. PacBio Iso-Seq generated 21,951 high-confidence, non-redundant full-length transcript isoforms, among which 6921 were annotated in the Nr, Pfam, COG, KEGG, and GO databases. Comparative RNA-Seq analysis revealed pronounced section-specific transcriptional divergence, with 1570, 1533, and 1600 DETs enriched in the head, middle, and tail sections, respectively. DETs in the head were significantly enriched in pathways related to amino acid metabolism, RNA processing, and ion transport, while the DETs in the middle body section were primarily associated with glycolysis, oxidative phosphorylation, and transcriptional regulation, indicating elevated metabolic and transcriptional activity. DETs in the tail were significantly enriched in processes related to protein degradation, structural maintenance, and stress adaptation, suggesting roles in environmental response and physiological resilience. This study, for the first time, reports the first full-length transcriptome of E. annulatus and reveals distinct gene expression profiles across different body sections. These findings provide valuable molecular insights into the spatial organization of gene expression in E. annulatus and establish a foundation for studying its biology and host-parasite interactions in the future.",
+      "authors": "[\"Wang Yi-Dan\", \"He Jun-Jun\", \"Xu Cui-Rong\", \"Wang Lu-Yang\", \"Yang Jian-Fa\", \"Wang Ping\", \"Shu Fan-Fan\", \"Zou Feng-Cai\", \"Ma Jun\"]",
+      "journal": "Parasites & vectors",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.347098",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942689",
+      "title": "Mpox Awareness and Knowledge Among Residents of the Northern Border Region, Saudi Arabia: Implications for Community Preparedness.",
+      "abstract": "In August 2024, the World Health Organization declared the ongoing mpox upsurge in Africa a Public Health Emergency of International Concern, underscoring mpox as an emerging global threat. In non‑endemic countries such as Saudi Arabia, understanding community awareness is critical for public health preparedness and prevention. This study assessed mpox awareness and knowledge among residents of the Northern Border Region and identified factors associated with better knowledge, to inform targeted community‑based health communication strategies. A community‑based cross‑sectional survey was conducted between 1 March and 20 August 2025 among 1,362 adults. A structured, pre‑validated questionnaire assessed general knowledge, symptom recognition, and preventive measures. Knowledge scores (0-15) were summarized descriptively and categorized as poor, moderate, or good. Ordinal logistic regression and machine‑learning classifiers were used to identify predictors of higher knowledge and to explore the prediction of adequate knowledge from sociodemographic characteristics and prior mpox awareness, supporting risk stratification for community interventions. Among 1,362 participants (78.1% female; 56.8% aged 18-30 years), 48.4% had previously heard of mpox. Overall knowledge was suboptimal (mean 7.64/15; 50.9% correct); 48.3% had poor knowledge, 38.2% moderate, and 13.5% good. Suboptimal knowledge across sociodemographic groups suggests substantial vulnerability to future mpox introductions in this border region. Social media and other internet sources were the main information channels, underscoring their potential as primary platforms for risk communication. In multivariable ordinal regression, prior mpox awareness was the strongest predictor of higher knowledge (adjusted odds = 4.1), alongside higher education and health‑related occupations. Logistic‑regression-based machine‑learning models showed moderate discrimination and acceptable calibration (AUC‑ROC = 0.72; Brier = 0.19), with prior awareness consistently the most important feature. Mpox knowledge in the Northern Border Region is suboptimal and low across sociodemographic groups, particularly among less educated and non‑health‑sector participants. Prior exposure to mpox information is a central, modifiable determinant of adequate knowledge, underscoring the need for targeted, evidence‑based communication strategies, particularly via widely used digital platforms. Tailored community‑level interventions focusing on less educated and non‑health‑sector groups are essential to strengthen mpox preparedness and broader infectious‑disease readiness in this underserved border region.",
+      "authors": "[\"Abu Alsel Baraah\", \"Alenezi Elaf Ali A\", \"Alanazi Hajar Abdullah K\", \"Alenezi Fai Tulail N\", \"Alenezi Waten Led Atiwi\", \"Al Suogaih Munirah Suliman\", \"Alanazi Rimas Khalid A\", \"Al Suogaih Norah Suliman\", \"Esmaeel Safya E\", \"Mersal Fathia Ahmed\", \"Fahmy Eslam K\", \"Ismail Mohammed M\", \"Fawzy Manal S\"]",
+      "journal": "Journal of community health",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.348143",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "Logistic Regression"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC",
+          "Calibration"
+        ],
+        "sample_size": 1,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942729",
+      "title": "Association between health literacy and successful aging among older Korean adults.",
+      "abstract": "With the rapid advancement of information and communication technology, health-related information has become increasingly accessible, making health literacy-the ability to access, understand, and use health information-more important than ever. This study aimed to investigate the relationship between health literacy and successful aging in a Korean population. We analyzed cross-sectional data from 70,626 participants in the 2021 Korean Community Health Survey. Verbal and written health literacy were assessed. Successful aging was operationalized using five criteria capturing physical, cognitive, social, and psychological dimensions: no disability, high cognitive function, no depressive symptoms, active social engagement, and psychological well-being. Adjusted multivariable logistic regression was used to examine association between health literacy and successful aging. Compared with participants with high verbal health literacy, those with low verbal health literacy had significantly lower odds of successful aging (OR = 0.72, 95% CI = 0.68-0.76). Compared with participants with high written health literacy, those with low written literacy (OR = 0.78, 95% CI = 0.73-0.83) and those uninterested in written health information had lower odds of successful aging (OR = 0.69, 95% CI = 0.65-0.74). Low health literacy was significantly associated with lower odds of successful aging. These findings underscore the importance of promoting health literacy as a potential target for intervention to support successful aging and to inform future health policies and intervention efforts.",
+      "authors": "[\"Nari Fatima\", \"Kang Soo Hyun\", \"Kim Soo Young\", \"Park Eun-Cheol\", \"Jeong Wonjeong\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.348852",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "Logistic Regression"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942737",
+      "title": "Blood pressure status, JSH 2019-based control rate, and associated factors among community-dwelling adults: The NOSE study.",
+      "abstract": "The Japanese Society of Hypertension Guidelines (JSH 2019) introduce stricter blood pressure (BP) targets, but BP status (hypertension prevalence and treatment) and control rates under these criteria, particularly by home BP monitoring, remain limited. This study investigated BP status, guideline-based BP control rates, and associated factors in a community-dwelling population. We analyzed baseline data (2020-2021) from 623 participants (mean age 67.6 years; 37.4% men) in the NOSE Study. BP status and control were defined using JSH 2019 criteria, with thresholds modified by age and comorbidities and 5 mmHg lower for home BP. Office BP and 30-day mean morning and evening home BP values (≥14 days) were assessed. Multivariable regression analysis was used to identify factors associated with hypertension prevalence, treatment status, and poor BP control. Hypertension prevalence was 66.8% and was associated with older age and higher body mass index. Approximately half of adults with hypertension were untreated, despite having higher BP levels, and tended to be younger with fewer comorbidities. Among treated participants, BP control rates were 22.9% based on office BP and 7.3% based on morning home BP. Masked hypertension was frequent (24.8%). Monotherapy was common (59.2%), while diuretics (10.1%) and beta-blockers (4.1%) were underutilized. A higher number of anti-hypertensive medications was associated with better BP control. Community-dwelling adults showed high hypertension prevalence, substantial untreated BP, and very low control rates under guideline targets. Home BP monitoring is essential for detecting uncontrolled morning and masked hypertension, and current treatment patterns appear insufficient to meet JSH recommendations.",
+      "authors": "[\"Chanthavong Phouvanh\", \"Kobayashi Keigo\", \"Akagi Yuya\", \"Yoshida Hiroko\", \"Kido Michiko\", \"Godai Kayo\", \"Fukata Yuka\", \"Tachibana Yuka\", \"Terada Saya\", \"Shi Liyu\", \"Anzai Chihiro\", \"Maeyama Yurie\", \"Kikuchi Haruna\", \"Yokoyama Yuka\", \"Wada Arisa\", \"Higashi Makiko\", \"Kikuchi Takeshi\", \"Matsuno Fumie\", \"Nagayoshi Sho\", \"Asayama Kei\"]",
+      "journal": "Hypertension research : official journal of the Japanese Society of Hypertension",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.349704",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942778",
+      "title": "Patterns, Timing, and Survival of Recurrence After Surgery for Esophageal and Junctional Adenocarcinoma in the European Multicentre ENSURE Study.",
+      "abstract": "Following surgery for esophageal cancer, approximately half of patients develop disease recurrence. Analyzing recurrence site, timing, and their impact on postrecurrence survival can guide refinements in postoperative surveillance and therapy. This study aimed to describe the pattern and timing of esophageal cancer recurrence and assess survival patterns by recurrence location. This study included patients from the ENSURE study who underwent resection for esophageal and junctional adenocarcinoma between 2009 and 2015 across 20 centers in Europe and Canada. Only patients with disease recurrence were included in the final analysis. Sites of first recurrence were stratified into different groups and survival outcomes postrecurrence detection were estimated using Kaplan-Meier curves. Of 3,299 patients who underwent surgery for esophageal adenocarcinoma, 1,310 patients developed recurrence and had sufficient follow-up data available. First recurrence was detected at multiple distant sites (n = 469; 37.3%) or at a single distant site (n = 463; 33.7%), whereas isolated local recurrence occurred in 189 (14.4%) patients. Recurrence in the liver-only presented significant earlier (median 9.0 months), whereas recurrence in lung-only (15.2 months) and local-only recurrence (17.8 months) were observed later. Patients with multiple-sites and liver-only recurrence had significant worse median postrecurrence survival (7.4 and 8.3 months, respectively) compared with lung- or local-only recurrence (10.4 and 15.9 months, respectively). This study highlights that time to recurrence varies by location and significantly impacts postrecurrence survival outcomes. Multiple sites and liver-only recurrence had the poorest prognosis.",
+      "authors": "[\"Goense Lucas\", \"Elliott Jessie A\", \"Markar Sheraz R\", \"Klevebro Fredrik\", \"Johar Asif\", \"Mantziari Styliani\", \"Lagergren Pernilla\", \"Zaninotto Giovanni\", \"van Hillegersberg Richard\", \"van Berge Henegouwen Mark I\", \"Nilsson Magnus\", \"Hanna George B\", \"Reynolds John V\"]",
+      "journal": "Annals of surgical oncology",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.350408",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2009,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942968",
+      "title": "Incorporating a Veteran's lived and living expertise of sex work and substance use into clinician education.",
+      "abstract": "Sex workers, particularly those who use drugs, experience intersecting stigma and structural barriers that can worsen mental health and sexual health outcomes and limit access to affirming care. Although lived and living expertise is increasingly recognized as valuable in clinician education, perspectives from sex workers who use drugs remain underrepresented in mental health clinician training. In April 2025, a virtual, 1-h educational discussion was delivered to interdisciplinary Veterans Affairs mental health staff and trainees. The session was led by a bisexual, cisgender male sex worker who was a United States Army Veteran in recovery and moderated by a social worker with lived expertise. Topics included defining sex work, the role of substances in sex work, harm reduction strategies, and person-centered care. Anonymous pre-/post-surveys included items adapted from a previously published survey instrument and used 5-point Likert scale responses to assess attendee characteristics and changes in knowledge and attitudes related to sex workers. Thirty-six clinicians attended; 24 completed both surveys. Most were physicians (37.5%) or psychologists (20.8%). Half (50.0%) had previously cared for a sex worker, yet only 29.2% reported prior formal education on sex work. Post-session surveys showed increased self-rated knowledge about sex work (2.2 ± 1.1 to 3.2 ± 0.8), improved recognition of sex workers' rights to access mental health care (4.7 ± 1.0 to 5.0 ± 0.2), and greater awareness of healthcare barriers encountered by sex workers (4.0 ± 1.0 to 4.3 ± 0.8). Willingness to provide care was high at baseline and remained high post-session (5.0 ± 0.2 to 5.0 ± 0.2). A brief, Veteran-led discussion incorporating lived and living expertise was associated with meaningful short-term increases in clinician knowledge about sex work. Findings support integrating sex work-informed, trauma-informed content into routine clinician education and partnering with lived and living experience educators to improve relevance and reduce stigma.",
+      "authors": "[\"Ruggles Andie\", \"Aguirre Earl\", \"Tietjen Donald\", \"Rife-Pennington Tessa\"]",
+      "journal": "BMC medical education",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.351318",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41943051",
+      "title": "Tridax procumbens promotes apoptosis and suppresses markers of proliferation, growth, and metastasis in pancreatic ductal adenocarcinoma cells.",
+      "abstract": "We assessed whether Tridax procumbens (TP) extracts could be used therapeutically against pancreatic cancer and remain nontoxic to normal cell types. The crude extract from TP (CETP) was fractionated using hexane, dichloromethane, and ethyl acetate to obtain fractions (NHF, DCMF, and EAF, respectively). The pancreatic ductal adenocarcinoma cell line (PANC-1) was cultured with (10, 20, 50, 100, and 250 μg/mL) dimethyl sulfoxide (DMSO) (control), CETP, and CETP-fractions for 24 or 48 h. As a normal cell type, we cultured E11.5d mouse pancreatic explants for five days before treating with the test samples (20 μg/mL) in DMSO for a further 48 h. Cytotoxicity assays (MTT and Live-Dead) were conducted, and the expression of cellular biomarkers, such as vimentin, Ki-67, p53, p21, and caspase-3, was evaluated. DCMF elicited PANC-1 cell death (IC<sub>50</sub> = 23.1 μg/mL) compared to CETP (IC<sub>50</sub> = 114.2 μg/mL). There were significant elevations in p53 (2.8-fold), caspase-3 (2.9-fold), catalase (4.0-fold), p21<sup>Cip1/Wap-1</sup> (4.4-fold), and ALP (5.0-fold) proteins in DCMF-treated cells compared to control. DCMF significantly suppressed PNA and GST-pi (2.3-fold), Ki-67 (2.7-fold), and vimentin (10.8-fold) in PANC-1 cells relative to control. Also, DCMF induced Bcl-2 perinuclear staining and cytoplasmic translocation of APC in treated cells. Phenotype morphogenesis was observed in DCMF-treated embryonic pancreas with immunopositivity for insulin, vimentin, and amylase (1.3-fold), cytokeratin-7 (1.5-fold), PNA (1.9-fold), and glucagon (2.8-fold). In conclusion, Tridax procumbens appear to exert its anticancer effect via induction of apoptosis, antioxidant enzymes, and suppression of growth, proliferation, and invasiveness in PANC-1 cells without any observable toxicity on the normal embryonic pancreas.",
+      "authors": "[\"Samuel Ekundayo\", \"Eggleston Ian\", \"Tosh David\", \"Odunola Oyeronke\"]",
+      "journal": "BMC complementary medicine and therapies",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.352093",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": "5-fold CV"
+      }
+    },
+    {
+      "pmid": "41942939",
+      "title": "Associations between DXA-derived parameters of body composition and bone mass density in patients with T2DM and metabolic dysfunction-associated steatotic liver disease: a cross-sectional study.",
+      "abstract": "Metabolic dysfunction-associated steatotic liver disease(MASLD) is associated with the deterioration of bone mass density(BMD), but the independent contributions of soft tissue parameters of body composition are not fully understood. We aimed to evaluate the relationship between the degree of liver steatosis, as assessed by vibration-controlled transient elastography(FibroScan<sup>®</sup>), and DXA-derived BMD indices in the European population. 156 patients, 95 females and 61 males, aged 33-78 years, treated for T2DM and MASLD with oral antidiabetic medication, were included in this cross-sectional study. Subgroup analyses were conducted by sex, age, BMI, lean mass index, and the extent of fibrosis. Multiple linear regression models were fitted with BMD indices as the dependent variable and the Controlled Attenuation Parameter(CAP) as a measure of liver steatosis, serving as the independent variable. The models were adjusted for age, sex, HOMA-IR, BMI, lean mass index, and android fat mass%. Accordingly, ROC curves with T-score(Z-score)=-1.0 were plotted as a classifier of bone mass deterioration. The total BMD and CAP were positively correlated in the entire group(r = 0.21,p = 0.001) and in the female group(r = 0.29,p = 0.004), but not in the male group(r = 0.08,p = 0.51). The association maintained significance after adjustment for total body fat%(r = 0.23,p = 0.003), AGR(r = 0.22,p = 0.005), lean mass index(r = 0.19,p = 0.02) and osteocalcin(r = 0.16,p = 0.04) but not for BMI(r = 0.13,p = 0.09). The AUC in the female group for total BMD in the model calculated from CAP and android fat mass% and adjusted for age, was: ROC = 0.746(95%CI 0.62-0.88). Our results demonstrate existing discrepancies in the association between BMD and MASLD across sex-, age-, BMI-, lean mass index-, and fibrosis-stratified analyses. CAP and android fat% may have clinical value in predicting osteopenia in patients with MASLD and T2DM. Not applicable.",
+      "authors": "[\"Fraenkel Emil\", \"Kaško Martin\", \"Koky Tomáš\", \"Lazúrová Ivica\"]",
+      "journal": "BMC endocrine disorders",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.352934",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Normalization"
+        ],
+        "evaluation_metrics": [
+          "AUROC"
+        ],
+        "sample_size": 156,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942743",
+      "title": "Movement behaviors, psychosocial well-being and childhood obesity: the IDEFICS/I.Family cohort.",
+      "abstract": "Understanding the association between movement behaviors and psychosocial well-being at a young age seems essential for effective interventions and moving friendly environments, particularly in the context of childhood obesity. to examine the association between adherence to movement behavior guidelines and psychosocial well-being, and whether obesity indices moderate this association. The IDEFICS/IFamily cohort followed European children aged 2-16 years over 6 years, including 7359 repeated observations across three waves. Longitudinal associations between adherence to movement behavior recommendations and psychological well-being were assessed using generalized linear models. Obesity indicators, z-score body mass index (z-BMI) and z-score waist circumference (z-BMI) were used to test their moderating role. Lower adherence to movement behaviors was negatively associated with psychosocial well-being (β = -0.39, 95%CI: -0.77, 0.00), with stronger effects in males (β = -0.70, 95%CI: -1.20, -0.20). Moreover, effects were larger in participants with overweight/obesity (β = -1.29, 95%CI: -2.21, -0.37). Obesity indices moderated the association between movement behaviors and psychosocial well-being (β = -0.40, 95%CI: -0.80, -0.06 for z-BMI; β = -0.36, 95%CI: -0.82, -0.03 for z-WC). Adherence to movement behavior guidelines was associated with psychosocial well-being, especially in males and individuals with overweight or obesity. These findings highlight the potential relevance of movement behavior patterns for psychosocial well-being and obesity prevention, while acknowledging the observational nature of the data.",
+      "authors": "[\"Masip Guiomar\", \"Møller Jørgensen Rasmus\", \"Veidebaum Toomas\", \"Molnar Dénés\", \"Lissner Lauren\", \"Lauria Fabio\", \"De Henauw Stefaan\", \"Hadjigeorgiou Charalambos\", \"Hebestreit Antje\", \"Buck Christoph\", \"Ahrens Wolfgang\", \"Moreno Luis A\"]",
+      "journal": "International journal of obesity (2005)",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.353619",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Normalization"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942889",
+      "title": "A one-pot CRISPR/Cas12b assay for extraction-free and visual detection of Haemophilus influenzae.",
+      "abstract": "Haemophilus influenzae is a major respiratory pathogen, particularly in pediatric populations, and its rapid and accurate detection is critical for early diagnosis and targeted treatment. Traditional diagnostic methods, such as bacterial culture and PCR, are often time-consuming and require specialized equipment. In this study, we developed the Hi-ExCad assay, a one-pot, extraction-free CRISPR/Cas12b-based system for the rapid, simple, and accurate detection of H. influenzae. The assay integrates loop-mediated isothermal amplification and CRISPR/Cas12b detection in a single reaction, enabling direct detection from clinical sputum samples without the need for nucleic acid extraction. The Hi-ExCad assay demonstrated high specificity, correctly identifying H. influenzae in clinical samples, with a limit of detection of 1 pg of genomic DNA. The assay also exhibited excellent performance in real-time detection and visual result interpretation under blue light, making it highly suitable for point-of-care testing and resource-limited settings. These findings suggest that the Hi-ExCad assay provides a rapid, reliable, and user-friendly method for the detection of H. influenzae, with significant potential for clinical application.",
+      "authors": "[\"Qiu Xiaotong\", \"Yuan Linghui\", \"Liu Xueping\", \"Li Yanan\", \"Ma Xiao\", \"Du Bingqian\", \"Yuan Min\", \"Li Zhenjun\"]",
+      "journal": "BMC microbiology",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.354140",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "41943045",
+      "title": "Biocidal Activity of Barium and Iron-Co-Doped Titanium Dioxide Nanocomposites, Synthesized by Psidium guajava-Mediated Precipitation Method.",
+      "abstract": "The emergence of drug-resistant microorganisms and the need for effective anticancer agents necessitate the development of novel nanomaterials with enhanced biomedical performance. This study aims to synthesize barium and iron dual-doped titanium dioxide (TiBaFeO NC) using a green precipitation method with Psidium guajava leaf extract, targeting improved antimicrobial and anticancer efficacy. The synthesized nanocomposite was characterized by various analytical techniques. XRD confirmed the crystalline anatase phase of TiO<sub>2</sub> and TiBaFeO NC, with average crystallite sizes of 40 and 37 nm, respectively, suitable for biomedical applications. UV-Vis analysis showed a decrease in bandgap from 3.79 eV for TiO<sub>2</sub> to 3.67 eV for TiBaFeO NC, indicating enhanced reactive oxygen species (ROS) generation potential. PL spectra exhibited green emissions at 520 nm for TiO<sub>2</sub> and 523 nm for TiBaFeO NC, reflecting a higher oxygen vacancy defect density in the doped nanocomposite. Biological evaluations demonstrated that TiBaFeO NC exhibited superior antimicrobial activity against Gram-positive bacteria (Staphylococcus aureus, Bacillus subtilis, Bacillus megaterium), Gram-negative bacteria (Shigella dysenteriae, Escherichia coli, Proteus vulgaris), and fungi (Candida albicans). Furthermore, TiBaFeO NC showed enhanced anticancer activity against human breast cancer cells (MDA-MB-231) with an IC<sub>50</sub> of 9.8 µg/mL, outperforming TiO<sub>2</sub>. These results suggest that TiBaFeO NC is a promising nanocomposite for advanced biomedical applications, combining enhanced antimicrobial and anticancer properties through defect-mediated ROS generation.",
+      "authors": "[\"Goyal Saumya\", \"Ballal Suhas\", \"Punia Ankit\", \"Sharma Deeplata\", \"Nagpal Manish\", \"Pathak Jaivik\", \"Thangavelu Indumathi\", \"Tadepalli Srinivas\"]",
+      "journal": "Biotechnology and applied biochemistry",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.355076",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942790",
+      "title": "Methane emissions from inactive oil and gas wells in Western Canada.",
+      "abstract": "The oil and gas industry is the largest source of methane emissions for many countries, including Canada. In the last 10 years, several new studies have highlighted the underestimation of methane emissions from active wells and facilities compared to national inventories. In contrast, only a few studies have focused on emissions from inactive wells. These studies also suggested underestimation compared to national inventories. In this context, more research is needed, and to address this, we undertook an extensive analysis, mining close to 15,000 vehicle-based measurements acquired across Alberta and Saskatchewan over a span of six years. The results showed averaged emission factors ranging from 0.09 to 0.15 kg/hr for suspended well sites, aligning well with the literature (0.008-0.45 kg/hr with a mean of 0.20 kg/hr) for this region. Similar to previous studies, the most significant sources of emissions were suspended gas wells in Red Deer, Alberta, and heavy oil sites near the border of Alberta and Saskatchewan. No emission factors were computed for plugged well sites because of insufficient observations. Although suspended and plugged wells emit less methane per site or at a lower frequency than active wells, their large numbers can result in significant total methane emissions. Our results support proposed amendments to the federal oil and gas methane regulations that would, for the first time, extend the regulatory scope to all infrastructure, including nonproducing wells. The results from this study also confirmed that vehicle-based surveys can detect emissions from isolated suspended well sites.",
+      "authors": "[\"Lavoie Martin\", \"Perine Gilles\", \"Risk David\"]",
+      "journal": "Environmental monitoring and assessment",
+      "publication_date": "2026-04-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.356222",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942662",
+      "title": "Other Techniques.",
+      "abstract": "The production of protein crystals suitable for high-resolution structural analysis critically depends on the quality, homogeneity, and functional integrity of the protein sample throughout the crystallization workflow. This chapter provides a comprehensive overview of key biochemical and biophysical parameters that govern successful protein crystallization, including protein purity, conformational and compositional homogeneity, structural integrity, and biological activity. We discuss the application of different complementary techniques - including chromatographic methods, mass spectrometry, circular dichroism, surface plasmon resonance, and X-ray crystallography - to systematically assess and optimize these parameters from initial sample preparation to final crystal formation and subsequent X-ray data collection. By integrating orthogonal characterization approaches, common issues such as aggregation, degradation, conformational heterogeneity, and loss of function can be identified and mitigated prior to crystallization trials, thereby improving reproducibility and diffraction quality. Furthermore, the chapter highlights alternative X-ray data collection methodologies such as room-temperature, in situ, and automated data collection that further enhances crystallographic workflows by reducing crystal handling, improving experimental efficiency, and enabling the capture of biologically relevant conformational states.",
+      "authors": "[\"Gonçalves Ana M\", \"Santos Marino F A\", \"Passarinha Luís A\"]",
+      "journal": "Advances in biochemical engineering/biotechnology",
+      "publication_date": "2026-04-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:00.356823",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics",
+          "Medical Imaging"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41943150",
+      "title": "miR-3613-3p Is a New Diagnostic Indicator of Acute Coronary Syndrome (ACS) That Reduces Endothelial Damage by Targeting Ring Finger and CCCH-Type Domains 1 (RC3H1).",
+      "abstract": "Focusing on acute coronary syndrome (ACS), a critical cardiovascular condition, this study explores the diagnostic utility of miR-3613-3p and its mechanistic involvement in endothelial injury. Quantitative real-time polymerase chain reaction (qRT-PCR) quantified serum and cell miR-3613-3p expression. Receiver operator characteristic (ROC) curve and logistic regression analysis assessed its diagnostic potential. Correlation analysis evaluated the association between miR-3613-3p and ACS. The effect of miR-3613-3p on hypoxia/reoxygenation (H/R)-induced human coronary artery endothelial cell (HCAEC) injury was evaluated by cell counting kit-8 (CCK-8, cell proliferation), enzyme linked immunosorbent assay (ELISA) kit (interleukin-6, IL-6; tumor necrosis factor-α, TNF-α), and commercialized assay kits (superoxide dismutase, SOD; glutathione, GSH, malonaldehyde, MDA). Dual-luciferase reporter assay validated the interaction between miR-3613-3p and ring finger and CCCH-type domains 1 (RC3H1). The recovery experiment assessed the effect of RC3H1 on H/R-induced HCAEC cell proliferation, inflammation, and oxidative stress. Compared to healthy individuals, serum miR-3613-3p in ACS, correlating with Gensini score, cardiac troponin I (cTnI), creatine kinase isoenzyme-MB (CK-MB), and left ventricular ejection fraction (LVEF), was downregulated and served as a diagnostic biomarker. In vitro, miR-3613-3p overexpression promoted cell proliferation, diminished inflammatory factor release, and reduced oxidative stress in H/R-induced HCAECs. RC3H1 was a direct target of miR-3613-3p, and its overexpression antagonized the cytoprotective influence of miR-3613-3p in H/R-induced HCAEC injury. miR-3613-3p is a novel biomarker for ACS and provides a new target for ACS intervention by alleviating endothelial damage via targeting RC3H1.",
+      "authors": "[\"Liu Jianfei\", \"Wei Xiangran\", \"Chen Dongsheng\", \"Lv Zhuo\"]",
+      "journal": "Journal of biochemical and molecular toxicology",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.564955",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "Logistic Regression"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942715",
+      "title": "Clay deposits in the Benue Valley, Northern Cameroon: mineralogical, chemical and technological characterisation for uses in ceramic bricks production.",
+      "abstract": "The clay deposits located in Pitoa, Benue Valley (North, Cameroon) have been the subject of physical, chemical, and mineralogical characterization, and to assess their potential utilization in ceramic bricks production. After fieldwork, four samples were chosen and investigated by Atterberg limits, particle size distribution, XRD analysis, XRF analysis, and the ceramic products' properties were appreciated after firing at temperatures of 900, 1000, and 1100 °C. From the particle size distribution (PSD) tests, the studied materials showed that the particle size spread with the clay fraction varies from 14.0 to 32.5% and sand fraction from 47 to 66%. The plasticity index is higher than 6. Mineralogically, these materials showed a dominance of quartz followed by kaolinite, smectite, and K-feldspar. According to geochemical investigation of the main components of clay, the percentage of SiO<sub>2</sub> was above 50%, while the percentages of Al<sub>2</sub>O<sub>3</sub> and Fe<sub>2</sub>O<sub>3</sub> were over 16% and 6%, respectively. The percentage of other elements like CaO, K<sub>2</sub>O, MgO, and Na<sub>2</sub>O was in small fractions. The technological properties of the firing products reveal that the bulk density (1.74 and 2.07 g/cm<sup>3</sup>), shrinkage (0.04-4.32%), weight loss (0.38-7.05%), and compressive strength (2.23-11.92 MPa) of firing samples increased with the temperature increases (900 °C, 1000 °C and 1100 °C) while water absorption (17.99-4.96%) and porosity (17.80-2.42%) decreases. These different results obtained on clay deposits are favorable for use in ceramic brick production.",
+      "authors": "[\"Kagonbé Bertin Pagna\", \"Ngarena Klamadji Moussa\", \"Cengiz Özgür\", \"Djenabou Soureiyatou Fadil\", \"Bakaïné Viviane Djaoyang\", \"Yanné Etienne\", \"Djoda Fréderic Pagoré\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.565673",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 6,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942806",
+      "title": "Epigenetic regulators and inflammation antagonists in familial Mediterranean fever: the role of hsa-miR-335-5p, hsa-miR-26b-5p, hsa-miR-16-5p miRNAs and IL-36Ra levels in pathogenesis.",
+      "abstract": "Familial Mediterranean Fever (FMF) is a hereditary autoinflammatory disease characterized by mutations in the MEFV and an over-activation of the pyrin inflammatory cascade. In this study, the roles of three specific microRNAs (miRNAs) and the inflammatory cytokine antagonist IL-36Ra in the pathogenesis of FMF were investigated due to their potential roles in chronic inflammation. 40 FMF patients and 45 healthy control individuals who applied to the Balikesir University Genetic Disorders Evaluation Center between February 2021 and June 2024 were included in the study. miRNA expression levels were determined by Quantitative Real-Time Polymerase Chain Reaction (qRT-PCR), and IL-36Ra protein levels were determined using the ELISA method. Gene expression levels were analyzed by the 2-ΔΔCt method. A significant decrease (p < 0.005) in hsa-miR-335-5p and hsa-miR-26b-5p expression levels and a significant increase (p < 0.005) in hsa-miR-16-5p and IL-36Ra protein levels were observed in FMF patients. These findings point to the existence of a two-way molecular mechanism in FMF pathogenesis: on one hand, there is a deficit in epigenetic regulators with anti-inflammatory properties, such as hsa-miR-335-5p and hsa-miR-26b-5p, while on the other hand, molecules like hsa-miR-16-5p and IL-36Ra increase as a compensatory response to balance the inflammatory load. These molecules show promise as potential biomarkers for the diagnosis and follow-up of FMF.",
+      "authors": "[\"Erdik Sedef\", \"Solmaz Avcikurt Ayla\", \"Bolat Hilmi\"]",
+      "journal": "Immunologic research",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.566418",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41943178",
+      "title": "Prospect-Theoretic Risk Assessment of Emergency Response Performance Under Procedural Dependency and Organizational Collaboration: A Dynamic Metanetwork-Based Framework.",
+      "abstract": "Emergency response performance assessment (ERPA) is critical for improving emergency management by supporting proactive risk identification and post event improvement. Existing ERPA approaches based on conceptual frameworks or system effectiveness seldom capture operational mechanisms, the decision-makers' bounded rationality, and the joint effects of procedure dependency and organizational collaboration. To address these limitations, this study develops a dynamic metanetwork-based risk analysis framework grounded in prospect theory that emphasizes multisubjective interactions within emergency response systems and distorted performance perceptions of decision-makers. The emergency response system is represented as a dynamic metanetwork with four node types, including procedure, organization, resource, and information, connected through seven subnetworks that describe system operations. Satisfaction indicators are defined at the single-procedure level and transformed using S-shaped timeliness functions to reflect bounded rationality under prospect theory, then extended to multi-procedure settings to capture procedural dependency. Key forms of organizational collaboration are identified, including procedure hand-offs, co-assignments, and resource negotiations, and collaboration indicators are constructed to measure alignment between organizational networks and these collaboration forms. Procedure timeliness and organizational collaboration are finally integrated through a fuzzy affiliation function to account for external uncertainty. The proposed framework is illustrated through a risk ERPA of the Manchester Arena attack, with sensitivity and comparative analysis demonstrating its effectiveness in complex settings.",
+      "authors": "[\"Wang Renlong\", \"Yue Jingyao\", \"Lu Jintao\", \"Huynh Anh Ngoc Quang\", \"Shao Xueyan\", \"Gao Mingang\"]",
+      "journal": "Risk analysis : an official publication of the Society for Risk Analysis",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.567155",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942863",
+      "title": "Chemoradiotherapy-induced Th17/IL-17 signaling correlates with therapeutic tolerance and early recurrence in cervical carcinoma.",
+      "abstract": "This study investigates the role of Th17 cells and IL-17 signaling in mediating therapeutic resistance and early recurrence in cervical carcinoma. Th17 cells were generated in vitro, and cervical carcinoma cells were subsequently exposed to cisplatin in the presence of Th17-conditioned media or recombinant IL-17. To elucidate the underlying molecular mechanisms, synthetic siRNAs targeting Akt1 (si-Akt1) and Akt2 (si-Akt2) were employed. Gene expression levels were quantified using ABIVII7 qRT-PCR, and phosphorylation of AKT at Thr308 and Ser473 was assessed. Cervical carcinoma cell lines (HeLa and SW756) were cultured and subjected to siRNA-mediated knockdown of AKT1 and AKT2. Cytotoxicity assays were conducted to evaluate cell viability under various treatment conditions. Cells were stimulated with either standard medium or conditioned medium from in vitro-differentiated Th17 cells. Th17 cell-induced resistance to cisplatin and radiation co-treatment was found to be mediated via the AKT signaling pathway. Moreover, Th17 cells promoted chemoradiotherapy tolerance in cervical cancer cells, with a potential contribution from IL-17 signaling. Although chemoradiotherapy significantly decreased cell viability across all cell lines, preconditioning with recombinant IL-17 notably mitigated this effect, resulting in increased cellular survival. These findings suggest a critical role for Th17 cells in modulating the therapeutic response and recurrence risk in cervical carcinoma through AKT pathway activation.",
+      "authors": "[\"Cao Fanglei\", \"Li Na\"]",
+      "journal": "BMC molecular and cell biology",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.567812",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942704",
+      "title": "Phosphotyrosine proteomics reveals novel Zap70 and Itk pathway targets downstream of TCR and CAR in Jurkat T cells.",
+      "abstract": "Ζ-associated protein of 70 kDa (Zap70) and interleukin-2-inducible T cell kinase (Itk) propagate the primary and CD28-integrated phosphotyrosine (pY) signalling, respectively, to achieve full T cell activation. Despite their canonical roles in T cell activation, our understanding of how each kinase controls canonical and noncanonical pY signalling is incomplete. Here, using three T cell activation methods (soluble antibodies, APC-pMHC/TCR, and CD19-CAR/Raji), we evaluated the effects of two novel inhibitors, RDN2150 (RDN, Zap70) and Soquelitinib (Soq, Itk), on T cell activation. We validated the published working concentrations of RDN and Soq on phosphorylation of key T cell signalling proteins and on T cell activation markers, finding that RDN provides more complete inhibition of T cell signalling and activation. We used LC-MS/MS to evaluate how RDN and Soq treatment affected the phosphotyrosine (pY) signalling and proteome of T cells, finding that RDN, as opposed to Soq, completely downregulated the TCR signalling pathway. Finally, we identified new, noncanonical pY sites responsive to RDN and Soq, providing new insights into the pathways regulated by Zap70 and Itk. Together, our work provides a basis for further study on RDN and Soq, as well as a molecular roadmap for the effects of these inhibitors.",
+      "authors": "[\"Callahan Aurora\", \"Trychanh Savannah S\", \"Ro Timothy\", \"Mojumdar Aisharja\", \"Salomon Arthur R\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.568391",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942809",
+      "title": "Radiolabeling efficiency of FENTA chelators and stability of their terbium-161, lutetium-177 and bismuth-213 complexes.",
+      "abstract": "Phenanthroline derivatives are well-known chelators in coordination chemistry, but their potential in the rapidly evolving field of targeted radionuclide therapy (TRT) has not yet been explored. In TRT, DOTA remains the gold standard chelator for several clinically relevant radionuclides such as terbium-161, lutetium-177 and bismuth-213. However, its requirement for elevated labeling temperatures is a drawback, particularly for heat-sensitive targeting vectors. Although several alternative chelators have been reported in recent years, there remains an interest in new systems with suitable complexation properties. In this work, we evaluate whether phenanthroline-based ligands can serve as useful chelators in TRT, using the octadentate chelator H<sub>4</sub>FENTA and a newly developed bifunctional analog, BF-FENTA. Their ability to complex [<sup>161</sup>Tb]Tb<sup>3+</sup>, [<sup>177</sup>Lu]Lu<sup>3+</sup>, and [<sup>213</sup>Bi]Bi<sup>3+</sup>, as well as their kinetic inertness, was assessed and compared to the benchmark chelators DOTA and CHX-A\"-DTPA. BF-FENTA was prepared via mono-substitution of 2,9-bis(chloromethyl)-1,10-phenanthroline with di-tert-butyl iminodiacetate, followed by a second substitution with the bifunctional arm. Both H<sub>4</sub>FENTA and BF-FENTA efficiently incorporated [<sup>161</sup>Tb]Tb<sup>3+</sup> under mild conditions within 15 min at an apparent molar activity (AMA) of 150 MBq/nmol. Stability studies showed that both chelators formed an unstable complex with [<sup>161</sup>Tb]Tb<sup>3+</sup>, while the [<sup>177</sup>Lu]Lu<sup>3+</sup> chelates showed similar stability compared to DOTA after 7 days in human serum. However, a DTPA challenge indicated a reduced kinetic inertness for both FENTA chelators compared to DOTA. For [<sup>213</sup>Bi]Bi<sup>3+</sup>, rapid incorporation was observed with the phenanthroline chelators, with H<sub>4</sub>FENTA achieving high radiochemical conversions (> 90%) at high AMAs of up to ~ 200 MBq/nmol after 5 min. Additionally, H<sub>4</sub>FENTA displayed a high selectivity for [<sup>213</sup>Bi]Bi<sup>3+</sup> in the presence of competing metal ions. BF-FENTA showed slightly less favorable chelation properties with [<sup>213</sup>Bi]Bi<sup>3+</sup> compared to H<sub>4</sub>FENTA. Nonetheless, the [<sup>213</sup>Bi]Bi<sup>3+</sup> complexes remained intact in both buffer (NH<sub>4</sub>OAc, pH 6.0) and human serum after 90 min. Both H<sub>4</sub>FENTA and BF-FENTA rapidly incorporated terbium-161, lutetium-177, and bismuth-213. While the kinetic inertness of their terbium-161 and lutetium-177 complexes was inadequate, H<sub>4</sub>FENTA exhibited favorable kinetic inertness with bismuth-213 over the 90 min timeframe, identifying it as a promising chelator. In contrast, further structural refinement is needed for its bifunctional analog.",
+      "authors": "[\"Bonneux Cédric\", \"Rodríguez Pérez Sunay\", \"Heinitz Stephan\", \"Bogaerts Veronique\", \"Van de Voorde Michiel\", \"Cardinaels Thomas\", \"Ooms Maarten\", \"Dehaen Wim\", \"Opsomer Tomas\"]",
+      "journal": "EJNMMI radiopharmacy and chemistry",
+      "publication_date": "2026-04-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.569530",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 15,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942708",
+      "title": "Meta-Analysis: The Holy Grail?",
+      "abstract": "Meta-analysis is often regarded as a cornerstone of evidence synthesis, yet its application in interventional oncology (IO) is challenged by heterogeneous study designs, rapidly evolving technologies, and limited availability of randomized controlled trials. This review evaluates the current state of evidence in IO, emphasizing the role of systematic reviews and meta-analyses in guiding clinical decision-making. To evaluate the level of evidence of the published studies within IO, a PubMed search was conducted with the aim to identify the various article types that have been published over the past decades. Over the past decades, the number of original articles has remained relatively stable. A notable observation is the significant increase in the number of systematic reviews and meta-analyses, particularly when compared to the relatively unchanged volume of original articles. This trend suggests a growing emphasis on evaluating existing research rather than generating new prospective studies. The grading of recommendations assessment, development and evaluation (GRADE) approach to assess evidence quality, the importance of adhering to Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guidelines, and common challenges like risk of bias and publication bias will be discussed within this context. Ultimately, meta-analysis should not be viewed as a definitive benchmark in IO, but as a methodological tool of which conclusions depend heavily on the quality, consistency, and relevance of the underlying studies.",
+      "authors": "[\"Vos Danielle J W\", \"Schulz Hannah H\", \"Meijerink Martijn R\"]",
+      "journal": "Cardiovascular and interventional radiology",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.570148",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942759",
+      "title": "Disparities in healthcare access and expenditures among Indigenous population in Mexico, 2018-2022.",
+      "abstract": "In Mexico, Indigenous groups face persistent structural disparities in access to healthcare services, leading to high rates of preventable diseases and increased vulnerability to financial hardship associated with to out-of-pocket health expenditures. We conducted an analysis of health coverage and health-related expenditures among Indigenous population using microdata from the three cycles of National Survey of Household Income and Expenditures. These years correspond to contrasting policy and economic contexts: 2018 marks the final phase of the Seguro Popular program; 2020 reflects its termination alongside the onset of the COVID-19 pandemic; and 2022 captures the subsequent transition period marked by the restructuring of the national public healthcare system. We found that Indigenous systematically face greater barriers in accessing healthcare systems and are more likely to incur highest out-of-pocket health expenditures compared with non-Indigenous population. The evidence underscores the need for inclusive health policies that prioritize equity in accessing health care services.",
+      "authors": "[\"García-Amador Cecilia\", \"Juárez-Díaz Diego\"]",
+      "journal": "Journal of public health policy",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.570626",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41944117",
+      "title": "Artificial Intelligence in Skin Inflammation and Oncology: Diagnostic Innovations in Dermatology.",
+      "abstract": "Skin cancer is a prevalent public health problem worldwide, caused by multiple factors like ultraviolet (UV) radiation, environmental toxins, and lifestyle-related risks. Early diagnosis is the key to enhancing patient outcomes, and recent times have seen tremendous development in artificial intelligence (AI)-aided diagnostic approaches. Conventional machine learning (ML) methods, especially Support Vector Machines (SVMs), have demonstrated robust performance in classifying skin lesions based on hand-designed features. However, deep learning has enabled automated feature extraction and enhanced diagnostic accuracy. Convolutional Neural Networks (CNNs) are increasingly used to classify melanomas based on large annotated dermoscopic images, enabling them to perform at expert levels in detecting and segmenting lesions. To support these image-based models, Long Short-Term Memory (LSTM) networks have been utilized to evaluate sequential clinical information, facilitating longitudinal disease monitoring and decision support. In addition, the convergence of CNN and LSTM architectures is the foundation for sophisticated decision support platforms, such as AI-based clinical chatbots that can interact with patients, triage, and provide initial diagnostic advice. Collectively, these innovations usher in the era of hybrid, multimodal AI platforms that will advance precision dermatology and enable earlier, more efficient interventions.",
+      "authors": "[\"Dhankhar Sanchit\", \"Garg Nitika\", \"Mahajan Shushank\", \"Dora Chander Parkash\", \"Yasmin Sabina\", \"Beniwal Suresh\", \"Chauhan Samrat\"]",
+      "journal": "Recent advances in inflammation & allergy drug discovery",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.571197",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "SVM"
+        ],
+        "dl_architectures": [
+          "CNN",
+          "RNN",
+          "Multimodal"
+        ],
+        "feature_engineering": [
+          "Dimensionality Reduction"
+        ],
+        "evaluation_metrics": [
+          "Accuracy",
+          "Precision"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942780",
+      "title": "Robotic Distal Splenopancreatectomy and Left Nephrectomy: Double Docking for En Bloc Resection of Pancreatic Cancer.",
+      "abstract": "Robotic approach has been demonstrated as a safe option for selected patients undergoing left pancreatectomy.<sup>1</sup> Nevertheless, robotic approach is still uncommon in case of multivisceral resections involving the pancreas.<sup>2,3</sup> We describe a reproducible distal splenopancreatectomy with en bloc left kidney resection for the treatment of pancreatic cancer. An 81-year-old male patient was diagnosed with adenocarcinoma in the tail of the pancreas with renal infiltration. After completing neoadjuvant therapy with Gem-Abraxane, with a good response, a decision was made to perform resective surgery using a robotic approach. The teams of urology and pancreatic surgery collaborated to perform the procedure. The approach prioritized an en bloc resection with negative margin. Early identification of the renal hilum and kidney mobilization from the inferior and lateral margin facilitated further en bloc mobilization. Following partial kidney mobilization, the patient's position and trocar placement were modified. The splenic artery was sectioned, and the pancreatic body was mobilised. It was then sectioned to the left of the pancreatic neck, together with the splenic vein, using an endostapler. Finally, the pancreatic tail, upper renal pole, and spleen were mobilized en bloc without detaching the three organs. The patient was discharged on postoperative day 6. Pathology results showed a T4 pancreatic adenocarcinoma with kidney invasion and two out of 26 lymph nodes involved. The involvement of a multidisciplinary team and the option of re-docking in complex robotic procedures reduces the conversion risk and offers patients benefits by ensuring oncological radicality.",
+      "authors": "[\"González-Abós Carolina\", \"Mercader Claudia\", \"Musquera Mireia\", \"Ausania Fabio\"]",
+      "journal": "Annals of surgical oncology",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.571944",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 81,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942700",
+      "title": "Revealing the transient ionization dynamics and mode-coupling mechanisms of helicon discharge through a self-consistent multiphysics model.",
+      "abstract": "Helicon plasma sources play a central role in applications ranging from material treatment to space propulsion and fusion, yet the physical processes governing their ignition and transient ionization remain incompletely understood. Here we develop a self-consistent, fully coupled multiphysics framework implemented in COMSOL Multiphysics, that integrates Maxwell's equations, electron energy transport, drift-diffusion kinetics, and heavy-species chemistry to capture the complete spatiotemporal evolution of helicon discharges. The model reproduces experimental measurements across pressure, magnetic field, and frequency ranges, and reveals a previously unresolved transient ionization stage characterized by a rapid density rise within ~ 10<sup>- 4</sup> s, accompanied by a two-peak electron temperature structure that governs the formation of the dense plasma core. By tracking the RF power flow and field topology, we characterize the transient redistribution of RF energy during ignition. A short-lived phase of localized energy deposition accompanies the onset of ionization, followed by a gradual restructuring of the RF field distribution as the plasma density increases, together with rapid density growth and profile restructuring. Systematic parametric scans further reveal the sensitivity of this mode-coupling process to gas pressure, magnetic field strength, and driving frequency. These results provide a unified picture of the ignition in helicon plasmas and establish a predictive tool for the design and optimization of RF plasma sources across space propulsion, manufacturing, and fusion technologies.",
+      "authors": "[\"Ma Jing-Jing\", \"Chang Lei\", \"Wu Ming-Yang\", \"Zhou Hua\", \"Zhang Yi-Wei\", \"Zadiriev Ilya\", \"Kralkina Elena\", \"Isayama Shogo\", \"You Shin-Jae\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.572665",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942768",
+      "title": "Integrated Responses of Hydrocotyle vulgaris at Different Temperatures and Rhodamine B Stress.",
+      "abstract": "Rhodamine B (RhB) release and its residues in the water bring environmental and human health risks. To explore integrated responses of Hydrocotyle vulgaris L. to high concentrations of RhB and different temperatures under RhB stress, we first tested the growth performance of H. vulgaris to different concentrations (5-100 mg/L) of RhB at 25 °C. Plant biomass, root activity, and photosynthetic pigment contents decreased, while those for osmoregulators and antioxidants increased with increasing RhB concentrations. However, the growth performance of H. vulgaris did not change significantly at 20 mg/L RhB exposure. Then we tested H. vulgaris responses under 20 mg/L RhB exposure at varying temperatures. H. vulgaris showed similar responses at 15 °C and 35 °C compared to 25 °C, with a removal efficiency of 97% RhB at 35 °C. Mass spectrometry analysis confirmed that RhB underwent progressive oxidation and was ultimately degraded into small-molecule compounds by H. vulgaris, thereby reducing its overall ecotoxicity. Therefore, while H. vulgaris shows potential for dye remediation under controlled temperatures; its practical application requires further consideration of complex field variables in natural aquatic environments.",
+      "authors": "[\"Zhang Jiehe\", \"Zhang Kaifan\", \"Yang Yi\", \"Jiang Jiahui\", \"Tao Haisheng\"]",
+      "journal": "Bulletin of environmental contamination and toxicology",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.573202",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942794",
+      "title": "The Information Needs and Experiences of Cardiac Implantable Electronic Device Caregivers: A Qualitative Analysis of Social Media Data.",
+      "abstract": "Although cardiac implantable electronic devices (CIEDs) significantly improve physiological and mortality outcomes, both patients and their caregivers can experience considerable psychosocial distress. This study aimed to characterise the information needs and experiences of CIED caregivers discussed on a social media platform. Data were systematically collected using a Python-based script that filtered for CIED caregivers' posts to the social media platform Reddit based on predefined keywords. Reflexive content analysis was used to analyse and describe the data. From 2138 posts collected, 190 posts from 151 caregivers were identified after filtering and screening. Included caregivers most often cared for fathers or husbands, who typically had pacemakers and a median age of 67 years (IQR = 30). Four categories described the main topics of caregivers' discussions: Concerns about the health of patients (79% of users), Managing and coping with patients' lives and deaths (75%), The difficulties of being a caregiver (62%), and Engagement with healthcare (41%). This study highlights that CIED caregivers using social media reported substantial burdens and challenges, adopting social media as a source of support. Given the parallels with caregivers of other patient populations, the findings demonstrate the need for healthcare guidelines, policies, and practices to support CIED caregivers.",
+      "authors": "[\"Nicmanis Mitchell\", \"Oxlad Melissa\", \"Chur-Hansen Anna\"]",
+      "journal": "Journal of clinical psychology in medical settings",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.573828",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942594",
+      "title": "An enhanced escape algorithm with comprehensive learning and Cauchy-Gaussian mutation for reservoir optimization.",
+      "abstract": "Global optimization of complex, high-dimensional landscapes remains a fundamental challenge in scientific and engineering domains. To mitigate the inherent limitations of premature convergence and diversity loss, this paper proposes CLGMESC, an enhanced variant of the Escape Algorithm (ESC). The proposed algorithm integrates a dimension-wise comprehensive learning (CL) strategy with a hybrid Cauchy-Gaussian mutation (HCGM) operator. The CL strategy reconfigures the learning paradigm for stagnant individuals, enabling them to construct exemplars from multiple high-quality peers and thereby restore population diversity. Synergistically, the HCGM operator utilizes an adaptive weighting mechanism to dynamically balance heavy-tailed Cauchy mutations for global exploration and thin-tailed Gaussian mutations for local refinement, effectively facilitating escapes from local optima. Comprehensive evaluations on the CEC2017 benchmark suite demonstrate that CLGMESC achieves the top rank among ten advanced metaheuristics (including SBO, BBO, PO, DE, PSO, SMA, CPA, and MGO), with Wilcoxon signed-rank tests confirming its statistical superiority ([Formula: see text]) across the majority of test functions. Furthermore, the practical efficacy of CLGMESC was validated through a reservoir production optimization problem using the three-dimensional Egg Model ([Formula: see text] grid). In determining optimal well controls, CLGMESC achieved the highest Net Present Value ([Formula: see text] USD) with the lowest standard deviation, thus substantiating its reliability and robustness in solving computationally intensive real-world engineering problems. The consistently high rankings across diverse benchmarks and the substantial economic gains in the reservoir simulation underscore the algorithm's pronounced capability to maintain a robust exploration-exploitation balance and dynamically escape local optima in demanding parameter spaces.",
+      "authors": "[\"Chen Hongkui\", \"Zhu Xiaomin\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.574604",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942755",
+      "title": "Thermal runaway-induced short-circuit arc in highly integrated lithium-ion battery systems: mechanisms, thresholds, and mitigation strategies.",
+      "abstract": "Thermal runaway-induced short-circuit arc in battery cell blocks or modules pose severe risks to electric vehicle safety; Despite this risk, however, their failure mechanisms, path and safety thresholds remain insufficiently understood. This study addresses these gaps by investigating short-circuit arc in commercial battery systems. Three short-circuit arc modes (case-to-case, case-to-busbar, and busbar-to-busbar) and corresponding failure paths were identified, with the case-to-case mode confirmed as the most hazardous. Experimental characterization reveals three phenomena during the case-to-case mode: weak Joule heating, intrinsic breakdown, and thermal breakdown with temperatures exceeding 1400 °C under 117 V and 7.2 mm, capable of triggering adjacent cell thermal runaway. A quadratic correlation between the critical breakdown voltage and electrode spacing was established, and a risk map was proposed. This study clarifies the mechanisms of thermal runaway-induced short-circuit arc, providing a quantitative safety design tool for highly integrated/high-voltage battery systems.",
+      "authors": "[\"Yu Zhenxing\", \"Chen Chuan\", \"Zhao Pengfei\", \"Qiao Yantao\", \"Cao Yu\", \"He Binwei\", \"Liu Zhimin\"]",
+      "journal": "Communications engineering",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.575114",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942811",
+      "title": "Biomimetic bone scaffold functionalized with traditional Chinese medicine ingredients and collagen-binding IGF-1 for bone regeneration.",
+      "abstract": "Many active ingredients from traditional Chinese medicine (TCM) have been applied in bone tissue engineering. However, the fuzzy mechanism of these ingredients limits their application. In this study, a novel biomimetic bone scaffold functionalized with two TCM ingredients, nano deer bone meals (nBM) and neferine (Nef), as well as collagen-binding IGF-1 (CBD-IGF-1) was fabricated via a combination of phase inversion and particle leaching methods. The biomimetic CIGF1&Nef@PLGA/nBM scaffold mimicked cancellous bone in terms of its porous structure and bone matrix composition rich in collagen. Both Nef contained in the scaffold and CBD-IGF-1 bound to collagen matrix could be slowly released from the scaffold, exerting long-term and safe bioactivity. In vitro tests showed that the CIGF1&Nef@PLGA/nBM composite significantly enhanced the adhesion, proliferation and osteogenic differentiation of MC3T3-E1 cells on the material. Nef and IGF-1 in CIGF1&Nef@PLGA/nBM scaffold exerted a synergistic effect on IGF-1-mediated osteogenic differentiation via IGF-1R axis to ensure the osteogenic activity of the biomimetic scaffold. In vivo skull defect repair experiment confirmed that CIGF1&Nef@PLGA/nBM could promote the neocortical bone formation and osseous maturation, further accelerating the bone defect repair. The findings of this research demonstrated that the biomimetic CIGF1&Nef@PLGA/nBM scaffold is a promising implantation in bone defect therapy.",
+      "authors": "[\"Gao Xiaobo\", \"Lei Bocheng\", \"Zhao Xiaomin\", \"Zhang Ying\"]",
+      "journal": "Journal of materials science. Materials in medicine",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.575725",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41943123",
+      "title": "Lemon Balm Attenuates Methotrexate-Induced Testicular Damage Through Modulation of Oxidative Stress and p-p38 MAPK Signaling.",
+      "abstract": "This study investigated the protective effects of Lemon balm (Melissa officinalis) extract against methotrexate (MTX)-induced testicular toxicity in male Wistar rats. Thirty-two rats were divided into four groups: control, Lemon balm, MTX, and MTX + Lemon balm. MTX was administered intraperitoneally at 20 mg/kg on day 23, while Lemon balm was given orally at 100 mg/kg daily. The MTX-treated group showed significant reductions in body and testicular weight, sperm quality, and reproductive hormone levels [testosterone, luteinizing hormone (LH), follicle-stimulating hormone (FSH)]. There was also a marked increase in oxidative stress markers [malondialdehyde (MDA), nitric oxide (NO)] and inflammation markers [tumor necrosis factor-alpha (TNF-α), interleukin (IL)-6, IL-1β, 8-hydroxy-2'-deoxyguanosine (8-OHdG)]. Immunohistochemical analysis revealed strong p-p38 mitogen-activated protein kinase (MAPK) expression in testicular tissues of the MTX group. Co-treatment with Lemon balm significantly improved sperm parameters and hormone levels while reducing oxidative and inflammatory responses, including marked downregulation of p-p38 MAPK expression. These findings suggest that Lemon balm extract may alleviate MTX-induced testicular toxicity through antioxidant, anti-inflammatory, and p-p38 MAPK pathway modulation.",
+      "authors": "[\"Gazwi Hanaa S S\", \"Megahed Esraa M\", \"Ahmed Anwar\", \"Mohany Mohamed\", \"Živković Jelena\", \"Tony Sallam K\"]",
+      "journal": "Environmental toxicology",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.576332",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41943063",
+      "title": "Exercise-myokine relationships in osteoarthritis.",
+      "abstract": "The pathogenesis and progression of osteoarthritis (OA) involve a multidimensional interplay of biomechanical abnormalities, metabolic disturbances, and inflammatory cascades. Current clinical interventions for OA face limitations such as singular therapeutic targets and significant adverse effects, highlighting an urgent need to explore innovative strategies targeting pathological network regulation. Recent advancements have revealed that exercise training modulates OA through the \"exercise-myokine-joint\" regulatory axis. This axis is mediated by myokines secreted from skeletal muscle, providing a breakthrough direction for OA prevention and treatment. Studies demonstrate that physical exercise ameliorates OA progression through biomechanical adaptations, inflammatory modulation, and metabolic regulation, with myokines serving as molecular messengers that precisely regulate cartilage metabolism, inflammatory responses, and bone remodeling networks. Notably, exercise parameters (modality, intensity, frequency) exhibit dose-dependent correlations with myokine secretion profiles. This review systematically examines the molecular basis and translational potential of the exercise-myokine-OA regulatory network, offering theoretical support for developing myokine-targeted precision interventions while pioneering novel pathways for clinical optimization of exercise therapy.",
+      "authors": "[\"Zhang Yiwen\", \"Pan Chunran\", \"Hou Wenjie\", \"Sun Kai\", \"Xu Tao\"]",
+      "journal": "Journal of translational medicine",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.576883",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Precision"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942913",
+      "title": "Association of nephrology referral timing with long-term survival and peritoneal dialysis-associated peritonitis in patients initiating peritoneal dialysis: a single-center retrospective study.",
+      "abstract": "The timing of nephrology referral is an important determinant of outcomes in chronic kidney disease, and observational studies have examined its association with outcomes among patients initiating peritoneal dialysis (PD). We investigated whether early referral (ER) was associated with long-term survival and PD-associated peritonitis (PD peritonitis). We conducted a single-center, retrospective cohort study of 105 Japanese patients who initiated PD between 2007 and 2014. ER was defined as a nephrology consultation ≥ 90 days before PD initiation, and late referral (LR) as < 90 days. The primary outcome was all-cause mortality, assessed by Cox regression. The secondary outcomes were time to first PD peritonitis (Fine-Gray model) and PD peritonitis incidence rates (episodes per patient-year), compared in adjusted analyses. Follow-up continued until death, transplantation, or the end of 2020. Of 105 patients (median age, 58 years; 71.4% male), 81 were in the ER group and 24 were in the LR group. During a median follow-up of 7.3 years, 42 patients (40.0%) died. ER was associated with lower mortality risk (adjusted hazard ratio, 0.43; 95% confidence interval, 0.22-0.82). PD peritonitis occurred in 54 patients (51.4%). ER was not significantly associated with time to first PD peritonitis (adjusted subdistribution hazard ratio, 0.60; 95% confidence interval, 0.33-1.07) or PD peritonitis incidence (adjusted incidence rate ratio, 0.55; 95% confidence interval, 0.29-1.05). ER before PD initiation was associated with significantly improved long-term survival. Associations between ER and PD peritonitis outcomes did not reach statistical significance. These findings underscore the importance of timely nephrology referral in patients considered for PD. Not applicable.",
+      "authors": "[\"Okamoto Keisuke\", \"Matsui Masaru\", \"Eriguchi Masahiro\", \"Samejima Ken-Ichi\", \"Tsuruya Kazuhiko\"]",
+      "journal": "BMC nephrology",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:02.577832",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2007,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942721",
+      "title": "A secretory leukocyte protease inhibitor-derived small peptide coating on a titanium surface enhances osteoblast adhesion, proliferation, and reduces bacterial adhesion.",
+      "abstract": "Establishing strong osseointegration and preventing infection are essential for the success of titanium implants. Previous studies demonstrate that the secretory Leukocyte Protease Inhibitor (SLPI) enhances osteoblast adhesion on titanium surfaces, highlighting its potential clinical applications in orthopedics or dental implantation. This study examined SLPI-derived small peptides (SDSPs) as innovative coatings aimed at improving the biological and antibacterial characteristics of titanium (Ti). SDSPs were generated via in silico digestion of human SLPI sequence and subsequently synthesised. In this study, evaluation using the human foetal osteoblasts (hFOB 1.19) revealed that SDSP fragments (P1, P7, P8) notably enhanced cell adhesion by more than 50% in addition to improving spreading and proliferation on Ti surfaces wthout cytotoxic effects. The coatings demonstrated a notable increase in calcium deposition when compared to uncoated Ti. Analysis using XPS and profilometry validated the presence of peptides, and the P7 coating notably enhanced surface hydrophilicity. The anti-bacterial adhesion assays revealed that P7 effectively decreased the presence of both Escherichia coli and Staphylococcus aureus on plastic surfaces. Interestingly, P7 fragments effectively prevented the adhesion of Gram-negative Escherichia coli on Ti, in a concentration-dependent manner. The findings indicate that SDSPs, especially P7, have the potential to enhance osteoblast activity while simultaneously decreasing bacterial adherence. This investigation presents initial findings indicating that SDSP-coated titanium may enhance the results of orthopaedic and dental implants.",
+      "authors": "[\"Thepsupa Watchara\", \"Thongjui Nattikan\", \"Chouyratchakarn Wannapat\", \"Srisopar Onnicha\", \"Kanthasap Kritsana\", \"Baipaywad Phornsawat\", \"Jarisarapurin Wattanased\", \"Jobsri Jantipa\", \"Supanchart Chayarop\", \"Kumphune Sarawut\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:04.704481",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC"
+        ],
+        "sample_size": 50,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942552",
+      "title": "Knowledge and attitudes toward mpox among the Lebanese population during the second wave and their attitudes toward vaccination.",
+      "abstract": "Mpox has spread beyond endemic regions, with cases reported in Lebanon. Public knowledge, perceptions, and vaccine acceptability may have evolved due to increased media coverage and global outbreaks. This study assesses the Lebanese population's knowledge and attitudes toward mpox during the second wave, as well as their willingness to receive the vaccine. A cross-sectional online survey was conducted among 2343 Lebanese residents. Participants' knowledge and attitudes were assessed using a 26-point knowledge index and a Likert scale via an online validated questionnaire. Multiple linear regression analyses identified determinants influencing knowledge, attitudes, and vaccine acceptance. The mean knowledge index for the second wave was 9.36 with a standard deviation (SD) of 6.76, showing no significant improvement from the first wave. Key predictors of higher knowledge included healthcare worker status and the presence of comorbidities, while reliance on social media was associated with lower scores. Attitudes remained stable and moderately positive (mean: 11.76, SD: 2.62), yet vaccine acceptance declined from 56.4% to 37.1%. A correlation matrix revealed a weak negative link between knowledge and attitude, and a modest positive association between attitude and vaccine acceptability. Hesitancy was highest among women and rural residents. Targeted public health strategies and trusted communication channels are needed to improve vaccine confidence.",
+      "authors": "[\"Tanashat Mohammad\", \"Fakih Nour\", \"El Bizri Nour\", \"Saad Rakab Mohamed\", \"Abouzid Mohamed\", \"Sleiman Karen\", \"Hassan Hadi\", \"Al Sayed Moetasem\", \"Zibara Zahraa\", \"Afyouni Ahmad\", \"Salameh Pascale\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:04.705188",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942774",
+      "title": "Two-dimensional materials for integrated sensing.",
+      "abstract": "Recent advances in electrical multiply-accumulate (MAC) operations leveraging resistive-switching materials have catalysed significant progress in optoelectronic sensing and computing technologies through the exploration of emerging materials. These innovative approaches facilitate the encoding of optical amplitude information such as retina-like functionalities. However, a critical dimensional mismatch persists between electrical and optical information, resulting in a substantial portion of high-dimensional data channels remaining unexplored in conventional MAC operation schemes. Combined with advanced device architectures and data algorithms, two-dimensional materials are considered promising candidates to realize in situ encoding and optoelectronic sensing of multi-dimensional optical information under precise control owing to their tunable physical properties. In this Review, we outline the progress of emerging two-dimensional-materials-based 'integrated sensors', and benchmark electrical inputs with optical scenarios in a framework unifying information encoding. Exciting opportunities for integrated sensors are discussed as well, highlighting the requirements and differences in the encoding of different dimensions of information and exploring the potential for integrated sensors in other fields.",
+      "authors": "[\"Xu Hangyu\", \"Xu Zhihao\", \"Ren Qinqi\", \"Meng Yuan\", \"Han Sangmoon\", \"Wang Zhaoqing\", \"Chai Yang\", \"Bae Sang-Hoon\", \"Hu Weida\"]",
+      "journal": "Nature materials",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:04.705728",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942591",
+      "title": "Hyperemesis gravidarum revisited: from GDF15 biology to precision multimodal therapy.",
+      "abstract": "Hyperemesis gravidarum (HG) is a severe and potentially life-threatening form of nausea and vomiting in pregnancy, characterized by intractable vomiting, dehydration, electrolyte imbalance, nutritional deficiencies, and significant weight loss. Despite being a leading cause of early pregnancy hospitalization, its management remains inconsistent and often empirical. Emerging evidence suggests a paradigm shift in the understanding of HG pathophysiology, moving beyond traditional hormonal theories toward an integrated model involving genetic susceptibility and metabolic signaling pathways, particularly Growth Differentiation Factor 15 (GDF15) and RYR2-related mechanisms. This narrative review critically synthesizes current evidence regarding the evolving biological basis of HG and evaluates established and emerging therapeutic strategies. A multimodal, stepwise approach remains the cornerstone of management. First-line pharmacotherapy includes doxylamine-pyridoxine, followed by dopamine antagonists or 5-HT3 receptor antagonists such as metoclopramide and ondansetron, which demonstrate reassuring safety profiles in large cohort studies. Corticosteroids may be considered in refractory cases. Early correction of dehydration, electrolyte disturbances, and thiamine deficiency is essential to prevent complications such as Wernicke's encephalopathy. Nutritional support, preferably through enteral tube feeding rather than parenteral nutrition, should be prioritized when oral intake is inadequate. Integrating biological insights with standardized, compassionate, and multidisciplinary care may improve clinical outcomes and reduce the substantial physical and psychological burden associated with HG.",
+      "authors": "[\"Alshaikh Ahmed Baker A\", \"Al-Kuraishy Hayder M\", \"Kafy Souzan\", \"Albar Mohammad\", \"Sebghatallah Asem\", \"Shokr Mustafa M\", \"Batiha Gaber El-Saber\"]",
+      "journal": "Naunyn-Schmiedeberg's archives of pharmacology",
+      "publication_date": "2026-04-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:04.706384",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [
+          "Multimodal"
+        ],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Precision"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942661",
+      "title": "Biomolecular Crystallization in Microfluidic Devices.",
+      "abstract": "This chapter presents an overview of microfluidic devices reported in the literature, used to develop methodologies for nucleation of biomolecules, with crystal size control, and for collecting thermodynamic and kinetic data. Section 2 is dedicated to the properties of microfluidic devices through materials used for their fabrication and for crystal analysis. Section 3 describes the variety of microfluidic devices available and how to handle them to produce flows, droplets, and/or wells of micrometer size. These devices use crystallization methods inspired by batch processes, and they are mainly used for protein crystallization. Section 4 focuses on fundamental properties of biomolecule crystallization determined using droplet-based microfluidics: nucleation kinetics, nucleation rate, and effective interfacial energy crystal/solution. Section 5 explains how the kinetic effect of confinement due to micrometer size, and so nanovolumes, leads to isolation of different phases. These latter are characterized by X-ray diffraction (XRD), and methods to minimize manual handling of crystals for XRD are also presented, with appropriate equipment to store the crystals.",
+      "authors": "[\"Candoni Nadine\", \"Grossier Romain\", \"Veesler Stéphane\"]",
+      "journal": "Advances in biochemical engineering/biotechnology",
+      "publication_date": "2026-04-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:04.706866",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Medical Imaging"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942590",
+      "title": "Critical analysis of the prescription and evaluation of monoclonal antibodies approved in Germany for the outpatient setting from 2010-2021.",
+      "abstract": "Monoclonal antibodies (mAbs) are increasingly being launched on the German market and account for a growing share of total drug costs every year. In 2021 alone, eleven monoclonal antibodies were among the 30 best-selling drugs, accounting for 9.91% of total drug costs. In contrast, a considerable additional benefit of the newly introduced monoclonal antibodies is not predominantly demonstrable. Therefore, our objective was to analyze the drug prescriptions and associated costs in comparison to the benefit assessment of the Federal Joint Committee (GBA). This paper analyzes 62 monoclonal antibodies that were approved by the European Medicines Agency in the period from 2010 to 2021 and newly launched on the German market. The data basis is provided by the Drug Prescription Report (AVR) and the Statutory Health Insurance (SHI) Drug Index for outpatients. The SHI index is compiled by the Wissenschaftliches Institut der AOK (WIdO). The GBA provides a further data basis for the assessment of additional benefits. The relevant parameters used for each drug include the number of prescriptions, net costs, defined daily doses (DDD) and costs of the defined daily doses (DDD costs) at the time of the year of approval and as of 2021. There is only a slight correlation between the number of DDDs, prescriptions and net costs of the respective drug and the additional benefit assessed by the GBA. There is a certain correlation between the advertisements in the journal \"Oncology Research and Treatment\" and the drug benefit. In summary, the high costs of monoclonal antibodies cannot be justified by the additional benefit assessed by the GBA, as no overriding significant additional benefit can be proven for the drugs analyzed. More precise regulation of drugs with little or no additional benefit, as well as regulation of the price of drugs with considerable additional benefit, is crucial to ensure a better balance between costs and benefits.",
+      "authors": "[\"Tödter Anna Lena\", \"Seifert Roland\"]",
+      "journal": "Naunyn-Schmiedeberg's archives of pharmacology",
+      "publication_date": "2026-04-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:04.707635",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2021,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942601",
+      "title": "SMN1 mutation spectrum and functional analysis of novel SMN1 variants in a Chinese spinal muscular atrophy cohort.",
+      "abstract": "Spinal muscular atrophy is the most common fatal neurogenetic disorder in infancy and early childhood, caused by insufficient expression of SMN protein due to mutations in the survival motor neuron 1 (SMN1) gene. In this study, we describe the SMN1 mutation spectrum in our SMA cohort and the clinical characteristics of 30 patients with SMN1 compound heterozygous mutations. We find the c.22_23insA hotspot mutation has a founder effect, and identify 6 novel SMN1 variants and verify the pathogenicity of these variants at molecular levels. This study proposes that SMA newborn screening should integrate RT-PCR, MLPA, and long-read sequencing to prevent missed diagnoses of compound heterozygous mutations. Furthermore, in the era of therapeutics, new clinical classification methods based on genetic characteristics are worthy of further exploration.",
+      "authors": "[\"Li Gui-He\", \"Wu Li-Wen\", \"Li Jing\", \"Dong Sen-Wei\", \"Hong Jing-Mei\", \"Xie Ying-Xuan\", \"Sun Yu-Hao\", \"He Jin\", \"Wang Ning\", \"Chen Wan-Jin\", \"Chen Hai-Zhu\"]",
+      "journal": "Journal of human genetics",
+      "publication_date": "2026-04-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:04.708025",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 1,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942804",
+      "title": "Comparative evaluation of saturated and 10% potassium iodide in reducing silver diamine fluoride staining under RMGIC restorations in primary teeth.",
+      "abstract": "Silver diamine fluoride (SDF) effectively arrests caries lesions, but its major drawback is staining. Potassium iodide (KI) has been suggested to minimise this effect. The present clinical trial compared 10% KI and saturated KI in reducing SDF-induced staining under resin-modified glass ionomer cement (RMGIC) restorations in primary teeth. A triple-blinded, parallel-design randomised clinical trial was conducted on 46 primary teeth meeting standardised ICDAS criteria to eliminate selection bias. Teeth were randomly assigned to Group A (10% KI) or Group B (saturated KI). Changes in staining were quantified using mean grey values at baseline and follow-up intervals. Secondary outcomes included parental satisfaction assessed through a structured questionnaire. A significant difference in mean grey value change was observed between groups at the 15 day interval, with saturated KI showing greater stain reduction. However, no significant differences were found at subsequent follow-ups. Parental satisfaction related to aesthetic outcomes varied between the two groups. This is one of the first clinical studies, beyond predominantly in vitro evidence, to evaluate KI formulations for SDF stain reduction under RMGIC restorations. Neither 10% KI nor saturated KI provided consistent long-term aesthetic benefits, although short-term improvements and positive parental acceptance were noted. Future trials with larger samples and adjunctive approaches are warranted to identify more reliable strategies for managing SDF-related discolouration.",
+      "authors": "[\"Vaish P\", \"Ansari A A\", \"Singh R K\", \"Khanna R\", \"Singh S\"]",
+      "journal": "European archives of paediatric dentistry : official journal of the European Academy of Paediatric Dentistry",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:04.708665",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 46,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942726",
+      "title": "An ethics-informed computable audit framework for monitoring misdiagnosis risk in AI-assisted diagnosis.",
+      "abstract": "Diagnostic AI can misclassify under distribution shift and subgroup imbalance; governance signals are rarely computable at deploy time. We target deployed diagnostic decision-support systems that perform binary classification and output a continuous risk score (preferably a calibrated probability). The audit layer ingests deploy-time streams including features X, model score S, subgroup tag g, and clinician action a, while outcome labels Y may arrive later via adjudication or follow-up. We define a unit-scaled Misdiagnosis Risk Index (MRI-AI) aggregating shift, fairness, calibration, and human-AI interaction; implement a streaming sentinel with starter bands and stop rules; and log signals and actions in an accountability ledger. A minimal simulation emulates device/site drift and imbalance. Outcomes include deploy-time trigger behavior from label-free indicators and delayed updates of label-dependent metrics (overall/worst-group AUC/FPR, ECE/Brier), as well as trigger rate, top-decile error share, and decision-curve net benefit. Using a controlled, scenario-based synthetic stress-test suite (designed to evaluate the audit/monitoring layer rather than to claim clinical performance of a particular diagnostic model), we report both predictive metrics (overall and worst-group AUC/FPR, ECE, and Brier) and alert-centric endpoints (window-level alert rate, time-to-first-trigger, and persistence). The results show that alert burden remains low under stable conditions and increases in a graded and interpretable manner with shift type and severity, supporting scenario-dependent monitoring and risk-tiered governance actions. Temperature scaling improves calibration while preserving rank-based decision behavior, and subgroup disparities remain explicitly auditable. A computable audit layer-MRI-AI + streaming sentinel + ledger-turns fairness and transparency into actionable controls for diagnostic decision support, enabling auditable monitoring and risk-tiered interventions.",
+      "authors": "[\"Li Yue\", \"Yuan MengYu\", \"Yang Yujing\", \"Fu Jia\", \"Xin Yi\", \"Duan Chu Jie\", \"Wang Jun\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:04.709489",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC",
+          "Calibration"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Medical Imaging"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41942683",
+      "title": "Unveiling the \"Glycolysis-Lactate-Lactylation\" Axis: A Novel Target in Ischemic Cerebrovascular Disease.",
+      "abstract": "Ischemic cerebrovascular disease involves complex interactions between metabolic reprogramming and epigenetic regulation. Recent studies indicate that enhanced glycolysis and lactate accumulation under hypoxic conditions not only maintain cell viability by supplying energy but also participate in disease regulation through lactylation. Lactylation regulates gene expression, immune polarization, metabolic enzyme activity, and angiogenesis through epigenetic remodeling. In ischemic cerebrovascular disease, lactylation exerts dual roles: on one hand, it can induce neuronal death, exacerbate neuroinflammation, and form a vicious metabolic cycle; on the other hand, it can influence immune cell function and gene expression, thereby exerting neuroprotective effects. Accordingly, targeting lactate metabolism or lactylation-modifying enzymes holds considerable therapeutic potential. Nevertheless, the spatiotemporal regulation, synergistic effects, and broader physiopathological implications of lactylation warrant further in-depth investigation. This review systematically summarizes the role of the \"glycolysis-lactate-lactylation\" axis in the pathogenesis of ischemic cerebrovascular disease, and discusses its potential as a therapeutic target.",
+      "authors": "[\"Xie Yi\", \"Dai Mengmeng\", \"Liu Rui\", \"Li Ying\", \"Yan Hao\", \"Li Jiacheng\", \"Liu Xuantong\", \"Yu Zhiyuan\", \"Xu Shabei\", \"Wang Wei\", \"Luo Xiang\"]",
+      "journal": "Neuroscience bulletin",
+      "publication_date": "2026-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 贝叶斯 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T19:41:04.710020",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    }
+  ]
+}

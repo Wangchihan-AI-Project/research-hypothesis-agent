@@ -1,0 +1,48 @@
+{
+  "experiment_id": "exp_20260413_025337_8ac6c39d",
+  "start_time": "2026-04-13T02:53:37.934291",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "多组学 AND 倾向性评分",
+  "search_params": {
+    "max_results": 20,
+    "date_range": [
+      2023,
+      2026
+    ],
+    "min_if": 0,
+    "relevance_threshold": 7.0,
+    "cutoff_date": "2026-04-13"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-13T02:53:50.536613",
+      "path": "data\\snapshots\\data_snapshot_20260413_025350.json",
+      "record_count": 382
+    },
+    {
+      "timestamp": "2026-04-13T03:14:53.919448",
+      "path": "data\\snapshots\\data_snapshot_20260413_031453.json",
+      "record_count": 989
+    },
+    {
+      "timestamp": "2026-04-13T03:51:54.200205",
+      "path": "data\\snapshots\\data_snapshot_20260413_035154.json",
+      "record_count": 989
+    },
+    {
+      "timestamp": "2026-04-13T04:29:58.104960",
+      "path": "data\\snapshots\\data_snapshot_20260413_042958.json",
+      "record_count": 989
+    },
+    {
+      "timestamp": "2026-04-13T05:06:35.897881",
+      "path": "data\\snapshots\\data_snapshot_20260413_050635.json",
+      "record_count": 989
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "experiment_id": "exp_20260412_224923_5d592231",
+  "start_time": "2026-04-12T22:49:23.876784",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "TCGA AND 机器学习",
+  "search_params": {
+    "max_results": 20,
+    "date_range": "2018-2026",
+    "min_if": 0,
+    "cutoff_date": "2026-04-12"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-12T22:49:31.729447",
+      "path": "data\\snapshots\\data_snapshot_20260412_224931.json",
+      "record_count": 85
+    },
+    {
+      "timestamp": "2026-04-12T22:59:20.549707",
+      "path": "data\\snapshots\\data_snapshot_20260412_225920.json",
+      "record_count": 149
+    },
+    {
+      "timestamp": "2026-04-12T23:07:40.622149",
+      "path": "data\\snapshots\\data_snapshot_20260412_230740.json",
+      "record_count": 149
+    },
+    {
+      "timestamp": "2026-04-12T23:14:28.924154",
+      "path": "data\\snapshots\\data_snapshot_20260412_231428.json",
+      "record_count": 150
+    },
+    {
+      "timestamp": "2026-04-12T23:19:53.745520",
+      "path": "data\\snapshots\\data_snapshot_20260412_231953.json",
+      "record_count": 9
+    },
+    {
+      "timestamp": "2026-04-12T23:20:25.971740",
+      "path": "data\\snapshots\\data_snapshot_20260412_232025.json",
+      "record_count": 150
+    }
+  ]
+}

@@ -1,0 +1,553 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-12T17:21:20.222942",
+  "cutoff_date": "2026-04-12",
+  "metadata": {
+    "query": "利用 UK Biobank 的多组学数据，构建一个因果图神经网络模型，研究 APOE 变体对后期痴呆风险的非线性影响。重点关注中介效应分析和残余混杂控制。",
+    "date_range": "1"
+  },
+  "record_count": 21,
+  "papers": [
+    {
+      "pmid": "41092306",
+      "title": "Atrial cardiomyopathy: markers and outcomes.",
+      "abstract": "Atrial cardiomyopathy (AtCM) is increasingly recognized as an important substrate for atrial fibrillation (AF). This study aimed to examine potential markers and risk factors of AtCM, and associations with incident AF, heart failure (HF), and stroke. Individuals from the UK Biobank with cardiac magnetic resonance imaging and electrocardiographic information were included. Atrial cardiomyopathy markers included left atrial dilation, left atrial mechanical dysfunction, P-wave prolongation, and abnormal P-wave terminal force. Risk factors for AtCM were assessed using logistic regressions. Incident AF, HF, and stroke according to AtCM markers were assessed in multivariable Cox-regression and cumulative incidence models. AF risk according to AtCM markers, clinical and genetic risk factors was evaluated by integrating the HARMS2-AF score and a polygenic risk score for AF. We used net reclassification improvement (NRI) to evaluate reclassification of risk when considering AtCM markers. Among 26 467 individuals, 4145 (15.7%) had ≥1 marker and 619 (2.3%) had ≥2 markers of AtCM. Age, coronary artery disease, and hypertension were consistently associated with AtCM. Having one AtCM marker conferred a hazard ratio (HR) for AF of 1.88 [95% confidence interval (CI): 1.54-2.31; P < .001], with higher rates observed in individuals with ≥2 markers (HR: 4.59; 95% CI: 3.52-5.99; P < .001). Addition of AtCM markers was associated with an NRI of 13.7% (95% CI: 9.2%-18.3%). Integration of clinical and genetic risk factors indicated an additive effect on AF rates. Having ≥2 markers associated with HF (HR: 3.08, 95% CI: 2.03-4.66, P < .001), and stroke (HR: 3.07, 95% CI: 1.78-5.28, P < .001). One in seven individuals had at least one marker of AtCM. Atrial cardiomyopathy markers were associated with AF, HF, and stroke, supporting AtCM as a common substrate for all three outcomes.",
+      "authors": "[\"Vad Oliver B\", \"van Vreeswijk Nick\", \"Yassin Ahmed S\", \"Blaauw Yuri\", \"Paludan-Müller Christian\", \"Kanters Jørgen K\", \"Graff Claus\", \"Schotten Ulrich\", \"Benjamin Emelia J\", \"Svendsen Jesper H\", \"Rienstra Michiel\"]",
+      "journal": "European heart journal",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:17.614552",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "Logistic Regression"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 467,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41579261",
+      "title": "Metabolic signatures, vitamin D, and red cell distribution width in dementia risk: UK Biobank insights.",
+      "abstract": "Red cell distribution width (RDW), reflecting erythrocyte size variability, and serum vitamin D are emerging biomarkers for dementia. We examined the independent and joint associations of RDW and 25-hydroxyvitamin D [25(OH)D] with incident dementia and the potential mediating role of plasma metabolomic profiles in a large prospective cohort study. We analyzed data from 162,606 UK Biobank participants aged ≥ 50 years and dementia-free with RDW and 25(OH)D measurements at baseline. Incident dementia was identified via electronic health records for ≤ 15 years. Cox proportional hazards models adjusted for sociodemographic, cardiovascular, and genetic factors. Mediation was assessed using generalized structural equation models based on 15 metabolomic principal components (zMETAB1-zMETAB15) derived from 249 NMR-based plasma metabolites. Higher RDW was associated with increased dementia risk (HR = 1.05; 95% CI: 1.02-1.08) and a atherogenic lipid signature (zMETAB1: Cholesteryl Esters in VLDL), while higher 25(OH)D was associated with lower risk (HR = 0.89; 95% CI: 0.86-0.92) and more favorable metabolomic profiles (zMETAB7: higher Omega-3 Fatty Acids; zMETAB12: lower Saturated Fatty Acids). zMETAB1, zMETAB2 (Free Cholesterol in Small HDL), and zMETAB4 (Phospholipids in Small HDL) significantly mediated RDW's effect on dementia (up to 8.8%), whereas ~ 10.8% of the association with vitamin D was mediated by zMETAB1, with additional contributions from zMETAB7 and zMETAB12. Omega-3 fatty acids partially mediated both associations, while RDW and 25(OH)D did not interact significantly in relation to dementia risk. RDW and vitamin D exert opposing, non-interactive influences on dementia risk. Lipid metabolism, particularly omega-3 fatty acids, partially mediates both associations, highlighting a common metabolic pathway that could be targeted for prevention. These findings suggest that interventions aimed at increasing omega-3 intake may simultaneously modulate the effects of both RDW and vitamin D on dementia risk, offering a promising translational strategy for early risk reduction.",
+      "authors": "[\"Beydoun May A\", \"Huang Tianyi\", \"Noren Hooten Nicole\", \"Beydoun Hind A\", \"Bouhrara Mustapha\", \"Weiss Jordan\", \"Evans Michele K\", \"Zonderman Alan B\"]",
+      "journal": "GeroScience",
+      "publication_date": "2026-01-24",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:17.638252",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 15,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "EHR"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41679317",
+      "title": "Delirium and adverse clinical outcomes: a matched cohort study in the UK Biobank.",
+      "abstract": "Delirium complicates up to one in four hospitalisations among older adults, but its clinical sequelae beyond cognitive impairment, functional decline, and mortality are not well characterised. Whether delirium signals broader multisystem vulnerability leading to later adverse outcomes remains uncertain. We aimed to examine the association of in-hospital delirium with the occurrence of a range of adverse outcomes during later hospitalisations in the UK. We performed a matched cohort study among hospitalised UK Biobank participants recruited in England, Scotland, and Wales in 2006-10 with linked hospital inpatient records collected from Jan 1, 1997 to Oct 31, 2022. We matched 14 909 individuals with delirium (1:1) to hospitalised control individuals without delirium by age, sex, Hospital Frailty Risk Score, primary diagnosis, episode length of stay, and intensive care unit length of stay of the index episode. The primary outcome was the risk of adverse clinical outcomes following delirium. Delirium was identified by ICD-10 codes, with exposure intensity defined as the number of episodes within 12 months of the index admission. Adverse clinical outcomes were selected based on existing literature and included incident events occurring during subsequent hospitalisations: falls, fractures (any and hip), pressure injury, urinary and faecal incontinence, myocardial infarction, heart failure, stroke, venous thromboembolism, pulmonary embolism, acute kidney injury, gastrointestinal bleeding, pneumonia, and sepsis. Fine-Gray subdistribution hazard models accounted for death as a competing risk and adjusted for socioeconomic covariates. Over a maximum follow-up of 26 years, the median time to event was 1·2 years (IQR 0·2-3·3) in the delirium group and 1·3 years (0·3-3·6) in the control group. Delirium was associated with a higher risk of 12 of the 15 adverse clinical outcomes than no delirium, which were urinary incontinence (subdistribution hazard ratio 2·01 [95% CI 1·78-2·28]), falls (1·96 [1·78-2·17]), pressure injury (1·72 [1·53-1·93]), acute kidney injury (1·71 [1·57-1·86]), sepsis (1·67 [1·52-1·84]), hip fracture (1·66 [1·39-2·00]), stroke (1·62 [1·41-1·87]), overall fractures (1·56 [1·40-1·74]), pneumonia (1·53 [1·41-1·65]), faecal incontinence (1·53 [1·31-1·78]), heart failure (1·31 [1·18-1·45]), and gastrointestinal bleeding (1·23 [1·09-1·38]). Each additional episode was associated with a 6-17% higher risk. Findings were consistent across sensitivity analyses excluding individuals with short follow-up, those with prevalent dementia, and the least well-matched pairs. In-hospital delirium was consistently and dose-responsively associated with a range of adverse outcomes, independent of frailty and pre-existing dementia, supporting its recognition as a sentinel event indicating longer-term vulnerability. Sigrid Jusélius Foundation, the Osk Huttunen Foundation, the Biomedicum Helsinki Foundation, and Finska Läkaresällskapet.",
+      "authors": "[\"Haapanen Markus J\", \"Ward David D\", \"Mudge Alison M\", \"Gordon Emily H\", \"Graham Frederick A\", \"Rockwood Kenneth\", \"Hubbard Ruth E\"]",
+      "journal": "The lancet. Healthy longevity",
+      "publication_date": "2026-02-09",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:17.649060",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": 2006,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41857050",
+      "title": "Adherence to the EAT-Lancet Diet and Risk of Sepsis: A Prospective Cohort Study from the UK Biobank.",
+      "abstract": "Sepsis remains a significant global health challenge due to its high incidence, mortality, and disability. While adherence to the EAT-Lancet diet has been shown to reduce the risk of various inflammatory and metabolic diseases, its impact on sepsis is not well understood. This study aimed to investigate the association between adherence to the EAT-Lancet diet and sepsis risk, considering genetic susceptibility and potential proteomic mechanisms. Data from 199,085 participants in the UK Biobank were analyzed, with sepsis cases identified using ICD-10 codes from hospital records. Higher adherence to the EAT-Lancet diet was linked to a significantly reduced risk of sepsis (HR 0.85, 95% CI: 0.78-0.93; P for trend <0.01). This protective effect was consistent across different genetic risk levels. Proteomic analysis revealed 43 plasma proteins that mediated this relationship, primarily involved in immune and inflammatory pathways. These findings suggest that greater adherence to the EAT-Lancet diet may lower sepsis risk, independent of genetic predisposition, through the modulation of immune-inflammatory proteins.",
+      "authors": "[\"Nan Wenbin\", \"Huang Qiong\", \"He Baimei\", \"Liu Yinglan\", \"Peng Zhenyu\"]",
+      "journal": "NPJ science of food",
+      "publication_date": "2026-03-19",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:17.664057",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40576910",
+      "title": "Deep learning predicts onset acceleration of 38 age-associated diseases from blood and body composition biomarkers in the UK Biobank.",
+      "abstract": "A major challenge in multimorbid aging is understanding how diseases co-occur and identifying high-risk groups for accelerated disease development, but to date associations in the relative onset acceleration of disease diagnoses have not been used to characterize disease patterns. This study presents the development and evaluation of a neural network Cox model for predicting onset acceleration risk for age-associated conditions, using demographic, anthropomorphic, imaging, and blood biomarker traits from 60,396 individuals and 218,530 outcome events from the UK Biobank. Risk prediction was evaluated with Harrell's concordance index (C-index). The model performed well on internal (C-index <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.6830</mn> <mo>±</mo> <mn>0.0902</mn></mrow> </math> , <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>n</mi> <mo>=</mo> <mn>8</mn> <mo>,</mo> <mn>931</mn></mrow> </math> ) and external (C-index <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.6461</mn> <mo>±</mo> <mn>0.1264</mn></mrow> </math> , <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>n</mi> <mo>=</mo> <mn>855</mn></mrow> </math> ) test sets, attaining C-index <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>≥</mo> <mn>0.6</mn></mrow> </math> on 38 out of 47 ( <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>80.9</mn> <mo>%</mo></mrow> </math> ) conditions. Inclusion of body composition and blood biomarker input traits was independently important for predictive performance. Kaplan-Meier curves for predicted risk quartiles (log-rank <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>p</mi> <mo>≤</mo> <mn>1.16</mn> <mi>E</mi> <mo>-</mo> <mn>16</mn></mrow> </math> ) indicated robust stratification of individuals into high and low risk groups. Analysis of risk quartiles revealed cardiometabolic, vascular-neuropsychiatric, and digestive-neuropsychiatric disease clusters with strong statistically significant inter-correlated onset acceleration ( <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>r</mi> <mo>≥</mo> <mn>0.6</mn></mrow> </math> , <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>p</mi> <mo>≤</mo> <mn>3.46</mn> <mi>E</mi> <mo>-</mo> <mn>5</mn></mrow> </math> ), while 13 and 19 conditions were strongly associated with onset acceleration of all-cause mortality and all-cause morbidity, respectively. In prognostic survival analysis, the proportional hazards assumption was met (Schoenfeld residual <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>p</mi> <mo>></mo> <mn>0.05</mn></mrow> </math> ) in 435 out of 435 or 100% (1238 out of 1334 or 92.8%) of cases across outcomes, <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi> <mi>H</mi> <mi>R</mi> <mo>=</mo> <mn>6.11</mn> <mo>±</mo> <mn>9.00</mn></mrow> </math> ( <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi> <mi>H</mi> <mi>R</mi> <mo>=</mo> <mn>3.67</mn> <mo>±</mo> <mn>5.78</mn></mrow> </math> ) with (without) Bonferroni correction. The neural architecture of OnsetNet was interpreted with saliency analysis, and several significant body composition and blood biomarkers were identified. The results demonstrate that neural network survival models are able to estimate prognostically informative onset acceleration risk, which could be used to improve understanding of synchronicity in the onset of age-associated diseases and reprioritize patients based on disease-specific risk.",
+      "authors": "[\"Ji Mica Xu\", \"Thanaj Marjola\", \"Nehale-Ezzine Léna\", \"Whitcher Brandon\", \"Thomas E Louise\", \"Bell Jimmy D\"]",
+      "journal": "GeroScience",
+      "publication_date": "2025-06-27",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:17.672048",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "C-index",
+          "Log-rank"
+        ],
+        "sample_size": 38,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "41932814",
+      "title": "Associations between respiratory diseases and lung cancer risk: a secondary analysis of the large-scale prospective UK biobank cohort.",
+      "abstract": "Respiratory diseases are significant risk factors for lung cancer; however, the association between acute respiratory infections and lung cancer incidence requires further exploration. We performed a secondary analysis of the prospective UK Biobank cohort, including participants aged 37-73 years recruited from 22 assessment centres across the UK between 2006 and 2010. Cox proportional hazards models estimated HRs for incident lung cancer according to respiratory disease status, which was defined based on linked hospital inpatient records. Mediation analysis explored potential biomarkers, and Mendelian randomisation assessed causal relationships. During a mean follow-up of 10.44 years (4 790 738 person-years), 2189 participants developed lung cancer. Among 107 007 individuals with respiratory diseases, 1322 cases occurred (incidence rate 27.6 per 10 000 person-years), compared with 867 cases among 351 876 participants without respiratory diseases (7.9 per 10 000 person-years). Overall, respiratory diseases were associated with increased lung cancer risk (HR 2.97, 95% CI 2.75 to 3.21). Acute respiratory infections, including acute nasopharyngitis (HR 3.41; 95% CI 1.83 to 6.34), influenza (HR 3.90; 95% CI 2.53 to 6.01), viral pneumonia (HR 9.86; 95% CI 6.55 to 14.85) and bacterial pneumonia (HR 6.28; 95% CI 4.40 to 8.96), showed strong associations with lung cancer incidence. In subtype analyses, squamous cell carcinoma exhibited the highest risk elevation (HR 3.65; 95% CI 3.06 to 4.36). Mediation analysis indicated that neutrophil counts partially mediated these associations (proportion mediated up to 8%). Acute respiratory infections were associated with higher lung cancer incidence, providing hypothesis-generating evidence that may inform future risk stratification research.",
+      "authors": "[\"Zhong Qiu\", \"Feng Yi\", \"Zheng Xiangyuan\", \"Deng Ying\", \"He Juan\", \"Li Jianfu\", \"Wu Xinyi\", \"Wang Zixun\", \"Wang Runchen\", \"Sun Ruixiang\", \"Lu Xuanzhuang\", \"He Jianxing\", \"Cheng Bo\", \"Liang Wenhua\"]",
+      "journal": "BMJ open respiratory research",
+      "publication_date": "2026-04-03",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:17.674208",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2006,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41483391",
+      "title": "Dynamic frailty trajectories and risk of age-related macular degeneration: a prospective cohort study in UK Biobank.",
+      "abstract": "Age-related macular degeneration (AMD) is a leading cause of irreversible vision loss in the aging population. Although frailty has been recognized as a potential risk factor, previous studies relying on static assessments cannot capture its dynamic nature. This study aims to prospectively evaluate the association between dynamic frailty trajectories and incident AMD. The baseline cohort included 462,573 UK Biobank participants who were free of AMD and had frailty phenotype (FP) data at enrollment. Among them, 53,059 with at least one follow-up FP assessment comprised the trajectory cohort. Participants were categorized as nonfrail, prefrail, or frail based on their FP scores. Annualized frailty progression (ΔFP/year) was estimated via linear regression. Cox models assessed hazard ratios (HRs) and 95% confidence intervals (CIs) for AMD. During a median follow-up of 11.8 years in the baseline cohort, 13,428 incident AMD cases (2.9%) were documented. Prefrail (HR:1.14; 95% CI:1.10-1.18) and frail (HR:1.36; 95% CI: 1.26-1.47) individuals had significantly higher AMD risks compared to nonfrail participants. In the frailty trajectory analysis with a median follow-up duration of 3.3 years, 852 incident AMD cases (1.6%) were recorded. Each 1-point FP increase conferred 28% higher AMD risk (HR: 1.28; 95% CI: 1.18-1.38), while each 0.1-point/year ΔFP increase independently elevated risk by 15% (HR: 1.15; 95% CI: 1.10-1.21). Compared to stable nonfrail, prefrailty aggravation showed highest AMD risk (HR: 2.26; 95% CI: 1.51-3.37), followed by frailty alleviation (HR: 1.73; 95% CI: 0.98-3.04) and frailty maintenance (HR: 1.72; 95% CI: 0.86-3.41). Progressive frailty trajectories, independent of baseline status, is associated with increased incident AMD risk. Early interventions targeting frailty progression may mitigate AMD risk in aging populations.",
+      "authors": "[\"Peng Yu\", \"Zhang Yuzhou\", \"Kam Ka Wai\", \"Ho Mary\", \"Sezto Simon\", \"Au Sunny\", \"Yim Charlene C\", \"Zhang Xiujuan\", \"Ng Mandy P H\", \"Ip Patrick\", \"Young Alvin\", \"Pang Chi Pui\", \"Tham Clement C\", \"Chen Li Jia\", \"Yam Jason C\"]",
+      "journal": "GeroScience",
+      "publication_date": "2026-01-02",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:17.683115",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41286463",
+      "title": "Dissecting the genetic and proteomic risk factors for delirium.",
+      "abstract": "Delirium is an acute change in cognition, common in hospitalized older adults, and associated with high healthcare and human cost; however, delirium's genetic and proteomic background remains poorly understood. Here we conducted a genetic meta-analysis on delirium using multi-ancestry data from the UK Biobank, FinnGen, All of Us Research Program and Michigan Genomics Initiative cohorts (n = 1,059,130; 11,931 cases), yielding the Apolipoprotein E (APOE) gene as a strong delirium risk factor independently of dementia. A multi-trait analysis of delirium with Alzheimer disease identified five delirium genetic risk loci. Plasma proteins associated with up to 16-year incident delirium in UK Biobank (n = 32,652; 541 cases) revealed protein biomarkers implicating brain vulnerability, inflammation and immune response processes. Incorporating proteomic and genetic evidence via Mendelian randomization, colocalization and druggability analyses, we indicate potentially useful drug target proteins for delirium. Combining proteins, APOE-ε4 status and demographics significantly improved incident delirium prediction compared to demographics alone. Our results provide insight into delirium's etiology and may guide further research on clinically relevant biomarkers.",
+      "authors": "[\"Raptis Vasilis\", \"Bhak Youngjune\", \"Cannings Timothy I\", \"MacLullich Alasdair M J\", \"Tenesa Albert\"]",
+      "journal": "Nature aging",
+      "publication_date": "2025-11-24",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:17.695868",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 1059130,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40864401",
+      "title": "Integrative machine learning approach to risk prediction for dementia and Alzheimer's disease.",
+      "abstract": "Dementia, particularly Alzheimer's disease (AD), presents a growing global health challenge characterized by cognitive decline, behavioral changes, and loss of independence. With increasing life expectancy, early diagnosis and improved clinical strategies are urgently needed. This study developed and evaluated machine learning (ML) models to predict AD risk using UK Biobank data, integrating health, genetic, and lifestyle factors. The cohort included 2878 AD cases and 72,366 controls. Among several algorithms, CatBoost performed best (ROC-AUC = 0.773), especially in females. Inputs included ICD-10 codes from 5 years pre-diagnosis, ApoE-ε4 genotype, and large collection of modifiable risk factors. Despite fewer cases, the risk predictive models for vascular dementia (VaD) outperformed the unique AD models. ApoE-ε4 was the most predictive genetic marker, while other common variants had limited utility. Key non-genetic predictors included comorbidities (e.g., diabetes, hypertension), education, physical activity, and diet. These findings highlight the value of integrating diverse data sources for dementia risk prediction and emphasize the role of sex-specific modeling and modifiable factors in early, personalized intervention strategies.",
+      "authors": "[\"Stern Amos\", \"Linial Michal\"]",
+      "journal": "GeroScience",
+      "publication_date": "2025-08-27",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:17.702141",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41810381",
+      "title": "Shared Neurocardiac Pathways Linking Atrial Fibrillation and Depression: A UK Biobank Analysis.",
+      "abstract": "Atrial fibrillation (AF) and major depressive disorder (MDD) frequently co-occur and are each associated with adverse cardiovascular outcomes, yet the biological pathways linking these conditions remain poorly defined. Using the UK Biobank, we evaluated shared neurocardiac, inflammatory, and cardiovascular correlates underlying the AF-MDD association. To assess bidirectional associations between AF and MDD and determine whether shared inflammatory, cardiovascular, autonomic, and neuroimaging correlates characterize their comorbidity. We analyzed individuals with AF (N≥1,716), MDD (N≥4,550), comorbid AF-MDD (N≥243), and healthy comparators (HCs; N≥33,041). Bidirectional associations were examined using cross-sectional and Cox proportional hazard models. Mediation analyses evaluated contributions of inflammatory markers and cardiovascular risk. Central autonomic network structure and function was assessed using MRI-derived morphometry and resting-state connectivity. AF and MDD demonstrated bidirectional associations: AF was associated with a 44% higher risk of incident MDD, and MDD with a 26% higher risk of incident AF. Inflammatory biomarkers and cardiovascular risk partially mediated these associations (6.85% and 32.01%, respectively). AF was associated with greater gray matter volume in ventromedial prefrontal and insular cortices and increased central autonomic network connectivity, whereas MDD showed opposite structural and functional patterns. The comorbid AF-MDD group exhibited distinct, non-additive neural profiles. AF and MDD demonstrate bidirectional associations characterized by shared inflammatory, cardiovascular, and neural correlates, alongside distinct and non-additive alterations within central autonomic network circuits. These findings support a systems-level neurocardiac framework linking cardiac and psychiatric disease and highlight the importance of integrated approaches to risk assessment and multidisciplinary management in patients with AF-MDD comorbidity.",
+      "authors": "[\"Verdonk Charles\", \"Talishinsky Aleksandr\", \"Hakimi Navid\", \"Misaki Masaya\", \"Steinhäuser Jonas L\", \"Thompson Wesley K\", \"Fan Chun Chieh\", \"Paulus Martin P\", \"Ajijola Olujimi A\", \"Khalsa Sahib S\"]",
+      "journal": "medRxiv : the preprint server for health sciences",
+      "publication_date": "2026-02-23",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:17.714447",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Medical Imaging"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41679324",
+      "title": "Adult obesity and risk of severe infections: a multicohort study with global burden estimates.",
+      "abstract": "Adult obesity has been linked to specific infections, but evidence across the full spectrum of infectious diseases remains scarce. In this multicohort study with impact modelling, we examined the association between this preventable risk factor and the incidence, hospitalisations, and mortality of 925 bacterial, viral, parasitic, and fungal infectious diseases, and estimated their global and regional attributable impact. We used pooled data from two Finnish cohort studies and repeated analyses in an independent population from the UK Biobank. BMI was assessed at baseline (1998-2002 in the Finnish studies; 2006-10 in UK Biobank), and participants were categorised as having healthy weight (18·5-24·9 kg/m<sup>2</sup>), overweight (25·0-29·9 kg/m<sup>2</sup>) or obesity, classified as class I (30·0-34·9 kg/m<sup>2</sup>), class II (35·0-39·9 kg/m<sup>2</sup>), or class III (≥40·0 kg/m<sup>2</sup>). Participants were followed up through national hospitalisation and mortality registries for hospital admissions and deaths due to infectious diseases. Using hazard ratios derived from the Finnish cohorts and UK Biobank, along with obesity prevalence estimates from the Global Burden of Diseases, Injuries, and Risk Factors Study database, we estimated the proportion of fatal infections attributable to obesity globally, regionally, and by country for the years 2018 (before), 2021 (during), and 2023 (after the COVID-19 pandemic). The analysis included 67 766 adults (mean age 42·1 [SD 10·8] years; 49 516 [73·1%] females, 18 250 [26·9%] males) from the Finnish cohorts and 479 498 adults (mean age 57·0 [SD 8·1] years; 261 084 [54·4%] females, 218 414 [45·6%] males) from UK Biobank. Participants had no recent history of infection-related hospitalisations at baseline. During follow-up, there were 8230 incident infection cases in the Finnish cohorts and 81 945 in UK Biobank. Compared with individuals of healthy weight, those with class III obesity had a three-times higher risk of infection-related hospital admissions (Finnish cohorts 2·75 [95% CI 2·24-3·37], UK Biobank 3·07 [2·95-3·19]), death (Finnish cohorts 3·06 [1·25-7·49], UK Biobank 3·54 [3·15-3·98]), or either outcome (Finnish cohorts 2·69 [2·19-3·30], UK Biobank 3·07 [2·95-3·19]). The corresponding pooled hazard ratio for either fatal or non-fatal severe infection among individuals with any obesity (classes I-III) was 1·7 (1·7-1·8). This association was consistent across different indicators of obesity (BMI, waist circumference, and waist-to-height ratio), demographic and clinical subgroups, and a wide range of infections (non-fatal and fatal, acute and chronic, bacterial and viral [including subtypes], and parasitic and fungal). Applying these risk estimates to global burden of disease data, the population attributable fractions of infection-related deaths due to obesity were estimated at 8·6% (6·6-11·1) in 2018, 15·0% (12·8-17·4) in 2021, and 10·8% (8·6-13·6) in 2023. Adult obesity is a risk factor for infection-related hospitalisations and mortality across diverse pathogen types, populations, and baseline clinical profiles, with evidence suggesting that approximately one in ten infection-related deaths worldwide might be attributable to obesity. Wellcome Trust, Medical Research Council, and Research Council of Finland.",
+      "authors": "[\"Nyberg Solja T\", \"Frank Philipp\", \"Ahmadi-Abhari Sara\", \"Pentti Jaana\", \"Vahtera Jussi\", \"Ervasti Jenni\", \"Suominen Sakari B\", \"Strandberg Timo E\", \"Sipilä Pyry N\", \"Meri Seppo\", \"Sattar Naveed\", \"Kivimäki Mika\"]",
+      "journal": "Lancet (London, England)",
+      "publication_date": "2026-02-09",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:20.185455",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2018,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41369132",
+      "title": "Macronutrient content and quality, and risk of multimorbidity in the UK Biobank.",
+      "abstract": "Multimorbidity is a major determinant of lifespan in older adults. We aimed to examine the association between overall, healthy and unhealthy low-carbohydrate diets (LCD) and low-fat diets (LFD) with the incidence of multimorbidity. 112 710 individuals (40-70 years) from the UK Biobank were included. Food consumption was assessed using up to five 24-h dietary recalls. LCD and LFD scores were calculated based on macronutrient quality. We calculated three versions of each score-overall, healthy and unhealthy. Multimorbidity was defined as the coexistence of ≥2 of nine chronic diseases, including cancer, chronic obstructive pulmonary disease, dementia, Parkinson's disease, stroke, depression, osteoarthritis, diabetes, and coronary heart disease. There were 8387 individuals with multimorbidity during a median follow-up of 10.7 years. Overall, LCD and LFD scores were not associated with higher multimorbidity risk. There was a higher multimorbidity risk for individuals in the highest quintile (Q5) of unhealthy LCD vs. lowest quintile (Q1) [fully adjusted hazard ratio (HR): 1.07, 95%CI: 1.01, 1.15, p-trend = 0.16] overall as well as among non-tobacco smokers [1.11 (1.00, 1.23), p-trend = 0.09]. The unhealthy LFD score was associated with multimorbidity overall [1.07 (1.00, 1.14), p-trend = 0.07] and never-smokers [1.12 (1.01, 1.24); p-trend = 0.01]. Healthy score results were less consistent. The plant protein component had an inverse association with incident multimorbidity risk, whereas the low-quality-fat and animal protein components were each associated with a higher risk of multimorbidity. Diet scores defined only by the total amount of carbohydrates or fat were not associated with risk of multimorbidity. Unhealthy diet scores, including low-quality macronutrients and animal protein, were associated with increased risk of multimorbidity.",
+      "authors": "[\"Vázquez-Fernández Aitana\", \"Yévenes-Briones Humberto\", \"Baylin Ana\", \"Caballero Francisco F\", \"Lopez-Garcia Esther\"]",
+      "journal": "The journals of gerontology. Series A, Biological sciences and medical sciences",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:20.186384",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 710,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41617718",
+      "title": "Cheese consumption and lower cholelithiasis risk a prospective UK biobank study with HDL-C mediation.",
+      "abstract": "Cholelithiasis affects 10-20% of adults globally, and while cheese consumption may influence risk, underlying biological pathways remain unclear. In this prospective cohort study of 399,467 UK Biobank participants without prior cholelithiasis, we examined cheese intake frequency (never to ≥1/day) via baseline food-frequency questionnaires and identified incident cholelithiasis through hospital records, primary care data, and self-reports. Multivariable COX regression and causal mediation analyses assessed risk associations and mediation by cholesterol subtypes. Over follow-up, 15,897 participants developed cholelithiasis. Higher cheese intake showed a dose-dependent inverse association, with daily consumers having 26.3% lower odds (adjusted OR = 0.737, 95% CI: 0.653-0.832) versus non-consumers. HDL-C significantly mediated this association (proportion mediated: 4.03-6.98%). Frequent cheese consumption was associated with significantly lower cholelithiasis risk, partially mediated by HDL-C, suggesting a potential dietary strategy for prevention, though residual confounding and mechanisms require further investigation.",
+      "authors": "[\"Yang Wenwen\", \"Bao Zhixian\", \"Chen Yuhua\", \"Gao Jie\", \"Ji Rui\"]",
+      "journal": "NPJ science of food",
+      "publication_date": "2026-01-30",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:20.186914",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41626871",
+      "title": "Large-Scaled Proteomics Analysis for Glaucoma: Integrated Genetics, Multi-Omics, UK Biobank and Therapeutic Analysis.",
+      "abstract": "To identify plasma proteins associated with glaucoma and assess the translational potential of key proteins as both biomarkers and therapeutic targets. Genome-wide association study data were obtained from the UK Biobank Pharma Proteomics Project, FinnGen, and the Million Veteran Program. We used a four-stage analytical framework: Stage 1 applied Mendelian randomization and Bayesian colocalization to evaluate associations between 2923 plasma proteins and glaucoma; Stage 2 used summary-based Mendelian randomization to explore transcriptomic and epigenomic associations of the identified proteins with glaucoma risk; Stage 3 involved a prospective association analysis of protein levels and incident glaucoma in the UK Biobank cohort, including 40,170 glaucoma-free participants; and Stage 4 systematically evaluated the druggability of the prioritized protein targets. We identified 26 plasma proteins with putative causal associations with glaucoma, six of which were novel: COL24A1, KAZALD1, EBAG9, CSNK1D, AZI2, and AXIN1. COL24A1 (odds ratio [OR] = 0.85; 95% confidence interval [CI], 0.80-0.90; PFDR < 0.001; PP.H4 = 0.95) and EFEMP1 (OR = 0.88; 95% CI, 0.83-0.92; PFDR < 0.001; PP.H4 = 0.98) emerged as the most compelling candidates. To further elucidate the regulatory mechanisms, multiomics analyses indicated that epigenetic modifications and alternative splicing events affecting these genes were associated with elevated glaucoma risk. Notably, EFEMP1 was significantly associated with glaucoma incidence in the prospective cohort analysis (fully adjusted Cox model: hazard ratio = 1.61; 95% CI, 1.29-2.00; PFDR = 0.002), demonstrating strong predictive performance (C-index = 0.811, area under the curve = 0.806) and representing a promising therapeutic target. Our findings provide new insights into the proteomic basis of glaucoma and highlight promising opportunities for developing targeted therapies.",
+      "authors": "[\"Xu Jianming\", \"Gao Yuelan\", \"Yu Jun\", \"Xu Zihe\", \"Zhang Yuzhou\", \"Pang Chi Pui\", \"Tham Clement C\", \"Yam Jason C\", \"Chen Li Jia\"]",
+      "journal": "Investigative ophthalmology & visual science",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:20.188256",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC",
+          "C-index"
+        ],
+        "sample_size": 2923,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Bulk RNA-seq",
+          "Proteomics",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41646810",
+      "title": "Stroke Subtypes Drive Distinct Neurological, Cognitive, and Mortality Outcomes in UK Biobank Cohort.",
+      "abstract": "Pathophysiological distinctions among stroke subtypes-acute ischemic stroke (AIS), subarachnoid hemorrhage (SAH), intracerebral hemorrhage (ICH), and other nontraumatic intracranial hemorrhage (ONIH)-are well described, but their associations with long-term mortality, cognitive outcomes, and dementia risk remain incompletely characterized. We examined whether stroke subtypes differ in post-stroke survival, cognitive performance, dementia risk, and neuroimaging phenotypes. Using data from the UK Biobank, we evaluated subtype-specific associations with all-cause mortality, incident all-cause dementia, post-stroke cognitive performance, and white matter hyperintensity (WMH) burden. We assessed time to mortality and all-cause dementia using multivariable Cox proportional hazards models. Cognitive outcomes were compared cross-sectionally between stroke subtypes and stroke-free participants using covariate-adjusted linear models with ANOVA and Tukey post hoc tests. Neuroimaging analyses assessed associations between stroke subtype and WMH volume. Mortality risk varied substantially by stroke subtype. Of UKB participants who had a stroke during surveillance (n=14,806), we found that 69.24% of strokes were ischemic, 9.51% subarachnoid, 9.78% ONIH, and 11.78% ICH. Compared with stroke-free person-time, intracerebral hemorrhage was associated with the highest post-stroke hazard of death (HR 7.62, 95% CI 7.10-8.18), followed by other nontraumatic intracranial hemorrhage (HR 5.41, 95% CI 4.89-5.98), subarachnoid hemorrhage (HR 3.89, 95% CI 3.52-4.31), and ischemic stroke (HR 3.99, 95% CI 3.82-4.16). At 1 year after stroke, absolute mortality risk was highest following ICH (36.4%), followed by ONIH (31.9%) and SAH (26.0%), while ischemic stroke was associated with substantially lower risk (11.7%); by 5 years, corresponding risks increased to 43.5%, 39.8%, 30.0%, and 20.0%, respectively. Dementia risk also differed by subtype, with the highest risk observed following ICH. Post-stroke cognitive performance varied across domains, with slower reaction times observed across multiple stroke subtypes and lower fluid intelligence scores among AIS and ICH patients. Reaction time and fluid intelligence assessments were completed a median of approximately 6-9 years after stroke. WMH burden was higher in ICH and AIS compared with stroke-free participants. Stroke subtype is associated with distinct patterns of mortality, dementia risk, cognitive performance, and brain imaging phenotypes. These findings highlight the heterogeneity of long-term outcomes following stroke and support the importance of subtype-aware post-stroke monitoring and prognostication.",
+      "authors": "[\"Grover Ambika\", \"Murthy Venkatesh L\", \"Patel Chirag J\"]",
+      "journal": "medRxiv : the preprint server for health sciences",
+      "publication_date": "2026-01-27",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:20.191692",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 14806,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41565340",
+      "title": "Associations between shift work patterns and sleep disturbance: an analysis of cross-sectional data from UK Biobank.",
+      "abstract": "To investigate associations between shift work patterns and sleep disturbance, and to assess if the association is modified by demographic factors, socioeconomic factors, anthropometric and lifestyle factors, health conditions or sleep traits. Analysis of cross-sectional data obtained from the UK Biobank baseline assessment. UK Biobank, a large-scale prospective cohort study which recruited half a million participants aged 40-69 years between 2006 and 2010 from across the UK. A total of 285 175 employed or self-employed participants at baseline (2006-2010), including 148 296 (52.0%) females and 136 879 (48.0%) males. The sample comprised 94.0% White, 0.7% Mixed race, 0.36% East Asian, 2.0% South Asian, 1.8% Black and 0.89% from other ethnic backgrounds. Sleep disturbance was defined as the presence of both insomnia and excessive sleepiness symptoms. A total of 42 181 (14.8%) participants had sleep disturbance defined based on insomnia and excessive sleepiness. 236 200 (82.8%) were non-shift workers, while 48 975 (17.2%) were shift workers, which included 24 062 (49.1%) working day shifts only, 17 940 (36.6%) working night shifts sometimes or usually, and 6973 (14.2%) working night shifts always. Compared with non-shift workers, all shift workers had higher multivariable-adjusted odds of sleep disturbance: (non-night shifts: OR in model 3 (OR) 1.21 (95% CI 1.16 to 1.27); sometimes/usually night shifts: OR 1.37 (95% CI 1.30 to 1.44) and always night shifts: OR 1.50 (95% CI 1.38 to 1.63)). The association between shift work pattern and sleep disturbance was modified by age (p<sub>interaction</sub><0.0001), ethnicity (p<sub>interaction</sub>=0.0005) and smoking status (p<sub>interaction</sub>=0.04). Shift work is associated with a higher odds of sleep disturbance compared with non-shift work in all participants, with greatest odds observed among those always working night shifts. The association was stronger among individuals who were younger than 55 years old, from an ethnic minority background and never smokers. Future large-scale longitudinal studies are needed to further investigate these associations.",
+      "authors": "[\"Li Xianqi\", \"Ray David W\", \"Kyle Simon D\", \"Smith-Byrne Karl\", \"Holmes Leah\", \"Keane Annie\", \"Parsaeian Mahboubeh\", \"Travis Ruth C\", \"Richmond Rebecca\"]",
+      "journal": "BMJ open",
+      "publication_date": "2026-01-21",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:20.198265",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2006,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41805055",
+      "title": "Triglyceride-Related Indices and Risk of Acute Pancreatitis: A Prospective Study in UK Biobank.",
+      "abstract": "Triglyceride-related indices, including triglyceride-glucose (TyG), TyG related to body mass index (TyG-BMI), TyG related to waist circumference (TyG-WC), TyG related to waist-to-height ratio (TyG-WHtR), atherogenic index of plasma (AIP), cardiometabolic index (CMI), visceral adiposity index (VAI), and lipid accumulation product (LAP), are simple surrogate indicators of insulin resistance. Nevertheless, few studies have explored the association between triglyceride-related indices and acute pancreatitis (AP). A total of 387,275 participants from the UK Biobank were included. Cox regression models provided hazard ratios (HRs) with 95% confidence intervals (CIs) for the association between triglyceride-related indices and the risk of AP. Restricted cubic splines (RCS) and receiver operating characteristic (ROC) were employed to evaluate and visualize the relationship. These triglyceride-related indices were significantly associated with an increased risk of AP. Compared with the lowest quartile, the HRs (95% CIs) of AP in the highest quartile were 1.52 (1.33, 1.74), 1.54 (1.34, 1.77), 2.32 (2.02, 2.65), 2.83 (2.43, 3.30), 2.86 (2.46, 3.32), 2.16 (1.88, 2.49), 1.95 (1.71, 2.22), and 2.49 (2.15, 2.87), respectively, for the TyG, AIP, TyG-BMI, TyG-WC, TyG-WHtR, CMI, VAI, and LAP index. RCS analyses showed that the above relationships except for AIP were nonlinear (P for nonlinear < 0.05). ROC curves showed that TyG-WHtR was the best predictor for AP. Elevated triglyceride-related indices were positively related to AP onset. Among them, the TyG-WHtR index displayed the strongest predictive power for the onset of AP, which was expected to become a more effective metric for identifying populations at early risk of AP.",
+      "authors": "[\"Li Jing-Bo\", \"Zhu Yu-Jiao\", \"Liao Yang-Jie\", \"Wang Jia-Yi\"]",
+      "journal": "The Kaohsiung journal of medical sciences",
+      "publication_date": "2026-03-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:20.202999",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC",
+          "C-index"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41757363",
+      "title": "Endogenous β-hydroxybutyrate and the risk of cognitive decline: a nested case-control study in the UK Biobank cohort.",
+      "abstract": "β-hydroxybutyrate (BHB) has been linked to improved cognitive function via enhanced cerebral metabolism and anti-inflammatory effects. However, evidence on the relationship between endogenous plasma BHB levels and cognitive decline remains limited. This study investigated whether higher plasma BHB levels are associated with reduced cognitive decline in middle-aged and older adults. We conducted a nested case-control study within the UK Biobank prospective cohort. Among 4,653 participants with baseline plasma BHB measurements and cognitive assessments at baseline and follow-up, 2,143 cases of cognitive decline were matched to 2,143 controls by age, sex, and polygenic risk score for Alzheimer's disease. Plasma BHB concentrations were measured by nuclear magnetic resonance spectroscopy. Cognitive function was assessed across five domains, and a global cognition score was derived through factor analysis. Cognitive decline was defined as a decrease in the global cognition score from baseline to follow-up. Conditional logistic regression and restricted cubic spline models were used to examine the associations between plasma BHB levels and cognitive decline, adjusting for demographic, lifestyle, and clinical factors. Plasma BHB concentrations were not significantly associated with global cognitive decline after covariate adjustment. However, higher plasma BHB tertiles were associated with a slower decline in fluid intelligence (adjusted OR for tertile 1 vs. 3, 0.83; 95% CI, 0.72-0.97). Endogenous plasma BHB was not significantly associated with global cognitive decline but was inversely related to decline in fluid intelligence. Further studies are needed to clarify BHB's role in cognitive aging.",
+      "authors": "[\"Eun Youngmi\", \"Newman John C\", \"Lee Ji Hyun\", \"Kim Se-Hong\", \"Kim Ha-Na\"]",
+      "journal": "Frontiers in aging neuroscience",
+      "publication_date": "2026-02-11",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:20.214214",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "Logistic Regression"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41494698",
+      "title": "Association between metabolic score for visceral fat and adverse outcomes in chronic obstructive pulmonary disease.",
+      "abstract": "The metabolic score of visceral fat (METS-VF) is linked to chronic obstructive pulmonary disease (COPD) incidence, while its association with mortality and adverse outcomes in patients with COPD remains unclear. We analysed 7246 participants with COPD from the UK Biobank and 869 from US National Health and Nutrition Examination Survey (US NHANES) (1999-2018). METS-VF was categorised into quartiles. In UK Biobank, outcomes included all-cause, cardiovascular disease (CVD), COPD-specific mortality, pulmonary heart disease (PHD), pulmonary embolism (PE) and heart failure (HF); in NHANES, only all-cause and CVD mortality were evaluated. UK Biobank analyses used Cox models, restricted cubic splines, Kaplan-Meier curves, time-dependent receiver operating characteristic (ROC) curves and mediation analysis (C reactive protein (CRP), white blood cell count (WBC), platelet count (PLT)). NHANES served as an external validation cohort using survey-weighted Cox models, subgroup and sensitivity analyses and time-dependent ROC for the two mortality outcomes. In UK Biobank, restricted cubic splines identified non-linear associations of METS-VF with all-cause and CVD mortality, with a common inflection point at 7.03, and linear associations with secondary outcomes. Compared with the lowest quartile, the highest METS-VF quartile showed significantly higher risks of all-cause mortality (HR 1.467), CVD mortality (HR 3.000), COPD-specific mortality (HR 1.952), PHD (HR 3.505), PE (HR 2.301) and HF (HR 2.567). Similar positive associations were observed in NHANES, where the highest METS-VF quartile remained significantly associated with all-cause mortality (HR 3.337) and CVD mortality (HR 3.011). Time-dependent ROC analyses demonstrated modest but stable discrimination across follow-up in both cohorts. Mediation analyses showed that CRP and WBC partially mediated the associations of METS-VF with mortality and cardiopulmonary outcomes, whereas PLT did not exhibit significant mediation effects. Elevated METS-VF is consistently associated with increased long-term risks of mortality and cardiopulmonary complications in COPD across independent discovery and validation cohorts. METS-VF may serve as a practical prognostic biomarker for risk stratification in the clinical management of COPD.",
+      "authors": "[\"Ma Kai\", \"Xia Tianyi\", \"Liu Tao\", \"Wang Haiying\", \"Wang Qun\", \"Ju Shenghong\", \"Zhang Ruifeng\"]",
+      "journal": "BMJ open respiratory research",
+      "publication_date": "2026-01-05",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:20.215079",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC",
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "41945275",
+      "title": "Accelerated biological aging is associated with faster multimorbidity progression: a UK biobank study.",
+      "abstract": "This study examined the associations of biological age accelerations (BAAs)-KDM-BA acceleration (via Klemera and Doubal's method) and PhenoAge acceleration (epigenetics-based), defined as residuals from regressing each biological age estimate on chronological age (CA)-with multimorbidity progression (measured by the Charlson Comorbidity Index, CCI), compared to CA. Utilizing UK Biobank data (n = 317,835; median follow-up: 13 years), Cox regression models adjusted for sex, ethnicity, lifestyle, and socioeconomic factors showed that each 1-year increase in KDM-BA acceleration raised the risk of CCI progression by 9.9% (HR [95% CI]: 1.099 [1.094-1.104]) and in PhenoAge acceleration by 4.3% (HR [95% CI]: 1.043 [1.041-1.044]). Consistent results were found in subgroup, sensitivity, and restricted cubic spline analyses, with PhenoAge acceleration achieving the highest predictive performance (C-index = 0.6755) compared to KDM-BA acceleration (0.6734) and CA (0.6701). These findings support the use of BAAs as cost-effective tools for assessing the risk of multimorbidity progression.",
+      "authors": "[\"Wang Zhaoyu\", \"Liao Jiaojiao\", \"Fan Dongwei\", \"Pei Minyue\", \"Li Zhaoji\", \"Dai Qianqian\", \"Wang Hui\", \"Li Nan\", \"Tao Liyuan\"]",
+      "journal": "GeroScience",
+      "publication_date": "2026-04-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:20.215552",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall",
+          "C-index"
+        ],
+        "sample_size": 317835,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41697512",
+      "title": "A Previous History of Endometriosis Elevates Irritable Bowel Syndrome Risk in Middle-Aged and Older Women: A UK Biobank Cohort Study of 225,703 Participants.",
+      "abstract": "Endometriosis (EMT) and irritable bowel syndrome (IBS) disproportionately affect middle-aged and older women, where overlapping symptoms (e.g., chronic pelvic pain, bloating) and shared inflammatory mechanisms may drive comorbidity. However, large-scale evidence linking EMT to IBS incidence in this population remains scarce. Leveraging the UK Biobank cohort (N = 225,703), we investigate their longitudinal association to address this critical gap in women's health research.  We sourced data on pre-existing endometriosis (EMT) status and incident IBS diagnoses from the UK Biobank. We employed multivariate Cox regression to analyze the link between baseline EMT and subsequent IBS, as well as the association with different IBS subtypes and severities. Subgroup and sensitivity analyses were also performed.  The study population comprised 225,703 individuals, with 6379 cases (2.83%) exhibiting EMT at initial assessment and 6282 cases (2.78%) developing IBS during a median observation period of 13.8 years (IQR 13-14.5). EMT patients showed significantly elevated cumulative incidence of hypertension compared to population controls (4.61%, p < 0.001). Adjusted Cox models identified EMT as an independent predictor of IBS development (hazard ratio 1.58, 95% CI 1.38-1.82; p < 0.001). Subtype analysis revealed specific risk elevation for constipation-predominant (IBS-C) and mixed-pattern (IBS-M) variants (both p < 0.001), though no significant associations emerged for diarrhea-predominant subtypes(IBS-D). These findings persisted across sensitivity analyses and subgroup evaluations, confirming EMT's robust association with incident IBS. Clinical data analysis revealed elevated IBS susceptibility among EMT-affected individuals relative to reference populations, with notable predisposition toward IBS-C. These findings suggest clinical relevance of EMT-IBS correlations, requiring integration of EMT status into diagnostic evaluations for gastrointestinal symptom management.",
+      "authors": "[\"Ye Fangchen\", \"Li Laifu\", \"Ruan Fangyi\", \"Wang Lianli\", \"Ran Yan\", \"Mei Lin\", \"Sun Yating\", \"Zhang Xinping\", \"Dai Fei\"]",
+      "journal": "Digestive diseases and sciences",
+      "publication_date": "2026-02-16",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "多组学 AND 图神经网络 AND UK Biobank AND (\"2026\" [PDAT]   \"2026\"[PDAT]",
+      "search_date": "2026-04-12T09:21:20.220175",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": 225703,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": "Independent test"
+      }
+    }
+  ]
+}

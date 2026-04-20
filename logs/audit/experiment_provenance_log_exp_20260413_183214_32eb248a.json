@@ -1,0 +1,53 @@
+{
+  "experiment_id": "exp_20260413_183214_32eb248a",
+  "start_time": "2026-04-13T18:32:14.436982",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "SCM AND 阿尔茨海默病",
+  "search_params": {
+    "max_results": 20,
+    "date_range": [
+      2023,
+      2026
+    ],
+    "min_if": 0,
+    "relevance_threshold": 7.0,
+    "cutoff_date": "2026-04-13"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-13T18:32:19.892740",
+      "path": "data\\snapshots\\data_snapshot_20260413_183219.json",
+      "record_count": 22
+    },
+    {
+      "timestamp": "2026-04-13T18:51:06.104331",
+      "path": "data\\snapshots\\data_snapshot_20260413_185106.json",
+      "record_count": 1000
+    },
+    {
+      "timestamp": "2026-04-13T19:37:29.740186",
+      "path": "data\\snapshots\\data_snapshot_20260413_193729.json",
+      "record_count": 900
+    },
+    {
+      "timestamp": "2026-04-13T20:30:01.951961",
+      "path": "data\\snapshots\\data_snapshot_20260413_203001.json",
+      "record_count": 1000
+    },
+    {
+      "timestamp": "2026-04-13T21:30:13.031322",
+      "path": "data\\snapshots\\data_snapshot_20260413_213012.json",
+      "record_count": 900
+    },
+    {
+      "timestamp": "2026-04-13T22:09:43.716418",
+      "path": "data\\snapshots\\data_snapshot_20260413_220943.json",
+      "record_count": 83
+    }
+  ]
+}

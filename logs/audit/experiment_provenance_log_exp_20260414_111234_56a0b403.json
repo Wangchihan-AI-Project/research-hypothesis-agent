@@ -1,0 +1,33 @@
+{
+  "experiment_id": "exp_20260414_111234_56a0b403",
+  "start_time": "2026-04-14T11:12:34.081935",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "UK Biobank AND 因果推断",
+  "search_params": {
+    "max_results": 20,
+    "date_range": [
+      2023,
+      2026
+    ],
+    "min_if": 0,
+    "relevance_threshold": 7.0,
+    "cutoff_date": "2026-04-14"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-14T11:12:50.539688",
+      "path": "data\\snapshots\\data_snapshot_20260414_111250.json",
+      "record_count": 50
+    },
+    {
+      "timestamp": "2026-04-14T11:34:08.403508",
+      "path": "data\\snapshots\\data_snapshot_20260414_113408.json",
+      "record_count": 50
+    }
+  ]
+}

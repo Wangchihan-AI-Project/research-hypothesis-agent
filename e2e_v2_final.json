@@ -1,0 +1,264 @@
+{
+  "task_id": "42aeed35-8d18-4b2b-854a-9acb332c9c5a",
+  "state": "success",
+  "ready": true,
+  "successful": true,
+  "result": {
+    "task_id": "42aeed35-8d18-4b2b-854a-9acb332c9c5a",
+    "state": "success",
+    "result_type": "hypothesis",
+    "payload": {
+      "hypothesis": {
+        "title": "基于多模态组学与生成式AI的疾病预测框架：针对数据穿越与内生性偏倚的稳健性重构",
+        "details": "本方案（Vv1.1）针对Vv1.0中暴露的方法学缺陷进行了深度修补。核心在于构建严格的'信息防火墙'以阻断数据穿越，并引入因果推断框架解决EHR/pQTL数据的内生性问题。我们将特征工程、超参数优化及统计降维完全封装在交叉验证的训练折内部，确保测试集绝对不可见。同时，针对群体分层与未观测的混杂因素，引入孟德尔随机化与混合线性模型（LMM）作为因果识别的稳健性检验，确保模型捕捉的是生物学因果关联而非统计伪相关。",
+        "methodology": {
+          "technical_safeguards": [
+            "实施'嵌套式交叉验证'（Nested CV）协议：外层循环用于模型性能评估，内层循环用于超参数搜索与特征选择。所有涉及目标变量的统计量（如GWAS p-value筛选、方差分析、Z-score标准化）的计算均严格限制在内层训练集上，生成的变换参数仅应用于该折的验证集，彻底杜绝'前瞻性偏差'（Look-ahead Bias）。",
+            "建立'预处理流水线隔离'机制：使用Scikit-learn的Pipeline对象，将数据清洗、降维（如PCA/LD-pruning）、编码器与分类器串联。在Pipeline拟合之前，严禁使用全局数据集进行任何形式的预计算或预筛选，确保模型部署时的数据处理逻辑与训练时完全一致。"
+          ],
+          "validation_protocol": "采用'留一中心验证'（Leave-One-Site-Out）或'时间序列验证'（针对EHR时间数据）作为补充验证手段。对于pQTL数据，必须通过置换检验验证特征重要性分布是否显著优于随机噪声，并计算'穿越系数'（Leakage Score）以量化信息泄露风险。",
+          "bias_control": "针对EHR数据的群体分层与混杂因素，采用'双变量校准'策略：1) 在表型训练前，使用线性混合模型（LMM）校正人口统计学特征（如年龄、性别、PC主成分）；2) 引入工具变量（IV）进行敏感性分析，利用pQTL作为工具变量执行两阶段最小二乘法（2SLS）回归，以闭合未观测混杂因子的后门路径，验证预测特征的因果效应。"
+        },
+        "version": "v1.1",
+        "patch_log": [
+          {
+            "attack_type": "数据穿越",
+            "patch_applied": "部署嵌套交叉验证与Pipeline封装机制，将特征选择与归一化严格限制在训练折内部，消除预处理泄漏。",
+            "supporting_reference": "PMID: 32889595 (Machine learning pitfalls in biomarker discovery)"
+          },
+          {
+            "attack_type": "内生性偏倚",
+            "patch_applied": "引入混合线性模型（LMM）校正群体分层，并利用孟德尔随机化（MR）作为因果推断的稳健性检验，阻断后门路径。",
+            "supporting_reference": "PMID: 31511674 (Mendelian randomization in epigenetics)"
+          }
+        ]
+      },
+      "fitness": {
+        "hybrid_fitness": 8.958892822265625,
+        "vector_novelty_score": 9.931487083435059,
+        "red_team_rigor_score": 7.5,
+        "physical_validation": {
+          "passed": true,
+          "details": {
+            "smiles_found": [],
+            "ukb_fields_found": [],
+            "compute_params_found": {}
+          },
+          "failure_reason": ""
+        },
+        "fused": false,
+        "fuse_reason": "",
+        "similarity": 0.5317258834838867,
+        "similarity_interpretation": "创新甜点区（适度参考现有研究）",
+        "timestamp": "2026-04-20T02:02:03.990272"
+      },
+      "verified_ids": {
+        "pmids": [
+          "36410526",
+          "25446182",
+          "37449329",
+          "19242640",
+          "28378042",
+          "38890208",
+          "41077266",
+          "39661674",
+          "25172387",
+          "38618716",
+          "25264175",
+          "14962470",
+          "31371925",
+          "18212560",
+          "39875870",
+          "32323742",
+          "39699565",
+          "17516167",
+          "26113472",
+          "26140711",
+          "31916218",
+          "29373843",
+          "41677628",
+          "31823411",
+          "30095969",
+          "25281838",
+          "39865120",
+          "31646321",
+          "29554809",
+          "19684190",
+          "19221132",
+          "14659807",
+          "36549804",
+          "28194639",
+          "26424394",
+          "37696137",
+          "26028343",
+          "27995363",
+          "23598272",
+          "36496052",
+          "26259139",
+          "24593785",
+          "28266127",
+          "27580017",
+          "30004243",
+          "31456416",
+          "25606703",
+          "34800627",
+          "20066536",
+          "19242644"
+        ],
+        "arxiv_ids": [],
+        "dois": []
+      },
+      "domain": "心血管疾病",
+      "sources": [
+        "pubmed",
+        "semantic_scholar"
+      ],
+      "audit_context": {
+        "iterations": 6,
+        "rewrites": 0,
+        "patches": 1,
+        "score_history": [
+          8.399999999999999,
+          8.958892822265625
+        ],
+        "red_attack_types": [
+          "UNKNOWN",
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      }
+    },
+    "error": null,
+    "traceback": null,
+    "start_time": "2026-04-20T02:00:08.812914",
+    "end_time": "2026-04-20T02:02:13.486107",
+    "duration": 124.673193,
+    "api_calls_used": 0,
+    "tokens_used": 0,
+    "progress": null,
+    "progress_message": null,
+    "phoenix_protocol": {
+      "total_iterations": 6,
+      "rewrite_attempts": 0,
+      "patch_attempts": 1,
+      "score_evolution": [
+        8.399999999999999,
+        8.958892822265625
+      ],
+      "version_chain": [],
+      "transition_history": [
+        {
+          "from": "INITIAL",
+          "trigger": "HYPOTHESIS_READY",
+          "to": "HYPOTHESIS_GEN",
+          "iteration": 1,
+          "timestamp": "2026-04-20T02:00:18.792226"
+        },
+        {
+          "from": "HYPOTHESIS_GEN",
+          "trigger": "RED_ATTACK_START",
+          "to": "RED_ATTACK",
+          "iteration": 2,
+          "timestamp": "2026-04-20T02:00:46.495753"
+        },
+        {
+          "from": "RED_ATTACK",
+          "trigger": "BLUE_DEFENSE_START",
+          "to": "BLUE_DEFENSE",
+          "iteration": 3,
+          "timestamp": "2026-04-20T02:01:53.944343"
+        },
+        {
+          "from": "BLUE_DEFENSE",
+          "trigger": "BLUE_DEFENSE_FAILURE",
+          "to": "PHOENIX_PATCH",
+          "iteration": 4,
+          "timestamp": "2026-04-20T02:01:55.038568"
+        },
+        {
+          "from": "PHOENIX_PATCH",
+          "trigger": "PATCH_APPLIED",
+          "to": "PHOENIX_RETRY",
+          "iteration": 5,
+          "timestamp": "2026-04-20T02:02:03.983572"
+        },
+        {
+          "from": "PHOENIX_RETRY",
+          "trigger": "DEFENSE_PASSED",
+          "to": "SUCCESS",
+          "iteration": 6,
+          "timestamp": "2026-04-20T02:02:13.482741"
+        }
+      ],
+      "final_state": "SUCCESS",
+      "success": true
+    },
+    "version_evolution": {
+      "chain": [
+        {
+          "version": "v1.0",
+          "type": "initial",
+          "type_display": "初始版本",
+          "created_at": "2026-04-20T02:00:18.792124",
+          "science_score": 8.399999999999999,
+          "fitness_score": 8.399999999999999,
+          "defense_passed": false,
+          "rewrite_log": [],
+          "iteration": 1,
+          "red_attack_types": [],
+          "patch_applied": false
+        },
+        {
+          "version": "v1.1",
+          "type": "methodology_patch",
+          "type_display": "方法论补丁",
+          "created_at": "2026-04-20T02:02:03.983234",
+          "science_score": 0.0,
+          "fitness_score": 0.0,
+          "defense_passed": false,
+          "rewrite_log": [],
+          "iteration": 5,
+          "red_attack_types": [
+            "UNKNOWN",
+            "UNKNOWN",
+            "UNKNOWN"
+          ],
+          "patch_applied": true
+        }
+      ]
+    },
+    "promise_score": {
+      "total_score": 8.31,
+      "components": {
+        "innovation": {
+          "score": 8.958892250061034,
+          "weight": 0.3,
+          "description": "创新性",
+          "details": "向量创新分: 9.9, 方法论创新分: 7.5"
+        },
+        "feasibility": {
+          "score": 7.5,
+          "weight": 0.35,
+          "description": "可行性",
+          "details": "物理可行性分: 7.5"
+        },
+        "frontier_alignment": {
+          "score": 8.0,
+          "weight": 0.25,
+          "description": "前沿契合度",
+          "details": "年份: 2025, 引用速度: normal"
+        },
+        "evidence_strength": {
+          "score": 10.0,
+          "weight": 0.1,
+          "description": "证据强度",
+          "details": "PMID 数量: 50, arXiv 数量: 0"
+        }
+      },
+      "trend": "declining",
+      "evolution_delta": -8.399999999999999,
+      "grade": "good",
+      "recommendation": "方案前景良好，可进行小规模预实验后推进。演化���常，分数下降需要检查"
+    }
+  }
+}

@@ -1,0 +1,302 @@
+# -*- coding: utf-8 -*-
+"""
+Program.md 配置解析器
+解析 program.md 文件中的研究策略配置
+"""
+
+import os
+import re
+import yaml
+from typing import Dict, Any, Optional
+from datetime import datetime
+
+
+class ProgramConfig:
+    """
+    解析 program.md 中的研究策略配置
+
+    类似 Karpathy autoresearch 的设计理念：
+    - 人类通过修改 program.md 来引导 Agent
+    - Agent 启动时读取此配置
+    """
+
+    # 默认配置
+    DEFAULT_CONFIG = {
+        'research_goals': {
+            'primary_field': '计算生物学',
+            'target_journal_level': 'Nature级别',
+            'research_depth': '博士论文开题深度',
+            'min_transformative_impact': 8.0,
+            'min_methodological_originality': 7.5,
+            'min_poc_feasibility': 7.0,
+            'min_overall_score': 7.5
+        },
+        'paper_search': {
+            'use_two_stage_funnel': True,
+            'stage1_max': 500,
+            'stage2_top_k': 40,
+            'min_if': 0.0,
+            'date_range_start': 2020,
+            'date_range_end': datetime.now().year,
+            'fetch_full_text': True,
+            'max_full_text': 10
+        },
+        'hypothesis_generation': {
+            'num_hypotheses': 3,
+            'best_of_n': 3,
+            'min_score_threshold': 7.5,
+            'enable_prevalidation': True,
+            'radical_pivot_threshold': 5.0,
+            'max_internal_retries': 2
+        },
+        'audit': {
+            'global_prior_art_enabled': True,
+            'min_novelty_score': 50,
+            'dark_box_audit_enabled': True,
+            'max_audit_iterations': 2,
+            'red_blue_defense_enabled': True,
+            'red_team_intensity': 'high'
+        },
+        'autonomous_mode': {
+            'enabled': False,
+            'max_iterations': 5,
+            'target_score': 8.0,
+            'time_budget_minutes': 60,
+            'auto_select_papers': True,
+            'auto_approve_hypothesis': False,
+            'auto_technical_analysis': True,
+            'on_failure_action': 'radical_pivot',
+            'max_pivot_attempts': 2,
+            'experiment_log': True,
+            'output_dir': 'experiments/'
+        },
+        'output': {
+            'report_format': 'markdown',
+            'include_scores': True,
+            'include_audit_log': True,
+            'reports_dir': 'reports/'
+        }
+    }
+
+    def __init__(self, program_path: str = None):
+        """
+        初始化配置解析器
+
+        Args:
+            program_path: program.md 文件路径，默认为项目根目录下的 program.md
+        """
+        if program_path is None:
+            # 默认路径
+            project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            program_path = os.path.join(project_root, 'program.md')
+
+        self.program_path = program_path
+        self.config = self.DEFAULT_CONFIG.copy()
+
+        # 尝试加载 program.md
+        if os.path.exists(program_path):
+            self._load_program_md()
+
+    def _load_program_md(self) -> None:
+        """
+        解析 program.md 文件
+
+        支持两种格式：
+        1. YAML 块（```yaml ... ```）
+        2. Markdown 表格/列表
+        """
+        try:
+            with open(self.program_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            # 提取 YAML 块
+            yaml_blocks = re.findall(r'```yaml\s*(.*?)\s*```', content, re.DOTALL)
+
+            for block in yaml_blocks:
+                try:
+                    yaml_config = yaml.safe_load(block)
+                    if yaml_config:
+                        self._merge_config(yaml_config)
+                except yaml.YAMLError as e:
+                    print(f"[ProgramConfig] YAML 解析警告: {e}")
+                    continue
+
+            print(f"[ProgramConfig] 已加载配置: {self.program_path}")
+
+        except FileNotFoundError:
+            print(f"[ProgramConfig] 配置文件不存在，使用默认配置")
+        except Exception as e:
+            print(f"[ProgramConfig] 配置加载失败: {e}")
+
+    def _merge_config(self, yaml_config: Dict) -> None:
+        """
+        合并 YAML 配置到默认配置
+
+        深度合并，保留未指定的默认值
+        """
+        for key, value in yaml_config.items():
+            if key in self.config:
+                if isinstance(value, dict) and isinstance(self.config[key], dict):
+                    # 深度合并字典
+                    self.config[key].update(value)
+                else:
+                    self.config[key] = value
+            else:
+                self.config[key] = value
+
+    def get(self, key: str, default: Any = None) -> Any:
+        """
+        获取配置值（支持点分隔路径）
+
+        Args:
+            key: 配置键，如 'autonomous_mode.max_iterations'
+            default: 默认值
+
+        Returns:
+            配置值
+        """
+        keys = key.split('.')
+        value = self.config
+
+        for k in keys:
+            if isinstance(value, dict) and k in value:
+                value = value[k]
+            else:
+                return default
+
+        return value
+
+    def get_section(self, section: str) -> Dict:
+        """
+        获取整个配置区块
+
+        Args:
+            section: 区块名称，如 'autonomous_mode'
+
+        Returns:
+            配置字典
+        """
+        return self.config.get(section, {})
+
+    def is_autonomous_enabled(self) -> bool:
+        """检查自主模式是否启用"""
+        return self.get('autonomous_mode.enabled', False)
+
+    def get_target_score(self) -> float:
+        """获取目标分数"""
+        return self.get('autonomous_mode.target_score', 8.0)
+
+    def get_max_iterations(self) -> int:
+        """获取最大迭代次数"""
+        return self.get('autonomous_mode.max_iterations', 5)
+
+    def get_time_budget(self) -> int:
+        """获取时间预算（分钟）"""
+        return self.get('autonomous_mode.time_budget_minutes', 60)
+
+    def get_min_if(self) -> float:
+        """获取最低影响因子阈值"""
+        return self.get('paper_search.min_if', 0.0)
+
+    def get_date_range(self) -> tuple:
+        """获取日期范围"""
+        start = self.get('paper_search.date_range_start', 2020)
+        end = self.get('paper_search.date_range_end', datetime.now().year)
+        return (start, end)
+
+    def get_min_score_threshold(self) -> float:
+        """获取假设最低分数阈值"""
+        return self.get('hypothesis_generation.min_score_threshold', 7.5)
+
+    def update(self, key: str, value: Any) -> None:
+        """
+        动态更新配置值
+
+        Args:
+            key: 配置键（点分隔）
+            value: 新值
+        """
+        keys = key.split('.')
+        config = self.config
+
+        for k in keys[:-1]:
+            if k not in config:
+                config[k] = {}
+            config = config[k]
+
+        config[keys[-1]] = value
+        print(f"[ProgramConfig] 配置已更新: {key} = {value}")
+
+    def save_to_file(self, path: str = None) -> None:
+        """
+        保存当前配置到文件
+
+        Args:
+            path: 保存路径，默认为原路径
+        """
+        if path is None:
+            path = self.program_path
+
+        # 构建新的 program.md 内容
+        content = self._build_program_md()
+
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(content)
+
+        print(f"[ProgramConfig] 配置已保存: {path}")
+
+    def _build_program_md(self) -> str:
+        """构建 program.md 文件内容"""
+        lines = [
+            "# Research Hypothesis Agent - 研究策略配置",
+            "",
+            "> 此文件由 ProgramConfig 自动生成",
+            f"> 更新时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+            "",
+            "---",
+            "",
+            "## 当前配置",
+            ""
+        ]
+
+        # YAML 输出
+        lines.append("```yaml")
+        lines.append(yaml.dump(self.config, default_flow_style=False, allow_unicode=True))
+        lines.append("```")
+
+        return "\n".join(lines)
+
+    def __repr__(self) -> str:
+        return f"ProgramConfig(path={self.program_path}, autonomous={self.is_autonomous_enabled()})"
+
+
+# 全局配置实例
+_global_config = None
+
+
+def get_program_config() -> ProgramConfig:
+    """
+    获取全局配置实例（单例模式）
+
+    Returns:
+        ProgramConfig 实例
+    """
+    global _global_config
+    if _global_config is None:
+        _global_config = ProgramConfig()
+    return _global_config
+
+
+def reload_program_config(path: str = None) -> ProgramConfig:
+    """
+    重新加载配置
+
+    Args:
+        path: 新的配置文件路径
+
+    Returns:
+        新的 ProgramConfig 实例
+    """
+    global _global_config
+    _global_config = ProgramConfig(path)
+    return _global_config

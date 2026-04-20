@@ -1,0 +1,383 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-12T17:26:43.529356",
+  "cutoff_date": "2026-04-12",
+  "metadata": {
+    "query": "利用 UK Biobank 的多组学数据，构建一个因果图神经网络模型，研究 APOE 变体对后期痴呆风险的非线性影响。重点关注中介效应分析和残余混杂控制。",
+    "date_range": "1"
+  },
+  "record_count": 15,
+  "papers": [
+    {
+      "pmid": "40783888",
+      "title": "Ubiquitous Environmental Exposures and Risk of Hepatocellular Carcinoma: A Narrative Review.",
+      "abstract": "Hepatocellular carcinoma (HCC) is among the most prevalent and deadly cancers worldwide. Chronic liver disease is the most established risk factor for HCC, but environmental exposures are increasingly recognized as contributor. In this narrative review, we sought to analyze data linking three substances to HCC: polycyclic aromatic hydrocarbons (PAHs), per- and polyfluoroalkyl substances (PFAS), and cadmium. We performed a literature search of MEDLINE for this narrative review. Two reviewers screened titles and abstracts for relevance. We focused on articles published within the last three years. PAH, PFAS, and cadmium have been linked to chronic liver disease, liver injury, and to a lesser extent, HCC. Major limitations in existing data are small sample sizes, lack of longitudinal follow up (most studies are cross-sectional), and heterogeneity in the species assayed and the methods of assay. Further studies in large, prospective cohorts with longitudinal follow up are needed. Given existing evidence linking these substances to liver injury and HCC, a multi-faceted prevention and intervention strategy is needed, incorporating research, public education and engagement, legal frameworks, decontamination and medical interventions to mitigate deleterious effects of these substances.",
+      "authors": "[\"Abate Hiwot Mulugeta\", \"Bujnowski Daniel\", \"Jowell Ashley\", \"Moylan Cynthia A\", \"Hoyo Cathrine\", \"Wegermann Kara\"]",
+      "journal": "Digestive diseases and sciences",
+      "publication_date": "2025-08-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:41.069712",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41592910",
+      "title": "Health of South Asian migrants and refugees in Australia: an evidence gap map.",
+      "abstract": "The objective of this gap map is to provide an overview of existing evidence on the health of South Asian migrants and refugees in Australia and highlight research gaps. We searched four databases until June 2025 to include quantitative, qualitative and mixed methods studies conducted in Australia and published from the year 2000 onwards on health of migrants and refugees from South Asian countries. Two reviewers screened titles/abstracts and full texts using Covidence to establish eligibility. The included studies were then coded in Evidence for Policy & Practice Information Centre - Reviewer (EPPI-Reviewer) to generate a gap map. The evidence gap map summarises findings from 129 studies (66 qualitative, 52 quantitative and 11 mixed methods studies) reporting on the health and well-being of migrants from South Asian countries residing in Australia. The gap map depicts that mental health conditions, non-communicable diseases and maternal health are relatively well-evidenced domains compared with other health conditions. Knowledge, attitudes, perceptions and behaviours are the most frequently evaluated outcomes, followed by experiences with healthcare system, prevalence of health conditions and factors associated with healthcare access and utilisation. There are evident data gaps assessing survival/mortality, access and utilisation of health services and cost-effectiveness. There is sparse evidence on the effectiveness of interventions/strategies to improve health status, access and utilisation of health services and their impact on survival and mortality. Health literacy, language proficiency, competing priorities, negative beliefs, past experiences, confusion in navigating the healthcare system and cost of services were reported as barriers in accessing healthcare services. These findings highlight the scarcity of evidence beyond the descriptive measures on health of South Asian migrants in Australia. Priority areas for future research include generating data to establish causal relationships between population-specific risk factors and adverse health outcomes by establishing long-term cohorts. These data would assist in designing and evaluating context-specific interventions that are feasible and acceptable to improve health outcomes in this population.",
+      "authors": "[\"Salam Rehana Abdus\", \"Castleton Patience\", \"Mengistu Tesfaye Setegn\", \"Bhaumik Soumyadeep\", \"Begum Mumtaz\", \"Lassi Zohra\"]",
+      "journal": "BMJ global health",
+      "publication_date": "2026-01-27",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:41.081070",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41526023",
+      "title": "Gamification design and engagement in preregistration nurse education: a scoping review protocol.",
+      "abstract": "The complexity of modern healthcare has driven an increase in the complexity of the preregistration nursing curricula. Diverse learning needs in this population are best served by inclusion of diverse approaches to teaching. Gamification offers an approach to enhance motivation and engagement, allowing for sustained motivation to keep learning. However, current research concerning gamification within preregistration nursing is still limited, particularly surrounding underlying design and the impact this has on long-term engagement and motivation. The aim of this scoping review is to identify and map gamification design elements used in preregistration nursing education, using the Octalysis framework, and to evaluate how these designs influence student engagement and motivation. This scoping review will use the updated Joanna Briggs Institute Scoping Review Methodology and will be reported in accordance with Preferred Reporting Items for Systematic Reviews and Meta-Analyses extension for scoping reviews (PRISMA - ScR). The search will be conducted using Medical Literature Analysis and Retrieval System Online (MEDLINE), Cumulative Index to Nursing and Allied Health Literature (CINAHL), Education Resources Information Cente (ERIC), EBSCO, Web of Science Core Collection, PROquest, SCOPUS, Excerpta Medica Database (EMBASE) and PsycINFO. Grey literature, conference proceedings and relevant digital platforms will also be considered. Two reviewers will independently screen titles/abstracts and full texts. Data extraction will include gamification design elements, engagement and motivation outcomes and their alignment with the Octalysis framework. Synthesis and presentation of findings will be completed using the Patterns, Advances, Gaps, Evidence for practice, Research recommendations framework. The planned start for performing the scoping review is November 2025. Ethical approval is not required as this review will synthesise published and publicly available evidence. Findings will be disseminated via peer-reviewed publication, conference presentations and stakeholder engagement within higher education.",
+      "authors": "[\"McMillan Kelvin\", \"Valler Tracey\", \"Swift Amelia\"]",
+      "journal": "BMJ open",
+      "publication_date": "2026-01-12",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:41.084844",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41877333",
+      "title": "Global maternal and infant health monitoring systems: a scoping review protocol.",
+      "abstract": "Enhancing maternal and infant health is a cornerstone of global health advancement. This can be achieved by building sustainable health monitoring systems that can accurately and reliably generate high-quality data and produce evidence-based recommendations for policymakers. By identifying gaps and strengths in current systems, this review aims to highlight current practices in monitoring maternal and infant health outcomes, including low birth weight. The review will adopt the Arksey and O'Malley framework and the Joanna Briggs Institute's Scoping Review Methods Manual. Three databases, including PubMed, Embase and CINAHL (Cumulative Index to Nursing and Allied Health Literature), as well as relevant grey literature sources, will be searched for articles describing active global population-based maternal and infant health monitoring systems published in English from the year of database inception till 30 September 2025. Two reviewers will independently screen titles and abstracts, followed by independent full-text screenings against predefined eligibility criteria, with data extracted using a data extraction form. After data extraction, a narrative synthesis will be performed. The findings will adhere to Preferred Reporting Items for Systematic reviews and Meta-Analyses extension for Scoping Reviews guidelines. This review is based on publicly available data; no ethical approval is required. The findings of this scoping review will be published in journals and presented at relevant conferences.",
+      "authors": "[\"Al-Habbal Khairat\", \"Hassan Zeinab\", \"Kaddoura Rima\", \"Yousef Sara\", \"Fetty Jason\"]",
+      "journal": "BMJ open",
+      "publication_date": "2026-03-23",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:41.089073",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41571426",
+      "title": "Building a functional resonance analysis method (FRAM) in healthcare: a systematic review on how steps are reported, defined and supported by data.",
+      "abstract": "The functional resonance analysis method (FRAM) is increasingly used to analyse healthcare processes. FRAM uses four steps to analyse a process and its potential variability. We systematically reviewed studies using FRAM in healthcare on how the four steps in FRAM are reported, defined and supported by data. Systematic review following the preferred reporting items for systematic reviews and meta-analyses 2020 guidelines. Web of Science, PubMed, Embase, Scopus, PsycINFO, Dimensions and Lens were searched up to December 2025. All peer-reviewed studies using FRAM in a healthcare context that presented a FRAM visualisation were included. The papers had to be written in English. Two independent reviewers screened titles and abstracts, and subsequently the full text of selected papers. Data was extracted reporting on the steps of FRAM, how functions were supported by data, and the functions and couplings of the visualisations. Sixty-eight papers were included, of which 20 (29%) reported at least one aspect of all four steps in FRAM. While most studies (85%) described how functions were supported by data, the methods used varied widely. Terminology was interpreted differently concerning variability, the output of variability and the effect of combined variability. Most FRAM studies in healthcare do not report all steps of FRAM, and interpretations of key terms differ. FRAM studies should more clearly describe which steps of the method are conducted, and how data is collected and analysed. Refinement of FRAM guidelines, particularly on data use and terminology, would enhance consistency and comparability across studies. CRD42024592858.",
+      "authors": "[\"Luijcks Nienke Maria\", \"Bazuin Tom\", \"Adriaensen Arie\", \"Visser Annelies\", \"Dongelmans Dave\", \"Groeneweg Jop\", \"van der Laan Maarten J\", \"Marang-van de Mheen Perla\"]",
+      "journal": "BMJ open",
+      "publication_date": "2026-01-22",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:41.093377",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41605605",
+      "title": "Breaking bad news and the cost of caring on physicians: a systematic scoping review.",
+      "abstract": "Caring for dying patients and their distressed families can be traumatic. For physicians, these encounters shape the way they see, act and feel as professionals, influencing the inculcation and display of their professional expectations and values-otherwise known as professional identity formation (PIF). When inadequately supported, such changes in PIF can impact patient care, family support and teamwork. With recurrent, brief yet emotionally charged interactions with patients and families especially likely to predispose to moral distress, compassion fatigue and burnout, we propose a review into how breaking bad news (BBN) to patients and families impacts PIF and this personal cost of caring. Framed by the modified-Systematic Evidence-Based Approach, we conducted a systematic scoping review of studies on BBN published between 2000 and 2024 in PubMed, Embase, Scopus, CINAHL and PsycINFO. To chart changes in PIF, we employed the Ring Theory of Personhood (RToP). Thematic and RToP-guided content analyses were concurrently performed, supplemented by ChatGPT-5 to the triangulate human-led analysis. 15 786 titles and abstracts were identified, 346 full-text articles were reviewed and 31 were analysed. BBN demands physicians balance familial goals while preserving patient interests. This predisposes to the personal cost of caring and impacts PIF. These effects are aggravated by ineffective organisational support. BBN impacts PIF and triggers the personal cost of caring. Greater use of team-based approaches in BBN to families should be adopted in practice while training and longitudinal assessment in these approaches should be integrated within purpose-designed, holistic programmes.",
+      "authors": "[\"Tan Cheng Yat\", \"Thum Nicholas Wei Hong\", \"Mohan Trivikram\", \"Cheng Aidan Kay Jan\", \"Govindasamy Ranitha\", \"Abdul Hamid Nur Amira Binte\", \"Ong Simon Yew Kuang\", \"Krishna Lalit Kumar Radha\"]",
+      "journal": "BMJ supportive & palliative care",
+      "publication_date": "2026-01-28",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:41.095556",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2000,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41592841",
+      "title": "Prevalence of hearing loss across age groups in Nepal: a systematic review and meta-analysis protocol.",
+      "abstract": "Hearing loss is a global health problem. It is not only an impairment of hearing but also has debilitating effects on the social, emotional and cognitive domains. It also imposes costs on a country's healthcare sector, which must first be identified to prevent the prevalence of the impairment. In a low- and middle-income country like Nepal, there is no published systematic review on the prevalence of hearing loss. We aim to perform a systematic review and meta-analysis on the national prevalence of hearing loss in Nepal across all age groups. We will report our findings in line with the Preferred Reporting Items for Systematic Review and Meta-Analysis Protocols guidelines. We will search the MEDLINE (PubMed) and Nepal Journals Online databases for publications in Nepali and English. Google Scholar will also be used to broaden the search scope. We will also search grey literature, like government reports. Studies that report the prevalence of hearing loss in Nepal will be included. Titles and abstracts of the studies will be independently screened by both reviewers (PB and SA) using Rayyan software. Full-text articles that pass the initial screening will also be independently reviewed by both reviewers. Disagreements will be resolved through discussion at all stages. If necessary, a third reviewer will be invited, and the original author will be contacted where appropriate (e.g., when data are missing in the original study). We will perform a narrative synthesis of the study results. Cochran's Q test and the I² statistic will be calculated to assess heterogeneity. I² values of 25%, 50% and 75% will be interpreted as indicating low, moderate and high heterogeneity, respectively. We will conduct a meta-analysis using a random-effects model, which accounts for both within-study and between-study variability. We will perform a sensitivity analysis to examine whether a single study disproportionately contributes to heterogeneity. Potential publication bias will be evaluated using both visual and statistical approaches (Funnel plot and Egger's test). In addition, if funnel plot asymmetry is observed, trim-and-fill analysis will be conducted. Statistical tests will be performed in R (V.4.3.1) using RStudio (V.2023.06.1+524) with the metafor package for meta-analysis. Ethics approval is not required for this protocol. This review and meta-analysis are based entirely on secondary data; no primary data will be collected. Our findings will be useful to quantify the national prevalence of hearing impairment in Nepal. They may be useful for developing intervention policies and furthering research agendas for government agencies and hearing-health researchers alike. The results will be presented at conferences, published in peer-reviewed journals and shared with relevant policy-making bodies. CRD420251120903.",
+      "authors": "[\"Bhandari Pratik\", \"Aryal Sajana\"]",
+      "journal": "BMJ open",
+      "publication_date": "2026-01-27",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:41.106158",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "41638739",
+      "title": "Culturally appropriate sexual health interventions for STBBI and HIV among racialised immigrant communities in Western nations: a scoping review protocol.",
+      "abstract": "Racialised immigrant communities in Western nations face disproportionate risks for sexually transmitted and blood-borne infections (STBBIs) due to systemic barriers, including racism, stigma and limited access to culturally appropriate care. While the need is well-established, a comprehensive synthesis of effective, culturally responsive sexual health interventions is lacking. This scoping review aims to map the available evidence on sexual health intervention needs and protective factors of racialised immigrants, and to identify and describe existing culturally appropriate programmes in Western nations. The review will follow the JBI methodology for scoping reviews and be reported as per the Preferred Reporting Items for Systematic Reviews and Meta-Analyses extension for Scoping Reviews (PRISMA-ScR) guidelines. A systematic search strategy, developed and peer-reviewed by a health sciences librarian, will be executed in MEDLINE, Embase, CINAHL and Scopus, alongside grey literature sources, with no date limit. Two independent reviewers will screen titles/abstracts and full texts against the inclusion criteria. Data will be extracted using a standardised tool, analysed via narrative synthesis and framed by a socio-ecological model to categorise interventions across individual, interpersonal, community and structural levels. Ethical approval is not required for this review. Findings will be disseminated through a peer-reviewed publication, academic presentations and tailored summaries for community organisations and policy-makers to ensure practical application. Open Science Framework (https://osf.io/9qah6).",
+      "authors": "[\"Kwame Abukari\", \"Maina Geoffrey\", \"Langman Erin\", \"Ndubuka Nnamdi\", \"Caine Vera\", \"Spence Cara\", \"Maposa Sithokozile\", \"Kamrul Rejina\", \"Mason Natalya\", \"Etowa Josephine\", \"Eaton Andrew D\", \"Caron-Roy Stephanie\", \"Abdulrasheed Abdulmalik\", \"Guliak Dasha\", \"Chowdhury Isfar\", \"Ahmed Ashfaque\", \"Nyoni Nuru\", \"Hanson Jacelyn\", \"Alvarez Analu\"]",
+      "journal": "BMJ open",
+      "publication_date": "2026-02-04",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:41.114391",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41713909",
+      "title": "'They don't know my body': health consumer recognition and escalation of acute deterioration - a systematic review.",
+      "abstract": "Health consumer escalation of acute deterioration response systems are now widely available to help facilitate early recognition and response to acute deterioration in hospitals. Yet, a systematic synthesis of the literature on the signs and symptoms that health consumers consider representative of acute deterioration and the reasons for escalation has not been conducted. (1) To identify the signs and symptoms that health consumers recognise as indicative of acute deterioration, and (2) describe the reasons that health consumers activate acute deterioration response systems in hospitals. A systematic review was undertaken, informed by the PRISMA (Preferred Reporting Items for Systematic reviews and Meta-Analyses) statement and checklist. Five databases (Ovid Medline, Ovid Emcare, CINAHL Complete, Scopus and ProQuest Dissertations and Theses Global Database; January 2015-April 2025; English language) and Google Scholar were searched using a registered search strategy. Screening was undertaken in Covidence with all study designs that met the inclusion criteria included. The MMAT (Mixed-Methods Appraisal Tool) was applied to evaluate study quality. A convergent integrative synthesis was undertaken, incorporating thematic analysis. From 947 unique titles/abstracts and 27 full-text articles, 14 studies met the inclusion criteria. Health consumers can identify a variety of physiological, cognitive, behavioural and functional changes indicative of acute deterioration. Health consumers activate acute deterioration response systems for four reasons: (1) reassurance, (2) reassessment, (3) re-establishing control and (4) recognition and respect. Health consumers' ability to recognise acute deterioration varies, from clear, specific signs and symptoms to a non-specific sense that something is wrong. Health consumers activate acute deterioration response systems for multiple reasons. CRD420251013545.",
+      "authors": "[\"Bonnamy James\", \"Dart Janeane\", \"Palermo Claire\", \"Molloy Renee\", \"Small Kirsten\", \"Connell Clifford\"]",
+      "journal": "BMJ quality & safety",
+      "publication_date": "2026-02-19",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:41.117767",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41611528",
+      "title": "Machine learning based screening of potential paper mill publications in cancer research: methodological and cross sectional study.",
+      "abstract": "To train and validate a machine learning model to distinguish paper mill publications from genuine cancer research articles, and to screen the cancer research literature to assess the prevalence of papers that have textual similarities to paper mill papers. Methodological and cross sectional study applying a BERT (bidirectional encoder representations from transformers) based, text classification model to article titles and abstracts. Retracted paper mill publications listed in the Retraction Watch database were used for model training. The cancer research corpus was screened by the model using the PubMed database restricted to original cancer research articles published between 1999 and 2024. The model was trained on 2202 retracted paper mill papers and validated on independent data collected by image integrity experts. 2.6 million cancer research papers were screened. Classification performance of the model. Prevalence of papers flagged as similar to retracted paper mill publications with 95% confidence intervals and their distribution over time, by country, publisher, cancer type, research area, and within high impact journals (top 10%). The model achieved an accuracy of 0.91. When applied to the cancer research literature, it flagged 261 245 of 2 647 471 papers (9.87%, 95% confidence interval 9.83 to 9.90) and revealed a large increase in flagged papers from 1999 to 2024, both across the entire corpus and in the top 10% of journals by impact factor. More than 170 000 papers affiliated with Chinese institutions were flagged, accounting for 36% of Chinese cancer research articles. Most publishers had published substantial numbers of flagged papers. Flagged papers were overrepresented in fundamental research and in gastric, bone, and liver cancer. Paper mills are a large and growing problem in the cancer literature and are not restricted to low impact journals. Collective awareness and action will be crucial to address the problem of paper mill publications.",
+      "authors": "[\"Scancar Baptiste\", \"Byrne Jennifer A\", \"Causeur David\", \"Barnett Adrian G\"]",
+      "journal": "BMJ (Clinical research ed.)",
+      "publication_date": "2026-01-29",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:41.119120",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [
+          "Transformer",
+          "BERT"
+        ],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Accuracy"
+        ],
+        "sample_size": 1999,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41480623",
+      "title": "The Effectiveness of Peer Education, Mentorship and Role-Playing Approaches in Developing Clinical Skills Among Iranian Nursing Students: A Systematic Review.",
+      "abstract": "This study aimed to assess the effectiveness of peer education, mentorship, and role play approaches in developing clinical skills in nursing students. We conducted a systematic review using specific criteria to identify randomized controlled trials and quasi-experimental focused on nursing students. From the period 2000 to November 28, 2024, six databases, namely Web of Science, Scopus, PubMed, EMBASE, Cochrane, and Google Scholar, were searched through search strategy and the use of Boolean operators. After screening 1821 titles and abstracts, 22 full texts were reviewed, and 6 studies were included in the final analysis. The findings revealed that mentorship significantly improved nursing students' clinical competencies compared to other methods. Role-playing effectively enhanced practical skills such as CPR and triage. Peer education fostered collaboration and confidence but demonstrated inconsistent results in enhancing clinical skills. Mentorship is the most effective method for improving clinical skills, while role-playing excels in practical training. Peer education supports collaboration with inconsistent results. Integrating these methods can enhance nursing education. Further research is needed for broader validation.",
+      "authors": "[\"Ghonchehpour Asma\", \"Alipoor Mina\", \"Farmitani Zakieh\", \"Ghorbani Fereshteh\", \"Nouhi Esmat\"]",
+      "journal": "Health science reports",
+      "publication_date": "2025-12-30",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:41.119661",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41752179",
+      "title": "An Integrated Text Mining Approach for Discovering Pharmacological Effects, Drug Combinations, and Repurposing Opportunities of ACE Inhibitors.",
+      "abstract": "The rapidly expanding body of biomedical literature encompasses a wealth of information concerning the pharmacological effects, mechanisms of action, adverse reactions, and repurposing potential of small-molecule therapeutics. Nevertheless, the systematic extraction and integration of this knowledge continue to pose substantial challenges. In this study, we propose an integrated text-mining framework for the automated extraction and structured representation of information on the biological activities of low-molecular-weight compounds, exemplified by angiotensin-converting enzyme (ACE) inhibitors as a representative pharmacological class. A corpus comprising over 20,000 PubMed titles and abstracts reporting in vitro, in vivo, and clinical investigations of ACE inhibitors was assembled. Chemical compounds, proteins/genes, and diseases were recognized using a previously developed named entity recognition model based on conditional random fields. Entity-level associations were extracted at the sentence level through a rule-based approach employing manually curated pattern phrases, followed by normalization via automated queries to PubChem, UniProt, and the Human Disease Ontology. The proposed methodology facilitated the extraction of approximately 22,000 unique and normalized associations encompassing drug-target, drug-disease, and drug-drug relationships. In addition to confirming well-established therapeutic effects and clinically recognized drug combinations, the analysis identified underexplored pharmacological activities of ACE inhibitors, including antineoplastic, antifibrotic, and neuropsychiatric properties, along with mechanistic associations involving matrix metalloproteinases and neurotrophic signaling pathways. Collectively, these findings underscore the potential of automated literature mining to advance systematic knowledge integration and data-driven hypothesis generation in the contexts of drug repurposing and safety evaluation.",
+      "authors": "[\"Biziukova Nadezhda Yu\", \"Savosina Polina I\", \"Druzhilovskiy Dmitry S\", \"Tarasova Olga A\", \"Poroikov Vladimir V\"]",
+      "journal": "International journal of molecular sciences",
+      "publication_date": "2026-02-22",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:41.123465",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Normalization"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41308967",
+      "title": "Maternal activity and fetal movement: A scoping review.",
+      "abstract": "This scoping review aimed to comprehensively examine methods for measuring changes in fetal movement in response to maternal activity and synthesize evidence on objective measurement techniques. Literature exploring the relationship between maternal physical activity and fetal movement was included. Databases searched included PubMed, Web of Science, Cumulative Index to Nursing and Allied Health Literature, Psychological Abstracts Information Services, and Latin American and Caribbean Health Sciences Literature, supplemented by manual searches. Articles were screened by title and abstract, with eligibility determined through full-text review. Data extracted included title, author, publication year, gestational age, number of participants, device used, measurement methods, type of maternal activity, and fetal response (increased, unchanged, or decreased). Findings were summarized in a table. Additionally, study quality was assessed using risk-of-bias tools specific for each study design. On September 1st, 2025, 1660 references were identified, with 12 articles included. Fetal movement was measured before and after maternal physical activity in nine studies. Of these studies, maternal perception was used in three, and ultrasound in six. Fetal movement during maternal physical activity was measured in three studies, and in all studies, maternal perception was used. No literature provides detailed methods for objectively measuring fetal movement during maternal physical activity, highlighting a research gap. We expect to obtain key findings relevant to physical therapy in the NICU by exploring objective methods for measuring fetal movement during maternal activity and investigating fetal responses to maternal activity in future research.",
+      "authors": "[\"Nemoto Sayaka\", \"Sermpon Nisasri\", \"Gima Hirotaka\"]",
+      "journal": "Neuroscience and biobehavioral reviews",
+      "publication_date": "2025-11-25",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:41.129316",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Medical Imaging"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41702658",
+      "title": "Synthesising evidence on the association between the structure, function and quality components of social connection and quality of life for people with dementia: a scoping review protocol.",
+      "abstract": "Social connection describes how individuals connect, relate and interact with one another, and can affect quality of life (QoL) in persons with dementia. Much of the existing research on social connection does not explicitly differentiate social connection's structure, function and quality components. Due to this, social connection is described using inconsistent terminology, making it unknown how each component is associated with health and well-being outcomes. However, for people with dementia, it is unknown which components of social connection are associated with QoL and whether factors such as gender and type of dementia influence these relationships. This scoping review will identify which components of social connection have been studied in relation to the QoL for people with dementia. This will address inconsistent definitions of social connection terminology and clarify what components of social connection are described and measured in the existing literature. The six-stage scoping review framework developed by Arksey and O'Malley (2005), with updates from Levac <i>et al</i> (2010), will be used. In March 2025, a comprehensive literature search in the following databases will be conducted: MEDLINE ALL (Ovid), APA PsycInfo (Ovid), Embase Classic and Embase (Ovid), CINAHL Complete (EBSCOhost) and Scopus, from database inception. Studies will be included if they are observational studies reporting on an association between social connection and QoL in community-dwelling people with dementia. In Covidence, two reviewers will independently screen the titles and abstracts and review full-text articles based on the inclusion criteria. Data extraction will be carried out by one reviewer and cross-checked by another reviewer. A content analysis for scoping reviews will be used to analyse data and synthesise findings. Ethical approval is not required. Dissemination activities will include peer-reviewed publications, academic presentations and lay summaries on professional websites and social media.",
+      "authors": "[\"Liougas Madalena Pamela\", \"Campos Jennifer L\", \"Montanari Lianna\", \"Rabin Jennifer S\", \"McGilton Katherine S\", \"Bethell Jennifer\"]",
+      "journal": "BMJ open",
+      "publication_date": "2026-02-17",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:43.489657",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41952081",
+      "title": "Exploring eye care service delivery models for pediatric refraction and spectacle-dispensing in India and the United Kingdom: A scoping review.",
+      "abstract": "To explore various service delivery models available for pediatric refraction and spectacle-dispensing in India and UK. A scoping review was conducted following Preferred Reporting Items for Systematic Reviews and Meta-analyses extension for Scoping Review guidelines that included published literature (2010-2024) from MEDLINE (PubMed) and Cochrane Library, reports from government websites, annual reports of nongovernmental organizations, and private eyecare providers. Primary reports on refraction or spectacle-dispensing for children less than 18 years were included. Data related to the \"5 Ps\" influencing service delivery, namely, \"Presence\" (availability of refraction services), \"Procurement\" (availability of spectacle-dispensing), \"Personnel,\" clinical \"Protocol,\" and \"Price\" involved in the services, were qualitatively synthesized. From 1999 published articles screened by title and abstracts, 187 underwent full-text screening, and 60 were included in the review. Evidence also included 22 government reports, 13 annual reports, and 68 websites. A total of 13 and 9 pediatric eyecare service delivery models were identified in India and UK, respectively, and broadly categorized into community outreach, optical/optometry practices, hospitals/clinics, and online services. \"Presence\" and \"Procurement\" were evident in all models in India, whereas in UK, these were evident only in the optical/optometry practices and hospitals following referral from community outreach. \"Personnel\" included refractionists, ophthalmic assistants/vision-technicians, optometrists, opticians, or ophthalmologists in India, and orthoptists, optometrists, dispensing-opticians, or ophthalmologists with distinct regulatory roles in the UK. \"Protocol\" varied in community outreach in both countries. \"Price\" was free of charge at the point of delivery to patients through community outreach in India and all models in the UK, except online services. Evidence gaps exist under \"Personnel,\" \"Price\" in optical/optometry practices in India, and \"Protocol\" in all models except community-outreach in both countries. This review highlights four broad models for pediatric refraction and spectacle-dispensing with varied \"Personnel,\" \"Protocol,\" and \"Price\" in both countries, identifying evidence gaps, benefits, and challenges to inform future research and global efforts to improve child eye care.",
+      "authors": "[\"Dhandapani Kalaiyarasi\", \"Saravanan Swetha\", \"Sukumar Subash\", \"Narayanan Anuradha\"]",
+      "journal": "Optometry and vision science : official publication of the American Academy of Optometry",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "\"多组学\"[Title Abstract] OR \"图神经网络\"[Title Abstract] OR \"UK Biobank\"[Title Abstract]",
+      "search_date": "2026-04-12T09:26:43.522634",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 18,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    }
+  ]
+}

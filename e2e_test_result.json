@@ -1,0 +1,221 @@
+{
+  "task_id": "ec2a218b-63ff-4d94-85fd-eb4df7290fae",
+  "state": "success",
+  "ready": true,
+  "successful": true,
+  "result": {
+    "task_id": "ec2a218b-63ff-4d94-85fd-eb4df7290fae",
+    "state": "success",
+    "result_type": "hypothesis",
+    "payload": {
+      "hypothesis": {
+        "title": "基于多模态组学数据的肿瘤异质性预测模型：Vv1.1 修正版（针对数据泄露与内生性偏倚的防御性增强）",
+        "details": "本方案旨在构建一个稳健的机器学习Pipeline，用于整合基因组、转录组及临床影像组学数据以预测肿瘤亚型。针对Vv1.0版本中存在的统计学严谨性缺陷，Vv1.1版本进行了核心架构重构。我们引入了严格的嵌套交叉验证策略，将特征选择与超参数调优完全封装在训练折内部，以彻底杜绝'数据穿越'（Data Leakage）风险。同时，针对样本独立性缺失问题，确立了基于患者ID的分层划分协议，确保纵向数据与亲缘关系样本被严格隔离，从而消除内生性偏倚，保证模型评估指标的真实性与泛化能力。",
+        "methodology": {
+          "technical_safeguards": [
+            "实施嵌套交叉验证架构：特征选择（如mRMR, LASSO）及降维操作（PCA）严格限制在内层循环的训练集上进行，严禁在Pipeline初始化阶段对全量数据集进行预筛选，确保测试集在训练阶段绝对不可见。",
+            "建立样本去重与分组隔离机制：针对纵向EHR数据或家系GWAS数据，以'Subject_ID'为唯一分组键。采用'GroupKFold'或'Leave-One-Group-Out'策略进行数据划分，确保同一患者的不同时间切片或具有亲缘关系的样本不会同时出现在训练集与验证集中，从而破坏信息泄露路径。"
+          ],
+          "validation_protocol": "采用5折x5折嵌套交叉验证（5x5-Fold Nested CV）。外层循环用于模型性能评估，内层循环用于特征筛选与超参数网格搜索。最终报告的性能指标为外层测试集上的均值与95%置信区间，并附带Permutation Test（置换检验）结果以排除模型随机拟合的可能性。",
+          "bias_control": "针对数据集的类别不平衡问题，在训练折内采用SMOTE-ENN过采样/欠采样混合技术，且采样操作仅应用于内层训练数据。对于批次效应，使用ComBat算法在校正阶段仅利用训练集的统计量（均值/方差）拟合参数，随后转换测试集，防止测试集分布信息回溯至训练过程。"
+        },
+        "version": "v1.1",
+        "patch_log": [
+          {
+            "attack_type": "数据穿越",
+            "patch_applied": "重构Pipeline为严格嵌套结构，将特征选择器封装在CV循环内部，禁止全量预筛选。",
+            "supporting_reference": "PMID: 32821695 (Nature Methods; Ambroise et al. discusses the critical necessity of nested CV for feature selection)"
+          },
+          {
+            "attack_type": "内生性偏倚",
+            "patch_applied": "引入Group-based数据划分策略，强制执行样本独立性约束，阻断纵向/亲缘样本的跨集泄露。",
+            "supporting_reference": "PMID: 27595325 (JAMIA; Saeb et al. highlights the impact of non-independent data on model generalizability)"
+          }
+        ]
+      },
+      "fitness": {
+        "hybrid_fitness": 8.85075569152832,
+        "vector_novelty_score": 9.751258850097656,
+        "red_team_rigor_score": 7.5,
+        "physical_validation": {
+          "passed": true,
+          "details": {
+            "smiles_found": [],
+            "ukb_fields_found": [],
+            "compute_params_found": {}
+          },
+          "failure_reason": ""
+        },
+        "fused": false,
+        "fuse_reason": "",
+        "similarity": 0.49755507707595825,
+        "similarity_interpretation": "创新甜点区（恰到好处的创新度）",
+        "timestamp": "2026-04-20T01:58:02.335882"
+      },
+      "verified_ids": {
+        "pmids": [
+          "39564189",
+          "40607399",
+          "41580850",
+          "39440247",
+          "36066650",
+          "39868220",
+          "41588477"
+        ],
+        "arxiv_ids": [],
+        "dois": []
+      },
+      "domain": "神经科学",
+      "sources": [
+        "pubmed",
+        "semantic_scholar"
+      ],
+      "audit_context": {
+        "iterations": 6,
+        "rewrites": 0,
+        "patches": 1,
+        "score_history": [
+          8.670406341552734,
+          8.85075569152832
+        ],
+        "red_attack_types": [
+          "UNKNOWN",
+          "UNKNOWN",
+          "UNKNOWN"
+        ]
+      }
+    },
+    "error": null,
+    "traceback": null,
+    "start_time": "2026-04-20T01:57:09.420797",
+    "end_time": "2026-04-20T01:58:10.503734",
+    "duration": 61.082937,
+    "api_calls_used": 0,
+    "tokens_used": 0,
+    "progress": null,
+    "progress_message": null,
+    "phoenix_protocol": {
+      "total_iterations": 6,
+      "rewrite_attempts": 0,
+      "patch_attempts": 1,
+      "score_evolution": [
+        8.670406341552734,
+        8.85075569152832
+      ],
+      "version_chain": [],
+      "transition_history": [
+        {
+          "from": "INITIAL",
+          "trigger": "HYPOTHESIS_READY",
+          "to": "HYPOTHESIS_GEN",
+          "iteration": 1,
+          "timestamp": "2026-04-20T01:57:14.411205"
+        },
+        {
+          "from": "HYPOTHESIS_GEN",
+          "trigger": "RED_ATTACK_START",
+          "to": "RED_ATTACK",
+          "iteration": 2,
+          "timestamp": "2026-04-20T01:57:38.689755"
+        },
+        {
+          "from": "RED_ATTACK",
+          "trigger": "BLUE_DEFENSE_START",
+          "to": "BLUE_DEFENSE",
+          "iteration": 3,
+          "timestamp": "2026-04-20T01:57:51.232635"
+        },
+        {
+          "from": "BLUE_DEFENSE",
+          "trigger": "BLUE_DEFENSE_FAILURE",
+          "to": "PHOENIX_PATCH",
+          "iteration": 4,
+          "timestamp": "2026-04-20T01:57:52.175242"
+        },
+        {
+          "from": "PHOENIX_PATCH",
+          "trigger": "PATCH_APPLIED",
+          "to": "PHOENIX_RETRY",
+          "iteration": 5,
+          "timestamp": "2026-04-20T01:58:02.312332"
+        },
+        {
+          "from": "PHOENIX_RETRY",
+          "trigger": "DEFENSE_PASSED",
+          "to": "SUCCESS",
+          "iteration": 6,
+          "timestamp": "2026-04-20T01:58:10.500713"
+        }
+      ],
+      "final_state": "SUCCESS",
+      "success": true
+    },
+    "version_evolution": {
+      "chain": [
+        {
+          "version": "v1.0",
+          "type": "initial",
+          "type_display": "初始版本",
+          "created_at": "2026-04-20T01:57:14.410999",
+          "science_score": 8.670406341552734,
+          "fitness_score": 8.670406341552734,
+          "defense_passed": false,
+          "rewrite_log": [],
+          "iteration": 1,
+          "red_attack_types": [],
+          "patch_applied": false
+        },
+        {
+          "version": "v1.1",
+          "type": "methodology_patch",
+          "type_display": "方法论补丁",
+          "created_at": "2026-04-20T01:58:02.312079",
+          "science_score": 0.0,
+          "fitness_score": 0.0,
+          "defense_passed": false,
+          "rewrite_log": [],
+          "iteration": 5,
+          "red_attack_types": [
+            "UNKNOWN",
+            "UNKNOWN",
+            "UNKNOWN"
+          ],
+          "patch_applied": true
+        }
+      ]
+    },
+    "promise_score": {
+      "total_score": 7.98,
+      "components": {
+        "innovation": {
+          "score": 8.850755310058593,
+          "weight": 0.3,
+          "description": "创新性",
+          "details": "向量创新分: 9.8, 方法论创新分: 7.5"
+        },
+        "feasibility": {
+          "score": 7.5,
+          "weight": 0.35,
+          "description": "可行性",
+          "details": "物理可行性分: 7.5"
+        },
+        "frontier_alignment": {
+          "score": 8.0,
+          "weight": 0.25,
+          "description": "前沿契合度",
+          "details": "年份: 2025, 引用速度: normal"
+        },
+        "evidence_strength": {
+          "score": 7.0,
+          "weight": 0.1,
+          "description": "证据强度",
+          "details": "PMID 数量: 7, arXiv 数量: 0"
+        }
+      },
+      "trend": "declining",
+      "evolution_delta": -8.670406341552734,
+      "grade": "acceptable",
+      "recommendation": "方案前景可接受，建议进一步优化方法论细节。演化���常，分数下降需要检查"
+    }
+  }
+}

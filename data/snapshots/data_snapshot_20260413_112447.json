@@ -1,0 +1,113 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-13T11:24:47.271265",
+  "cutoff_date": "2026-04-13",
+  "metadata": {
+    "query": "单细胞参考映射，bulk 反卷积，细胞类型富集，多组学因子分析，疾病风险预测",
+    "date_range": "(2023, 2026)"
+  },
+  "record_count": 4,
+  "papers": [
+    {
+      "pmid": "41857035",
+      "title": "Membrane interfacial potential governs surface condensation and fibrillation of α-Synuclein in neurons.",
+      "abstract": "Biomolecular condensates formed via liquid-liquid phase separation (LLPS) are essential for cellular organization. α-Synuclein, an amyloidogenic protein linked to Parkinson's Disease (PD), undergoes phase separation at high concentrations, but the influence of lipid membranes on this process remains unclear. Here, combining in vitro reconstitution, cell biology, and simulations, we show that membranous interfaces promote α-Synuclein condensation at physiologically relevant sub-critical concentrations ( ~ 10 nM) without crowding agents. Notably, condensation occurs only on membranes with a specific stoichiometry of lipids, underscoring the role of interfacial potential. These condensates serve as nucleation sites for fibril formation, leading to membrane deformation and rupture. A lattice gas model reveals this behavior as a prewetting-like transition, where an attractive membrane induces local phase separation below the bulk saturation concentration. Indeed altering interfacial potential by lipid composition and membrane depolarization not only drastically changes α-Synuclein puncta size and number but also triggers their release from neurons. These findings reveal the crucial role of lipid membrane interfaces in regulating α-Synuclein condensation, aggregation and release, shedding light on a potential mechanism of their cell-to-cell propagation during neurodegeneration.",
+      "authors": "[\"Shaikh Jafarulla\", \"Nagarajan Aniruddha\", \"Mitra Tuhina\", \"Modak Aninda Sundar\", \"Biswas Krittika\", \"Meher Geetanjali\", \"Bhausaheb Aher Jayesh\", \"Kannan Nimal Archish\", \"Sahu Bhavani Shankar\", \"Ghatak Swagata\", \"Choubey Sandeep\", \"Saleem Mohammed\"]",
+      "journal": "Nature communications",
+      "publication_date": "2026-03-19",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "单细胞参考映射 bulk 反卷积 细胞类型富集 多组学因子分析 疾病风险预测 AND (\"2023\" 2026[PDAT])",
+      "search_date": "2026-04-13T03:24:47.268783",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41857317",
+      "title": "A meta-analysis of single-nucleus expression quantitative trait loci linking genetic risk to brain disorders.",
+      "abstract": "Most genetic risk variants for neurological diseases are located in noncoding regulatory regions, where they often act as expression quantitative trait loci (eQTLs), modulating gene expression and influencing disease susceptibility. However, eQTL studies in bulk brain tissue or cell lines fail to capture the brain's cellular diversity. Single-nucleus RNA sequencing (snRNA-seq) allows high-resolution mapping of eQTLs across diverse brain cell types. Here we performed a meta-analysis by integrating snRNA-seq and genotype data from four cohorts, totaling 5.8 million nuclei from 983 individuals of European ancestry. We mapped cis-eQTLs and trans-eQTLs across major brain cell types and subtypes, including disease-specific and sex-specific eQTLs, and applied colocalization and Mendelian randomization to identify genes that mediate neurological disease risk. We observed up to tenfold more cis-eQTLs and uncovered cell-type-specific genes linked to neurological disease. SingleBrain is a comprehensive single-cell eQTL resource that provides insights into the genetic mechanism of brain disorders.",
+      "authors": "[\"Jang Beomjin\", \"Bp Kailash\", \"Tokolyi Alex\", \"Dredge Winston H\", \"Ravi Ashvin\", \"Jung Sang-Hyuk\", \"Naito Tatsuhiko\", \"Kim Beomsu\", \"Kim Min Seo\", \"Cho Minyoung\", \"Park Mi-So\", \"Rosen Mikaela\", \"Blanchard Joel\", \"Humphrey Jack\", \"Knowles David A\", \"Won Hong-Hee\", \"Raj Towfique\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2026-03-19",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "单细胞参考映射 bulk 反卷积 细胞类型富集 多组学因子分析 疾病风险预测 AND (\"2023\" 2026[PDAT])",
+      "search_date": "2026-04-13T03:24:47.269390",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 983,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Bulk RNA-seq"
+        ],
+        "validation_method": "10-fold CV"
+      }
+    },
+    {
+      "pmid": "41342739",
+      "title": "A High-Fiber, Plant-Based Diet in Myeloma Precursor Disorders: Results from the NUTRIVENTION Clinical Trial and Preclinical Vk*MYC Model.",
+      "abstract": "Consumption of a Western diet and high body mass index (BMI) are risk factors for progression from premalignant phenotypes to multiple myeloma, a hematologic cancer. In the NUTRIVENTION trial (NCT04920084), we administered a high-fiber, plant-based diet (HFPBD; meals for 12 weeks, coaching for 24 weeks) to 23 participants with myeloma precursor states and elevated BMI. The intervention was feasible and improved quality of life and modifiable risk factors: metabolic (BMI, insulin resistance), microbiome (diversity, composition), and immune (inflammation, monocyte subsets). Disease progression trajectory improved (n = 2) or was stable. Findings were translated to Vk*MYC mice modeling the myeloma precursor state, in which a high-fiber diet (HFD) delayed disease progression through improved metabolism and microbiome composition, leading to increased short-chain fatty acid production that reinvigorated antitumor immunity and inhibited tumor growth. These effects from fiber consumption were independent of calorie restriction and weight loss. A HFD is a low-risk intervention that may delay progression to myeloma. A HFPBD in participants with precursor plasma cell disorders and an elevated BMI improved metabolic, microbiome, and immune biomarkers of disease. In a subset, it may delay progression to myeloma. In mouse models, a HFD delayed progression to myeloma independent of calorie restriction. See related commentary by Fairfield and Reagan, p. 623.",
+      "authors": "[\"Shah Urvi A\", \"Cogrossi Laura Lucia\", \"Garcés Juan-Jose\", \"Policastro Anna\", \"Castro Francesca\", \"Derkach Andriy\", \"Fei Teng\", \"DeWolf Susan\", \"Grioni Matteo\", \"Sisti Sofia\", \"Blaslov Jenna\", \"Adintori Peter A\", \"Hosszu Kinga K\", \"McAvoy Devin\", \"Baichoo Mirae\", \"Cross Justin R\", \"Paredes Jenny\", \"Anuraj Aishwarya\", \"Raj Sandeep S\", \"Pohl Charlotte\"]",
+      "journal": "Cancer discovery",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "单细胞参考映射 bulk 反卷积 细胞类型富集 多组学因子分析 疾病风险预测 AND (\"2023\" 2026[PDAT])",
+      "search_date": "2026-04-13T03:24:47.270100",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41685669",
+      "title": "Spatial transcriptomics reveals a key role of fibroblast-like vascular smooth muscle cells in human atherosclerotic cell crosstalk and stability.",
+      "abstract": "Atherosclerotic plaques are the leading cause of cardiovascular events. Single-cell approaches have identified diverse human plaque cell phenotypes but their spatial distribution and interactions remain unclear. Here, intercellular communication patterns in human plaque microenvironments were mapped to reveal novel targets to prevent atherosclerotic events. Spatial transcriptomics (Visium, 10x) from 13 carotid plaques, and single-cell transcriptomics (cells = 51 981) were used to analyse cell phenotypes, cell trajectories, and intercellular communications. Cells contributing to plaque stability were explored using deconvolution of plaque bulk RNA-seq data (n = 78), histology, and survival analyses. Key cells and pathways were validated in apolipoprotein E (Apoe)-/- mice and in vitro. Genome-wide association study enrichment analyses were conducted using summary statistics of atherosclerotic diseases. LINCS L1000 data were used to explore drug repurposing. A fibroblast-like vascular smooth muscle cell (VSMC) phenotype associated with extracellular matrix formation pathways (validated in Apoe-/- mice) emerged as a key regulator of intra-plaque ligand-receptor signalling, in particular in the cap region. A higher proportion of fibroblast-like VSMCs was found in asymptomatics, associated with stable plaque features and predicted a lower risk of future events. Genes specific to this VSMC phenotype were enriched in coronary artery disease and myocardial infarction. Finally, compounds, which could induce key marker genes were identified and validated in vitro. This study provides the first comprehensive spatial transcriptomics map of cell communication in human plaque microenvironments. A pivotal role of a fibroblast-like VSMC, orchestrating intraplaque cell signalling and contributing to plaque stability, was identified. Targeting these cells might present promising novel avenues for therapies.",
+      "authors": "[\"Goncalves Isabel\", \"Pan Mengyu\", \"Singh Pratibha\", \"Wang Wenqi\", \"Zhao Jing\", \"Dib Lea\", \"Sundius Lena\", \"Persson Ana\", \"Gialeli Chrysostomi\", \"Fountas Panagiotis\", \"Nitulescu Mihaela\", \"Nilsson Jan\", \"Malin Stephen\", \"Monaco Claudia\", \"Jørgensen Helle F\", \"Sun Jiangming\", \"Edsfeldt Andreas\"]",
+      "journal": "European heart journal",
+      "publication_date": "2026-02-13",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "单细胞参考映射 bulk 反卷积 细胞类型富集 多组学因子分析 疾病风险预测 AND (\"2023\" 2026[PDAT])",
+      "search_date": "2026-04-13T03:24:47.270979",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 78,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Bulk RNA-seq",
+          "Spatial Transcriptomics"
+        ],
+        "validation_method": null
+      }
+    }
+  ]
+}

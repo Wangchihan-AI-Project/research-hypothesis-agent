@@ -1,0 +1,63 @@
+# V3.4 CODE FREEZE 备份清单
+
+备份时间: 2026-04-16 02:58:48
+备份路径: backup/V3.4_CODE_FREEZE_20260416_025848/
+系统版本: V3.4 Zero-Day Defense
+状态: CODE FREEZE READY
+
+---
+
+## 备份文件列表
+
+### 新增核心文件 (Level 4 零日漏洞防御)
+- zero_day_defense.py (680 行) - 零日漏洞防御模块
+  - HeterogeneousModelPool - 异构模型执行器
+  - PromptInjectionDefender - 提示词注入防御器
+  - SteelStampReinforcer - 钢印强化器
+  - APICacheManager - API 物理缓存管理器
+
+### 新增核心文件 (Level 3 终极鲁棒性)
+- ultimate_robustness.py (700 行) - 终极鲁棒性防御模块
+  - DataSanitizer - 数据清洗器
+  - ModalityBlacklist - 模态违禁词库
+  - SnapshotManager - 快照管理器
+  - ObservabilityTracer - 可观测性追踪器
+
+### 增强文件 (Level 2 LLM 专属陷阱)
+- llm_utils.py (V3.2 增强版)
+  - TypeSafeCast - 类型安全转换器
+  - retry_with_exponential_backoff - 指数退避重试
+  - TokenHardCapManager - Token 硬上限管理器
+
+### 更新文件
+- red_team_agent.py - 集成钢印强化
+- config_loader.py - 添加异构模型支持
+- pubmed.py - 集成 API 缓存
+
+### 验收文件
+- V3_4_ACCEPTANCE.txt - 架构验收确认书
+
+---
+
+## 恢复方法
+
+如需恢复此备份，执行:
+
+```bash
+cd /c/Users/PC/research-hypothesis-agent
+cp backup/V3.4_CODE_FREEZE_20260416_025848/* src/core/
+cp backup/V3.4_CODE_FREEZE_20260416_025848/llm_utils.py src/utils/
+cp backup/V3.4_CODE_FREEZE_20260416_025848/red_team_agent.py src/agents/
+cp backup/V3.4_CODE_FREEZE_20260416_025848/pubmed.py src/utils/
+```
+
+---
+
+## 审查历史
+
+- Level 1: 逻辑级代码审查 (4 缺陷) -> 已修复
+- Level 2: LLM 专属陷阱审查 (4 缺陷) -> 已修复
+- Level 3: 终极鲁棒性审查 (4 缺陷) -> 已修复
+- Level 4: 零日漏洞与混沌工程审查 (4 缺陷) -> 已修复
+
+总计: 16 个深层缺陷全部修复

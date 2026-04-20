@@ -1,0 +1,33 @@
+{
+  "experiment_id": "exp_20260413_223524_a8bc5773",
+  "start_time": "2026-04-13T22:35:24.929425",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "PD-L1 AND 因果推断",
+  "search_params": {
+    "max_results": 20,
+    "date_range": [
+      2023,
+      2026
+    ],
+    "min_if": 0,
+    "relevance_threshold": 7.0,
+    "cutoff_date": "2026-04-14"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-13T22:37:07.998408",
+      "path": "data\\snapshots\\data_snapshot_20260413_223707.json",
+      "record_count": 22
+    },
+    {
+      "timestamp": "2026-04-13T23:21:52.988698",
+      "path": "data\\snapshots\\data_snapshot_20260413_232152.json",
+      "record_count": 800
+    }
+  ]
+}

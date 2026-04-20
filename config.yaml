@@ -1,0 +1,46 @@
+# 研究假设生成系统配置
+
+# 系统设置
+system:
+  name: "Research Hypothesis Generator"
+  version: "1.0.0"
+  description: "基于多智能体协作的科研假设生成系统"
+
+# 智能体配置（统一使用 Sonnet 模型，避免代理超时）
+agents:
+  paper_search:
+    name: "论文搜索智能体"
+    description: "从PubMed搜索相关论文"
+    model: "claude-opus-4-6"
+    max_results: 50  # 每次搜索最大返回论文数
+
+  hypothesis:
+    name: "假设生成智能体"
+    description: "基于论文内容生成新颖的研究假设"
+    model: "claude-opus-4-6"
+
+  validation:
+    name: "假设验证智能体"
+    description: "评估假设的可行性、新颖性和技术性"
+    model: "claude-opus-4-6"
+
+  tech_analysis:
+    name: "技术分析智能体"
+    description: "分析验证假设所需的技术和方法"
+    model: "claude-opus-4-6"
+
+# PubMed搜索配置
+pubmed:
+  base_url: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+  retmax: 50
+  retmode: "json"
+
+# 数据库配置
+database:
+  type: "sqlite"
+  path: "./data/research.db"
+
+# CLI配置
+cli:
+  page_size: 10  # 每页显示论文数
+  hypothesis_display_limit: 5  # 一次显示假设数量限制

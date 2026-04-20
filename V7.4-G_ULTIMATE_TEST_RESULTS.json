@@ -1,0 +1,84 @@
+{
+  "test_info": {
+    "test_type": "V7.4-G 终极全流程回归矩阵",
+    "timestamp": "2026-04-19T17:49:28.538125",
+    "total_cases": 3,
+    "total_duration": 465.3427996635437
+  },
+  "cases": [
+    {
+      "input": {
+        "id": "命题一",
+        "category": "基准测试-稳健性",
+        "title": "集成 UK Biobank 多组学特征与残差图卷积网络（ResGCN）的人类心血管衰老轨迹精准量化模型。",
+        "expected_behavior": "V7.4-G 0.85分高严谨度门槛下丝滑通过，展现工程可实现性",
+        "checkpoint": "科学底线评分机制是否生效，severe_threshold 是否动态调整"
+      },
+      "output": {
+        "case_id": "命题一",
+        "category": "基准测试-稳健性",
+        "final_state": "PASS",
+        "reason": "DefenseCommittee 审查通过",
+        "healing_activated": false,
+        "attack_types": [],
+        "attack_types_valid": true,
+        "patch_source": "",
+        "iteration_count": 2,
+        "baseline_score": 0,
+        "duration": 126.67037987709045
+      }
+    },
+    {
+      "input": {
+        "id": "命题二",
+        "category": "核心压测-自愈力",
+        "title": "基于 AlphaFold3 构象采样与大规模分布式分子动力学模拟，探究罕见非编码 SNP 对药物结合口袋（Binding Pocket）变构效应的影响。",
+        "expected_behavior": "必须触发 Iteration 4，自愈引擎从 arXiv/PubMed 闭环",
+        "checkpoint": "前沿科学不被误判 PSEUDOSCIENCE，补丁模板正确调用"
+      },
+      "output": {
+        "case_id": "命题二",
+        "category": "核心压测-自愈力",
+        "final_state": "REJECT",
+        "reason": "Red Team 拒绝: N/A",
+        "healing_activated": true,
+        "attack_types": [
+          "BIAS",
+          "VALIDATION"
+        ],
+        "attack_types_valid": true,
+        "patch_source": "PubMed MD 验证标准",
+        "iteration_count": 4,
+        "baseline_score": 0,
+        "duration": 155.34208250045776
+      }
+    },
+    {
+      "input": {
+        "id": "命题三",
+        "category": "极限拦截-公理底线",
+        "title": "利用超低频生物光子谐振与量子引力波场，实现跨组织的无损神经元电活动远端实时测序与干预研究。",
+        "expected_behavior": "Step 0 立即 Hard-Block，给出科学转向建议",
+        "checkpoint": "物理公理锚定检测引擎是否正确拦截"
+      },
+      "output": {
+        "case_id": "命题三",
+        "category": "极限拦截-公理底线",
+        "final_state": "REJECT",
+        "reason": "Red Team 拒绝: N/A",
+        "healing_activated": true,
+        "attack_types": [
+          "LEAKAGE",
+          "PSEUDOSCIENCE",
+          "OVERFITTING",
+          "BIAS"
+        ],
+        "attack_types_valid": true,
+        "patch_source": "PSEUDOSCIENCE_v1 物理锚定补丁",
+        "iteration_count": 4,
+        "baseline_score": 0,
+        "duration": 177.307199716568
+      }
+    }
+  ]
+}

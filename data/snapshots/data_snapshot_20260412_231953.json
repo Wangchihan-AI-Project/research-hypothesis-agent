@@ -1,0 +1,235 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-12T23:19:53.744005",
+  "cutoff_date": "2026-04-12",
+  "metadata": {
+    "query": "TME AND SCM",
+    "date_range": "2018-2026"
+  },
+  "record_count": 9,
+  "papers": [
+    {
+      "pmid": "41455698",
+      "title": "A new strategy for CAR-T therapy in solid tumors: IL-15-autocrine signaling augments tumor stroma depletion and promotes a T<sub>SCM</sub> subset in the TME.",
+      "abstract": "Although chimeric antigen receptor (CAR)-T cell therapy has achieved remarkable therapeutic effects in treating hematologic cancers, its effectiveness in solid tumors remains significantly restricted. the primary reason is the immunosuppression mediated by the tumor microenvironment (TME), which leads to rapid exhaustion of infiltrating CAR-T cells. To enhance CAR-T cell efficacy against solid tumors, we pursued improvements in two aspects. First, we constructed fibroblast activation protein (FAP)-directed CAR-T cells to enhance their anti-CAF capability within the TME, thereby alleviating the immunosuppressive barrier. Second, we utilized IL-15, an efficient activator of CAR-T cells that inhibits activation-induced cell death, restores effector functions, and increases the proportion of the T stem cell memory (T<sub>SCM</sub>) subpopulation. In this study, we report the generation of FAP/IL-15 CAR-T cells, which target FAP and autonomously synthesize and secrete IL-15. Our data demonstrate that treatment with FAP/IL-15 CAR-T cells exhibited stronger activation characteristics in a FAP antigen-dependent manner, selectively targeting CAFs within the solid TME. Moreover, endogenous IL-15 secretion enabled CAR-T cells to adopt a T<sub>SCM</sub>-like phenotype with enhanced memory characteristics, thus improving cell survival, proliferation, activation, and therapeutic efficacy against solid tumors.",
+      "authors": "[\"Pang Yanyang\", \"Chen Leiyuan\", \"Sun Qinghui\", \"He Na\", \"Lai Zhiheng\", \"Wang Xi\", \"Xie Zhihao\", \"Yang Wenli\", \"Wang Wu\"]",
+      "journal": "Cell death & disease",
+      "publication_date": "2025-12-27",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TME AND SCM",
+      "search_date": "2026-04-12T15:19:53.736869",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39716892",
+      "title": "FGF19-Activated Hepatic Stellate Cells Release ANGPTL4 that Promotes Colorectal Cancer Liver Metastasis.",
+      "abstract": "Liver and lung are the most common metastatic sites in colorectal cancer (CRC), where the tumor microenvironment (TME) plays a crucial role in the progression and metastasis of CRC. Understanding the interactions between various types of cells in the TME can suggest innovative therapeutic strategies. Using single-cell RNA sequencing (scRNA-Seq) and clinical samples, fibroblast growth factor-19 (FGF19, rodent FGF15) is found to mediate a significant interaction between CRC cells and cancer-associated fibroblasts (CAFs), activating the hepatic stellate cells (HSCs)-to-CAFs differentiation. In various CRC metastatic mouse models, it is shown that FGF15 has a more pronounced effect on liver metastasis compared to pulmonary metastasis. More importantly, the differentially expressed genes (DEGs) are also identified from the RNA-Seq dataset upon the activation of HSCs by FGF19 and compared the DEGs in matched primary and metastatic mRNA samples from patients with CRC liver metastasis (CRCLM), it is found that the ANGPTL4 gene is significantly associated with HSCs activation. Different mouse models also demonstrated the impact of the FGF19/ANGPTL4 axis on the severity of CRCLM. Importantly, disruption of this axis significantly inhibits CRCLM in vivo. This study is among the first to demonstrate the impact of the FGF19/ANGPTL4 axis on CRCLM, offering a novel therapeutic strategy.",
+      "authors": "[\"Fan Xueying\", \"Li Baoting\", \"Zhang Fan\", \"Liu Meng\", \"Kwan Hiu-Yee\", \"Liu Zhongqiu\", \"Su Tao\"]",
+      "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+      "publication_date": "2024-12-24",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TME AND SCM",
+      "search_date": "2026-04-12T15:19:53.737517",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "scRNA-seq",
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41346587",
+      "title": "Metabolic reprogramming of CAR T cells: a new frontier in cancer immunotherapy.",
+      "abstract": "Chimeric Antigen Receptor (CAR) T cell therapy has revolutionized hematological cancer treatment, but its efficacy in solid tumors remains limited by the immunosuppressive and metabolically hostile tumor microenvironment (TME). CAR T cells' functional compromise, exhaustion, and poor persistence are critically linked to their suboptimal metabolic fitness. This review highlights a paradigm shift: immunometabolism and its intricate interplay with epigenetics profoundly regulate T cell fate and function, establishing their reprogramming as a cornerstone for optimizing CAR T cell efficacy in diverse malignancies. We explore the intricate relationship between T cell differentiation and metabolic states, emphasizing that modulating CAR T cell metabolism <i>ex vivo</i> during manufacturing can drive differentiation towards less exhausted, more persistent memory phenotypes, such as stem cell central memory (T<sub>scm</sub>) and central memory (T<sub>cm</sub>) cells, which correlate with superior anti-tumor responses. Our analysis demonstrates that metabolic inhibitors offer significant potential to reprogram CAR T cells. Agents targeting glycolysis or the PI3K/Akt/mTOR pathway promote a memory-like phenotype by favoring oxidative phosphorylation (OXPHOS). Further strategies utilizing glutamine antagonists, mitochondrial modulators, or enzyme manipulation (e.g., IDH2, ACAT1) can epigenetically reprogram cells, fostering memory and exhaustion resistance. Similarly, nutrient level optimization during <i>ex vivo</i> expansion directly sculpts CAR T cell metabolic profiles. With approaches like glucose restriction/galactose substitution, or specific amino acid modulation (e.g., L-arginine, asparagine), persistence of CAR T cells in patients can be improved. The judicious selection and engineering of cytokines (e.g., IL-7, IL-15, IL-21) during manufacturing also plays a vital role in fostering desired memory phenotypes. In conclusion, metabolic engineering, leveraging its impact on epigenetic regulation during CAR T cell manufacturing, is crucial for generating potent, persistent, and functionally resilient products. This approach holds immense promise for expanding the curative potential of CAR T cell therapy to a broader range of cancers, particularly challenging solid tumors.",
+      "authors": "[\"Frlic Tjaša\", \"Pavlin Mojca\"]",
+      "journal": "Frontiers in immunology",
+      "publication_date": "2025-11-19",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TME AND SCM",
+      "search_date": "2026-04-12T15:19:53.738532",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39682743",
+      "title": "Differential Infiltration of Key Immune T-Cell Populations Across Malignancies Varying by Immunogenic Potential and the Likelihood of Response to Immunotherapy.",
+      "abstract": "<b>Background:</b> Solid tumors vary by the immunogenic potential of the tumor microenvironment (TME) and the likelihood of response to immunotherapy. The emerging literature has identified key immune cell populations that significantly impact immune activation or suppression within the TME. This study investigated candidate T-cell populations and their differential infiltration within different tumor types as estimated from mRNA co-expression levels of the corresponding cellular markers. <b>Methods:</b> We analyzed the mRNA co-expression levels of cellular biomarkers that define stem-like tumor-infiltrating lymphocytes (TILs), tissue-resident memory T-cells (TRM), early dysfunctional T-cells, late dysfunctional T-cells, activated-potentially anti-tumor (APA) T-cells and Butyrophilin 3A (BTN3A) isoforms, utilizing clinical and transcriptomic data from 1892 patients diagnosed with melanoma, bladder, ovarian, or pancreatic carcinomas. Real-world data were collected under the Total Cancer Care Protocol and the Avatar<sup>®</sup> project (NCT03977402) across 18 cancer centers. Furthermore, we compared the survival outcomes following immune checkpoint inhibitors (ICIs) based on immune cell gene expression. <b>Results:</b> In melanoma and bladder cancer, the estimated infiltration of APA T-cells differed significantly (<i>p</i> = 4.67 × 10<sup>-12</sup> and <i>p</i> = 5.80 × 10<sup>-12</sup>, respectively) compared to ovarian and pancreatic cancers. Ovarian cancer had lower TRM T-cell infiltration than melanoma, bladder, and pancreatic (<i>p</i> = 2.23 × 10<sup>-8</sup>, 3.86 × 10<sup>-28</sup>, and 7.85 × 10<sup>-9</sup>, respectively). Similar trends were noted with stem-like, early, and late dysfunctional T-cells. Melanoma and ovarian expressed BTN3A isoforms more than other malignancies. Higher densities of stem-like TILs; TRM, early and late dysfunctional T-cells; APA T-cells; and BTN3A isoforms were associated with increased survival in melanoma (<i>p</i> = 0.0075, 0.00059, 0.013, 0.005, 0.0016, and 0.041, respectively). The TRM gene signature was a moderate predictor of survival in the melanoma cohort (AUROC = 0.65), with similar findings in testing independent public datasets of ICI-treated patients with melanoma (AUROC 0.61-0.64). <b>Conclusions:</b> Key cellular elements related to immune activation are more heavily infiltrated within ICI-responsive versus non-responsive malignancies, supporting a central role in anti-tumor immunity. In melanoma patients treated with ICIs, higher densities of stem-like TILs, TRM T-cells, early dysfunctional T-cells, late dysfunctional T-cells, APA T-cells, and BTN3A isoforms were associated with improved survival.",
+      "authors": "[\"Eljilany Islam\", \"Coleman Sam\", \"Tan Aik Choon\", \"McCarter Martin D\", \"Carpten John\", \"Colman Howard\", \"Naqash Abdul Rafeh\", \"Puzanov Igor\", \"Arnold Susanne M\", \"Churchman Michelle L\", \"Spakowicz Daniel\", \"Salhia Bodour\", \"Marin Julian\", \"Ganesan Shridar\", \"Ratan Aakrosh\", \"Shriver Craig\", \"Hwu Patrick\", \"Dalton William S\", \"Weiner George J\", \"Conejo-Garcia Jose R\"]",
+      "journal": "Cells",
+      "publication_date": "2024-12-03",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TME AND SCM",
+      "search_date": "2026-04-12T15:19:53.739776",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC"
+        ],
+        "sample_size": 3,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Bulk RNA-seq"
+        ],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "35481698",
+      "title": "Treatment with Exogenously Added Catalase Alters CD8 T Cell Memory Differentiation and Function.",
+      "abstract": "Cell-based immunotherapy is a promising approach to cancer treatment. However, the metabolically hostile tumor microenvironment (TME) poses a major barrier to this therapeutic approach. Metabolic reprogramming may enhance T cell effector function and support longevity and persistence within the TME. Metabolic processes lead reactive oxygen species (ROS) production, which are mandatory mediators of signaling and immune cell functions, but detrimental when present in excess. Catalase (CAT) is an intracellular antioxidant enzyme that scavenges hydrogen peroxide (H<sub>2</sub> O<sub>2</sub> ), a central ROS member with a plethora of biological effects. H<sub>2</sub> O<sub>2</sub> is produced intracellularly and extracellularly, diffusing freely between the two compartments. In this study, it is found that scavenging extracellular H<sub>2</sub> O<sub>2</sub> by CAT supplementation has a major impact on the cell redox state, decreased intracellular ROS, but enhanced activation and altered memory differentiation. Under in vitro chronic activation conditions, CAT treatment favors CD8 T cells with less exhausted phenotype, increased activation and memory markers, and high bioenergetic capacity. Under in vitro acute activation conditions, CAT treatment selectively prevents differentiation transition from the stem cell memory/naive (T<sub>SCM</sub> /T<sub>N</sub> )- to the central memory (T<sub>CM</sub> )-like phenotype, while enhancing activation and polyfunctionality. The study highlights the critical role of H<sub>2</sub> O<sub>2</sub> as a \"hidden player\" in T cell fitness and memory differentiation.",
+      "authors": "[\"Aksoylar Halil-Ibrahim\", \"Patsoukis Nikolaos\"]",
+      "journal": "Advanced biology",
+      "publication_date": "2022-04-28",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TME AND SCM",
+      "search_date": "2026-04-12T15:19:53.740675",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "36358860",
+      "title": "Role of CAR T Cell Metabolism for Therapeutic Efficacy.",
+      "abstract": "Chimeric antigen receptor (CAR) T cells hold enormous potential. However, a substantial proportion of patients receiving CAR T cells will not reach long-term full remission. One of the causes lies in their premature exhaustion, which also includes a metabolic anergy of adoptively transferred CAR T cells. T cell phenotypes that have been shown to be particularly well suited for CAR T cell therapy display certain metabolic characteristics; whereas T-stem cell memory (T<sub>SCM</sub>) cells, characterized by self-renewal and persistence, preferentially meet their energetic demands through oxidative phosphorylation (OXPHOS), effector T cells (T<sub>EFF</sub>) rely on glycolysis to support their cytotoxic function. Various parameters of CAR T cell design and manufacture co-determine the metabolic profile of the final cell product. A co-stimulatory 4-1BB domain promotes OXPHOS and formation of central memory T cells (T<sub>CM</sub>), while T cells expressing CARs with CD28 domains predominantly utilize aerobic glycolysis and differentiate into effector memory T cells (T<sub>EM</sub>). Therefore, modification of CAR co-stimulation represents one of the many strategies currently being investigated for improving CAR T cells' metabolic fitness and survivability within a hostile tumor microenvironment (TME). In this review, we will focus on the role of CAR T cell metabolism in therapeutic efficacy together with potential targets of intervention.",
+      "authors": "[\"Rial Saborido Judit\", \"Völkl Simon\", \"Aigner Michael\", \"Mackensen Andreas\", \"Mougiakakos Dimitrios\"]",
+      "journal": "Cancers",
+      "publication_date": "2022-11-04",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TME AND SCM",
+      "search_date": "2026-04-12T15:19:53.741313",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37179445",
+      "title": "Immune landscape of breast tumors with low and intermediate estrogen receptor expression.",
+      "abstract": "Immune checkpoint blockade (ICB) is currently approved for patients with triple-negative breast cancer (TNBC), whereas responses to ICB are also observed in a small subgroup of Estrogen Receptor (ER)-positive breast cancer. The cut-off for ER-positivity (≥1%) is based on likelihood of endocrine treatment response, but ER-positive breast cancer represents a very heterogeneous group. This raises the question whether selection based on ER-negativity should be revisited to select patients for ICB treatment in the context of clinical trials. Stromal tumor-infiltrating lymphocytes (sTILs) and other immune parameters are higher in TNBC compared to ER-positive breast cancer, but it is unknown whether lower ER levels are associated with more inflamed tumor microenvironments (TME). We collected a consecutive series of primary tumors from 173 HER2-negative breast cancer patients, enriched for tumors with ER expression between 1 and 99% and found levels of stromal TILs, CD8 + T cells, and PD-L1 positivity in breast tumors with ER 1-9% and ER 10-50% to be comparable to tumors with ER 0%. Expression of immune-related gene signatures in tumors with ER 1-9% and ER 10-50% was comparable to ER 0%, and higher than in tumors with ER 51-99% and ER 100%. Our results suggest that the immune landscape of ER low tumors (1-9%) and ER intermediate tumors (10-50%) mimic that of primary TNBC.",
+      "authors": "[\"Voorwerk Leonie\", \"Sanders Joyce\", \"Keusters Milou S\", \"Balduzzi Sara\", \"Cornelissen Sten\", \"Duijst Maxime\", \"Lips Esther H\", \"Sonke Gabe S\", \"Linn Sabine C\", \"Horlings Hugo M\", \"Kok Marleen\"]",
+      "journal": "NPJ breast cancer",
+      "publication_date": "2023-05-13",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TME AND SCM",
+      "search_date": "2026-04-12T15:19:53.742055",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 1,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "32747660",
+      "title": "Correlative study of epigenetic regulation of tumor microenvironment in spindle cell melanomas and cutaneous malignant peripheral nerve sheath tumors.",
+      "abstract": "The tumor microenvironment (TME) plays critical roles in tumor growth and progression, however key regulators of gene expression in the TME of cutaneous malignant peripheral nerve sheath tumor (C-MPNST) and spindle cell melanoma (SCM) have not been well elucidated. Herein, we investigate the epigenetic regulation of promoters and gene bodies and their effect on the TME composition of C-MPNSTs and SCMs. A cohort of 30 patients was analyzed using differential gene expression (DGE) and gene set enrichment analysis (GSEA) using the Nanostring platform. Methylation analysis was carried out utilizing an Infinium Methylation EPIC array targeting 866,562 methylation site (CpG) islands. DGE revealed overexpression of genes related to mast cells in the TME of SCMs, and a predominance of exhausted CD8<sup>+</sup> T cells and macrophages in the TME of C-MPNSTs. Interestingly, we further observed promoter hypermethylation in key overexpressed genes and corresponding gene body hypomethylation. Analysis using ENCODE ChIP-sequencing data identified CTCF as the common transcription factor at the site of the hypomethylated probe. These findings support that the TME composition of C-MPNSTs and SCMs is at least partially independent on promoter methylation status, suggesting a possible relationship between gene body enhancers and expression of key TME genes in both entities.",
+      "authors": "[\"Vougiouklakis Theodore\", \"Aung Phyu P\", \"Vasudevaraja Varshini\", \"Prieto Victor G\", \"Torres-Cabala Carlos A\", \"Sulman Erik P\", \"Snuderl Matija\", \"Jour George\"]",
+      "journal": "Scientific reports",
+      "publication_date": "2020-08-03",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TME AND SCM",
+      "search_date": "2026-04-12T15:19:53.743060",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 30,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "32627781",
+      "title": "Relieving immunosuppression during long-term anti-angiogenesis therapy using photodynamic therapy and oxygen delivery.",
+      "abstract": "Angiogenesis is an irreplaceable therapeutic cancer target, where anti-angiogenesis are drugs that are limited by their hydrophobicity and low therapeutic effects. What is more, the long-term shutdown of tumor blood vessel density also aggravates hypoxia and causes immunosuppression in the tumor microenvironment (TME). In order to solve these shortcomings, we developed a single therapeutic agent based on a bovine serum albumin nanocarrier that can co-deliver the anti-angiogenic drug Sorafenib (\"S\") and the photosensitizer Ce6 (\"C\") along with a molecular oxygen supply based on MnO2 (\"M\") as a convenient one-pot formulated nanoscale agent (SCM@BSA). Compared with anti-angiogenesis monotherapy, SCM@BSA can not only improve upon the solubility and therapeutic effects of anti-angiogenesis agents, but it also reshapes the immunosuppressive TME during anti-angiogenic therapy. Together, these results point out that SCM@BSA synthesized via a very simple method can solve the shortcomings usually experienced during long-term anti-angiogenic therapy.",
+      "authors": "[\"He Qianyuan\", \"Zhang Zhanjie\", \"Liu Haojie\", \"Tuo Zhan\", \"Zhou Jie\", \"Hu Yan\", \"Sun Yajie\", \"Wan Chao\", \"Xu Zushun\", \"Lovell Jonathan F\", \"Hu Desheng\", \"Yang Kunyu\", \"Jin Honglin\"]",
+      "journal": "Nanoscale",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "TME AND SCM",
+      "search_date": "2026-04-12T15:19:53.743868",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    }
+  ]
+}

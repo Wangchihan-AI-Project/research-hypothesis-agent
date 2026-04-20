@@ -1,0 +1,24 @@
+{
+  "experiment_id": "exp_20260412_013237_e9eb8716",
+  "start_time": "2026-04-12T01:32:37.039386",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "机器学习",
+  "search_params": {
+    "max_results": 20,
+    "date_range": 1,
+    "min_if": 0,
+    "cutoff_date": "2026-04-12"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-12T01:32:44.332296",
+      "path": "data\\snapshots\\data_snapshot_20260412_013244.json",
+      "record_count": 150
+    }
+  ]
+}

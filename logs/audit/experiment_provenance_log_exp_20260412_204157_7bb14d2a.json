@@ -1,0 +1,27 @@
+{
+  "experiment_id": "exp_20260412_204157_7bb14d2a",
+  "start_time": "2026-04-12T20:41:57.057329",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "machine learning",
+  "search_params": {
+    "max_results": 100,
+    "date_range": [
+      2020,
+      2025
+    ],
+    "min_if": 5.0,
+    "cutoff_date": "2026-04-12"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-12T20:42:02.905059",
+      "path": "data\\snapshots\\data_snapshot_20260412_204202.json",
+      "record_count": 58
+    }
+  ]
+}

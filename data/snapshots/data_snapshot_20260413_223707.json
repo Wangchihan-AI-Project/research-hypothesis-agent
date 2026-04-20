@@ -1,0 +1,585 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-13T22:37:07.996004",
+  "cutoff_date": "2026-04-13",
+  "metadata": {
+    "query": "GWAS 与 pQTL 共定位，识别疾病驱动基因与机制",
+    "date_range": "(2023, 2026)"
+  },
+  "record_count": 22,
+  "papers": [
+    {
+      "pmid": "36797296",
+      "title": "Genome-wide genotype-serum proteome mapping provides insights into the cross-ancestry differences in cardiometabolic disease susceptibility.",
+      "abstract": "Identification of protein quantitative trait loci (pQTL) helps understand the underlying mechanisms of diseases and discover promising targets for pharmacological intervention. For most important class of drug targets, genetic evidence needs to be generalizable to diverse populations. Given that the majority of the previous studies were conducted in European ancestry populations, little is known about the protein-associated genetic variants in East Asians. Based on data-independent acquisition mass spectrometry technique, we conduct genome-wide association analyses for 304 unique proteins in 2,958 Han Chinese participants. We identify 195 genetic variant-protein associations. Colocalization and Mendelian randomization analyses highlight 60 gene-protein-phenotype associations, 45 of which (75%) have not been prioritized in Europeans previously. Further cross-ancestry analyses uncover key proteins that contributed to the differences in the obesity-induced diabetes and coronary artery disease susceptibility. These findings provide novel druggable proteins as well as a unique resource for the trans-ancestry evaluation of protein-targeted drug discovery.",
+      "authors": "[\"Xu Fengzhe\", \"Yu Evan Yi-Wen\", \"Cai Xue\", \"Yue Liang\", \"Jing Li-Peng\", \"Liang Xinxiu\", \"Fu Yuanqing\", \"Miao Zelei\", \"Yang Min\", \"Shuai Menglei\", \"Gou Wanglong\", \"Xiao Congmei\", \"Xue Zhangzhi\", \"Xie Yuting\", \"Li Sainan\", \"Lu Sha\", \"Shi Meiqi\", \"Wang Xuhong\", \"Hu Wensheng\", \"Langenberg Claudia\"]",
+      "journal": "Nature communications",
+      "publication_date": "2023-02-16",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.973990",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2958,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37563310",
+      "title": "Genetics of circulating inflammatory proteins identifies drivers of immune-mediated disease risk and therapeutic targets.",
+      "abstract": "Circulating proteins have important functions in inflammation and a broad range of diseases. To identify genetic influences on inflammation-related proteins, we conducted a genome-wide protein quantitative trait locus (pQTL) study of 91 plasma proteins measured using the Olink Target platform in 14,824 participants. We identified 180 pQTLs (59 cis, 121 trans). Integration of pQTL data with eQTL and disease genome-wide association studies provided insight into pathogenesis, implicating lymphotoxin-α in multiple sclerosis. Using Mendelian randomization (MR) to assess causality in disease etiology, we identified both shared and distinct effects of specific proteins across immune-mediated diseases, including directionally discordant effects of CD40 on risk of rheumatoid arthritis versus multiple sclerosis and inflammatory bowel disease. MR implicated CXCL5 in the etiology of ulcerative colitis (UC) and we show elevated gut CXCL5 transcript expression in patients with UC. These results identify targets of existing drugs and provide a powerful resource to facilitate future drug target prioritization.",
+      "authors": "[\"Zhao Jing Hua\", \"Stacey David\", \"Eriksson Niclas\", \"Macdonald-Dunlop Erin\", \"Hedman Åsa K\", \"Kalnapenkis Anette\", \"Enroth Stefan\", \"Cozzetto Domenico\", \"Digby-Bell Jonathan\", \"Marten Jonathan\", \"Folkersen Lasse\", \"Herder Christian\", \"Jonsson Lina\", \"Bergen Sarah E\", \"Gieger Christian\", \"Needham Elise J\", \"Surendran Praveen\", \"Paul Dirk S\", \"Polasek Ozren\", \"Thorand Barbara\"]",
+      "journal": "Nature immunology",
+      "publication_date": "2023-08-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.974910",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 14824,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39317738",
+      "title": "Statistically and functionally fine-mapped blood eQTLs and pQTLs from 1,405 humans reveal distinct regulation patterns and disease relevance.",
+      "abstract": "Studying the genetic regulation of protein expression (through protein quantitative trait loci (pQTLs)) offers a deeper understanding of regulatory variants uncharacterized by mRNA expression regulation (expression QTLs (eQTLs)) studies. Here we report cis-eQTL and cis-pQTL statistical fine-mapping from 1,405 genotyped samples with blood mRNA and 2,932 plasma samples of protein expression, as part of the Japan COVID-19 Task Force (JCTF). Fine-mapped eQTLs (n = 3,464) were enriched for 932 variants validated with a massively parallel reporter assay. Fine-mapped pQTLs (n = 582) were enriched for missense variations on structured and extracellular domains, although the possibility of epitope-binding artifacts remains. Trans-eQTL and trans-pQTL analysis highlighted associations of class I HLA allele variation with KIR genes. We contrast the multi-tissue origin of plasma protein with blood mRNA, contributing to the limited colocalization level, distinct regulatory mechanisms and trait relevance of eQTLs and pQTLs. We report a negative correlation between ABO mRNA and protein expression because of linkage disequilibrium between distinct nearby eQTLs and pQTLs.",
+      "authors": "[\"Wang Qingbo S\", \"Hasegawa Takanori\", \"Namkoong Ho\", \"Saiki Ryunosuke\", \"Edahiro Ryuya\", \"Sonehara Kyuto\", \"Tanaka Hiromu\", \"Azekawa Shuhei\", \"Chubachi Shotaro\", \"Takahashi Yugo\", \"Sakaue Saori\", \"Namba Shinichi\", \"Yamamoto Kenichi\", \"Shiraishi Yuichi\", \"Chiba Kenichi\", \"Tanaka Hiroko\", \"Makishima Hideki\", \"Nannya Yasuhito\", \"Zhang Zicong\", \"Tsujikawa Rika\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2024-09-24",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.976093",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 3464,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41387722",
+      "title": "Genetic profiling of the circulating proteome in common diseases suggests causal proteins and improves risk prediction.",
+      "abstract": "Elucidating the genetic regulation of protein expression in specific disease states is important for understanding how genetic variation impact disease pathology. To this end, we conduct a large-scale genome-proteome-wide pQTL analysis on 2901 plasma proteins among 7626 healthy individuals and 28,064 patients across 42 disease statuses. We find 25,987 independent pQTL associations across 2224 regions, and investigate similarities and differences in their regulatory effects across various diseases and health states. We find that pQTL identified in specific diseases are more likely to be disease risk variants. We then integrate the association findings with Mendelian randomisation to identify 110 high-confidence causal proteins associated with 21 diseases, including Apolipoprotein(a) for cardiovascular diseases and angiotensin-converting enzyme for type 2 diabetes. Finally, we develop risk prediction models by integrating pQTL-derived polygenic risk scores and causal-protein-derived protein risk scores, which demonstrate good performance in discriminating populations at high risk for 21 disease types. These results indicate that disease state partly determines the impact of genetic variation on protein expression, implicating disease-related and disease-discordant pQTL associations as regulators of disease progression.",
+      "authors": "[\"Ma Qianying\", \"Cai Yimin\", \"He Chunyi\", \"Li Yanmin\", \"Ning Caibo\", \"Zhang Ming\", \"Lu Zequn\", \"Chen Can\", \"Zong Yue\", \"Wu Feitong\", \"Jin Meng\", \"Wei Yongchang\", \"Li Xiangpan\", \"Yang Xiaojun\", \"Huang Chaoqun\", \"Li Bin\", \"Ma Zhaocheng\", \"Zhu Ying\", \"Miao Xiaoping\", \"Tian Jianbo\"]",
+      "journal": "Nature communications",
+      "publication_date": "2025-12-12",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.976912",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2901,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39883516",
+      "title": "Novel genetic insight for psoriasis: integrative genome-wide analyses in 863 080 individuals and proteome-wide Mendelian randomization.",
+      "abstract": "Psoriasis affects a significant proportion of the worldwide population and causes an extremely heavy psychological and physical burden. The existing therapeutic schemes have many deficiencies such as limited efficacies and various side effects. Therefore, novel ways of treating psoriasis are urgently needed. A large-scale meta-analysis of psoriasis genome-wide association studies (GWAS) totaling 20 105 cases and 842 975 controls was conducted. Based on the GWAS results, Mendelian randomization (MR) analyses were then performed on three cis-protein quantitative trait loci (pQTL) data in blood. Furthermore, druggability verification and mouse knock-out models were utilized to explore the clinical value of screened proteins. We identified 42 genome-wide significant psoriasis risk variants (P < 5 × 10-8), of which 33 were previously unreported. MR analyses unveiled 19 unique circulating proteins that were associated with psoriasis, among which only AIF1, FCGR3A, NEU1, HSPA1A, TNXB, and ABO were the potential proteins that interacted with psoriasis risk after being analyzed with high evidence of colocalization (PP.H4 > 0.9). In addition, AIF1, FCGR3A, and HSPA1A have been finally determined to be feasible therapeutic targets for psoriasis after being confirmed by druggability verification and specific mouse knock-out models. This large-scale GWAS meta-analysis identified 33 new variants for psoriasis. This study announced that AIF1, FCGR3, and HSPA1A were the unexplored but material variants of psoriasis, thus providing novel and valuable targets for psoriasis treatment and broadening new orientation of drug development for psoriasis.",
+      "authors": "[\"Liu Shunying\", \"Li Lingfei\", \"Liang Yi\", \"Tan Yang\", \"Wang Xiaoyu\", \"Feng Yanhai\", \"Chen Nian\", \"Lei Xia\"]",
+      "journal": "Briefings in bioinformatics",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.977730",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 863,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39530187",
+      "title": "Exploring susceptibility and therapeutic targets for kidney stones through proteome-wide Mendelian randomization.",
+      "abstract": "Given the high recurrence rate of kidney stones, surgical lithotripsy and stone removal are not the ultimate treatments for kidney stones. There's an urgent need to explore the genetic mechanisms behind the susceptibility to kidney stones and to identify potential targets for prevention, to reduce the renal damage caused by recurrent stone formation. In this study, we screened 4548 circulating proteins using proteome-wide Mendelian Randomization (MR) to find proteins with a causal relationship to kidney stone risk. Additionally, proteome-wide association study (PWAS) and colocalization analysis were used to validate and prioritize candidate proteins. Moreover, downstream analyses including single-cell analysis, enrichment analysis, protein-protein interaction (PPI), and druggability analysis were conducted on the proteins causally related to kidney stones, to further explore the genetic mechanisms of susceptibility and the potential of proteins as drug targets. Ultimately, 22 target proteins associated with the risk of kidney stones were identified. Six plasma proteins (COLGALT1, CLMP, LECT1, ITIH1, CDHR3, CPLX2) were negatively correlated with kidney stone risk, while the genetic overexpression of 16 target proteins (GJA1, STOM, IRF9, F9, TMPRSS11D, ADH1B, SPINK13, CRYBB2, TNS2, DOCK9, OXSM, MST1, IL2, LMAN2, ITIH3, KLRF1) increased the risk of kidney stones. Based on the PWAS and colocalization analysis results, the 22 target proteins were classified into 3 tiers: IL2, CPLX2, and LMAN2 as tier 1 proteins with the most compelling evidence, MST1, ITIH1, and ITIH3 as tier 2 proteins, and the rest as tier 3 proteins. Enrichment analysis and PPI showed that target proteins mainly affect the occurrence of kidney stones through leukocyte activation and cell junction assembly. Druggability analysis suggested that IL2, MST1, and ITIH1 have potential as drug targets, and potential drugs were evaluated through molecular docking. In summary, this study employed multiple analytical methods to screen plasma proteins related to susceptibility to kidney stones, providing new insights into the genetic mechanisms of kidney stones and potential targets for treatment and prevention.",
+      "authors": "[\"Jiang Qinhong\", \"Su Xiaozhe\", \"Liao Wenbiao\", \"He Ziqi\", \"Wang Yunhan\", \"Jiang Rong\", \"Dong Caitao\", \"Yang Sixing\"]",
+      "journal": "Human molecular genetics",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.979009",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39528825",
+      "title": "Proteogenomic analysis of human cerebrospinal fluid identifies neurologically relevant regulation and implicates causal proteins for Alzheimer's disease.",
+      "abstract": "The integration of quantitative trait loci (QTLs) with disease genome-wide association studies (GWASs) has proven successful in prioritizing candidate genes at disease-associated loci. QTL mapping has been focused on multi-tissue expression QTLs or plasma protein QTLs (pQTLs). We generated a cerebrospinal fluid (CSF) pQTL atlas by measuring 6,361 proteins in 3,506 samples. We identified 3,885 associations for 1,883 proteins, including 2,885 new pQTLs, demonstrating unique genetic regulation in CSF. We identified CSF-enriched pleiotropic regions on chromosome (chr)3q28 near OSTN and chr19q13.32 near APOE that were enriched for neuron specificity and neurological development. We integrated our associations with Alzheimer's disease (AD) through proteome-wide association study (PWAS), colocalization and Mendelian randomization and identified 38 putative causal proteins, 15 of which have drugs available. Finally, we developed a proteomics-based AD prediction model that outperforms genetics-based models. These findings will be instrumental to further understand the biology and identify causal and druggable proteins for brain and neurological traits.",
+      "authors": "[\"Western Daniel\", \"Timsina Jigyasha\", \"Wang Lihua\", \"Wang Ciyang\", \"Yang Chengran\", \"Phillips Bridget\", \"Wang Yueyao\", \"Liu Menghan\", \"Ali Muhammad\", \"Beric Aleksandra\", \"Gorijala Priyanka\", \"Kohlfeld Pat\", \"Budde John\", \"Levey Allan I\", \"Morris John C\", \"Perrin Richard J\", \"Ruiz Agustin\", \"Marquié Marta\", \"Boada Mercè\", \"de Rojas Itziar\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2024-11-11",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.979911",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 3506,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37683633",
+      "title": "Integration of genetic fine-mapping and multi-omics data reveals candidate effector genes for hypertension.",
+      "abstract": "Genome-wide association studies of blood pressure (BP) have identified >1,000 loci, but the effector genes and biological pathways at these loci are mostly unknown. Using published association summary statistics, we conducted annotation-informed fine-mapping incorporating tissue-specific chromatin segmentation and colocalization to identify causal variants and candidate effector genes for systolic BP, diastolic BP, and pulse pressure. We observed 532 distinct signals associated with ≥2 BP traits and 84 with all three. For >20% of signals, a single variant accounted for >75% posterior probability, 65 were missense variants in known (SLC39A8, ADRB2, and DBH) and previously unreported BP candidate genes (NRIP1 and MMP14). In disease-relevant tissues, we colocalized >80 and >400 distinct signals for each BP trait with cis-eQTLs and regulatory regions from promoter capture Hi-C, respectively. Integrating mouse, human disorder, gene expression and tissue abundance data, and literature review, we provide consolidated evidence for 436 BP candidate genes for future functional validation and discover several potential drug targets.",
+      "authors": "[\"van Duijvenboden Stefan\", \"Ramírez Julia\", \"Young William J\", \"Olczak Kaya J\", \"Ahmed Farah\", \"Alhammadi Mohammed J A Y\", \"Bell Christopher G\", \"Morris Andrew P\", \"Munroe Patricia B\"]",
+      "journal": "American journal of human genetics",
+      "publication_date": "2023-09-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.980876",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40073132",
+      "title": "Genetically supported targets and drug repurposing for brain aging: A systematic study in the UK Biobank.",
+      "abstract": "Brain age gap (BAG), the deviation between estimated brain age and chronological age, is a promising marker of brain health. However, the genetic architecture and reliable targets for brain aging remains poorly understood. In this study, we estimate magnetic resonance imaging (MRI)-based brain age using deep learning models trained on the UK Biobank and validated with three external datasets. A genome-wide association study for BAG identified two unreported loci and seven previously reported loci. By integrating Mendelian Randomization (MR) and colocalization analysis on eQTL and pQTL data, we prioritized seven genetically supported druggable genes, including <i>MAPT</i>, <i>TNFSF12</i>, <i>GZMB</i>, <i>SIRPB1</i>, <i>GNLY</i>, <i>NMB</i>, and <i>C1RL</i>, as promising targets for brain aging. We rediscovered 13 potential drugs with evidence from clinical trials of aging and prioritized several drugs with strong genetic support. Our study provides insights into the genetic basis of brain aging, potentially facilitating drug development for brain aging to extend the health span.",
+      "authors": "[\"Yi Fan\", \"Yuan Jing\", \"Somekh Judith\", \"Peleg Mor\", \"Zhu Yi-Cheng\", \"Jia Zhilong\", \"Wu Fei\", \"Huang Zhengxing\"]",
+      "journal": "Science advances",
+      "publication_date": "2025-03-12",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.981723",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Medical Imaging"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40263317",
+      "title": "Genetics of circulating proteins in newborn babies at high risk of type 1 diabetes.",
+      "abstract": "Type 1 diabetes is a chronic, autoimmune disease characterized by the destruction of insulin-producing β-cells in the pancreas. Early detection can facilitate timely intervention, potentially delaying or preventing disease onset. Circulating proteins reflect dysregulated biological processes and offer insights into early disease mechanisms. Here, we construct a genome-wide pQTL map of 1985 proteins in 695 newborn babies (median age 2 days) at increased genetic risk of developing Type 1 diabetes. We identify 535 pQTLs (352 cis-pQTLs, 183 trans-pQTLs), 62 of which characteristic of newborns. We show colocalization of pQTLs for CTRB1, APOBR, IL7R, CPA1, and PNLIPRP1 with Type 1 diabetes GWAS signals, and Mendelian randomization causally implicates each of these five proteins in the aetiology of Type 1 diabetes. Our study illustrates the utility of newborn molecular profiles for discovering potential drug targets for childhood diseases of significant concern.",
+      "authors": "[\"Tutino Mauro\", \"Yu Nancy Yiu-Lin\", \"Hatzikotoulas Konstantinos\", \"Park Young-Chan\", \"Kreitmaier Peter\", \"Katsoula Georgia\", \"Berner Reinhard\", \"Casteels Kristina\", \"Elding Larsson Helena\", \"Kordonouri Olga\", \"Ołtarzewski Mariusz\", \"Szypowska Agnieszka\", \"Ott Raffael\", \"Weiss Andreas\", \"Winkler Christiane\", \"Zapardiel-Gonzalo Jose\", \"Petrera Agnese\", \"Hauck Stefanie M\", \"Bonifacio Ezio\", \"Ziegler Anette-Gabriele\"]",
+      "journal": "Nature communications",
+      "publication_date": "2025-04-22",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.982551",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 695,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38527854",
+      "title": "Connecting dementia risk loci to the CSF proteome identifies pathophysiological leads for dementia.",
+      "abstract": "Genome-wide association studies have successfully identified many genetic risk loci for dementia, but exact biological mechanisms through which genetic risk factors contribute to dementia remains unclear. Integrating CSF proteomic data with dementia risk loci could reveal intermediate molecular pathways connecting genetic variance to the development of dementia. We tested to what extent effects of known dementia risk loci can be observed in CSF levels of 665 proteins [proximity extension-based (PEA) immunoassays] in a deeply-phenotyped mixed memory clinic cohort [n = 502, mean age (standard deviation, SD) = 64.1 (8.7) years, 181 female (35.4%)], including patients with Alzheimer's disease (AD, n = 213), dementia with Lewy bodies (DLB, n = 50) and frontotemporal dementia (FTD, n = 93), and controls (n = 146). Validation was assessed in independent cohorts (n = 99 PEA platform, n = 198, mass reaction monitoring-targeted mass spectroscopy and multiplex assay). We performed additional analyses stratified according to diagnostic status (AD, DLB, FTD and controls separately), to explore whether associations between CSF proteins and genetic variants were specific to disease or not. We identified four AD risk loci as protein quantitative trait loci (pQTL): CR1-CR2 (rs3818361, P = 1.65 × 10-8), ZCWPW1-PILRB (rs1476679, P = 2.73 × 10-32), CTSH-CTSH (rs3784539, P = 2.88 × 10-24) and HESX1-RETN (rs186108507, P = 8.39 × 10-8), of which the first three pQTLs showed direct replication in the independent cohorts. We identified one AD-specific association between a rare genetic variant of TREM2 and CSF IL6 levels (rs75932628, P = 3.90 × 10-7). DLB risk locus GBA showed positive trans effects on seven inter-related CSF levels in DLB patients only. No pQTLs were identified for FTD loci, either for the total sample as for analyses performed within FTD only. Protein QTL variants were involved in the immune system, highlighting the importance of this system in the pathophysiology of dementia. We further identified pQTLs in stratified analyses for AD and DLB, hinting at disease-specific pQTLs in dementia. Dissecting the contribution of risk loci to neurobiological processes aids in understanding disease mechanisms underlying dementia.",
+      "authors": "[\"Reus Lianne M\", \"Jansen Iris E\", \"Tijms Betty M\", \"Visser Pieter Jelle\", \"Tesi Niccoló\", \"van der Lee Sven J\", \"Vermunt Lisa\", \"Peeters Carel F W\", \"De Groot Lisa A\", \"Hok-A-Hin Yanaika S\", \"Chen-Plotkin Alice\", \"Irwin David J\", \"Hu William T\", \"Meeter Lieke H\", \"van Swieten John C\", \"Holstege Henne\", \"Hulsman Marc\", \"Lemstra Afina W\", \"Pijnenburg Yolande A L\", \"van der Flier Wiesje M\"]",
+      "journal": "Brain : a journal of neurology",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.983960",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 502,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38997278",
+      "title": "CoPheScan: phenome-wide association studies accounting for linkage disequilibrium.",
+      "abstract": "Phenome-wide association studies (PheWAS) facilitate the discovery of associations between a single genetic variant with multiple phenotypes. For variants which impact a specific protein, this can help identify additional therapeutic indications or on-target side effects of intervening on that protein. However, PheWAS is restricted by an inability to distinguish confounding due to linkage disequilibrium (LD) from true pleiotropy. Here we describe CoPheScan (Coloc adapted Phenome-wide Scan), a Bayesian approach that enables an intuitive and systematic exploration of causal associations while simultaneously addressing LD confounding. We demonstrate its performance through simulation, showing considerably better control of false positive rates than a conventional approach not accounting for LD. We used CoPheScan to perform PheWAS of protein-truncating variants and fine-mapped variants from disease and pQTL studies, in 2275 disease phenotypes from the UK Biobank. Our results identify the complexity of known pleiotropic genes such as APOE, and suggest a new causal role for TGM3 in skin cancer.",
+      "authors": "[\"Manipur Ichcha\", \"Reales Guillermo\", \"Sul Jae Hoon\", \"Shin Myung Kyun\", \"Longerich Simonne\", \"Cortes Adrian\", \"Wallace Chris\"]",
+      "journal": "Nature communications",
+      "publication_date": "2024-07-12",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.984874",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2275,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41501544",
+      "title": "Protein-protein interactions shape trans-regulatory impact of genetic variation on protein expression and complex traits.",
+      "abstract": "Most genetic variants influence complex traits by affecting gene regulation. Yet, despite comprehensive catalogs of molecular quantitative trait loci (QTLs), linking trait-associated variants to biological functions remains difficult. By re-analyzing large maps of protein QTLs (pQTLs), we found that genes with trans-pQTLs but no cis-pQTLs are under strong selective constraints and are particularly informative in interpreting genome-wide association study (GWAS) loci. We observed that trans-pQTLs and their target proteins are frequently involved in protein-protein interactions (PPIs). Notably, trans-pQTLs are enriched in missense variants and at PPI interfaces, suggesting a key role of PPIs in the trans-regulation of proteome. Using PPI annotations to guide trans-pQTL mapping, we identified 17,662 trans-pQTLs affecting 961 PPI clusters after accounting for blood cell composition effects. These trans-pQTLs colocalized with 36% GWAS loci per trait on average for 27 complex traits, helping in many cases to link GWAS loci to cellular function. Finally, we identified trans-pQTL effects at multiple autoimmune GWAS loci that converge to the same PPIs, pinpointing protein complexes and signaling pathways that show promising therapeutic target potential.",
+      "authors": "[\"Li Jinghui\", \"Li Yang I\", \"Liu Xuanyao\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2026-01-07",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.985725",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41507467",
+      "title": "Linking the plasma proteome to genetics in individuals from continental Africa provides insights into type 2 diabetes pathogenesis.",
+      "abstract": "Individuals of African ancestry remain largely underrepresented in genetic and proteomic studies. Here we measure the levels of 2,873 proteins in plasma samples from 163 individuals with type 2 diabetes (T2D) or prediabetes and 362 normoglycemic controls from the Ugandan population. We identify 88 differentially expressed proteins between the two groups. We link genome-wide data to protein expression levels and construct a protein quantitative trait locus (pQTL) map for this population. We identify 399 independent associations with 346 (86.7%) cis-pQTLs and 53 (13.3%) trans-pQTLs; 16.7% of the cis-pQTLs and all of the trans-pQTLs have not been previously reported in individuals of African ancestry. Of these, 37 pQTLs have not been previously reported in any population. We find evidence for colocalization between a pQTL and T2D genetic risk. Our findings reveal proteins causally implicated in the pathogenesis of T2D, which may be leveraged for personalized medicine tailored to individuals of African ancestry.",
+      "authors": "[\"Soremekun Opeyemi\", \"Park Young-Chan\", \"Tutino Mauro\", \"Arruda Ana Luiza\", \"Kalungi Allan\", \"Rayner N William\", \"Nyirenda Moffat\", \"Fatumo Segun\", \"Zeggini Eleftheria\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2026-01-08",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.986477",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 163,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "36349687",
+      "title": "Identifying causal serum protein-cardiometabolic trait relationships using whole genome sequencing.",
+      "abstract": "Cardiometabolic diseases, such as type 2 diabetes and cardiovascular disease, have a high public health burden. Understanding the genetically determined regulation of proteins that are dysregulated in disease can help to dissect the complex biology underpinning them. Here, we perform a protein quantitative trait locus (pQTL) analysis of 248 serum proteins relevant to cardiometabolic processes in 2893 individuals. Meta-analyzing whole-genome sequencing (WGS) data from two Greek cohorts, MANOLIS (n = 1356; 22.5× WGS) and Pomak (n = 1537; 18.4× WGS), we detect 301 independently associated pQTL variants for 170 proteins, including 12 rare variants (minor allele frequency < 1%). We additionally find 15 pQTL variants that are rare in non-Finnish European populations but have drifted up in the frequency in the discovery cohorts here. We identify proteins causally associated with cardiometabolic traits, including Mep1b for high-density lipoprotein (HDL) levels, and describe a knock-out (KO) Mep1b mouse model. Our findings furnish insights into the genetic architecture of the serum proteome, identify new protein-disease relationships and demonstrate the importance of isolated populations in pQTL analysis.",
+      "authors": "[\"Png Grace\", \"Gerlini Raffaele\", \"Hatzikotoulas Konstantinos\", \"Barysenka Andrei\", \"Rayner N William\", \"Klarić Lucija\", \"Rathkolb Birgit\", \"Aguilar-Pimentel Juan A\", \"Rozman Jan\", \"Fuchs Helmut\", \"Gailus-Durner Valerie\", \"Tsafantakis Emmanouil\", \"Karaleftheri Maria\", \"Dedoussis George\", \"Pietrzik Claus\", \"Wilson James F\", \"de Angelis Martin Hrabe\", \"Becker-Pauly Christoph\", \"Gilly Arthur\", \"Zeggini Eleftheria\"]",
+      "journal": "Human molecular genetics",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.987427",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2893,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Genomics/WGS",
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41611717",
+      "title": "Human brain prefrontal cortex proteomics identifies compromised energy metabolism and neuronal function in Schizophrenia.",
+      "abstract": "Understanding the pathophysiological substrates of schizophrenia is a major challenge for current neuropsychiatric research. As part of a set of multi-omics experiments, we performed an extensive case-control proteomics study on 192 post-mortem tissue sections from prefrontal cortex from 96 individuals, including 47 cases with schizophrenia and 49 healthy controls. Using two independently measured cortical datasets, we identified 387 proteins differentially expressed between schizophrenia cases and controls at a 5% FDR threshold. This significantly regulated set of proteins contains genes located in GWAS-identified schizophrenia loci and proteins identified by pQTL analysis. Gene ontology analysis using GOAT provided evidence for regulation of several major protein categories, emphasizing downregulation of mitochondrial oxidative respiration, ribosomes and the proteasome, upregulation of kinases and (small) GTPases. SynGO analysis supports the notion of synaptic dysfunction in schizophrenia, with major regulators of pre- and postsynaptic function compromised. Our findings highlight the complex molecular dysregulation in schizophrenia, with mitochondrial function downregulated versus signaling and trafficking upregulated, and synapse function disrupted; in combination with prior avenues of research, these finding support a role for energy deficits compromising highly ATP dependent neuronal function as a target for therapeutic interventions.",
+      "authors": "[\"Koopmans Frank\", \"Dijkstra Anke A\", \"Li Wei-Ping\", \"Klaassen Remco V\", \"Gouwenberg Yvonne\", \"Yao Shuyang\", \"Bast Lisa\", \"Verhage Matthijs\", \"Karlsson Robert\", \"Dwork Andrew J\", \"Stockmeier Craig A\", \"Hjerling-Leffler Jens\", \"Sullivan Patrick F\", \"Smit August B\"]",
+      "journal": "Nature communications",
+      "publication_date": "2026-01-29",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.988240",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 192,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40921788",
+      "title": "Multiancestry brain pQTL fine-mapping and integration with genome-wide association studies of 21 neurologic and psychiatric conditions.",
+      "abstract": "To understand shared and ancestry-specific genetic control of brain protein expression and its ramifications for disease, we mapped protein quantitative trait loci (pQTLs) in 1,362 brain proteomes from African American, Hispanic/Latin American and non-Hispanic white donors. Among the pQTLs that multiancestry fine-mapping MESuSiE confidently assigned as putative causal pQTLs in a specific population, most were shared across the three studied populations and are referred to as multiancestry causal pQTLs. These multiancestry causal pQTLs were enriched for exonic and promoter regions. To investigate their effects on disease, we modeled the 858 multiancestry causal pQTLs as instrumental variables using Mendelian randomization and genome-wide association study results for neurologic and psychiatric conditions (21 traits in participants with European ancestry, 10 in those with African ancestry and 4 in Hispanic participants). We identified 119 multiancestry pQTL-protein pairs consistent with a causal role in these conditions. Remarkably, 29% of the multiancestry pQTLs in these pairs were coding variants. These results lay an important foundation for the creation of new molecular models of neurologic and psychiatric conditions that are likely to be relevant to individuals across different genetic ancestries.",
+      "authors": "[\"Wingo Aliza P\", \"Liu Yue\", \"Vattathil Selina M\", \"Gerasimov Ekaterina S\", \"Mei Zhen\", \"Ravindran Suda Parimala\", \"Liu Jiaqi\", \"Shantaraman Ananth\", \"Seifar Fatemeh\", \"Wang Erming\", \"Zhang Bin\", \"Reddy Joseph\", \"Allen Mariet\", \"Ertekin-Taner Nilüfer\", \"De Jager Philip L\", \"Fox Edward J\", \"Duong Duc M\", \"Epstein Michael P\", \"Cutler David J\", \"Levey Allan I\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2025-09-08",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.989123",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 1362,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39079537",
+      "title": "Omnibus proteome-wide association study identifies 43 risk genes for Alzheimer disease dementia.",
+      "abstract": "Transcriptome-wide association study (TWAS) tools have been applied to conduct proteome-wide association studies (PWASs) by integrating proteomics data with genome-wide association study (GWAS) summary data. The genetic effects of PWAS-identified significant genes are potentially mediated through genetically regulated protein abundance, thus informing the underlying disease mechanisms better than GWAS loci. However, existing TWAS/PWAS tools are limited by considering only one statistical model. We propose an omnibus PWAS pipeline to account for multiple statistical models and demonstrate improved performance by simulation and application studies of Alzheimer disease (AD) dementia. We employ the Aggregated Cauchy Association Test to derive omnibus PWAS (PWAS-O) p values from PWAS p values obtained by three existing tools assuming complementary statistical models-TIGAR, PrediXcan, and FUSION. Our simulation studies demonstrated improved power, with well-calibrated type I error, for PWAS-O over all three individual tools. We applied PWAS-O to studying AD dementia with reference proteomic data profiled from dorsolateral prefrontal cortex of postmortem brains from individuals of European ancestry. We identified 43 risk genes, including 5 not identified by previous studies, which are interconnected through a protein-protein interaction network that includes the well-known AD risk genes TOMM40, APOC1, and APOC2. We also validated causal genetic effects mediated through the proteome for 27 (63%) PWAS-O risk genes, providing insights into the underlying biological mechanisms of AD dementia and highlighting promising targets for therapeutic development. PWAS-O can be easily applied to studying other complex diseases.",
+      "authors": "[\"Hu Tingyang\", \"Parrish Randy L\", \"Dai Qile\", \"Buchman Aron S\", \"Tasaki Shinya\", \"Bennett David A\", \"Seyfried Nicholas T\", \"Epstein Michael P\", \"Yang Jingjing\"]",
+      "journal": "American journal of human genetics",
+      "publication_date": "2024-07-29",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.990381",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41338217",
+      "title": "Large-scale integration of omics and electronic health records to identify potential risk protein biomarkers and therapeutic drugs for cancer prevention.",
+      "abstract": "Identifying risk protein targets and their therapeutic drugs is crucial for effective cancer prevention. Here, we conduct integrative and fine-mapping analyses of large genome-wide association studies data for breast, colorectal, lung, ovarian, pancreatic, and prostate cancers and characterize 710 lead variants independently associated with cancer risk. Through mapping protein quantitative trait loci (pQTLs) for these variants using plasma proteomics data from over 75,000 participants, we identify 365 proteins associated with cancer risk. Subsequent colocalization analysis identifies 101 proteins, including 74 not reported in previous studies. We further characterize 36 potential druggable proteins for cancers or other disease indications. Analyzing >3.5 million electronic health records, we conducted analyses of emulated trials for 11 drugs across 290 comparisons and identified three drugs significantly associated with reduced colorectal cancer risk: caffeine vs. paroxetine (hazard ratio [HR], 0.51; 95% confidence interval [CI], 0.41-0.64), haloperidol vs. prochlorperazine (HR, 0.47; 95% CI, 0.33-0.68), and trazodone hydrochloride vs. paroxetine (HR, 0.49; 95% CI, 0.38-0.63). Conversely, caffeine was associated with increased cancer risk in comparison with finasteride (colorectal cancer) and fluoxetine (breast cancer). Meta-analysis identified six drugs significantly associated with cancer risk, including acetazolamide, which was associated with reduced colorectal cancer risk (HR, 0.79; 95% CI, 0.72-0.87). This study identifies previously unreported protein biomarkers and candidate drug targets across six major cancer types and highlights several approved drugs with potential chemopreventive effects.",
+      "authors": "[\"Li Qing\", \"Song Qingyuan\", \"Chen Zhishan\", \"Choi Jungyoon\", \"Moreno Victor\", \"Ping Jie\", \"Wen Wanqing\", \"Li Chao\", \"Shu Xiang\", \"Yan Jun\", \"Shu Xiao-Ou\", \"Cai Qiuyin\", \"Long Jirong\", \"Huyghe Jeroen R\", \"Pai Rish\", \"Gruber Stephen B\", \"Yang Yaohua\", \"Casey Graham\", \"Wang Xusheng\", \"Toriola Adetunji T\"]",
+      "journal": "American journal of human genetics",
+      "publication_date": "2025-12-02",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.991820",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics",
+          "EHR",
+          "Multi-omics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40640959",
+      "title": "Protein quantitative trait locus analysis in African American and non-Hispanic White individuals.",
+      "abstract": "Substantial efforts have been dedicated to exploring the link between genetic regulation and the proteome, informing studies of complex trait mechanisms. Most of these efforts have been limited to populations of European ancestry. We conduct an Olink protein quantitative trait locus (pQTL) analysis on 1245 proteins involving 1033 self-identified African American (AA) and 1764 non-Hispanic White (NHW) participants from the Women's Health Initiative and Framingham Heart Study. For replication of candidate pQTLs, we use data from 534 self-identified AA adults from the Jackson Heart Study and protein genome-wide association analysis statistics from the UK Biobank Pharma Proteomics Project, including 54,219 participants, of whom 931 are of African ancestry. In total, we identify and validate 5103 pQTLs (4496 or 88% cis- and 602 or 12% trans-pQTLs) for 983 proteins. Among these, 195 are previously unreported, with most (166 or 85%) identified in our AA sample, many of which were essentially monomorphic in European reference populations. Several of these newly identified African ancestry-specific pQTLs have been reported in ClinVar; our results suggest impact on circulating protein levels, potentially bolstering evidence for clinical significance. We identify a \"cis pQTL hotspot\" within the leukocyte receptor gene cluster on human chromosome 19q13.4. We also provide examples where a particular cis-pQTL, identified through conditional analysis, offers biological insights into an overlapping GWAS signal for disease susceptibility. The identification of previously undescribed African ancestry-specific pQTLs contributes to understanding protein genetic regulation and highlights the significance of proteomic analysis in diverse populations.",
+      "authors": "[\"Cai Yanwei\", \"Johnson Mari\", \"Haessler Jeffrey\", \"Molstad Aaron J\", \"Hwang Shih-Jen\", \"Joehanes Roby\", \"Murabito Joanne M\", \"Tahir Usman A\", \"Franceschini Nora\", \"Gerszten Robert E\", \"Sun Wei\", \"Levy Daniel\", \"Raffield Laura M\", \"Kooperberg Charles\", \"Hsu Li\", \"Reiner Alexander P\"]",
+      "journal": "Genome biology",
+      "publication_date": "2025-07-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.992631",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 1245,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39565278",
+      "title": "Brain multi-omic Mendelian randomisation to identify novel drug targets for gliomagenesis.",
+      "abstract": "Genetic variants associated with molecular traits that are also associated with liability to glioma can provide causal evidence for the identification and prioritisation of drug targets. We performed comprehensive two-sample Mendelian randomisation (Wald ratio and/or IVW) and colocalisation analyses of molecular traits on glioma. Instrumentable traits (QTLs P < 5 × 10-8) were identified amongst 11 985 gene expression measures, 13 285 splicing isoforms and 10 198 protein abundance measures, derived from 15 brain regions. Glioma summary-level data was extracted from a genome-wide association meta-analysis of 12 496 cases and 18 190 controls. We found evidence for causal effect of 22 molecular traits (across 18 genes/proteins) on glioma risk. Thirteen molecular traits have been previously linked with glioma risk and five were novel; HBEGF (5q31.3) expression and all glioma [OR 1.36 (95%CI 1.19-1.55); P = 4.41 × 10-6]; a CEP192 (18p11.21) splice isoform and glioblastoma [OR 4.40 (95%CI 2.28-8.48); P = 9.78 × 10-4]; a FAIM (3q22.3) splice isoform and all glioma [OR 2.72-3.43; P = 1.03 × 10-5 to 1.09 × 10-5]; a SLC8A1 (2p22.1) splice isoform and all glioma [OR 0.37 (95%CI 0.24-0.56; P = 5.72 × 10-6]; D2HGDH (2q37.3) protein and all glioma [OR 0.86 (95%CI 0.80-0.92); P = 5.94 × 10-6)]. We provide robust causal evidence for prioritising genes and their protein products in glioma research. Our results highlight the importance of alternative splicing as a mechanism in gliomagenesis and as an avenue for exploration of drug targets.",
+      "authors": "[\"Thornton Zak A\", \"Andrews Lily J\", \"Zhao Huiling\", \"Zheng Jie\", \"Paternoster Lavinia\", \"Robinson Jamie W\", \"Kurian Kathreena M\"]",
+      "journal": "Human molecular genetics",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.993867",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "36168886",
+      "title": "Differences and commonalities in the genetic architecture of protein quantitative trait loci in European and Arab populations.",
+      "abstract": "Polygenic scores (PGS) can identify individuals at risk of adverse health events and guide genetics-based personalized medicine. However, it is not clear how well PGS translate between different populations, limiting their application to well-studied ethnicities. Proteins are intermediate traits linking genetic predisposition and environmental factors to disease, with numerous blood circulating protein levels representing functional readouts of disease-related processes. We hypothesized that studying the genetic architecture of a comprehensive set of blood-circulating proteins between a European and an Arab population could shed fresh light on the translatability of PGS to understudied populations. We therefore conducted a genome-wide association study with whole-genome sequencing data using 1301 proteins measured on the SOMAscan aptamer-based affinity proteomics platform in 2935 samples of Qatar Biobank and evaluated the replication of protein quantitative traits (pQTLs) from European studies in an Arab population. Then, we investigated the colocalization of shared pQTL signals between the two populations. Finally, we compared the performance of protein PGS derived from a Caucasian population in a European and an Arab cohort. We found that the majority of shared pQTL signals (81.8%) colocalized between both populations. About one-third of the genetic protein heritability was explained by protein PGS derived from a European cohort, with protein PGS performing ~20% better in Europeans when compared to Arabs. Our results are relevant for the translation of PGS to non-Caucasian populations, as well as for future efforts to extend genetic research to understudied populations.",
+      "authors": "[\"Thareja Gaurav\", \"Belkadi Aziz\", \"Arnold Matthias\", \"Albagha Omar M E\", \"Graumann Johannes\", \"Schmidt Frank\", \"Grallert Harald\", \"Peters Annette\", \"Gieger Christian\", \"Consortium The Qatar Genome Program Research\", \"Suhre Karsten\"]",
+      "journal": "Human molecular genetics",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "GWAS 与 pQTL 共定位 识别疾病驱动基因与机制 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-13T14:37:07.994986",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC"
+        ],
+        "sample_size": 2935,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Genomics/WGS",
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "experiment_id": "exp_20260412_210923_c15332df",
+  "start_time": "2026-04-12T21:09:23.181316",
+  "system_info": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "working_directory": "C:\\Users\\PC\\research-hypothesis-agent"
+  },
+  "stages": [],
+  "user_input": "结合因果表征学习 (Causal Representation Learning) 与解耦图注意力网络 (Disentangled GAT)，消除空间转录组数据中的细胞通讯批次效应，重构阿尔茨海默症早期淀粉样斑块周围微环境的因果调控网络",
+  "search_params": {
+    "max_results": 100,
+    "date_range": [
+      2020,
+      2025
+    ],
+    "min_if": 5.0,
+    "cutoff_date": "2026-04-12"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-04-12T21:09:29.878588",
+      "path": "data\\snapshots\\data_snapshot_20260412_210929.json",
+      "record_count": 80
+    }
+  ]
+}

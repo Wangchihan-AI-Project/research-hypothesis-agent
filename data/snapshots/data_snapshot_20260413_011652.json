@@ -1,0 +1,431 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-13T01:16:52.939169",
+  "cutoff_date": "2026-04-13",
+  "metadata": {
+    "query": "机器学习",
+    "date_range": "(2023, 2025)"
+  },
+  "record_count": 17,
+  "papers": [
+    {
+      "pmid": "41924540",
+      "title": "Erratum.",
+      "abstract": "[This corrects the article DOI: 10.1055/s-0045-1813727.][This corrects the article DOI: 10.1055/s-0045-1809923.][This corrects the article DOI: 10.1055/s-0045-1813731.].",
+      "authors": "[]",
+      "journal": "Sleep science (Sao Paulo, Brazil)",
+      "publication_date": "2026-03-31",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:50.171751",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41939037",
+      "title": "Where We Began and Where We Stand: the Evolution of Medical Education in India.",
+      "abstract": "Medical education in India has progressed through distinct phases, from holistic pre-colonial systems to colonial biomedical models, post-independence expansion, rapid privatization, and the transformative reforms of the National Medical Commission. India now has the world's largest network of medical colleges and a rapidly growing healthcare workforce. Enhanced integration of community-based learning, broader early clinical exposure, a more explicit emphasis on ethics and communication, and a progressively integrated, learner-centered approach now define the system's evolving strengths. As India advances, in 2025 the priority is to ensure equitable quality across institutions while integrating technology, supporting student well-being, and shaping a globally influential medical education framework. Medical education in India is not just a set of academic formulas; it is a reflection of our nation's history, values, and aspirations. The process has been long, complicated, and closely connected to the social and political texture of the country. In 2025, when India stands at the leading edge of world healthcare discourse, it is time to look back at how medical education has developed, what it has accomplished, where it is now, and what the future needs to call for.",
+      "authors": "[\"Surapaneni Krishna Mohan\"]",
+      "journal": "Medical science educator",
+      "publication_date": "2025-12-29",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:50.176217",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2025,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41939033",
+      "title": "Harnessing Data and Learning Analytics in the Era of AI: Reflections from Medical Education.",
+      "abstract": "Artificial intelligence (AI) and learning analytics are transforming medical education by enabling personalized learning, data-informed assessment, and curriculum planning. However, educational use of these tools also carries ethical implications related to privacy, bias, and the epistemic value of data. This commentary proposes that AI and analytics be approached not only as technical solutions but as sociotechnical systems that influence how medical schools conceptualize learning, assessment, and equity. Drawing on recent literature and lived educational experience, we argue for theory-driven, ethically grounded implementations that protect learners, promote transparency, and foster human-centered professional formation.",
+      "authors": "[\"Goh Poh-Sun\", \"Lopez Mildred\"]",
+      "journal": "Medical science educator",
+      "publication_date": "2025-12-22",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:50.191060",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41939064",
+      "title": "The Past, Present, and Future of Concept Mapping Technology in Health Professions Education.",
+      "abstract": "This paper explores the evolution of concept mapping in health professions education, from its origins as a manual learning tool to its current integration with advanced digital and artificial intelligence technologies. It examines how digital tools have enhanced the utility of concept maps for teaching, learning, assessment, and research, and explores potential future directions. The discussion highlights the challenges and benefits of technology-assisted concept mapping, including improved engagement, collaboration, feedback, and personalized learning opportunities. As educational needs evolve, concept mapping remains a powerful strategy for visualizing complex relationships and supporting critical thinking in modern, integrated curricula.",
+      "authors": "[\"Heck Amber J\", \"Appel Joanna\", \"Taranikanti Varna\", \"Waite Gabi N\", \"Zhang Bei\"]",
+      "journal": "Medical science educator",
+      "publication_date": "2025-11-18",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:50.192619",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41929560",
+      "title": "Impact of detector parameters and image resolution modeling on dedicated brain PET imaging.",
+      "abstract": "High performance brain PET scanners suitable for accurate and precise measurement of uptake in small regions of the brain require high spatial resolution (1.5-2 mm) together with high system sensitivity. While small cross section crystals are needed to achieve high spatial resolution with pixelated detectors, effective system sensitivity requires long crystals and good time-of-flight (TOF) resolution. In addition, depending on crystal thickness, some level of depth-of-interaction (DOI) capability may also be needed to reduce parallax error. While various methods for DOI measurement can be utilized within the detector, the impact on reconstructed spatial resolution as a function of crystal thickness needs to be carefully evaluated. The focus of this work is to use Monte Carlo simulations to evaluate the impact of crystal size, thickness, and DOI resolution on the reconstructed spatial resolution in a high-resolution brain scanner design. Two crystal cross sections were chosen, 1.6 mm × 1.6 mm and 2 mm × 2 mm, and three different LSO crystal thickness (10 mm, 15 mm, and 20 mm) were evaluated. We evaluated these system designs without DOI capability and with DOI resolution (4-12 mm) for varying crystal thickness. In addition, we evaluated the use of image-space resolution modeling (IRM) techniques, which can mitigate losses in spatial resolution and positioning accuracy due to parallax error and Compton scatter, and to complement the advantages of DOI capability. A brain size elliptical phantom with small spheres was simulated to study the overall benefit in uptake measurements for small objects using the contrast recovery coefficient (CRC) metric. Our results show that a system with 2 mm × 2 mm crystals can provide comparable image quality in terms of CRC measurement than one with 1.6 mm × 1.6 mm crystals. However, crystal thickness has a bigger impact on spatial resolution and CRC with performance degrading with best performance achieved with 10 mm thick crystals. DOI measurement is necessary with longer crystals in order to maintain good imaging performance with high sensitivity. For the 15 mm thick crystals 9 mm DOI resolution is needed to compensate for the loss in spatial resolution compared to 10 mm thick crystals without DOI, but still with lower CRC. A similar conclusion is reached for 20 mm crystals with 4 mm DOI resolution. Alternatively, IRM methods can provide improved and similar performance for all crystal thicknesses studied here, indicating a pathway for achieving our brain scanner design goals without additional cost, complexity, and performance tradeoffs. This work provides a systematic investigation for designing future brain PET systems.",
+      "authors": "[\"Gao Min\", \"Matej Samuel\", \"Karp Joel S\", \"Surti Suleman\"]",
+      "journal": "IEEE transactions on radiation and plasma medical sciences",
+      "publication_date": "2025-12-26",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:50.209247",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Accuracy",
+          "Recall"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41932807",
+      "title": "Missing persons response: national programs and global cooperation in Brazil's migration context.",
+      "abstract": "The search and identification of missing persons represent a pressing global issue with profound humanitarian, legal, and institutional implications. This study presents an illustrative documentary review of MP/UHR identification initiatives in countries selected for their migration-related links to Brazil and their relevance to transnational DNA cooperation (Brazil, Portugal, Spain, France, the United Kingdom, the United States, Canada, Mexico, and Belgium). Grounded in the United Nations guidelines and using peer-reviewed literature, official reports, and documentation from international organizations, the analysis examine how forensic genetics is integrated into MP/UHR workflows, the legal and governance frameworks that enable or constrain the processing of relatives' reference profiles, and the operational arrangements that support cross-border exchange. The synthesis indicates that identification outcomes depend not only on laboratory capacity, but also on institutional coordination and the linkage of ante-mortem and post-mortem data. The study also describes international mechanisms such as INTERPOL's I-Familia database, and humanitarian identification platforms. Although these tools show great potential, their effectiveness is limited due to inconsistent adoption across countries and variations in national protocols. The identification of missing persons must be approached as a shared international responsibility, requiring cooperation in science, law, and policy to ensure dignity, truth, and justice for families of the missing.",
+      "authors": "[\"Minervino Aline\", \"Amorim António\", \"Corte Real Francisco\", \"Cainé Laura\"]",
+      "journal": "Science & justice : journal of the Forensic Science Society",
+      "publication_date": "2025-12-21",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:50.209891",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41939023",
+      "title": "Foundations of Curiosity and its Impact in Medical Education.",
+      "abstract": "Curiosity is a key cognitive drive that enhances learning, memory, critical thinking, and problem-solving but is often overlooked in medical education. This paper explores curiosity's psychological and neuroscientific basis, emphasizing its role in fostering motivation, clinical reasoning, empathy, and communication skills. It also highlights curiosity's protective effect against burnout and mental health challenges commonly experienced in the medical profession. The Medical Curiosity Scale (MCS) is introduced as a tool for measuring curiosity, helping educators cultivate it in training. In response to gaps in implementation, this paper discusses intentional strategies to foster curiosity through targeted educational design, including concrete applications of the MCS. In addition, the paper advocates integrating curiosity into curricula to improve academic and clinical outcomes, noting AI's potential to either enhance or hinder curiosity depending on its implementation.",
+      "authors": "[\"Al-Khayat Thura\", \"Rajput Vijay\", \"Bauckman Kyle\", \"Soler Yemmy\"]",
+      "journal": "Medical science educator",
+      "publication_date": "2025-11-08",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:50.219606",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41923946",
+      "title": "Medication use from conception to the first antenatal appointment: agreement between maternal self-report to midwife and prescribing records in Northern Ireland in 2011-2016.",
+      "abstract": "Data reliability must be considered before using administrative healthcare databases to study medication utilisation and safety during pregnancy. To compare medication use reported by the mother and recorded by midwives at the first antenatal visit in the Northern Ireland (NI) Maternity System (NIMATS) to dispensed prescriptions recorded in the Enhanced Prescribing Database (EPD). A population-based linked cohort study including all resident women in NI who gave birth between 01/01/2011 and 31/12/2016. Prescriptions dispensed in the EPD between the last menstrual period and the first antenatal visit were compared to medications recorded in NIMATS. The number and proportion of pregnancies with medications in each data source were calculated along with Cohen's kappa, sensitivity and specificity. Of the 139,687 pregnancies in NIMATS (106,206 women), 74.3% reported taking medication, including supplements, and 63.5% had prescriptions dispensed (with 86.9% reporting taking medication or having a prescription dispensed). Excluding supplements, 18.2% reported medication use, while 48.7% had prescriptions dispensed. In NIMATS, 20.4% of pregnancies had vitamins and 1.2% antacids compared to 1.4% and 0.1% respectively in EPD. All other medications were more commonly prescribed than reported, with moderate agreement for antiemetics (kappa 0.42, 95% CI 0.41-0.43), anticoagulants (kappa 0.62, 95% CI 0.61-0.64) and antihypertensives (kappa 0.62, 95% CI 0.61- 0.64). Agreement was lowest for 400mg folic acid (kappa -0.09, 95% CI -0.10 - -0.09). There was considerable underreporting of medicines for chronic use, such as antiepileptics, at the first antenatal appointment. Medication use during early pregnancy was common. Women obtained vitamins and antiacids over the counter rather than by prescription, but all other medications were prescribed more. Non-compliance and discontinuation may explain some of the disagreement, but reporting of prescribed medicines for chronic illnesses was incomplete in antenatal records. To identify all medication use, combining maternal reporting with prescribing data is recommended.",
+      "authors": "[\"Given Joanne\", \"Dolk Helen\", \"Little Alison\", \"Loane Maria\"]",
+      "journal": "International journal of population data science",
+      "publication_date": "2025-10-24",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:50.222723",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": 2011,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41939075",
+      "title": "Wellness and Work: Anki, Study Habits, and Exam Outcomes in First-Year Medical Students.",
+      "abstract": "Medical students face increasing content demands while adapting to condensed preclinical curricula and the transition of USMLE Step 1 to pass/fail. As students seek effective study strategies, tools like Anki, which use spaced repetition and retrieval practice, have gained popularity. However, their impact on in-house performance and wellness remains unclear. A cross-sectional study of 176 first-year medical students at Saint Louis University School of Medicine was conducted during the 2024 to 2025 academic year. A structured, anonymized Qualtrics survey assessed study methods, Anki use, study hours, and self-reported wellness using 10-point Likert scales and categorical items. Survey data were linked by a third party to scores from six in-house assessments, including three multiple-choice written exams and two cadaver-based anatomy lab practicals per course. Statistical analyses included ANOVA, Mann-Whitney U tests, and regression modeling. Eighty-two percent of respondents reported using Anki, and 51 percent identified it as their primary study method. Anki use was not associated with improved exam performance. Students who used three or more study methods scored significantly lower on written exams compared to those using two or fewer (<i>p</i> = 0.02). Higher self-reported wellness and sleep of at least seven hours were both associated with better written exam performance (<i>p</i> = 0.01). Study hours and time spent in lab showed no correlation with outcomes. Success in early medical education appears more closely related to wellness and focused study habits than to any specific study tool. Consistency and self-care may be more effective than time investment alone. The online version contains supplementary material available at 10.1007/s40670-025-02549-8.",
+      "authors": "[\"Spence Lawson E\", \"Khoury Sharbel K\", \"Gronewold Aaron\", \"Regan Michael P\", \"Daly Daniel T\", \"Nebel Cynthia\"]",
+      "journal": "Medical science educator",
+      "publication_date": "2025-10-28",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:50.229617",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41924391",
+      "title": "Co-producing data-intensive research with an underserved group: a case study and evaluation identifying pathways to impact.",
+      "abstract": "Co-production of research, where researchers and experts by experience work as equal partners throughout a research project, can improve the quality, relevance, implementation and impact of research. However, there is limited evidence on methods for successful co-production in data-intensive research with underserved groups. In partnership with the charity Voice of Young People in Care (VOYPIC) and a group of care experienced young people, the Administrative Data Research Centre Northern Ireland (ADRC NI) piloted and evaluated a co-production approach in a research project that used linked administrative data to examine the association between care experience and mental ill health and mortality. The aim of this paper is to report the impact of co-production using the pilot as a case study, and assess the mechanisms involved against published principles of co-production. Additionally, we consider if co-production in this context is a special case that warrants bespoke guidance. Two participatory workshops and three semi-structured 1-1 interviews were conducted to collect the perspectives of pilot participants. Deductive thematic analysis was used to sort data into three predetermined categories: 1) impact; 2) barriers; and 3) enablers. To formally assess pathways to implementing co-production and achieving impact, mechanisms were mapped against the five National Institute for Health and Care Research (NIHR) principles of co-production. Positive impacts were identified for individuals, the research and organisations involved. Common barriers to co-production, like representativeness and resource constraints were identified, alongside challenges specific to data-intensive research, such as balancing power-sharing with data access constraints. Key enablers included genuine power sharing, valuing diverse knowledge, and partnership working. Special considerations needed to support successful co-production in this context include extra effort to achieve inclusion and address support needs. Partnerships with voluntary and community organisations support an inclusive, trauma-informed approach. This case study and evaluation can be utilised to support co-production with underserved groups in other data-intensive research contexts. Embedding co-production of data research with underserved groups will require changes to the broader research eco-system, including tailored guidance and resources, and funding partnerships rather than only pre-specified research projects.",
+      "authors": "[\"McKenna Sarah\", \"Salem Ash\", \"Ibrahim Esla\", \"Brown Rhianna\", \"McCallin Martha\", \"Kilpatrick Brenda\", \"Irvine Jo\", \"Kane Lee\", \"Nelson Elizabeth\", \"Maguire Aideen\"]",
+      "journal": "International journal of population data science",
+      "publication_date": "2025-11-04",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:50.231355",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41939056",
+      "title": "Students' Research Experiences at DO-Granting and MD-Granting US Medical Schools.",
+      "abstract": "All US medical schools are required to train students to interpret and apply research findings, but students' direct participation in scholarly projects is highly variable across and within institutions. DO (Doctor of Osteopathic Medicine)-granting schools exhibit lower research participation than MD (Doctor of Medicine)-granting schools, yet the origins of these differences remain unclear. In this study, we aimed to understand how DO and MD students seek out research opportunities, their motivation for pursuing research opportunities, and their experiences navigating barriers to finding, completing, and publishing research projects. We also sought to clarify any divergence between DO and MD students in the concept of \"research\" and its perceived value to DO and MD students. The study was conducted at two public medical schools with similar, state-focused, primary care missions: Ohio University Heritage College of Osteopathic Medicine (HCOM), a DO-granting school, and the Brody School of Medicine at East Carolina University (BSOM), an MD-granting school. We administered an online survey to first- through fourth-year medical students, with 42 participants from HCOM and 36 participants from BSOM. Students from both medical schools shared similar beliefs and experiences regarding research participation during undergraduate medical education, despite nationwide statistics indicating higher research productivity among MD graduates compared to DO graduates. Given the shared experiences of DO and MD students, increased collaboration between their institutions in research education and mentorship could better support students' research aspirations. The online version contains supplementary material available at 10.1007/s40670-025-02603-5.",
+      "authors": "[\"Shapiro Devora\", \"Franz Berkeley\", \"Long-Mills Em\", \"Linares Jhojana Infante\", \"Eldridge David L\", \"Tumin Dmitry\"]",
+      "journal": "Medical science educator",
+      "publication_date": "2025-12-22",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:52.913652",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41912307",
+      "title": "Assessment of lysosomal drug sequestration and release using fluorescence microscopy.",
+      "abstract": "Lysosomotropism refers to the ability of certain basic lipophilic compounds to accumulate in lysosomes via pH partitioning. Various drugs including anticancer agents are trapped in lysosomes, and this process can prevent such drugs from reaching their primary target, thereby limiting their effectiveness. Strategies aimed at preventing drug sequestration or inducing drug release from lysosomes have garnered considerable interest. Chloroquine is a widely used anti-malarial drug that triggers lysosome membrane permeabilization (LMP) to liberate sequestered drugs from these organelles. In this study, we first evaluate the lysosomotropism of various fluorescent anticancer agents in silico. Next, we outline a simple, fast and robust method for the visualization and quantification of their lysosomal sequestration and release by fluorescence microscopy. The method is used on live cells and consists of two steps: (i) visualization of the compounds in lysosomes by analyzing their colocalization with a specific fluorescent lysosomal marker, and (ii) assessment of drug release from lysosomes. Furthermore, we present fluorescence microscopy protocols for monitoring LMP by analyzing the subcellular localization of LGALS3 (Galectin-3), which normally distributes diffusely in the cytoplasm but translocates into lysosomes upon LMP. This can be achieved on fixed cells by detecting endogenous LGALS3 with immunostaining or by the visualization of a transgenic LGALS3-mCherry fusion protein on live cells. Altogether, these methods facilitate qualitative and quantitative fluorescence imaging of lysosomal sequestration and liberation of lysosomotropic drugs.",
+      "authors": "[\"Ferret Lucille\", \"Dehissi Samy\", \"Guillon Jean\", \"Alvarez-Valadez Karla\", \"Kroemer Guido\", \"Djavaheri-Mergny Mojgan\"]",
+      "journal": "Methods in cell biology",
+      "publication_date": "2025-10-27",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:52.916398",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41939025",
+      "title": "Exploring the Characteristics of Parachute Medical Teachers and their Effects on Medical Students' Attitudes and Performance.",
+      "abstract": "The quality of medical education is critically dependent on the effectiveness of teaching staff. While the importance of teacher effectiveness is well-established, there is a paucity of research exploring the specific qualities of medical teachers that could have an impact on students' attitudes towards their learning process, and by turn on their academic performance. This study aims to explore the presence of parachute faculty qualities among medical teachers as perceived by medical students, and to assess the effects of these qualities on students' attitudes towards learning. The findings are intended to inform strategies for optimizing the deployment and support of medical teachers and inform teacher appraisal and faculty development programs in medical schools. A cross-sectional descriptive study was conducted from January to March 2025 among medical students from diverse public and private medical colleges in Saudi Arabia. Participants were recruited using convenience and snowball sampling techniques. An online, tailored questionnaire, developed and validated through expert review and pilot testing, was distributed via social media platforms. The questionnaire gathered data on perceived parachute faculty qualities of medical teachers on 5 scales and gathered information about the effect of these qualities on students' attitudes towards learning. Data was analyzed using descriptive statistics and comparative analyses to identify key perceived qualities and their association with student outcomes. Exploratory factor analysis was performed for construct validation of the questionnaire. A total of 533 medical students participated in the study, with 94.7% from public universities. The internal consistency of the questionnaire scales ranged from acceptable to excellent (Cronbach's alpha 0.669-0.945). Students generally perceived their teachers as frequently demonstrating parachute faculty qualities, with mean scores exceeding 4 on a 5-point scale across all domains. Significant differences in perceptions were observed across academic years and between genders for most domains, except \"commitment to teaching well.\" Students consistently reported that teacher qualities substantially affect their attitudes, motivation, engagement, performance, self-confidence, and career choices, with no significant differences across sectors or academic years. Factor analysis identified three main factors: personal qualities of the medical teacher (9 items), scaffolding qualities (22 items), and effects on students' attitudes towards learning (6 items), accounting for 57% of the overall variance. This study introduces and validates the concept of \"parachute faculty\" in medical education, representing educators who possess specific qualities that enable students to navigate their educational journey successfully. The three-factor structure provides a refined framework for understanding effective medical teaching that can inform faculty development initiatives, evaluation processes, and institutional policies aimed at enhancing the quality of medical education in Saudi Arabia's rapidly expanding medical education sector.",
+      "authors": "[\"Mansour Tayseer\", \"Zalat Marwa M\", \"El Tarhouny Shereen A\", \"Kamal Doaa\", \"Amer Soliman M\", \"Wassif Ghada A\", \"Farghaly Amira\"]",
+      "journal": "Medical science educator",
+      "publication_date": "2025-11-17",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:52.918428",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC"
+        ],
+        "sample_size": 5,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41930255",
+      "title": "Teneurin-2 and related proteins in reactive astrocytes after <i>status epilepticus</i> induction in adult rats.",
+      "abstract": "Teneurins are a protein family composed of four paralogs in vertebrates (Ten-1-4), expressed mainly in the central nervous system (CNS), which primarily participate in neuronal circuit establishment through homophilic or heterophilic interactions. These proteins possess a bioactive peptide, teneurin C-terminal associated peptide (TCAP1-4), located at the distal extracellular tip. The adhesion G protein-coupled receptors L (ADGRL1-3) are the main receptors for teneurins. The purpose of this study was to evaluate the Ten-2/TCAP-2/ADGRL1 system in the cerebral cortex and hippocampus in a rat model of epilepsy. Adult male rats received LiCl-pilocarpine and were euthanized 2, 5, 14, 35 and 65 days after <i>status epilepticus</i> (SE) induction. Ten-2, TCAP-2 and ADGRL1 immunohistochemistry and quantitative gene expression were performed in the primary somatosensory area and hippocampus. Fluoro-Jade C staining was used to verify colocalization between neuronal degeneration and immunoreactive cells. Increases in Ten-2- (Ten-2-LI) and ADGRL1-like immunoreactive (ADGRL1-LI) reactive astrocyte profiles were mainly found in the primary somatosensory (5 days after SE, <i>p</i> < 0.0001) and CA3 (2, 5 and 14 days, <i>p</i> < 0.0001) areas, when compared with other groups. Ten-2, TCAP-2 and ADGRL1 gene expressions showed significant up-regulation in the cerebral cortex (5 days, <i>p</i> < 0.001) and CA3 (2 and 5 days, <i>p</i> < 0.0001). Ten-2-LI and ADGRL1-LI were colocated in the same reactive astrocyte profiles, positioned in brain regions with neuronal degeneration. This study demonstrated that SE induced an up-regulation of Ten-2, TCAP-2 and ADGRL1 in reactive astrocytes of adult rats, indicating that the astrocytic teneurin-ADGRL system is modulated after <i>status epilepticus</i> induction.",
+      "authors": "[\"Tessarin Gestter Willian Lattari\", \"Hogg David William\", \"Gonçalves Alaide\", \"Casatti Daniel Vieira\", \"Savenhago Vitória Morelli\", \"da Costa Bárbara Stéfani Silva\", \"Priore Viviam Barbuglio Del\", \"Lovejoy David Alan\", \"Horta-Junior José Anchieta de Castro\", \"Casatti Cláudio Aparecido\"]",
+      "journal": "Frontiers in neuroscience",
+      "publication_date": "2026-03-18",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:52.923596",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41909868",
+      "title": "Saskatoon berry (<i>Amelanchier alnifolia</i>): nutritional composition, phytochemical, health benefits, shelf-life extension and utilization.",
+      "abstract": "Saskatoon berry (STB) contains various nutrients and phytochemicals. In recent years, considerable research has been conducted on the chemical composition and biological functions of the STB. STB encompass a diverse range of species with varying nutritional and functional profiles, which necessitates a systematic review to summarize and synthesize existing knowledge. In this review, we summarize the current developments in STB as a potential source of bioactive compounds. Special emphasis on health benefits, storage techniques, and applications. STB is a rich source of nutrients (carbohydrates, proteins, fats, and minerals) and phytochemicals (including polyphenols, polysaccharides, volatile, etc.) that are biologically active and beneficial to human health. These bioactive constituents have many health advantages, including antioxidant, anti-inflammatory, metabolic syndrome modulating, antimicrobial, and anticancer capabilities. In addition, practical applications of storage technology in STB are discussed. Recommendations for maximizing the potential of STB in promoting their development as functional food materials/ingredients are also offered.",
+      "authors": "[\"Li Dingjin\", \"Cheng Zhen\", \"Wan Ibadullah Wan Zunairah\", \"Shukri Radhiah\", \"Duan Qiuxia\", \"Mustapha Nor Afizah\"]",
+      "journal": "Food science and biotechnology",
+      "publication_date": "2025-09-26",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:52.925431",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41939038",
+      "title": "\"It Honestly Took Me About Two Years\": Minoritized Students' Experiences in Navigating Pathways Between High School, College, and Health Science Graduate Programs.",
+      "abstract": "This study explores the resources needed by minoritized students-particularly students of color and first-generation college students-to succeed in the pathway toward advanced health sciences degrees. Using Teemant et al.'s equity framework, we investigated how partnerships among key stakeholders-including students, parents, school leaders, and community members-contribute to these students' academic success in the health sciences. We conducted four focus groups (total = 31 participants) with the following groups: (1) parents of first-generation college students, (2) community college students, (3) graduate students in health sciences, and (4) academic advisors. An additional four participants provided perspectives through individual interviews. Focus groups and interviews were transcribed verbatim and coded inductively by a subset of the authors. Using Teemant et al.'s framework, our analysis illustrated three overarching themes: barriers, supports, and capacities. Key barriers included limited access to information about applying to higher-education programs and facing skepticism from teachers and advisors regarding the potential to succeed in health sciences. Supportive factors included university-based diversity programs and bridge programs that provided target guidance, resources, and information to both students and their families. Data also indicated that higher-education systems often fall short in ensuring that resources are truly accessible and relevant to diverse student populations. Our study illuminates how the success of minoritized individuals in advanced health sciences hinges on bolstering both students' and their parents' navigational capital, while addressing the complex interplay of structural barriers and targeted supports that shape their educational journeys.",
+      "authors": "[\"Chow Candace J\", \"Curtis Scott\", \"Chen Michael\", \"Purdy Johanna C\", \"Stanfield Gillian M\", \"Rojas Erica\", \"Wadsworth Rebekah\", \"Sisler Shawna\", \"Simonetti Juliana\"]",
+      "journal": "Medical science educator",
+      "publication_date": "2025-11-28",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:52.935079",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [
+          "Feature Selection"
+        ],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41923945",
+      "title": "Administrative data linkage to Census 2021 in Wales, UK: A cross-sectional study examining completeness and representativeness for population analytics.",
+      "abstract": "Measuring population representativeness is an important methodological step in public health and epidemiological studies. To explore the representativeness of Census 2021 data linkage when compared with the Welsh Demographic Service Dataset (WDSD) within the Secure Anonymised Information Linkage (SAIL) Databank for research on the population of Wales, UK. To understand the characteristics of individuals linked and not linked and which subgroups of the population are disproportionately represented in data linkage population-wide studies. An observational, population-wide cross-sectional comparison study, utilising administrative demographic data and decennial survey data held in SAIL. Two data sources, the WDSD and Census 2021, were used to create and compare two cohorts of the resident population of Wales, UK, on 21<sup>st</sup> March 2021.The two cohorts were linked to understand how many individuals from Census 2021 can be successfully linked within SAIL, in WDSD and not in Census 2021, and found across both sources. Logistic regression models analysed the variation in the linkability of the survey data within SAIL by various demographic and household characteristics. The central analytical cohort contained 2,440,191 individuals present in both data sources. WDSD contained 3,090,976 individuals with 2,965,196 individuals in Census data.With a positively classed outcome indicating non-linkage from WDS to Census the characteristics associated with the highest odds of individuals being registered in WDS but not linked to Census (in SAIL) are male (aOR = 1.28 [95%CI 1.28,1.32]), 75+ years of age (aOR = 1.27 [95%CI 1.25,1.29]), of Asian ethnicity (aOR = 1.27 [95%CI 1.24,1.30]), a more recent migrant (arriving to UK after 2000) (aOR = 1.30 [95%CI 1.28,1.32]), a member of the LGBTQ+ community (aOR = 1.29 [95%CI 1.25,1.29]) or not disclosing LGBTQ+ status (aOR = 1.41 [95%CI 1.39,1.43]), being separated, divorced or widowed (aOR = 1.28 [95%CI 1.27,1.29]), or living in rental accommodation (aOR = 1.47 [95%CI 1.45,1.48]). Results show that certain personal characteristics and sub-groups of the population of Wales are disproportionately represented when combining population estimates and utilising Census data in data linkage population-wide studies in SAIL.",
+      "authors": "[\"Lyons Jane\", \"Johnson Rhodri D\", \"Edwards Michael\", \"Turner Samantha\", \"Fry Richard\", \"Griffiths Lucy J\", \"Lyons Ronan A\"]",
+      "journal": "International journal of population data science",
+      "publication_date": "2025-11-26",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "机器学习",
+      "search_date": "2026-04-12T17:16:52.936736",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "Logistic Regression"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 21,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    }
+  ]
+}

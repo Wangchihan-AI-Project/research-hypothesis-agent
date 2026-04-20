@@ -1,0 +1,16 @@
+{
+  "cache_key": "7b4f418b42fd83f1",
+  "timestamp": "2026-04-16T02:56:29.762993",
+  "api_endpoint": "pubmed_search",
+  "request_params": {
+    "query": "alzheimer",
+    "max_results": 10
+  },
+  "response_payload": "{\"papers\": []}",
+  "response_hash": "3215a3b93b652ac4",
+  "pmid_list": [
+    "123456",
+    "789012"
+  ],
+  "paper_count": 2
+}

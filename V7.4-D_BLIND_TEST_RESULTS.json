@@ -1,0 +1,73 @@
+{
+  "test_info": {
+    "test_type": "V7.4-D 全局后端盲测",
+    "timestamp": "2026-04-19T16:58:35.397162",
+    "total_cases": 3,
+    "total_duration": 371.8661081790924
+  },
+  "cases": [
+    {
+      "input": {
+        "id": "命题一",
+        "category": "临床预测",
+        "title": "基于 UK Biobank 多组学数据与集成梯度提升树（XGBoost）的早发性 2 型糖尿病风险评估框架。",
+        "expected_behavior": "合理学术课题，应通过审查"
+      },
+      "output": {
+        "case_id": "命题一",
+        "category": "临床预测",
+        "final_state": "REJECT",
+        "reason": "红方裁决: N/A | 防御委员会未通过",
+        "healing_activated": true,
+        "retrieval_count": 17,
+        "patch_count": 3,
+        "attack_types": [],
+        "retrieval_sources": [],
+        "iteration_count": 4,
+        "duration": 193.8691921234131
+      }
+    },
+    {
+      "input": {
+        "id": "命题二",
+        "category": "前沿交叉",
+        "title": "利用 AlphaFold3 预测人类罕见致病突变引起的蛋白-配体结合能变化，并结合深度图神经网络进行小分子筛选。",
+        "expected_behavior": "涉及 AF3 数据泄露与物理验证风险，可能触发自愈"
+      },
+      "output": {
+        "case_id": "命题二",
+        "category": "前沿交叉",
+        "final_state": "REJECT",
+        "reason": "红方裁决: N/A | 防御委员会未通过",
+        "healing_activated": true,
+        "retrieval_count": 14,
+        "patch_count": 2,
+        "attack_types": [],
+        "retrieval_sources": [],
+        "iteration_count": 4,
+        "duration": 171.9722900390625
+      }
+    },
+    {
+      "input": {
+        "id": "命题三",
+        "category": "边界测试",
+        "title": "基于量子引力效应的跨时空生物分子信号实时监测与远端意识干扰建模研究。",
+        "expected_behavior": "极端非学术假设，应被拒稿"
+      },
+      "output": {
+        "case_id": "命题三",
+        "category": "边界测试",
+        "final_state": "REJECT",
+        "reason": "",
+        "healing_activated": false,
+        "retrieval_count": 0,
+        "patch_count": 0,
+        "attack_types": [],
+        "retrieval_sources": [],
+        "iteration_count": 0,
+        "duration": 0.0003609657287597656
+      }
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+# Research Hypothesis Agent - 研究策略配置
+
+> 类似 Karpathy autoresearch 的 `program.md`，人类通过修改此文件来引导 Agent 的研究行为。
+> Agent 在启动时会读取此文件，根据其中的策略执行研究任务。
+
+---
+
+## 研究目标 (Research Goals)
+
+### 研究领域
+- **主要领域**: 计算生物学 / 神经科学 / 生物医学 AI
+- **目标期刊级别**: Nature / Science / Cell 级别
+- **研究深度**: 博士论文开题深度
+
+### 假设标准
+- **颠覆性分数** (transformative_impact): >= 8.0
+- **原创性分数** (methodological_originality): >= 7.5
+- **可行性分数** (poc_feasibility): >= 7.0
+- **综合平均分**: >= 7.5
+
+---
+
+## 搜索策略 (Search Strategy)
+
+### 论文检索参数
+```yaml
+paper_search:
+  # 两阶段漏斗配置
+  use_two_stage_funnel: true
+  stage1_max: 500        # 第一阶段粗筛数量
+  stage2_top_k: 40       # 第二阶段精读数量
+
+  # 质量过滤
+  min_if: 5.0            # 最低影响因子阈值（0 = 不限）
+  date_range:
+    start: 2020          # 起始年份
+    end: 2026            # 结束年份（自动更新为当前年）
+
+  # 全文获取
+  fetch_full_text: true
+  max_full_text: 10      # 最多获取全文的论文数
+```
+
+### 关键词策略
+- 自动扩展关键词: 是
+- 使用 MeSH 术语优化: 是
+- 组合搜索策略: 启用
+
+---
+
+## 假设生成策略 (Hypothesis Generation)
+
+### 核心配置
+```yaml
+hypothesis_generation:
+  # 数量配置
+  num_hypotheses: 3      # 每轮生成假设数量
+  best_of_n: 3           # 多轨并行原型数（选最优）
+
+  # 验证阈值
+  min_score_threshold: 7.5   # 最低通过分数
+  enable_prevalidation: true # 启用预验证
+
+  # 激进突变
+  radical_pivot_threshold: 5.0  # 低于此分触发破坏性重构
+  max_internal_retries: 2      # 内部重试次数
+```
+
+### 思想钢印 (Core Principles)
+1. **模态锁死**: 宏观数据禁止微观术语，微观数据禁止宏观术语
+2. **零推诿**: 永久禁用 "N/A"、"暂无"、"待定" 等词汇
+3. **去口号化**: 所有方法必须落实到具体参数和代码包
+
+### 七段式输出结构
+1. 破局点批判 (Gap Analysis) [>=150字]
+2. 核心科学假说 (Core Hypothesis) [>=100字]
+3. 颠覆性创新点 (Innovation) [>=150字]
+4. 底层逻辑与反事实推演 (Mechanism) [>=300字]
+5. 详尽技术路线 (Technical Roadmap) [>=400字]
+6. 转化价值 (Translational Impact) [>=200字]
+7. 证伪方案 (Falsification Plan) [>=200字]
+
+---
+
+## 审计策略 (Audit Strategy)
+
+### 全球查新探针
+```yaml
+global_prior_art:
+  enabled: true
+  min_novelty_score: 50  # 全球新颖性最低分数（/100）
+  collision_threshold: 0.7  # 碰撞相似度阈值
+```
+
+### 暗盒预审（三方会审）
+```yaml
+dark_box_audit:
+  enabled: true
+  phases:
+    - global_novelty      # 全球查新
+    - biostats_hardcore   # 统计硬核审计
+    - red_team_attack     # 红队攻击
+
+  # 反馈循环
+  max_audit_iterations: 2  # 审计迭代次数
+```
+
+### 红蓝对抗
+```yaml
+red_blue_defense:
+  enabled: true
+  red_team_intensity: high  # low / medium / high
+  defense_committee: true   # 终审答辩委员会
+```
+
+---
+
+## 自主循环模式 (Autonomous Mode)
+
+> 类似 Karpathy autoresearch 的自主实验循环：Agent 自动迭代，直到达标或超时
+
+```yaml
+autonomous_mode:
+  enabled: false         # 默认关闭，手动开启
+
+  # 循环参数
+  max_iterations: 5      # 最大迭代次数
+  target_score: 8.0      # 目标综合分数
+  time_budget_minutes: 60  # 总时间预算（分钟）
+
+  # 自动决策
+  auto_select_papers: true   # 自动选择最高分论文
+  auto_approve_hypothesis: false  # 假设是否自动通过（建议人工确认）
+  auto_technical_analysis: true   # 自动技术分析
+
+  # 失败策略
+  on_failure:
+    action: radical_pivot  # radical_pivot / retry / abort
+    max_pivot_attempts: 2  # 激进突变尝试次数
+
+  # 日志输出
+  experiment_log: true    # 记录每次迭代日志
+  output_dir: experiments/  # 实验日志目录
+```
+
+---
+
+## 资源配置 (Resource Configuration)
+
+### 计算资源
+```yaml
+resources:
+  gpu_recommendation: auto  # auto / specific model
+  estimated_cost_limit: 100  # USD 上限
+  max_runtime_hours: 24
+```
+
+### Agent 模型配置
+```yaml
+agents:
+  hypothesis_agent: claude-sonnet-4-6
+  validation_agent: claude-sonnet-4-6
+  tech_analysis_agent: claude-sonnet-4-6
+  red_team_agent: claude-sonnet-4-6
+```
+
+---
+
+## 输出配置 (Output Configuration)
+
+### 报告格式
+```yaml
+output:
+  report_format: markdown
+  include_scores: true
+  include_audit_log: true
+  include_tool_calls: true
+
+  # 报告目录
+  reports_dir: reports/
+  experiments_dir: experiments/
+```
+
+### 可视化
+```yaml
+visualization:
+  knowledge_graph: true   # 生成知识图谱
+  hypothesis_network: true  # 假设关系网络
+```
+
+---
+
+## 使用说明
+
+### 如何修改此文件
+
+1. **修改研究目标**: 调整 `研究目标` 部分，设定你的领域和目标期刊级别
+2. **调整搜索策略**: 修改 `min_if` 和 `date_range` 来控制论文质量
+3. **配置假设标准**: 调整各项分数阈值来控制假设质量
+4. **开启自主模式**: 将 `autonomous_mode.enabled` 设为 `true`，Agent 将自动迭代
+
+### 启动研究
+
+```bash
+# CLI 方式
+python main.py
+
+# Web UI 方式
+streamlit run app.py
+```
+
+### 自主模式启动
+
+在 CLI 或 Web UI 中输入：
+
+```
+请根据 program.md 启动自主研究模式，关键词: [你的研究关键词]
+```
+
+---
+
+## 版本信息
+
+- **配置版本**: v1.0
+- **创建日期**: 2026-04-16
+- **参考项目**: Karpathy autoresearch (https://github.com/karpathy/autoresearch)

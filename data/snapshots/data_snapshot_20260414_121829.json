@@ -1,0 +1,1264 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-14T12:18:29.256897",
+  "cutoff_date": "2026-04-14",
+  "metadata": {
+    "query": "基于 UK Biobank 多组学，构建疾病因果调控网络假设",
+    "date_range": "(2023, 2026)"
+  },
+  "record_count": 50,
+  "papers": [
+    {
+      "pmid": "37620601",
+      "title": "Multiparameter prediction of myeloid neoplasia risk.",
+      "abstract": "The myeloid neoplasms encompass acute myeloid leukemia, myelodysplastic syndromes and myeloproliferative neoplasms. Most cases arise from the shared ancestor of clonal hematopoiesis (CH). Here we analyze data from 454,340 UK Biobank participants, of whom 1,808 developed a myeloid neoplasm 0-15 years after recruitment. We describe the differences in CH mutational landscapes and hematology/biochemistry test parameters among individuals that later develop myeloid neoplasms (pre-MN) versus controls, finding that disease-specific changes are detectable years before diagnosis. By analyzing differences between 'pre-MN' and controls, we develop and validate Cox regression models quantifying the risk of progression to each myeloid neoplasm subtype. We construct 'MN-predict', a web application that generates time-dependent predictions with the input of basic blood tests and genetic data. Our study demonstrates that many individuals that develop myeloid neoplasms can be identified years in advance and provides a framework for disease-specific prognostication that will be of substantial use to researchers and physicians.",
+      "authors": "[\"Gu Muxin\", \"Kovilakam Sruthi Cheloor\", \"Dunn William G\", \"Marando Ludovica\", \"Barcena Clea\", \"Mohorianu Irina\", \"Smith Alexandra\", \"Kar Siddhartha P\", \"Fabre Margarete A\", \"Gerstung Moritz\", \"Cargo Catherine A\", \"Malcovati Luca\", \"Quiros Pedro M\", \"Vassiliou George S\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2023-08-24",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.207407",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37652022",
+      "title": "The penetrance of rare variants in cardiomyopathy-associated genes: A cross-sectional approach to estimating penetrance for secondary findings.",
+      "abstract": "Understanding the penetrance of pathogenic variants identified as secondary findings (SFs) is of paramount importance with the growing availability of genetic testing. We estimated penetrance through large-scale analyses of individuals referred for diagnostic sequencing for hypertrophic cardiomyopathy (HCM; 10,400 affected individuals, 1,332 variants) and dilated cardiomyopathy (DCM; 2,564 affected individuals, 663 variants), using a cross-sectional approach comparing allele frequencies against reference populations (293,226 participants from UK Biobank and gnomAD). We generated updated prevalence estimates for HCM (1:543) and DCM (1:220). In aggregate, the penetrance by late adulthood of rare, pathogenic variants (23% for HCM, 35% for DCM) and likely pathogenic variants (7% for HCM, 10% for DCM) was substantial for dominant cardiomyopathy (CM). Penetrance was significantly higher for variant subgroups annotated as loss of function or ultra-rare and for males compared to females for variants in HCM-associated genes. We estimated variant-specific penetrance for 316 recurrent variants most likely to be identified as SFs (found in 51% of HCM- and 17% of DCM-affected individuals). 49 variants were observed at least ten times (14% of affected individuals) in HCM-associated genes. Median penetrance was 14.6% (±14.4% SD). We explore estimates of penetrance by age, sex, and ancestry and simulate the impact of including future cohorts. This dataset reports penetrance of individual variants at scale and will inform the management of individuals undergoing genetic screening for SFs. While most variants had low penetrance and the costs and harms of screening are unclear, some individuals with highly penetrant variants may benefit from SFs.",
+      "authors": "[\"McGurk Kathryn A\", \"Zhang Xiaolei\", \"Theotokis Pantazis\", \"Thomson Kate\", \"Harper Andrew\", \"Buchan Rachel J\", \"Mazaika Erica\", \"Ormondroyd Elizabeth\", \"Wright William T\", \"Macaya Daniela\", \"Pua Chee Jian\", \"Funke Birgit\", \"MacArthur Daniel G\", \"Prasad Sanjay K\", \"Cook Stuart A\", \"Allouba Mona\", \"Aguib Yasmine\", \"Yacoub Magdi H\", \"O'Regan Declan P\", \"Barton Paul J R\"]",
+      "journal": "American journal of human genetics",
+      "publication_date": "2023-08-30",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.208186",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 51,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "38198570",
+      "title": "Prospective study design and data analysis in UK Biobank.",
+      "abstract": "Population-based prospective studies, such as UK Biobank, are valuable for generating and testing hypotheses about the potential causes of human disease. We describe how UK Biobank's study design, data access policies, and approaches to statistical analysis can help to minimize error and improve the interpretability of research findings, with implications for other population-based prospective studies being established worldwide.",
+      "authors": "[\"Allen Naomi E\", \"Lacey Ben\", \"Lawlor Deborah A\", \"Pell Jill P\", \"Gallacher John\", \"Smeeth Liam\", \"Elliott Paul\", \"Matthews Paul M\", \"Lyons Ronan A\", \"Whetton Anthony D\", \"Lucassen Anneke\", \"Hurles Matthew E\", \"Chapman Michael\", \"Roddam Andrew W\", \"Fitzpatrick Natalie K\", \"Hansell Anna L\", \"Hardy Rebecca\", \"Marioni Riccardo E\", \"O'Donnell Valerie B\", \"Williams Julie\"]",
+      "journal": "Science translational medicine",
+      "publication_date": "2024-01-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.208437",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37365347",
+      "title": "Phenotypic effects of genetic variants associated with autism.",
+      "abstract": "While over 100 genes have been associated with autism, little is known about the prevalence of variants affecting them in individuals without a diagnosis of autism. Nor do we fully appreciate the phenotypic diversity beyond the formal autism diagnosis. Based on data from more than 13,000 individuals with autism and 210,000 undiagnosed individuals, we estimated the odds ratios for autism associated to rare loss-of-function (LoF) variants in 185 genes associated with autism, alongside 2,492 genes displaying intolerance to LoF variants. In contrast to autism-centric approaches, we investigated the correlates of these variants in individuals without a diagnosis of autism. We show that these variants are associated with a small but significant decrease in fluid intelligence, qualification level and income and an increase in metrics related to material deprivation. These effects were larger for autism-associated genes than in other LoF-intolerant genes. Using brain imaging data from 21,040 individuals from the UK Biobank, we could not detect significant differences in the overall brain anatomy between LoF carriers and non-carriers. Our results highlight the importance of studying the effect of the genetic variants beyond categorical diagnosis and the need for more research to understand the association between these variants and sociodemographic factors, to best support individuals carrying these variants.",
+      "authors": "[\"Rolland Thomas\", \"Cliquet Freddy\", \"Anney Richard J L\", \"Moreau Clara\", \"Traut Nicolas\", \"Mathieu Alexandre\", \"Huguet Guillaume\", \"Duan Jinjie\", \"Warrier Varun\", \"Portalier Swan\", \"Dry Louise\", \"Leblond Claire S\", \"Douard Elise\", \"Amsellem Frédérique\", \"Malesys Simon\", \"Maruani Anna\", \"Toro Roberto\", \"Børglum Anders D\", \"Grove Jakob\", \"Baron-Cohen Simon\"]",
+      "journal": "Nature medicine",
+      "publication_date": "2023-06-26",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.209042",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 13000,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38459180",
+      "title": "Sex-specific genetic architecture of blood pressure.",
+      "abstract": "The genetic and genomic basis of sex differences in blood pressure (BP) traits remain unstudied at scale. Here, we conducted sex-stratified and combined-sex genome-wide association studies of BP traits using the UK Biobank resource, identifying 1,346 previously reported and 29 new BP trait-associated loci. Among associated loci, 412 were female-specific (P<sub>female</sub> ≤ 5 × 10<sup>-8</sup>; P<sub>male</sub> > 5 × 10<sup>-8</sup>) and 142 were male-specific (P<sub>male</sub> ≤ 5 × 10<sup>-8</sup>; P<sub>female</sub> > 5 × 10<sup>-8</sup>); these sex-specific loci were enriched for hormone-related transcription factors, in particular, estrogen receptor 1. Analyses of gene-by-sex interactions and sexually dimorphic effects identified four genomic regions, showing female-specific associations with diastolic BP or pulse pressure, including the chromosome 13q34-COL4A1/COL4A2 locus. Notably, female-specific pulse pressure-associated loci exhibited enriched acetylated histone H3 Lys27 modifications in arterial tissues and a female-specific association with fibromuscular dysplasia, a female-biased vascular disease; colocalization signals included Chr13q34: COL4A1/COL4A2, Chr9p21: CDKN2B-AS1 and Chr4q32.1: MAP9 regions. Sex-specific and sex-biased polygenic associations of BP traits were associated with multiple cardiovascular traits. These findings suggest potentially clinically significant and BP sex-specific pleiotropic effects on cardiovascular diseases.",
+      "authors": "[\"Yang Min-Lee\", \"Xu Chang\", \"Gupte Trisha\", \"Hoffmann Thomas J\", \"Iribarren Carlos\", \"Zhou Xiang\", \"Ganesh Santhi K\"]",
+      "journal": "Nature medicine",
+      "publication_date": "2024-03-08",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.209691",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37414898",
+      "title": "A prognostic risk score for development and spread of chronic pain.",
+      "abstract": "Chronic pain is a complex condition influenced by a combination of biological, psychological and social factors. Using data from the UK Biobank (n = 493,211), we showed that pain spreads from proximal to distal sites and developed a biopsychosocial model that predicted the number of coexisting pain sites. This data-driven model was used to identify a risk score that classified various chronic pain conditions (area under the curve (AUC) 0.70-0.88) and pain-related medical conditions (AUC 0.67-0.86). In longitudinal analyses, the risk score predicted the development of widespread chronic pain, the spreading of chronic pain across body sites and high-impact pain about 9 years later (AUC 0.68-0.78). Key risk factors included sleeplessness, feeling 'fed-up', tiredness, stressful life events and a body mass index >30. A simplified version of this score, named the risk of pain spreading, obtained similar predictive performance based on six simple questions with binarized answers. The risk of pain spreading was then validated in the Northern Finland Birth Cohort (n = 5,525) and the PREVENT-AD cohort (n = 178), obtaining comparable predictive performance. Our findings show that chronic pain conditions can be predicted from a common set of biopsychosocial factors, which can aid in tailoring research protocols, optimizing patient randomization in clinical trials and improving pain management.",
+      "authors": "[\"Tanguay-Sabourin Christophe\", \"Fillingim Matt\", \"Guglietti Gianluca V\", \"Zare Azin\", \"Parisien Marc\", \"Norman Jax\", \"Sweatman Hilary\", \"Da-Ano Ronrick\", \"Heikkala Eveliina\", \"Perez Jordi\", \"Karppinen Jaro\", \"Villeneuve Sylvia\", \"Thompson Scott J\", \"Martel Marc O\", \"Roy Mathieu\", \"Diatchenko Luda\", \"Vachon-Presseau Etienne\"]",
+      "journal": "Nature medicine",
+      "publication_date": "2023-07-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.210334",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "AUROC"
+        ],
+        "sample_size": 493211,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39117878",
+      "title": "Proteomic aging clock predicts mortality and risk of common age-related diseases in diverse populations.",
+      "abstract": "Circulating plasma proteins play key roles in human health and can potentially be used to measure biological age, allowing risk prediction for age-related diseases, multimorbidity and mortality. Here we developed a proteomic age clock in the UK Biobank (n = 45,441) using a proteomic platform comprising 2,897 plasma proteins and explored its utility to predict major disease morbidity and mortality in diverse populations. We identified 204 proteins that accurately predict chronological age (Pearson r = 0.94) and found that proteomic aging was associated with the incidence of 18 major chronic diseases (including diseases of the heart, liver, kidney and lung, diabetes, neurodegeneration and cancer), as well as with multimorbidity and all-cause mortality risk. Proteomic aging was also associated with age-related measures of biological, physical and cognitive function, including telomere length, frailty index and reaction time. Proteins contributing most substantially to the proteomic age clock are involved in numerous biological functions, including extracellular matrix interactions, immune response and inflammation, hormone regulation and reproduction, neuronal structure and function and development and differentiation. In a validation study involving biobanks in China (n = 3,977) and Finland (n = 1,990), the proteomic age clock showed similar age prediction accuracy (Pearson r = 0.92 and r = 0.94, respectively) compared to its performance in the UK Biobank. Our results demonstrate that proteomic aging involves proteins spanning multiple functional categories and can be used to predict age-related functional status, multimorbidity and mortality risk across geographically and genetically diverse populations.",
+      "authors": "[\"Argentieri M Austin\", \"Xiao Sihao\", \"Bennett Derrick\", \"Winchester Laura\", \"Nevado-Holgado Alejo J\", \"Ghose Upamanyu\", \"Albukhari Ashwag\", \"Yao Pang\", \"Mazidi Mohsen\", \"Lv Jun\", \"Millwood Iona\", \"Fry Hannah\", \"Rodosthenous Rodosthenis S\", \"Partanen Jukka\", \"Zheng Zhili\", \"Kurki Mitja\", \"Daly Mark J\", \"Palotie Aarno\", \"Adams Cassandra J\", \"Li Liming\"]",
+      "journal": "Nature medicine",
+      "publication_date": "2024-08-08",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.211107",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Accuracy",
+          "Pearson"
+        ],
+        "sample_size": 45441,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37231097",
+      "title": "The impact of rare protein coding genetic variation on adult cognitive function.",
+      "abstract": "Compelling evidence suggests that human cognitive function is strongly influenced by genetics. Here, we conduct a large-scale exome study to examine whether rare protein-coding variants impact cognitive function in the adult population (n = 485,930). We identify eight genes (ADGRB2, KDM5B, GIGYF1, ANKRD12, SLC8A1, RC3H2, CACNA1A and BCAS3) that are associated with adult cognitive function through rare coding variants with large effects. Rare genetic architecture for cognitive function partially overlaps with that of neurodevelopmental disorders. In the case of KDM5B we show how the genetic dosage of one of these genes may determine the variability of cognitive, behavioral and molecular traits in mice and humans. We further provide evidence that rare and common variants overlap in association signals and contribute additively to cognitive function. Our study introduces the relevance of rare coding variants for cognitive function and unveils high-impact monogenic contributions to how cognitive function is distributed in the normal adult population.",
+      "authors": "[\"Chen Chia-Yen\", \"Tian Ruoyu\", \"Ge Tian\", \"Lam Max\", \"Sanchez-Andrade Gabriela\", \"Singh Tarjinder\", \"Urpa Lea\", \"Liu Jimmy Z\", \"Sanderson Mark\", \"Rowley Christine\", \"Ironfield Holly\", \"Fang Terry\", \"Daly Mark\", \"Palotie Aarno\", \"Tsai Ellen A\", \"Huang Hailiang\", \"Hurles Matthew E\", \"Gerety Sebastian S\", \"Lencz Todd\", \"Runz Heiko\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2023-05-25",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.211587",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 485930,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40770095",
+      "title": "Whole-genome sequencing of 490,640 UK Biobank participants.",
+      "abstract": "Whole-genome sequencing provides an unbiased and complete view of the human genome and enables the discovery of genetic variation without the technical limitations of other genotyping technologies. Here we report on whole-genome sequencing of 490,640 UK Biobank participants, building on previous genotyping effort<sup>1</sup>. This advance deepens our understanding of how genetics associates with disease biology and further enhances the value of this open resource for the study of human biology and health. Coupling this dataset with rich phenotypic data, we surveyed within- and cross-ancestry genomic associations and identified novel genetic and clinical insights. Although most associations with disease traits were primarily observed in individuals of European ancestries, strong or novel signals were also identified in individuals of African and Asian ancestries. With the improved ability to accurately genotype structural variants and exonic variation in both coding and UTR sequences, we strengthened and revealed novel insights relative to whole-exome sequencing<sup>2,3</sup> analyses. This dataset, representing a large collection of whole-genome sequencing data that is available to the UK Biobank research community, will enable advances of our understanding of the human genome, facilitate the discovery of diagnostics and therapeutics with higher efficacy and improved safety profile, and enable precision medicine strategies with the potential to improve global health.",
+      "authors": "[]",
+      "journal": "Nature",
+      "publication_date": "2025-08-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.212164",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Precision"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Genomics/WGS"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39278973",
+      "title": "A metabolomic profile of biological aging in 250,341 individuals from the UK Biobank.",
+      "abstract": "The metabolomic profile of aging is complex. Here, we analyse 325 nuclear magnetic resonance (NMR) biomarkers from 250,341 UK Biobank participants, identifying 54 representative aging-related biomarkers associated with all-cause mortality. We conduct genome-wide association studies (GWAS) for these 325 biomarkers using whole-genome sequencing (WGS) data from 95,372 individuals and perform multivariable Mendelian randomization (MVMR) analyses, discovering 439 candidate \"biomarker - disease\" causal pairs at the nominal significance level. We develop a metabolomic aging score that outperforms other aging metrics in predicting short-term mortality risk and exhibits strong potential for discriminating aging-accelerated populations and improving disease risk prediction. A longitudinal analysis of 13,263 individuals enables us to calculate a metabolomic aging rate which provides more refined aging assessments and to identify candidate anti-aging and pro-aging NMR biomarkers. Taken together, our study has presented a comprehensive aging-related metabolomic profile and highlighted its potential for personalized aging monitoring and early disease intervention.",
+      "authors": "[\"Zhang Shiyu\", \"Wang Zheng\", \"Wang Yijing\", \"Zhu Yixiao\", \"Zhou Qiao\", \"Jian Xingxing\", \"Zhao Guihu\", \"Qiu Jian\", \"Xia Kun\", \"Tang Beisha\", \"Mutz Julian\", \"Li Jinchen\", \"Li Bin\"]",
+      "journal": "Nature communications",
+      "publication_date": "2024-09-15",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.212644",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 250341,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Genomics/WGS"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "36931274",
+      "title": "The effects of obesity and metabolic abnormalities on severe COVID-19-related outcomes after vaccination: A population-based study.",
+      "abstract": "Breakthrough SARS-CoV-2 infections of vaccinated individuals are being reported globally, resulting in an increased risk of hospitalization and death among such patients. Therefore, it is crucial to identify the modifiable risk factors that may affect the protective efficacy of vaccine use against the development of severe COVID-19 and thus to initiate early medical interventions. Here, in population-based studies using the UK Biobank database and the 2021 National Health Interview Survey (NHIS), we analyzed 20,362 participants aged 50 years or older and 2,588 aged 18 years or older from both databases who tested positive for SARS-COV-2, of whom 33.1% and 67.7% received one or more doses of vaccine, respectively. In the UK Biobank, participants are followed from the vaccination date until October 18, 2021. We found that obesity and metabolic abnormalities (namely, hyperglycemia, hyperlipidemia, and hypertension) were modifiable factors for severe COVID-19 in vaccinated patients (all p < 0.05). When metabolic abnormalities were present, regardless of obesity, the risk of severe COVID-19 was higher than that of metabolically normal individuals (all p < 0.05). Moreover, pharmacological interventions targeting such abnormalities (namely, antihypertensive [adjusted hazard ratio (aHR) 0.64, 95% CI 0.48-0.86; p = 0.003], glucose-lowering [aHR 0.55, 95% CI 0.36-0.83; p = 0.004], and lipid-lowering treatments [aHR 0.50, 95% CI 0.37-0.68; p < 0.001]) were significantly associated with a reduced risk for this outcome. These results show that more proactive health management of patients with obesity and metabolic abnormalities is critical to reduce the incidence of severe COVID-19 after vaccination.",
+      "authors": "[\"Fan Xiude\", \"Han Junming\", \"Zhao Enfa\", \"Fang Jiansong\", \"Wang Dawei\", \"Cheng Yiping\", \"Shi Yingzhou\", \"Wang Zhen\", \"Yao Zhenyu\", \"Lu Peng\", \"Liu Tianbao\", \"Li Qihang\", \"Poulsen Kyle L\", \"Yuan Zhongshang\", \"Song Yongfeng\", \"Zhao Jiajun\"]",
+      "journal": "Cell metabolism",
+      "publication_date": "2023-03-01",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.213399",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37024597",
+      "title": "Heterogeneous aging across multiple organ systems and prediction of chronic disease and mortality.",
+      "abstract": "Biological aging of human organ systems reflects the interplay of age, chronic disease, lifestyle and genetic risk. Using longitudinal brain imaging and physiological phenotypes from the UK Biobank, we establish normative models of biological age for three brain and seven body systems. Here we find that an organ's biological age selectively influences the aging of other organ systems, revealing a multiorgan aging network. We report organ age profiles for 16 chronic diseases, where advanced biological aging extends from the organ of primary disease to multiple systems. Advanced body age associates with several lifestyle and environmental factors, leukocyte telomere lengths and mortality risk, and predicts survival time (area under the curve of 0.77) and premature death (area under the curve of 0.86). Our work reveals the multisystem nature of human aging in health and chronic disease. It may enable early identification of individuals at increased risk of aging-related morbidity and inform new strategies to potentially limit organ-specific aging in such individuals.",
+      "authors": "[\"Tian Ye Ella\", \"Cropley Vanessa\", \"Maier Andrea B\", \"Lautenschlager Nicola T\", \"Breakspear Michael\", \"Zalesky Andrew\"]",
+      "journal": "Nature medicine",
+      "publication_date": "2023-04-06",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.213876",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38409228",
+      "title": "Whole-exome sequencing in UK Biobank reveals rare genetic architecture for depression.",
+      "abstract": "Nearly two hundred common-variant depression risk loci have been identified by genome-wide association studies (GWAS). However, the impact of rare coding variants on depression remains poorly understood. Here, we present whole-exome sequencing analyses of depression with seven different definitions based on survey, questionnaire, and electronic health records in 320,356 UK Biobank participants. We showed that the burden of rare damaging coding variants in loss-of-function intolerant genes is significantly associated with risk of depression with various definitions. We compared the rare and common genetic architecture across depression definitions by genetic correlation and showed different genetic relationships between definitions across common and rare variants. In addition, we demonstrated that the effects of rare damaging coding variant burden and polygenic risk score on depression risk are additive. The gene set burden analyses revealed overlapping rare genetic variant components with developmental disorder, autism, and schizophrenia. Our study provides insights into the contribution of rare coding variants, separately and in conjunction with common variants, on depression with various definitions and their genetic relationships with neurodevelopmental disorders.",
+      "authors": "[\"Tian Ruoyu\", \"Ge Tian\", \"Kweon Hyeokmoon\", \"Rocha Daniel B\", \"Lam Max\", \"Liu Jimmy Z\", \"Singh Kritika\", \"Levey Daniel F\", \"Gelernter Joel\", \"Stein Murray B\", \"Tsai Ellen A\", \"Huang Hailiang\", \"Chabris Christopher F\", \"Lencz Todd\", \"Runz Heiko\", \"Chen Chia-Yen\"]",
+      "journal": "Nature communications",
+      "publication_date": "2024-02-26",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.214395",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 320356,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Genomics/WGS",
+          "EHR"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37074710",
+      "title": "Interplay of Metabolome and Gut Microbiome in Individuals With Major Depressive Disorder vs Control Individuals.",
+      "abstract": "Metabolomics reflect the net effect of genetic and environmental influences and thus provide a comprehensive approach to evaluating the pathogenesis of complex diseases, such as depression. To identify the metabolic signatures of major depressive disorder (MDD), elucidate the direction of associations using mendelian randomization, and evaluate the interplay of the human gut microbiome and metabolome in the development of MDD. This cohort study used data from participants in the UK Biobank cohort (n = 500 000; aged 37 to 73 years; recruited from 2006 to 2010) whose blood was profiled for metabolomics. Replication was sought in the PREDICT and BBMRI-NL studies. Publicly available summary statistics from a 2019 genome-wide association study of depression were used for the mendelian randomization (individuals with MDD = 59 851; control individuals = 113 154). Summary statistics for the metabolites were obtained from OpenGWAS in MRbase (n = 118 000). To evaluate the interplay of the metabolome and the gut microbiome in the pathogenesis of depression, metabolic signatures of the gut microbiome were obtained from a 2019 study performed in Dutch cohorts. Data were analyzed from March to December 2021. Outcomes were lifetime and recurrent MDD, with 249 metabolites profiled with nuclear magnetic resonance spectroscopy with the Nightingale platform. The study included 6811 individuals with lifetime MDD compared with 51 446 control individuals and 4370 individuals with recurrent MDD compared with 62 508 control individuals. Individuals with lifetime MDD were younger (median [IQR] age, 56 [49-62] years vs 58 [51-64] years) and more often female (4447 [65%] vs 2364 [35%]) than control individuals. Metabolic signatures of MDD consisted of 124 metabolites spanning the energy and lipid metabolism pathways. Novel findings included 49 metabolites, including those involved in the tricarboxylic acid cycle (ie, citrate and pyruvate). Citrate was significantly decreased (β [SE], -0.07 [0.02]; FDR = 4 × 10-04) and pyruvate was significantly increased (β [SE], 0.04 [0.02]; FDR = 0.02) in individuals with MDD. Changes observed in these metabolites, particularly lipoproteins, were consistent with the differential composition of gut microbiota belonging to the order Clostridiales and the phyla Proteobacteria/Pseudomonadota and Bacteroidetes/Bacteroidota. Mendelian randomization suggested that fatty acids and intermediate and very large density lipoproteins changed in association with the disease process but high-density lipoproteins and the metabolites in the tricarboxylic acid cycle did not. The study findings showed that energy metabolism was disturbed in individuals with MDD and that the interplay of the gut microbiome and blood metabolome may play a role in lipid metabolism in individuals with MDD.",
+      "authors": "[\"Amin Najaf\", \"Liu Jun\", \"Bonnechere Bruno\", \"MahmoudianDehkordi Siamak\", \"Arnold Matthias\", \"Batra Richa\", \"Chiou Yu-Jie\", \"Fernandes Marco\", \"Ikram M Arfan\", \"Kraaij Robert\", \"Krumsiek Jan\", \"Newby Danielle\", \"Nho Kwangsik\", \"Radjabzadeh Djawad\", \"Saykin Andrew J\", \"Shi Liu\", \"Sproviero William\", \"Winchester Laura\", \"Yang Yang\", \"Nevado-Holgado Alejo J\"]",
+      "journal": "JAMA psychiatry",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.215507",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 500,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Medical Imaging"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37311415",
+      "title": "Adiposity and sex-specific cancer risk.",
+      "abstract": "Obesity is associated with several types of cancer and fat distribution, which differs dramatically between sexes, has been suggested to be an independent risk factor. However, sex-specific effects on cancer risk have rarely been studied. Here we estimate the effects of fat accumulation and distribution on cancer risk in females and males. We performed a prospective study in 442,519 UK Biobank participants, for 19 cancer types and additional histological subtypes, with a mean follow-up time of 13.4 years. Cox proportional hazard models were used to estimate the effect of 14 different adiposity phenotypes on cancer rates, and a 5% false discovery rate was considered statistically significant. Adiposity-related traits are associated with all but three cancer types, and fat accumulation is associated with a larger number of cancers compared to fat distribution. In addition, fat accumulation or distribution exhibit differential effects between sexes on colorectal, esophageal, and liver cancer.",
+      "authors": "[\"Rask-Andersen Mathias\", \"Ivansson Emma\", \"Höglund Julia\", \"Ek Weronica E\", \"Karlsson Torgny\", \"Johansson Åsa\"]",
+      "journal": "Cancer cell",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.216043",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 442519,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40634782",
+      "title": "Plasma proteomics links brain and immune system aging with healthspan and longevity.",
+      "abstract": "Plasma proteins derived from specific organs can estimate organ age and mortality, but their sensitivity to environmental factors and their robustness in forecasting onset of organ diseases and mortality remain unclear. To address this gap, we estimate the biological age of 11 organs using plasma proteomics data (2,916 proteins) from 44,498 individuals in the UK Biobank. Organ age estimates were sensitive to lifestyle factors and medications and were associated with future onset (within 17 years' follow-up) of a range of diseases, including heart failure, chronic obstructive pulmonary disease, type 2 diabetes and Alzheimer's disease. Notably, having an especially aged brain posed a risk of Alzheimer's disease (hazard ratio (HR) = 3.1) that was similar to carrying one copy of APOE4, the strongest genetic risk factor for sporadic Alzheimer's disease, whereas a youthful brain (HR = 0.26) provided protection that was similar to carrying two copies of APOE2, independent of APOE genotype. Accrual of aged organs progressively increased mortality risk (2-4 aged organs, HR = 2.3; 5-7 aged organs, HR = 4.5; 8+ aged organs, HR = 8.3), whereas youthful brains and immune systems were uniquely associated with longevity (youthful brain, HR = 0.60 for mortality risk; youthful immune system, HR = 0.58; youthful both, HR = 0.44). Altogether, these findings support the use of plasma proteins for monitoring of organ health and point to the brain and immune systems as key targets for longevity interventions.",
+      "authors": "[\"Oh Hamilton Se-Hwee\", \"Le Guen Yann\", \"Rappoport Nimrod\", \"Urey Deniz Yagmur\", \"Farinas Amelia\", \"Rutledge Jarod\", \"Channappa Divya\", \"Wagner Anthony D\", \"Mormino Elizabeth\", \"Brunet Anne\", \"Greicius Michael D\", \"Wyss-Coray Tony\"]",
+      "journal": "Nature medicine",
+      "publication_date": "2025-07-09",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.216693",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": 17,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37729413",
+      "title": "Association between frailty and depression: A bidirectional Mendelian randomization study.",
+      "abstract": "Frailty and depression were linked in observational studies, but the causality remains ambiguous. We intended to explore it using Mendelian randomization (MR). We obtained frailty genome-wide association study (GWAS) data from UK Biobank and TwinGen meta-analysis, and depression GWAS data from Psychiatric Genomics Consortium (PGC) and FinnGen (respectively recorded as PD and FD). We performed univariable and multivariable-adjusted MR with adjustments for body mass index (BMI) and physical activity (PA). Frailty was significantly associated with elevated risks of PD (OR, 1.860; 95% CI, 1.439 to 2.405; <i>P</i> < 0.001) and FD (OR, 1.745; 95% CI, 1.193 to 2.552; <i>P</i> = 0.004), and depression was meanwhile a susceptible factor for frailty (PD: β, 0.146; 95% CI, 0.086 to 0.201; <i>P</i> < 0.001; and FD: β, 0.112; 95% CI, 0.051 to 0.174; <i>P</i> < 0.001). This association was robust after adjustments for BMI or PA. Our study provides evidence of the bidirectional causal association between frailty and depression from genetic perspectives.",
+      "authors": "[\"Deng Ming-Gang\", \"Liu Fang\", \"Liang Yuehui\", \"Wang Kai\", \"Nie Jia-Qi\", \"Liu Jiewei\"]",
+      "journal": "Science advances",
+      "publication_date": "2023-09-20",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.217193",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39039282",
+      "title": "Genome-wide association meta-analysis identifies five loci associated with postpartum hemorrhage.",
+      "abstract": "Bleeding in early pregnancy and postpartum hemorrhage (PPH) bear substantial risks, with the former closely associated with pregnancy loss and the latter being the foremost cause of maternal death, underscoring the severe impact on maternal-fetal health. We identified five genetic loci linked to PPH in a meta-analysis. Functional annotation analysis indicated candidate genes HAND2, TBX3 and RAP2C/FRMD7 at three loci and showed that at each locus, associated variants were located within binding sites for progesterone receptors. There were strong genetic correlations with birth weight, gestational duration and uterine fibroids. Bleeding in early pregnancy yielded no genome-wide association signals but showed strong genetic correlation with various human traits, suggesting a potentially complex, polygenic etiology. Our results suggest that PPH is related to progesterone signaling dysregulation, whereas early bleeding is a complex trait associated with underlying health and possibly socioeconomic status and may include genetic factors that have not yet been identified.",
+      "authors": "[\"Westergaard David\", \"Steinthorsdottir Valgerdur\", \"Stefansdottir Lilja\", \"Rohde Palle Duun\", \"Wu Xiaoping\", \"Geller Frank\", \"Tyrmi Jaakko\", \"Havulinna Aki S\", \"Solé-Navais Pol\", \"Flatley Christopher\", \"Ostrowski Sisse Rye\", \"Pedersen Ole Birger\", \"Erikstrup Christian\", \"Sørensen Erik\", \"Mikkelsen Christina\", \"Bruun Mie Topholm\", \"Aagaard Jensen Bitten\", \"Brodersen Thorsten\", \"Ullum Henrik\", \"Magnus Per\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2024-07-22",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.217696",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40173244",
+      "title": "The inflammatory and genetic mechanisms underlying the cumulative effect of co-occurring pain conditions on depression.",
+      "abstract": "Chronic pain conditions frequently coexist and share common genetic vulnerabilities. Despite evidence showing associations between pain and depression, the additive effect of co-occurring pain conditions on depression risk and the underlying mechanisms remain unclear. Leveraging data from 431,038 UK Biobank participants with 14-year follow-up, we found a significantly increased risk of depression incidence in individuals reporting pain, irrespective of body site or duration (acute or chronic), compared with pain-free individuals. The depression risk increased with the number of co-occurring pain sites. Mendelian randomization supported potential causal inference. We constructed a composite pain score by combining individual effects of acute or chronic pain conditions across eight body sites in a weighted manner. We found that depression risks increased monotonically in parallel with composite pain scores. Moreover, some inflammatory markers, including C-reactive protein, partially mediated the association between composite pain scores and depression risk. Considering the high prevalence of comorbid depression and pain, pain screening may help identify high-risk individuals for depression.",
+      "authors": "[\"Jiang Rongtao\", \"Geha Paul\", \"Rosenblatt Matthew\", \"Wang Yunhe\", \"Fu Zening\", \"Foster Maya\", \"Dai Wei\", \"Calhoun Vince D\", \"Sui Jing\", \"Spann Marisa N\", \"Scheinost Dustin\"]",
+      "journal": "Science advances",
+      "publication_date": "2025-04-02",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.218208",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41044249",
+      "title": "A genetic map of human metabolism across the allele frequency spectrum.",
+      "abstract": "Genetic studies of human metabolism have been limited in scale and allelic breadth. Here we provide a data-driven map of the genetic regulation of circulating small molecules and lipoprotein characteristics (249 traits) measured using proton nuclear magnetic resonance spectroscopy across the allele frequency spectrum in ~450,000 individuals. Trans-ancestral meta-analyses identify 29,824 locus-metabolite associations mapping to 753 regions with effects largely consistent between men and women and large ancestral groups represented in UK Biobank. We observe and classify extreme genetic pleiotropy, identify regulators of lipid metabolism, and assign effector genes at >100 loci through rare-to-common allelic series. We propose roles for genes less established in metabolic control (for example, SIDT2), genes characterized by phenotypic heterogeneity (for example, APOA1) and genes with specific disease relevance (for example, VEGFA). Our study demonstrates the value of broad, large-scale metabolomic phenotyping to identify and characterize regulators of human metabolism.",
+      "authors": "[\"Zoodsma Martijn\", \"Beuchel Carl\", \"Yasmeen Summaira\", \"Kohleick Leonhard\", \"Nepal Aakash\", \"Koprulu Mine\", \"Kronenberg Florian\", \"Mayr Manuel\", \"Williamson Alice\", \"Pietzner Maik\", \"Langenberg Claudia\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2025-10-03",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:24.218660",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 450000,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39747598",
+      "title": "Fine-mapping causal tissues and genes at disease-associated loci.",
+      "abstract": "Complex diseases often have distinct mechanisms spanning multiple tissues. We propose tissue-gene fine-mapping (TGFM), which infers the posterior inclusion probability (PIP) for each gene-tissue pair to mediate a disease locus by analyzing summary statistics and expression quantitative trait loci (eQTL) data; TGFM also assigns PIPs to non-mediated variants. TGFM accounts for co-regulation across genes and tissues and models uncertainty in cis-predicted expression models, enabling correct calibration. We applied TGFM to 45 UK Biobank diseases or traits using eQTL data from 38 Genotype-Tissue Expression (GTEx) tissues. TGFM identified an average of 147 PIP > 0.5 causal genetic elements per disease or trait, of which 11% were gene-tissue pairs. Causal gene-tissue pairs identified by TGFM reflected both known biology (for example, TPO-thyroid for hypothyroidism) and biologically plausible findings (for example, SLC20A2-artery aorta for diastolic blood pressure). Application of TGFM to single-cell eQTL data from nine cell types in peripheral blood mononuclear cells (PBMCs), analyzed jointly with GTEx tissues, identified 30 additional causal gene-PBMC cell type pairs.",
+      "authors": "[\"Strober Benjamin J\", \"Zhang Martin Jinye\", \"Amariuta Tiffany\", \"Rossen Jordan\", \"Price Alkes L\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2025-01-02",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.799894",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Calibration"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38959863",
+      "title": "Association of genetic risk, lifestyle, and their interaction with obesity and obesity-related morbidities.",
+      "abstract": "The extent to which modifiable lifestyle factors offset the determined genetic risk of obesity and obesity-related morbidities remains unknown. We explored how the interaction between genetic and lifestyle factors influences the risk of obesity and obesity-related morbidities. The polygenic score for body mass index was calculated to quantify inherited susceptibility to obesity in 338,645 UK Biobank European participants, and a composite lifestyle score was derived from five obesogenic factors (physical activity, diet, sedentary behavior, alcohol consumption, and sleep duration). We observed significant interaction between high genetic risk and poor lifestyles (p<sub>interaction</sub> < 0.001). Absolute differences in obesity risk between those who adhere to healthy lifestyles and those who do not had gradually expanded with an increase in polygenic score. Despite a high genetic risk for obesity, individuals can prevent obesity-related morbidities by adhering to a healthy lifestyle and maintaining a normal body weight. Healthy lifestyles should be promoted irrespective of genetic background.",
+      "authors": "[\"Kim Min Seo\", \"Shim Injeong\", \"Fahed Akl C\", \"Do Ron\", \"Park Woong-Yang\", \"Natarajan Pradeep\", \"Khera Amit V\", \"Won Hong-Hee\"]",
+      "journal": "Cell metabolism",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.800388",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 338645,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39271666",
+      "title": "NOTCH3 p.Arg1231Cys is markedly enriched in South Asians and associated with stroke.",
+      "abstract": "The genetic factors of stroke in South Asians are largely unexplored. Exome-wide sequencing and association analysis (ExWAS) in 75 K Pakistanis identified NM_000435.3(NOTCH3):c.3691 C > T, encoding the missense amino acid substitution p.Arg1231Cys, enriched in South Asians (alternate allele frequency = 0.58% compared to 0.019% in Western Europeans), and associated with subcortical hemorrhagic stroke [odds ratio (OR) = 3.39, 95% confidence interval (CI) = [2.26, 5.10], p = 3.87 × 10<sup>-9</sup>), and all strokes (OR [CI] = 2.30 [1.77, 3.01], p = 7.79 × 10<sup>-10</sup>). NOTCH3 p.Arg231Cys was strongly associated with white matter hyperintensity on MRI in United Kingdom Biobank (UKB) participants (effect [95% CI] in SD units = 1.1 [0.61, 1.5], p = 3.0 × 10<sup>-6</sup>). The variant is attributable for approximately 2.0% of hemorrhagic strokes and 1.1% of all strokes in South Asians. These findings highlight the value of diversity in genetic studies and have major implications for genomic medicine and therapeutic development in South Asian populations.",
+      "authors": "[\"Rodriguez-Flores Juan Lorenzo\", \"Khalid Shareef\", \"Parikshak Neelroop\", \"Rasheed Asif\", \"Ye Bin\", \"Kapoor Manav\", \"Backman Joshua\", \"Sepehrband Farshid\", \"Gioia Silvio Alessandro Di\", \"Gelfman Sahar\", \"De Tanima\", \"Banerjee Nilanjana\", \"Sharma Deepika\", \"Martinez Hector\", \"Castaneda Sofia\", \"D'Ambrosio David\", \"Zhang Xingmin A\", \"Xun Pengcheng\", \"Tsai Ellen\", \"Tsai I-Chun\"]",
+      "journal": "Nature communications",
+      "publication_date": "2024-09-13",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.800920",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 75,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Medical Imaging"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39488213",
+      "title": "Plasma protein-based organ-specific aging and mortality models unveil diseases as accelerated aging of organismal systems.",
+      "abstract": "Aging is a complex process manifesting at molecular, cellular, organ, and organismal levels. It leads to functional decline, disease, and ultimately death, but the relationship between these fundamental biomedical features remains elusive. By applying elastic net regularization to plasma proteome data of over 50,000 human subjects in the UK Biobank and other cohorts, we report interpretable organ-specific and conventional aging models trained on chronological age, mortality, and longitudinal proteome data. These models predict organ/system-specific disease and indicate that men age faster than women in most organs. Accelerated organ aging leads to diseases in these organs, and specific diets, lifestyles, professions, and medications influence organ aging rates. We then identify proteins driving these associations with organ-specific aging. Our analyses reveal that age-related chronic diseases epitomize accelerated organ- and system-specific aging, modifiable through environmental factors, advocating for both universal whole-organism and personalized organ/system-specific anti-aging interventions.",
+      "authors": "[\"Goeminne Ludger J E\", \"Vladimirova Anastasiya\", \"Eames Alec\", \"Tyshkovskiy Alexander\", \"Argentieri M Austin\", \"Ying Kejun\", \"Moqri Mahdi\", \"Gladyshev Vadim N\"]",
+      "journal": "Cell metabolism",
+      "publication_date": "2024-11-01",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.801427",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "Elastic Net"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37563310",
+      "title": "Genetics of circulating inflammatory proteins identifies drivers of immune-mediated disease risk and therapeutic targets.",
+      "abstract": "Circulating proteins have important functions in inflammation and a broad range of diseases. To identify genetic influences on inflammation-related proteins, we conducted a genome-wide protein quantitative trait locus (pQTL) study of 91 plasma proteins measured using the Olink Target platform in 14,824 participants. We identified 180 pQTLs (59 cis, 121 trans). Integration of pQTL data with eQTL and disease genome-wide association studies provided insight into pathogenesis, implicating lymphotoxin-α in multiple sclerosis. Using Mendelian randomization (MR) to assess causality in disease etiology, we identified both shared and distinct effects of specific proteins across immune-mediated diseases, including directionally discordant effects of CD40 on risk of rheumatoid arthritis versus multiple sclerosis and inflammatory bowel disease. MR implicated CXCL5 in the etiology of ulcerative colitis (UC) and we show elevated gut CXCL5 transcript expression in patients with UC. These results identify targets of existing drugs and provide a powerful resource to facilitate future drug target prioritization.",
+      "authors": "[\"Zhao Jing Hua\", \"Stacey David\", \"Eriksson Niclas\", \"Macdonald-Dunlop Erin\", \"Hedman Åsa K\", \"Kalnapenkis Anette\", \"Enroth Stefan\", \"Cozzetto Domenico\", \"Digby-Bell Jonathan\", \"Marten Jonathan\", \"Folkersen Lasse\", \"Herder Christian\", \"Jonsson Lina\", \"Bergen Sarah E\", \"Gieger Christian\", \"Needham Elise J\", \"Surendran Praveen\", \"Paul Dirk S\", \"Polasek Ozren\", \"Thorand Barbara\"]",
+      "journal": "Nature immunology",
+      "publication_date": "2023-08-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.801963",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 14824,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40178977",
+      "title": "Sex differences in DNMT3A-mutant clonal hematopoiesis and the effects of estrogen.",
+      "abstract": "Blood cancers are generally more common in males, and the prevalence of most mutations that drive clonal hematopoiesis and myeloid malignancies is higher in males. In contrast, hematopoietic DNMT3A mutations are more common in females. Among ∼450,000 participants in the UK Biobank, the prevalence of DNMT3A mutations and copy-number abnormalities is higher in females than males. In a murine model, Dnmt3a-mutant hematopoietic stem cells (HSCs) from unperturbed female mice had increased stemness gene expression compared to male and wild-type (WT) mice. Estrogen regulates HSCs, and we found that Dnmt3a mutations maintain stemness in the setting of estrogen-induced proliferative stress. Dnmt3a-mutant myeloid cells outcompeted WT cells under chronic estrogen treatment, an effect that was dependent on cell-intrinsic estrogen receptor alpha activity. Our studies indicate that estrogen might contribute to the female predominance of DNMT3A-mutant clonal hematopoiesis.",
+      "authors": "[\"Stomper Julia\", \"Niroula Abhishek\", \"Belizaire Roger\", \"McConkey Marie\", \"Bandaru Tagore Sanketh\", \"Ebert Benjamin L\"]",
+      "journal": "Cell reports",
+      "publication_date": "2025-04-02",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.802418",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39972219",
+      "title": "Integrating the environmental and genetic architectures of aging and mortality.",
+      "abstract": "Both environmental exposures and genetics are known to play important roles in shaping human aging. Here we aimed to quantify the relative contributions of environment (referred to as the exposome) and genetics to aging and premature mortality. To systematically identify environmental exposures associated with aging in the UK Biobank, we first conducted an exposome-wide analysis of all-cause mortality (n = 492,567) and then assessed the associations of these exposures with a proteomic age clock (n = 45,441), identifying 25 independent exposures associated with mortality and proteomic aging. These exposures were also associated with incident age-related multimorbidity, aging biomarkers and major disease risk factors. Compared with information on age and sex, polygenic risk scores for 22 major diseases explained less than 2 percentage points of additional mortality variation, whereas the exposome explained an additional 17 percentage points. Polygenic risk explained a greater proportion of variation (10.3-26.2%) compared with the exposome for incidence of dementias and breast, prostate and colorectal cancers, whereas the exposome explained a greater proportion of variation (5.5-49.4%) compared with polygenic risk for incidence of diseases of the lung, heart and liver. Our findings provide a comprehensive map of the contributions of environment and genetics to mortality and incidence of common age-related diseases, suggesting that the exposome shapes distinct patterns of disease and mortality risk, irrespective of polygenic disease risk.",
+      "authors": "[\"Argentieri M Austin\", \"Amin Najaf\", \"Nevado-Holgado Alejo J\", \"Sproviero William\", \"Collister Jennifer A\", \"Keestra Sarai M\", \"Kuilman Midas M\", \"Ginos Bigina N R\", \"Ghanbari Mohsen\", \"Doherty Aiden\", \"Hunter David J\", \"Alvergne Alexandra\", \"van Duijn Cornelia M\"]",
+      "journal": "Nature medicine",
+      "publication_date": "2025-02-19",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.803064",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 492567,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "36669485",
+      "title": "Virus exposure and neurodegenerative disease risk across national biobanks.",
+      "abstract": "With recent findings connecting the Epstein-Barr virus to an increased risk of multiple sclerosis and growing concerns regarding the neurological impact of the coronavirus pandemic, we examined potential links between viral exposures and neurodegenerative disease risk. Using time series data from FinnGen for discovery and cross-sectional data from the UK Biobank for replication, we identified 45 viral exposures significantly associated with increased risk of neurodegenerative disease and replicated 22 of these associations. The largest effect association was between viral encephalitis exposure and Alzheimer's disease. Influenza with pneumonia was significantly associated with five of the six neurodegenerative diseases studied. We also replicated the Epstein-Barr/multiple sclerosis association. Some of these exposures were associated with an increased risk of neurodegeneration up to 15 years after infection. As vaccines are currently available for some of the associated viruses, vaccination may be a way to reduce some risk of neurodegenerative disease.",
+      "authors": "[\"Levine Kristin S\", \"Leonard Hampton L\", \"Blauwendraat Cornelis\", \"Iwaki Hirotaka\", \"Johnson Nicholas\", \"Bandres-Ciga Sara\", \"Ferrucci Luigi\", \"Faghri Faraz\", \"Singleton Andrew B\", \"Nalls Mike A\"]",
+      "journal": "Neuron",
+      "publication_date": "2023-01-19",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.803524",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38653246",
+      "title": "Loss of GPR75 protects against non-alcoholic fatty liver disease and body fat accumulation.",
+      "abstract": "Approximately 1 in 4 people worldwide have non-alcoholic fatty liver disease (NAFLD); however, there are currently no medications to treat this condition. This study investigated the role of adiposity-associated orphan G protein-coupled receptor 75 (GPR75) in liver lipid accumulation. We profiled Gpr75 expression and report that it is most abundant in the brain. Next, we generated the first single-cell-level analysis of Gpr75 and identified a subpopulation co-expressed with key appetite-regulating hypothalamic neurons. CRISPR-Cas9-deleted Gpr75 mice fed a palatable western diet high in fat adjusted caloric intake to remain in energy balance, thereby preventing NAFLD. Consistent with mouse results, analysis of whole-exome sequencing data from 428,719 individuals (UK Biobank) revealed that variants in GPR75 are associated with a reduced likelihood of hepatic steatosis. Here, we provide a significant advance in understanding of the expression and function of GPR75, demonstrating that it is a promising pharmaceutical target for NAFLD treatment.",
+      "authors": "[\"Leeson-Payne Alasdair\", \"Iyinikkel Jean\", \"Malcolm Cameron\", \"Lam Brian Y H\", \"Sommer Nadine\", \"Dowsett Georgina K C\", \"Martinez de Morentin Pablo B\", \"Thompson Dawn\", \"Mackenzie Alasdair\", \"Chianese Raffaella\", \"Kentistou Katherine\", \"Gardner Eugene J\", \"Perry John R B\", \"Grassmann Felix\", \"Speakman John R\", \"Rochford Justin J\", \"Yeo Giles S H\", \"Murray Fiona\", \"Heisler Lora K\"]",
+      "journal": "Cell metabolism",
+      "publication_date": "2024-04-22",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.804024",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 4,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Genomics/WGS"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39789286",
+      "title": "A scalable variational inference approach for increased mixed-model association power.",
+      "abstract": "The rapid growth of modern biobanks is creating new opportunities for large-scale genome-wide association studies (GWASs) and the analysis of complex traits. However, performing GWASs on millions of samples often leads to trade-offs between computational efficiency and statistical power, reducing the benefits of large-scale data collection efforts. We developed Quickdraws, a method that increases association power in quantitative and binary traits without sacrificing computational efficiency, leveraging a spike-and-slab prior on variant effects, stochastic variational inference and graphics processing unit acceleration. We applied Quickdraws to 79 quantitative and 50 binary traits in 405,088 UK Biobank samples, identifying 4.97% and 3.25% more associations than REGENIE and 22.71% and 7.07% more than FastGWA. Quickdraws had costs comparable to REGENIE, FastGWA and SAIGE on the UK Biobank Research Analysis Platform service, while being substantially faster than BOLT-LMM. These results highlight the promise of leveraging machine learning techniques for scalable GWASs without sacrificing power or robustness.",
+      "authors": "[\"Loya Hrushikesh\", \"Kalantzis Georgios\", \"Cooper Fergus\", \"Palamara Pier Francesco\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2025-01-09",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.804665",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 405088,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "36626356",
+      "title": "Healthy lifestyle behaviors, mediating biomarkers, and risk of microvascular complications among individuals with type 2 diabetes: A cohort study.",
+      "abstract": "The influence of overall lifestyle behaviors on diabetic microvascular complications remains unknown. In addition, the potential mediating biomarkers underlying the association is unclear. This study aimed to examine the associations of the combined lifestyle factors with risks of total and individual microvascular complications among patients with type 2 diabetes (T2D) and to explore the potential mediation effects of metabolic biomarkers. This retrospective cohort study included 15,104 patients with T2D free of macro- and microvascular complications at baseline (2006 to 2010) from the UK Biobank. Healthy lifestyle behaviors included noncurrent smoking, recommended waist circumference, regular physical activity, healthy diet, and moderate alcohol drinking. Outcomes were ascertained using electronic health records. Over a median of 8.1 years of follow-up, 1,296 cases of the composite microvascular complications occurred, including 558 diabetic retinopathy, 625 diabetic kidney disease, and 315 diabetic neuropathy, with some patients having 2 or 3 microvascular complications simultaneously. After multivariable adjustment for sociodemographic characteristics, history of hypertension, glycemic control, and medication histories, the hazard ratios (95% confidence intervals (CIs)) for the participants adhering 4 to 5 low-risk lifestyle behaviors versus 0 to 1 were 0.65 (0.46, 0.91) for diabetic retinopathy, 0.43 (0.30, 0.61) for diabetic kidney disease, 0.46 (0.29, 0.74) for diabetic neuropathy, and 0.54 (0.43, 0.68) for the composite outcome (all Ps-trend ≤0.01). Further, the population-attributable fraction (95% CIs) of diabetic microvascular complications for poor adherence to the overall healthy lifestyle (<4 low-risk factors) ranged from 25.3% (10.0%, 39.4%) to 39.0% (17.7%, 56.8%). In addition, albumin, HDL-C, triglycerides, apolipoprotein A, C-reactive protein, and HbA1c collectively explained 23.20% (12.70%, 38.50%) of the associations between overall lifestyle behaviors and total diabetic microvascular complications. The key limitation of the current analysis was the potential underreporting of microvascular complications because the cases were identified via electronic health records. Adherence to overall healthy lifestyle behaviors was associated with a significantly lower risk of microvascular complications in patients with T2D, and the favorable associations were partially mediated through improving biomarkers of glycemic control, systemic inflammation, liver function, and lipid profile.",
+      "authors": "[\"Geng Tingting\", \"Zhu Kai\", \"Lu Qi\", \"Wan Zhenzhen\", \"Chen Xue\", \"Liu Liegang\", \"Pan An\", \"Liu Gang\"]",
+      "journal": "PLoS medicine",
+      "publication_date": "2023-01-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.805768",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 15104,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "EHR"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40065165",
+      "title": "An enhanced framework for local genetic correlation analysis.",
+      "abstract": "Genetic correlation is a key parameter in the joint genetic model of complex traits, but it is usually estimated on a global genomic scale. Understanding local genetic correlations provides more detailed insight into the shared genetic architecture of complex traits. However, a state-of-the-art tool for local genetic correlation analysis, LAVA, is prone to false inference. Here we extend the high-definition likelihood (HDL) method to a local version, HDL-L, which performs genetic correlation analysis in small, approximately independent linkage disequilibrium blocks. HDL-L allows a more granular estimation of genetic variances and covariances. Simulations show that HDL-L offers more consistent heritability estimates and more efficient genetic correlation estimates compared with LAVA. HDL-L demonstrated robust performance across a wide range of simulations conducted under varying parameter settings. In the analysis of 30 phenotypes from the UK Biobank, HDL-L identified 109 significant local genetic correlations and showed a notable computational advantage. HDL-L proves to be a powerful tool for uncovering the detailed genetic landscape that underlies complex human traits, offering both accuracy and computational efficiency.",
+      "authors": "[\"Li Yuying\", \"Pawitan Yudi\", \"Shen Xia\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2025-03-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.806263",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Accuracy"
+        ],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38750076",
+      "title": "Identifying proteomic risk factors for cancer using prospective and exome analyses of 1463 circulating proteins and risk of 19 cancers in the UK Biobank.",
+      "abstract": "The availability of protein measurements and whole exome sequence data in the UK Biobank enables investigation of potential observational and genetic protein-cancer risk associations. We investigated associations of 1463 plasma proteins with incidence of 19 cancers and 9 cancer subsites in UK Biobank participants (average 12 years follow-up). Emerging protein-cancer associations were further explored using two genetic approaches, cis-pQTL and exome-wide protein genetic scores (exGS). We identify 618 protein-cancer associations, of which 107 persist for cases diagnosed more than seven years after blood draw, 29 of 618 were associated in genetic analyses, and four had support from long time-to-diagnosis ( > 7 years) and both cis-pQTL and exGS analyses: CD74 and TNFRSF1B with NHL, ADAM8 with leukemia, and SFTPA2 with lung cancer. We present multiple blood protein-cancer risk associations, including many detectable more than seven years before cancer diagnosis and that had concordant evidence from genetic analyses, suggesting a possible role in cancer development.",
+      "authors": "[\"Papier Keren\", \"Atkins Joshua R\", \"Tong Tammy Y N\", \"Gaitskell Kezia\", \"Desai Trishna\", \"Ogamba Chibuzor F\", \"Parsaeian Mahboubeh\", \"Reeves Gillian K\", \"Mills Ian G\", \"Key Tim J\", \"Smith-Byrne Karl\", \"Travis Ruth C\"]",
+      "journal": "Nature communications",
+      "publication_date": "2024-05-15",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.806804",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38862855",
+      "title": "Body mass index stratification optimizes polygenic prediction of type 2 diabetes in cross-biobank analyses.",
+      "abstract": "Type 2 diabetes (T2D) shows heterogeneous body mass index (BMI) sensitivity. Here, we performed stratification based on BMI to optimize predictions for BMI-related diseases. We obtained BMI-stratified datasets using data from more than 195,000 individuals (n<sub>T2D</sub> = 55,284) from BioBank Japan (BBJ) and UK Biobank. T2D heritability in the low-BMI group was greater than that in the high-BMI group. Polygenic predictions of T2D toward low-BMI targets had pseudo-R<sup>2</sup> values that were more than 22% higher than BMI-unstratified targets. Polygenic risk scores (PRSs) from low-BMI discovery outperformed PRSs from high BMI, while PRSs from BMI-unstratified discovery performed best. Pathway-specific PRSs demonstrated the biological contributions of pathogenic pathways. Low-BMI T2D cases showed higher rates of neuropathy and retinopathy. Combining BMI stratification and a method integrating cross-population effects, T2D predictions showed greater than 37% improvements over unstratified-matched-population prediction. We replicated findings in the Tohoku Medical Megabank (n = 26,000) and the second BBJ cohort (n = 33,096). Our findings suggest that target stratification based on existing traits can improve the polygenic prediction of heterogeneous diseases.",
+      "authors": "[\"Ojima Takafumi\", \"Namba Shinichi\", \"Suzuki Ken\", \"Yamamoto Kenichi\", \"Sonehara Kyuto\", \"Narita Akira\", \"Kamatani Yoichiro\", \"Tamiya Gen\", \"Yamamoto Masayuki\", \"Yamauchi Toshimasa\", \"Kadowaki Takashi\", \"Okada Yukinori\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2024-06-11",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.807419",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": 195000,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37322117",
+      "title": "Effects of urban living environments on mental health in adults.",
+      "abstract": "Urban-living individuals are exposed to many environmental factors that may combine and interact to influence mental health. While individual factors of an urban environment have been investigated in isolation, no attempt has been made to model how complex, real-life exposure to living in the city relates to brain and mental health, and how this is moderated by genetic factors. Using the data of 156,075 participants from the UK Biobank, we carried out sparse canonical correlation analyses to investigate the relationships between urban environments and psychiatric symptoms. We found an environmental profile of social deprivation, air pollution, street network and urban land-use density that was positively correlated with an affective symptom group (r = 0.22, P<sub>perm</sub> < 0.001), mediated by brain volume differences consistent with reward processing, and moderated by genes enriched for stress response, including CRHR1, explaining 2.01% of the variance in brain volume differences. Protective factors such as greenness and generous destination accessibility were negatively correlated with an anxiety symptom group (r = 0.10, P<sub>perm</sub> < 0.001), mediated by brain regions necessary for emotion regulation and moderated by EXD3, explaining 1.65% of the variance. The third urban environmental profile was correlated with an emotional instability symptom group (r = 0.03, P<sub>perm</sub> < 0.001). Our findings suggest that different environmental profiles of urban living may influence specific psychiatric symptom groups through distinct neurobiological pathways.",
+      "authors": "[\"Xu Jiayuan\", \"Liu Nana\", \"Polemiti Elli\", \"Garcia-Mondragon Liliana\", \"Tang Jie\", \"Liu Xiaoxuan\", \"Lett Tristram\", \"Yu Le\", \"Nöthen Markus M\", \"Feng Jianfeng\", \"Yu Chunshui\", \"Marquand Andre\", \"Schumann Gunter\"]",
+      "journal": "Nature medicine",
+      "publication_date": "2023-06-15",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.808099",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39167384",
+      "title": "Inflammatory Biomarkers and Risk of Psychiatric Disorders.",
+      "abstract": "Individuals with psychiatric disorders have been reported to have elevated levels of inflammatory biomarkers, and prospective evidence is limited regarding the association between inflammatory biomarkers and subsequent psychiatric disorders risk. To assess the associations between inflammation biomarkers and subsequent psychiatric disorders risk. This was a prospective cohort study including individuals from the Swedish Apolipoprotein Mortality Risk (AMORIS) cohort, with no prior psychiatric diagnoses and having a measurement of at least 1 inflammatory biomarker. Data from the UK Biobank were used for validation. Longitudinal trajectories of studied biomarkers were visualized before diagnosis of psychiatric disorders in the AMORIS cohort via a nested case-control study. In addition, genetic correlation and mendelian randomization (MR) analyses were conducted to determine the genetic overlap and causality of the studied associations using publicly available GWAS summary statistics. Inflammatory biomarkers, eg, leukocytes, haptoglobin, immunoglobulin G (IgG), C-reactive protein (CRP), platelets, or albumin. Any psychiatric disorder or specific psychiatric disorder (ie, depression, anxiety, and stress-related disorders) was identified through the International Statistical Classification of Diseases, Eighth, Ninth, and Tenth Revision codes. Among the 585 279 individuals (mean [SD] age, 45.5 [14.9] years; 306 784 male [52.4%]) in the AMORIS cohort, individuals with a higher than median level of leukocytes (hazard ratio [HR], 1.11; 95% CI, 1.09-1.14), haptoglobin (HR, 1.13; 95% CI, 1.12-1.14), or CRP (HR, 1.02; 95% CI, 1.00-1.04) had an elevated associated risk of any psychiatric disorders. In contrast, we found an inverse association for IgG level (HR, 0.92; 95% CI, 0.89-0.94). The estimates were comparable for depression, anxiety, and stress-related disorders, specifically, and these results were largely validated in the UK Biobank (n = 485 620). Analyses of trajectories revealed that individuals with psychiatric disorders had higher levels of leukocytes and haptoglobin and a lower level of IgG than their controls up to 30 years before the diagnosis. The MR analysis suggested a possible causal relationship between leukocytes and depression. In this cohort study, inflammatory biomarkers including leukocytes, haptoglobin, CRP, and IgG were associated with a subsequent risk of psychiatric disorders, and thus might be used for high-risk population identification. The possible causal link between leukocytes and depression supports the crucial role of inflammation in the development of psychiatric disorders.",
+      "authors": "[\"Zeng Yu\", \"Chourpiliadis Charilaos\", \"Hammar Niklas\", \"Seitz Christina\", \"Valdimarsdóttir Unnur A\", \"Fang Fang\", \"Song Huan\", \"Wei Dang\"]",
+      "journal": "JAMA psychiatry",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.809109",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 485,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40476824",
+      "title": "Misdirected yet intact TREX1 exonuclease activity causes human cerebral and systemic small vessel disease.",
+      "abstract": "Retinal vasculopathy with cerebral leukoencephalopathy and systemic manifestations (RVCL-S) is an incurable microvascular disease caused by C-terminus truncation of the TREX1 exonuclease. There is a pressing need to understand disease mechanisms and identify therapeutic targets. We evaluated TREX1 sequencing data from 469 229 UK Biobank participants together with RVCL-S-related microvascular clinical and imaging outcomes. We show that mono-allelic truncating mutations in TREX1 require intact nuclease activity in order to cause endothelial disease. Differential proteomics identifies loss of interaction with endoplasmic reticulum insertion proteins such as Guided Entry of Tail-Anchored Proteins Factor 3 as a major consequence of pathogenic TREX1 truncation, and this altered trafficking results in the unregulated presence of enzymatically active TREX1 in the nucleus. In endothelial cells with a patient mutation, mislocalized yet enzymatically active TREX1 causes accumulation of a spectrum of DNA damage. These pathological changes can be rescued by inhibiting exonuclease activity. In summary, our data implicate exonuclease-dependent DNA damage in endothelial cells as a key therapeutic target in the pathogenesis of RVCL-S.",
+      "authors": "[\"McGlasson Sarah\", \"Reid Katy\", \"Klingseisen Anna\", \"Rioux Bastien\", \"Chauvin Samuel\", \"Miner Cathrine A\", \"Holley Joe\", \"Forbes Deborah\", \"Geary Bethany\", \"Kimber Jeffrey\", \"Wood Katrina\", \"Roufosse Candice\", \"Smith Colin\", \"Kavanagh David\", \"Miner Jonathan\", \"Hunt David P J\"]",
+      "journal": "Brain : a journal of neurology",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.809651",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Proteomics"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "40682810",
+      "title": "Neurodegenerative disease in C9orf72 repeat expansion carriers: population risk and effect of UNC13A.",
+      "abstract": "The C9orf72 hexanucleotide repeat expansion (HRE) is the most common monogenetic cause of amyotrophic lateral sclerosis (ALS) and frontotemporal dementia (FTD). Neurodegenerative disease incidence in C9orf72 HRE carriers has been studied using cohorts from disease-affected families or by extrapolating from population disease incidence, potentially introducing bias. Age-specific cumulative incidence of ALS and dementia was estimated using Kaplan-Meier and competing risk models in C9orf72 HRE carriers compared to matched controls in UK Biobank. Risk modification by UNC13A genotype was examined. Of 490 331 individuals with valid genetic data, 701 had >100 repeats in C9orf72 [median age 55 (interquartile range 48-62), follow-up 13.4 years (12.3-14.1)]. The cumulative incidence of ALS or dementia was 66% (95% confidence interval 57%-73%) by age 80 in C9orf72 HRE carriers versus 5.8% (4.5%-7.0%) in controls, or 58% (50%-64%) versus 5.1% (4.1%-6.4%), accounting for the competing risk of other-cause mortality. Forty-one per cent of dementia incidence accrued between age 75-80. C-allele homozygosity at rs12608932 in UNC13A increased ALS or dementia risk in C9orf72 HRE carriers [hazard ratio 1.81 (1.18-2.78)]. C9orf72 HRE disease was incompletely penetrant in this population-based cohort, with risk modified by UNC13A genotype. This has implications for counselling at-risk individuals and modelling expected phenoconversion for prevention trials.",
+      "authors": "[\"Gao Jiali\", \"Douglas Andrew G L\", \"Chalitsios Christos V\", \"Scaber Jakub\", \"Talbot Kevin\", \"Turner Martin R\", \"Thompson Alexander G\"]",
+      "journal": "Brain : a journal of neurology",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.810311",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 331,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37697102",
+      "title": "Mutation rates and fitness consequences of mosaic chromosomal alterations in blood.",
+      "abstract": "Mosaic chromosomal alterations (mCAs) are common in cancers and can arise decades before diagnosis. A quantitative understanding of the rate at which these events occur, and their functional consequences, could improve cancer risk prediction and our understanding of somatic evolution. Using mCA clone size estimates from the blood of approximately 500,000 UK Biobank participants, we estimate mutation rates and fitness consequences of acquired gain, loss and copy-neutral loss of heterozygosity events. Most mCAs have moderate to high fitness effects but occur at a low rate, being more than tenfold less common than equivalently fit single-nucleotide variants. Notable exceptions are mosaic loss of X and Y, which we estimate have roughly 1,000-fold higher mutation rates than autosomal mCAs. Although the way in which most mCAs increase in prevalence with age is consistent with constant growth rates, some mCAs exhibit different behavior, suggesting that their fitness may depend on inherited variants, extrinsic factors or distributions of fitness effects.",
+      "authors": "[\"Watson Caroline J\", \"Blundell Jamie R\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2023-09-11",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.810798",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": "10-fold CV"
+      }
+    },
+    {
+      "pmid": "36723924",
+      "title": "Long-term Exposure to Multiple Ambient Air Pollutants and Association With Incident Depression and Anxiety.",
+      "abstract": "Air pollution is increasingly recognized as an important environmental risk factor for mental health. However, epidemiologic evidence on long-term exposure to low levels of air pollutants with incident depression and anxiety is still very limited. To investigate the association of long-term joint exposure to multiple air pollutants with incident depression and anxiety. This prospective, population-based cohort study used data from the UK Biobank. The participants were recruited between March 13, 2006, and October 1, 2010, and included individuals who had never been diagnosed with depression or anxiety at baseline and had full information on exposure and covariates. Data were analyzed from May 1 to October 10, 2022. Annual mean air pollution concentrations of particulate matter (PM) with aerodynamic diameter of 2.5 μm or less (PM2.5) and PM with aerodynamic diameter between 2.5 μm and 10 μm (PM2.5-10). Nitrogen dioxide (NO2) and nitric oxide (NO) were estimated for each participant's residential address using the land use regression model, and joint exposure to air pollution reflected by air pollution score was calculated by principal components analysis. Incidence of diagnosed depression (F32-F33) and anxiety (F40-F48) were ascertained with International Statistical Classification of Diseases and Related Health Problems, Tenth Revision codes. During a median (IQR) follow-up of 10.9 (10.1-11.6) years, among 389 185 participants (mean [SD] age, 56.7 [8.1] years, 205 855 female individuals [52.9%]), a total of 13 131 and 15 835 patients were diagnosed with depression and anxiety, respectively. The median (IQR) concentration of pollutants was as follows: PM2.5, 9.9 (9.3-10.6) μg/m3; PM2.5-10, 6.1 (5.8-6.6) μg/m3; NO2, 26.0 (21.3-31.1) μg/m3; and NO, 15.9 (11.6-20.6) μg/m3. Long-term estimated exposure to multiple air pollutants was associated with increased risk of depression and anxiety, and the exposure-response curves were nonlinear, with steeper slopes at lower concentrations and plateauing trends at higher exposure. The hazard ratios (HRs) and 95% CIs for depression and anxiety were 1.16 (95% CI, 1.09-1.23; P < .001) and 1.11 (95% CI, 1.05-1.17; P < .001) in the highest quartile compared with the lowest quartile of air pollution score, respectively. Similar trends were shown for PM2.5, NO2, and NO. Subgroup analysis showed the association between PM2.5 and anxiety tended to be higher in male individuals than in female individuals (quartile 4: male individuals, 1.18; 95% CI, 1.08-1.29; female individuals, 1.07; 95% CI, 1.00-1.14; P = .009). Study results suggest that estimates of long-term exposure to multiple air pollutants was associated with increased risk of depression and anxiety. The nonlinear associations may have important implications for policy making in air pollution control. Reductions in joint exposure to multiple air pollutants may alleviate the disease burden of depression and anxiety.",
+      "authors": "[\"Yang Teng\", \"Wang Jiawei\", \"Huang Jing\", \"Kelly Frank J\", \"Li Guoxing\"]",
+      "journal": "JAMA psychiatry",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:26.811987",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 2,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41102563",
+      "title": "Obesity due to MC4R deficiency is associated with reduced cholesterol, triglycerides and cardiovascular disease risk.",
+      "abstract": "Obesity causes dyslipidemia and is a major risk factor for cardiovascular disease. However, the mechanisms coupling weight gain and lipid metabolism are poorly understood. Brain melanocortin 4 receptors (MC4Rs) regulate body weight and lipid metabolism in mice, but the relevance of these findings to humans is unclear. Here we investigated lipid levels in men and women with obesity due to MC4R deficiency. Among 7,719 people from the Genetics of Obesity Study cohort, we identified 316 probands and 144 adult family members with loss-of-function (LoF) MC4R mutations. Adults with MC4R deficiency had lower levels of total and low-density lipoprotein (LDL)-cholesterol and triglycerides than 336,728 controls from the UK Biobank, after adjusting for adiposity. Carriers of LoF MC4R variants within the UK Biobank had lower lipid levels and a lower risk of cardiovascular disease, after accounting for body weight, compared to noncarriers. After a high-fat meal, the postprandial rise in triglyceride-rich lipoproteins and metabolomic markers of fatty acid oxidation were reduced in people with MC4R deficiency compared to controls, changes that favor triglyceride storage in adipose tissue. We concluded that central MC4Rs regulate lipid metabolism and cardiovascular disease risk in humans, highlighting potential therapeutic approaches for cardiovascular risk reduction.",
+      "authors": "[\"Zorn Stefanie\", \"Bounds Rebecca\", \"Williamson Alice\", \"Lawler Katherine\", \"Hanssen Ruth\", \"Keogh Julia\", \"Henning Elana\", \"Smith Miriam\", \"Fielding Barbara A\", \"Umpleby A Margot\", \"Yasmeen Summaira\", \"Marti-Solano Maria\", \"Langenberg Claudia\", \"Wabitsch Martin\", \"Collet Tinh-Hai\", \"Farooqi I Sadaf\"]",
+      "journal": "Nature medicine",
+      "publication_date": "2025-10-16",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:29.250744",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 4,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39746957",
+      "title": "Machine learning derived retinal pigment score from ophthalmic imaging shows ethnicity is not biology.",
+      "abstract": "Few metrics exist to describe phenotypic diversity within ophthalmic imaging datasets, with researchers often using ethnicity as a surrogate marker for biological variability. We derived a continuous, measured metric, the retinal pigment score (RPS), that quantifies the degree of pigmentation from a colour fundus photograph of the eye. RPS was validated using two large epidemiological studies with demographic and genetic data (UK Biobank and EPIC-Norfolk Study) and reproduced in a Tanzanian, an Australian, and a Chinese dataset. A genome-wide association study (GWAS) of RPS from UK Biobank identified 20 loci with known associations with skin, iris and hair pigmentation, of which eight were replicated in the EPIC-Norfolk cohort. There was a strong association between RPS and ethnicity, however, there was substantial overlap between each ethnicity and the respective distributions of RPS scores. RPS decouples traditional demographic variables from clinical imaging characteristics. RPS may serve as a useful metric to quantify the diversity of the training, validation, and testing datasets used in the development of AI algorithms to ensure adequate inclusion and explainability of the model performance, critical in evaluating all currently deployed AI models. The code to derive RPS is publicly available at: https://github.com/uw-biomedical-ml/retinal-pigmentation-score .",
+      "authors": "[\"Rajesh Anand E\", \"Olvera-Barrios Abraham\", \"Warwick Alasdair N\", \"Wu Yue\", \"Stuart Kelsey V\", \"Biradar Mahantesh I\", \"Ung Chuin Ying\", \"Khawaja Anthony P\", \"Luben Robert\", \"Foster Paul J\", \"Cleland Charles R\", \"Makupa William U\", \"Denniston Alastair K\", \"Burton Matthew J\", \"Bastawrous Andrew\", \"Keane Pearse A\", \"Chia Mark A\", \"Turner Angus W\", \"Lee Cecilia S\", \"Tufail Adnan\"]",
+      "journal": "Nature communications",
+      "publication_date": "2025-01-02",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:29.251334",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": "Independent test"
+      }
+    },
+    {
+      "pmid": "38811690",
+      "title": "Diffusion imaging genomics provides novel insight into early mechanisms of cerebral small vessel disease.",
+      "abstract": "Cerebral small vessel disease (cSVD) is a leading cause of stroke and dementia. Genetic risk loci for white matter hyperintensities (WMH), the most common MRI-marker of cSVD in older age, were recently shown to be significantly associated with white matter (WM) microstructure on diffusion tensor imaging (signal-based) in young adults. To provide new insights into these early changes in WM microstructure and their relation with cSVD, we sought to explore the genetic underpinnings of cutting-edge tissue-based diffusion imaging markers across the adult lifespan. We conducted a genome-wide association study of neurite orientation dispersion and density imaging (NODDI) markers in young adults (i-Share study: N = 1 758, (mean[range]) 22.1[18-35] years), with follow-up in young middle-aged (Rhineland Study: N = 714, 35.2[30-40] years) and late middle-aged to older individuals (UK Biobank: N = 33 224, 64.3[45-82] years). We identified 21 loci associated with NODDI markers across brain regions in young adults. The most robust association, replicated in both follow-up cohorts, was with Neurite Density Index (NDI) at chr5q14.3, a known WMH locus in VCAN. Two additional loci were replicated in UK Biobank, at chr17q21.2 with NDI, and chr19q13.12 with Orientation Dispersion Index (ODI). Transcriptome-wide association studies showed associations of STAT3 expression in arterial and adipose tissue (chr17q21.2) with NDI, and of several genes at chr19q13.12 with ODI. Genetic susceptibility to larger WMH volume, but not to vascular risk factors, was significantly associated with decreased NDI in young adults, especially in regions known to harbor WMH in older age. Individually, seven of 25 known WMH risk loci were associated with NDI in young adults. In conclusion, we identified multiple novel genetic risk loci associated with NODDI markers, particularly NDI, in early adulthood. These point to possible early-life mechanisms underlying cSVD and to processes involving remyelination, neurodevelopment and neurodegeneration, with a potential for novel approaches to prevention.",
+      "authors": "[\"Le Grand Quentin\", \"Tsuchida Ami\", \"Koch Alexandra\", \"Imtiaz Mohammed-Aslam\", \"Aziz N Ahmad\", \"Vigneron Chloé\", \"Zago Laure\", \"Lathrop Mark\", \"Dubrac Alexandre\", \"Couffinhal Thierry\", \"Crivello Fabrice\", \"Matthews Paul M\", \"Mishra Aniket\", \"Breteler Monique M B\", \"Tzourio Christophe\", \"Debette Stéphanie\"]",
+      "journal": "Molecular psychiatry",
+      "publication_date": "2024-05-29",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:29.252209",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 1,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Medical Imaging"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "37950632",
+      "title": "Neutrophil counts and cardiovascular disease.",
+      "abstract": "Anti-inflammatory trials have shown considerable benefits for cardiovascular disease. High neutrophil counts, an easily accessible inflammation biomarker, are associated with atherosclerosis in experimental studies. This study aimed to investigate the associations between neutrophil counts and risk of nine cardiovascular endpoints using observational and genetic approaches. Observational studies were conducted in the Copenhagen General Population Study (n = 101 730). Genetic studies were firstly performed using one-sample Mendelian randomization (MR) with individual-level data from the UK Biobank (n = 365 913); secondly, two-sample MR analyses were performed using summary-level data from the Blood Cell Consortium (n = 563 085). Outcomes included ischaemic heart disease, myocardial infarction, peripheral arterial disease, ischaemic cerebrovascular disease, ischaemic stroke, vascular-related dementia, vascular dementia, heart failure, and atrial fibrillation. Observational analyses showed associations between high neutrophil counts with high risks of all outcomes. In the UK Biobank, odds ratios (95% confidence intervals) per 1-SD higher genetically predicted neutrophil counts were 1.15 (1.08, 1.21) for ischaemic heart disease, 1.22 (1.12, 1.34) for myocardial infarction, and 1.19 (1.04, 1.36) for peripheral arterial disease; similar results were observed in men and women separately. In two-sample MR, corresponding estimates were 1.14 (1.05, 1.23) for ischaemic heart disease and 1.11 (1.02, 1.20) for myocardial infarction; multiple sensitivity analyses showed consistent results. No robust associations in two-sample MR analyses were found for other types of leucocytes. Observational and genetically determined high neutrophil counts were associated with atherosclerotic cardiovascular disease, supporting that high blood neutrophil counts is a causal risk factor for atherosclerotic cardiovascular disease.",
+      "authors": "[\"Luo Jiao\", \"Thomassen Jesper Qvist\", \"Nordestgaard Børge G\", \"Tybjærg-Hansen Anne\", \"Frikke-Schmidt Ruth\"]",
+      "journal": "European heart journal",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:29.252939",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [
+          "Recall"
+        ],
+        "sample_size": 101,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38600383",
+      "title": "Sex differences orchestrated by androgens at single-cell resolution.",
+      "abstract": "Sex differences in mammalian complex traits are prevalent and are intimately associated with androgens<sup>1-7</sup>. However, a molecular and cellular profile of sex differences and their modulation by androgens is still lacking. Here we constructed a high-dimensional single-cell transcriptomic atlas comprising over 2.3 million cells from 17 tissues in Mus musculus and explored the effects of sex and androgens on the molecular programs and cellular populations. In particular, we found that sex-biased immune gene expression and immune cell populations, such as group 2 innate lymphoid cells, were modulated by androgens. Integration with the UK Biobank dataset revealed potential cellular targets and risk gene enrichment in antigen presentation for sex-biased diseases. This study lays the groundwork for understanding the sex differences orchestrated by androgens and provides important evidence for targeting the androgen pathway as a broad therapeutic strategy for sex-biased diseases.",
+      "authors": "[\"Li Fei\", \"Xing Xudong\", \"Jin Qiqi\", \"Wang Xiang-Ming\", \"Dai Pengfei\", \"Han Ming\", \"Shi Huili\", \"Zhang Ze\", \"Shao Xianlong\", \"Peng Yunyi\", \"Zhu Yiqin\", \"Xu Jiayi\", \"Li Dan\", \"Chen Yu\", \"Wu Wei\", \"Wang Qiao\", \"Yu Chen\", \"Chen Luonan\", \"Bai Fan\", \"Gao Dong\"]",
+      "journal": "Nature",
+      "publication_date": "2024-04-10",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:29.253383",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [
+          "Bulk RNA-seq"
+        ],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "39313615",
+      "title": "A phenome-wide association study of methylated GC-rich repeats identifies a GCC repeat expansion in AFF3 associated with intellectual disability.",
+      "abstract": "GC-rich tandem repeat expansions (TREs) are often associated with DNA methylation, gene silencing and folate-sensitive fragile sites, and underlie several congenital and late-onset disorders. Through a combination of DNA-methylation profiling and tandem repeat genotyping, we identified 24 methylated TREs and investigated their effects on human traits using phenome-wide association studies in 168,641 individuals from the UK Biobank, identifying 156 significant TRE-trait associations involving 17 different TREs. Of these, a GCC expansion in the promoter of AFF3 was associated with a 2.4-fold reduced probability of completing secondary education, an effect size comparable to several recurrent pathogenic microdeletions. In a cohort of 6,371 probands with neurodevelopmental problems of suspected genetic etiology, we observed a significant enrichment of AFF3 expansions compared with controls. With a population prevalence that is at least fivefold higher than the TRE that causes fragile X syndrome, AFF3 expansions represent a major cause of neurodevelopmental delay.",
+      "authors": "[\"Jadhav Bharati\", \"Garg Paras\", \"van Vugt Joke J F A\", \"Ibanez Kristina\", \"Gagliardi Delia\", \"Lee William\", \"Shadrina Mariya\", \"Mokveld Tom\", \"Dolzhenko Egor\", \"Martin-Trujillo Alejandro\", \"Gies Scott J\", \"Altman Gabrielle\", \"Rocca Clarissa\", \"Barbosa Mafalda\", \"Jain Miten\", \"Lahiri Nayana\", \"Lachlan Katherine\", \"Houlden Henry\", \"Paten Benedict\", \"Veldink Jan\"]",
+      "journal": "Nature genetics",
+      "publication_date": "2024-09-23",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:29.253857",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 168641,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": "5-fold CV"
+      }
+    },
+    {
+      "pmid": "39324695",
+      "title": "Plasma metabolomic signature of healthy lifestyle, structural brain reserve and risk of dementia.",
+      "abstract": "Although the association between healthy lifestyle and dementia risk has been documented, the relationship between a metabolic signature indicative of healthy lifestyle and dementia risk and the mediating role of structural brain impairment remain unknown. We retrieved 136 628 dementia-free participants from UK Biobank. Elastic net regression was used to obtain a metabolic signature that represented lifestyle behaviours. Cox proportional hazard models were fitted to explore the associations of lifestyle-associated metabolic signature with incident dementia. Causal associations between identified metabolites and dementia were investigated using Mendelian randomization. Mediation analysis was also conducted to uncover the potential mechanisms involving 19 imaging-derived phenotypes (brain volume, grey matter volume, white matter volume and regional grey matter volumes). During a follow-up of 12.55 years, 1783 incident cases of all-cause dementia were identified, including 725 cases of Alzheimer's dementia and 418 cases of vascular dementia. We identified 83 metabolites that could represent healthy lifestyle behaviours using elastic net regression. The metabolic signature was associated with a lower dementia risk, and for each standard deviation increment in metabolic signature, the hazard ratio was 0.89 [95% confidence interval (CI): 0.85, 0.93] for all-cause dementia, 0.95 (95% CI: 0.88, 1.03) for Alzheimer's dementia and 0.84 (95% CI: 0.77, 0.91) for vascular dementia. Mendelian randomization revealed potential causal associations between the identified metabolites and risk of dementia. In addition, the specific structural brain reserve, including the hippocampus, grey matter in the hippocampus, parahippocampal gyrus and middle temporal gyrus, were detected to mediate the effects of metabolic signature on dementia risk (mediated proportion ranging from 6.21% to 11.98%). The metabolic signature associated with a healthy lifestyle is inversely associated with dementia risk, and greater structural brain reserve plays an important role in mediating this relationship. These findings have significant implications for understanding the intricate connections between lifestyle, metabolism and brain health.",
+      "authors": "[\"Tian Fei\", \"Wang Yuhua\", \"Qian Zhengmin Min\", \"Ran Shanshan\", \"Zhang Zilong\", \"Wang Chongjian\", \"McMillin Stephen Edward\", \"Chavan Niraj R\", \"Lin Hualiang\"]",
+      "journal": "Brain : a journal of neurology",
+      "publication_date": null,
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:29.254751",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [
+          "Elastic Net"
+        ],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": null,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "36702127",
+      "title": "Significance tests for R<sup>2</sup> of out-of-sample prediction using polygenic scores.",
+      "abstract": "The coefficient of determination (R<sup>2</sup>) is a well-established measure to indicate the predictive ability of polygenic scores (PGSs). However, the sampling variance of R<sup>2</sup> is rarely considered so that 95% confidence intervals (CI) are not usually reported. Moreover, when comparisons are made between PGSs based on different discovery samples, the sampling covariance of R<sup>2</sup> is required to test the difference between them. Here, we show how to estimate the variance and covariance of R<sup>2</sup> values to assess the 95% CI and p value of the R<sup>2</sup> difference. We apply this approach to real data calculating PGSs in 28,880 European participants derived from UK Biobank (UKBB) and Biobank Japan (BBJ) GWAS summary statistics for cholesterol and BMI. We quantify the significantly higher predictive ability of UKBB PGSs compared to BBJ PGSs (p value 7.6e-31 for cholesterol and 1.4e-50 for BMI). A joint model of UKBB and BBJ PGSs significantly improves the predictive ability, compared to a model of UKBB PGS only (p value 3.5e-05 for cholesterol and 1.3e-28 for BMI). We also show that the predictive ability of regulatory SNPs is significantly enriched over non-regulatory SNPs for cholesterol (p value 8.9e-26 for UKBB and 3.8e-17 for BBJ). We suggest that the proposed approach (available in R package r2redux) should be used to test the statistical significance of difference between pairs of PGSs, which may help to draw a correct conclusion about the comparative predictive ability of PGSs.",
+      "authors": "[\"Momin Md Moksedul\", \"Lee Soohyun\", \"Wray Naomi R\", \"Lee S Hong\"]",
+      "journal": "American journal of human genetics",
+      "publication_date": "2023-01-25",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:29.255385",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 28880,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "38513668",
+      "title": "Biobank-scale inference of multi-individual identity by descent and gene conversion.",
+      "abstract": "We present a method for efficiently identifying clusters of identical-by-descent haplotypes in biobank-scale sequence data. Our multi-individual approach enables much more computationally efficient inference of identity by descent (IBD) than approaches that infer pairwise IBD segments and provides locus-specific IBD clusters rather than IBD segments. Our method's computation time, memory requirements, and output size scale linearly with the number of individuals in the dataset. We also present a method for using multi-individual IBD to detect alleles changed by gene conversion. Application of our methods to the autosomal sequence data for 125,361 White British individuals in the UK Biobank detects more than 9 million converted alleles. This is 2,900 times more alleles changed by gene conversion than were detected in a previous analysis of familial data. We estimate that more than 250,000 sequenced probands and a much larger number of additional genomes from multi-generational family members would be required to find a similar number of alleles changed by gene conversion using a family-based approach. Our IBD clustering method is implemented in the open-source ibd-cluster software package.",
+      "authors": "[\"Browning Sharon R\", \"Browning Brian L\"]",
+      "journal": "American journal of human genetics",
+      "publication_date": "2024-03-20",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:29.255880",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 9,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    },
+    {
+      "pmid": "41686892",
+      "title": "Healthy dietary patterns, longevity genes, and life expectancy: A prospective cohort study.",
+      "abstract": "Associations between healthy dietary patterns and life expectancy remain unclear. Here, we reported the prospective associations of five dietary patterns with mortality and life expectancy in 103,649 UK Biobank participants. Over a median follow-up period of 10.6 years, 4314 total deaths were documented. Alternate Healthy Eating Index-2010, Alternate Mediterranean Diet (AMED), healthful Plant-based Diet Index (hPDI), Dietary Approaches to Stop Hypertension, and Diabetes Risk Reduction Diet (DRRD) were associated with lower all-cause mortality and longer life expectancy, with DRRD showing slightly stronger associations than hPDI. Compared with the bottom quintile, achieving the top quintile of dietary scores was associated with 1.9 to 3.0 years of life gained at 45 years in men and 1.5 to 2.3 years in women. The life gained was longest in DRRD for males and AMED for females. The significant associations remained when accounting for genetic susceptibility. Our findings underscore the advantages of healthy dietary patterns in prolonging life expectancy, regardless of longevity genes.",
+      "authors": "[\"Lv Yanling\", \"Song Jing\", \"Ding Ding\", \"Luo Mengyun\", \"He Feng J\", \"Yuan Changzheng\", \"MacGregor Graham A\", \"Liu Liegang\", \"Chen Liangkai\"]",
+      "journal": "Science advances",
+      "publication_date": "2026-02-13",
+      "doi": null,
+      "keywords": "[]",
+      "search_query": "基于 UK Biobank 多组学 构建疾病因果调控网络假设 AND (\"2023/01/01\"[PDAT] : \"2026/12/31\"[PDAT])",
+      "search_date": "2026-04-14T04:18:29.256339",
+      "status": "pending",
+      "ds_elements": {
+        "ml_models": [],
+        "dl_architectures": [],
+        "feature_engineering": [],
+        "evaluation_metrics": [],
+        "sample_size": 103649,
+        "python_libs": [],
+        "r_libs": [],
+        "data_types": [],
+        "validation_method": null
+      }
+    }
+  ]
+}
