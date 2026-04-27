@@ -1,0 +1,255 @@
+{
+  "candidate": "frontier_only",
+  "task_id": "meta-harness-01f36961",
+  "task_name": "real-defense-stage-sample",
+  "payload": {
+    "hypothesis": {
+      "title": "基于因果推断与严格数据流管的预测模型构建方案 v1.1",
+      "details": "本方案旨在解决原 v1.0 版本中存在的严重数据泄露风险与内生性偏倚问题。通过引入有向无环图（DAG）进行因果结构定义，并实施严格的数据流管，确保所有统计变换（如PCA、标准化）仅基于训练集计算，从而保证模型的泛化性与因果解释力。",
+      "methodology": {
+        "technical_safeguards": [
+          "建立严格的数据流管：在Pipeline中明确划分 'Fit' 阶段与 'Transform' 阶段。确保 PCA、StandardScaler 等任何涉及全局统计量计算的变换器，仅在 Training Set 上调用 .fit() 方法，随后将学习到的参数（如均值、方差、主成分载荷）应用于 Validation Set 和 Test Set，严禁在验证前对全量数据进行预处理。",
+          "实施双重验证机制：除传统的 K-fold 交叉验证外，引入敏感性分析，通过置换检验验证特征与结果之间的因果稳定性，排除虚假相关性。"
+        ],
+        "validation_protocol": "采用 'Nested Cross-Validation'（嵌套交叉验证）策略。外层循环用于模型评估，内层循环用于超参数调优。确保在每一个 Fold 的训练子集内部独立进行特征选择与降维，彻底阻断测试集信息向训练集泄露的路径。",
+        "bias_control": "构建基于领域知识的因果图（DAG）。在模型训练前，利用 Do-Calculus 或后门准则识别并调整混杂变量，确保模型学习到的是 $P(Y|do(X))$ 而非 $P(Y|X)$，从而消除由遗漏变量或选择偏差导致的内生性偏倚。"
+      },
+      "version": "v1.1",
+      "patch_log": [
+        {
+          "attack_type": "数据穿越",
+          "patch_applied": "实施了严格的数据隔离策略，强制所有基于数据分布的统计量计算仅限于训练集，并使用 Pipeline 机制封装变换顺序，防止验证集信息泄露。",
+          "supporting_reference": "Reference: Ambroise, C., & McLachlan, G. J. (2002). Selection bias in gene extraction on the basis of microarray gene-expression data. PNAS."
+        },
+        {
+          "attack_type": "内生性偏倚",
+          "patch_applied": "引入因果推断框架，通过构建 DAG 显式建模变量间的因果关系，并使用因果调整算法控制混杂因子，避免模型拟合虚假相关。",
+          "supporting_reference": "Reference: Pearl, J. (2009). Causality: Models, Reasoning, and Inference. Cambridge University Press; PMID: 31601808 (Causal Inference in Statistics)"
+        }
+      ]
+    },
+    "fitness": {
+      "hybrid_fitness": 8.94357681274414,
+      "vector_novelty_score": 9.905961990356445,
+      "red_team_rigor_score": 7.5,
+      "physical_validation": {
+        "passed": true,
+        "details": {
+          "smiles_found": [],
+          "ukb_fields_found": [],
+          "compute_params_found": {}
+        },
+        "failure_reason": ""
+      },
+      "fused": false,
+      "fuse_reason": "",
+      "similarity": 0.5062534809112549,
+      "similarity_interpretation": "创新甜点区（恰到好处的创新度）",
+      "timestamp": "2026-04-20T01:21:11.988483"
+    },
+    "verified_ids": {
+      "pmids": [
+        "24762253"
+      ],
+      "arxiv_ids": [],
+      "dois": []
+    },
+    "domain": "心血管疾病",
+    "sources": [
+      "pubmed",
+      "semantic_scholar"
+    ],
+    "audit_context": {
+      "iterations": 6,
+      "rewrites": 0,
+      "patches": 1,
+      "score_history": [
+        8.399999999999999,
+        8.94357681274414
+      ],
+      "red_attack_types": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ]
+    },
+    "red_team_report": {
+      "critical_flaws": [
+        {
+          "category": "data_leakage",
+          "issue": "特征工程流程可能在训练/验证之间共享统计量，导致数据泄露风险。",
+          "suggestion": "将所有归一化、特征筛选和降维步骤封装在训练折内部的 Pipeline 中。"
+        }
+      ],
+      "severe_issues": [
+        {
+          "category": "causal_inference",
+          "issue": "当前方案对混杂路径的识别仍然不足，因果解释可能不稳健。",
+          "suggestion": "显式构建 DAG 并加入敏感性分析或工具变量验证。"
+        }
+      ],
+      "moderate_concerns": [
+        {
+          "category": "reproducibility",
+          "issue": "复现包与日志记录要求尚未完全写清。",
+          "suggestion": "补充可执行复现清单与审计日志导出。"
+        }
+      ],
+      "verdict": "major_revision",
+      "summary": "红方认为方案具备潜力，但仍需对数据泄露、因果识别和复现流程补强。"
+    },
+    "defense_report": {
+      "defense_passed": true,
+      "verdict": "conditional",
+      "committee_response": "委员会经过审议，认为蓝方在 V7.2 版本中针对 '数据泄露' 这一致命缺陷提出了令人信服的技术防范措施（严格的数据流管与 Fit/Transform 隔离），成功化解了最核心的危机。然而，对于 '因果推断' 中的混杂路径识别问题，目前的 '双重验证与敏感性分析' 仅能验证稳定性，无法完全解决 '识别不足' 的根本性缺陷。因此，方案在方法论上已达标，但在因果严谨性上仍需补强，故判定为 '有条件通过'。",
+      "final_verdict": "有条件通过：需补充因果图构建细节。",
+      "critical_issues": [
+        "因果图构建的先验知识依据不足",
+        "复现性日志的标准化格式尚未明确"
+      ],
+      "recommendations": [
+        "在正文中补充基于领域知识构建的DAG（有向无环图），明确标注已识别和未识别的混杂因子。",
+        "将 '敏感性分析' 扩展为 'E-value' 计算，以量化潜在未测量混杂因素的影响。",
+        "复现包需包含 Dockerfile 以及详细的随机种子设置说明。"
+      ],
+      "committee_discussion": {
+        "Chair_Review": "主席认为，蓝方对数据泄露的快速反应展示了严谨的科学态度，这是顶刊发表的关键。虽然因果部分仍有瑕疵，但已具备 Nature 系列期刊所需的 '方法论创新' 潜质，建议在修改后重投。",
+        "Methodology_Expert_Review": "方法论专家确认，'Pipeline 严格流管' 是解决数据泄露的标准且有效的工程实践。但对于 '混杂路径'，仅靠置换检验是不够的，必须引入结构化因果模型（SCM）来形式化假设，否则 '因果推断' 的标签名不副实。",
+        "Domain_Expert_Review": "领域专家指出，生物学机制复杂，单纯的数据驱动因果发现容易产生假阳性。蓝方必须结合文献先验来约束因果图，否则模型在生物学上的解释力将大打折扣。",
+        "Clinical_Expert_Review": "临床专家强调，模型的可解释性对临床转化至关重要。如果因果路径不清晰，医生将不敢使用该模型。建议增加 SHAP 值与因果效应的一致性检验。"
+      },
+      "attack_responses": [
+        {
+          "attack_type": "data_leakage",
+          "issue": "特征工程流程可能在训练/验证之间共享统计量，导致数据泄露风险。",
+          "response": "蓝方成功防守。通过明确划分 'Fit' 与 'Transform' 阶段，并禁止在验证前计算全局统计量，从工程架构上根除了数据泄露的可能性。符合顶刊标准。"
+        },
+        {
+          "attack_type": "causal_inference",
+          "issue": "当前方案对混杂路径的识别仍然不足，因果解释可能不稳健。",
+          "response": "部分防守成功，但仍有残留。蓝方提出的 '敏感性分析' 可以验证结果的稳定性，但不能替代 '混杂路径识别'。必须补充基于先验知识的因果图构建过程。"
+        },
+        {
+          "attack_type": "reproducibility",
+          "issue": "复现包与日志记录要求尚未完全写清。",
+          "response": "问题降级为中等疑虑。虽然未在本次技术防范措施中详细展开，但鉴于数据流管的规范化，复现性已有基础。需在最终稿中补充具体的日志规范。"
+        }
+      ]
+    },
+    "stage_outputs": [
+      {
+        "order": 0,
+        "stage": "user_input",
+        "json_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_00_user_input.json",
+        "markdown_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_00_user_input.md"
+      },
+      {
+        "order": 11,
+        "stage": "iteration_1_hypothesis",
+        "json_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_11_iteration_1_hypothesis.json",
+        "markdown_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_11_iteration_1_hypothesis.md"
+      },
+      {
+        "order": 12,
+        "stage": "iteration_1_red_team",
+        "json_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_12_iteration_1_red_team.json",
+        "markdown_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_12_iteration_1_red_team.md"
+      },
+      {
+        "order": 13,
+        "stage": "iteration_1_defense",
+        "json_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_13_iteration_1_defense.json",
+        "markdown_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_13_iteration_1_defense.md"
+      }
+    ],
+    "stage_index_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\INDEX.md"
+  },
+  "report_path": "reports\\phoenix_report_20260424_125853_meta-har.md",
+  "report_text": "# V7.5 Phoenix Protocol - 详细输出报告\n\n**生成时间**: 2026-04-24 12:58:53\n**学科领域**: 心血管疾病\n\n---\n\n## 用户输入\n\n> 基于因果推断与严格数据流管的预测模型构建方案 v1.1\n\n---\n\n\n### 【1. Hypothesis - 假设】\n\n#### 标题\n**基于因果推断与严格数据流管的预测模型构建方案 v1.1** (_v1.1_)\n\n#### 研究背景\n本方案旨在解决原 v1.0 版本中存在的严重数据泄露风险与内生性偏倚问题。通过引入有向无环图（DAG）进行因果结构定义，并实施严格的数据流管，确保所有统计变换（如PCA、标准化）仅基于训练集计算，从而保证模型的泛化性与因果解释力。\n\n\n#### 因果链结构\n```\n突变/干预 (X) → 方法学改进 (M) → 偏倚降低/因果识别 (Y) → 模型性能提升\n```\n\n\n---\n\n\n### 【2. Methods - 方法论】\n\n#### 验证策略\n\n采用 'Nested Cross-Validation'（嵌套交叉验证）策略。外层循环用于模型评估，内层循环用于超参数调优。确保在每一个 Fold 的训练子集内部独立进行特征选择与降维，彻底阻断测试集信息向训练集泄露的路径。\n\n#### 技术保障\n\n| 内容 |\n|------|\n| 建立严格的数据流管：在Pipeline中明确划分 'Fit' 阶段与 'Transform' 阶段。确保 PCA、StandardScaler 等任何涉及全局统计量计算的变换器，仅在 Training Set 上调用 .fit() 方法，随后将学习到的参数（如均值、方差、主成分载荷）应用于 Validation Set 和 Test Set，严禁在验证前对全量数据进行预处理。 |\n| 实施双重验证机制：除传统的 K-fold 交叉验证外，引入敏感性分析，通过置换检验验证特征与结果之间的因果稳定性，排除虚假相关性。 |\n\n#### 偏倚控制\n\n构建基于领域知识的因果图（DAG）。在模型训练前，利用 Do-Calculus 或后门准则识别并调整混杂变量，确保模型学习到的是 $P(Y|do(X))$ 而非 $P(Y|X)$，从而消除由遗漏变量或选择偏差导致的内生性偏倚。\n\n---\n\n### 【3. Lineage - 前沿溯源】\n\n#### 关键出版物\n\n| PMID | 类型 | 内容 |\n|------|------|------|\n| 24762253 | PubMed | 作为关键参考文献引用 |\n\n#### 数据源\n\n- pubmed\n- semantic_scholar\n\n---\n\n### 【4. Defense Log - 防御日志】\n\n#### 凤凰协议统计\n- 总迭代次数: 6\n- 方法论补丁: 1\n- 物理重写: 0\n\n#### 红方攻击审计报告（Nature 审稿标准）\n\n| 攻击类型 | 严重级别 | 是否触发 | 详细描述 |\n|------|------|------|------|\n| data_leakage | 💀 致命 | ✅ 触发 | 特征工程流程可能在训练/验证之间共享统计量，导致数据泄露风险。 |\n| causal_inference | 💀 致命 | ✅ 触发 | 当前方案对混杂路径的识别仍然不足，因果解释可能不稳健。 |\n| reproducibility | ⚠️ 严重 | ✅ 触发 | 复现包与日志记录要求尚未完全写清。 |\n\n#### 红方裁决\n```\nverdict: MAJOR_REVISION\noverall_severity: 致命\n```\n红方认为方案具备潜力，但仍需对数据泄露、因果识别和复现流程补强。\n\n#### 红方建议\n1. 将所有归一化、特征筛选和降维步骤封装在训练折内部的 Pipeline 中。\n2. 显式构建 DAG 并加入敏感性分析或工具变量验证。\n3. 在正文中补充基于领域知识构建的DAG（有向无环图），明确标注已识别和未识别的混杂因子。\n4. 将 '敏感性分析' 扩展为 'E-value' 计算，以量化潜在未测量混杂因素的影响。\n5. 复现包需包含 Dockerfile 以及详细的随机种子设置说明。\n\n---\n\n#### 蓝方答辩报告\n\n| 攻击类型 | 答辩要点 |\n|------|------|\n| 委员会结论 | 有条件通过：需补充因果图构建细节。 |\n| 总体答辩 | 委员会经过审议，认为蓝方在 V7.2 版本中针对 '数据泄露' 这一致命缺陷提出了令人信服的技术防范措施（严格的数据流管与 Fit/Transform 隔离），成功化解了最核心的危机。 然而，对于 '因果推断' 中的混杂路径识别问题，目前的 '双重验证与敏感性分析' 仅能验证稳定性，无法完全解决 '识别不足' 的根本性缺陷。 因此，方案在方法论上已达标，但在因果严谨性上仍需补强，故判定为 '有条件通过'。 |\n| 委员会讨论 | Chair_Review: 主席认为，蓝方对数据泄露的快速反应展示了严谨的科学态度，这是顶刊发表的关键。 虽然因果部分仍有瑕疵，但已具备 Nature 系列期刊所需的 '方法论创新' 潜质，建议在修改后重投。 ； Methodology_Expert_Review: 方法论专家确认，'Pipeline 严格流管' 是解决数据泄露的标准且有效的工程实践。 但对于 '混杂路径'，仅靠置换检验是不够的，必须引入结构化因果模型（SCM）来形式化假设，否则 '因果推断' 的标签名不副实。 ； Domain_Expert_Review: 领域专家指出，生物学机制复杂，单纯的数据驱动因果发现容易产生假阳性。 蓝方必须结合文献先验来约束因果图，否则模型在生物学上的解释力将大打折扣。 |\n| data_leakage | 针对“特征工程流程可能在训练/验证之间共享统计量，导致数据泄露风险。”，蓝方成功防守。通过明确划分 'Fit' 与 'Transform' 阶段，并禁止在验证前计算全局统计量，从工程架构上根除了数据泄露的可能性。符合顶刊标准。 |\n| causal_inference | 针对“当前方案对混杂路径的识别仍然不足，因果解释可能不稳健。”，部分防守成功，但仍有残留。蓝方提出的 '敏感性分析' 可以验证结果的稳定性，但不能替代 '混杂路径识别'。必须补充基于先验知识的因果图构建过程。 |\n| reproducibility | 针对“复现包与日志记录要求尚未完全写清。”，问题降级为中等疑虑。虽然未在本次技术防范措施中详细展开，但鉴于数据流管的规范化，复现性已有基础。需在最终稿中补充具体的日志规范。 |\n| data_leakage | 针对“特征工程流程可能在训练/验证之间共享统计量，导致数据泄露风险。”，建立严格的数据流管：在Pipeline中明确划分 'Fit' 阶段与 'Transform' 阶段。确保 PCA、StandardScaler 等任何涉及全局统计量计算的变换器，仅在 Training Set 上调用 .fit() 方法，随后将学习到的参数（如均值、方差、主成分载荷）应用于 Validation Set 和 Test Set，严禁在验证前对全量数据进行预处理。 结合委员会说明：Chair_Review: 主席认为，蓝方对数据泄露的快速反应展示了严谨的科学态度，这是顶刊发表的关键。 虽然因果部分仍有瑕疵，但已具备 Nature 系列期刊所需的 '方法论创新' 潜质，建议在修改后重投。 后续修复方向包括：将所有归一化、特征筛选和降维步骤封装在训练折内部的 Pipeline 中。 |\n| causal_inference | 针对“当前方案对混杂路径的识别仍然不足，因果解释可能不稳健。”，实施双重验证机制：除传统的 K-fold 交叉验证外，引入敏感性分析，通过置换检验验证特征与结果之间的因果稳定性，排除虚假相关性。 结合委员会说明：Chair_Review: 主席认为，蓝方对数据泄露的快速反应展示了严谨的科学态度，这是顶刊发表的关键。 虽然因果部分仍有瑕疵，但已具备 Nature 系列期刊所需的 '方法论创新' 潜质，建议在修改后重投。 后续修复方向包括：显式构建 DAG 并加入敏感性分析或工具变量验证。 |\n| reproducibility | 针对“复现包与日志记录要求尚未完全写清。”，Chair_Review: 主席认为，蓝方对数据泄露的快速反应展示了严谨的科学态度，这是顶刊发表的关键。 虽然因果部分仍有瑕疵，但已具备 Nature 系列期刊所需的 '方法论创新' 潜质，建议在修改后重投。 后续修复方向包括：补充可执行复现清单与审计日志导出。 |\n| 需修复问题 | 因果图构建的先验知识依据不足 |\n| 需修复问题 | 复现性日志的标准化格式尚未明确 |\n| 委员会建议 | 在正文中补充基于领域知识构建的DAG（有向无环图），明确标注已识别和未识别的混杂因子。 |\n| 委员会建议 | 将 '敏感性分析' 扩展为 'E-value' 计算，以量化潜在未测量混杂因素的影响。 |\n| 委员会建议 | 复现包需包含 Dockerfile 以及详细的随机种子设置说明。 |\n\n#### 蓝方裁决\n```\ndefense_passed: TRUE\nconfidence_score: 0.0/10\n```\n\n---\n\n#### 方法论补丁注入\n\n| 目标漏洞 | 补丁措施 |\n|------|------|\n| 数据穿越 | 实施了严格的数据隔离策略，强制所有基于数据分布的统计量计算仅限于训练集，并使用 Pipeline 机制封装变换顺序，防止验证集信息泄露。<br>*参考*: Reference: Ambroise, C., & McLachlan, G. J. (2002). Selection bias in gene extraction on the basis of microarray gene-expression data. PNAS. |\n| 内生性偏倚 | 引入因果推断框架，通过构建 DAG 显式建模变量间的因果关系，并使用因果调整算法控制混杂因子，避免模型拟合虚假相关。<br>*参考*: Reference: Pearl, J. (2009). Causality: Models, Reasoning, and Inference. Cambridge University Press; PMID: 31601808 (Causal Inference in Statistics) |\n\n---\n\n### 【5. Roadmap - 实施路线图】\n\n暂无路线图信息。\n\n---\n\n\n### 【6. Innovation - 创新点分析】\n\n暂无创新点分析信息。\n\n---\n\n\n### 【评分汇总】\n\n| 指标 | 数值 | 解释 |\n|------|------|------|\n| **Science Score (Hybrid Fitness)** | **8.94** | 优秀 - 达到成功阈值 |\n| **向量创新分 (Vector Novelty)** | 9.91 | 突破性创新 |\n| **红方严谨分 (Red Team Rigor)** | 7.50 | Nature 审稿标准 |\n| **相似度 (Similarity)** | 0.506 | 创新甜点区（恰到好处的创新度） |\n| **物理验证** | Passed | 无伪科学模式 |\n\n---\n\n---\n\n## 附录\n\n| 项目 | 值 |\n|------|-----|\n| 任务 ID | meta-harness-01f36961 |\n| 最终状态 | success |\n| 总耗时 | 53.84 秒 |\n| 报告生成时间 | 2026-04-24T12:58:53.673946 |\n\n---\n\n**本报告由 V7.5 Phoenix Protocol 自动生成**\n",
+  "stage_outputs": [
+    {
+      "order": 0,
+      "stage": "user_input",
+      "json_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_00_user_input.json",
+      "markdown_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_00_user_input.md"
+    },
+    {
+      "order": 11,
+      "stage": "iteration_1_hypothesis",
+      "json_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_11_iteration_1_hypothesis.json",
+      "markdown_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_11_iteration_1_hypothesis.md"
+    },
+    {
+      "order": 12,
+      "stage": "iteration_1_red_team",
+      "json_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_12_iteration_1_red_team.json",
+      "markdown_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_12_iteration_1_red_team.md"
+    },
+    {
+      "order": 13,
+      "stage": "iteration_1_defense",
+      "json_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_13_iteration_1_defense.json",
+      "markdown_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\stage_13_iteration_1_defense.md"
+    }
+  ],
+  "stage_index_path": "C:\\Users\\PC\\research-hypothesis-agent\\outputs\\stages\\meta-harness-01f36961\\INDEX.md",
+  "metadata": {
+    "source_file": "C:\\Users\\PC\\research-hypothesis-agent\\meta_harness_real_sample.json",
+    "field": "心血管疾病",
+    "candidate_config": {
+      "include_enhanced_keys": [
+        "frontier_analysis"
+      ]
+    }
+  },
+  "metrics": {
+    "overall": 0.6861,
+    "section_score": 1.0,
+    "payload_field_score": 0.4444,
+    "content_score": 0.5,
+    "readability_score": 1.0,
+    "section_checks": {
+      "hypothesis": true,
+      "methods": true,
+      "lineage": true,
+      "defense": true,
+      "roadmap": true,
+      "innovation": true,
+      "scoring": true
+    },
+    "payload_field_checks": {
+      "defense_committee_discussion": true,
+      "defense_attack_responses": true,
+      "frontier_key_publications": false,
+      "frontier_leading_groups": false,
+      "roadmap_resources": false,
+      "roadmap_risks": false,
+      "innovation_summary": false,
+      "stage_outputs": true,
+      "stage_index_path": true
+    },
+    "content_checks": {
+      "lineage_publications_rendered": true,
+      "lineage_timeline_rendered": false,
+      "lineage_trends_rendered": false,
+      "defense_committee_rendered": true,
+      "defense_attack_response_rendered": true,
+      "roadmap_rendered": false,
+      "innovation_rendered": false,
+      "stage_outputs_visible": true
+    },
+    "absence_flags": {
+      "missing_red_attack_detail": false,
+      "missing_roadmap_content": true,
+      "missing_innovation_content": true
+    },
+    "rubric": {
+      "defense_quality": 1.0,
+      "lineage_quality": 0.2,
+      "roadmap_quality": 0.0,
+      "innovation_quality": 0.0,
+      "readability": 1.0
+    },
+    "readability_flags": []
+  }
+}

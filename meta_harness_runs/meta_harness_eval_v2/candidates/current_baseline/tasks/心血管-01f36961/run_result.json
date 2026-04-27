@@ -1,0 +1,138 @@
+{
+  "candidate": "current_baseline",
+  "task_id": "01f36961-0b6d-4517-854b-36504feeef60",
+  "task_name": "心血管-01f36961",
+  "payload": {
+    "hypothesis": {
+      "title": "基于因果推断与严格数据流管的预测模型构建方案 v1.1",
+      "details": "本方案旨在解决原 v1.0 版本中存在的严重数据泄露风险与内生性偏倚问题。通过引入有向无环图（DAG）进行因果结构定义，并实施严格的数据流管，确保所有统计变换（如PCA、标准化）仅基于训练集计算，从而保证模型的泛化性与因果解释力。",
+      "methodology": {
+        "technical_safeguards": [
+          "建立严格的数据流管：在Pipeline中明确划分 'Fit' 阶段与 'Transform' 阶段。确保 PCA、StandardScaler 等任何涉及全局统计量计算的变换器，仅在 Training Set 上调用 .fit() 方法，随后将学习到的参数（如均值、方差、主成分载荷）应用于 Validation Set 和 Test Set，严禁在验证前对全量数据进行预处理。",
+          "实施双重验证机制：除传统的 K-fold 交叉验证外，引入敏感性分析，通过置换检验验证特征与结果之间的因果稳定性，排除虚假相关性。"
+        ],
+        "validation_protocol": "采用 'Nested Cross-Validation'（嵌套交叉验证）策略。外层循环用于模型评估，内层循环用于超参数调优。确保在每一个 Fold 的训练子集内部独立进行特征选择与降维，彻底阻断测试集信息向训练集泄露的路径。",
+        "bias_control": "构建基于领域知识的因果图（DAG）。在模型训练前，利用 Do-Calculus 或后门准则识别并调整混杂变量，确保模型学习到的是 $P(Y|do(X))$ 而非 $P(Y|X)$，从而消除由遗漏变量或选择偏差导致的内生性偏倚。"
+      },
+      "version": "v1.1",
+      "patch_log": [
+        {
+          "attack_type": "数据穿越",
+          "patch_applied": "实施了严格的数据隔离策略，强制所有基于数据分布的统计量计算仅限于训练集，并使用 Pipeline 机制封装变换顺序，防止验证集信息泄露。",
+          "supporting_reference": "Reference: Ambroise, C., & McLachlan, G. J. (2002). Selection bias in gene extraction on the basis of microarray gene-expression data. PNAS."
+        },
+        {
+          "attack_type": "内生性偏倚",
+          "patch_applied": "引入因果推断框架，通过构建 DAG 显式建模变量间的因果关系，并使用因果调整算法控制混杂因子，避免模型拟合虚假相关。",
+          "supporting_reference": "Reference: Pearl, J. (2009). Causality: Models, Reasoning, and Inference. Cambridge University Press; PMID: 31601808 (Causal Inference in Statistics)"
+        }
+      ]
+    },
+    "fitness": {
+      "hybrid_fitness": 8.94357681274414,
+      "vector_novelty_score": 9.905961990356445,
+      "red_team_rigor_score": 7.5,
+      "physical_validation": {
+        "passed": true,
+        "details": {
+          "smiles_found": [],
+          "ukb_fields_found": [],
+          "compute_params_found": {}
+        },
+        "failure_reason": ""
+      },
+      "fused": false,
+      "fuse_reason": "",
+      "similarity": 0.5062534809112549,
+      "similarity_interpretation": "创新甜点区（恰到好处的创新度）",
+      "timestamp": "2026-04-20T01:21:11.988483"
+    },
+    "verified_ids": {
+      "pmids": [
+        "24762253"
+      ],
+      "arxiv_ids": [],
+      "dois": []
+    },
+    "domain": "心血管疾病",
+    "sources": [
+      "pubmed",
+      "semantic_scholar"
+    ],
+    "audit_context": {
+      "iterations": 6,
+      "rewrites": 0,
+      "patches": 1,
+      "score_history": [
+        8.399999999999999,
+        8.94357681274414
+      ],
+      "red_attack_types": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ]
+    }
+  },
+  "report_path": "reports\\phoenix_report_20260422_154706_01f36961.md",
+  "report_text": "# V7.5 Phoenix Protocol - 详细输出报告\n\n**生成时间**: 2026-04-22 15:47:06\n**学科领域**: 心血管疾病\n\n---\n\n## 用户输入\n\n> 基于因果推断与严格数据流管的预测模型构建方案 v1.1\n\n---\n\n\n### 【1. Hypothesis - 假设】\n\n#### 标题\n**基于因果推断与严格数据流管的预测模型构建方案 v1.1** (_v1.1_)\n\n#### 研究背景\n本方案旨在解决原 v1.0 版本中存在的严重数据泄露风险与内生性偏倚问题。通过引入有向无环图（DAG）进行因果结构定义，并实施严格的数据流管，确保所有统计变换（如PCA、标准化）仅基于训练集计算，从而保证模型的泛化性与因果解释力。\n\n\n#### 因果链结构\n```\n突变/干预 (X) → 方法学改进 (M) → 偏倚降低/因果识别 (Y) → 模型性能提升\n```\n\n\n---\n\n\n### 【2. Methods - 方法论】\n\n#### 验证策略\n\n采用 'Nested Cross-Validation'（嵌套交叉验证）策略。外层循环用于模型评估，内层循环用于超参数调优。确保在每一个 Fold 的训练子集内部独立进行特征选择与降维，彻底阻断测试集信息向训练集泄露的路径。\n\n#### 技术保障\n\n| 内容 |\n|------|\n| 建立严格的数据流管：在Pipeline中明确划分 'Fit' 阶段与 'Transform' 阶段。确保 PCA、StandardScaler 等任何涉及全局统计量计算的变换器，仅在 Training Set 上调用 .fit() 方法，随后将学习到的参数（如均值、方差、主成分载荷）应用于 Validation Set 和 Test Set，严禁在验证前对全量数据进行预处理。 |\n| 实施双重验证机制：除传统的 K-fold 交叉验证外，引入敏感性分析，通过置换检验验证特征与结果之间的因果稳定性，排除虚假相关性。 |\n\n#### 偏倚控制\n\n构建基于领域知识的因果图（DAG）。在模型训练前，利用 Do-Calculus 或后门准则识别并调整混杂变量，确保模型学习到的是 $P(Y|do(X))$ 而非 $P(Y|X)$，从而消除由遗漏变量或选择偏差导致的内生性偏倚。\n\n---\n\n### 【3. Lineage - 前沿溯源】\n\n#### 关键出版物\n\n| PMID | 类型 | 内容 |\n|------|------|------|\n| 24762253 | PubMed | 作为关键参考文献引用 |\n\n#### 数据源\n\n- pubmed\n- semantic_scholar\n\n---\n\n### 【4. Defense Log - 防御日志】\n\n#### 凤凰协议统计\n- 总迭代次数: 6\n- 方法论补丁: 1\n- 物理重写: 0\n\n#### 红方攻击审计报告（Nature 审稿标准）\n\n暂无红方攻击明细。\n\n#### 红方裁决\n```\nverdict: UNKNOWN\noverall_severity: 轻微\n```\n\n---\n\n#### 方法论补丁注入\n\n| 目标漏洞 | 补丁措施 |\n|------|------|\n| 数据穿越 | 实施了严格的数据隔离策略，强制所有基于数据分布的统计量计算仅限于训练集，并使用 Pipeline 机制封装变换顺序，防止验证集信息泄露。<br>*参考*: Reference: Ambroise, C., & McLachlan, G. J. (2002). Selection bias in gene extraction on the basis of microarray gene-expression data. PNAS. |\n| 内生性偏倚 | 引入因果推断框架，通过构建 DAG 显式建模变量间的因果关系，并使用因果调整算法控制混杂因子，避免模型拟合虚假相关。<br>*参考*: Reference: Pearl, J. (2009). Causality: Models, Reasoning, and Inference. Cambridge University Press; PMID: 31601808 (Causal Inference in Statistics) |\n\n---\n\n### 【5. Roadmap - 实施路线图】\n\n暂无路线图信息。\n\n---\n\n\n### 【6. Innovation - 创新点分析】\n\n暂无创新点分析信息。\n\n---\n\n\n### 【评分汇总】\n\n| 指标 | 数值 | 解释 |\n|------|------|------|\n| **Science Score (Hybrid Fitness)** | **8.94** | 优秀 - 达到成功阈值 |\n| **向量创新分 (Vector Novelty)** | 9.91 | 突破性创新 |\n| **红方严谨分 (Red Team Rigor)** | 7.50 | Nature 审稿标准 |\n| **相似度 (Similarity)** | 0.506 | 创新甜点区（恰到好处的创新度） |\n| **物理验证** | Passed | 无伪科学模式 |\n\n---\n\n---\n\n## 附录\n\n| 项目 | 值 |\n|------|-----|\n| 任务 ID | 01f36961-0b6d-4517-854b-36504feeef60 |\n| 最终状态 | success |\n| 总耗时 | 53.84 秒 |\n| 报告生成时间 | 2026-04-22T15:47:06.932657 |\n\n---\n\n**本报告由 V7.5 Phoenix Protocol 自动生成**\n",
+  "stage_outputs": [],
+  "stage_index_path": "",
+  "metadata": {
+    "source_file": "C:\\Users\\PC\\research-hypothesis-agent\\multifield_final.json",
+    "field": "心血管",
+    "candidate_config": {
+      "mode": "current_baseline"
+    }
+  },
+  "metrics": {
+    "overall": 0.4438,
+    "section_score": 1.0,
+    "payload_field_score": 0.0,
+    "content_score": 0.125,
+    "readability_score": 1.0,
+    "section_checks": {
+      "hypothesis": true,
+      "methods": true,
+      "lineage": true,
+      "defense": true,
+      "roadmap": true,
+      "innovation": true,
+      "scoring": true
+    },
+    "payload_field_checks": {
+      "defense_committee_discussion": false,
+      "defense_attack_responses": false,
+      "frontier_key_publications": false,
+      "frontier_leading_groups": false,
+      "roadmap_resources": false,
+      "roadmap_risks": false,
+      "innovation_summary": false,
+      "stage_outputs": false,
+      "stage_index_path": false
+    },
+    "content_checks": {
+      "lineage_publications_rendered": true,
+      "lineage_timeline_rendered": false,
+      "lineage_trends_rendered": false,
+      "defense_committee_rendered": false,
+      "defense_attack_response_rendered": false,
+      "roadmap_rendered": false,
+      "innovation_rendered": false,
+      "stage_outputs_visible": false
+    },
+    "absence_flags": {
+      "missing_red_attack_detail": true,
+      "missing_roadmap_content": true,
+      "missing_innovation_content": true
+    },
+    "rubric": {
+      "defense_quality": 0.0,
+      "lineage_quality": 0.2,
+      "roadmap_quality": 0.0,
+      "innovation_quality": 0.0,
+      "readability": 1.0
+    },
+    "readability_flags": []
+  }
+}

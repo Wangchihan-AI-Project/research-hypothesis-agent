@@ -345,6 +345,118 @@ class DefenseCommitteeAgent(BaseAgent):
         # 否则进行深度审议
         return self._deep_deliberation(blue_package, red_attack)
 
+    def _extract_technical_safeguards(self, blue_package: dict) -> List[str]:
+        """提取技术防范措施"""
+        if not blue_package:
+            return []
+
+        hypothesis_data = blue_package.get('hypothesis_data', {})
+        methodology = hypothesis_data.get('methodology', {})
+        if not isinstance(methodology, dict):
+            return []
+
+        safeguards = methodology.get('technical_safeguards', [])
+        if isinstance(safeguards, list):
+            return [str(item).strip() for item in safeguards if str(item).strip()]
+        if safeguards:
+            return [str(safeguards).strip()]
+        return []
+
+    def _summarize_issue_labels(self, issues: List[dict], limit: int = 3) -> str:
+        """汇总问题标签"""
+        labels = []
+        for item in issues[:limit]:
+            if not isinstance(item, dict):
+                text = str(item).strip()
+                if text:
+                    labels.append(text)
+                continue
+            category = item.get('category') or item.get('type') or '问题'
+            issue = item.get('issue') or item.get('reason') or ''
+            labels.append(f"{category}: {issue}" if issue else str(category))
+        return '；'.join(labels)
+
+    def _build_attack_responses(
+        self,
+        red_attack: dict,
+        technical_safeguards: List[str] = None,
+        committee_response: str = "",
+        recommendations: List[str] = None
+    ) -> List[dict]:
+        """构建按攻击类型组织的答辩要点"""
+        technical_safeguards = technical_safeguards or []
+        recommendations = recommendations or []
+        attack_responses = []
+
+        red_items = []
+        for key in ['critical_flaws', 'severe_issues', 'moderate_concerns']:
+            red_items.extend(red_attack.get(key, []) or [])
+
+        for index, item in enumerate(red_items):
+            if not isinstance(item, dict):
+                text = str(item).strip()
+                if text:
+                    attack_responses.append({
+                        'attack_type': text,
+                        'issue': text,
+                        'response': committee_response or '委员会认为该问题需要在后续版本中通过更具体的方法学补丁予以回应。'
+                    })
+                continue
+
+            attack_type = item.get('category') or item.get('type') or f'问题{index + 1}'
+            issue = item.get('issue') or item.get('reason') or item.get('details') or ''
+            suggestion = item.get('suggestion') or ''
+            safeguard = technical_safeguards[index] if index < len(technical_safeguards) else ''
+            recommendation = recommendations[index] if index < len(recommendations) else ''
+
+            response_parts = []
+            if safeguard:
+                response_parts.append(f"蓝方已提出对应措施：{safeguard}")
+            elif committee_response:
+                response_parts.append("委员会认为该问题已有初步回应，但仍需补充可审计证据")
+            else:
+                response_parts.append("委员会认为该问题尚未被充分化解，需要补充可执行修复路径")
+
+            if suggestion:
+                response_parts.append(f"红方建议优先处理：{suggestion}")
+            if recommendation and recommendation != suggestion:
+                response_parts.append(f"委员会补充建议：{recommendation}")
+
+            attack_responses.append({
+                'attack_type': str(attack_type),
+                'issue': str(issue),
+                'response': '；'.join(part for part in response_parts if part)
+            })
+
+        return attack_responses
+
+    def _build_committee_discussion(self, red_attack: dict, technical_safeguards: List[str] = None) -> str:
+        """构建委员会讨论摘要"""
+        technical_safeguards = technical_safeguards or []
+        critical_flaws = red_attack.get('critical_flaws', []) or []
+        severe_issues = red_attack.get('severe_issues', []) or []
+        moderate_concerns = red_attack.get('moderate_concerns', []) or []
+
+        discussion_parts = [
+            f"委员会首先确认红方共提出 {len(critical_flaws)} 个致命缺陷、{len(severe_issues)} 个严重问题和 {len(moderate_concerns)} 个中等疑虑。"
+        ]
+
+        critical_summary = self._summarize_issue_labels(critical_flaws)
+        if critical_summary:
+            discussion_parts.append(f"最核心的否决点集中在：{critical_summary}。")
+
+        severe_summary = self._summarize_issue_labels(severe_issues)
+        if severe_summary:
+            discussion_parts.append(f"需要重点修复的次级问题包括：{severe_summary}。")
+
+        if technical_safeguards:
+            safeguards_preview = '；'.join(technical_safeguards[:3])
+            discussion_parts.append(f"蓝方已给出技术防范措施，主要包括：{safeguards_preview}。委员会认为这些措施可以部分降低方法学风险，但仍需以审计日志、独立验证或复现包证明其有效性。")
+        else:
+            discussion_parts.append("蓝方尚未提交足够具体的技术防范措施，因此委员会无法将相关风险下调。")
+
+        return ' '.join(discussion_parts)
+
     def _quick_verdict(self, red_attack: dict, blue_package: dict = None) -> dict:
         """
         快速裁决（基于攻击报告的定量分析）
@@ -364,66 +476,96 @@ class DefenseCommitteeAgent(BaseAgent):
         critical_count = len(critical_flaws)
         severe_count = len(severe_issues)
 
-        # V7.2: 检查蓝方是否提供了 technical_safeguards
-        has_safeguards = False
-        if blue_package:
-            hypothesis_data = blue_package.get('hypothesis_data', {})
-            methodology = hypothesis_data.get('methodology', {})
-            if isinstance(methodology, dict) and methodology.get('technical_safeguards'):
-                has_safeguards = True
-                print("[防御委员会 V7.2] 检测到蓝方提供了技术防范措施 (technical_safeguards)")
+        technical_safeguards = self._extract_technical_safeguards(blue_package)
+        has_safeguards = bool(technical_safeguards)
+        if has_safeguards:
+            print("[防御委员会 V7.2] 检测到蓝方提供了技术防范措施 (technical_safeguards)")
 
-        # V7.2: 如果有 safeguards，不直接失败，进入深度审议
         if critical_count >= self.critical_threshold:
             if has_safeguards:
-                # 有技术防范措施，进入深度审议让委员会评估是否有效
                 print("[防御委员会 V7.2] 虽然有致命缺陷，但蓝方提供了技术防范措施，进入深度审议")
                 return {
                     'is_definitive': False,
                     'result': {}
                 }
-            # 无 safeguards，直接失败
+
+            recommendations = [f['suggestion'] for f in critical_flaws if isinstance(f, dict) and f.get('suggestion')]
+            committee_discussion = self._build_committee_discussion(red_attack, technical_safeguards)
+            attack_responses = self._build_attack_responses(
+                red_attack,
+                technical_safeguards=technical_safeguards,
+                committee_response=committee_discussion,
+                recommendations=recommendations
+            )
             return {
                 'is_definitive': True,
                 'result': {
                     'defense_passed': False,
                     'verdict': 'failed',
-                    'committee_response': f"**委员会裁决：防守失败**\n\n发现 {critical_count} 个致命缺陷，这些缺陷会导致研究无法达到预期目标或产生不可靠的结论。",
+                    'committee_response': (
+                        f"**委员会裁决：防守失败**\n\n发现 {critical_count} 个致命缺陷，这些缺陷会导致研究无法达到预期目标或产生不可靠的结论。"
+                        f" 当前最关键的问题包括：{self._summarize_issue_labels(critical_flaws)}。"
+                    ),
                     'final_verdict': 'FAILED - 存在致命缺陷',
-                    'critical_issues': [f['issue'] for f in critical_flaws],
-                    'recommendations': [f['suggestion'] for f in critical_flaws if f.get('suggestion')]
+                    'critical_issues': [f['issue'] for f in critical_flaws if isinstance(f, dict) and f.get('issue')],
+                    'recommendations': recommendations,
+                    'committee_discussion': committee_discussion,
+                    'attack_responses': attack_responses,
                 }
             }
 
-        # 严重问题过多：失败
         if severe_count >= self.severe_threshold:
+            recommendations = [f['suggestion'] for f in severe_issues if isinstance(f, dict) and f.get('suggestion')]
+            committee_discussion = self._build_committee_discussion(red_attack, technical_safeguards)
+            attack_responses = self._build_attack_responses(
+                red_attack,
+                technical_safeguards=technical_safeguards,
+                committee_response=committee_discussion,
+                recommendations=recommendations
+            )
             return {
                 'is_definitive': True,
                 'result': {
                     'defense_passed': False,
                     'verdict': 'failed',
-                    'committee_response': f"**委员会裁决：防守失败**\n\n存在 {severe_count} 个严重问题，累积影响研究的可信度和可行性。",
+                    'committee_response': (
+                        f"**委员会裁决：防守失败**\n\n存在 {severe_count} 个严重问题，累积影响研究的可信度和可行性。"
+                        f" 委员会认为优先修复项为：{self._summarize_issue_labels(severe_issues)}。"
+                    ),
                     'final_verdict': 'FAILED - 严重问题过多',
-                    'critical_issues': [f['issue'] for f in severe_issues],
-                    'recommendations': [f['suggestion'] for f in severe_issues if f.get('suggestion')]
+                    'critical_issues': [f['issue'] for f in severe_issues if isinstance(f, dict) and f.get('issue')],
+                    'recommendations': recommendations,
+                    'committee_discussion': committee_discussion,
+                    'attack_responses': attack_responses,
                 }
             }
 
-        # 无严重问题：直接通过
         if severe_count == 0 and critical_count == 0:
+            recommendations = [f['suggestion'] for f in moderate_concerns if isinstance(f, dict) and f.get('suggestion')]
+            committee_discussion = self._build_committee_discussion(red_attack, technical_safeguards)
+            attack_responses = self._build_attack_responses(
+                red_attack,
+                technical_safeguards=technical_safeguards,
+                committee_response=committee_discussion,
+                recommendations=recommendations
+            )
             return {
                 'is_definitive': True,
                 'result': {
                     'defense_passed': True,
                     'verdict': 'passed',
-                    'committee_response': f"**委员会裁决：防守成功**\n\n红方攻击未发现致命或严重问题。{len(moderate_concerns)} 个中等疑虑可以在后续研究中改进。",
+                    'committee_response': (
+                        f"**委员会裁决：防守成功**\n\n红方攻击未发现致命或严重问题。"
+                        f" {len(moderate_concerns)} 个中等疑虑可以在后续研究中改进。"
+                    ),
                     'final_verdict': 'PASSED - 无重大问题',
                     'critical_issues': [],
-                    'recommendations': [f['suggestion'] for f in moderate_concerns if f.get('suggestion')]
+                    'recommendations': recommendations,
+                    'committee_discussion': committee_discussion,
+                    'attack_responses': attack_responses,
                 }
             }
 
-        # 边界情况：需要深度审议
         return {
             'is_definitive': False,
             'result': {}
@@ -568,7 +710,14 @@ class DefenseCommitteeAgent(BaseAgent):
   "final_verdict": "最终裁决的简短描述",
   "critical_issues": ["需要修复的关键问题列表"],
   "recommendations": ["具体改进建议"],
-  "committee_discussion": "委员会讨论要点摘要"
+  "committee_discussion": "委员会讨论要点摘要，需比 committee_response 更细，说明各角色争议与共识",
+  "attack_responses": [
+    {{
+      "attack_type": "攻击类型",
+      "issue": "该类型下最关键的问题",
+      "response": "委员会对该攻击的具体回应或要求"
+    }}
+  ]
 }}
 
 请开始委员会审议：
@@ -597,7 +746,9 @@ class DefenseCommitteeAgent(BaseAgent):
                 'committee_response': deliberation_data.get('committee_response', ''),
                 'final_verdict': deliberation_data.get('final_verdict', ''),
                 'critical_issues': deliberation_data.get('critical_issues', []),
-                'recommendations': deliberation_data.get('recommendations', [])
+                'recommendations': deliberation_data.get('recommendations', []),
+                'committee_discussion': deliberation_data.get('committee_discussion', ''),
+                'attack_responses': deliberation_data.get('attack_responses', []),
             }
         except Exception as e:
             print(f"[防御委员会] 解析响应失败: {e}")
@@ -608,6 +759,15 @@ class DefenseCommitteeAgent(BaseAgent):
         severe_issues = red_attack.get('severe_issues', [])
         severe_count = len(severe_issues)
 
+        technical_safeguards = []
+        committee_discussion = self._build_committee_discussion(red_attack, technical_safeguards)
+        attack_responses = self._build_attack_responses(
+            red_attack,
+            technical_safeguards=technical_safeguards,
+            committee_response=committee_discussion,
+            recommendations=[]
+        )
+
         if severe_count >= 2:
             # 保守策略：2个严重问题视为失败
             return {
@@ -615,8 +775,10 @@ class DefenseCommitteeAgent(BaseAgent):
                 'verdict': 'failed',
                 'committee_response': '**委员会裁决：防守失败**\n\n由于委员会审议过程出现问题，采用保守裁决。鉴于红方报告指出多个严重问题，判定方案需要重大修改。',
                 'final_verdict': 'FAILED - 保守裁决',
-                'critical_issues': [f['issue'] for f in severe_issues],
-                'recommendations': []
+                'critical_issues': [f['issue'] for f in severe_issues if isinstance(f, dict) and f.get('issue')],
+                'recommendations': [],
+                'committee_discussion': committee_discussion,
+                'attack_responses': attack_responses,
             }
         else:
             # 保守策略：允许通过但需要改进
@@ -626,7 +788,9 @@ class DefenseCommitteeAgent(BaseAgent):
                 'committee_response': '**委员会裁决：有条件通过**\n\n由于委员会审议过程出现问题，采用保守裁决。方案基本可行，但需要针对指出的问题进行改进。',
                 'final_verdict': 'CONDITIONAL - 保守裁决',
                 'critical_issues': [],
-                'recommendations': []
+                'recommendations': [],
+                'committee_discussion': committee_discussion,
+                'attack_responses': attack_responses,
             }
 
     def _call_llm_with_retry(self, prompt: str, max_tokens: int = 3000) -> str:

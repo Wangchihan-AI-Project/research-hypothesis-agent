@@ -1,0 +1,126 @@
+{
+  "run_time": "2026-04-24T15:14:58.796810",
+  "suite": "v2_axes",
+  "run_name_prefix": "cli_v2_axes_suite_summary_check",
+  "axes": [
+    "v2_frontier_sensitive",
+    "v2_roadmap_sensitive",
+    "v2_innovation_sensitive"
+  ],
+  "axis_summaries": {
+    "v2_frontier_sensitive": {
+      "full_enhanced": {
+        "count": 2,
+        "avg_score": 0.8014
+      },
+      "current_baseline": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "render_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "roadmap_only": {
+        "count": 2,
+        "avg_score": 0.5431
+      },
+      "innovation_only": {
+        "count": 2,
+        "avg_score": 0.5153
+      },
+      "frontier_only": {
+        "count": 2,
+        "avg_score": 0.6305
+      },
+      "roadmap_innovation": {
+        "count": 2,
+        "avg_score": 0.6146
+      },
+      "frontier_roadmap": {
+        "count": 2,
+        "avg_score": 0.7299
+      },
+      "frontier_innovation": {
+        "count": 2,
+        "avg_score": 0.7021
+      }
+    },
+    "v2_roadmap_sensitive": {
+      "full_enhanced": {
+        "count": 2,
+        "avg_score": 0.5431
+      },
+      "current_baseline": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "render_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "roadmap_only": {
+        "count": 2,
+        "avg_score": 0.5431
+      },
+      "innovation_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "frontier_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "roadmap_innovation": {
+        "count": 2,
+        "avg_score": 0.5431
+      },
+      "frontier_roadmap": {
+        "count": 2,
+        "avg_score": 0.5431
+      },
+      "frontier_innovation": {
+        "count": 2,
+        "avg_score": 0.4438
+      }
+    },
+    "v2_innovation_sensitive": {
+      "full_enhanced": {
+        "count": 2,
+        "avg_score": 0.5153
+      },
+      "current_baseline": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "render_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "roadmap_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "innovation_only": {
+        "count": 2,
+        "avg_score": 0.5153
+      },
+      "frontier_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "roadmap_innovation": {
+        "count": 2,
+        "avg_score": 0.5153
+      },
+      "frontier_roadmap": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "frontier_innovation": {
+        "count": 2,
+        "avg_score": 0.5153
+      }
+    }
+  }
+}

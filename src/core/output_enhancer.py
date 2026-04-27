@@ -247,6 +247,9 @@ class OutputEnhancer:
         title = hypothesis_data.get('title', '')
         details = hypothesis_data.get('details', '')
         methodology = hypothesis_data.get('methodology', {})
+        inferred_domain = str(hypothesis_data.get('domain', '') or hypothesis_data.get('field', '') or '')
+        domain_context = self._build_domain_context(hypothesis_data, inferred_domain)
+        research_focus = self._infer_research_focus(hypothesis_data)
 
         # 提取核心创新点
         core_innovations = self._extract_core_innovations(
@@ -267,6 +270,8 @@ class OutputEnhancer:
         breakthrough_potential = self._assess_breakthrough_potential(
             hypothesis_data, fitness_result
         )
+        breakthrough_potential['context'] = domain_context
+        breakthrough_potential['research_focus'] = research_focus
 
         # 向量创新分析
         vector_analysis = {
@@ -284,10 +289,12 @@ class OutputEnhancer:
         methodology_analysis = self._analyze_methodology_innovation(
             methodology, patch_log
         )
+        methodology_analysis['context'] = domain_context
 
         # 生成总结
         summary = self._generate_innovation_summary(
-            core_innovations, novelty_level, vector_analysis
+            core_innovations, novelty_level, vector_analysis, differentiation,
+            breakthrough_potential, domain_context, research_focus
         )
 
         return InnovationAnalysis(
@@ -328,10 +335,11 @@ class OutputEnhancer:
         frontier_position = self._determine_frontier_position(
             hypothesis_data, promise_score_components
         )
+        research_focus = self._infer_research_focus(hypothesis_data)
 
-        # 关键出版物解读（基于PMID数量）
+        # 关键出版物解读（基于 PMID 数量）
         key_publications = self._interpret_publications(
-            pmids, arxiv_ids, domain
+            pmids, arxiv_ids, domain, hypothesis_data
         )
 
         # 研究趋势
@@ -344,14 +352,17 @@ class OutputEnhancer:
             hypothesis_data, verified_ids
         )
 
+        if research_focus and all(research_focus not in gap for gap in gap_analysis):
+            gap_analysis.append(f'围绕“{research_focus}”的规范化验证路径仍不充分')
+
         # 领先团队（基于文献推断）
         leading_groups = self._infer_leading_groups(
-            pmids, domain
+            pmids, domain, hypothesis_data
         )
 
         # 前沿时间线
         timeline = self._construct_frontier_timeline(
-            hypothesis_data, verified_ids
+            hypothesis_data, verified_ids, domain
         )
 
         # 引用速度和年份趋势
@@ -371,6 +382,76 @@ class OutputEnhancer:
             citation_velocity=citation_velocity,
             year_trend=year_trend
         )
+
+    def _build_domain_context(self, hypothesis_data: Dict, domain: str) -> str:
+        """构建领域上下文描述"""
+        title = str(hypothesis_data.get('title', '')).strip()
+        details = str(hypothesis_data.get('details', '')).strip()
+        methodology = str(hypothesis_data.get('methodology', '')).strip()
+        combined = ' '.join(part for part in [domain, title, details, methodology] if part)
+
+        domain_tags = []
+        if any(keyword in combined.lower() for keyword in ['machine learning', 'deep learning', 'ai', '模型', '预测']):
+            domain_tags.append('以机器学习/预测建模为核心')
+        if any(keyword in combined.lower() for keyword in ['clinical', 'patient', 'cohort', '临床', '患者', '队列']):
+            domain_tags.append('强调临床或队列场景落地')
+        if any(keyword in combined.lower() for keyword in ['causal', 'dag', '因果', '混杂']):
+            domain_tags.append('突出因果识别与偏倚控制')
+        if any(keyword in combined.lower() for keyword in ['omics', 'single-cell', '多组学', '单细胞']):
+            domain_tags.append('包含高维组学或复杂生物数据')
+
+        if not domain_tags:
+            domain_tags.append('聚焦该领域的机制探索与方法学验证')
+
+        return '；'.join(domain_tags[:3])
+
+    def _infer_research_focus(self, hypothesis_data: Dict) -> str:
+        """提取研究焦点"""
+        title = str(hypothesis_data.get('title', '') or '').strip()
+        if title:
+            return title[:60] + ('...' if len(title) > 60 else '')
+
+        core_hypothesis = str(hypothesis_data.get('core_hypothesis', '') or '').strip()
+        if core_hypothesis:
+            sentences = re.split(r'[。；\n]', core_hypothesis)
+            first = next((sentence.strip() for sentence in sentences if sentence.strip()), core_hypothesis)
+            return first[:60] + ('...' if len(first) > 60 else '')
+
+        details = str(hypothesis_data.get('details', '') or '').strip()
+        if details:
+            sentences = re.split(r'[。；\n]', details)
+            first = next((sentence.strip() for sentence in sentences if sentence.strip()), details)
+            return first[:60] + ('...' if len(first) > 60 else '')
+
+        background = str(hypothesis_data.get('background', '') or '').strip()
+        if background:
+            sentences = re.split(r'[。；\n]', background)
+            first = next((sentence.strip() for sentence in sentences if sentence.strip()), background)
+            return first[:60] + ('...' if len(first) > 60 else '')
+
+        return '提升研究可信度与解释力的方法学优化'
+
+    def _format_publication_note(self, identifier: str, domain: str, index: int, total_count: int) -> str:
+        """生成出版物说明文本"""
+        position_text = '奠基性参考' if index == 0 else ('方法学支撑' if index == 1 else '旁证文献')
+        if total_count >= 8:
+            activity_text = '说明该方向已有较活跃的持续研究积累'
+        elif total_count >= 4:
+            activity_text = '说明该方向已经形成较稳定的方法学讨论'
+        else:
+            activity_text = '说明该方向仍存在明显的拓展空间'
+        return f"{position_text}，围绕 {domain or '当前主题'} 提供直接参考；{activity_text}。"
+
+    def _estimate_focus_stage(self, hypothesis_data: Dict) -> str:
+        """估计当前研究所处阶段"""
+        combined = f"{hypothesis_data.get('title', '')} {hypothesis_data.get('details', '')} {hypothesis_data.get('methodology', '')}".lower()
+        if any(keyword in combined for keyword in ['validation', 'external', 'prospective', '多中心', '外部验证']):
+            return '从方法建立转向外部验证与临床转化'
+        if any(keyword in combined for keyword in ['mechanism', 'pathway', '因果', 'dag']):
+            return '从相关性发现迈向机制解释与因果识别'
+        if any(keyword in combined for keyword in ['single-cell', 'spatial', 'diffusion', 'alphafold']):
+            return '处于技术快速扩散后的深化应用阶段'
+        return '处于由概念验证向规范化研究设计过渡的阶段'
 
     # ==================== 私有方法：落地指南 ====================
 
@@ -498,36 +579,42 @@ class OutputEnhancer:
         # 人力需求
         if complexity == 'high':
             personnel = {
-                'PI (项目负责人)': '1人，20%时间投入',
-                'Co-PI (联合负责人)': '1人，30%时间投入',
-                '博士后研究员': '2-3人，全职',
-                '博士研究生': '2-4人',
-                '技术员': '1-2人',
-                '数据分析师': '1人',
-                '统计顾问': '1人（兼职）'
+                'PI (项目负责人)': '1人，20%时间投入，负责研究方向与关键里程碑决策',
+                'Co-PI (联合负责人)': '1人，30%时间投入，负责跨团队协调与方法学把关',
+                '博士后研究员': '2-3人，全职，承担实验推进、模型实现与结果复核',
+                '博士研究生': '2-4人，负责数据整理、子课题实验与分析迭代',
+                '技术员': '1-2人，负责样本处理、平台操作与质控执行',
+                '数据分析师': '1人，负责统计建模、复现包整理与可视化',
+                '统计顾问': '1人（兼职），负责功效分析与敏感性分析审阅'
             }
         elif complexity == 'medium':
             personnel = {
-                'PI': '1人，30%时间投入',
-                '博士后/博士生': '1-2人',
-                '技术员': '1人'
+                'PI': '1人，30%时间投入，负责总体设计与关键结果把关',
+                '博士后/博士生': '1-2人，负责核心实验与数据分析',
+                '技术员': '1人，负责样本处理和流程执行'
             }
         else:
             personnel = {
-                'PI': '1人，10%时间投入',
-                '研究生': '1人'
+                'PI': '1人，10%时间投入，负责研究设计与结果审阅',
+                '研究生': '1人，负责数据处理、实验推进与初稿撰写'
             }
 
         # 设备需求
         equipment = self._generate_equipment_needs(methodology)
+        equipment['narrative'] = f"结合 {domain or '当前领域'} 的研究任务，建议优先保障核心计算环境、数据存储和质量控制工具的持续可用性，避免项目在中期因资源瓶颈导致重复返工。"
 
         # 数据需求
         data_needs = self._generate_data_needs(methodology, domain)
+        data_needs['narrative'] = '数据资源应同时覆盖训练/发现阶段与独立验证阶段，若涉及临床或队列研究，应预先锁定纳排标准、时间窗口与缺失值处理策略。'
 
         return {
             'personnel': personnel,
             'equipment': equipment,
-            'data': data_needs
+            'data': data_needs,
+            'coordination': {
+                'description': '建议建立固定周会 + 关键节点审阅机制',
+                'note': '用于同步实验进度、模型迭代与审稿级材料准备'
+            }
         }
 
     def _generate_equipment_needs(self, methodology: Dict) -> Dict:
@@ -637,35 +724,42 @@ class OutputEnhancer:
     def _generate_risks(self, hypothesis_data: Dict, domain: str) -> List[Dict]:
         """生成风险评估"""
         risks = []
+        research_focus = self._infer_research_focus(hypothesis_data)
 
-        # 通用风险
         risks.append({
             'category': '技术风险',
-            'description': '实验技术可能无法达到预期效果',
-            'mitigation': '在正式实验前进行小规模预实验验证',
+            'description': '实验技术或模型设计可能无法稳定达到预期效果',
+            'mitigation': '在正式研究前先完成小规模预实验，并保留替代技术路线以便快速切换',
             'severity': 'medium'
         })
 
         risks.append({
             'category': '数据风险',
-            'description': '数据质量或样本量可能不足',
-            'mitigation': '制定严格的质量控制标准，进行中期功效分析',
+            'description': '数据质量、样本量或标签定义可能不足以支撑主要结论',
+            'mitigation': '制定严格质控标准，进行中期功效分析，并在必要时补充独立验证数据集',
             'severity': 'high'
         })
 
         risks.append({
             'category': '时间风险',
-            'description': '实验周期可能延长',
-            'mitigation': '设置里程碑检查点，及时调整计划',
+            'description': '跨阶段依赖较多，关键实验或验证可能拖慢整体进度',
+            'mitigation': '设置里程碑检查点，将数据准备、主分析和复现整理并行推进',
             'severity': 'medium'
         })
 
-        # 领域特定风险
         if '临床' in str(hypothesis_data) or domain in ['心血管疾病', '癌症']:
             risks.append({
                 'category': '伦理风险',
-                'description': '涉及人体样本需伦理批准',
-                'mitigation': '提前准备伦理申请材料，预留审批时间',
+                'description': '涉及人体样本或患者数据时，伦理审批和数据访问可能成为瓶颈',
+                'mitigation': '提前准备伦理申请、数据使用协议和脱敏流程，避免主实验启动后等待审批',
+                'severity': 'high'
+            })
+
+        if any(keyword in research_focus.lower() for keyword in ['causal', '因果', '预测', 'model', '模型']):
+            risks.append({
+                'category': '方法学风险',
+                'description': f'围绕“{research_focus}”的结论容易受到泄漏、混杂或评估偏差影响',
+                'mitigation': '强制采用患者级/时间级切分、训练折内预处理、敏感性分析和独立 hold-out 验证',
                 'severity': 'high'
             })
 
@@ -678,33 +772,37 @@ class OutputEnhancer:
     ) -> List[str]:
         """生成可行性备注"""
         notes = []
+        research_focus = self._infer_research_focus(hypothesis_data)
 
         physical_validation = fitness_result.get('physical_validation', {})
         if not physical_validation.get('passed', True):
             notes.append(
-                "[警告] 物理可行性验证未通过，请重新评估假设的科学基础"
+                '[警告] 物理可行性验证未通过，请优先重新评估假说的科学基础与可测量路径。'
             )
 
         hybrid_fitness = fitness_result.get('hybrid_fitness', 0)
         if hybrid_fitness >= 8.0:
             notes.append(
-                "[优秀] 综合适应度评分较高，假设具有较强的科学可行性"
+                f'[优秀] 综合适应度评分较高，说明“{research_focus}”具备较强的科学可行性，但仍建议在正式结论前补足独立验证与复现包。'
             )
         elif hybrid_fitness >= 6.0:
             notes.append(
-                "[良好] 综合适应度评分中等，假设基本可行，建议优化细节"
+                f'[良好] 综合适应度处于可推进区间，建议先围绕“{research_focus}”收紧纳排标准、验证协议和关键对照设计。'
             )
         else:
             notes.append(
-                "[注意] 综合适应度评分较低，建议重新审视假设设计"
+                f'[注意] 综合适应度偏低，建议先缩小问题范围，明确“{research_focus}”的最小可验证版本后再扩展研究。'
             )
 
-        # 方法论备注
         methodology = hypothesis_data.get('methodology', {})
         if methodology:
             notes.append(
-                "[方法论] 假设已包含详细的方法论设计，包括技术保障、"
-                "验证协议和偏倚控制"
+                '[方法论] 当前假设已包含方法论设计草图，但建议把技术保障、偏倚控制、超参数选择与最终评估边界写成可审计流程。'
+            )
+
+        if any(keyword in str(methodology).lower() for keyword in ['machine learning', '模型', 'validation', 'causal', 'dag']):
+            notes.append(
+                '[执行提醒] 若研究涉及预测模型或因果推断，应提前冻结切分策略、特征工程边界和主要终点定义，避免后期出现数据穿越或结论边界漂移。'
             )
 
         return notes
@@ -835,25 +933,29 @@ class OutputEnhancer:
 
         # 从补丁日志提取差异化点
         for patch in patch_log:
-            patch_desc = patch.get('patch_applied', '')
+            patch_desc = str(patch.get('patch_applied', '') or '').strip()
             if patch_desc:
                 differentiation.append(f"vs. 现有研究: {patch_desc}")
 
         # 从方法论提取
         methodology = hypothesis_data.get('methodology', {})
-        if methodology.get('validation_protocol'):
-            differentiation.append(
-                "验证协议差异: "
-                f"{methodology['validation_protocol'][:50]}..."
-            )
+        validation_protocol = str(methodology.get('validation_protocol', '') or '').strip()
+        if validation_protocol:
+            differentiation.append(f"验证协议差异: {validation_protocol}")
 
-        if methodology.get('bias_control'):
-            differentiation.append(
-                "偏倚控制差异: "
-                f"{methodology['bias_control'][:50]}..."
-            )
+        bias_control = str(methodology.get('bias_control', '') or '').strip()
+        if bias_control:
+            differentiation.append(f"偏倚控制差异: {bias_control}")
 
-        return differentiation[:4]
+        deduped = []
+        seen = set()
+        for item in differentiation:
+            if not item or item in seen:
+                continue
+            seen.add(item)
+            deduped.append(item)
+
+        return deduped[:4]
 
     def _assess_breakthrough_potential(
         self,
@@ -880,7 +982,7 @@ class OutputEnhancer:
             'description': description,
             'factors': [
                 f'向量新颖度: {vector_score:.2f}',
-                '相似度位置: {similarity:.2f}',
+                f'相似度位置: {similarity:.2f}',
                 f'方法论严谨性: {fitness_result.get("red_team_rigor_score", 0):.2f}'
             ]
         }
@@ -916,7 +1018,11 @@ class OutputEnhancer:
         self,
         innovations: List[Dict],
         novelty_level: str,
-        vector_analysis: Dict
+        vector_analysis: Dict,
+        differentiation: List[str],
+        breakthrough_potential: Dict,
+        domain_context: str,
+        research_focus: str
     ) -> str:
         """生成创新点总结"""
         level_map = {
@@ -926,18 +1032,44 @@ class OutputEnhancer:
             'incremental_low': '低度渐进性'
         }
 
-        summary = f"""
-本研究的创新性属于【{level_map.get(novelty_level, novelty_level)}】创新。
+        lines = [
+            f"本研究的创新性属于【{level_map.get(novelty_level, novelty_level)}】创新，整体定位为：{domain_context}。",
+            f"从研究问题来看，当前工作的核心聚焦于“{research_focus}”，因此其价值不只在于提出一个新想法，更在于把问题转化为可验证、可复现、可被同行审阅的方法学路径。"
+        ]
 
-核心创新点包括：
-"""
-        for i, innovation in enumerate(innovations, 1):
-            summary += f"{i}. {innovation.get('type', '')}: {innovation.get('description', '')[:50]}...\n"
+        if innovations:
+            lines.append('核心创新点主要体现在以下方面：')
+            for index, innovation in enumerate(innovations[:5], 1):
+                innovation_type = innovation.get('type', '创新点')
+                description = str(innovation.get('description', '') or '').strip()
+                source = str(innovation.get('source', '') or '').strip()
+                source_text = f"（来源：{source}）" if source else ''
+                if description:
+                    lines.append(f"{index}. {innovation_type}：{description}{source_text}")
+        else:
+            lines.append('当前尚未抽取到明确的显式创新点，建议进一步补强标题、方法论和补丁日志中的创新表达。')
 
-        summary += f"\n向量新颖度评分为 {vector_analysis.get('score', 0):.2f}/10，"
-        summary += f"{vector_analysis.get('interpretation', '')}。"
+        if differentiation:
+            lines.append('与现有研究相比，本方案的差异化重点包括：')
+            for item in differentiation[:3]:
+                lines.append(f"- {item}")
 
-        return summary.strip()
+        lines.append(
+            f"向量新颖度评分为 {vector_analysis.get('score', 0):.2f}/10，{vector_analysis.get('interpretation', '')}；"
+            f"相似度为 {vector_analysis.get('similarity', 0):.3f}，{vector_analysis.get('similarity_interpretation', '')}。"
+        )
+
+        if breakthrough_potential:
+            factor_text = '；'.join(str(item) for item in breakthrough_potential.get('factors', []) if str(item).strip())
+            lines.append(
+                f"综合突破潜力评估为 {breakthrough_potential.get('level', 'normal')}，"
+                f"原因是：{breakthrough_potential.get('description', '')}。"
+                + (f" 主要依据包括：{factor_text}。" if factor_text else '')
+            )
+
+        lines.append('因此，这一创新并非停留在概念层面的“新”，而是体现为研究问题选择、方法学约束和验证路径设计三者的联合提升。')
+
+        return '\n\n'.join(lines).strip()
 
     # ==================== 私有方法：前沿溯源分析 ====================
 
@@ -963,39 +1095,47 @@ class OutputEnhancer:
         self,
         pmids: List[str],
         arxiv_ids: List[str],
-        domain: str
+        domain: str,
+        hypothesis_data: Dict
     ) -> List[Dict]:
         """解读关键出版物"""
         publications = []
-
-        # 基于数量生成解读
         total_count = len(pmids) + len(arxiv_ids)
+        research_focus = self._infer_research_focus(hypothesis_data)
 
         if total_count == 0:
             publications.append({
                 'type': 'note',
-                'content': '未检索到直接相关文献，可能表明研究具有较高原创性',
+                'content': (
+                    f'当前未检索到与“{research_focus}”直接对应的已验证文献，这可能意味着问题具有原创性，'
+                    '也意味着后续需要更谨慎地补充旁证文献与方法学依据。'
+                ),
                 'pmids': []
-            })
-        elif total_count <= 3:
-            publications.append({
-                'type': 'direct_support',
-                'content': f'检索到 {total_count} 篇直接相关文献，为研究提供基础支持',
-                'pmids': pmids[:3]
             })
         else:
             publications.append({
-                'type': 'extensive_support',
-                'content': f'检索到 {total_count} 篇相关文献，表明该领域研究活跃',
+                'type': 'field_signal',
+                'content': (
+                    f'共检索到 {total_count} 篇相关文献，说明 {domain or "当前方向"} 已形成一定研究积累；'
+                    f'围绕“{research_focus}”的工作更适合定位为在既有前沿上的细化推进，而非完全脱离文献背景的孤立设想。'
+                ),
                 'pmids': pmids[:5]
             })
 
-        # 如果有 PMID，生成具体解读
-        for pmid in pmids[:3]:
+        for index, pmid in enumerate(pmids[:5]):
             publications.append({
                 'type': 'key_reference',
-                'content': f'PMID: {pmid} - 作为关键参考文献引用',
-                'pmids': [pmid]
+                'content': self._format_publication_note(str(pmid), domain, index, total_count),
+                'pmids': [pmid],
+                'pmid': pmid
+            })
+
+        for arxiv_id in arxiv_ids[:2]:
+            publications.append({
+                'type': 'preprint_signal',
+                'content': f'arXiv:{arxiv_id} 提示该方向在预印本层面已有快速迭代迹象，适合重点关注方法学更新与最新 benchmark。',
+                'pmids': [],
+                'identifier': arxiv_id
             })
 
         return publications
@@ -1070,59 +1210,70 @@ class OutputEnhancer:
     def _infer_leading_groups(
         self,
         pmids: List[str],
-        domain: str
+        domain: str,
+        hypothesis_data: Dict
     ) -> List[Dict]:
-        """推断领先团队（简化版）"""
-        # 实际应从文献元数据提取，这里提供通用信息
-        return [
+        """推断领先团队（增强版）"""
+        focus = self._infer_research_focus(hypothesis_data)
+        groups = [
             {
-                'type': 'note',
-                'content': '建议从检索到的文献中分析主要贡献机构和作者',
-                'action': '使用文献计量学工具分析'
+                'type': 'research_alliance',
+                'content': f'{domain or "该领域"}多中心协作网络通常是推动“{focus}”进入高影响力期刊的主要力量',
+                'action': '优先关注多中心队列、公开 benchmark 与共享分析框架'
+            },
+            {
+                'type': 'methodology_team',
+                'content': '方法学领先团队通常掌握数据切分、偏倚控制、外部验证和复现包交付等标准化流程',
+                'action': '对标其 supplementary materials 与公开代码结构'
             }
         ]
+
+        if pmids:
+            groups.append({
+                'type': 'literature_signal',
+                'content': f'当前已检索到 {len(pmids)} 个 PMID，可进一步据此追踪高频作者、机构和联盟名称，识别真正的头部团队。',
+                'action': '基于 PMID 元数据做作者/机构共现分析'
+            })
+
+        return groups
 
     def _construct_frontier_timeline(
         self,
         hypothesis_data: Dict,
-        verified_ids: Dict
+        verified_ids: Dict,
+        domain: str
     ) -> List[Dict]:
         """构建前沿时间线"""
-        timeline = []
+        focus = self._infer_research_focus(hypothesis_data)
+        stage_hint = self._estimate_focus_stage(hypothesis_data)
 
-        # 基础研究阶段
-        timeline.append({
-            'period': '2018-2020',
-            'stage': '基础研究积累',
-            'description': '相关领域基础理论和方法的建立'
-        })
-
-        # 技术突破阶段
-        timeline.append({
-            'period': '2021-2023',
-            'stage': '技术方法突破',
-            'description': '关键技术（如单细胞测序、AI分析）的成熟应用'
-        })
-
-        # 当前前沿
-        timeline.append({
-            'period': '2024-2025',
-            'stage': '当前研究前沿',
-            'description': '本假设所处的前沿位置'
-        })
-
-        # 未来方向
-        timeline.append({
-            'period': '2026+',
-            'stage': '未来发展方向',
-            'description': '预测的研究演进方向'
-        })
-
-        return timeline
+        return [
+            {
+                'period': '2018-2020',
+                'stage': '基础研究积累',
+                'description': f'{domain or "相关领域"}开始形成与“{focus}”相关的基础理论、数据资源和早期分析框架。'
+            },
+            {
+                'period': '2021-2023',
+                'stage': '技术方法突破',
+                'description': '更成熟的计算工具、验证协议与高维数据分析流程推动该问题从概念验证走向可重复研究。'
+            },
+            {
+                'period': '2024-2026',
+                'stage': '当前研究前沿',
+                'description': f'当前重点已转向 {stage_hint}，研究竞争点主要集中在方法学严谨性、泛化能力与机制解释。'
+            },
+            {
+                'period': '2026+',
+                'stage': '未来发展方向',
+                'description': '后续高价值工作通常会围绕多中心验证、标准化复现包和更强的转化落地证据展开。'
+            }
+        ]
 
     def _assess_year_trend(self, hypothesis_data: Dict) -> str:
         """评估年份趋势"""
-        return '2025年最新趋势 - 基于当前最新研究进展'
+        focus = self._infer_research_focus(hypothesis_data)
+        return f'2024-2026 持续升温，围绕“{focus}”的研究正从概念验证转向规范化验证与转化评估'
 
 
 # ==================== 便捷函数 ====================

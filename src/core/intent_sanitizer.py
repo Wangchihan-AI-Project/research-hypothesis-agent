@@ -34,6 +34,9 @@ class SanitizationResult:
     blocked_reason: str = None
     blocked_category: str = None
     risk_score: float = 0.0
+    # V7.7: 笼统输入检测
+    is_broad_input: bool = False  # 是否为笼统输入
+    broad_input_type: str = ""    # 笼统输入类型
 
 
 class IntentSanitizer:
@@ -359,6 +362,64 @@ class IntentSanitizer:
             for kw in self.LEGAL_RESEARCH_CONTEXTS
         ]
 
+    # ==================== V7.7: 笼统输入检测 ====================
+
+    # 笼统输入特征词（过于宽泛的研究主题）
+    BROAD_INPUT_PATTERNS = {
+        'too_short': {
+            'pattern': r'^.{1,15}$',
+            'description': '输入过短，缺少具体研究方向',
+            'suggestion': '请提供更具体的研究方向，例如：使用什么数据、研究什么疾病、采用什么方法'
+        },
+        'generic_domain': {
+            'pattern': r'(AI|人工智能|机器学习|深度学习|数据挖掘|大数据|生物信息|医学|癌症|肿瘤)$',
+            'description': '仅包含泛化领域词，缺少具体问题',
+            'suggestion': '请指定具体的研究问题，例如：某个疾病的预测、某个生物标志物的发现'
+        },
+        'no_methodology': {
+            'pattern': r'^(研究|分析|预测|诊断|治疗).{0,15}(疾病|癌症|肿瘤)',
+            'description': '缺少方法论描述',
+            'suggestion': '请说明使用什么方法或技术，例如：深度学习、多组学整合、因果推断'
+        },
+        'no_data_source': {
+            'pattern': r'^(基于|利用|使用)(AI|机器学习|深度学习)(研究|分析|预测)$',
+            'description': '缺少数据来源描述',
+            'suggestion': '请说明使用什么数据，例如：UK Biobank、TCGA、公共影像数据集'
+        },
+    }
+
+    def _detect_broad_input(self, user_input: str) -> Tuple[bool, str, str]:
+        """
+        V7.7: 检测笼统输入
+
+        Args:
+            user_input: 用户输入
+
+        Returns:
+            Tuple[bool, str, str]: (是否笼统, 笼统类型, 建议)
+        """
+        import re
+
+        input_stripped = user_input.strip()
+
+        for broad_type, config in self.BROAD_INPUT_PATTERNS.items():
+            pattern = config['pattern']
+            if re.search(pattern, input_stripped, re.IGNORECASE):
+                return True, broad_type, config['suggestion']
+
+        # 额外检查：输入长度 < 20 字且无具体关键词
+        if len(input_stripped) < 20:
+            specific_keywords = [
+                '预测', '诊断', '分类', '回归', '聚类', '关联', '因果',
+                '基因', '蛋白', '影像', '病理', '临床', '队列',
+                '神经网络', '随机森林', 'SVM', 'XGBoost', 'Transformer',
+                'UKB', 'TCGA', 'MIMIC', 'ADNI', 'GEO'
+            ]
+            if not any(kw in input_stripped for kw in specific_keywords):
+                return True, 'too_short', '请提供更具体的研究方向，包括：研究问题、数据来源、分析方法'
+
+        return False, "", ""
+
     def sanitize(self, user_input: str) -> SanitizationResult:
         """
         执行意图清洗
@@ -369,18 +430,23 @@ class IntentSanitizer:
         Returns:
             SanitizationResult: 清洗结果
         """
-        if not user_input or len(user_input.strip()) < 10:
+        if not user_input or len(user_input.strip()) < 3:
             return SanitizationResult(
                 is_valid=False,
                 original_input=user_input,
                 cleaned_input='',
-                blocked_reason='输入过短（少于10字符）',
+                blocked_reason='输入过短（少于3字符）',
                 blocked_category='invalid_input',
-                risk_score=1.0
+                risk_score=1.0,
+                is_broad_input=True,
+                broad_input_type='empty_input'
             )
 
         cleaned_input = user_input.strip()
         risk_score = 0.0
+
+        # V7.7: 先检测笼统输入（不阻断，仅标记）
+        is_broad, broad_type, suggestion = self._detect_broad_input(cleaned_input)
 
         # ========== 阶段1: 越狱检测 ==========
         jailbreak_result = self._detect_jailbreak(cleaned_input)
@@ -391,7 +457,9 @@ class IntentSanitizer:
                 cleaned_input='',
                 blocked_reason=f"检测到越狱尝试: {jailbreak_result['matched_pattern']}",
                 blocked_category=f"jailbreak:{jailbreak_result['category']}",
-                risk_score=1.0  # 越狱直接满分阻断
+                risk_score=1.0,
+                is_broad_input=is_broad,
+                broad_input_type=broad_type
             )
 
         # ========== 阶段2: 非科学范畴检测 ==========
@@ -403,7 +471,9 @@ class IntentSanitizer:
                 cleaned_input='',
                 blocked_reason=f"输入脱离科学范畴: {non_science_result['matched_pattern']}",
                 blocked_category=f"non_science:{non_science_result['category']}",
-                risk_score=0.9
+                risk_score=0.9,
+                is_broad_input=is_broad,
+                broad_input_type=broad_type
             )
 
         # ========== V7.1 阶段2.5: 语义隧道检测 ==========
@@ -420,7 +490,9 @@ class IntentSanitizer:
                     cleaned_input='',
                     blocked_reason=f"检测到语义隧道攻击: {semantic_tunnel_result['matched_pattern']}",
                     blocked_category=f"semantic_tunnel:{semantic_tunnel_result['category']}",
-                    risk_score=0.95
+                    risk_score=0.95,
+                    is_broad_input=is_broad,
+                    broad_input_type=broad_type
                 )
             else:
                 # 有豁免 → 记录警告但不阻断
@@ -441,7 +513,9 @@ class IntentSanitizer:
                     cleaned_input='',
                     blocked_reason='输入与科学研究范畴关联度过低',
                     blocked_category='low_science_relevance',
-                    risk_score=0.7
+                    risk_score=0.7,
+                    is_broad_input=is_broad,
+                    broad_input_type=broad_type
                 )
             else:
                 # 宽松模式下仅警告
@@ -468,7 +542,9 @@ class IntentSanitizer:
                     cleaned_input='',
                     blocked_reason='检测到代码/命令注入尝试',
                     blocked_category='code_injection',
-                    risk_score=1.0
+                    risk_score=1.0,
+                    is_broad_input=is_broad,
+                    broad_input_type=broad_type
                 )
 
         # ========== 最终返回 ==========
@@ -476,7 +552,9 @@ class IntentSanitizer:
             is_valid=True,
             original_input=user_input,
             cleaned_input=cleaned_input,
-            risk_score=risk_score
+            risk_score=risk_score,
+            is_broad_input=is_broad,
+            broad_input_type=broad_type
         )
 
     def _detect_jailbreak(self, text: str) -> Dict:

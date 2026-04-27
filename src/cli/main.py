@@ -1,6 +1,11 @@
 """
 命令行交互界面（Human-in-the-Loop 版本）
 实现人在回路的研究假设生成流程
+
+V8.0 新增：
+- 自然语言对话模式
+- IntentParser 语义理解
+- ConversationContext 多轮对话支持
 """
 import sys
 import os
@@ -13,6 +18,11 @@ from core.database import Hypothesis
 from core.config_loader import get_config
 from core.program_config import get_program_config, reload_program_config
 from utils.report_export import ReportExporter
+
+# V8.0: 新增语义理解组件
+from core.intent_parser import IntentParser, UserIntent, ParsedIntent, ResearchDomain
+from core.conversation_context import ContextManager, ConversationContext, create_session_context
+
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
@@ -37,7 +47,10 @@ custom_style = Style([
 
 
 class ResearchCLI:
-    """研究假设生成CLI - Human-in-the-Loop 版本"""
+    """研究假设生成CLI - Human-in-the-Loop 版本
+
+    V8.0 新增自然语言对话模式
+    """
 
     def __init__(self):
         """初始化CLI"""
@@ -51,11 +64,17 @@ class ResearchCLI:
         self.hypothesis_ids = []
         self.proposal_path = None
 
+        # V8.0: 新增语义理解组件
+        self.intent_parser = IntentParser()
+        self.context_manager = ContextManager()
+        self.current_context: ConversationContext = None
+
     def run(self):
         """运行CLI主循环"""
         self.console.print(Panel.fit(
             "[bold cyan]生物医学计算与统计自动化科研引擎[/bold cyan]\n"
             "[bold yellow]Human-in-the-Loop 模式[/bold yellow]\n"
+            "[bold magenta]V8.0 自然语言对话模式[/bold magenta]\n"
             "[green]四大核心领域：Biomedical Informatics | Computational Biology | Health Data Science | Biostatistics[/green]\n"
             "[dim]专注于PubMed文献的计算/统计Gap挖掘与方法论创新[/dim]\n"
             f"[dim]版本: {self.config.get('system.version')}[/dim]",
@@ -67,7 +86,8 @@ class ResearchCLI:
             action = questionary.select(
                 "请选择操作：",
                 choices=[
-                    "开始新的研究流程",
+                    "💬 自然语言对话模式 (推荐)",
+                    "开始新的研究流程 (传统)",
                     "🤖 自主循环模式 (Auto-Iterate)",
                     "查看/修改研究策略 (program.md)",
                     "查看历史会话",
@@ -78,7 +98,9 @@ class ResearchCLI:
                 style=custom_style
             ).ask()
 
-            if action == "开始新的研究流程":
+            if action == "💬 自然语言对话模式 (推荐)":
+                self.run_conversational_mode()
+            elif action == "开始新的研究流程 (传统)":
                 self.run_workflow_hitl()
             elif action == "🤖 自主循环模式 (Auto-Iterate)":
                 self.run_autonomous_mode()
@@ -829,6 +851,356 @@ class ResearchCLI:
         if report:
             filename = self.exporter.export_to_markdown(report)
             self.console.print(f"[green]报告已导出到: {filename}[/green]")
+
+    # ==================== V8.0: 自然语言对话模式 ====================
+
+    def run_conversational_mode(self):
+        """
+        V8.0: 运行自然语言对话模式
+
+        支持��轮对话，用户可以用自然语言描述需求
+        """
+        # 创建新会话
+        import uuid
+        session_id = str(uuid.uuid4())[:8]
+        self.current_context = create_session_context(session_id)
+
+        self.console.print(Panel.fit(
+            "[bold cyan]💬 自然语言对话模式[/bold cyan]\n"
+            "[dim]您可以用自然语言描述您的需求，例如：[/dim]\n"
+            "[dim]• \"帮我找50篇关于CRISPR基因治疗的论文\"[/dim]\n"
+            "[dim]• \"用AI帮医生看片子\"[/dim]\n"
+            "[dim]• \"预测病人对药物的反应\"[/dim]\n"
+            "[dim]• \"把刚才的搜索扩大到100篇\"[/dim]\n"
+            "[dim]• \"生成假设\"[/dim]\n"
+            "[dim]• \"查看历史\"[/dim]\n"
+            "[dim]• \"退出\"[/dim]\n"
+            "[yellow]输入 'exit' 或 '退出' 可随时结束对话[/yellow]",
+            border_style="magenta"
+        ))
+
+        while True:
+            # 显示上下文提示
+            if self.current_context:
+                context_summary = self.current_context.get_summary()
+                if context_summary != "新会话":
+                    self.console.print(f"[dim]上下文: {context_summary}[/dim]\n")
+
+            # 获取用户输入
+            user_input = questionary.text(
+                "请告诉我您想做什么：",
+                style=custom_style
+            ).ask()
+
+            if not user_input:
+                continue
+
+            # 解析用户意图
+            parsed = self.intent_parser.parse(
+                user_input,
+                self.current_context.get_context_for_parser()
+            )
+
+            # 添加对话记录
+            self.current_context.add_turn(
+                user_input=user_input,
+                parsed_intent=parsed,
+                action_taken=""
+            )
+
+            # 处理意图
+            try:
+                should_exit = self._handle_parsed_intent(parsed)
+                if should_exit:
+                    break
+            except KeyboardInterrupt:
+                self.console.print("\n[yellow]对话已中断[/yellow]")
+                break
+            except Exception as e:
+                self.console.print(f"\n[red]处理出错: {str(e)}[/red]")
+                import traceback
+                traceback.print_exc()
+
+    def _handle_parsed_intent(self, parsed: ParsedIntent) -> bool:
+        """
+        处理解析后的意图
+
+        Args:
+            parsed: 解析后的意图
+
+        Returns:
+            bool: 是否应该退出对话
+        """
+        intent = parsed.intent
+
+        # 显示解析结果（调试用）
+        self.console.print(f"[dim]解析结果: {intent.value} (置信度: {parsed.confidence:.2f})[/dim]")
+
+        if parsed.confidence < 0.7:
+            # 低置信度时确认
+            confirmed = questionary.confirm(
+                f"我理解您想{intent.value.replace('_', ' ')}，对吗？",
+                default=True,
+                style=custom_style
+            ).ask()
+            if not confirmed:
+                return False
+
+        # 退出意图
+        if intent == UserIntent.EXIT:
+            self.console.print("[green]对话已结束[/green]")
+            return True
+
+        # 搜索论文
+        elif intent == UserIntent.SEARCH_PAPERS:
+            self._handle_search_papers(parsed)
+
+        # 扩大/缩小搜索
+        elif intent == UserIntent.REFINE_SEARCH:
+            self._handle_refine_search(parsed)
+
+        # 生成假设
+        elif intent == UserIntent.GENERATE_HYPOTHESIS:
+            self._handle_generate_hypothesis(parsed)
+
+        # 选择假设
+        elif intent == UserIntent.SELECT_HYPOTHESIS:
+            self._handle_select_hypothesis(parsed)
+
+        # 查看历史
+        elif intent == UserIntent.VIEW_HISTORY:
+            self.view_sessions()
+
+        # 查看保存的假设
+        elif intent == UserIntent.VIEW_SAVED:
+            self.view_saved_hypotheses()
+
+        # 修改配置
+        elif intent == UserIntent.MODIFY_CONFIG:
+            self.view_program_config()
+
+        # 导出报告
+        elif intent == UserIntent.EXPORT_REPORT:
+            self.export_report()
+
+        # 自主模式
+        elif intent == UserIntent.AUTONOMOUS_MODE:
+            self.run_autonomous_mode()
+
+        # 未知意图
+        elif intent == UserIntent.UNKNOWN:
+            self.console.print("[yellow]抱歉，我没有理解您的意思。请尝试用更具体的方式描述。[/yellow]")
+
+        return False
+
+    def _handle_search_papers(self, parsed: ParsedIntent):
+        """处理搜索论文意图"""
+        params = parsed.parameters
+        if not params:
+            self.console.print("[yellow]请提供更具体的搜索关键词[/yellow]")
+            return
+
+        query = params.query
+        max_results = params.max_results or 20
+        date_range = params.date_range
+        sources = params.sources
+
+        # 显示搜索信息
+        self.console.print(f"\n[cyan]正在搜索: {query}[/cyan]")
+        if max_results:
+            self.console.print(f"[dim]最大结果数: {max_results}[/dim]")
+        if date_range:
+            self.console.print(f"[dim]时间范围: {date_range[0]}-{date_range[1]}[/dim]")
+        if sources:
+            self.console.print(f"[dim]数据源: {', '.join(sources)}[/dim]")
+
+        # 调用搜索
+        with Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            console=self.console
+        ) as progress:
+            task = progress.add_task("正在搜索文献...", total=None)
+
+            search_result = self.orchestrator.search_papers(
+                query,
+                max_results,
+                enable_filter=False,
+                fetch_full_text=True,
+                max_full_text=5
+            )
+
+            progress.remove_task(task)
+
+        if not search_result['success']:
+            self.console.print(f"[red]搜索失败: {search_result.get('error')}[/red]")
+            return
+
+        papers = search_result['papers']
+        self.current_papers = papers
+
+        # 更新上下文
+        self.current_context.update_search_results(
+            papers=papers,
+            results_count=len(papers)
+        )
+
+        self.console.print(f"\n[green]找到 {len(papers)} 篇相关文献[/green]")
+
+        # 显示前几篇
+        if papers:
+            self.console.print("\n[cyan]部分结果:[/cyan]")
+            for i, paper in enumerate(papers[:3], 1):
+                title = paper.get('title', 'N/A')
+                if len(title) > 60:
+                    title = title[:60] + "..."
+                self.console.print(f"  {i}. {title}")
+
+    def _handle_refine_search(self, parsed: ParsedIntent):
+        """处理扩大/缩小搜索意图"""
+        # 从上下文获取上次查询
+        if not self.current_context.last_query:
+            self.console.print("[yellow]没有上一次的搜索记录[/yellow]")
+            return
+
+        # 合并参数
+        last_params = self.current_context.last_parameters or {}
+        new_params = parsed.parameters
+
+        query = new_params.query if new_params and new_params.query else last_params.get('query')
+        max_results = new_params.max_results if new_params and new_params.max_results else last_params.get('max_results', 20)
+
+        # 如果用户说"扩大"，增加结果数
+        if '扩大' in parsed.original_input or '更多' in parsed.original_input:
+            max_results = (last_params.get('max_results', 20) or 20) * 2
+        elif '缩小' in parsed.original_input or '少点' in parsed.original_input:
+            max_results = max((last_params.get('max_results', 20) or 20) // 2, 5)
+
+        self.console.print(f"\n[cyan]重新搜索: {query} (最大结果数: {max_results})[/cyan]")
+
+        # 执行搜索
+        with Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            console=self.console
+        ) as progress:
+            task = progress.add_task("正在搜索文献...", total=None)
+
+            search_result = self.orchestrator.search_papers(
+                query,
+                max_results,
+                enable_filter=False,
+                fetch_full_text=True,
+                max_full_text=5
+            )
+
+            progress.remove_task(task)
+
+        if not search_result['success']:
+            self.console.print(f"[red]搜索失败: {search_result.get('error')}[/red]")
+            return
+
+        papers = search_result['papers']
+        self.current_papers = papers
+        self.current_context.update_search_results(papers=papers, results_count=len(papers))
+
+        self.console.print(f"\n[green]找到 {len(papers)} 篇相关文献[/green]")
+
+    def _handle_generate_hypothesis(self, parsed: ParsedIntent):
+        """处理生成假设意图"""
+        if not self.current_papers:
+            self.console.print("[yellow]请先搜索论文[/yellow]")
+            return
+
+        self.console.print(f"\n[cyan]基于 {len(self.current_papers)} 篇论文生成假设...[/cyan]")
+
+        research_topic = parsed.parameters.query if parsed.parameters else "研究假设"
+
+        with Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            console=self.console
+        ) as progress:
+            task = progress.add_task("正在生成假设...", total=None)
+
+            hyp_result = self.orchestrator.hypothesis_agent.execute({
+                'literature_report': f"找到 {len(self.current_papers)} 篇相关文献",
+                'papers': self.current_papers,
+                'research_topic': research_topic,
+                'output_dir': 'reports'
+            })
+
+            progress.remove_task(task)
+
+        if not hyp_result['success']:
+            self.console.print(f"[red]假设生成失败: {hyp_result.get('error')}[/red]")
+            return
+
+        hypotheses = hyp_result['hypotheses']
+        hypothesis_ids = hyp_result.get('hypothesis_ids', [])
+
+        self.generated_hypotheses = hypotheses
+        self.hypothesis_ids = hypothesis_ids
+
+        # 更新上下文
+        self.current_context.update_hypotheses(hypotheses, hypothesis_ids)
+
+        self.console.print(f"\n[green]生成了 {len(hypotheses)} 个假设[/green]")
+
+        # 显示假设摘要
+        self._display_hypotheses_summary()
+
+        # 询问是否选择
+        if hypotheses:
+            self._ask_hypothesis_selection()
+
+    def _handle_select_hypothesis(self, parsed: ParsedIntent):
+        """处理选择假设意图"""
+        if not self.current_context.pending_hypotheses:
+            self.console.print("[yellow]没有待选择的假设[/yellow]")
+            return
+
+        # 从用户输入中提取选择
+        import re
+        match = re.search(r'第?(\d+)[个号]', parsed.original_input)
+        if match:
+            index = int(match.group(1)) - 1
+        elif '1' in parsed.original_input or '一' in parsed.original_input:
+            index = 0
+        elif '2' in parsed.original_input or '二' in parsed.original_input:
+            index = 1
+        elif '3' in parsed.original_input or '三' in parsed.original_input:
+            index = 2
+        else:
+            self.console.print("[yellow]请明确选择第几个假设（如\"选择第1个\"）[/yellow]")
+            return
+
+        selected = self.current_context.select_hypothesis(index)
+        if selected:
+            self.console.print(f"\n[bold green]您选择了: {selected['title']}[/bold green]")
+            # 可以继续进行验证等流程
+        else:
+            self.console.print(f"[red]无效的选择（索引超出范围）[/red]")
+
+    def _ask_hypothesis_selection(self):
+        """询问假设选择"""
+        choice = questionary.text(
+            "请输入 1, 2, 3 选择对应假设，或输入 0 让他们重新想：",
+            style=custom_style
+        ).ask()
+
+        if choice == '0':
+            self.console.print("\n[yellow]打回给首席科学家重新生成...[/yellow]")
+            # 可以重新调用 _handle_generate_hypothesis
+        elif choice in ['1', '2', '3']:
+            hyp_index = int(choice) - 1
+            selected = self.current_context.select_hypothesis(hyp_index)
+            if selected:
+                self.console.print(f"\n[bold green]您选择了假设 {choice}: {selected['title'][:50]}...[/bold green]")
+            else:
+                self.console.print(f"[red]无效选择[/red]")
+        else:
+            self.console.print("[red]无效输入，请输入 0, 1, 2 或 3[/red]")
 
 
 def main():

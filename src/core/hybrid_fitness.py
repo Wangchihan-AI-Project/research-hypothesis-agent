@@ -15,6 +15,7 @@ V6.1 混合适应度函数 (Hybrid Fitness Function)
 """
 
 import json
+import os
 import threading
 import re
 import numpy as np
@@ -22,6 +23,11 @@ from typing import Dict, List, Optional, Any, Tuple
 from dataclasses import dataclass, field
 from pathlib import Path
 from datetime import datetime
+
+# ==================== HuggingFace 镜像设置（中国大陆） ====================
+# 如果未设置 HF_ENDPOINT，使用国内镜像加速
+if not os.getenv('HF_ENDPOINT'):
+    os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 
 # ==================== V7.1: 集中式日志挂载 ====================
 from src.utils.logger import get_central_logger, AUDIT_LEVEL, log_exceptions

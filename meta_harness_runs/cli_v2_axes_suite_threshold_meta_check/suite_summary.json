@@ -1,0 +1,270 @@
+{
+  "run_time": "2026-04-24T16:56:59.117524",
+  "suite": "v2_axes",
+  "run_name_prefix": "cli_v2_axes_suite_threshold_meta_check",
+  "axes": [
+    "v2_frontier_sensitive",
+    "v2_roadmap_sensitive",
+    "v2_innovation_sensitive"
+  ],
+  "axis_summaries": {
+    "v2_frontier_sensitive": {
+      "full_enhanced": {
+        "count": 2,
+        "avg_score": 0.8014
+      },
+      "current_baseline": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "render_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "roadmap_only": {
+        "count": 2,
+        "avg_score": 0.5431
+      },
+      "innovation_only": {
+        "count": 2,
+        "avg_score": 0.5153
+      },
+      "frontier_only": {
+        "count": 2,
+        "avg_score": 0.6305
+      },
+      "roadmap_innovation": {
+        "count": 2,
+        "avg_score": 0.6146
+      },
+      "frontier_roadmap": {
+        "count": 2,
+        "avg_score": 0.7299
+      },
+      "frontier_innovation": {
+        "count": 2,
+        "avg_score": 0.7021
+      }
+    },
+    "v2_roadmap_sensitive": {
+      "full_enhanced": {
+        "count": 2,
+        "avg_score": 0.5431
+      },
+      "current_baseline": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "render_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "roadmap_only": {
+        "count": 2,
+        "avg_score": 0.5431
+      },
+      "innovation_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "frontier_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "roadmap_innovation": {
+        "count": 2,
+        "avg_score": 0.5431
+      },
+      "frontier_roadmap": {
+        "count": 2,
+        "avg_score": 0.5431
+      },
+      "frontier_innovation": {
+        "count": 2,
+        "avg_score": 0.4438
+      }
+    },
+    "v2_innovation_sensitive": {
+      "full_enhanced": {
+        "count": 2,
+        "avg_score": 0.5153
+      },
+      "current_baseline": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "render_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "roadmap_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "innovation_only": {
+        "count": 2,
+        "avg_score": 0.5153
+      },
+      "frontier_only": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "roadmap_innovation": {
+        "count": 2,
+        "avg_score": 0.5153
+      },
+      "frontier_roadmap": {
+        "count": 2,
+        "avg_score": 0.4438
+      },
+      "frontier_innovation": {
+        "count": 2,
+        "avg_score": 0.5153
+      }
+    }
+  },
+  "strength_tag_rule": {
+    "method": "midpoint_between_baseline_and_best",
+    "axes": {
+      "v2_frontier_sensitive": {
+        "baseline": 0.4438,
+        "best": 0.8014,
+        "threshold": 0.6226
+      },
+      "v2_roadmap_sensitive": {
+        "baseline": 0.4438,
+        "best": 0.5431,
+        "threshold": 0.4934
+      },
+      "v2_innovation_sensitive": {
+        "baseline": 0.4438,
+        "best": 0.5153,
+        "threshold": 0.4795
+      }
+    }
+  },
+  "overall_ranking": [
+    {
+      "rank": 1,
+      "candidate": "full_enhanced",
+      "overall_avg": 0.6199,
+      "axis_scores": {
+        "v2_frontier_sensitive": 0.8014,
+        "v2_roadmap_sensitive": 0.5431,
+        "v2_innovation_sensitive": 0.5153
+      },
+      "strength_tags": [
+        "frontier_strong",
+        "roadmap_strong",
+        "innovation_strong"
+      ]
+    },
+    {
+      "rank": 2,
+      "candidate": "frontier_roadmap",
+      "overall_avg": 0.5723,
+      "axis_scores": {
+        "v2_frontier_sensitive": 0.7299,
+        "v2_roadmap_sensitive": 0.5431,
+        "v2_innovation_sensitive": 0.4438
+      },
+      "strength_tags": [
+        "frontier_strong",
+        "roadmap_strong"
+      ]
+    },
+    {
+      "rank": 3,
+      "candidate": "roadmap_innovation",
+      "overall_avg": 0.5577,
+      "axis_scores": {
+        "v2_frontier_sensitive": 0.6146,
+        "v2_roadmap_sensitive": 0.5431,
+        "v2_innovation_sensitive": 0.5153
+      },
+      "strength_tags": [
+        "roadmap_strong",
+        "innovation_strong"
+      ]
+    },
+    {
+      "rank": 4,
+      "candidate": "frontier_innovation",
+      "overall_avg": 0.5537,
+      "axis_scores": {
+        "v2_frontier_sensitive": 0.7021,
+        "v2_roadmap_sensitive": 0.4438,
+        "v2_innovation_sensitive": 0.5153
+      },
+      "strength_tags": [
+        "frontier_strong",
+        "innovation_strong"
+      ]
+    },
+    {
+      "rank": 5,
+      "candidate": "roadmap_only",
+      "overall_avg": 0.51,
+      "axis_scores": {
+        "v2_frontier_sensitive": 0.5431,
+        "v2_roadmap_sensitive": 0.5431,
+        "v2_innovation_sensitive": 0.4438
+      },
+      "strength_tags": [
+        "roadmap_strong"
+      ]
+    },
+    {
+      "rank": 6,
+      "candidate": "frontier_only",
+      "overall_avg": 0.506,
+      "axis_scores": {
+        "v2_frontier_sensitive": 0.6305,
+        "v2_roadmap_sensitive": 0.4438,
+        "v2_innovation_sensitive": 0.4438
+      },
+      "strength_tags": [
+        "frontier_strong"
+      ]
+    },
+    {
+      "rank": 7,
+      "candidate": "innovation_only",
+      "overall_avg": 0.4915,
+      "axis_scores": {
+        "v2_frontier_sensitive": 0.5153,
+        "v2_roadmap_sensitive": 0.4438,
+        "v2_innovation_sensitive": 0.5153
+      },
+      "strength_tags": [
+        "innovation_strong"
+      ]
+    },
+    {
+      "rank": 8,
+      "candidate": "current_baseline",
+      "overall_avg": 0.4438,
+      "axis_scores": {
+        "v2_frontier_sensitive": 0.4438,
+        "v2_roadmap_sensitive": 0.4438,
+        "v2_innovation_sensitive": 0.4438
+      },
+      "strength_tags": [
+        "baseline_level"
+      ]
+    },
+    {
+      "rank": 9,
+      "candidate": "render_only",
+      "overall_avg": 0.4438,
+      "axis_scores": {
+        "v2_frontier_sensitive": 0.4438,
+        "v2_roadmap_sensitive": 0.4438,
+        "v2_innovation_sensitive": 0.4438
+      },
+      "strength_tags": [
+        "baseline_level"
+      ]
+    }
+  ]
+}

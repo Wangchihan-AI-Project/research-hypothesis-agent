@@ -378,6 +378,55 @@ class DataSource(Enum):
 
 
 @dataclass
+class MultiDomainRoutingResult:
+    """
+    V8.0 多领域路由决策结果
+
+    支持交叉学科场景，合并多个领域的数据源
+    """
+    domains: List[str]                        # 检测到的多个领域
+    sources: List[str]                        # 合并后的数据源列表
+    routing_reason: str                       # 路由理由
+    domain_details: List[Dict] = field(default_factory=list)  # 各领域详情
+    confidence: float = 1.0                   # 路由置信度
+    timestamp: str = field(default_factory=lambda: datetime.now().isoformat())
+
+    def to_dict(self) -> Dict:
+        """转换为字典"""
+        return {
+            'domains': self.domains,
+            'sources': self.sources,
+            'routing_reason': self.routing_reason,
+            'domain_details': self.domain_details,
+            'confidence': self.confidence,
+            'timestamp': self.timestamp,
+        }
+
+    def get_source_config_text(self) -> str:
+        """
+        生成数据源配置文本
+
+        用于 PI Prompt 的 {DATA_SOURCE_CONFIG} 插槽
+        """
+        source_descriptions = {
+            'pubmed': 'PubMed (医学/生命科学文献数据库) - 使用 PMID 引用格式',
+            'arxiv': 'ArXiv (计算机/物理/数学预印本) - 使用 arXiv:xxx 引用格式',
+            'semantic_scholar': 'Semantic Scholar (全学科学术搜索) - 使用 DOI 引用格式',
+        }
+
+        lines = []
+        for source in self.sources:
+            desc = source_descriptions.get(source, source)
+            lines.append(f"- {desc}")
+
+        # 添加领域说明
+        if self.domains:
+            lines.append(f"\n涉及领域: {', '.join(self.domains)}")
+
+        return "\n".join(lines)
+
+
+@dataclass
 class RoutingResult:
     """
     路由决策结果
@@ -665,6 +714,133 @@ class DynamicRAGRouter:
             detected_keywords=detected_keywords,
             user_domain_match=user_domain_match,
         )
+
+    def route_multi_domain(
+        self,
+        domains: List[str],
+        confidences: List[float] = None,
+    ) -> MultiDomainRoutingResult:
+        """
+        V8.0 多领域路由决策
+
+        支持交叉学科场景，合并多个领域的数据源
+
+        Args:
+            domains: 检测到的领域列表
+            confidences: 各领域的置信度（可选）
+
+        Returns:
+            MultiDomainRoutingResult: 多领域路由结果
+        """
+        if not domains:
+            domains = ['default']
+
+        # 合并所有领域的数据源
+        all_sources = set()
+        domain_details = []
+
+        for i, domain in enumerate(domains):
+            domain_lower = domain.lower()
+            sources = DOMAIN_SOURCE_MAPPING.get(domain_lower, DOMAIN_SOURCE_MAPPING['default'])
+
+            confidence = confidences[i] if confidences and i < len(confidences) else 0.8
+
+            domain_detail = {
+                'domain': domain,
+                'sources': sources,
+                'confidence': confidence,
+            }
+            domain_details.append(domain_detail)
+
+            all_sources.update(sources)
+
+        # 按优先级排序数据源
+        sorted_sources = self._sort_sources_by_priority(list(all_sources))
+
+        # 构建路由理由
+        routing_reason = self._build_multi_domain_routing_reason(domains, sorted_sources)
+
+        # 计算整体置信度
+        overall_confidence = sum(confidences or [0.8] * len(domains)) / len(domains)
+
+        logger.info(f"[RAG Router V8.0] Multi-domain routing: {domains} → {sorted_sources}")
+
+        return MultiDomainRoutingResult(
+            domains=domains,
+            sources=sorted_sources,
+            routing_reason=routing_reason,
+            domain_details=domain_details,
+            confidence=overall_confidence,
+        )
+
+    def _sort_sources_by_priority(self, sources: List[str]) -> List[str]:
+        """
+        V8.0: 按优先级排序数据源
+
+        Args:
+            sources: 数据源列表
+
+        Returns:
+            List[str]: 按优先级排序的数据源列表
+        """
+        # 定义排序权重
+        priority_weights = {
+            'pubmed': 1,      # 医学优先
+            'arxiv': 2,       # 计算机/物理优先
+            'semantic_scholar': 3,  # 全学科辅助
+            'crossref': 4,    # 降级
+            'google_scholar': 5,  # 降级
+        }
+
+        # 按权重排序
+        sorted_sources = sorted(
+            sources,
+            key=lambda s: priority_weights.get(s, 10)
+        )
+
+        return sorted_sources
+
+    def _build_multi_domain_routing_reason(
+        self,
+        domains: List[str],
+        sources: List[str]
+    ) -> str:
+        """
+        V8.0: 构建多领域路由理由
+
+        Args:
+            domains: 领域列表
+            sources: 数据源列表
+
+        Returns:
+            str: 路由理由说明
+        """
+        domain_str = ', '.join(domains)
+        source_str = ', '.join(sources)
+
+        reasons = []
+
+        # 分析领域组合
+        has_medical = any(d in ['medicine', 'biology', 'biomedicine', 'neuroscience',
+                                'oncology', 'genomics', 'cardiology', 'medical_imaging']
+                          for d in domains)
+        has_cs = any(d in ['computer_science', 'ai', 'machine_learning', 'deep_learning',
+                           'computer_vision', 'nlp', 'data_science']
+                     for d in domains)
+
+        if has_medical and has_cs:
+            reasons.append("交叉学科场景：医学/生命科学 + 计算机/AI")
+            reasons.append("合并 PubMed (医学文献) + ArXiv (计算机预印本)")
+        elif has_medical:
+            reasons.append("医学/生命科学领域，优先 PubMed")
+        elif has_cs:
+            reasons.append("计算机/AI领域，优先 ArXiv + Semantic Scholar")
+        else:
+            reasons.append(f"领域: {domain_str}")
+
+        reasons.append(f"数据源: {source_str}")
+
+        return " | ".join(reasons)
 
     def _detect_domain(self, user_input: str) -> Tuple[str, List[str]]:
         """

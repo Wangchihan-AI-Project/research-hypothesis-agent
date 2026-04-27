@@ -1,0 +1,29 @@
+# iteration_1_hypothesis
+
+```json
+{
+  "title": "基于因果推断与严格数据流管的预测模型构建方案 v1.1",
+  "details": "本方案旨在解决原 v1.0 版本中存在的严重数据泄露风险与内生性偏倚问题。通过引入有向无环图（DAG）进行因果结构定义，并实施严格的数据流管，确保所有统计变换（如PCA、标准化）仅基于训练集计算，从而保证模型的泛化性与因果解释力。",
+  "methodology": {
+    "technical_safeguards": [
+      "建立严格的数据流管：在Pipeline中明确划分 'Fit' 阶段与 'Transform' 阶段。确保 PCA、StandardScaler 等任何涉及全局统计量计算的变换器，仅在 Training Set 上调用 .fit() 方法，随后将学习到的参数（如均值、方差、主成分载荷）应用于 Validation Set 和 Test Set，严禁在验证前对全量数据进行预处理。",
+      "实施双重验证机制：除传统的 K-fold 交叉验证外，引入敏感性分析，通过置换检验验证特征与结果之间的因果稳定性，排除虚假相关性。"
+    ],
+    "validation_protocol": "采用 'Nested Cross-Validation'（嵌套交叉验证）策略。外层循环用于模型评估，内层循环用于超参数调优。确保在每一个 Fold 的训练子集内部独立进行特征选择与降维，彻底阻断测试集信息向训练集泄露的路径。",
+    "bias_control": "构建基于领域知识的因果图（DAG）。在模型训练前，利用 Do-Calculus 或后门准则识别并调整混杂变量，确保模型学习到的是 $P(Y|do(X))$ 而非 $P(Y|X)$，从而消除由遗漏变量或选择偏差导致的内生性偏倚。"
+  },
+  "version": "v1.1",
+  "patch_log": [
+    {
+      "attack_type": "数据穿越",
+      "patch_applied": "实施了严格的数据隔离策略，强制所有基于数据分布的统计量计算仅限于训练集，并使用 Pipeline 机制封装变换顺序，防止验证集信息泄露。",
+      "supporting_reference": "Reference: Ambroise, C., & McLachlan, G. J. (2002). Selection bias in gene extraction on the basis of microarray gene-expression data. PNAS."
+    },
+    {
+      "attack_type": "内生性偏倚",
+      "patch_applied": "引入因果推断框架，通过构建 DAG 显式建模变量间的因果关系，并使用因果调整算法控制混杂因子，避免模型拟合虚假相关。",
+      "supporting_reference": "Reference: Pearl, J. (2009). Causality: Models, Reasoning, and Inference. Cambridge University Press; PMID: 31601808 (Causal Inference in Statistics)"
+    }
+  ]
+}
+```

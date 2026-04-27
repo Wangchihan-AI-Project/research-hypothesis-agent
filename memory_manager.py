@@ -10,6 +10,11 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any
 from pathlib import Path
 
+# ==================== HuggingFace 镜像设置（中国大陆） ====================
+# 如果未设置 HF_ENDPOINT，使用国内镜像加速
+if not os.getenv('HF_ENDPOINT'):
+    os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
+
 # 尝试导入依赖
 try:
     import chromadb
