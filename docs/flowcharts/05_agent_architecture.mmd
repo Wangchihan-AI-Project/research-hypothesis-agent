@@ -1,0 +1,18 @@
+flowchart TB
+    User[用户] --> Sanitizer[意图清洗网关]
+    Sanitizer --> RAG[动态 RAG 路由器]
+    RAG --> PubMed[PubMed]
+    RAG --> ArXiv[ArXiv]
+    RAG --> SemanticScholar[Semantic Scholar]
+    RAG --> PI[PI Agent 首席科学家 假设生成]
+    PI --> StateMachine[Phoenix 状态机]
+    StateMachine --> Red[RedTeam Agent 红方攻击者 漏洞检测]
+    Red --> Blue[Defense Committee 蓝方答辩委员会 可行性审查]
+    Blue --> GenAI[GenAI Expert AI ML 专家]
+    Blue --> Biostats[Biostats Agent 生物统计专家]
+    Blue --> StateMachine
+    StateMachine --> PatchInjector[补丁注入器]
+    PatchInjector --> RollbackHandler[回溯处理器]
+    RollbackHandler --> PI
+    StateMachine --> VersionManager[版本管理器]
+    VersionManager --> SQLite[(SQLite 数据库)]

@@ -33,6 +33,14 @@ PHOENIX_CONFIG = {
     'SCORE_RISE_MIN_DELTA': 0.5,        # 每轮最少上升 0.5 分
     'MIN_SUCCESS_SCORE': 8.5,           # 成功最低分数阈值
     'COMPENSATION_SEARCH_DEPTH': 3,     # 外部补偿检索深度
+    # V7.6: 分级检索配置
+    'PATCH_INEFFECTIVE_THRESHOLD': 2,   # 连续 2 次补丁无效触发升级检索
+    'MAX_SEARCH_LEVEL': 3,              # 最高检索级别
+    # V7.7: 补丁无效累积回溯配置
+    'ATTACK_TYPE_FAILURE_THRESHOLD': 3, # 同一攻击类型连续失败 3 次触发回溯
+    'MAX_ROLLBACK_ATTEMPTS': 2,         # 最大回溯尝试次数
+    'ROLLBACK_DEPTH_LIMIT': 3,          # 回溯深度限制（最多回溯3个版本）
+    'ROLLBACK_SCORE_TOLERANCE': 1.0,    # 回溯评分容忍度（不回溯到分数低于当前-1.0的版本）
 }
 
 
@@ -57,6 +65,9 @@ class PhoenixState(Enum):
     SCORE_STagnant = auto()             # 分数停滞（触发外部补偿）
     EXTERNAL_COMPENSATION = auto()      # 外部算法补偿进行中
 
+    # V7.7: 回溯状态
+    PHOENIX_ROLLBACK = auto()           # 补丁无效累积回溯
+
     # 终态
     SUCCESS = auto()                    # 最终成功
     HARD_FAILURE = auto()               # 硬性失败（物理不可修复）
@@ -79,6 +90,10 @@ class PhoenixTransitionTrigger(Enum):
     PATCH_APPLIED = auto()              # 补丁已应用
     REWRITE_COMPLETED = auto()          # 重写完成
     COMPENSATION_COMPLETED = auto()     # 补偿完成
+
+    # V7.7: 回溯触发器
+    ATTACK_TYPE_UNSOLVABLE = auto()     # 攻击类型无法解决（触发回溯）
+    ROLLBACK_COMPLETED = auto()         # 回溯完成
 
     # 终态触发器
     UNRECOVERABLE_CONFLICT = auto()     # 不可恢复冲突
@@ -146,6 +161,12 @@ PHOENIX_STATE_TRANSITIONS = {
         PhoenixState.MAX_PHOENIX_EXCEEDED,
     (PhoenixState.BLUE_DEFENSE, PhoenixTransitionTrigger.SUCCESS_THRESHOLD_REACHED):
         PhoenixState.SUCCESS,
+
+    # V7.7: 回溯状态转换
+    (PhoenixState.PHOENIX_RETRY, PhoenixTransitionTrigger.ATTACK_TYPE_UNSOLVABLE):
+        PhoenixState.PHOENIX_ROLLBACK,
+    (PhoenixState.PHOENIX_ROLLBACK, PhoenixTransitionTrigger.ROLLBACK_COMPLETED):
+        PhoenixState.PHOENIX_RETRY,
 }
 
 
@@ -181,6 +202,27 @@ class PhoenixContext:
     # 补丁信息
     applied_patches: List[Dict] = field(default_factory=list)
     compensation_sources: List[str] = field(default_factory=list)
+
+    # V7.7: 攻击类型失败追踪
+    attack_type_failure_count: Dict[str, int] = field(default_factory=dict)  # 每个攻击类型的失败次数
+    rollback_attempts: int = 0  # 回溯尝试次数
+    rollback_history: List[Dict] = field(default_factory=list)  # 回溯历史记录
+
+    # V7.7: 失败方向黑名单（用于生成新假设时避开）
+    failed_attack_blacklist: List[str] = field(default_factory=list)  # 已确认无法解决的攻击类型
+    tried_patch_solutions: List[str] = field(default_factory=list)  # 已尝试的解决方案名称
+
+    # V7.6: 分级检索追踪
+    search_level_used: int = 0  # 当前使用的检索级别 (1=预设库, 2=方法论关键词, 3=原主题组合)
+    previous_patch_attack_types: List[str] = field(default_factory=list)  # 上次补丁的攻击类型
+    patch_effectiveness_history: List[Dict] = field(default_factory=list)  # 补丁有效性历史
+
+    # 原研究主题（用于 Level 3 检索）
+    original_research_topic: str = ""
+
+    # V7.7: 笼统输入标记
+    is_broad_input: bool = False
+    broad_input_type: str = ""
 
     # 结果
     final_result: Optional[Dict] = None
@@ -220,6 +262,207 @@ class PhoenixContext:
             self.stagnant_count += 1
         else:
             self.stagnant_count = 0
+
+    def record_patch_effectiveness(self, attack_types: List[str], score_delta: float, search_level: int):
+        """
+        V7.6: 记录补丁有效性
+
+        Args:
+            attack_types: 本次补丁针对的攻击类型
+            score_delta: 补丁后分数变化
+            search_level: 使用的检索级别
+        """
+        self.patch_effectiveness_history.append({
+            'attack_types': attack_types,
+            'score_delta': score_delta,
+            'search_level': search_level,
+            'iteration': self.phoenix_iterations,
+        })
+        self.previous_patch_attack_types = attack_types
+        self.search_level_used = search_level
+
+    def should_upgrade_search_level(self) -> bool:
+        """
+        V7.6: 判断是否应该升级检索级别
+
+        Returns:
+            bool: 是否需要升级
+        """
+        if self.search_level_used >= PHOENIX_CONFIG['MAX_SEARCH_LEVEL']:
+            return False
+
+        # 检查最近补丁是否无效
+        if len(self.patch_effectiveness_history) >= PHOENIX_CONFIG['PATCH_INEFFECTIVE_THRESHOLD']:
+            recent_patches = self.patch_effectiveness_history[-PHOENIX_CONFIG['PATCH_INEFFECTIVE_THRESHOLD']:]
+
+            # 条件1: 连续多次补丁分数未提升
+            ineffective_count = sum(1 for p in recent_patches if p.get('score_delta', 0) <= 0)
+
+            # 条件2: 攻击类型相同（说明同一问题未解决）
+            same_attack_types = all(
+                set(p.get('attack_types', [])) == set(self.previous_patch_attack_types)
+                for p in recent_patches
+            )
+
+            if ineffective_count >= PHOENIX_CONFIG['PATCH_INEFFECTIVE_THRESHOLD'] and same_attack_types:
+                return True
+
+        return False
+
+    def get_next_search_level(self) -> int:
+        """
+        V7.6: 获取下一个检索级别
+
+        Returns:
+            int: 下一个检索级别 (1-3)
+        """
+        if self.should_upgrade_search_level():
+            return min(self.search_level_used + 1, PHOENIX_CONFIG['MAX_SEARCH_LEVEL'])
+        return self.search_level_used if self.search_level_used > 0 else 1
+
+    def record_attack_type_failure(self, attack_types: List[str]) -> Dict[str, int]:
+        """
+        V7.7: 记录攻击类型失败
+
+        Args:
+            attack_types: 红方攻击类型列表
+
+        Returns:
+            Dict[str, int]: 更新后的失败计数
+        """
+        for attack_type in attack_types:
+            self.attack_type_failure_count[attack_type] =                 self.attack_type_failure_count.get(attack_type, 0) + 1
+
+        return self.attack_type_failure_count
+
+    def should_trigger_rollback(self) -> bool:
+        """
+        V7.7: 判断是否应该触发回溯
+
+        条件：某个攻击类型失败次数 >= 阈值
+
+        Returns:
+            bool: 是否需要回溯
+        """
+        if self.rollback_attempts >= PHOENIX_CONFIG['MAX_ROLLBACK_ATTEMPTS']:
+            return False
+
+        threshold = PHOENIX_CONFIG['ATTACK_TYPE_FAILURE_THRESHOLD']
+        for attack_type, count in self.attack_type_failure_count.items():
+            if count >= threshold:
+                return True
+
+        return False
+
+    def get_unsolvable_attack_types(self) -> List[str]:
+        """
+        V7.7: 获��无法解决的攻击类型列表
+
+        Returns:
+            List[str]: 失败次数 >= 阈值的攻击类型
+        """
+        threshold = PHOENIX_CONFIG['ATTACK_TYPE_FAILURE_THRESHOLD']
+        return [
+            attack_type for attack_type, count
+            in self.attack_type_failure_count.items()
+            if count >= threshold
+        ]
+
+    def reset_attack_type_failure_count(self, attack_types: List[str] = None):
+        """
+        V7.7: 重置攻击类型失败计数（回溯后调用）
+
+        Args:
+            attack_types: 要重置的攻击类型列表（默认重置所有）
+        """
+        if attack_types:
+            for attack_type in attack_types:
+                self.attack_type_failure_count[attack_type] = 0
+        else:
+            self.attack_type_failure_count = {}
+
+    def record_rollback(self, from_version: str, to_version: str, attack_types: List[str]):
+        """
+        V7.7: 记录回溯历史
+
+        Args:
+            from_version: 回溯前的版本
+            to_version: 回溯到的版本
+            attack_types: 触发回溯的攻击类型
+        """
+        from datetime import datetime
+        self.rollback_attempts += 1
+        self.rollback_history.append({
+            'from_version': from_version,
+            'to_version': to_version,
+            'attack_types': attack_types,
+            'iteration': self.phoenix_iterations,
+            'timestamp': datetime.now().isoformat(),
+        })
+
+        # 将无法解决的攻击类型加入黑名单
+        for attack_type in attack_types:
+            if attack_type not in self.failed_attack_blacklist:
+                self.failed_attack_blacklist.append(attack_type)
+
+    def get_avoidance_prompt(self) -> str:
+        """
+        V7.7: 获取避让提示，用于生成新假设时注入
+
+        Returns:
+            str: 避让提示内容
+        """
+        if not self.failed_attack_blacklist:
+            return ""
+
+        # 生成中英文对照的避让提示
+        type_translations = {
+            'Data Leakage': '数据穿越',
+            'Endogeneity': '内生性偏倚',
+            'Multiple Testing': '多重检验',
+            'Statistical Power': '统计功效',
+            'Causal Inference': '因果推断',
+            'Reproducibility': '可复现性',
+        }
+
+        avoid_list = []
+        for attack_type in self.failed_attack_blacklist:
+            translation = type_translations.get(attack_type, attack_type)
+            avoid_list.append(f"- {attack_type} ({translation})")
+
+        return f"""
+【重要避让提示】
+以下攻击类型在之前版本中已确认无法通过常规方法论补丁解决，请在生成新假设时采用**完全不同的研究方向**：
+{chr(10).join(avoid_list)}
+
+建议采取的策略：
+1. 如果是数据穿越问题 → 更换数据来源或使用不同的特征选择策略
+2. 如果是内生性问题 → 改用工具变量、断点回归或自然实验设计
+3. 如果是多重检验问题 → 缩小研究范围或使用预注册设计
+4. 如果是因果推断问题 → 改写为相关性研究或使用更强的因果识别策略
+"""
+
+    def add_tried_solution(self, solution_name: str):
+        """
+        V7.7: 记录已尝试的解决方案
+
+        Args:
+            solution_name: 解决方案名称
+        """
+        if solution_name not in self.tried_patch_solutions:
+            self.tried_patch_solutions.append(solution_name)
+
+    def has_tried_solution(self, solution_name: str) -> bool:
+        """
+        V7.7: 检查解决方案是否已尝试过
+
+        Args:
+            solution_name: 解决方案名称
+
+        Returns:
+            bool: 是否已尝试
+        """
+        return solution_name in self.tried_patch_solutions
 
 
 # ==================== 凤凰协议状态机 ====================
@@ -360,6 +603,7 @@ def get_state_description(state: PhoenixState) -> str:
         PhoenixState.SUCCESS: "✅ 最终成功",
         PhoenixState.HARD_FAILURE: "❌ 硬性失败（物理不可修复）",
         PhoenixState.MAX_PHOENIX_EXCEEDED: "⏰ 超过演化上限",
+        PhoenixState.PHOENIX_ROLLBACK: "🔙 补丁无效累积回溯",
     }
     return descriptions.get(state, "未知状态")
 

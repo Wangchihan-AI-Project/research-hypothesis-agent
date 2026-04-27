@@ -504,7 +504,8 @@ def register_task_persistence(task_id: str, user_input: str, config: Dict):
         cursor = conn.cursor()
 
         input_hash = hashlib.sha256(user_input.encode()).hexdigest()[:16]
-        session_id = st.session_state.get('tab_session_id', 'default')
+        # 确保 session_id 不为空
+        session_id = st.session_state.get('tab_session_id') or f"session_{datetime.now().strftime('%Y%m%d%H%M%S')}"
         input_preview = user_input[:100] if len(user_input) > 100 else user_input
         config_json = json.dumps(config, ensure_ascii=False)
 
@@ -626,13 +627,45 @@ def update_task_completion(task_id: str, state: str, result_json: str = None):
 
 
 def get_task_history_list(limit: int = 10) -> List[Dict]:
-    """获取任务历史列表"""
+    """获取任务历史列表 - 从两个数据库合并"""
+    history = []
+
+    # 1. 从 research.db 读取旧版本任务（research_sessions）
+    try:
+        research_db = DATA_DIR / 'research.db'
+        if research_db.exists():
+            conn = sqlite3.connect(research_db)
+            cursor = conn.cursor()
+
+            cursor.execute("""
+                SELECT id, query, created_at, status, hypotheses_generated
+                FROM research_sessions
+                ORDER BY created_at DESC
+                LIMIT ?
+            """, (limit,))
+
+            rows = cursor.fetchall()
+            conn.close()
+
+            for row in rows:
+                history.append({
+                    'task_id': f"old_{row[0]}",
+                    'status': row[3],
+                    'created_at': row[2],
+                    'input_preview': row[1] or '',
+                    'result_json': None,
+                    'source': 'research.db'
+                })
+    except Exception as e:
+        logger.warning(f"Research history fetch failed: {e}")
+
+    # 2. 从 task_persistence.db 读取新版本任务（task_registry）
     try:
         conn = sqlite3.connect(PERSISTENCE_DB)
         cursor = conn.cursor()
 
         cursor.execute("""
-            SELECT task_id, status, created_at, user_input_preview
+            SELECT task_id, status, created_at, user_input_preview, result_json
             FROM task_registry
             ORDER BY created_at DESC
             LIMIT ?
@@ -641,18 +674,94 @@ def get_task_history_list(limit: int = 10) -> List[Dict]:
         rows = cursor.fetchall()
         conn.close()
 
-        return [
-            {
+        for row in rows:
+            history.append({
                 'task_id': row[0],
                 'status': row[1],
                 'created_at': row[2],
-                'input_preview': row[3] or ''
-            }
-            for row in rows
-        ]
+                'input_preview': row[3] or '',
+                'result_json': row[4],
+                'source': 'task_persistence.db'
+            })
     except Exception as e:
         logger.warning(f"Task history fetch failed: {e}")
-        return []
+
+    # 3. 合并并排序（按时间）
+    history.sort(key=lambda x: x['created_at'] or '', reverse=True)
+    return history[:limit]
+
+
+def delete_task_from_history(task_id: str) -> bool:
+    """从历史记录中删除任务（支持两个数据库）"""
+    deleted = False
+
+    # 1. 从 task_persistence.db 删除新任务
+    try:
+        conn = sqlite3.connect(PERSISTENCE_DB)
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM task_registry WHERE task_id = ?", (task_id,))
+        conn.commit()
+        if cursor.rowcount > 0:
+            deleted = True
+            logger.info(f"任务已删除 (task_registry): {task_id[:12]}...")
+        conn.close()
+    except Exception as e:
+        logger.warning(f"Task deletion from task_registry failed: {e}")
+
+    # 2. 从 research.db 删除旧任务
+    if task_id.startswith('old_'):
+        try:
+            research_db = DATA_DIR / 'research.db'
+            if research_db.exists():
+                session_id = task_id.replace('old_', '')
+                conn = sqlite3.connect(research_db)
+                cursor = conn.cursor()
+                cursor.execute("DELETE FROM research_sessions WHERE id = ?", (session_id,))
+                conn.commit()
+                if cursor.rowcount > 0:
+                    deleted = True
+                    logger.info(f"任务已删除 (research_sessions): {session_id}")
+                conn.close()
+        except Exception as e:
+            logger.warning(f"Task deletion from research_sessions failed: {e}")
+
+    return deleted
+
+
+def clear_all_task_history() -> int:
+    """清空所有任务历史（两个数据库）"""
+    total_count = 0
+
+    # 1. 清空 task_persistence.db
+    try:
+        conn = sqlite3.connect(PERSISTENCE_DB)
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM task_registry")
+        count = cursor.fetchone()[0]
+        cursor.execute("DELETE FROM task_registry")
+        conn.commit()
+        conn.close()
+        total_count += count
+    except Exception as e:
+        logger.warning(f"Clear task_registry failed: {e}")
+
+    # 2. 清空 research.db 的 research_sessions
+    try:
+        research_db = DATA_DIR / 'research.db'
+        if research_db.exists():
+            conn = sqlite3.connect(research_db)
+            cursor = conn.cursor()
+            cursor.execute("SELECT COUNT(*) FROM research_sessions")
+            count = cursor.fetchone()[0]
+            cursor.execute("DELETE FROM research_sessions")
+            conn.commit()
+            conn.close()
+            total_count += count
+    except Exception as e:
+        logger.warning(f"Clear research_sessions failed: {e}")
+
+    logger.info(f"已清空所有任务历史，共 {total_count} 条记录")
+    return total_count
 
 # ==================== Redis 健康检查 ====================
 def check_redis_health() -> Tuple[bool, str]:
@@ -697,6 +806,15 @@ def submit_celery_task_with_safety(user_input: str, config: Dict) -> Tuple[Optio
             dispatch_result['error_type'] = 'REDIS_CONNECTION_FAILED'
             dispatch_result['error_message'] = health_msg
             return None, dispatch_result
+
+        # Worker 检测（支持手动确认）
+        worker_alive = check_worker_heartbeat()
+        manual_confirm = st.session_state.get('worker_confirmed', False)
+
+        if not worker_alive and not manual_confirm:
+            dispatch_result['error_type'] = 'WORKER_OFFLINE'
+            dispatch_result['error_message'] = 'Worker 未运行。请在侧边栏勾选"我确认 Worker 已运行"或启动 Worker。'
+            return None, dispatch_result
     else:
         dispatch_result['error_type'] = 'CELERY_NOT_AVAILABLE'
         dispatch_result['error_message'] = 'Celery 模块未加载'
@@ -720,6 +838,12 @@ def submit_celery_task_with_safety(user_input: str, config: Dict) -> Tuple[Optio
         'max_phoenix_iterations': config.get('max_phoenix_iterations', 8),
         'enable_phoenix_rewrite': config.get('enable_phoenix_rewrite', True),
         'enable_methodology_patch': config.get('enable_methodology_patch', True),
+
+        # 文献检索筛选参数
+        'min_if': config.get('min_if', 3.0),
+        'start_year': config.get('start_year', 2020),
+        'end_year': config.get('end_year', datetime.now().year),
+        'min_citations': config.get('min_citations', 10),
     }
 
     logger.debug(f"V7.5 Task kwargs prepared:")
@@ -800,7 +924,7 @@ def init_submission_guard():
     if 'tab_session_id' not in st.session_state:
         st.session_state.tab_session_id = f"tab_{datetime.now().strftime('%Y%m%d%H%M%S')}_{hash(os.urandom(8)) & 0xFFFFFF:06x}"
 
-    if 'tab_fingerprint' not in st.session_state:
+    if 'tab_fingerprint' not in st.session_state or st.session_state.tab_fingerprint is None:
         st.session_state.tab_fingerprint = {
             'created_at': datetime.now().isoformat(),
             'last_activity': datetime.now().isoformat(),
@@ -933,18 +1057,61 @@ def check_poll_guard(task_id: str) -> Tuple[bool, str, Dict]:
 
 
 def check_worker_heartbeat() -> bool:
-    """Worker 心跳检测"""
+    """Worker 心跳检测（支持多种检测方式）"""
     if not CELERY_AVAILABLE:
+        print("[DEBUG] CELERY_NOT_AVAILABLE")
         return False
 
+    # 方法0: 直接检查 Redis 中的 Celery key（最可靠，优先使用）
     try:
-        celery_app = get_celery_app()
-        inspect = celery_app.control.inspect()
-        active_workers = inspect.active()
+        import redis
+        redis_url = os.getenv('REDIS_URL', 'redis://localhost:6379/0')
+        print(f"[DEBUG] 检查 Redis: {redis_url}")
+        r = redis.from_url(redis_url, decode_responses=True)
+        # 检查是否有 Celery heartbeat 或 worker 相关的 key
+        celery_keys = r.keys('celery*')
+        kombu_keys = r.keys('_kombu.binding.celery*')
+        print(f"[DEBUG] celery_keys: {celery_keys}, kombu_keys: {kombu_keys}")
+        if celery_keys or kombu_keys:
+            logger.info(f"[Health Check] Redis 中发现 Celery 迹象: {len(celery_keys)} celery keys, {len(kombu_keys)} kombu keys")
+            print(f"[Health Check] ✅ 通过 Redis key 检测到 Worker!")
+            return True
+    except Exception as redis_err:
+        print(f"[DEBUG] Redis 检测失败: {redis_err}")
 
-        return active_workers is not None and len(active_workers) > 0
-    except Exception:
-        return False
+    # 如果 Redis 检测没有找到，尝试使用 inspect（可能失败）
+    try:
+        print("[DEBUG] 尝试使用 inspect 检测...")
+        celery_app = get_celery_app()
+
+        # 方法1: 检测活跃任务
+        inspect = celery_app.control.inspect(timeout=1.0)
+        active_workers = inspect.active()
+        print(f"[DEBUG] active_workers: {active_workers}")
+
+        if active_workers and len(active_workers) > 0:
+            logger.info(f"[Health Check] 检测到 {len(active_workers)} 个活跃 Worker (active)")
+            return True
+
+        # 方法2: 检测已注册的 Worker（备用）
+        registered_workers = inspect.registered()
+        print(f"[DEBUG] registered_workers: {registered_workers}")
+        if registered_workers and len(registered_workers) > 0:
+            logger.info(f"[Health Check] 检测到 {len(registered_workers)} 个 Worker (registered)")
+            return True
+
+        # 方法3: 检测 Worker 统计信息（备用）
+        stats = inspect.stats()
+        print(f"[DEBUG] stats: {stats}")
+        if stats and len(stats) > 0:
+            logger.info(f"[Health Check] 检测到 {len(stats)} 个 Worker (stats)")
+            return True
+    except Exception as inspect_err:
+        print(f"[DEBUG] Inspect 检测失败（已跳过）: {inspect_err}")
+
+    logger.warning("[Health Check] 所有检测方法均未发现 Worker")
+    print("[DEBUG] 所有检测方法均未发现 Worker")
+    return False
 
 
 def poll_task_status_safe(task_id: str) -> Dict:
@@ -967,10 +1134,14 @@ def poll_task_status_safe(task_id: str) -> Dict:
         st.session_state.last_known_state = current_state
         st.session_state.last_state_change_time = datetime.now().isoformat()
 
-    if current_state in ['SUCCESS', 'FAILURE']:
+    if current_state in ['SUCCESS', 'success', 'FAILURE', 'failure']:
         st.session_state.poll_start_time = None
         st.session_state.poll_attempt_count = 0
-        update_task_completion(task_id, current_state)
+        # 序列化结果并保存
+        result_json = json.dumps(poll_result.get('result'), ensure_ascii=False) if poll_result.get('result') else None
+        # 标准化状态为大写
+        normalized_state = current_state.upper()
+        update_task_completion(task_id, normalized_state, result_json)
 
     return poll_result
 
@@ -1404,21 +1575,63 @@ def render_health_indicator():
         health_ok, _ = check_redis_health()
         worker_alive = check_worker_heartbeat()
 
-        if health_ok and worker_alive:
-            st.markdown(
-                '<span class="health-indicator healthy">✅ Redis + Worker 就绪</span>',
-                unsafe_allow_html=True
-            )
-        elif health_ok:
-            st.markdown(
-                '<span class="health-indicator warning">⚠️ Redis 就绪，Worker 离线</span>',
-                unsafe_allow_html=True
-            )
-        else:
-            st.markdown(
-                '<span class="health-indicator unhealthy">❌ Redis 不可用</span>',
-                unsafe_allow_html=True
-            )
+        # 添加刷新按钮
+        col1, col2 = st.columns([3, 1])
+        with col1:
+            if health_ok and worker_alive:
+                st.markdown(
+                    '<span class="health-indicator healthy">✅ Redis + Worker 就绪</span>',
+                    unsafe_allow_html=True
+                )
+            elif health_ok:
+                st.markdown(
+                    '<span class="health-indicator warning">⚠️ Redis 就绪，Worker 离线</span>',
+                    unsafe_allow_html=True
+                )
+            else:
+                st.markdown(
+                    '<span class="health-indicator unhealthy">❌ Redis 不可用</span>',
+                    unsafe_allow_html=True
+                )
+        with col2:
+            if st.button("🔄", key="refresh_health", help="刷新健康状态"):
+                st.rerun()
+
+        # 显示诊断信息（展开式）
+        with st.expander("🔍 诊断信息", expanded=True):
+            st.code(f"""
+Redis 连接: {'✅ 正常' if health_ok else '❌ 失败'}
+Worker 状态: {'✅ 活跃' if worker_alive else '❌ 离线'}
+Redis URL: {os.getenv('REDIS_URL', 'redis://localhost:6379/0')}
+            """)
+
+            # 添加详细的Redis检测信息
+            try:
+                import redis
+                r = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
+                all_keys = r.keys('*')
+                celery_keys = [k for k in all_keys if 'celery' in k.lower()]
+                st.text(f"Redis 总keys: {len(all_keys)}")
+                st.text(f"Celery相关keys: {len(celery_keys)}")
+                if celery_keys:
+                    st.text("Celery keys:")
+                    for k in celery_keys:
+                        st.text(f"  - {k}")
+            except Exception as e:
+                st.text(f"Redis检测错误: {e}")
+
+            if not worker_alive:
+                st.info("""
+💡 **Worker 离线可能原因：**
+1. Worker 窗口��启动或已关闭
+2. Worker 启动命令错误
+3. Redis 连接问题
+
+🔧 **解决方案：**
+```bash
+celery -A src.core.celery_tasks_v75 worker --loglevel=info --pool=solo
+```
+                """)
     else:
         st.markdown(
             '<span class="health-indicator unknown">⏳ Celery 未加载</span>',
@@ -1437,6 +1650,23 @@ def render_sidebar_configurator():
     # 健康状态指示灯
     st.sidebar.markdown("### 🩺 系统健康状态")
     render_health_indicator()
+
+    st.sidebar.markdown("---")
+
+    # Worker 手动确认（始终显示，因为 Windows 检测不可靠）
+    st.sidebar.markdown("### ⚙️ Worker 确认")
+    worker_confirmed = st.sidebar.checkbox(
+        "✅ 我确认 Worker 正在运行",
+        value=st.session_state.get('worker_confirmed', False),
+        key="worker_confirmed_checkbox",
+        help="如果自动检测失败，请手动勾选此项"
+    )
+    st.session_state.worker_confirmed = worker_confirmed
+
+    if worker_confirmed:
+        st.sidebar.success("可以提交任务")
+    else:
+        st.sidebar.warning("请先启动 Worker 或勾选确认")
 
     st.sidebar.markdown("---")
 
@@ -1501,6 +1731,58 @@ def render_sidebar_configurator():
 
     st.sidebar.markdown("---")
 
+    # 文献检索筛选
+    st.sidebar.markdown("### 📚 文献检索筛选")
+
+    # 影响因子筛选
+    min_if = st.sidebar.slider(
+        "最低影响因子 (IF)",
+        min_value=0.0, max_value=30.0,
+        value=st.session_state.get('min_if', 3.0),
+        step=0.5,
+        help="适用于PubMed等数据库。ArXiv无IF，将使用引用数替代",
+        key='min_if_slider'
+    )
+    st.session_state.min_if = min_if
+
+    # 时间范围筛选
+    current_year = datetime.now().year
+    col_year1, col_year2 = st.sidebar.columns(2)
+    with col_year1:
+        start_year = st.number_input(
+            "起始年份",
+            min_value=1990, max_value=current_year,
+            value=st.session_state.get('start_year', 2020),
+            step=1,
+            key='start_year_input'
+        )
+    with col_year2:
+        end_year = st.number_input(
+            "结束年份",
+            min_value=1990, max_value=current_year + 2,
+            value=st.session_state.get('end_year', current_year),
+            step=1,
+            key='end_year_input'
+        )
+
+    st.session_state.start_year = start_year
+    st.session_state.end_year = end_year
+
+    # ArXiv 替代筛选（引用数）
+    min_citations = st.sidebar.slider(
+        "ArXiv最低引用数",
+        min_value=0, max_value=500,
+        value=st.session_state.get('min_citations', 10),
+        step=5,
+        help="ArXiv论文无影响因子，使用引用数作为质量指标",
+        key='min_citations_slider'
+    )
+    st.session_state.min_citations = min_citations
+
+    st.sidebar.info("💡 提示: ArXiv无IF，将自动使用引用数筛选")
+
+    st.sidebar.markdown("---")
+
     # 配置摘要
     config_summary = {
         'execution_mode': execution_mode,
@@ -1509,6 +1791,10 @@ def render_sidebar_configurator():
         'max_phoenix_iterations': max_phoenix,
         'enable_phoenix_rewrite': enable_rewrite,
         'enable_methodology_patch': enable_patch,
+        'min_if': min_if,
+        'start_year': start_year,
+        'end_year': end_year,
+        'min_citations': min_citations,
     }
 
     with st.sidebar.expander("🔍 配置预览", expanded=False):
@@ -1518,9 +1804,24 @@ def render_sidebar_configurator():
 
 
 def render_task_history_sidebar():
-    """任务历史列表"""
+    """任���历史列表"""
     st.sidebar.markdown("---")
-    st.sidebar.markdown("### 📜 历史任务")
+
+    # 标题和清空按钮
+    col1, col2 = st.sidebar.columns([3, 1])
+    with col1:
+        st.markdown("### 📜 历史任务")
+    with col2:
+        if st.button("🗑️", key="clear_all_history", help="清空所有历史"):
+            if st.session_state.get('confirm_clear_history', False):
+                count = clear_all_task_history()
+                st.toast(f"✅ 已清空 {count} 条历史记录")
+                st.session_state.confirm_clear_history = False
+                st.rerun()
+            else:
+                st.session_state.confirm_clear_history = True
+                st.warning("再次点击确认清空")
+                st.rerun()
 
     history = get_task_history_list(5)
 
@@ -1533,6 +1834,7 @@ def render_task_history_sidebar():
         status = item['status']
         created_at = item['created_at'][:16] if item['created_at'] else 'N/A'
         preview = item['input_preview'][:30] + '...' if item['input_preview'] and len(item['input_preview']) > 30 else item['input_preview']
+        result_json = item.get('result_json')
 
         status_color = {
             'SUCCESS': '🟢',
@@ -1543,17 +1845,43 @@ def render_task_history_sidebar():
             'ZOMBIE': '🟤',
         }.get(status, '⚪')
 
-        st.sidebar.markdown(f"""
-        {status_color} **{task_id[:12]}...**
-        - 状态: `{status}` | 时间: {created_at}
-        - 内容: {preview}
-        """)
+        # 使用 expander 显示任务详情
+        with st.sidebar.expander(f"{status_color} {task_id[:12]}... | {status}", expanded=False):
+            st.text(f"时间: {created_at}")
+            st.text(f"内容: {preview}")
+            st.text(f"ID: {task_id}")
 
-        if status not in ['SUCCESS', 'FAILURE', 'TIMEOUT', 'ZOMBIE']:
-            if st.sidebar.button("召回", key=f"recover_{task_id[:8]}"):
-                st.session_state.task_id = task_id
-                st.session_state.task_state = status
-                st.rerun()
+            col1, col2 = st.columns(2)
+
+            # 查看按钮（用于成功的任务）
+            if status == 'SUCCESS' and result_json:
+                with col1:
+                    if st.button("📄 查看", key=f"view_{task_id[:8]}", use_container_width=True):
+                        st.session_state.task_id = task_id
+                        st.session_state.task_state = 'SUCCESS'
+                        try:
+                            result_data = json.loads(result_json)
+                            st.session_state.task_result = result_data
+                        except:
+                            st.session_state.task_result = {'payload': result_json}
+                        st.rerun()
+
+            # 召回按钮（用于进行中的任务）
+            if status not in ['SUCCESS', 'FAILURE', 'TIMEOUT', 'ZOMBIE']:
+                with col1:
+                    if st.button("🔄 召回", key=f"recover_{task_id[:8]}", use_container_width=True):
+                        st.session_state.task_id = task_id
+                        st.session_state.task_state = status
+                        st.rerun()
+
+            # 删除按钮
+            with col2:
+                if st.button("🗑️", key=f"delete_{task_id[:8]}", use_container_width=True, help="删除此任务记录"):
+                    if delete_task_from_history(task_id):
+                        st.toast(f"✅ 已删除任务: {task_id[:12]}...")
+                        st.rerun()
+                    else:
+                        st.error("删除失败")
 
 # ==================== Pipeline 可视化 ====================
 def render_pipeline_visualizer():
@@ -1718,16 +2046,83 @@ def render_safe_submit_button(user_input: str, config: Dict) -> Optional[str]:
     return None
 
 
+def render_phoenix_failure_report(result: Dict):
+    """Phoenix 协议失败报告"""
+    payload = result.get('payload', {})
+    failure_state = payload.get('failure_state', 'UNKNOWN')
+    iterations = payload.get('iterations', 0)
+    score_history = payload.get('score_history', [])
+    version_chain = payload.get('version_chain', [])
+    reason = payload.get('reason', '未知原因')
+
+    # 根据失败类型显示不同的消息
+    failure_messages = {
+        'MAX_PHOENIX_EXCEEDED': '⏰ 演化达到最大迭代次数限制',
+        'HARD_FAILURE': '❌ 遇到无法修复的物理冲突',
+        'UNKNOWN': '⚠️ 未知错误'
+    }
+    title = failure_messages.get(failure_state, f'⚠️ {failure_state}')
+
+    st.markdown(f"""
+    <div class="warning-card">
+        <h2>{title}</h2>
+        <p><strong>迭代次数</strong>: {iterations} 次</p>
+        <p><strong>失败原因</strong>: {reason}</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # 分数历史
+    if score_history:
+        st.markdown("---")
+        st.markdown("### 📊 分数演化历史")
+        for i, score in enumerate(score_history):
+            st.markdown(f"- **v1.{i}**: Science Score = {score:.2f}")
+
+    # 版本链
+    if version_chain:
+        st.markdown("---")
+        st.markdown("### 🔥 版本演化链")
+        for v in version_chain:
+            version = v.get('version', 'N/A')
+            v_type = v.get('type_display', v.get('type', 'N/A'))
+            score = v.get('science_score', 0)
+            created_at = v.get('created_at', 'N/A')[:19]
+
+            st.markdown(f"""
+            <div class="version-card">
+                <strong>{version}</strong> ({v_type}) | Score: {score:.2f} | {created_at}
+            </div>
+            """, unsafe_allow_html=True)
+
+            # 显示假设内容（如果有）
+            hc = v.get('hypothesis_content')
+            if hc and isinstance(hc, dict):
+                title = hc.get('title', '')
+                description = hc.get('description', '')
+                if title or description:
+                    st.markdown(f"- **标题**: {title[:100] if title else 'N/A'}")
+                    if description:
+                        with st.expander("查看描述"):
+                            st.write(description[:500])
+
+
 # ==================== V7.5 成功报告渲染 ====================
 def render_success_report(result: Dict):
     """V7.5 凤凰协议成功报告"""
+    payload = result.get('payload', {})
+
+    # 检查是否为 Phoenix 失败结果
+    failure_state = payload.get('failure_state')
+    if failure_state:
+        render_phoenix_failure_report(result)
+        return
+
     st.markdown("""
     <div class="success-card">
         <h2>🎉 凤凰演化完成</h2>
     </div>
     """, unsafe_allow_html=True)
 
-    payload = result.get('payload', {})
     hypothesis = payload.get('hypothesis', {})
     fitness = payload.get('fitness', {})
 
@@ -1746,9 +2141,9 @@ def render_success_report(result: Dict):
         st.markdown("### ⏰ 演化达到上限，展示最佳候选方案")
         render_top_candidate_badge(result)
 
-    # 创建三个主要 Tabs
+    # 创建多个主要 Tabs
     tabs = st.tabs([
-        "📝 假设概述", "🔥 演化实验室", "📚 文献支撑"
+        "📄 完整报告", "📋 落地指南", "💡 创新分析", "🔬 前沿溯源", "🔥 演化实验室", "📚 文献支撑"
     ])
 
     with tabs[0]:
@@ -1756,9 +2151,95 @@ def render_success_report(result: Dict):
         <div class="report-container">
             <h3>{hypothesis.get('title', '未命名假设')}</h3>
             <p><strong>学科领域</strong>: {payload.get('domain', 'N/A')}</p>
-            <p><strong>描述</strong>: {hypothesis.get('description', 'N/A')}</p>
+            <p><strong>版本</strong>: {hypothesis.get('version', 'N/A')}</p>
         </div>
         """, unsafe_allow_html=True)
+
+        # 重构真正的���设陈述（从 methodology 提取核心假设）
+        methodology = hypothesis.get('methodology', {})
+        if methodology:
+            st.markdown("### 🎯 核心假设陈述")
+
+            # 从方法论中提取核心假设
+            bias_control = methodology.get('bias_control', '')
+            validation_protocol = methodology.get('validation_protocol', '')
+
+            # 构建假设陈述
+            if 'DAG' in bias_control or '因果' in bias_control:
+                # 因果链结构
+                st.markdown("""
+**因果链结构**:
+```
+突变/干预 (X) → 方法学改进 (M) → 偏倚降低/因果识别 (Y) → 模型性能提升
+```
+""")
+
+                hypothesis_statement = f"""**研究假设**:
+
+本研究假设：通过引入**因果推断框架（DAG与混杂因子调整）**结合**Pipeline-封装式机器学习范式**，能够：
+
+1. **显著降低数据穿越偏倚**：通过严格的信息隔离协议，确保测试集统计信息不泄露到训练过程
+2. **提高模型因果推断准确性**：通过DAG识别并控制混杂因子，消除虚假关联
+3. **提升模型泛化能力**：通过嵌套交叉验证获得无偏的性能估计
+
+**假设检验方法**: {validation_protocol[:100] if validation_protocol else '见方法论详情'}..."""
+            else:
+                hypothesis_statement = f"""**研究假设**:
+
+{hypothesis.get('title', '该研究提出的新方法')}将显著提升临床预测模型的性能与可靠性。
+
+**假设检验方法**: {validation_protocol[:100] if validation_protocol else '见方法论详情'}..."""
+
+            st.markdown(hypothesis_statement)
+            st.markdown("---")
+
+        # 版本迭代说明（如果有）
+        details = hypothesis.get('details', hypothesis.get('description', ''))
+        # 简化条件：只要 details 存在且长度大于50，就显示为版本迭代说明
+        if details and len(details) > 50:
+            st.markdown("### 研究背景")
+            st.info(details)
+
+        # 方法论详情
+        methodology = hypothesis.get('methodology', {})
+        if methodology:
+            st.markdown("---")
+            st.markdown("### 🔬 方法论")
+
+            if isinstance(methodology, dict):
+                for key, value in methodology.items():
+                    key_display = {
+                        'technical_safeguards': '技术保障',
+                        'validation_protocol': '验证协议',
+                        'bias_control': '偏倚控制',
+                        'approach': '技术路径',
+                        'statistical_framework': '统计框架',
+                        'cohort_definition': '队列定义',
+                        'expected_outcomes': '预期结果',
+                        'innovation_analysis': '创新分析',
+                    }.get(key, key)
+
+                    st.markdown(f"**{key_display}**")
+
+                    if isinstance(value, list):
+                        for item in value:
+                            st.markdown(f"  • {item}")
+                    elif isinstance(value, dict):
+                        for sub_key, sub_value in value.items():
+                            st.markdown(f"  • **{sub_key}**: {sub_value}")
+                    else:
+                        st.markdown(f"{value}")
+                    st.markdown("")
+            else:
+                st.markdown(str(methodology))
+
+        # 补丁日志
+        patch_log = hypothesis.get('patch_log', [])
+        if patch_log:
+            st.markdown("---")
+            st.markdown("### 🔧 演化记录")
+            for i, patch in enumerate(patch_log, 1):
+                st.markdown(f"**迭代 {i}**: {patch}")
 
         # 混合适应度
         if fitness:
@@ -1772,7 +2253,436 @@ def render_success_report(result: Dict):
             with col3:
                 st.metric("严谨度", f"{fitness.get('red_team_rigor_score', 0):.2f}")
 
+            # 相似度解释
+            similarity = fitness.get('similarity_interpretation', '')
+            if similarity:
+                st.info(f"**创新度分析**: {similarity}")
+
+        # 防御日志（从 audit_context 提取）
+        audit_context = payload.get('audit_context', {})
+        if audit_context:
+            st.markdown("---")
+            st.markdown("## 【4. Defense Log - 防御日志】")
+
+            # 迭代统计
+            iterations = audit_context.get('iterations', 0)
+            patches = audit_context.get('patches', 0)
+            rewrites = audit_context.get('rewrites', 0)
+
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.metric("总迭代次数", iterations)
+            with col2:
+                st.metric("方法论补丁", patches)
+            with col3:
+                st.metric("物理重写", rewrites)
+
+            # 红方攻击类型
+            red_attack_types = audit_context.get('red_attack_types', [])
+            if red_attack_types:
+                st.markdown("---")
+                st.markdown("### 红方攻击审计")
+
+                attack_severity = {
+                    'Data Leakage': '💀 致命',
+                    'Endogeneity': '💀 致命',
+                    'Multiple Testing': '⚠️ 严重',
+                    'Statistical Power': '⚠️ 严重',
+                    'Causal Inference': '💀 致命',
+                    'Reproducibility': '⚠️ 严重',
+                }
+
+                for attack in red_attack_types:
+                    severity = attack_severity.get(attack, '📝 中等')
+                    st.markdown(f"**{attack}** | {severity}")
+
+            # 补丁日志
+            patch_log = hypothesis.get('patch_log', [])
+            if patch_log:
+                st.markdown("---")
+                st.markdown("### 方法论补丁注入")
+                for i, patch in enumerate(patch_log, 1):
+                    if isinstance(patch, dict):
+                        attack_type = patch.get('attack_type', '未知')
+                        patch_applied = patch.get('patch_applied', '')
+                        reference = patch.get('supporting_reference', '')
+
+                        st.markdown(f"**迭代 {i}**: {attack_type}")
+                        if patch_applied:
+                            st.markdown(f"> 补丁措施: {patch_applied}")
+                        if reference:
+                            st.markdown(f"> 参考文献: {reference}")
+                    else:
+                        st.markdown(f"**迭代 {i}**: {patch}")
+                    st.markdown("")
+
     with tabs[1]:
+        # 落地指南
+        roadmap = payload.get('implementation_roadmap', {})
+        if roadmap:
+            st.markdown("## 📋 Implementation Roadmap (落地指南)")
+
+            # 阶段规划
+            phases = roadmap.get('phases', [])
+            if phases:
+                st.markdown("### 🎯 阶段规划")
+                for phase in phases:
+                    phase_name = phase.get('phase', phase.get('name', '未命名阶段'))
+                    duration = phase.get('duration', '')
+                    milestones = phase.get('milestones', [])
+                    deliverables = phase.get('deliverables', [])
+
+                    st.markdown(f"**{phase_name}**")
+                    if duration:
+                        st.markdown(f"⏱️ *{duration}*")
+
+                    if milestones:
+                        st.markdown("**里程碑**:")
+                        for ms in milestones:
+                            st.markdown(f"  • {ms}")
+
+                    if deliverables:
+                        st.markdown("**交付物**:")
+                        for d in deliverables:
+                            st.markdown(f"  • {d}")
+                    st.markdown("")
+
+            # 资源需求
+            resources = roadmap.get('resources', {})
+            if resources:
+                st.markdown("---")
+                st.markdown("### 🔧 资源需求")
+
+                # 人员
+                personnel = resources.get('personnel', {})
+                if personnel:
+                    st.markdown("**👥 人员配置**")
+                    for role, detail in personnel.items():
+                        if isinstance(detail, dict):
+                            st.markdown(f"  • **{role}**: {detail.get('count', detail.get('name', 'N/A'))}")
+                        else:
+                            st.markdown(f"  • **{role}**: {detail}")
+
+                # 设备
+                equipment = resources.get('equipment', {})
+                if equipment:
+                    st.markdown("**🖥️ 设备需求**")
+                    for key, val in equipment.items():
+                        if isinstance(val, dict):
+                            st.markdown(f"  • **{key}**: {val.get('type', val.get('name', 'N/A'))}")
+                        else:
+                            st.markdown(f"  • **{key}**: {val}")
+
+                # 数据
+                data = resources.get('data', {})
+                if data:
+                    st.markdown("**📊 数据需求**")
+                    for key, val in data.items():
+                        st.markdown(f"  • **{key}**: {val}")
+
+            # 时间线
+            timeline = roadmap.get('timeline', {})
+            if timeline:
+                st.markdown("---")
+                st.markdown("### ⏱️ 时间线")
+                st.markdown(f"**总周期**: {timeline.get('total_duration', 'N/A')}")
+                milestones = timeline.get('milestones', [])
+                if milestones:
+                    for ms in milestones:
+                        st.markdown(f"  • {ms}")
+
+            # 风险评估
+            risks = roadmap.get('risks', [])
+            if risks:
+                st.markdown("---")
+                st.markdown("### ⚠️ 风险评估")
+                for risk in risks:
+                    category = risk.get('category', risk.get('type', '未知'))
+                    description = risk.get('description', '')
+                    mitigation = risk.get('mitigation', '')
+                    severity = risk.get('severity', 'medium')
+
+                    severity_icon = {'high': '🔴', 'medium': '🟡', 'low': '🟢'}.get(severity, '⚪')
+                    st.warning(f"{severity_icon} **{category}**")
+                    if description:
+                        st.markdown(f">{description}")
+                    if mitigation:
+                        st.markdown(f"*应对策略*: {mitigation}")
+                    st.markdown("")
+
+            # 预算估算
+            budget = roadmap.get('budget', {})
+            if budget:
+                st.markdown("---")
+                st.markdown("### 💰 预算估算")
+
+                estimated_total = budget.get('estimated_total', 'N/A')
+                if estimated_total:
+                    st.metric("预估总成本", estimated_total)
+
+                breakdown = budget.get('breakdown', {})
+                if breakdown:
+                    st.markdown("**成本明细**:")
+                    for item, cost in breakdown.items():
+                        st.markdown(f"  • {item}: {cost}")
+
+                note = budget.get('note', '')
+                if note:
+                    st.info(f"ℹ️ {note}")
+        else:
+            st.info("暂无落地指南数据")
+
+    with tabs[2]:
+        # 创新分析
+        innovation = payload.get('innovation_analysis', {})
+        if innovation:
+            st.markdown("## 💡 Innovation Analysis (创新分析)")
+
+            # 核心创新点
+            core = innovation.get('core_innovations', [])
+            if core:
+                st.markdown("### 🌟 核心创新点")
+                for i, item in enumerate(core, 1):
+                    st.markdown(f"**{i}.** {item}")
+
+            # 新颖度等级
+            novelty = innovation.get('novelty_level')
+            if novelty:
+                st.markdown("---")
+                st.markdown("### 📊 新颖度等级")
+                if isinstance(novelty, dict):
+                    level = novelty.get('level', 'N/A')
+                    score = novelty.get('score', 0)
+                    st.metric("等级", level)
+                    st.metric("评分", f"{score:.2f}")
+                else:
+                    # novelty_level 是字符串
+                    level_display = {
+                        'breakthrough': '🌟 突破性',
+                        'incremental': '📈 渐进式',
+                        'novel': '💡 原创性',
+                    }.get(novelty, novelty)
+                    st.metric("等级", level_display)
+
+            # 差异化分析
+            diff = innovation.get('differentiation', [])
+            if diff:
+                st.markdown("---")
+                st.markdown("### 🔄 差异化分析")
+                for item in diff:
+                    st.markdown(f"  • {item}")
+
+            # 突破潜力
+            potential = innovation.get('breakthrough_potential')
+            if potential:
+                st.markdown("---")
+                st.markdown("### 🚀 突破潜力")
+                if isinstance(potential, dict):
+                    st.metric("Science Score", f"{potential.get('science_score', 0):.2f}")
+                    st.metric("Promise Score", f"{potential.get('promise_score', 0):.2f}")
+                else:
+                    st.markdown(f"**突破潜力**: {potential}")
+
+            # 总结
+            summary = innovation.get('summary', '')
+            if summary:
+                st.markdown("---")
+                st.markdown("### 📝 总结")
+                st.markdown(summary)
+        else:
+            st.info("暂无创新分析数据")
+
+    with tabs[3]:
+        # 前沿溯源分析
+        frontier = payload.get('frontier_analysis', {})
+        if frontier:
+            st.markdown("## 🔬 Frontier Analysis (前沿溯源)")
+
+            # 前沿定位
+            position = frontier.get('frontier_position')
+            if position:
+                st.markdown("### 📍 前沿定位")
+                if isinstance(position, dict):
+                    st.markdown(f"**2026 SoTA对比**: {position.get('sota_comparison', 'N/A')}")
+                    st.markdown(f"**位置**: {position.get('position', 'N/A')}")
+                else:
+                    st.markdown(f"**前沿定位**: {position}")
+
+            # 关键出版物
+            pubs = frontier.get('key_publications', [])
+            if pubs:
+                st.markdown("---")
+                st.markdown("### 📄 关键出版物")
+                for pub in pubs[:5]:
+                    title = pub.get('title', 'N/A')
+                    cite = pub.get('citation_count', 0)
+                    st.markdown(f"  • **{title}** (引用: {cite})")
+
+            # 研究趋势
+            trends = frontier.get('research_trends', [])
+            if trends:
+                st.markdown("---")
+                st.markdown("### 📈 研究趋势")
+                for trend in trends:
+                    st.markdown(f"  • {trend}")
+
+            # Gap分析
+            gaps = frontier.get('gap_analysis', [])
+            if gaps:
+                st.markdown("---")
+                st.markdown("### 🔍 研究空白 (Gap Analysis)")
+                for gap in gaps:
+                    st.markdown(f"  • {gap}")
+
+            # 引用速度
+            citation = frontier.get('citation_velocity')
+            year_trend = frontier.get('year_trend')
+            if citation or year_trend:
+                st.markdown("---")
+                st.markdown("### ⚡ 引用速度与趋势")
+                if citation:
+                    if isinstance(citation, dict):
+                        st.metric("年均引用", f"{citation.get('avg_per_year', 0):.1f}")
+                        st.metric("增长趋势", f"{citation.get('growth_rate', 0):.1%}")
+                    else:
+                        st.markdown(f"**引用速度**: {citation}")
+                if year_trend:
+                    st.markdown(f"**年度趋势**: {year_trend}")
+        else:
+            st.info("暂无前沿溯源数据")
+
+    with tabs[4]:
+        st.markdown(f"""
+        <div class="report-container">
+            <h3>{hypothesis.get('title', '未命名假设')}</h3>
+            <p><strong>学科领域</strong>: {payload.get('domain', 'N/A')}</p>
+            <p><strong>版本</strong>: {hypothesis.get('version', 'N/A')}</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+        # 详细描述
+        details = hypothesis.get('details', hypothesis.get('description', ''))
+        if details:
+            st.markdown("### 📋 假设概述")
+            st.markdown(f"<div class='report-container'>{details}</div>", unsafe_allow_html=True)
+
+        # 方法论详情
+        methodology = hypothesis.get('methodology', {})
+        if methodology:
+            st.markdown("---")
+            st.markdown("### 🔬 方法论")
+
+            if isinstance(methodology, dict):
+                for key, value in methodology.items():
+                    key_display = {
+                        'technical_safeguards': '技术保障',
+                        'validation_protocol': '验证协议',
+                        'bias_control': '偏倚控制',
+                        'approach': '技术路径',
+                        'statistical_framework': '统计框架',
+                        'cohort_definition': '队列定义',
+                        'expected_outcomes': '预期结果',
+                        'innovation_analysis': '创新分析',
+                    }.get(key, key)
+
+                    st.markdown(f"**{key_display}**")
+
+                    if isinstance(value, list):
+                        for item in value:
+                            st.markdown(f"  • {item}")
+                    elif isinstance(value, dict):
+                        for sub_key, sub_value in value.items():
+                            st.markdown(f"  • **{sub_key}**: {sub_value}")
+                    else:
+                        st.markdown(f"{value}")
+                    st.markdown("")
+            else:
+                st.markdown(str(methodology))
+
+        # 补丁日志
+        patch_log = hypothesis.get('patch_log', [])
+        if patch_log:
+            st.markdown("---")
+            st.markdown("### 🔧 演化记录")
+            for i, patch in enumerate(patch_log, 1):
+                st.markdown(f"**迭代 {i}**: {patch}")
+
+        # 混合适应度
+        if fitness:
+            st.markdown("---")
+            st.markdown("### 📊 混合适应度评估")
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.metric("总分", f"{fitness.get('hybrid_fitness', 0):.2f}")
+            with col2:
+                st.metric("创新度", f"{fitness.get('vector_novelty_score', 0):.2f}")
+            with col3:
+                st.metric("严谨度", f"{fitness.get('red_team_rigor_score', 0):.2f}")
+
+            # 相似度解释
+            similarity = fitness.get('similarity_interpretation', '')
+            if similarity:
+                st.info(f"**创新度分析**: {similarity}")
+
+        # 防御日志（从 audit_context 提取）
+        audit_context = payload.get('audit_context', {})
+        if audit_context:
+            st.markdown("---")
+            st.markdown("## 【4. Defense Log - 防御日志】")
+
+            # 迭代统计
+            iterations = audit_context.get('iterations', 0)
+            patches = audit_context.get('patches', 0)
+            rewrites = audit_context.get('rewrites', 0)
+
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.metric("总迭代次数", iterations)
+            with col2:
+                st.metric("方法论补丁", patches)
+            with col3:
+                st.metric("物理重写", rewrites)
+
+            # 红方攻击类型
+            red_attack_types = audit_context.get('red_attack_types', [])
+            if red_attack_types:
+                st.markdown("---")
+                st.markdown("### 红方攻击审计")
+
+                attack_severity = {
+                    'Data Leakage': '💀 致命',
+                    'Endogeneity': '💀 致命',
+                    'Multiple Testing': '⚠️ 严重',
+                    'Statistical Power': '⚠️ 严重',
+                    'Causal Inference': '💀 致命',
+                    'Reproducibility': '⚠️ 严重',
+                }
+
+                for attack in red_attack_types:
+                    severity = attack_severity.get(attack, '📝 中等')
+                    st.markdown(f"**{attack}** | {severity}")
+
+            # 补丁日志
+            patch_log = hypothesis.get('patch_log', [])
+            if patch_log:
+                st.markdown("---")
+                st.markdown("### 方法论补丁注入")
+                for i, patch in enumerate(patch_log, 1):
+                    if isinstance(patch, dict):
+                        attack_type = patch.get('attack_type', '未知')
+                        patch_applied = patch.get('patch_applied', '')
+                        reference = patch.get('supporting_reference', '')
+
+                        st.markdown(f"**迭代 {i}**: {attack_type}")
+                        if patch_applied:
+                            st.markdown(f"> 补丁措施: {patch_applied}")
+                        if reference:
+                            st.markdown(f"> 参考文献: {reference}")
+                    else:
+                        st.markdown(f"**迭代 {i}**: {patch}")
+                    st.markdown("")
+
+    with tabs[4]:
         st.markdown("### 🔥 V7.5 演化实验室")
 
         # 凤凰协议统计
@@ -1798,7 +2708,7 @@ def render_success_report(result: Dict):
         st.markdown("---")
         render_conflict_trace(result)
 
-    with tabs[2]:
+    with tabs[5]:
         st.markdown(f"""
         <div class="report-container">
             <h4>验证过的文献引用</h4>

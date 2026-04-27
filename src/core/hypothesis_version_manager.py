@@ -33,6 +33,7 @@ VERSION_TYPES = {
     'methodology_patch': '方法论补丁',
     'external_compensation': '外部算法补偿',
     'major_rewrite': '重大重构',
+    'rollback': '回溯恢复',
     'final': '最终版本',
 }
 
@@ -247,6 +248,30 @@ class HypothesisVersionManager:
                     f"[V7.5] 更新版本分数: {version_number} "
                     f"(science={science_score:.2f}, fitness={fitness_score:.2f}, passed={defense_passed})"
                 )
+                return version
+
+        logger.warning(f"[V7.5] 未找到版本: {version_number}")
+        return None
+
+    def update_hypothesis_content(
+        self,
+        version_number: str,
+        hypothesis_content: Dict
+    ) -> Optional[HypothesisVersion]:
+        """
+        更新版本的假设内容
+
+        Args:
+            version_number: 版本号
+            hypothesis_content: 假设内容字典
+
+        Returns:
+            Optional[HypothesisVersion]: 更新后的版本对象
+        """
+        for version in self.versions:
+            if version.version_number == version_number:
+                version.hypothesis_content = hypothesis_content
+                logger.info(f"[V7.5] 更新假设内容: {version_number}")
                 return version
 
         logger.warning(f"[V7.5] 未找到版本: {version_number}")
