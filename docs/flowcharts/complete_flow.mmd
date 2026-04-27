@@ -1,0 +1,209 @@
+flowchart TB
+    subgraph TITLE[凤凰协议 Phoenix Protocol - Research Hypothesis Agent 完整流程图]
+        direction TB
+    end
+
+    %% ==================== 第一阶段：入口 ====================
+    subgraph ENTRY[阶段1: 入口处理]
+        direction TB
+        E1[用户输入研究想法] --> E2[意图清洗网关 Intent Sanitizer]
+        E2 --> E3{通过清洗检查?}
+        E3 -->|拒绝| E4X[❌ 拒绝请求<br/>越狱攻击/非科学输入]
+        E3 -->|通过| E5[动态 RAG 路由器]
+
+        E5 --> E6{领域识别}
+        E6 -->|医学/生命科学| E7A[PubMed PRIMARY]
+        E6 -->|计算机/物理/数学| E7B[ArXiv PRIMARY]
+        E6 -->|全学科| E7C[Semantic Scholar SECONDARY]
+
+        E7A --> E8[多源并发检索聚合]
+        E7B --> E8
+        E7C --> E8
+        E8 --> E9[检索结果输出]
+    end
+
+    %% ==================== 第二阶段：假设生成 ====================
+    subgraph HYPGEN[阶段2: PI Agent 假设生成]
+        direction TB
+        H1[PI Agent 首席科学家] --> H2[基于文献生成假设<br/>Nature 审稿人标准]
+        H2 --> H3[物理铁闸校验 Physical Validator]
+        H3 --> H4{物理可行性检查}
+
+        H4 -->|信号捕获失败| H5X[科幻命题拒绝]
+        H4 -->|因果链不成立| H5X
+        H4 -->|物理冲突| H6[PHOENIX_REWRITE 物理锚定重写]
+
+        H6 --> H7{重写成功?}
+        H7 -->|否| H8X[❌ HARD_FAILURE 硬性失败]
+        H7 -->|是| H1
+
+        H4 -->|通过| H9[假设输出 v1.0]
+    end
+
+    %% ==================== 第三阶段：红蓝对抗 ====================
+    subgraph REDBLUE[阶段3: 红蓝对抗审查]
+        direction TB
+        R1[RED_ATTACK 红方攻击] --> R2[攻击类型检测]
+
+        R2 --> R3A[Data Leakage 数据穿越<br/>级别: 致命]
+        R2 --> R3B[Endogeneity 内生性偏倚<br/>级别: 致命]
+        R2 --> R3C[Multiple Testing 多重检验<br/>级别: 严重]
+        R2 --> R3D[Statistical Power 统计功效<br/>级别: 严重]
+        R2 --> R3E[Causal Inference 因果推断<br/>级别: 严重]
+        R2 --> R3F[Reproducibility 可复现性<br/>级别: 中等]
+
+        R3A --> R4[攻击报告生成]
+        R3B --> R4
+        R3C --> R4
+        R3D --> R4
+        R3E --> R4
+        R3F --> R4
+
+        R4 --> R5[BLUE_DEFENSE 蓝方答辩委员会]
+        R5 --> R6{答辩裁决}
+        R6 -->|通过| R7[计算 Science Score]
+        R6 -->|失败| R8[记录攻击类型失败]
+    end
+
+    %% ==================== 第四阶段：分数判断 ====================
+    subgraph SCORE[阶段4: 分数判断]
+        direction TB
+        S1[Science Score 计算<br/>向量创新分 x 0.6 + 红方严谨分 x 0.4] --> S2{Score 大于等于 8.5?}
+        S2 -->|是| S3X[✅ SUCCESS 最终成功<br/>输出最终假设]
+        S2 -->|否| S4{分数停滞检测<br/>连续2轮上升小于0.5?}
+        S4 -->|是| S5[EXTERNAL_COMPENSATION<br/>外部算法补偿检索]
+        S4 -->|否| S6[继续演化流程]
+        S5 --> S6
+    end
+
+    %% ==================== 第五阶段：演化机制 ====================
+    subgraph EVOLUTION[阶段5: Phoenix 演化机制]
+        direction TB
+        %% 攻击类型失败追踪
+        E1A[攻击类型失败计数] --> E2A{同一攻击类型<br/>连续失败大于等于3次?}
+
+        %% 分支A: 触发回溯
+        E2A -->|是| E3A[触发 PHOENIX_ROLLBACK]
+        E3A --> E4A[查找回溯目标版本]
+
+        %% 回溯目标选择逻辑
+        E4A --> E5A{候选版本检查}
+        E5A --> E6A{不含该攻击类型?}
+        E6A -->|否| E7A[跳过 继续查找]
+        E7A --> E5A
+        E6A -->|是| E8A{分数大于等于<br/>当前分数减1.0?}
+        E8A -->|否| E9A[评分保护 跳过]
+        E9A --> E5A
+        E8A -->|是| E10A[选中该版本]
+
+        %% 回溯深度限制
+        E5A -->|遍历超过3个版本| E11A[深度限制<br/>使用放宽条件]
+        E11A --> E10A
+
+        %% 执行回溯
+        E10A --> E12A[创建回溯版本 v1.x_rollback]
+        E12A --> E13A[加入失败黑名单]
+        E13A --> E14A[生成避让提示]
+        E14A --> E15A[重置失败计数]
+        E15A --> E16A[注入避让提示到 PI Agent]
+        E16A --> E17A[生成新假设 不同研究方向]
+
+        %% 回溯失败
+        E5A -->|无有效目标| E18A[❌ HARD_FAILURE]
+
+        %% 分支B: 方法论补丁
+        E2A -->|否| E3B[PHOENIX_PATCH 方法论补丁注入]
+        E3B --> E4B[分级检索 Level 1-3]
+
+        E4B --> E5B{检索级别}
+        E5B -->|Level 1| E6B1[预设方法论库<br/>Nested CV SHAP等]
+        E5B -->|Level 2| E6B2[方法论关键词检索<br/>Attack Type + Method]
+        E5B -->|Level 3| E6B3[原主题组合检索<br/>Topic + Method]
+
+        E6B1 --> E7B[补丁应用]
+        E6B2 --> E7B
+        E6B3 --> E7B
+
+        E7B --> E8B[创建新版本 v1.x]
+        E8B --> E9B[PHOENIX_RETRY 补丁后重试]
+
+        %% 重试结果
+        E9B --> E10B{重试结果}
+        E10B -->|通过| S3X
+        E10B -->|失败| E11B{迭代上限检查}
+        E11B -->|超过8次| E12BX[⏰ MAX_PHOENIX_EXCEEDED]
+        E11B -->|未超过| R8
+    end
+
+    %% ==================== 第六阶段：终态 ====================
+    subgraph FINAL[阶段6: 终态输出]
+        direction TB
+        F1[三种终态] --> F2A[✅ SUCCESS<br/>Score大于等于8.5<br/>输出最终假设]
+        F1 --> F2B[❌ HARD_FAILURE<br/>物理不可修复<br/>记录失败原因]
+        F1 --> F2C[⏰ MAX_PHOENIX_EXCEEDED<br/>迭代超过8次<br/>输出最高分版本]
+
+        F2A --> F3[输出增强模块]
+        F3 --> F4A[Implementation Roadmap<br/>落地指南 Phase 1-3]
+        F3 --> F4B[Innovation Analysis<br/>创新分析 breakthrough incremental]
+        F3 --> F4C[Frontier Analysis<br/>前沿分析 2026 SoTA]
+
+        F4A --> F5[完整科研资产输出]
+        F4B --> F5
+        F4C --> F5
+    end
+
+    %% ==================== 连接各阶段 ====================
+    E9 --> H1
+    H9 --> R1
+    R7 --> S1
+    R8 --> E1A
+    S6 --> E11B
+    E17A --> H1
+
+    %% ==================== 配置参数面板 ====================
+    subgraph CONFIG[核心配置参数]
+        direction LR
+        C1[迭代限制<br/>MAX_ITERATIONS 8<br/>MAX_REWRITE 3<br/>MAX_PATCH 5<br/>MAX_ROLLBACK 2]
+        C2[分数配置<br/>MIN_SUCCESS 8.5<br/>STAGNANT_THRESHOLD 2<br/>RISE_DELTA 0.5<br/>SCORE_TOLERANCE 1.0]
+        C3[回溯配置<br/>FAILURE_THRESHOLD 3<br/>DEPTH_LIMIT 3<br/>ROLLBACK_ATTEMPTS 2]
+    end
+
+    %% ==================== 版本演化示例 ====================
+    subgraph VERSION[版本演化示例]
+        direction LR
+        V1[v1.0 初始] -->|Data Leakage| V2[v1.1 补丁]
+        V2 -->|Endogeneity| V3[v1.2 补丁]
+        V3 -->|通过| V4[v1.3 最终 Score 8.9]
+
+        V5[v1.0 初始] -->|Data Leakage| V6[v1.1 补丁]
+        V6 -->|Data Leakage 失败| V7[v1.2 补丁]
+        V7 -->|Data Leakage 失败| V8[v1.3 补丁]
+        V8 -->|Data Leakage 第3次| VR[触发回溯]
+        VR --> V9[v1.4_rollback<br/>避让提示注入]
+        V9 -->|新方向| V10[v1.5 Score 8.2]
+        V10 -->|通过| V11[v1.6 最终 Score 9.1]
+    end
+
+    %% 样式设置
+    style TITLE fill:#2c3e50,color:#fff
+    style ENTRY fill:#3498db,color:#fff
+    style HYPGEN fill:#9b59b6,color:#fff
+    style REDBLUE fill:#e74c3c,color:#fff
+    style SCORE fill:#f39c12,color:#fff
+    style EVOLUTION fill:#1abc9c,color:#fff
+    style FINAL fill:#27ae60,color:#fff
+    style CONFIG fill:#34495e,color:#fff
+    style VERSION fill:#8e44ad,color:#fff
+
+    style S3X fill:#27ae60,color:#fff
+    style E4X fill:#c0392b,color:#fff
+    style H5X fill:#c0392b,color:#fff
+    style H8X fill:#c0392b,color:#fff
+    style E12BX fill:#c0392b,color:#fff
+    style E18A fill:#c0392b,color:#fff
+    style F2A fill:#27ae60,color:#fff
+    style F2B fill:#c0392b,color:#fff
+    style F2C fill:#e67e22,color:#fff
+    style VR fill:#ff6b6b,color:#fff
+    style V4 fill:#6bcb77,color:#fff
+    style V11 fill:#6bcb77,color:#fff
