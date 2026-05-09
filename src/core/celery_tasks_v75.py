@@ -444,13 +444,6 @@ def hypothesis_generation_task_v75_impl(
     # V7.6: 设置原研究主题（用于 Level 3 检索）
     phoenix_machine.context.original_research_topic = user_input
 
-    # V7.7: 检测笼统输入（从 sanitization 结果中获取）
-    if 'classification' in dir() and hasattr(classification, 'is_broad_input'):
-        phoenix_machine.context.is_broad_input = classification.is_broad_input
-        phoenix_machine.context.broad_input_type = classification.broad_input_type
-        if classification.is_broad_input:
-            logger.info(f"[Task {task_id}] 检测到笼统输入: {classification.broad_input_type}")
-
     logger.info(f"[Task {task_id}] 凤凰协议组件初始化完成")
 
     try:
@@ -473,6 +466,13 @@ def hypothesis_generation_task_v75_impl(
                 ).to_dict()
 
             logger.info(f"[Task {task_id}] 语义分类通过: type={classification.intent_type.value}")
+
+            if hasattr(classification, 'is_broad_input'):
+                phoenix_machine.context.is_broad_input = classification.is_broad_input
+                phoenix_machine.context.broad_input_type = classification.broad_input_type
+                if classification.is_broad_input:
+                    logger.info(f"[Task {task_id}] 检测到笼统输入: {classification.broad_input_type}")
+
             user_input = classification.cleaned_input
 
         except ImportError:
@@ -651,6 +651,8 @@ def hypothesis_generation_task_v75_impl(
                 )
 
                 if hypothesis_result:
+                    # LLM 调用成功，重置连续失败计数
+                    phoenix_context.consecutive_llm_failures = 0
                     current_hypothesis_str = hypothesis_result
 
                     # 解析并保存假设内容到版本管理器
@@ -720,6 +722,13 @@ def hypothesis_generation_task_v75_impl(
 
                 else:
                     logger.warning(f"[Task {task_id}] 假设生成失败")
+                    # V7.5.1: 连续失败快速中止，避免 API 不可用时浪费迭代
+                    phoenix_context.consecutive_llm_failures = getattr(phoenix_context, 'consecutive_llm_failures', 0) + 1
+                    if phoenix_context.consecutive_llm_failures >= 3:
+                        logger.error(f"[Task {task_id}] LLM 连续失败 {phoenix_context.consecutive_llm_failures} 次，快速中止")
+                        phoenix_context.failure_reason = f"LLM API 连续失败 {phoenix_context.consecutive_llm_failures} 次，API 可能不可用"
+                        phoenix_machine.transition(PhoenixTransitionTrigger.MAX_ITERATIONS_EXCEEDED)
+                        break
                     if iteration >= PHOENIX_CONFIG['MAX_PHOENIX_ITERATIONS']:
                         phoenix_context.failure_reason = "PI 假设生成失败且达到最大迭代次数"
                         phoenix_machine.transition(PhoenixTransitionTrigger.MAX_ITERATIONS_EXCEEDED)
@@ -1908,6 +1917,453 @@ def init_celery_tasks_v75():
     return app
 
 
+# ==================== V7.5 安全投递与轮询函数（从 app.py 提取） ====================
+
+def submit_celery_task_with_safety(user_input: str, config: Dict, session_state=None) -> tuple:
+    """V7.5 安全投递机制
+
+    将 st.warning() / st.error() 调用改为在返回值中携带，
+    由调用方决定如何展示。
+
+    Args:
+        user_input: 用户输入文本
+        config: 配置字典
+        session_state: Streamlit session_state (dict-like)
+
+    Returns:
+        (task_id, dispatch_result) 其中 dispatch_result 可能包含
+        'warnings' 和 'errors' 列表，调用方应遍历展示。
+    """
+    import time as time_mod
+    from datetime import datetime as dt_mod
+
+    dispatch_result = {
+        'attempt': 0,
+        'success': False,
+        'error_type': None,
+        'error_message': None,
+        'fallback_used': False,
+        'health_check_passed': False,
+        'warnings': [],
+        'errors': [],
+    }
+
+    # Phase 1: 投递前健康检查
+    # 延迟导入避免循环依赖
+    from src.core.health import check_redis_health, check_worker_heartbeat
+
+    health_ok, health_msg = check_redis_health()
+    dispatch_result['health_check_passed'] = health_ok
+
+    if not health_ok:
+        dispatch_result['error_type'] = 'REDIS_CONNECTION_FAILED'
+        dispatch_result['error_message'] = health_msg
+        return None, dispatch_result
+
+    # Worker 检测 — 离线时返回特殊标记，由调用方决定是否本地执行
+    worker_alive = check_worker_heartbeat()
+    if not worker_alive:
+        dispatch_result['error_type'] = 'WORKER_OFFLINE'
+        dispatch_result['error_message'] = 'Worker 离线，任务未投递到队列'
+        logger.warning("[submit_celery_task_with_safety] Worker 离线，任务不进入队列")
+        # 保存 config 和 input 供本地执行使用
+        if session_state:
+            session_state['last_submit_config'] = config
+            session_state['last_submit_input'] = user_input
+        return None, dispatch_result
+
+    # Phase 2: 投递中异常捕获 + 重试
+    celery_app = get_celery_app()
+
+    # V7.5: 参数穿透
+    tab_session_id = 'v7_default'
+    if session_state:
+        tab_session_id = session_state.get('tab_session_id', f"v7_session_{dt_mod.now().strftime('%Y%m%d%H%M%S')}")
+
+    task_kwargs = {
+        'user_input': user_input,
+        'user_domain': config.get('user_domain', 'auto-detect'),
+        'hard_cap': config.get('hard_cap', 15),
+        'min_score_threshold': config.get('min_score_threshold', 7.0),
+        'max_iterations': config.get('max_iterations', 5),
+        'execution_mode': config.get('execution_mode', 'autonomous'),
+        'webhook_url': None,
+        'session_id': tab_session_id,
+
+        # V7.5 Phoenix 参数
+        'max_phoenix_iterations': config.get('max_phoenix_iterations', 4),
+        'enable_phoenix_rewrite': config.get('enable_phoenix_rewrite', True),
+        'enable_methodology_patch': config.get('enable_methodology_patch', True),
+
+        # 文献检索筛选参数
+        'min_if': config.get('min_if', 3.0),
+        'start_year': config.get('start_year', 2020),
+        'end_year': config.get('end_year', dt_mod.now().year),
+        'min_citations': config.get('min_citations', 10),
+    }
+
+    logger.debug(f"V7.5 Task kwargs prepared:")
+    for k, v in task_kwargs.items():
+        logger.debug(f"  {k}: {v}")
+
+    for attempt in range(1, 4):
+        dispatch_result['attempt'] = attempt
+
+        try:
+            result = celery_app.send_task(
+                'hypothesis_generation_task_v75',
+                kwargs=task_kwargs,
+                queue='research',
+                priority=5,
+                retry=True,
+            )
+
+            task_id = result.id
+            dispatch_result['success'] = True
+            dispatch_result['task_id'] = task_id
+
+            if session_state:
+                session_state['task_id'] = task_id
+                session_state['task_state'] = 'PENDING'
+                session_state['task_progress'] = 0
+                session_state['task_message'] = '任务已派发'
+                session_state['task_start_time'] = dt_mod.now().isoformat()
+                # 保存 config 和 user_input 以便 Worker 卡住时可降级到本地执行
+                session_state['last_submit_config'] = config
+                session_state['last_submit_input'] = user_input
+                session_state['pipeline_logs'] = [{
+                    'time': dt_mod.now().strftime('%H:%M:%S'),
+                    'step': 2,
+                    'message': f'Task dispatched: {task_id}',
+                    'status': 'complete'
+                }]
+
+            # 延迟导入任务持久化
+            from src.core.task_persistence import register_task_persistence
+            register_task_persistence(task_id, user_input, config, session_id=tab_session_id)
+
+            return task_id, dispatch_result
+
+        except Exception as e:
+            # 检查是否为 redis 连接错误
+            error_name = type(e).__name__
+            if 'ConnectionError' in error_name or 'Redis' in error_name:
+                dispatch_result['error_type'] = 'REDIS_FLASH_DISCONNECT'
+            else:
+                dispatch_result['error_type'] = 'UNKNOWN_DISPATCH_ERROR'
+            dispatch_result['error_message'] = f'第 {attempt} 次投递时错误: {str(e)}'
+
+            if attempt < 3:
+                dispatch_result['warnings'].append(
+                    f"投递失败 (第 {attempt} 次)，正在重试..."
+                )
+                time_mod.sleep(2 ** attempt)
+            else:
+                break
+
+    # Phase 3: 投递失败降级 - 将错误信息放入返回值
+    if not dispatch_result['success']:
+        dispatch_result['errors'].append(
+            f"任务投递失败 (尝试 {dispatch_result['attempt']} 次)\n\n"
+            f"错误类型: {dispatch_result['error_type']}\n"
+            f"错误详情: {dispatch_result['error_message']}"
+        )
+        return None, dispatch_result
+
+    return dispatch_result.get('task_id'), dispatch_result
+
+
+def poll_task_status(task_id: str, session_state=None) -> Dict:
+    """轮询任务状态
+
+    Args:
+        task_id: Celery 任务 ID
+        session_state: Streamlit session_state (dict-like)，用于写入状态更新
+    """
+    if not task_id:
+        return {'state': 'UNKNOWN', 'progress': 0, 'message': 'Celery不可用'}
+
+    try:
+        from datetime import datetime as dt_mod
+
+        celery_app = get_celery_app()
+        async_result = AsyncResult(task_id, app=celery_app)
+
+        state = async_result.state
+        info = async_result.info if async_result.info else {}
+
+        progress = 0
+        message = ''
+
+        if state == 'PROGRESS':
+            progress = info.get('progress', 0)
+            message = info.get('message', '执行中...')
+
+        elif state == 'SUCCESS':
+            progress = 100
+            message = '任务完成'
+            if session_state is not None:
+                session_state['task_result'] = async_result.result
+
+        elif state == 'FAILURE':
+            progress = 0
+            message = info.get('error', '任务失败') if isinstance(info, dict) else str(info)
+            if session_state is not None:
+                session_state['error_occurred'] = True
+                session_state['error_message'] = message
+                if isinstance(info, dict):
+                    session_state['error_type'] = info.get('result_type', 'unknown')
+        elif state == 'PENDING':
+            progress = 0
+            message = '等待 Worker 接收...'
+
+        if session_state is not None:
+            session_state['task_state'] = state
+            session_state['task_progress'] = progress
+            session_state['task_message'] = message
+
+            if message and len(session_state.get('pipeline_logs', [])) < 50:
+                session_state.setdefault('pipeline_logs', []).append({
+                    'time': dt_mod.now().strftime('%H:%M:%S'),
+                    'step': max(1, min(13, progress // 8 + 1)),
+                    'message': message,
+                    'status': 'active' if state == 'PROGRESS' else state.lower()
+                })
+
+        return {
+            'state': state,
+            'progress': progress,
+            'message': message,
+            'info': info,
+            'result': async_result.result if state == 'SUCCESS' else None
+        }
+
+    except Exception as e:
+        return {
+            'state': 'ERROR',
+            'progress': 0,
+            'message': f'轮询异常: {str(e)}'
+        }
+
+
+def poll_task_status_safe(task_id: str, session_state=None) -> Dict:
+    """安全轮询（带守卫检查）
+
+    Args:
+        task_id: Celery 任务 ID
+        session_state: Streamlit session_state (dict-like)
+    """
+    import json as json_mod
+    from datetime import datetime as dt_mod
+
+    # 初始化轮询守卫（内联 init_poll_guard）
+    if session_state is not None:
+        session_state.setdefault('poll_start_time', None)
+        session_state.setdefault('poll_attempt_count', 0)
+        session_state.setdefault('last_state_change_time', None)
+        session_state.setdefault('last_known_state', None)
+
+        session_state['poll_attempt_count'] = session_state.get('poll_attempt_count', 0) + 1
+
+    # 延迟导入守卫与健康检查
+    from src.core.guards import check_poll_guard
+    from src.core.health import check_worker_heartbeat
+
+    can_continue, reason, details = check_poll_guard(
+        session_state if session_state else {},
+        task_id,
+        check_worker_heartbeat,
+    )
+
+    if not can_continue:
+        # WORKER_STUCK: 尝试撤销 Celery 任务并返回降级信号
+        if reason == 'WORKER_STUCK':
+            logger.warning(f"[poll_task_status_safe] Worker 卡住检测，尝试撤销 Celery 任务 {task_id[:16]}...")
+            try:
+                celery_app = get_celery_app()
+                celery_app.control.revoke(task_id, terminate=True)
+                logger.info(f"[poll_task_status_safe] Celery 任务已撤销: {task_id[:16]}...")
+            except Exception as e:
+                logger.warning(f"[poll_task_status_safe] 撤销 Celery 任务失败: {e}")
+
+            return {
+                'state': 'FALLBACK_TO_LOCAL',
+                'progress': 0,
+                'message': 'Celery Worker 未响应，切换到本地执行...',
+                'fallback_reason': reason,
+                'details': details,
+            }
+
+        return handle_poll_timeout(task_id, reason, details, session_state=session_state)
+
+    # V7.5.1: 早期降级检测 — 前几次轮询时若 Worker 不在线且任务仍 PENDING，立即降级
+    poll_count = session_state.get('poll_attempt_count', 0) if session_state else 0
+    if 5 <= poll_count <= 10:
+        worker_alive = check_worker_heartbeat()
+        if not worker_alive:
+            task_state_now = poll_task_status(task_id, session_state=session_state)
+            if task_state_now.get('state') in ['PENDING', 'pending']:
+                logger.warning(f"[poll_task_status_safe] Worker 离线且任务 PENDING，立即降级到本地执行")
+                try:
+                    celery_app = get_celery_app()
+                    celery_app.control.revoke(task_id, terminate=True)
+                except Exception:
+                    pass
+                return {
+                    'state': 'FALLBACK_TO_LOCAL',
+                    'progress': 0,
+                    'message': 'Celery Worker 未响应，切换到本地执行...',
+                    'fallback_reason': 'WORKER_OFFLINE_EARLY',
+                    'details': {'reason': 'Worker 不在线，任务无法被处理'},
+                }
+
+    poll_result = poll_task_status(task_id, session_state=session_state)
+
+    if session_state is not None:
+        current_state = poll_result['state']
+        last_state = session_state.get('last_known_state')
+
+        if current_state != last_state:
+            session_state['last_known_state'] = current_state
+            session_state['last_state_change_time'] = dt_mod.now().isoformat()
+
+        if current_state in ['SUCCESS', 'success', 'FAILURE', 'failure']:
+            session_state['poll_start_time'] = None
+            session_state['poll_attempt_count'] = 0
+            # 序列化结果并保存
+            result_json = json_mod.dumps(poll_result.get('result'), ensure_ascii=False) if poll_result.get('result') else None
+            # 标准化状态为大写
+            normalized_state = current_state.upper()
+            # 延迟导入任务持久化
+            from src.core.task_persistence import update_task_completion
+            update_task_completion(task_id, normalized_state, result_json)
+
+    return poll_result
+
+
+def handle_poll_timeout(task_id: str, reason: str, details: Dict, session_state=None) -> Dict:
+    """超时处理
+
+    Args:
+        task_id: Celery 任务 ID
+        reason: 超时原因代码
+        details: 超时详情字典
+        session_state: Streamlit session_state (dict-like)
+    """
+    if session_state is not None:
+        session_state['task_state'] = 'TIMEOUT'
+        session_state['error_occurred'] = True
+        session_state['error_type'] = reason
+        session_state['error_message'] = details.get('reason', '轮询超时')
+
+    if task_id:
+        try:
+            celery_app = get_celery_app()
+            async_result = AsyncResult(task_id, app=celery_app)
+            current_state = async_result.state
+
+            if current_state in ['PENDING', 'PROGRESS', 'STARTED']:
+                celery_app.control.revoke(task_id, terminate=True)
+                logger.warning(f"僵尸任务已撤销: {task_id[:16]}... (原因: {reason})")
+                # 延迟导入任务持久化
+                from src.core.task_persistence import update_task_completion
+                update_task_completion(task_id, 'ZOMBIE')
+
+        except Exception as e:
+            logger.warning(f"撤销僵尸任务失败: {e}")
+
+    return {
+        'state': 'TIMEOUT',
+        'progress': 0,
+        'message': details.get('reason', '轮询超时'),
+        'timeout_reason': reason,
+        'details': details,
+        'task_revoked': True,
+    }
+
+
+# ==================== 本地同步执行降级方案 ====================
+
+class LocalMockTask:
+    """Mock 任务对象，用于本地同步执行时模拟 Celery Task 接口
+
+    hypothesis_generation_task_v75_impl 的第一个参数 self 需要提供:
+    - self.request.id: 任务 ID
+    - self.update_state(): 状态更新（本地执行时仅记录日志）
+    - self.update_progress(): 进度更新（本地执行时仅记录日志）
+    """
+
+    def __init__(self, task_id: str):
+        self.request = type('Request', (object,), {'id': task_id})()
+
+    def update_state(self, state, meta=None):
+        logger.info(f"[LocalMockTask {self.request.id}] State update: {state}")
+
+    def update_progress(self, progress: int, message: str = None):
+        logger.info(f"[LocalMockTask {self.request.id}] Progress: {progress}% - {message or ''}")
+
+
+def run_hypothesis_task_locally(user_input: str, config: Dict) -> Dict:
+    """本地同步执行假设生成任务（Celery Worker 不可用时的降级方案）
+
+    当 Celery Worker 长时间不响应时，绕过 Celery 直接在 Streamlit 进程中
+    同步调用 hypothesis_generation_task_v75_impl。
+
+    Args:
+        user_input: 用户输入文本
+        config: 配置字典（与 submit_celery_task_with_safety 中的 config 格式一致）
+
+    Returns:
+        任务结果字典（与 Celery 异步执行返回格式一致）
+    """
+    import uuid
+    from datetime import datetime as dt_mod
+
+    task_id = f"local_{uuid.uuid4().hex[:12]}"
+
+    logger.info(f"[LocalFallback] 启动本地同步执行: {task_id}")
+    logger.info(f"[LocalFallback] User input: {user_input[:100]}...")
+
+    mock_task = LocalMockTask(task_id)
+
+    # 从 config 构建 kwargs（与 submit_celery_task_with_safety 保持一致）
+    kwargs = {
+        'hard_cap': config.get('hard_cap', 15),
+        'min_score_threshold': config.get('min_score_threshold', 7.0),
+        'max_iterations': config.get('max_iterations', 5),
+        'execution_mode': config.get('execution_mode', 'autonomous'),
+        'max_phoenix_iterations': config.get('max_phoenix_iterations', 4),
+        'enable_phoenix_rewrite': config.get('enable_phoenix_rewrite', True),
+        'enable_methodology_patch': config.get('enable_methodology_patch', True),
+        'min_if': config.get('min_if', 3.0),
+        'start_year': config.get('start_year', 2020),
+        'end_year': config.get('end_year', dt_mod.now().year),
+        'min_citations': config.get('min_citations', 10),
+    }
+
+    try:
+        result = hypothesis_generation_task_v75_impl(
+            mock_task,
+            user_input,
+            user_domain=config.get('user_domain', 'auto-detect'),
+            webhook_url=None,
+            session_id=f"local_{task_id}",
+            **kwargs
+        )
+        logger.info(f"[LocalFallback] 本地执行完成: {task_id}")
+        return result
+
+    except Exception as e:
+        logger.exception(f"[LocalFallback] 本地执行异常: {e}")
+        return {
+            'task_id': task_id,
+            'state': 'failure',
+            'result_type': 'local_execution_error',
+            'error': str(e),
+            'traceback': traceback.format_exc(),
+        }
+
+
 # ==================== 导出 ====================
 __all__ = [
     'get_celery_app',
@@ -1920,4 +2376,10 @@ __all__ = [
     'revoke_task',
     'init_celery_tasks_v75',
     'hypothesis_generation_task_v75_impl',
+    'submit_celery_task_with_safety',
+    'poll_task_status',
+    'poll_task_status_safe',
+    'handle_poll_timeout',
+    'run_hypothesis_task_locally',
+    'LocalMockTask',
 ]
