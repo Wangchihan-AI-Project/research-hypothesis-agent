@@ -5,7 +5,7 @@ echo 测试 GenAI 架构师
 echo ========================================
 echo.
 
-cd /d C:\Users\PC\research-hypothesis-agent
+cd /d "%~dp0.."
 
 echo [1/3] 检查 Python 环境...
 python --version

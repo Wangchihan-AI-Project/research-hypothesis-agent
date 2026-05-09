@@ -6,8 +6,8 @@ echo   系统清理和重��
 echo ====================================
 echo.
 
-REM 切换到脚本所在目录
-cd /d "%~dp0"
+REM 切换到项目根目录
+cd /d "%~dp0.."
 
 echo [1/4] 清理Python缓存...
 for /d /r %%d in (__pycache__) do @if exist "%%d" rd /s /q "%%d"

@@ -12,8 +12,8 @@ echo.
 echo [信息] 正在启动系统...
 echo.
 
-REM 切换到脚本所在目录
-cd /d "%~dp0"
+REM 切换到项目根目录
+cd /d "%~dp0.."
 
 REM 检查Python
 python --version >nul 2>&1
