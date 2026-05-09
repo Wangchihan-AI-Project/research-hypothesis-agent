@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 # ==================== 凤凰协议配置 ====================
 
 PHOENIX_CONFIG = {
-    'MAX_PHOENIX_ITERATIONS': 8,        # 最大演化迭代次数
+    'MAX_PHOENIX_ITERATIONS': 4,        # 最大演化迭代次数（降低以减少 API 压力）
     'MAX_REWRITE_ATTEMPTS': 3,          # 物理锚定重写最多 3 次
     'MAX_PATCH_ATTEMPTS': 5,            # 方法论补丁最多 5 次
     'SCORE_STagnant_THRESHOLD': 2,      # 连续 2 次停滞触发补偿

@@ -390,14 +390,15 @@ class OutputEnhancer:
         methodology = str(hypothesis_data.get('methodology', '')).strip()
         combined = ' '.join(part for part in [domain, title, details, methodology] if part)
 
+        combined_lower = combined.lower()
         domain_tags = []
-        if any(keyword in combined.lower() for keyword in ['machine learning', 'deep learning', 'ai', '模型', '预测']):
+        if re.search(r'\b(machine learning|deep learning|ai model|predictive model|prediction model)\b|机器学习|深度学习|预测模型', combined_lower):
             domain_tags.append('以机器学习/预测建模为核心')
-        if any(keyword in combined.lower() for keyword in ['clinical', 'patient', 'cohort', '临床', '患者', '队列']):
+        if re.search(r'\b(clinical|patient|cohort)\b|临床|患者|队列', combined_lower):
             domain_tags.append('强调临床或队列场景落地')
-        if any(keyword in combined.lower() for keyword in ['causal', 'dag', '因果', '混杂']):
+        if re.search(r'\b(causal|dag|confounding)\b|因果|混杂', combined_lower):
             domain_tags.append('突出因果识别与偏倚控制')
-        if any(keyword in combined.lower() for keyword in ['omics', 'single-cell', '多组学', '单细胞']):
+        if re.search(r'\b(omics|single-cell)\b|多组学|单细胞', combined_lower):
             domain_tags.append('包含高维组学或复杂生物数据')
 
         if not domain_tags:

@@ -201,9 +201,11 @@ class SemanticDepthValidator:
         union = hyp_set | doc_set
 
         jaccard = len(intersection) / len(union) if union else 0.0
+        doc_coverage = len(intersection) / len(doc_set) if doc_set else 0.0
+        hyp_coverage = len(intersection) / len(hyp_set) if hyp_set else 0.0
 
-        # 转换为一致性分数（0-1）
-        alignment_score = jaccard
+        # 兼顾集合相似度与覆盖率，避免多方法论假设被 Jaccard 过度惩罚。
+        alignment_score = max(jaccard, (doc_coverage * 0.6) + (hyp_coverage * 0.4))
 
         # 生成解释
         if alignment_score >= 0.7:
@@ -802,13 +804,13 @@ class HybridFitnessScorer:
 
         # 甜点区（0.40-0.65）
         if OPTIMAL_RANGE_LOW <= similarity <= OPTIMAL_RANGE_HIGH:
-            # 高斯分布峰值
             peak_distance = abs(similarity - PEAK_SIMILARITY)
-            # 使用高斯函数映射到 9-10 分
-            gaussian_score = 10.0 * np.exp(-(peak_distance ** 2) / 0.02)
-
-            # 确保分数在 9-10 范围内
-            score = min(10.0, max(9.0, gaussian_score))
+            max_peak_distance = max(
+                PEAK_SIMILARITY - OPTIMAL_RANGE_LOW,
+                OPTIMAL_RANGE_HIGH - PEAK_SIMILARITY
+            )
+            normalized_distance = peak_distance / max_peak_distance if max_peak_distance else 0.0
+            score = 10.0 - normalized_distance
 
             if similarity < PEAK_SIMILARITY:
                 interpretation = "创新甜点区（恰到好处的创新度）"
@@ -817,7 +819,7 @@ class HybridFitnessScorer:
             else:
                 interpretation = "创新甜点区（适度参考现有研究）"
 
-            return score, interpretation
+            return min(10.0, max(9.0, score)), interpretation
 
         # 线性过渡区
         if similarity < OPTIMAL_RANGE_LOW:
