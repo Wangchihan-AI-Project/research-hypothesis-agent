@@ -53,3 +53,14 @@ output/
 reports/
 temp/
 .cache/
+logs/
+cache/
+local_db/
+audit_logs/
+meta_harness_runs/
+outputs/
+papers/
+backup/
+backup_20260416/
+*.db
+*.log
