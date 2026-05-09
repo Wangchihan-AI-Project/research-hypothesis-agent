@@ -46,6 +46,7 @@ class ConfigLoader:
             'agents': {
                 'paper_search': {
                     'model': os.getenv('PAPER_SEARCH_MODEL', os.getenv('CLAUDE_MODEL', 'claude-opus-4-6')),
+                    'screening_model': os.getenv('PAPER_SCREENING_MODEL', 'claude-sonnet-4-6'),
                     'max_results': 50
                 },
                 'hypothesis': {
@@ -138,9 +139,7 @@ class ConfigLoader:
 
 
 # 全局配置实例
-print("============== [DEBUG CFG-1] 开始初始化全局 config_loader ==============", flush=True)
 config_loader = ConfigLoader()
-print("============== [DEBUG CFG-2] 全局 config_loader 初始化完成 ==============", flush=True)
 
 
 def get_config():

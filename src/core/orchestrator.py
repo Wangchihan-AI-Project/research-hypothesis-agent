@@ -11,9 +11,25 @@
 """
 from typing import Dict, List, Optional, Any
 import sys
+import concurrent.futures
 import os
+import uuid
 from datetime import datetime
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def _configure_stdio():
+    for stream_name in ('stdout', 'stderr'):
+        stream = getattr(sys, stream_name, None)
+        reconfigure = getattr(stream, 'reconfigure', None)
+        if callable(reconfigure):
+            try:
+                reconfigure(encoding='utf-8', errors='backslashreplace')
+            except Exception:
+                pass
+
+
+_configure_stdio()
 
 # ==================== 动态年份配置 ====================
 CURRENT_YEAR = datetime.now().year
@@ -63,6 +79,36 @@ import anthropic
 import json
 
 
+_progressive_search_executor = concurrent.futures.ThreadPoolExecutor(max_workers=2, thread_name_prefix='progressive_search')
+_progressive_search_jobs = {}
+
+
+def get_progressive_search_job(job_id: str) -> Dict:
+    job = _progressive_search_jobs.get(job_id)
+    if not job:
+        return {
+            'success': False,
+            'status': 'missing',
+            'error': '搜索任务不存在'
+        }
+
+    future = job.get('future')
+    if future and future.done() and job['status'] == 'running':
+        try:
+            future.result()
+        except Exception as e:
+            job['status'] = 'error'
+            job['error'] = str(e)
+
+    return {
+        'success': True,
+        'status': job['status'],
+        'stage1_result': job.get('stage1_result'),
+        'final_result': job.get('final_result'),
+        'error': job.get('error'),
+    }
+
+
 class Orchestrator:
     """工作流协调器（终极重构版）"""
 
@@ -102,16 +148,21 @@ class Orchestrator:
     # 递归反馈最大次数（从 program_config 读取）
     # MAX_FEEDBACK_LOOP = 1  # 旧硬编码，现已配置化
 
-    def __init__(self):
+    def __init__(self, search_only: bool = False):
         """初始化协调器"""
-        print("[Orchestrator] 开始初始化...", flush=True)
+        self.search_only = search_only
 
         # ==================== V6.1 加载 program_config (Pydantic强校验 + 兼容层) ====================
         # 使用兼容类 ProgramConfig（内部调用 get_current_config()）
         self.config = ProgramConfig()
         # 同时保存 V6.1 Pydantic 原始配置（用于直接访问 Pydantic 属性）
         self._v61_config = get_current_config()
-        print(f"[Orchestrator V6.1] program_config 已加载，hard_cap={self.config.get_global_fuse_hard_cap()}, min_threshold={self.config.get_min_score_threshold()}", flush=True)
+        self.logger = get_logger()
+        self.logger.info("Orchestrator 初始化开始")
+        self.logger.info(
+            f"program_config 已加载，hard_cap={self.config.get_global_fuse_hard_cap()}, "
+            f"min_threshold={self.config.get_min_score_threshold()}"
+        )
         # ==========================================================
 
         # ==================== 全局参数锁定（从配置读取） ====================
@@ -125,143 +176,16 @@ class Orchestrator:
         }
         # ==========================================================
 
-        # 初始化日志
         self.logger = get_logger()
+        self.logger.info("Orchestrator 初始化开始")
 
         # 初始化各智能体
-        print("[Orchestrator] 初始化 PaperSearchAgent...", flush=True)
+        self.logger.info("初始化 PaperSearchAgent")
         self.paper_agent = PaperSearchAgent()
-        print("[Orchestrator] PaperSearchAgent 完成", flush=True)
-
-        print("[Orchestrator] 初始化 GlobalPriorArtProbe (全球查新探针)...", flush=True)
-        self.global_prior_art_probe = GlobalPriorArtProbe()
-        print("[Orchestrator] GlobalPriorArtProbe 完成", flush=True)
-
-        print("[Orchestrator] 初始化 HypothesisAgent...", flush=True)
-        self.hypothesis_agent = HypothesisAgent()
-        print("[Orchestrator] HypothesisAgent 完成", flush=True)
-
-        print("[Orchestrator] 初始化 ValidationAgent...", flush=True)
-        self.validation_agent = ValidationAgent()
-        print("[Orchestrator] ValidationAgent 完成", flush=True)
-
-        print("[Orchestrator] 初始化 TechAnalysisAgent...", flush=True)
-        self.tech_agent = TechAnalysisAgent()
-        print("[Orchestrator] TechAnalysisAgent 完成", flush=True)
-
-        print("[Orchestrator] 初始化 ThesisWriterAgent...", flush=True)
-        self.thesis_writer_agent = ThesisWriterAgent()
-        print("[Orchestrator] ThesisWriterAgent 完成", flush=True)
-
-        # ==================== 纯干实验核心专家阵列 ====================
-        print("[Orchestrator] 初始化 GenAIExpertAgent...", flush=True)
-        self.genai_expert_agent = GenAIExpertAgent()
-        print("[Orchestrator] GenAIExpertAgent 完成", flush=True)
-
-        print("[Orchestrator] 初始化 CompBioAgent...", flush=True)
-        self.comp_bio_agent = CompBioAgent()
-        print("[Orchestrator] CompBioAgent 完成", flush=True)
-
-        print("[Orchestrator] 初始化 DigitalPathologyAgent...", flush=True)
-        self.digital_pathology_agent = DigitalPathologyAgent()
-        print("[Orchestrator] DigitalPathologyAgent 完成", flush=True)
-
-        print("[Orchestrator] 初始化 BiostatsAgent...", flush=True)
-        self.biostats_agent = BiostatsAgent()
-        print("[Orchestrator] BiostatsAgent 完成", flush=True)
-
-        print("[Orchestrator] 初始化 ClinicalMDAgent...", flush=True)
-        self.clinical_md_agent = ClinicalMDAgent()
-        print("[Orchestrator] ClinicalMDAgent 完成", flush=True)
-        # ============================================================
-
-        print("[Orchestrator] 初始化 DataHunterAgent...", flush=True)
-        self.data_hunter_agent = DataHunterAgent()
-        print("[Orchestrator] DataHunterAgent 完成", flush=True)
-
-        # ==================== 新增Agent ====================
-        print("[Orchestrator] 初始化 DataGovernanceAgent (数据治理审计)...", flush=True)
-        self.data_governance_agent = DataGovernanceAgent()
-        print("[Orchestrator] DataGovernanceAgent 完成", flush=True)
-
-        print("[Orchestrator] 初始化 ResourceEstimatorAgent (资源核算)...", flush=True)
-        self.resource_estimator_agent = ResourceEstimatorAgent()
-        print("[Orchestrator] ResourceEstimatorAgent 完成", flush=True)
-        # ============================================================
-
-        print("[Orchestrator] 初始化 EthicsReviewerAgent...", flush=True)
-        self.ethics_reviewer_agent = EthicsReviewerAgent()
-        print("[Orchestrator] EthicsReviewerAgent 完成", flush=True)
-
-        print("[Orchestrator] 初始化 CoderAgent...", flush=True)
-        self.coder_agent = CoderAgent()
-        print("[Orchestrator] CoderAgent 完成", flush=True)
-
-        # 红蓝对抗Agent
-        print("[Orchestrator] 初始化 RedTeamAgent...", flush=True)
-        self.red_team_agent = RedTeamAgent()
-        print("[Orchestrator] RedTeamAgent 完成", flush=True)
-
-        print("[Orchestrator] 初始化 DefenseCommitteeAgent...", flush=True)
-        self.defense_committee_agent = DefenseCommitteeAgent()
-        print("[Orchestrator] DefenseCommitteeAgent 完成", flush=True)
-
-        # ==================== LLM Client for 审计方法 ====================
-        # 用于 _run_red_team_audit 和 _run_biostats_hardcore_audit
-        self.api_key = os.getenv("ANTHROPIC_API_KEY")
-        self.model = os.getenv("ANTHROPIC_MODEL", "claude-opus-4-20250514")
-        base_url = os.getenv("ANTHROPIC_BASE_URL")
-        if base_url:
-            self.client = anthropic.Anthropic(api_key=self.api_key, base_url=base_url)
-        else:
-            self.client = anthropic.Anthropic(api_key=self.api_key)
-        # ==============================================================
+        self.logger.info("PaperSearchAgent 初始化完成")
 
         # 使用统一的数据库管理器
         self.db_manager = get_db_manager()
-
-        # ==================== V5.0/V6.0 全防御机制初始化 ====================
-        if V50_DEFENSE_ENABLED:
-            print("[Orchestrator] 初始化 V5.0/V6.0 全防御机制...", flush=True)
-
-            # 1. 意图清洗前置网关（从配置读取 strict_mode）
-            intent_sanitizer_strict = self.config.get_intent_sanitizer_strict_mode()
-            if self.config.is_intent_sanitizer_enabled():
-                self.intent_sanitizer = IntentSanitizer(strict_mode=intent_sanitizer_strict)
-                print(f"[V6.0] Intent Sanitizer Gateway 已启用 (strict_mode={intent_sanitizer_strict})", flush=True)
-            else:
-                self.intent_sanitizer = None
-                print("[V6.0] Intent Sanitizer 已禁用（配置）", flush=True)
-
-            # 2. 全局迭代熔断器（从配置读取 hard_cap）
-            hard_cap = self.config.get_global_fuse_hard_cap()
-            # warning_threshold 暂不传递给 get_global_fuse（待后续升级）
-            if self.config.is_global_fuse_enabled():
-                self.global_fuse = get_global_fuse(hard_cap=hard_cap, force_new=True)
-                print(f"[V6.0] Global Iteration Fuse 已启用 (上限{hard_cap}次API调用)", flush=True)
-            else:
-                self.global_fuse = None
-                print("[V6.0] Global Fuse 已禁用（配置）", flush=True)
-
-            # 3. 硬链接锚定校验器（从配置读取 strict_mode）
-            anchor_strict = self.config.get_hard_link_anchor_strict_mode()
-            if self.config.is_hard_link_anchor_enabled():
-                self.hard_link_anchor = get_hard_link_anchor(strict_mode=anchor_strict, force_new=True)
-                print(f"[V6.0] Hard-Link Anchoring Check 已启用 (strict_mode={anchor_strict})", flush=True)
-            else:
-                self.hard_link_anchor = None
-                print("[V6.0] Hard-Link Anchor 已禁用（配置）", flush=True)
-
-            # 4. V5.0 Prompts 标记
-            self.use_v50_prompts = True
-            print("[V5.0] PI/Auditor V5.0 System Prompts 已启用", flush=True)
-        else:
-            self.intent_sanitizer = None
-            self.global_fuse = None
-            self.hard_link_anchor = None
-            self.use_v50_prompts = False
-            print("[V5.0] 防御模块未启用（导入失败）", flush=True)
-        # ============================================================
 
         # 当前会话状态
         self.current_session_id = None  # 只保存ID，不保存对象
@@ -269,24 +193,135 @@ class Orchestrator:
         self.current_hypotheses = []
         self.current_hypothesis_ids = []  # 新增：跟踪假设ID
         self.feedback_loop_count = 0  # 递归反馈计数
+        self.search_executor = _progressive_search_executor
+        self.search_jobs = _progressive_search_jobs
+
+        if self.search_only:
+            self.global_prior_art_probe = None
+            self.hypothesis_agent = None
+            self.validation_agent = None
+            self.tech_agent = None
+            self.thesis_writer_agent = None
+            self.genai_expert_agent = None
+            self.comp_bio_agent = None
+            self.digital_pathology_agent = None
+            self.biostats_agent = None
+            self.clinical_md_agent = None
+            self.data_hunter_agent = None
+            self.data_governance_agent = None
+            self.resource_estimator_agent = None
+            self.ethics_reviewer_agent = None
+            self.coder_agent = None
+            self.red_team_agent = None
+            self.defense_committee_agent = None
+            self.api_key = os.getenv("ANTHROPIC_API_KEY")
+            self.model = os.getenv("ANTHROPIC_MODEL", "claude-opus-4-20250514")
+            self.client = None
+            self.intent_sanitizer = None
+            self.global_fuse = None
+            self.hard_link_anchor = None
+            self.use_v50_prompts = False
+            self.remedial_search_engine = None
+            self.logger.info("工作流协调器初始化完成（搜索轻量模式）")
+            return
+
+        self.logger.info("初始化 GlobalPriorArtProbe")
+        self.global_prior_art_probe = GlobalPriorArtProbe()
+        self.logger.info("GlobalPriorArtProbe 初始化完成")
+
+        self.logger.info("初始化 HypothesisAgent")
+        self.hypothesis_agent = HypothesisAgent()
+        self.logger.info("HypothesisAgent 初始化完成")
+
+        self.logger.info("初始化 ValidationAgent")
+        self.validation_agent = ValidationAgent()
+        self.logger.info("ValidationAgent 初始化完成")
+
+        self.logger.info("初始化 TechAnalysisAgent")
+        self.tech_agent = TechAnalysisAgent()
+        self.logger.info("TechAnalysisAgent 初始化完成")
+
+        self.logger.info("初始化 ThesisWriterAgent")
+        self.thesis_writer_agent = ThesisWriterAgent()
+        self.logger.info("ThesisWriterAgent 初始化完成")
+
+        # ==================== 纯干实验核心专家阵列 ====================
+        self.logger.info("初始化 GenAIExpertAgent")
+        self.genai_expert_agent = GenAIExpertAgent()
+        self.logger.info("GenAIExpertAgent 初始化完成")
+
+        self.logger.info("初始化 CompBioAgent")
+        self.comp_bio_agent = CompBioAgent()
+        self.logger.info("CompBioAgent 初始化完成")
+
+        self.logger.info("初始化 DigitalPathologyAgent")
+        self.digital_pathology_agent = DigitalPathologyAgent()
+        self.logger.info("DigitalPathologyAgent 初始化完成")
+
+        self.logger.info("初始化 BiostatsAgent")
+        self.biostats_agent = BiostatsAgent()
+        self.logger.info("BiostatsAgent 初始化完成")
+
+        self.logger.info("初始化 ClinicalMDAgent")
+        self.clinical_md_agent = ClinicalMDAgent()
+        self.logger.info("ClinicalMDAgent 初始化完成")
+        # ============================================================
+
+        self.logger.info("初始化 DataHunterAgent")
+        self.data_hunter_agent = DataHunterAgent()
+        self.logger.info("DataHunterAgent 初始化完成")
+
+        # ==================== 新增Agent ====================
+        self.logger.info("初始化 DataGovernanceAgent")
+        self.data_governance_agent = DataGovernanceAgent()
+        self.logger.info("DataGovernanceAgent 初始化完成")
+
+        self.logger.info("初始化 ResourceEstimatorAgent")
+        self.resource_estimator_agent = ResourceEstimatorAgent()
+        self.logger.info("ResourceEstimatorAgent 初始化完成")
+        # ============================================================
+
+        self.logger.info("初始化 EthicsReviewerAgent")
+        self.ethics_reviewer_agent = EthicsReviewerAgent()
+        self.logger.info("EthicsReviewerAgent 初始化完成")
+
+        self.logger.info("初始化 CoderAgent")
+        self.coder_agent = CoderAgent()
+        self.logger.info("CoderAgent 初始化完成")
+
+        # 红蓝对抗Agent
+        self.logger.info("初始化 RedTeamAgent")
+        self.red_team_agent = RedTeamAgent()
+        self.logger.info("RedTeamAgent 初始化完成")
+
+        self.logger.info("初始化 DefenseCommitteeAgent")
+        self.defense_committee_agent = DefenseCommitteeAgent()
+        self.logger.info("DefenseCommitteeAgent 初始化完成")
+
+        # ==================== LLM Client for 审计方法 ====================
+        # 用于 _run_red_team_audit 和 _run_biostats_hardcore_audit
+        self.api_key = os.getenv("ANTHROPIC_API_KEY")
+        self.model = os.getenv("ANTHROPIC_MODEL", "claude-opus-4-20250514")
+        from src.utils.llm_retry import create_anthropic_client
+        self.client = create_anthropic_client(api_key=self.api_key)
+        # ==============================================================
 
         # ==================== 补救检索引擎 ====================
-        print("[Orchestrator] 初始化 RemedialSearchEngine (补救检索)...", flush=True)
+        self.logger.info("初始化 RemedialSearchEngine")
         try:
             # 尝试初始化 PubMed 搜索器
             email = os.getenv('PUBMED_EMAIL')
             api_key = os.getenv('PUBMED_API_KEY')
             pubmed_searcher = PubMedSearcher(email=email, api_key=api_key)
             self.remedial_search_engine = RemedialSearchEngine(pubmed_searcher=pubmed_searcher)
-            print("[Orchestrator] RemedialSearchEngine 完成 (PubMed已连接)", flush=True)
+            self.logger.info("RemedialSearchEngine 初始化完成（PubMed已连接）")
         except Exception as e:
             self.logger.warning(f"PubMed初始化失败，使用模拟数据: {e}")
             self.remedial_search_engine = RemedialSearchEngine(pubmed_searcher=None)
-            print("[Orchestrator] RemedialSearchEngine 完成 (模拟模式)", flush=True)
+            self.logger.info("RemedialSearchEngine 初始化完成（模拟模式）")
         # ====================================================
 
         self.logger.info("工作流协调器初始化完成（终极重构版：数据治理+资源核算+递归反馈+补救检索）")
-        print("[Orchestrator] 初始化完成！", flush=True)
 
     def generate_hypothesis_v50(self, user_input: str) -> Dict:
         """
@@ -304,22 +339,19 @@ class Orchestrator:
         Returns:
             Dict: 生成结果或阻断消息
         """
-        print("\n" + "="*80)
-        print("🛡️  V5.0 全防御假说生成流程启动")
-        print("="*80)
+        self.logger.info("V5.0 全防御假说生成流程启动")
 
         # ==================== 阶段0: 意图清洗前置网关 ====================
-        print("\n[V5.0] 阶段0: 意图清洗前置网关检查...")
+        self.logger.info("V5.0 阶段0: 意图清洗前置网关检查")
 
         if not self.intent_sanitizer:
-            print("[警告] 意图清洗器未初始化，跳过检查")
+            self.logger.warning("意图清洗器未初始化，跳过检查")
             sanitized_input = user_input
         else:
             is_valid, cleaned_input, blocked_message = sanitize_user_input(user_input)
 
             if not is_valid:
-                # 恶意输入被阻断，直接返回错误
-                print(f"\n🚫 [阻断] {blocked_message}")
+                self.logger.warning(f"意图清洗阻断: {blocked_message}")
                 return {
                     'success': False,
                     'blocked': True,
@@ -328,20 +360,20 @@ class Orchestrator:
                     'user_input': user_input
                 }
 
-            print(f"[通过] 意图清洗通过")
+            self.logger.info("意图清洗通过")
             sanitized_input = cleaned_input
 
         # ==================== 阶段1: 重置熔断器 ====================
-        print("\n[V5.0] 阶段1: 重置全局熔断器...")
+        self.logger.info("V5.0 阶段1: 重置全局熔断器")
 
         if self.global_fuse:
             reset_global_fuse()
-            print("[熔断器] 全局计数器已重置，上限=15次")
+            self.logger.info("全局熔断器已重置，上限=15次")
         else:
-            print("[警告] 熔断器未初始化")
+            self.logger.warning("熔断器未初始化")
 
         # ==================== 阶段2: 执行搜索 ====================
-        print("\n[V5.0] 阶段2: 执行论文搜索...")
+        self.logger.info("V5.0 阶段2: 执行论文搜索")
 
         try:
             # 从配置读取检索上限
@@ -360,7 +392,7 @@ class Orchestrator:
                 }
 
             papers = search_result.get('papers', [])
-            print(f"[搜索完成] 获取 {len(papers)} 篇文献")
+            self.logger.info(f"论文搜索完成，获取 {len(papers)} 篇文献")
 
             # ==================== V7.1 反幻觉熔断：空文献强制拦截 ====================
             if not papers:
@@ -377,11 +409,10 @@ class Orchestrator:
             if self.hard_link_anchor:
                 pmids = [p.get('pmid', '') for p in papers if p.get('pmid')]
                 self.hard_link_anchor.register_verified_pmids(pmids)
-                print(f"[锚定校验器] 已注册 {len(pmids)} 个真实PMID")
+                self.logger.info(f"锚定校验器已注册 {len(pmids)} 个真实PMID")
 
         except ResourceExhaustedError as e:
-            # 熔断器触发，返回降级回复
-            print(f"\n🚨 [熔断触发] {e.message}")
+            self.logger.warning(f"全局熔断触发: {e.message}")
             return {
                 'success': False,
                 'blocked': True,
@@ -396,7 +427,7 @@ class Orchestrator:
             }
 
         # ==================== 阶段3: 生成假设 ====================
-        print("\n[V5.0] 阶段3: 生成假设（V5.0 Prompts）...")
+        self.logger.info("V5.0 阶段3: 生成假设")
 
         try:
             hypothesis_result = self.generate_hypotheses(
@@ -415,10 +446,10 @@ class Orchestrator:
                 }
 
             hypotheses = hypothesis_result.get('hypotheses', [])
-            print(f"[假设生成] 获得 {len(hypotheses)} 个假设")
+            self.logger.info(f"假设生成完成，获得 {len(hypotheses)} 个假设")
 
         except ResourceExhaustedError as e:
-            print(f"\n🚨 [熔断触发] {e.message}")
+            self.logger.warning(f"全局熔断触发: {e.message}")
             return {
                 'success': False,
                 'blocked': True,
@@ -428,7 +459,7 @@ class Orchestrator:
             }
 
         # ==================== 阶段4: 硬链接锚定校验 ====================
-        print("\n[V5.0] 阶段4: 硬链接锚定校验（PMID真实性验证）...")
+        self.logger.info("V5.0 阶段4: 硬链接锚定校验")
 
         if self.hard_link_anchor and hypotheses:
             for hyp in hypotheses:
@@ -439,20 +470,17 @@ class Orchestrator:
                     )
 
                     if not is_valid:
-                        # 检测到编造的PMID，清空输出并返回错误
-                        print(f"\n🚫 [幻觉检测] {message}")
+                        self.logger.warning(f"幻觉检测未通过: {message}")
                         hyp['hallucination_detected'] = True
                         hyp['hallucination_message'] = message
-                        # 不返回包含虚假引用的假设
                         hypotheses = [h for h in hypotheses if not h.get('hallucination_detected')]
                     else:
-                        print(f"[锚定通过] {message}")
+                        self.logger.info(f"锚定校验通过: {message}")
                         hyp['anchor_verified'] = True
                         hyp['anchor_message'] = message
 
                 except HallucinationError as e:
-                    # 编造PMID触发幻觉异常，直接阻断
-                    print(f"\n🚫 [幻觉阻断] {e.message}")
+                    self.logger.warning(f"幻觉阻断: {e.message}")
                     return {
                         'success': False,
                         'blocked': True,
@@ -462,17 +490,18 @@ class Orchestrator:
                     }
 
         # ==================== 阶段5: 最终统计 ====================
-        print("\n[V5.0] 阶段5: 最终统计...")
+        self.logger.info("V5.0 阶段5: 最终统计")
 
         if self.global_fuse:
             stats = self.global_fuse.get_stats()
-            print(f"[统计] API调用: {stats.total_api_calls}/15")
-            print(f"[统计] Token消耗: ~{stats.total_tokens_used}")
-            print(f"[统计] 预估成本: ${stats.total_cost_usd:.2f}")
+            self.logger.info(
+                f"防御流程统计: API调用 {stats.total_api_calls}/15, "
+                f"Token ~{stats.total_tokens_used}, 预估成本 ${stats.total_cost_usd:.2f}"
+            )
+        else:
+            stats = None
 
-        print("\n" + "="*80)
-        print("✅ V5.0 全防御流程完成")
-        print("="*80)
+        self.logger.info("V5.0 全防御流程完成")
 
         return {
             'success': True,
@@ -542,6 +571,7 @@ class Orchestrator:
         snapshot_path: str = None,
         min_if: float = 0,
         date_range: tuple = None,
+        progressive: bool = False,
         **kwargs
     ) -> Dict:
         """
@@ -562,12 +592,11 @@ class Orchestrator:
             self.global_search_params['enable_filter'] = enable_filter
             self.global_search_params['params_locked'] = True
 
-            print(f"\n{'='*60}")
-            print(f"🔒 全局搜索参数已锁定:")
-            print(f"   IF 阈值: ≥ {self.global_search_params['min_if']}")
-            print(f"   时间锁: {self.global_search_params['date_range'][0]}-{self.global_search_params['date_range'][1]}")
-            print(f"   最大结果: {self.global_search_params['max_results']}")
-            print(f"{'='*60}\n")
+            self.logger.info(
+                f"搜索参数锁定: min_if={self.global_search_params['min_if']}, "
+                f"date_range={self.global_search_params['date_range'][0]}-{self.global_search_params['date_range'][1]}, "
+                f"max_results={self.global_search_params['max_results']}"
+            )
         else:
             # 参数已锁定，使用锁定的值（忽略后续传入的值）
             min_if = self.global_search_params['min_if']
@@ -575,14 +604,74 @@ class Orchestrator:
             max_results = self.global_search_params['max_results']
             enable_filter = self.global_search_params['enable_filter']
 
-            print(f"\n🔒 使用锁定的全局参数: IF≥{min_if}, 时间锁{date_range}")
+            self.logger.info(f"使用锁定搜索参数: min_if={min_if}, date_range={date_range}")
         # ==========================================================
 
         try:
+            if progressive and use_two_stage_funnel:
+                self.logger.info("使用渐进式 LLM 摘要精读漏斗")
+
+                requested_source = kwargs.get('requested_source', 'pubmed')
+                retrieved_via = kwargs.get('retrieved_via', 'pubmed')
+                search_input = {
+                    'query': query,
+                    'max_results': max_results,
+                    'date_range': date_range,
+                    'min_if': min_if,
+                    'fetch_full_text': fetch_full_text,
+                    'snapshot_path': snapshot_path,
+                    'requested_source': requested_source,
+                    'retrieved_via': retrieved_via,
+                }
+                stage1_result = self.paper_agent.run_stage1(search_input)
+                if not stage1_result['success']:
+                    return {
+                        'success': False,
+                        'error': stage1_result.get('error', '搜索失败'),
+                        'papers': []
+                    }
+
+                preliminary_papers = [
+                    dict(
+                        p,
+                        selection_stage='stage1',
+                        requested_source=requested_source,
+                        retrieved_via=retrieved_via,
+                    )
+                    for p in stage1_result['papers']
+                ]
+                job_id = str(uuid.uuid4())
+                future = self.search_executor.submit(
+                    self._complete_progressive_search,
+                    job_id,
+                    stage1_result,
+                    search_input,
+                )
+                self.search_jobs[job_id] = {
+                    'status': 'running',
+                    'future': future,
+                    'stage1_result': stage1_result,
+                    'final_result': None,
+                    'error': None,
+                }
+
+                self.current_papers = preliminary_papers
+                self.logger.info(f"论文搜索完成（初步候选）: query={query}, count={len(preliminary_papers)}")
+
+                return {
+                    'success': True,
+                    'query': query,
+                    'papers': preliminary_papers,
+                    'total_count': len(preliminary_papers),
+                    'stage1_stats': stage1_result.get('stage1_stats'),
+                    'used_two_stage_funnel': True,
+                    'progressive': True,
+                    'result_level': 'preliminary',
+                    'job_id': job_id,
+                }
+
             if use_two_stage_funnel:
-                print(f"\n{'='*60}")
-                print("🔍 使用 LLM 摘要精读漏斗")
-                print(f"{'='*60}")
+                self.logger.info("使用 LLM 摘要精读漏斗")
 
                 result = self.paper_agent.execute({
                     'query': query,
@@ -595,25 +684,14 @@ class Orchestrator:
 
                 if result['success']:
                     self.current_papers = result['papers']
-                    self.logger.paper_search(query, len(result['papers']))
+                    self.logger.info(f"论文搜索完成: query={query}, count={len(result['papers'])}")
 
-                    # 显示统计信息
-                    if result.get('stage1_stats'):
-                        s1 = result['stage1_stats']
-                        print(f"\n📊 第一阶段统计:")
-                        print(f"  获取文献: {s1.get('total_fetched', 0)} 篇")
-
-                    if result.get('stage2_stats'):
-                        s2 = result['stage2_stats']
-                        print(f"\n📊 第二阶段统计:")
-                        print(f"  LLM精读: {s2.get('total_screened', 0)} 篇")
-                        print(f"  保留精华: {s2.get('selected_count', 0)} 篇")
-                        print(f"  平均评分: {s2.get('avg_score', 0):.1f}/10")
-
-                    if result.get('stage3_stats'):
-                        s3 = result['stage3_stats']
-                        print(f"\n📊 第三阶段统计:")
-                        print(f"  保存入库: {s3.get('saved_count', 0)} 篇")
+                    if result.get('stage1_stats') or result.get('stage2_stats') or result.get('stage3_stats'):
+                        self.logger.info(
+                            f"两阶段统计: stage1={result.get('stage1_stats', {}).get('total_fetched', 0)}, "
+                            f"stage2_selected={result.get('stage2_stats', {}).get('selected_count', 0)}, "
+                            f"stage3_saved={result.get('stage3_stats', {}).get('saved_count', 0)}"
+                        )
 
                     # 更新会话
                     if self.current_session_id:
@@ -653,7 +731,7 @@ class Orchestrator:
 
                 if result['success']:
                     self.current_papers = result['papers']
-                    self.logger.paper_search(query, len(result['papers']))
+                    self.logger.info(f"论文搜索完成: query={query}, count={len(result['papers'])}")
 
                 return result
 
@@ -664,6 +742,54 @@ class Orchestrator:
                 'error': f'论文搜索失败: {str(e)}',
                 'papers': []
             }
+
+    def _complete_progressive_search(self, job_id: str, stage1_result: Dict, search_input: Dict) -> Dict:
+        try:
+            stage2_result = self.paper_agent.run_stage2(stage1_result, search_input)
+            if not stage2_result.get('success'):
+                self.search_jobs[job_id]['status'] = 'error'
+                self.search_jobs[job_id]['error'] = stage2_result.get('error', '最终精选失败')
+                return stage2_result
+
+            stage2_result['papers'] = [
+                dict(
+                    p,
+                    selection_stage='stage2',
+                    requested_source=search_input.get('requested_source', 'pubmed'),
+                    retrieved_via=search_input.get('retrieved_via', 'pubmed'),
+                )
+                for p in stage2_result.get('papers', [])
+            ]
+            stage2_result['requested_source'] = search_input.get('requested_source', 'pubmed')
+            stage2_result['retrieved_via'] = search_input.get('retrieved_via', 'pubmed')
+            self.search_jobs[job_id]['final_result'] = stage2_result
+            self.search_jobs[job_id]['status'] = 'success'
+
+            print(f"\n[阶段 3/3] 深度阅读 - 生成调研报告...")
+            saved_count = self.paper_agent._save_papers_to_db(stage2_result['papers'])
+            stage2_result['stage3_stats'] = {
+                'total_fetched': stage2_result['stage1_stats']['total_fetched'],
+                'screened_count': stage2_result['stage2_stats'].get('candidate_count', len(stage1_result.get('papers', []))),
+                'selected_count': len(stage2_result['papers']),
+                'saved_count': saved_count,
+                'avg_score': stage2_result['stage2_stats']['avg_score']
+            }
+            self.search_jobs[job_id]['final_result'] = stage2_result
+            print(f"\n{'='*70}")
+            print(f"  漏斗筛选完成")
+            print(f"{'='*70}")
+            print(f"  阶段1: 获取 {stage2_result['stage1_stats']['total_fetched']} 篇")
+            print(f"  阶段2: 精读 {stage2_result['stage2_stats'].get('candidate_count', len(stage1_result.get('papers', [])))} 篇，筛选 {len(stage2_result['papers'])} 篇 (平均分: {stage2_result['stage2_stats']['avg_score']:.1f}/10，耗时 {stage2_result['stage2_stats'].get('elapsed_seconds', 0):.1f}s)")
+            print(f"  阶段3: 保存 {saved_count} 篇到数据库")
+            print(f"{'='*70}\n")
+            return stage2_result
+        except Exception as e:
+            self.search_jobs[job_id]['status'] = 'error'
+            self.search_jobs[job_id]['error'] = str(e)
+            raise
+
+    def get_search_job(self, job_id: str) -> Dict:
+        return get_progressive_search_job(job_id)
 
     def generate_hypotheses(
         self,

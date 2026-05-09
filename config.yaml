@@ -12,6 +12,7 @@ agents:
     name: "论文搜索智能体"
     description: "从PubMed搜索相关论文"
     model: "claude-opus-4-6"
+    screening_model: "claude-sonnet-4-6"
     max_results: 50  # 每次搜索最大返回论文数
 
   hypothesis:

@@ -8,6 +8,7 @@
 """
 import sys
 import os
+import logging
 from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
 from datetime import datetime, timedelta, date
@@ -27,6 +28,8 @@ from core.reproducibility_engine import (
     get_audit_logger,
     DeterminismLock
 )
+
+logger = logging.getLogger(__name__)
 
 
 class PaperSearchAgent(BaseAgent):
@@ -79,16 +82,29 @@ class PaperSearchAgent(BaseAgent):
         import httpx
         base_url = os.getenv("ANTHROPIC_BASE_URL") or None
         # 创建带超时的httpx客户端
-        http_client = httpx.Client(timeout=httpx.Timeout(120.0, connect=30.0))
+        http_client = httpx.Client(timeout=httpx.Timeout(45.0, connect=15.0))
 
         if base_url:
-            self.client = anthropic.Anthropic(api_key=self.api_key, base_url=base_url, http_client=http_client)
+            self.client = anthropic.Anthropic(
+                api_key=self.api_key,
+                base_url=base_url,
+                http_client=http_client,
+                max_retries=0,
+            )
         else:
-            self.client = anthropic.Anthropic(api_key=self.api_key, http_client=http_client)
+            self.client = anthropic.Anthropic(
+                api_key=self.api_key,
+                http_client=http_client,
+                max_retries=0,
+            )
 
         self.searcher = PubMedSearcher(
             email=os.getenv("PUBMED_EMAIL"),
             api_key=os.getenv("PUBMED_API_KEY")
+        )
+        self.screening_model = self.config.get(
+            'agents.paper_search.screening_model',
+            os.getenv("PAPER_SCREENING_MODEL", "claude-sonnet-4-6")
         )
 
         # ========== 按需拉取参数 ==========
@@ -96,6 +112,8 @@ class PaperSearchAgent(BaseAgent):
         self.relevance_threshold = 7.0  # 默认相关性阈值：7.0/10
         self.max_stage1_papers = 100  # 阶段1最大获取数（严格限制，防止过载）
         self.default_stage2_top_k = 25  # 阶段2默认保留数
+        self.default_stage2_candidate_limit = 15  # 阶段2默认精读候选上限
+        self.max_stage2_candidate_limit = 30  # 阶段2候选硬上限，避免等待过长
 
         # 防弹解析器
         self.extractor = SafeExtractor()
@@ -124,22 +142,27 @@ class PaperSearchAgent(BaseAgent):
                 'stage3_stats': dict - 第三阶段统计
             }
         """
+        stage1_result = self.run_stage1(input_data)
+        if not stage1_result['success']:
+            return stage1_result
+
+        return self.run_stage2_and_save(stage1_result, input_data)
+
+    def run_stage1(self, input_data: Dict) -> Dict:
         query = input_data.get('query', '')
         if not query:
             return {'success': False, 'error': '缺少搜索关键词', 'papers': []}
 
-        max_results = input_data.get('max_results', None)  # None = 基于阈值筛选
+        max_results = input_data.get('max_results', None)
         date_range = input_data.get('date_range')
         min_if = input_data.get('min_if', 0)
         relevance_threshold = input_data.get('relevance_threshold', self.relevance_threshold)
-        snapshot_path = input_data.get('snapshot_path')  # 新增：快照路径
+        snapshot_path = input_data.get('snapshot_path')
 
-        # 获取审计日志器和快照管理器
         audit_logger = get_audit_logger()
         snapshot_manager = DataSnapshotManager()
-        snapshot_file = None  # 初始化快照文件变量
+        snapshot_file = None
 
-        # 记录输入参数
         audit_logger.log_input(query, {
             'max_results': max_results,
             'date_range': date_range,
@@ -148,38 +171,30 @@ class PaperSearchAgent(BaseAgent):
             'cutoff_date': snapshot_manager.get_cutoff_date().isoformat()
         })
 
-        print(f"\n{'='*70}")
-        print(f"  LLM摘要精读漏斗 - {query}")
-        print(f"{'='*70}")
-        print(f"  模式: {'动态质量准入 (阈值≥{relevance_threshold}/10)' if max_results is None else f'固定数量模式 (最多{max_results}篇)'}")
+        logger.info(f"LLM摘要精读漏斗启动: query={query}, mode={'threshold' if max_results is None else f'top_{max_results}'}")
 
-        # ========== 检查快照（断网复现模式） ==========
         stage1_papers = []
         snapshot_used = False
 
         if snapshot_path and os.path.exists(snapshot_path):
-            print(f"\n[快照复现模式] 加载快照: {snapshot_path}")
+            logger.info(f"加载快照复现: {snapshot_path}")
             try:
                 snapshot_data = snapshot_manager.load_snapshot(snapshot_path)
                 stage1_papers = snapshot_data.get('papers', [])
                 snapshot_used = True
 
-                print(f"  ✓ 从快照加载了 {len(stage1_papers)} 篇论文")
-                print(f"  快照时间: {snapshot_data.get('timestamp')}")
-                print(f"  截止日期: {snapshot_data.get('cutoff_date')}")
+                logger.info(f"快照加载完成: papers={len(stage1_papers)}, cutoff={snapshot_data.get('cutoff_date')}")
 
                 audit_logger.log_stage('snapshot_loaded', {
                     'snapshot_path': snapshot_path,
                     'papers_loaded': len(stage1_papers)
                 })
             except Exception as e:
-                print(f"  ✗ 快照加载失败: {e}，将进行在线搜索")
+                logger.warning(f"快照加载失败，回退在线搜索: {e}")
 
-        # ========== 阶段 1: 海量泛�� ==========
         stage1_error = None
         if not stage1_papers:
-            print(f"\n[阶段 1/3] 海量泛读 - 获取文献摘要...")
-            print(f"  时间锁: 截止日期 {snapshot_manager.get_cutoff_date()}")
+            logger.info(f"阶段1开始: 截止日期 {snapshot_manager.get_cutoff_date()}")
 
             stage1_papers, stage1_error = self._stage1_fetch_abstracts(
                 query=query,
@@ -187,18 +202,16 @@ class PaperSearchAgent(BaseAgent):
                 min_if=min_if
             )
 
-            # 创建数据快照
             if stage1_papers:
                 snapshot_file = snapshot_manager.create_snapshot(
                     stage1_papers,
                     metadata={'query': query, 'date_range': str(date_range)}
                 )
-                print(f"  ✓ 已创建数据快照: {snapshot_file}")
+                logger.info(f"阶段1快照已创建: {snapshot_file}")
                 audit_logger.log_snapshot(snapshot_file, len(stage1_papers))
 
         if not stage1_papers:
             error_message = stage1_error if stage1_error else '未找到相关论文'
-            # 网络错误的友好提示
             if 'RemoteDisconnected' in error_message or 'connection' in error_message.lower():
                 error_message = f'PubMed 连接失败: {error_message}\n\n建议：\n1. 检查网络连接\n2. 稍后重试\n3. 尝试使用更简单的关键词'
             return {
@@ -212,49 +225,89 @@ class PaperSearchAgent(BaseAgent):
             'query': query
         }
 
-        print(f"  ✓ 获取到 {len(stage1_papers)} 篇论文摘要")
+        logger.info(f"阶段1完成: 获取到 {len(stage1_papers)} 篇论文摘要")
 
-        # ========== 阶段 2: 摘要精读（动态质量准入） ==========
-        print(f"\n[阶段 2/3] LLM摘要精读 - 评分筛选...")
+        return {
+            'success': True,
+            'papers': stage1_papers,
+            'stage1_stats': stage1_stats,
+            'snapshot_used': snapshot_used,
+            'snapshot_path': snapshot_file if not snapshot_used and stage1_papers else None
+        }
+
+    def run_stage2(self, stage1_result: Dict, input_data: Dict) -> Dict:
+        stage1_papers = stage1_result.get('papers', [])
+        if not stage1_papers:
+            return {
+                'success': False,
+                'error': '缺少阶段1候选论文',
+                'papers': []
+            }
+
+        max_results = input_data.get('max_results', None)
+        relevance_threshold = input_data.get('relevance_threshold', self.relevance_threshold)
+        stage1_stats = stage1_result.get('stage1_stats', {
+            'total_fetched': len(stage1_papers),
+            'query': input_data.get('query', '')
+        })
+
+        candidate_limit = input_data.get('stage2_candidate_limit')
+        if candidate_limit is None:
+            candidate_limit = self.default_stage2_candidate_limit
+            if max_results is not None:
+                candidate_limit = min(candidate_limit, max_results)
+        candidate_limit = max(1, min(int(candidate_limit), self.max_stage2_candidate_limit, len(stage1_papers)))
+        stage2_candidates = stage1_papers[:candidate_limit]
+
+        logger.info(f"阶段2开始: stage1_candidates={len(stage1_papers)}, screening_candidates={len(stage2_candidates)}")
+
+        stage2_started_at = time.perf_counter()
         screened_papers = self._stage2_llm_screening(
-            papers=stage1_papers,
+            papers=stage2_candidates,
             top_k=max_results if max_results is not None else self.default_stage2_top_k,
             relevance_threshold=relevance_threshold
         )
+        stage2_elapsed = time.perf_counter() - stage2_started_at
+        logger.info(f"阶段2完成: elapsed={stage2_elapsed:.1f}s")
 
         stage2_stats = screened_papers['stats']
-
-        # ========== 阶段 3: 深度阅读 ==========
-        print(f"\n[阶段 3/3] 深度阅读 - 生成调研报告...")
-
-        # 保存到数据库
-        saved_count = self._save_papers_to_db(screened_papers['papers'])
-
-        final_stats = {
-            'total_fetched': stage1_stats['total_fetched'],
-            'screened_count': len(stage1_papers),
-            'selected_count': len(screened_papers['papers']),
-            'saved_count': saved_count,
-            'avg_score': screened_papers['stats']['avg_score']
-        }
-
-        print(f"\n{'='*70}")
-        print(f"  漏斗筛选完成")
-        print(f"{'='*70}")
-        print(f"  阶段1: 获取 {stage1_stats['total_fetched']} 篇")
-        print(f"  阶段2: 筛选 {len(screened_papers['papers'])} 篇 (平均分: {stage2_stats['avg_score']:.1f}/10)")
-        print(f"  阶段3: 保存 {saved_count} 篇到数据库")
-        print(f"{'='*70}\n")
-
+        stage2_stats['candidate_count'] = len(stage2_candidates)
+        stage2_stats['total_stage1_candidates'] = len(stage1_papers)
+        stage2_stats['elapsed_seconds'] = round(stage2_elapsed, 2)
         return {
             'success': True,
             'papers': screened_papers['papers'],
             'stage1_stats': stage1_stats,
             'stage2_stats': stage2_stats,
-            'stage3_stats': final_stats,
-            'snapshot_used': snapshot_used,
-            'snapshot_path': snapshot_file if not snapshot_used and stage1_papers else None
+            'snapshot_used': stage1_result.get('snapshot_used', False),
+            'snapshot_path': stage1_result.get('snapshot_path')
         }
+
+    def run_stage2_and_save(self, stage1_result: Dict, input_data: Dict) -> Dict:
+        stage2_result = self.run_stage2(stage1_result, input_data)
+        if not stage2_result.get('success'):
+            return stage2_result
+
+        print(f"\n[阶段 3/3] 深度阅读 - 生成调研报告...")
+        saved_count = self._save_papers_to_db(stage2_result['papers'])
+
+        final_stats = {
+            'total_fetched': stage2_result['stage1_stats']['total_fetched'],
+            'screened_count': stage2_result['stage2_stats']['candidate_count'],
+            'selected_count': len(stage2_result['papers']),
+            'saved_count': saved_count,
+            'avg_score': stage2_result['stage2_stats']['avg_score']
+        }
+
+        logger.info(
+            f"漏斗筛选完成: stage1={stage2_result['stage1_stats']['total_fetched']}, "
+            f"stage2_candidates={stage2_result['stage2_stats']['candidate_count']}, "
+            f"selected={len(stage2_result['papers'])}, saved={saved_count}, "
+            f"avg_score={stage2_result['stage2_stats']['avg_score']:.1f}"
+        )
+
+        stage2_result['stage3_stats'] = final_stats
+        return stage2_result
 
     def _stage1_fetch_abstracts(
         self,
@@ -280,7 +333,7 @@ class PaperSearchAgent(BaseAgent):
             if date_range:
                 search_term = self._add_date_filter(search_term, date_range)
 
-            print(f"  搜索条件: {search_term[:100]}...")
+            logger.debug(f"阶段1搜索条件: {search_term[:100]}")
 
             # 执行搜索（动态质量准入制）
             import hashlib
@@ -299,7 +352,7 @@ class PaperSearchAgent(BaseAgent):
 
         except Exception as e:
             error_msg = str(e)
-            print(f"  ✗ 阶段1失败: {error_msg}")
+            logger.warning(f"阶段1失败: {error_msg}")
             return [], error_msg
 
     def _stage2_llm_screening(
@@ -326,24 +379,21 @@ class PaperSearchAgent(BaseAgent):
         total = len(papers)
         batch_size = 5  # 每批处理5篇，避免API限流
 
-        print(f"  总计: {total} 篇，批次大小: {batch_size}")
-        if top_k is None:
-            print(f"  筛选模式: 相关性阈值 ≥ {relevance_threshold}/10")
-        else:
-            print(f"  筛选模式: 固定数量 {top_k} 篇")
+        logger.info(f"阶段2精读配置: total={total}, batch_size={batch_size}, mode={'threshold' if top_k is None else f'top_{top_k}'}")
 
         for i in range(0, total, batch_size):
             batch = papers[i:i+batch_size]
             batch_num = i // batch_size + 1
             total_batches = (total + batch_size - 1) // batch_size
 
-            print(f"  批次 {batch_num}/{total_batches} - 处理第 {i+1}-{min(i+batch_size, total)} 篇...", end='', flush=True)
+            batch_started_at = time.perf_counter()
 
             # 对这批论文进行LLM评分
             scored_batch = self._screen_batch_with_llm(batch)
 
             screened_papers.extend(scored_batch)
-            print(f" ✓ 完成")
+            batch_elapsed = time.perf_counter() - batch_started_at
+            logger.debug(f"阶段2批次完成: batch={batch_num}/{total_batches}, elapsed={batch_elapsed:.1f}s")
 
             # 避免API限流，批次间暂停
             if i + batch_size < total:
@@ -356,11 +406,11 @@ class PaperSearchAgent(BaseAgent):
         if top_k is None:
             # 阈值筛选模式：保留所有超过阈值的"黄金情报"
             final_papers = [p for p in screened_papers if p.get('llm_score', 0) >= relevance_threshold]
-            print(f"  🎯 阈值筛选结果: {len(screened_papers)} 篇 → {len(final_papers)} 篇 (分数≥{relevance_threshold})")
+            logger.info(f"阶段2阈值筛选完成: screened={len(screened_papers)}, selected={len(final_papers)}, threshold={relevance_threshold}")
         else:
             # 固定数量模式：取前 top_k 篇
             final_papers = screened_papers[:top_k]
-            print(f"  ✂️ 固定数量筛选: 保留前 {top_k} 篇")
+            logger.info(f"阶段2固定数量筛选完成: screened={len(screened_papers)}, selected={len(final_papers)}")
 
         # 计算统计
         scores = [p.get('llm_score', 0) for p in final_papers]
@@ -408,7 +458,9 @@ class PaperSearchAgent(BaseAgent):
                 'llm_reason': llm_result.get('reason', ''),
                 'llm_innovation': llm_result.get('innovation', ''),
                 'llm_data_quality': llm_result.get('data_quality', ''),
-                'llm_research_type': llm_result.get('research_type', '')
+                'llm_research_type': llm_result.get('research_type', ''),
+                'llm_fallback': llm_result.get('fallback', False),
+                'llm_error_type': llm_result.get('error_type', ''),
             })
 
         return scored_papers
@@ -421,13 +473,13 @@ class PaperSearchAgent(BaseAgent):
             # 构建完整提示
             prompt = self.SCREENING_PROMPT.format(
                 title=f"**{title}**",
-                abstract=abstract[:3000]
+                abstract=abstract[:1800]
             )
 
             # 调用API
             message = self.client.messages.create(
-                model=self.model,
-                max_tokens=500,
+                model=self.screening_model,
+                max_tokens=220,
                 messages=[{"role": "user", "content": prompt}]
             )
 
@@ -439,16 +491,105 @@ class PaperSearchAgent(BaseAgent):
 
         except Exception as e:
             import traceback
-            print(f"    ⚠️ LLM评��失败: {type(e).__name__}: {e}")
-            print(f"    详细错误: {traceback.format_exc()[:200]}")
-            # Fallback: 使用基础评分
-            return {
-                'score': 5.0,
-                'reason': f'LLM调用失败({type(e).__name__})',
-                'innovation': 'N/A',
-                'data_quality': 'N/A',
-                'research_type': 'N/A'
-            }
+            logger.warning(f"LLM评分失败: {type(e).__name__}: {e}")
+            logger.debug(f"LLM评分失败详情: {traceback.format_exc()[:500]}")
+            return self._build_fallback_screening_result(title, abstract, type(e).__name__)
+
+    def _build_fallback_screening_result(self, title: str, abstract: str, error_type: str) -> Dict:
+        """LLM失败时使用启发式评分，避免所有候选都退化为固定分。"""
+        import re
+
+        text = f"{title} {abstract}".lower()
+        score = 4.8
+        innovation_notes = []
+        data_notes = []
+
+        research_type = '原创研究'
+        if any(keyword in text for keyword in ('systematic review', 'meta-analysis', 'review')):
+            research_type = '综述/Meta分析'
+            score -= 1.0
+        elif any(keyword in text for keyword in ('case report', 'case study')):
+            research_type = '病例报告'
+            score -= 1.5
+        elif any(keyword in text for keyword in ('protocol', 'study design')):
+            research_type = '方法论文'
+            score -= 0.5
+
+        innovation_keywords = {
+            'single-cell': 0.5,
+            'spatial': 0.5,
+            'multi-omics': 0.5,
+            'crispr': 0.4,
+            'foundation model': 0.6,
+            'deep learning': 0.4,
+            'machine learning': 0.3,
+            'transformer': 0.4,
+            'novel': 0.3,
+            'first': 0.2,
+        }
+        for keyword, bonus in innovation_keywords.items():
+            if keyword in text:
+                score += bonus
+                innovation_notes.append(keyword)
+
+        quality_keywords = {
+            'prospective': 0.5,
+            'randomized': 0.6,
+            'multicenter': 0.5,
+            'external validation': 0.7,
+            'independent cohort': 0.5,
+            'validation cohort': 0.4,
+            'benchmark': 0.3,
+        }
+        for keyword, bonus in quality_keywords.items():
+            if keyword in text:
+                score += bonus
+                data_notes.append(keyword)
+
+        if len(abstract) >= 1200:
+            score += 0.4
+            data_notes.append('摘要信息完整')
+        elif len(abstract) >= 700:
+            score += 0.2
+
+        sample_match = re.search(r'\b(n\s*=\s*|included\s+|enrolled\s+|patients?\s*=\s*)(\d{2,5})\b', text)
+        if sample_match:
+            sample_size = int(sample_match.group(2))
+            if sample_size >= 500:
+                score += 0.8
+                data_notes.append(f'大样本({sample_size})')
+            elif sample_size >= 100:
+                score += 0.5
+                data_notes.append(f'中等样本({sample_size})')
+            elif sample_size >= 30:
+                score += 0.2
+                data_notes.append(f'小样本({sample_size})')
+
+        if any(keyword in text for keyword in ('preclinical', 'mouse model', 'in vitro', 'cell line')):
+            score -= 0.3
+        if any(keyword in text for keyword in ('editorial', 'commentary', 'letter to the editor')):
+            score -= 1.2
+            research_type = '综述/Meta分析'
+
+        score = max(2.5, min(round(score, 1), 8.8))
+        reason_parts = []
+        if innovation_notes:
+            reason_parts.append(f"方法亮点: {', '.join(innovation_notes[:3])}")
+        if data_notes:
+            reason_parts.append(f"质量信号: {', '.join(data_notes[:3])}")
+        if not reason_parts:
+            reason_parts.append('按摘要长度与研究类型进行保守估分')
+        reason_parts.append(f'LLM调用失败({error_type})，使用启发式回退')
+
+        return {
+            'score': score,
+            'reason': '；'.join(reason_parts)[:100],
+            'innovation': '、'.join(innovation_notes[:3]) if innovation_notes else '未见强创新信号',
+            'data_quality': '、'.join(data_notes[:3]) if data_notes else '数据质量信号有限',
+            'research_type': research_type,
+            'fallback': True,
+            'error_type': error_type,
+        }
 
     def _parse_llm_json_response(self, response_text: str) -> Dict:
         """
@@ -473,6 +614,10 @@ class PaperSearchAgent(BaseAgent):
                     result['data_quality'] = 'N/A'
                 if 'research_type' not in result:
                     result['research_type'] = 'N/A'
+                if 'fallback' not in result:
+                    result['fallback'] = False
+                if 'error_type' not in result:
+                    result['error_type'] = ''
                 return result
             except:
                 pass
@@ -490,7 +635,9 @@ class PaperSearchAgent(BaseAgent):
             'reason': reason[:100],
             'innovation': 'N/A',
             'data_quality': 'N/A',
-            'research_type': 'N/A'
+            'research_type': 'N/A',
+            'fallback': False,
+            'error_type': ''
         }
 
     def _save_papers_to_db(self, papers: List[Dict]) -> int:

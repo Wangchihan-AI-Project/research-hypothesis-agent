@@ -86,9 +86,7 @@ class DatabaseManager:
 
 
 # 全局数据库管理器实例
-print("============== [DEBUG DB-1] 开始初始化全局 db_manager ==============", flush=True)
 db_manager = DatabaseManager()
-print("============== [DEBUG DB-2] 全局 db_manager 初始化完成 ==============", flush=True)
 
 
 def get_db_manager():
