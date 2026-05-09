@@ -73,7 +73,6 @@ class DimensionEscapeType(Enum):
     IRRELEVANT_EXTENSION = "irrelevant_extension"  # 无关扩展（新增维度与假设无关）
     RAPID_MUTATION = "rapid_mutation"  # 快速突变（短时间内维度剧变）
     STRATEGY_CHANGE = "strategy_change"  # 策略变更（改变攻击核心方向）
-}
 
 
 class ConvergenceState(Enum):
