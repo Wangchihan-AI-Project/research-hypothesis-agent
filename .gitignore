@@ -62,5 +62,6 @@ outputs/
 papers/
 backup/
 backup_20260416/
+data/snapshots/
 *.db
 *.log
