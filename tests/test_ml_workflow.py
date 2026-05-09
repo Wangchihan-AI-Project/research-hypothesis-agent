@@ -143,7 +143,7 @@ def test_ml_workflow():
 
     print_section("✅ 测试完成")
     print("\n所有核心功能正常运行！")
-    print("\n下一步: 运行 'streamlit run app_v7.py' 启动完整UI界面")
+    print("\n下一步: 运行 'streamlit run app.py' 启动完整UI界面")
 
 
 if __name__ == '__main__':
