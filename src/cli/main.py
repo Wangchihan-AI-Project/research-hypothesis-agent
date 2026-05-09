@@ -22,6 +22,8 @@ from utils.report_export import ReportExporter
 # V8.0: 新增语义理解组件
 from core.intent_parser import IntentParser, UserIntent, ParsedIntent, ResearchDomain
 from core.conversation_context import ContextManager, ConversationContext, create_session_context
+# V8.1: 意图明确化引导
+from core.intent_clarifier import IntentClarifier, ClarificationResult, MAX_CLARIFICATION_ROUNDS, is_broad_input
 
 from rich.console import Console
 from rich.table import Table
@@ -68,6 +70,8 @@ class ResearchCLI:
         self.intent_parser = IntentParser()
         self.context_manager = ContextManager()
         self.current_context: ConversationContext = None
+        # V8.1: 意图明确化引导
+        self.intent_clarifier = IntentClarifier()
 
     def run(self):
         """运行CLI主循环"""
@@ -901,6 +905,16 @@ class ResearchCLI:
                 self.current_context.get_context_for_parser()
             )
 
+            # ==================== V8.1: 意图明确化引导 ====================
+            if parsed.intent in (UserIntent.SEARCH_PAPERS, UserIntent.GENERATE_HYPOTHESIS):
+                clarified = self._run_clarification_loop(user_input, parsed)
+                if clarified and clarified.refined_query != user_input:
+                    # 用明确化后的 query 更新 parsed 对象
+                    parsed.parameters["query"] = clarified.refined_query
+                    parsed.parameters["research_profile"] = self.intent_clarifier.build_research_profile(clarified)
+                    parsed.parameters["clarity_score"] = clarified.clarity_score
+            # =============================================================
+
             # 添加对话记录
             self.current_context.add_turn(
                 user_input=user_input,
@@ -920,6 +934,83 @@ class ResearchCLI:
                 self.console.print(f"\n[red]处理出错: {str(e)}[/red]")
                 import traceback
                 traceback.print_exc()
+
+    def _run_clarification_loop(
+        self,
+        user_input: str,
+        parsed: ParsedIntent
+    ) -> Optional[ClarificationResult]:
+        """
+        V8.1: 意图明确化引导循环
+
+        当用户输入过于模糊时，进行最多 2 轮追问，帮助明确研究方向。
+        用户可随时说"直接开始"跳过。
+
+        Returns:
+            ClarificationResult 或 None（不需要明确化时）
+        """
+        # 快速预检：短输入可能是明确的学术术语（如"CRISPR基因编辑在T细胞中的应用"）
+        # 先用轻量检查，再决定是否需要 LLM 评估
+        parsed_query = parsed.parameters.get("query", user_input).strip()
+        if not is_broad_input(parsed_query) and len(parsed_query.split()) >= 5:
+            # 输入较长，可能已经足够明确，但仍用 LLM 确认
+            pass
+
+        result = self.intent_clarifier.assess(parsed_query)
+
+        # 如果已经足够清晰，直接返回
+        if result.is_clear_enough:
+            if result.clarity_score < 1.0:
+                self.console.print(f"[dim]研究画像: {result.research_scope_summary}[/dim]")
+            return result
+
+        # 需要追问
+        self.console.print(Panel.fit(
+            f"[bold yellow]🔍 您的方向很有意思，让我帮您明确一下[/bold yellow]\n\n"
+            f"[dim]当前理解: {result.research_scope_summary}[/dim]\n"
+            f"[dim]清晰度: {result.clarity_score:.0%}[/dim]",
+            border_style="yellow"
+        ))
+
+        while not result.is_clear_enough and result.round_count < MAX_CLARIFICATION_ROUNDS:
+            if not result.follow_up_questions:
+                break
+
+            # 显示追问
+            self.console.print("\n[bold white]想确认以下几点：[/bold white]\n")
+            for i, q in enumerate(result.follow_up_questions, 1):
+                self.console.print(f"  [cyan]{i}.[/cyan] {q}")
+
+            self.console.print(f"\n[dim]（输入 '直接开始' 跳过追问，直接研究）[/dim]")
+
+            answer = questionary.text(
+                "您的回答：",
+                style=custom_style
+            ).ask()
+
+            if not answer:
+                continue
+
+            # 检查跳过意图
+            skip_keywords = ["直接开始", "就这样", "先试试", "开始吧", "just start", "go ahead", "skip"]
+            if any(kw in answer.lower() for kw in skip_keywords):
+                self.console.print("[green]好的，基于现有信息开始研究...[/green]")
+                result.is_clear_enough = True
+                break
+
+            # 下一轮评估
+            result = self.intent_clarifier.assess(answer, previous_result=result)
+
+            if not result.is_clear_enough and result.round_count >= MAX_CLARIFICATION_ROUNDS:
+                self.console.print("[yellow]已达到最大追问次数，基于现有信息开始研究...[/yellow]\n")
+                result.is_clear_enough = True
+                break
+
+            if result.is_clear_enough:
+                self.console.print(f"\n[green]研究方向已明确: {result.research_scope_summary}[/green]")
+                self.console.print(f"[dim]检索关键词: {result.refined_query}[/dim]\n")
+
+        return result
 
     def _handle_parsed_intent(self, parsed: ParsedIntent) -> bool:
         """

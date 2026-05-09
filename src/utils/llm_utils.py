@@ -724,12 +724,17 @@ def call_llm(
     if model is None:
         model = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-20250514")
 
-    # 初始化客户端
-    base_url = os.getenv("ANTHROPIC_BASE_URL")
-    if base_url:
-        client = anthropic.Anthropic(api_key=api_key, base_url=base_url, timeout=timeout)
-    else:
-        client = anthropic.Anthropic(api_key=api_key, timeout=timeout)
+    # 使用带重试的 Anthropic client（500/连接错误指数退避重试 3 次）
+    try:
+        from src.utils.llm_retry import create_anthropic_client
+        client = create_anthropic_client(api_key=api_key, base_url=os.getenv("ANTHROPIC_BASE_URL"))
+    except ImportError:
+        # 降级：如果 retry 模块不可用，使用原始 client
+        base_url = os.getenv("ANTHROPIC_BASE_URL")
+        if base_url:
+            client = anthropic.Anthropic(api_key=api_key, base_url=base_url, timeout=timeout)
+        else:
+            client = anthropic.Anthropic(api_key=api_key, timeout=timeout)
 
     try:
         message = client.messages.create(
