@@ -507,6 +507,21 @@ def hypothesis_generation_task_v75_impl(
 
         logger.info(f"[Task {task_id}] Domain: {detected_domain}, Sources: {sources}")
 
+        experience_library = None
+        experience_context_suffix = ""
+        experience_candidates = []
+        try:
+            from src.core.research_experience_library import ExperienceQuery, ResearchExperienceLibrary
+            experience_library = ResearchExperienceLibrary.default()
+            experience_result = experience_library.retrieve(
+                ExperienceQuery(topic=user_input, domain=detected_domain, limit=3)
+            )
+            experience_context_suffix = experience_result.prompt_suffix
+            if experience_result.experiences:
+                logger.info(f"[Task {task_id}] 已检索历史科研经验 {len(experience_result.experiences)} 条")
+        except Exception as e:
+            logger.warning(f"[Task {task_id}] 历史科研经验检索失败: {e}")
+
         # ==================== Phase 4: 异步文献检索 ====================
         self.update_progress(25, "异步文献检索启动")
 
@@ -647,7 +662,7 @@ def hypothesis_generation_task_v75_impl(
 
                 hypothesis_result = _execute_hypothesis_gen(
                     self, task_id, user_input, detected_domain, sources, verified_ids,
-                    phoenix_context, iteration
+                    phoenix_context, iteration, experience_context_suffix if iteration == 1 else ""
                 )
 
                 if hypothesis_result:
@@ -748,6 +763,12 @@ def hypothesis_generation_task_v75_impl(
 
                     logger.info(f"[Task {task_id}] 红方 verdict: {attack_report.get('verdict', 'unknown')}")
                     stage_outputs.append(_write_stage_output(task_id, iteration * 10 + 2, f'iteration_{iteration}_red_team', red_team_result))
+                    if experience_library:
+                        experience_candidates.extend(
+                            experience_library.extract_from_red_team(
+                                task_id, detected_domain, user_input, iteration, red_team_result, phoenix_context
+                            )
+                        )
 
                 # V7.7: 记录攻击类型失败（用于回溯检测）
                 if red_team_result and attack_report.get('verdict') == 'failed':
@@ -773,6 +794,12 @@ def hypothesis_generation_task_v75_impl(
                 defense_passed = defense_result.get('defense_passed', False) if defense_result else False
 
                 logger.info(f"[Task {task_id}] 防御委员会: {'PASSED' if defense_passed else 'FAILED'}")
+                if experience_library:
+                    experience_candidates.extend(
+                        experience_library.extract_from_defense(
+                            task_id, detected_domain, user_input, iteration, defense_result, red_team_result, phoenix_context
+                        )
+                    )
 
                 if defense_passed:
                     logger.info(f"[Task {task_id}] 凤凰协议成功！迭代次数: {iteration}")
@@ -1183,6 +1210,20 @@ def hypothesis_generation_task_v75_impl(
             payload = convert_numpy_types(payload)
             state = TaskState.FAILURE
 
+        if experience_library:
+            try:
+                final_state_label = 'success' if state == TaskState.SUCCESS else 'failure'
+                experience_candidates.extend(
+                    experience_library.extract_from_final_payload(
+                        task_id, detected_domain, user_input, payload, final_state_label
+                    )
+                )
+                saved_experiences = experience_library.save_many(experience_candidates)
+                if saved_experiences:
+                    logger.info(f"[Task {task_id}] 保存科研经验 {saved_experiences} 条")
+            except Exception as e:
+                logger.warning(f"[Task {task_id}] 科研经验保存失败: {e}")
+
         # Webhook 回调
         if webhook_url:
             try:
@@ -1269,7 +1310,7 @@ def hypothesis_generation_task_v75_impl(
 
 
 # ==================== 辅助函数 ====================
-def _execute_hypothesis_gen(self, task_id, user_input, domain, sources, verified_ids, phoenix_context, iteration):
+def _execute_hypothesis_gen(self, task_id, user_input, domain, sources, verified_ids, phoenix_context, iteration, experience_context: str = ""):
     """执行假设生成"""
     try:
         from src.prompts.pi_system_prompt import format_pi_prompt_v60, format_pi_prompt_v732
@@ -1281,6 +1322,9 @@ def _execute_hypothesis_gen(self, task_id, user_input, domain, sources, verified
             augmented_input = f"{user_input}\n\n{red_feedback}"
         else:
             augmented_input = user_input
+
+        if experience_context:
+            augmented_input = f"{augmented_input}\n\n{experience_context}"
 
         # 选择 Prompt 版本
         if iteration > 1:
