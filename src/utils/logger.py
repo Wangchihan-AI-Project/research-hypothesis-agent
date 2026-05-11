@@ -364,6 +364,10 @@ class CentralizedLogger:
         self.error_logger.critical(message, exc_info=exc_info, **kwargs)
         self.system_logger.critical(message, exc_info=exc_info, **kwargs)
 
+    def session_start(self, session_id: Any, query: str):
+        """记录研究会话启动事件。"""
+        self.info(f"[Session] 启动研究会话 session_id={session_id}, query={query}")
+
 
 # ==================== Task Context Manager ====================
 
