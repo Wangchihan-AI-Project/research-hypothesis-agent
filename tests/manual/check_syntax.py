@@ -19,13 +19,13 @@ files_to_check = [
     "src/utils/relevance_scorer.py",
     "src/agents/paper_search_agent.py",
     "src/agents/genai_expert_agent.py",
-    "tests/test_genai_expert.py",
-    "tests/test_two_stage_funnel.py",
+    "tests/manual/test_genai_expert.py",
+    "tests/manual/test_two_stage_funnel.py",
     "tests/test_search_page_state_flow.py",
 ]
 
-tests_root = Path(__file__).parent
-project_root = tests_root.parent
+tests_root = Path(__file__).resolve().parents[1]
+project_root = Path(__file__).resolve().parents[2]
 all_ok = True
 
 for file_path in files_to_check:

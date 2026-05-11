@@ -331,22 +331,37 @@ research-hypothesis-agent/
 
 ## 测试验证
 
-### 核心测试文件
+### 自动测试
+
+默认测试入口由 `pytest.ini` 控制，只收集稳定、可在本地快速运行的自动测试：
 
 | 测试文件 | 测试内容 |
 |----------|----------|
-| `test_v75_integration.py` | Phoenix 状态机、版本链、分数趋势 |
-| `test_v75_e2e_audit.py` | 状态转换一致性、JSON 序列化、SQLite 持久化 |
-| `test_output_enhanced.py` | Roadmap、Innovation、Frontier 输出 |
-| `smoke_test_v75.py` | 全链路冒烟测试 |
-| `blind_test_v7_4_g.py` | 盲测验证 |
+| `tests/test_core_imports.py` | 核心入口导入 smoke test |
+| `tests/test_research_experience_library.py` | 科研经验库保存、检索和经验抽取回归 |
+| `tests/test_search_page_state_flow.py` | 文献检索页候选/最终状态流回归 |
 
-运行测试：
+运行自动测试：
 
 ```bash
-python test_v75_integration.py
-python test_v75_e2e_audit.py
-python smoke_test_v75.py
+python -m pytest
+```
+
+Windows 虚拟环境示例：
+
+```bat
+.venv\Scripts\python.exe -m pytest
+```
+
+### 手动/历史测试脚本
+
+`tests/manual/` 存放历史脚本型、诊断型、联网型或 LLM 相关测试。这些脚本不参与默认 `pytest` 收集，避免测试过程被交互输入、外部 API、长耗时流程或 `sys.exit` 中断。
+
+如需手动运行旧脚本，请从项目根目录执行，例如：
+
+```bat
+set PYTHONPATH=%CD%
+.venv\Scripts\python.exe tests\manual\test_genai_expert.py
 ```
 
 ---

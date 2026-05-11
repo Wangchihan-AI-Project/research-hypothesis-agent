@@ -91,6 +91,14 @@ def run_final_fallback_test():
     assert any('评分依据' in caption for caption in captions), captions
 
 
+def test_preliminary_state_metrics_and_warning():
+    run_preliminary_state_test()
+
+
+def test_final_fallback_metrics_and_captions():
+    run_final_fallback_test()
+
+
 if __name__ == '__main__':
     run_preliminary_state_test()
     run_final_fallback_test()
